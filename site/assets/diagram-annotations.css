@@ -1,0 +1,33 @@
+.dg-surface { position:relative; }
+.dg-card { position:absolute; z-index:8; background:var(--surface,#fff); color:var(--ink,#182333); border:2px solid #366a9e; border-radius:8px; box-shadow:0 6px 24px #142d4930; padding:14px; max-width:calc(100% - 12px); max-height:420px; overflow:auto; font:14px/1.5 var(--font,system-ui); box-sizing:border-box; }
+.dg-card[hidden] { display:none!important; }
+.dg-card h3 { font:700 16px/1.35 var(--font,system-ui); margin:8px 0; border:0; }
+.dg-card p { margin:5px 0 10px; white-space:pre-wrap; overflow-wrap:anywhere; font-size:14px; }
+.dg-card strong { display:block; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+.dg-close { display:block; margin-left:auto; font:600 12px/1.4 var(--font,system-ui); padding:5px 8px; border:1px solid var(--line,#ccc); border-radius:5px; background:var(--sunk,#f6f6f4); color:inherit; cursor:pointer; }
+.dg-docked { position:relative; margin:10px auto; width:calc(100% - 16px)!important; max-height:none; box-shadow:none; border-left-width:5px; }
+.dg-inspected>rect,.dg-inspected>polygon,.dg-inspected>circle { stroke:#245c9e!important; stroke-width:4px!important; }
+.dg-inspected { outline:none; }
+.dg-source-guide { font:13px/1.5 var(--font,system-ui); background:var(--sunk,#f6f6f4); color:var(--ink); padding:10px 12px; border-left:3px solid #4775a5; margin:0 0 8px; }
+.dg-source-guide strong { display:block; }
+.dg-helpable { cursor:help; }
+.dg-helpable:focus-visible { outline:3px solid #5145cd; outline-offset:3px; }
+@media print { .dg-card { display:none; } }
+
+.dg-card pre { max-height:260px;max-width:100%;overflow:auto;white-space:pre;font:12px/1.6 ui-monospace,monospace; } .dg-card details summary { font-size:13px;cursor:pointer; }
+
+.dg-card.dg-hover-preview { max-height:180px; }
+
+/* Intentional selection is a reading surface, never a hover-sized popup. */
+.dg-card.dg-docked { font-size:16px; line-height:1.6; max-width:100%; width:100%!important; margin:14px 0; padding:20px; scroll-margin-top:210px; overflow:visible; }
+.dg-card.dg-docked p { font-size:16px; }
+.dg-card.dg-docked h3 { font-size:20px; }
+.dg-card.dg-docked pre { font-size:14px; }
+.dg-card.dg-docked details summary { font-size:16px; }
+.dg-card.dg-docked strong { font-size:14px; }
+.dg-card.dg-docked .dg-close { font-size:15px; min-height:44px; }
+@media(max-width:600px){.dg-card.dg-docked{padding:14px;scroll-margin-top:190px;}}
+
+/* Short previews are noninteractive; they must never intercept a diagram selection. */
+.dg-hover-preview { pointer-events:none; }
+.dg-hover-preview .dg-close { display:none; }

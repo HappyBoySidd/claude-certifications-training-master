@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "note": "A review date exists only if a person or seat records it here. Format: \"exams\": {\"ccar-f\": {\"date\": \"YYYY-MM-DD\", \"by\": \"seat or person\", \"ref\": \"BACKLOG or DECISIONS id\"}}. Never fill from file dates.",
+  "exams": {
+    "ccao-f": {
+      "date": "2026-10-04",
+      "by": "content-steward (G2/G3, AUTHOR run)",
+      "ref": "B-59"
+    },
+    "ccar-f": {
+      "date": "2026-10-04",
+      "by": "content-steward (G2/G3, AUTHOR run)",
+      "ref": "B-59"
+    },
+    "ccar-p": {
+      "date": "2026-10-04",
+      "by": "content-steward (G2/G3, AUTHOR run)",
+      "ref": "B-59"
+    },
+    "ccdv-f": {
+      "date": "2026-10-04",
+      "by": "content-steward (G2/G3, AUTHOR run)",
+      "ref": "B-59"
+    }
+  }
+}

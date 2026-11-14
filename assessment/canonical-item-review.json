@@ -1,0 +1,2532 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-14",
+  "reviewer": "accuracy_review",
+  "scope": "149 project-authored CCAR-F items only; canonical source matched by ID and complete object equality; PLAN-02 eight-item corrected batch reviewed 2026-10-21 (six mapped, two supplemental/unmapped)",
+  "counts": {
+    "approved": 123,
+    "caveated": 28,
+    "quarantined": 6
+  },
+  "items": {
+    "CCARF-DP-001": {
+      "disposition": "approved",
+      "objective": "4.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "da22949b14c412a58f9a5953f375828d65af1da74a67cb885e4f93c123550268"
+    },
+    "CCARF-DP-002": {
+      "disposition": "approved",
+      "objective": "4.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "ca189358419f242f1b8a4bf440461c360718bf0fa5b6775c24e4f51239f36066"
+    },
+    "CCARF-DP-003": {
+      "disposition": "approved",
+      "objective": "4.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "a982c809d20268418f5bc4ab9119657b7ddbb383ea8fc8625141e668ff275248"
+    },
+    "CCARF-DP-004": {
+      "disposition": "approved",
+      "objective": "4.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9a767349c2026e96ffcbcf3a61c5f29843e367d3935902c97ee66e9d29e15a91"
+    },
+    "CCARF-DP-005": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Saved guide compresses schema tool use into a guarantee. Current strict enforcement must be explicit; ordinary input_schema descriptions alone do not guarantee schema compliance. Key remains best exam-baseline option, with visible implementation caveat.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "e2ee5604d1a45f21c2f072160be2b4871ae66a70b8289ed57c398ea7ef3316dd"
+    },
+    "CCARF-DP-006": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "2605a8a53be9160b1b9ad751e37180351a2ddc1479790cde605dfbf3b178e0f4"
+    },
+    "CCARF-DP-007": {
+      "disposition": "approved",
+      "objective": "4.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9ce808419bd1eb5a7025228d3a8da310a9bebdb38d5cb6c39c5fd7e5bf90fa38"
+    },
+    "CCARF-DP-008": {
+      "disposition": "approved",
+      "objective": "4.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "8a5f4b310fc4d6559fbbf12e2e1c0e797ab5356590a87af036e7d9772cbdc936"
+    },
+    "CCARF-DP-009": {
+      "disposition": "approved",
+      "objective": "4.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4e19728b409838e1f4ca19b768f45166eaf9a34bb4f03f5c88784f0abcf53506"
+    },
+    "CCARF-DP-010": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Format normalization cannot infer locale/year/currency from ambiguous source. Preserve original and unresolved interpretation; nullable/error contract and source checks needed before downstream acceptance.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "84baa789624fff75b67c68ddf3b6b20a789334b32da8c51c2aac1e7a5eee8d38"
+    },
+    "CCARF-DP-011": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "391adad1b000b61cb8ba39ee65d4e718c857cb285709a0eb2feb763b15b3c2ae"
+    },
+    "CCARF-DP-012": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "e0c214de131c4f984f1ceaf6119fc6cd47fc13a5dc28e54472ba80f5eb2fa8ca"
+    },
+    "CCARF-DP-013": {
+      "disposition": "approved",
+      "objective": "4.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "d19fb85af2c1c8fb55a48be6df98180c636dcce639850e81434d63cfe83c6c95"
+    },
+    "CCARF-DP-014": {
+      "disposition": "approved",
+      "objective": "4.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "526d6e6dd40109cfa8bbc177ebda48729419b4c8ae2b06a6d80055fad40921fc"
+    },
+    "CCARF-DP-015": {
+      "disposition": "approved",
+      "objective": "4.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "99c790001f274487b9d2e9762eec66e8dddb2439a2adaa8e3568453bc85c7e3c"
+    },
+    "CCARF-DP-016": {
+      "disposition": "approved",
+      "objective": "4.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3be59e7d222df4943303a12b73b32f1650913762d6f91a6b915e92c0f03effc6"
+    },
+    "CCARF-DP-017": {
+      "disposition": "approved",
+      "objective": "4.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "1f013200a6423e4c075f78cca05c94be5246ff037b9a70966a660677459cd372"
+    },
+    "CCARF-DP-018": {
+      "disposition": "approved",
+      "objective": "4.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "5538adbe84c44c39c9f6c42ce9c2ba4b494a542fd9b19e344c97fa8d53081b53"
+    },
+    "CCARF-DP-019": {
+      "disposition": "quarantined",
+      "objective": "4.5",
+      "reason": "Successful completion cannot always be guaranteed from a 24-hour batch expiry window. Six-hour arithmetic is conditional on successful processing and excludes recovery.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "7bef957a0baf1770a037d3ab2658357097a5976111450304ffd33030d4a3cb2b"
+    },
+    "CCARF-DP-020": {
+      "disposition": "approved",
+      "objective": "4.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b5937c100f77534331f6f5f9082565616374718cc1d9c7dc1b4bcb467c5b5e2b"
+    },
+    "CCARF-DP-021": {
+      "disposition": "approved",
+      "objective": "4.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "366f46962d29991a5ea4d144b069648b7b3f922998c07c9e458cf662e130563c"
+    },
+    "CCARF-DP-022": {
+      "disposition": "approved",
+      "objective": "2.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "84b3a92593fb08ca63fd9cbc4abf1c03c0643901ddf50c7298ba41169b4c800a"
+    },
+    "CCARF-DP-023": {
+      "disposition": "quarantined",
+      "objective": "2.3",
+      "reason": "any alone does not ensure exactly one tool call; disable_parallel_tool_use is needed in compatible modes. Forced record_findings with an allowed empty list is also defensible, contrary to its distractor explanation.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "623da1550ce101377b5424b9e0b787421dbf93bb8cd288265b54041d6d9986f9"
+    },
+    "CCARF-DP-024": {
+      "disposition": "quarantined",
+      "objective": "2.3",
+      "reason": "Keyed option says auto (or any) permits final text completion. any requires a tool call and cannot substitute for auto in the completion phase.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "dc2913351042f3302072a682587e8fa710de53e009e17a2f3a84ffe011e607ef"
+    },
+    "CCARF-DP-025": {
+      "disposition": "caveated",
+      "objective": "2.3",
+      "reason": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "dff1134f84d720630cc7e5bdc7525128b06ac1cf4a24db06df6ac46b7db3fe60"
+    },
+    "CCARF-DP-026": {
+      "disposition": "quarantined",
+      "objective": "5.5",
+      "reason": "Displayed disjoint counts and segment accuracies produce 95.974896%, not 97.1%. Clarify unlike metric denominators or correct the overall fixture before diagnostic use.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "04cbdc1d7061a490bd718c558e7e1fbe6cb0bb1ba420452f5091269cdd66555f"
+    },
+    "CCARF-DP-027": {
+      "disposition": "approved",
+      "objective": "5.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "8b6a374a1ffc949fcab5aaa30c2d417cdfc2c385c8af480ae562d873409416c7"
+    },
+    "CCARF-DP-028": {
+      "disposition": "approved",
+      "objective": "5.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3dc01b0bbc4971ad65760549f5a102012bffb0f518e3702b5b5dfeb9df7fab7e"
+    },
+    "CCARF-DP-029": {
+      "disposition": "approved",
+      "objective": "5.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9162366ac0def1c478507bc1e62a73a8941fcb4bec88ded54c97da7a0b2d4ba2"
+    },
+    "CCARF-DP-030": {
+      "disposition": "approved",
+      "objective": "3.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4c4c48e6f2b393d77f6244376f2029a8c8835e9ec7ea48944a9da1f9da6cb763"
+    },
+    "CCARF-DP-031": {
+      "disposition": "approved",
+      "objective": "3.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "1d052c2637f767ac29dd358d9274c139ccdec63eb64b1c7255a522834a1bbff4"
+    },
+    "CCARF-DP-032": {
+      "disposition": "approved",
+      "objective": "3.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9e4bb74feb846acccc09ce6a7d79560f92de3dd1be1fdae948e64b5e840539d6"
+    },
+    "CCARF-DP-033": {
+      "disposition": "approved",
+      "objective": "3.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "df14790e6acd8d8aee9c4d23a28981277b092bd2920df0f41b4bf40ac0117143"
+    },
+    "CCARF-DP-034": {
+      "disposition": "caveated",
+      "objective": "3.1",
+      "reason": "Saved-guide /memory answer must remain visibly contrasted with current /context loaded-file inspection and later instruction-loading evidence; listing locations is not proof of loaded content.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "368151840c4da214df352c7cc377253f63bdd51ba50c7348301484438dd7030a"
+    },
+    "CCARF-DP-035": {
+      "disposition": "approved",
+      "objective": "3.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "c33393d609c361c419691e16691010bb12e8fd48c171956c1b5fddb86f0c7d29"
+    },
+    "CCARF-DP-036": {
+      "disposition": "approved",
+      "objective": "3.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "994e3c05c8d36ed4c4205c2233761efdcbd170de79979c7fb548b7bfb70bd6ed"
+    },
+    "CCARF-DP-037": {
+      "disposition": "approved",
+      "objective": "3.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "5af3a323739a6f93a360c4c3d77f0a29b9d6a7619c0d10b2e36940774916fa97"
+    },
+    "CCARF-DP-038": {
+      "disposition": "approved",
+      "objective": "3.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "2e0d675ed55e595bbcfdb3c02fa3f2458d490f88c8bf01815b9da29f772e1eca"
+    },
+    "CCARF-DP-039": {
+      "disposition": "approved",
+      "objective": "3.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "cb2a18721c2631bc879d69cfe8e69fd43bdace71cfb4fce11d47218babf39187"
+    },
+    "CCARF-DP-040": {
+      "disposition": "approved",
+      "objective": "3.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "d9667748317104a2b7775e2c87f164c524d465d805a9106cf95eba6df5fcefd6"
+    },
+    "CCARF-DP-041": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "160e5cc23129e19ea39f979a6d723b15cb2e6af0c674c7cc8563e174911d4b34"
+    },
+    "CCARF-DP-042": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "8391d9d57e242b6e677936d29b6419bf869c75e7433c690feb471ab479a04d5b"
+    },
+    "CCARF-DP-043": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3cf669541e8e768514dc33e7461bc2a35d03a607eaeb72b504b293b68e1a249c"
+    },
+    "CCARF-DP-044": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b3496923c2e56d11617ff10d06fe926e74c5fd35a4ea7ea314aa806497786436"
+    },
+    "CCARF-DP-045": {
+      "disposition": "caveated",
+      "objective": "3.6",
+      "reason": "Current scripted bare mode can skip project instructions/hooks/MCP discovery. Preserve supplied-context and structured_output caveat; verify installed flags before runnable use.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "2518003220c6c0572621e0e7c138b812a0eddf0d011f19851b6e935a1dd021ad"
+    },
+    "CCARF-DP-046": {
+      "disposition": "approved",
+      "objective": "3.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "e633ad4dc5cd9945f364016afcdbd25a9860aeb5f6f6d4c6c092f7d6c3ec0bc9"
+    },
+    "CCARF-DP-047": {
+      "disposition": "caveated",
+      "objective": "1.4",
+      "reason": "Direct Bash deny enforces matching calls, not every indirect program invocation. Existing security-boundary caveat must remain visible; pre-tool matching alone also needs robust coverage.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "c78415a003e17e4ebc9af6a932d8b9868ecb8bf1fc5669a0363b52487192d172"
+    },
+    "CCARF-DP-048": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "c616488ee637e166ededee7e6918af6ca899004e55e701baa7278a880b0a1685"
+    },
+    "CCARF-DP-049": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "bf5bf647824551db72e295c10cf295c7f185b3f7b7dfc93d6425fbf7f2bf2c18"
+    },
+    "CCARF-DP-050": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4bd8fe452dd4ec371082afb4f6f3d6caa796c63d7cdeb187aba51b63c29e5056"
+    },
+    "CCARF-DP-051": {
+      "disposition": "caveated",
+      "objective": "1.5",
+      "reason": "Edit|Write covers those tool edits, not every filesystem mutation through Bash or other tools. This is a scoped feedback example, not a guarantee every possible file change is checked.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "d4cb73dee2c7489d0c7c179ca9368fffa40e5185ecc327abb749a6b31f80a3bb"
+    },
+    "CCARF-DP-052": {
+      "disposition": "approved",
+      "objective": "1.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "f818c19a9e07a691f0e773d6788cf273349775235309aa16d980fb375814c847"
+    },
+    "CCARF-DP-053": {
+      "disposition": "caveated",
+      "objective": "1.5",
+      "reason": "Edit|Write covers those tool edits, not every filesystem mutation through Bash or other tools. This is a scoped feedback example, not a guarantee every possible file change is checked.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "c25c5eeed7952fa7aa8e6507103ea05c1a40e17259849480042e7c1365484c50"
+    },
+    "CCARF-DP-054": {
+      "disposition": "caveated",
+      "objective": "1.5",
+      "reason": "PostToolUse signaling principle is correct, but tsc commonly emits diagnostics on stdout; the example captures only stderr. Capture both streams to deliver actual diagnostics.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "d62bf5f8498e192285012103c982fa3bde90657c06249cccdc49da76b748c63c"
+    },
+    "CCARF-DP-055": {
+      "disposition": "approved",
+      "objective": "1.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3b3eb930244f6ded8b429e80af709d99dcf39030f4000637e21df11f35ea1529"
+    },
+    "CCARF-DP-056": {
+      "disposition": "approved",
+      "objective": "1.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9be219cb81fe1a7dd4b16ed74e1522b613c02e224bed7130347a4a79a8387c63"
+    },
+    "CCARF-DP-057": {
+      "disposition": "approved",
+      "objective": "1.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "0a36bbdea4e402b30a8221bd21539a57ee7ee8587a37871d5f33ab8629d11d16"
+    },
+    "CCARF-DP-058": {
+      "disposition": "approved",
+      "objective": "1.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "2c4379c52e6ef01976694417ad092f29731e93dc94e8e65823511289db85366f"
+    },
+    "CCARF-DP-059": {
+      "disposition": "approved",
+      "objective": "1.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4bd12f7c9be208f81f4232f35b578b8ed922a3a7c989b085363e8b5c6b03bccf"
+    },
+    "CCARF-DP-060": {
+      "disposition": "approved",
+      "objective": "1.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "86956ecfc77d16099b4452c703971eae29a525572f28e3dab2807d15ef310c6d"
+    },
+    "CCARF-DP-061": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "0ff36f4c3d5f6461eb0255318fd7169433bfbbe686d8b790f4c07478e065c1d0"
+    },
+    "CCARF-DP-062": {
+      "disposition": "caveated",
+      "objective": "1.3",
+      "reason": "Saved Task/allowedTools exam baseline differs from current Agent definitions and permission semantics. Existing caveat must be shown; allow-list preapproval is not pool restriction.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "c157259450c14c63dc1a715cd37db662f17aecf885a63905143ffaacf48e097d"
+    },
+    "CCARF-DP-063": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "bbce2ab53a4c4a5817ec2fa52232609d5a252a03bc1bccfc1a5852a1f2831454"
+    },
+    "CCARF-DP-064": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "846b7d4061f71599148a06cd1acc5e2f453ef5a9e5e6c99a31ad5fff5cd2343e"
+    },
+    "CCARF-DP-065": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "225e555035ed0d8d740419b70104802d306b894698235141144f12677bffe51e"
+    },
+    "CCARF-DP-066": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b46f94b491eb04d832d218eaa0ead9bb0400e5488f9dc562e4d098ab3d5b97f4"
+    },
+    "CCARF-DP-067": {
+      "disposition": "approved",
+      "objective": "1.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "737615fc36dc1ed2d2239f15a5f34815b7de7bbfc4d6eba3fd7c4daa95d5b279"
+    },
+    "CCARF-DP-068": {
+      "disposition": "caveated",
+      "objective": "1.5",
+      "reason": "Normalization requires supported post-tool output replacement with matching output shape and explicit parsing/ambiguity handling; hook presence alone does not establish successful normalization.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "2b20dd73b9830b5ac135570da4c2a2cfcaf80695aa8ff9d53a230a958ece215d"
+    },
+    "CCARF-DP-069": {
+      "disposition": "approved",
+      "objective": "1.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "21006dfa4d5dc2c510a37f84eef48ebb4e4cf26698eb0be64259b64049c1c02b"
+    },
+    "CCARF-DP-070": {
+      "disposition": "approved",
+      "objective": "1.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "db9cc5cbf4af5dbc6678192ab920f2c1cee07bdb941b70ac1dfd962b55f15306"
+    },
+    "CCARF-DP-071": {
+      "disposition": "approved",
+      "objective": "1.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "14015baa5e3457744aafe45855842d227c45d31451ac7d30b97203ea63d128a7"
+    },
+    "CCARF-DP-072": {
+      "disposition": "approved",
+      "objective": "1.7",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "d1c2c6d15bdc8701c0a838aa107021ff48bb6b837978aed5bd7f3f0ef3a614d5"
+    },
+    "CCARF-DP-073": {
+      "disposition": "approved",
+      "objective": "1.7",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "6b0f51235a9d468eeb565be47cef1c7abf48652c45f5bd82ea7e79c79c01605c"
+    },
+    "CCARF-DP-074": {
+      "disposition": "caveated",
+      "objective": "1.7",
+      "reason": "fork_session is SDK terminology; CLI uses --fork-session with resume. Existing distinction must remain visible.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "3614c472ea96139ccf39649f8fa3c57e847685bb124c25309bb639f1780154c5"
+    },
+    "CCARF-DP-075": {
+      "disposition": "caveated",
+      "objective": "5.2",
+      "reason": "A human request is not the only later escalation trigger: policy gap, inability to progress or new authorization issues also apply. Key is best for this currently resolvable case.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "fc48cce99f4142156bc903caf5878f61acfbae535eb1e1c7c3f72534d245a97b"
+    },
+    "CCARF-DP-076": {
+      "disposition": "approved",
+      "objective": "5.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b4924bc8387cecf601f40a5d2318d1e022148069c8d48811b016d175ab82cf9c"
+    },
+    "CCARF-DP-077": {
+      "disposition": "approved",
+      "objective": "2.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "dfec9d612282f20851bfa89f0814b24af0e58eeadaf7fc9e8661f16301749cda"
+    },
+    "CCARF-DP-078": {
+      "disposition": "caveated",
+      "objective": "2.1",
+      "reason": "Purpose-specific tools are sensible here; a validated mode router with explicit contracts is also legitimate. Do not teach that one tool with modes necessarily has vague boundaries.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "98039020b9ab189aedd06ad9e550efe0651a829dce32594f1f9066286d9c3d18"
+    },
+    "CCARF-DP-079": {
+      "disposition": "approved",
+      "objective": "2.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "204f3605b8db7ccd1fa549419807ff19bef111457326c4c969bae8176976c280"
+    },
+    "CCARF-DP-080": {
+      "disposition": "approved",
+      "objective": "2.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "0157619dd00e9acde29b2bf2ccf5adde5a79b6ef3f724598aa24e93be01c3b6c"
+    },
+    "CCARF-DP-081": {
+      "disposition": "approved",
+      "objective": "2.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "cda4ef5f2cbe8b0641b93ea46f8acc5634d673257913d9c435276e02bce62b25"
+    },
+    "CCARF-DP-082": {
+      "disposition": "approved",
+      "objective": "2.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "d714e5fdf5e93b9db365aa6fca579a98e24293e4ef61a8552264d5c2b9257257"
+    },
+    "CCARF-DP-083": {
+      "disposition": "approved",
+      "objective": "2.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "72bc190409e47882f9e97ab53f7636a47ec0a0d1d9ab94a7daf653ace89baeeb"
+    },
+    "CCARF-DP-084": {
+      "disposition": "approved",
+      "objective": "2.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "865badadea5434339738fb74e187382a0ad59f465e3d5b7e3747f85e01c77737"
+    },
+    "CCARF-DP-085": {
+      "disposition": "approved",
+      "objective": "2.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "f68d0812656eee4d8d9d07d040057caab6b2807f01ed22728414c3a66d99f364"
+    },
+    "CCARF-DP-086": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "037874e1e8223deaf99d45bf1510ddf6be276f4be408635f16d3662f954f65d2"
+    },
+    "CCARF-DP-087": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "c5e5cea0e83417a84b999ffcbf018ee462d9ca3d133ffbd7fd74af7d6db899f4"
+    },
+    "CCARF-DP-088": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "1fe28d646e7bef6c7881bd2fa6316ae3df12334460fb2951cbde54fa177b5101"
+    },
+    "CCARF-DP-089": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "ba433c6f978eb23ca4a8ca5e6462eedd9cb5c60c429ef0638247fa11a21a2bdc"
+    },
+    "CCARF-DP-090": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "a5fe759de89883a75b4b392e0f12b49ef050692c1b1d24537b1fb7cb671e177c"
+    },
+    "CCARF-DP-091": {
+      "disposition": "approved",
+      "objective": "2.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "058a2139268fd4d7048b1d3a14ec735690cdef0533eeb11eb3effa81f604dc21"
+    },
+    "CCARF-DP-092": {
+      "disposition": "approved",
+      "objective": "2.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b2371faa949cef43168f8114f76962084d57fcf091112b3cc8eaf2b77ea993a2"
+    },
+    "CCARF-DP-093": {
+      "disposition": "approved",
+      "objective": "2.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3c54989d32f2c8dc05d27393f24ff753c03a5d16990f4b79c20eeebe05f52e05"
+    },
+    "CCARF-DP-094": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "e4b187cf841bb77f2ef55a5eeadad5682df980571a03c5e3b3d4381a00a4687a"
+    },
+    "CCARF-DP-095": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "cba19d9751db0165143a43b9f8cd70df4c6cb71c471737dfaca87dd0426d4c89"
+    },
+    "CCARF-DP-096": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "22ff6698a2dca694c105d06e92a1f140dac252e3d60f13f217a50e4887fe2813"
+    },
+    "CCARF-DP-097": {
+      "disposition": "approved",
+      "objective": "5.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "fb7c43a6eb8a94b78020afaf775ca3d92fecd266bb2348b9f1daaaf48ddec564"
+    },
+    "CCARF-DP-098": {
+      "disposition": "approved",
+      "objective": "5.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "187be048a6b487a36d755c13fff75c31fe367a6a87e8a4fe89bedceaebc315e6"
+    },
+    "CCARF-DP-099": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "9070cddc493035f0159bfaab6052833349f90584624f75d6f5c9b74eec20fef6"
+    },
+    "CCARF-DP-100": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "cf235f9a0e8245c664ae75224d09ccb294492f195eee7ad13b77dcbede735791"
+    },
+    "CCARF-DP-101": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "405108c5a8a8f4c0bf49360607f68bc63469072b4c28e3877309ac394283f593"
+    },
+    "CCARF-DP-102": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "68e75c30c8bcf67466a28db25d6bf022f23ac702ff26f681fec4a66722f2b5f7"
+    },
+    "CCARF-DP-103": {
+      "disposition": "approved",
+      "objective": "5.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "f9c393466a8d42728c700c85d64744348995dc15f4f124881d4fde43f94be0c6"
+    },
+    "CCARF-DP-104": {
+      "disposition": "approved",
+      "objective": "5.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "8b994bc2633446996a694e2e51f6b209ab1d85078e251a24166e044eac69f642"
+    },
+    "CCARF-HD-001": {
+      "disposition": "approved",
+      "objective": "1.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "26b4005521ee358d0a3275d8b5400c530d7d8b58c30c33edd3d20b811a4d3d96"
+    },
+    "CCARF-HD-002": {
+      "disposition": "approved",
+      "objective": "1.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "63818febacfe7bb11052c12d3a7edab985801baf48793c416dec88d03b1ff59d"
+    },
+    "CCARF-HD-003": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4fb3aac4abad4f064e3fba165bfa6ea4e7421cd520e462a7ed85f7aed9e21914"
+    },
+    "CCARF-HD-004": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "c78620119cd3f30521988efffa80fd9b28b3c9e29389c416eb6506e9208eb732"
+    },
+    "CCARF-HD-005": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "37dea95fb837e41ae56039142de24355a093a3e3c15821984cdf9b402c60d471"
+    },
+    "CCARF-HD-006": {
+      "disposition": "approved",
+      "objective": "1.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "5cd9507b4bac175b85ad3c02c061a320c9b68dab6ec8afc652aab7726fbdd8d6"
+    },
+    "CCARF-HD-007": {
+      "disposition": "approved",
+      "objective": "1.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "16f19335c5bd1c09726bbef068a3e6a22f4b00323294eaf8f20bee2883ce5aa4"
+    },
+    "CCARF-HD-008": {
+      "disposition": "approved",
+      "objective": "1.7",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "97350c17f966018976004decb3c693e9030a48a7a0264f3330a095da8c1d9a3a"
+    },
+    "CCARF-HD-009": {
+      "disposition": "approved",
+      "objective": "2.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "56cdf034e2a8e618caeba5d5e5632401228b58b55309d6376a93a345b85d35ac"
+    },
+    "CCARF-HD-010": {
+      "disposition": "approved",
+      "objective": "2.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "e306e1028ed8504eb019306b085f5ee315ce40b33f409bac3a4e1e66008414e3"
+    },
+    "CCARF-HD-011": {
+      "disposition": "approved",
+      "objective": "2.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "122bf9cce689b3ec9369dc750264adab9cbf6a5d1c2ff9c5dc7d7cfcea329f3d"
+    },
+    "CCARF-HD-012": {
+      "disposition": "caveated",
+      "objective": "2.3",
+      "reason": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "be7accb3b57b03a9b4d0e8dc8c41a14ee4ae2552b5e6a25c68d6ede200f58799"
+    },
+    "CCARF-HD-013": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4bf4970fe0b89e53d6a3a9daca84885f974aba5c6fe9975016d22edbba1f1d62"
+    },
+    "CCARF-HD-014": {
+      "disposition": "caveated",
+      "objective": "3.1",
+      "reason": "Saved-guide /memory answer must remain visibly contrasted with current /context loaded-file inspection and later instruction-loading evidence; listing locations is not proof of loaded content.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "c4395b90b6dd6651ea75f464cca0a0264077412bf4f5dc8dcf73bf61002ff8a2"
+    },
+    "CCARF-HD-015": {
+      "disposition": "caveated",
+      "objective": "3.2",
+      "reason": "Exam-baseline allowed-tools restriction statement is false for current Code; retain visible correction to disallowed-tools/tool pool restriction, and block Edit/Write/Bash or other mutation capabilities as appropriate.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "f0038607c135f8488c51a1105923daae8b60417f3f3df12dff4f8afd066b4031"
+    },
+    "CCARF-HD-016": {
+      "disposition": "approved",
+      "objective": "3.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "2a94608530ea9fdb065b1fdc650ffbb45d1238d5e32ed77866cf64b0e20a73ae"
+    },
+    "CCARF-HD-017": {
+      "disposition": "approved",
+      "objective": "3.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "6778bc55dcd1be47bd3224a1aa2cec0dba6a8c8e9e7bcdc815f55e97713326f6"
+    },
+    "CCARF-HD-018": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b6fea1ab2ad597eb7c2832becc5ae32ba30e8d5b318624a7a5daf01f15d197e4"
+    },
+    "CCARF-HD-019": {
+      "disposition": "caveated",
+      "objective": "3.6",
+      "reason": "Current scripted bare mode can skip project instructions/hooks/MCP discovery. Preserve supplied-context and structured_output caveat; verify installed flags before runnable use.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "a320aa1e6f76b86c380fd3d9928c56a83a22bf6dbf469dfea884f8a8e0f61bc4"
+    },
+    "CCARF-HD-020": {
+      "disposition": "approved",
+      "objective": "4.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "eb16f4dfede229e3a6e71957df9870089a3075132b1425fca463d08c41b63693"
+    },
+    "CCARF-HD-021": {
+      "disposition": "approved",
+      "objective": "4.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "61f7c666388388509811e406ddc5980aa2da391045b6524ae2bca78f28c3d06b"
+    },
+    "CCARF-HD-022": {
+      "disposition": "approved",
+      "objective": "4.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3645fe2b9780d7819174fb2296616759d33ff291e9e30d37635452d540288355"
+    },
+    "CCARF-HD-023": {
+      "disposition": "caveated",
+      "objective": "4.4",
+      "reason": "Saved guide compresses schema tool use into a guarantee. Current strict enforcement must be explicit; ordinary input_schema descriptions alone do not guarantee schema compliance. Key remains best exam-baseline option, with visible implementation caveat.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "6b4eb456640f1d51326b9c8815b45175e8150a50a2f0101eec8517db8d7a5dfe"
+    },
+    "CCARF-HD-024": {
+      "disposition": "quarantined",
+      "objective": "4.5",
+      "reason": "Eight-hour scheduling arithmetic leaves four hours only conditional on successful batch completion; an expiring batch cannot guarantee successful SLA completion.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "05d4bbb400deea62806e557296850795f54c7abdfbc54879a741adb37a94ac5c"
+    },
+    "CCARF-HD-025": {
+      "disposition": "approved",
+      "objective": "4.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b9e87fc048b5d64883a4342cb0c054484c0d9514d1e9bafbc52befbf8f4a3ee2"
+    },
+    "CCARF-HD-026": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "0d82f40d2ddc2c8cb72d996ee3efbe7b5d9e0578b4a8041e52e0ebe2e6555bbe"
+    },
+    "CCARF-HD-027": {
+      "disposition": "approved",
+      "objective": "5.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "76025b5407f41d0715549e334d6926afbef89e40f4f17c0b020786bc074ea7a9"
+    },
+    "CCARF-HD-028": {
+      "disposition": "approved",
+      "objective": "5.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "a8cfda3fefbc6c9185d96e96e83eefd12cb5e5e917f4136be3a13d67688aa236"
+    },
+    "CCARF-HD-029": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "62fb0710bc4a2fe98a644070547c6cc709da9df373263c139a3c2efbf6e0d7ef"
+    },
+    "CCARF-HD-030": {
+      "disposition": "approved",
+      "objective": "5.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "6a0d4fb1a6ae8c0eef5e14b3ad8a99cd0e4b219f0278d5c033fffd214cecf443"
+    },
+    "CCARF-HD-031": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "efa9a2f65a18d3d8c6214d2e57b8b762861747e5ecf7c40f28aecc16598a938e"
+    },
+    "CCARF-HD-032": {
+      "disposition": "approved",
+      "objective": "1.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "66f696883f11d0fd9549135b221b3cd3bdf9f4503c1e2f8091cbca33d8f6741e"
+    },
+    "CCARF-HD-033": {
+      "disposition": "approved",
+      "objective": "1.2",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "c3b53373bb2e1878780dbd5f766ce7e4dd4d4a7b7eef1b7a53a0e1d65128fd76"
+    },
+    "CCARF-HD-034": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "4db841478c49e8bce9a1d793e86a6ce3f15cfeb8759193d521447b9c63f2bd2d"
+    },
+    "CCARF-HD-035": {
+      "disposition": "caveated",
+      "objective": "1.5",
+      "reason": "Normalization requires supported post-tool output replacement with matching output shape and explicit parsing/ambiguity handling; hook presence alone does not establish successful normalization.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "cddb97dd3a69baf43c4aa3b1c99495d09b7e6c77abd3d00f519727d7c936b61b"
+    },
+    "CCARF-HD-036": {
+      "disposition": "approved",
+      "objective": "2.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "30ed701dd5dd90980a6ed897c56055a903839e149cf82c22e042ce3d38154982"
+    },
+    "CCARF-HD-037": {
+      "disposition": "quarantined",
+      "objective": "3.2",
+      "reason": "argument-hint is an autocomplete hint, not a missing-input prompt or validator. Add explicit instruction to request/validate absent release number; do not treat frontmatter alone as required-input enforcement.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "quarantined",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "5e2c84b98a21eb77f2b098199d5775a16c07ba0a49b2d95b0aac838bc20e5c6e"
+    },
+    "CCARF-HD-038": {
+      "disposition": "approved",
+      "objective": "3.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "3803baf2328319f6fc30fdf0e3026575c3a297deffedd945357ff700dc8638f7"
+    },
+    "CCARF-HD-039": {
+      "disposition": "caveated",
+      "objective": "4.3",
+      "reason": "Format normalization cannot infer locale/year/currency from ambiguous source. Preserve original and unresolved interpretation; nullable/error contract and source checks needed before downstream acceptance.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "7cd978fffb8cc9af2c54dd6c86dbaaf6cbb1bc8beb8fd717c9cef4dfafc1e062"
+    },
+    "CCARF-HD-040": {
+      "disposition": "approved",
+      "objective": "4.5",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "ce1d30acb51a2e58e01c3407c8917dd5c9ca0e6357d8369d5b06eafc93ce3730"
+    },
+    "CCARF-HD-041": {
+      "disposition": "caveated",
+      "objective": "5.5",
+      "reason": "Calibration and criticality routing is best among options but does not solve 300 flags/50 slots alone. Capacity overflow, backlog/escalation and independent holdout policy remain required.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "7143058b9d9e4d54ee2fea74c2bdce94c86ae632c1cd4be3a6421788271f6c0c"
+    },
+    "CCARF-HD-042": {
+      "disposition": "caveated",
+      "objective": "1.1",
+      "reason": "Beyond saved guide. Current refusal fallback is model/eligibility-dependent; apply supported fallback policy rather than indiscriminately switching models. Truncated tool calls must not be executed.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "caveated",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "3046d776b1b9883de061e232eaff845b9328942ad11ff6d0b2b112099cfe70d2"
+    },
+    "CCARF-HD-043": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "82f60c09e300e3fdb42f3cdf2a7adfcd04fd21e00a8ceb091dc9c07e29f9963f"
+    },
+    "CCARF-HD-044": {
+      "disposition": "approved",
+      "objective": "5.4",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "06687498ef850e9687ee5a543eb3d099fbd5148696ab68f3999360794609bbc6"
+    },
+    "CCARF-HD-045": {
+      "disposition": "approved",
+      "objective": "5.6",
+      "reason": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective.",
+      "reviewer": "accuracy_review",
+      "reviewed": "2026-10-14",
+      "gates": {
+        "G3": "source-checked",
+        "G4": "approved",
+        "G6": "answer-check complete",
+        "G12": "project-authored origin verified; no external mock rights asserted"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "569ed6055efa596081919024d8d7fbd8d91bfa2807dd83c645da085783113f16"
+    },
+    "CCARF-P2-001": {
+      "disposition": "approved",
+      "objective": "1.3",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "aeae675e5bbb6124ff35af926fb9821f4eb056cdf8743304baf1c12cf99877ec"
+    },
+    "CCARF-P2-002": {
+      "disposition": "approved",
+      "objective": "1.5",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "b284dda1b071d9634207fce084891e21be8e202ae1b168432db07097781f9d4b"
+    },
+    "CCARF-P2-003": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "7635d7ae700ab0113af18deeff21e5264a3c7716a287df28c80d8c5faf30c809"
+    },
+    "CCARF-P2-004": {
+      "disposition": "approved",
+      "objective": "2.4",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "6a29c4ca37125ea3fd516ab818769c9eeee42c6a6a2998f9b82a465238bac5c5"
+    },
+    "CCARF-P2-005": {
+      "disposition": "approved",
+      "objective": "4.5",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "7db4b6f5444d1eb54f346ecbb4298a05294795d52fbdd0e788e94a404d60c367"
+    },
+    "CCARF-P2-006": {
+      "disposition": "caveated",
+      "objective": null,
+      "reason": "PLAN-02 corrected item independently reviewed; supplementary current-product context; no direct objective coverage asserted.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "4dd5835fec871e7b5e2aaca40bf602543a21d2eab4a81f52170ec12af6fa3c3b"
+    },
+    "CCARF-P2-007": {
+      "disposition": "caveated",
+      "objective": null,
+      "reason": "PLAN-02 corrected item independently reviewed; supplementary current-product context; no direct objective coverage asserted.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": false,
+      "content_sha256": "6b990b056d5ec351d4cfe3920ac8d43f9bafa97014321d70c94d791f22b67404"
+    },
+    "CCARF-P2-008": {
+      "disposition": "approved",
+      "objective": "5.1",
+      "reason": "PLAN-02 corrected item independently reviewed; direct task mapping reviewed.",
+      "reviewer": "navigation_regression",
+      "reviewed": "2026-10-21",
+      "gates": {
+        "G3": "pass",
+        "G4": "pass",
+        "G6": "pass",
+        "G12": "pass"
+      },
+      "scored_readiness_eligible": true,
+      "content_sha256": "eb9c5eceee586d91bc13ef09bc487faefc92a33947ea7eddfd9b7948a3bd64a9"
+    }
+  },
+  "approved_ids": [
+    "CCARF-DP-001",
+    "CCARF-DP-002",
+    "CCARF-DP-003",
+    "CCARF-DP-004",
+    "CCARF-DP-007",
+    "CCARF-DP-008",
+    "CCARF-DP-009",
+    "CCARF-DP-013",
+    "CCARF-DP-014",
+    "CCARF-DP-015",
+    "CCARF-DP-016",
+    "CCARF-DP-017",
+    "CCARF-DP-018",
+    "CCARF-DP-020",
+    "CCARF-DP-021",
+    "CCARF-DP-022",
+    "CCARF-DP-027",
+    "CCARF-DP-028",
+    "CCARF-DP-029",
+    "CCARF-DP-030",
+    "CCARF-DP-031",
+    "CCARF-DP-032",
+    "CCARF-DP-033",
+    "CCARF-DP-035",
+    "CCARF-DP-036",
+    "CCARF-DP-037",
+    "CCARF-DP-038",
+    "CCARF-DP-039",
+    "CCARF-DP-040",
+    "CCARF-DP-041",
+    "CCARF-DP-042",
+    "CCARF-DP-043",
+    "CCARF-DP-044",
+    "CCARF-DP-046",
+    "CCARF-DP-048",
+    "CCARF-DP-049",
+    "CCARF-DP-050",
+    "CCARF-DP-052",
+    "CCARF-DP-055",
+    "CCARF-DP-056",
+    "CCARF-DP-057",
+    "CCARF-DP-058",
+    "CCARF-DP-059",
+    "CCARF-DP-060",
+    "CCARF-DP-061",
+    "CCARF-DP-063",
+    "CCARF-DP-064",
+    "CCARF-DP-065",
+    "CCARF-DP-066",
+    "CCARF-DP-067",
+    "CCARF-DP-069",
+    "CCARF-DP-070",
+    "CCARF-DP-071",
+    "CCARF-DP-072",
+    "CCARF-DP-073",
+    "CCARF-DP-076",
+    "CCARF-DP-077",
+    "CCARF-DP-079",
+    "CCARF-DP-080",
+    "CCARF-DP-081",
+    "CCARF-DP-082",
+    "CCARF-DP-083",
+    "CCARF-DP-084",
+    "CCARF-DP-085",
+    "CCARF-DP-086",
+    "CCARF-DP-087",
+    "CCARF-DP-088",
+    "CCARF-DP-089",
+    "CCARF-DP-090",
+    "CCARF-DP-091",
+    "CCARF-DP-092",
+    "CCARF-DP-093",
+    "CCARF-DP-094",
+    "CCARF-DP-095",
+    "CCARF-DP-096",
+    "CCARF-DP-097",
+    "CCARF-DP-098",
+    "CCARF-DP-099",
+    "CCARF-DP-100",
+    "CCARF-DP-101",
+    "CCARF-DP-102",
+    "CCARF-DP-103",
+    "CCARF-DP-104",
+    "CCARF-HD-001",
+    "CCARF-HD-002",
+    "CCARF-HD-003",
+    "CCARF-HD-004",
+    "CCARF-HD-005",
+    "CCARF-HD-006",
+    "CCARF-HD-007",
+    "CCARF-HD-008",
+    "CCARF-HD-009",
+    "CCARF-HD-010",
+    "CCARF-HD-011",
+    "CCARF-HD-013",
+    "CCARF-HD-016",
+    "CCARF-HD-017",
+    "CCARF-HD-018",
+    "CCARF-HD-020",
+    "CCARF-HD-021",
+    "CCARF-HD-022",
+    "CCARF-HD-025",
+    "CCARF-HD-026",
+    "CCARF-HD-027",
+    "CCARF-HD-028",
+    "CCARF-HD-029",
+    "CCARF-HD-030",
+    "CCARF-HD-031",
+    "CCARF-HD-032",
+    "CCARF-HD-033",
+    "CCARF-HD-034",
+    "CCARF-HD-036",
+    "CCARF-HD-038",
+    "CCARF-HD-040",
+    "CCARF-HD-043",
+    "CCARF-HD-044",
+    "CCARF-HD-045",
+    "CCARF-P2-001",
+    "CCARF-P2-002",
+    "CCARF-P2-003",
+    "CCARF-P2-004",
+    "CCARF-P2-005",
+    "CCARF-P2-008"
+  ],
+  "caveated_ids": [
+    "CCARF-DP-005",
+    "CCARF-DP-006",
+    "CCARF-DP-010",
+    "CCARF-DP-011",
+    "CCARF-DP-012",
+    "CCARF-DP-025",
+    "CCARF-DP-034",
+    "CCARF-DP-045",
+    "CCARF-DP-047",
+    "CCARF-DP-051",
+    "CCARF-DP-053",
+    "CCARF-DP-054",
+    "CCARF-DP-062",
+    "CCARF-DP-068",
+    "CCARF-DP-074",
+    "CCARF-DP-075",
+    "CCARF-DP-078",
+    "CCARF-HD-012",
+    "CCARF-HD-014",
+    "CCARF-HD-015",
+    "CCARF-HD-019",
+    "CCARF-HD-023",
+    "CCARF-HD-035",
+    "CCARF-HD-039",
+    "CCARF-HD-041",
+    "CCARF-HD-042",
+    "CCARF-P2-006",
+    "CCARF-P2-007"
+  ],
+  "quarantined_ids": [
+    "CCARF-DP-019",
+    "CCARF-DP-023",
+    "CCARF-DP-024",
+    "CCARF-DP-026",
+    "CCARF-HD-024",
+    "CCARF-HD-037"
+  ],
+  "private_other_exam_records_copied": false
+}

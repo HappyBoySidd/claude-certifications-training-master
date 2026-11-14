@@ -1,0 +1,1650 @@
+{
+  "lessons": {
+    "as-01-action-service": {
+      "teachingEdition": "integrated-v2",
+      "designIntro": "A representative uses an existing support application to explain a damaged order, then safely proposes a refund. Case C17 is the support case, order O4 is the purchase and r17 will identify one logical credit operation; these are fictional record identifiers, not Claude concepts.",
+      "deliveryIntro": "Translate this design into tested implementation, approved processing and a measured pilot. The following are design choices to verify, not a claim that a deployment or business outcome already happened.",
+      "overviewRoute": [
+        "Read the customer request and permitted order evidence",
+        "Separate a read-only answer from a proposed financial action",
+        "Validate arguments and enforce identity, ownership and approval policy",
+        "Execute once, reconcile observed status and hand unresolved work to staff"
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Backend Messages API integration within the existing support application. The model proposes; application code owns the workflow."
+        ],
+        [
+          "Capability features",
+          "Start with grounded explanation and narrowly described client tools. Add writes only with deterministic authorization, validation and recovery."
+        ],
+        [
+          "Model",
+          "Compare approved candidates on tool selection, argument correctness, honest status reporting, latency and cost\u2014not confidence alone."
+        ],
+        [
+          "Context",
+          "Supply permitted order/policy evidence and observed tool results. A typed account ID is untrusted input, not authenticated identity."
+        ]
+      ],
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "Claude can explain supplied order facts but cannot independently establish whether a credit occurred.",
+          "boundary": "Keep the baseline read-only and let Claude explain observed order/policy evidence.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Grounded explanation",
+            "what": "Claude can explain supplied order facts but cannot independently establish whether a credit occurred.",
+            "why": "Delegate explanation first; specify the read-only outcome and preserve who controls payment.",
+            "setup": "Identify what the representative needs and which facts the backend must supply.",
+            "repair": "Keep the baseline read-only and let Claude explain observed order/policy evidence.",
+            "proof": "The displayed answer has order evidence and zero payment calls."
+          }
+        },
+        {
+          "focus": "Diligence",
+          "plain": "The customer names another account while the new tool path could move money.",
+          "boundary": "Backend code checks trusted identity, ownership and current policy before dispatch.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Action proposals are not authorization",
+            "what": "The customer names another account while the new tool path could move money.",
+            "why": "Diligence requires an accountable permission boundary before a financial side effect.",
+            "setup": "Which trusted component knows the caller and owns payment access?",
+            "repair": "Backend code checks trusted identity, ownership and current policy before dispatch.",
+            "proof": "Wrong-owner fixture produces zero payment calls; a prompt is not the permission gate."
+          }
+        },
+        {
+          "focus": "Description + Discernment",
+          "plain": "Two tools both described as handle an order make a read-only delivery query trigger a write proposal.",
+          "boundary": "Define distinct lookup and issue-credit contracts; retain authorization even when routing improves.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Tool selection depends on contracts",
+            "what": "Two tools both described as handle an order make a read-only delivery query trigger a write proposal.",
+            "why": "Clear descriptions separate capabilities; discernment checks the selected operation against the actual request.",
+            "setup": "Compare each tool purpose and side effect with the delivery question.",
+            "repair": "Define distinct lookup and issue-credit contracts; retain authorization even when routing improves.",
+            "proof": "Delivery query follows lookup and issues no credit."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "A valid-looking proposal encodes 120 cents for a request worth 120 dollars.",
+          "boundary": "Check schema, integer units, request agreement and policy; permit only bounded evidence-based correction.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Structured output is not semantic correctness",
+            "what": "A valid-looking proposal encodes 120 cents for a request worth 120 dollars.",
+            "why": "Judge units and source agreement, not JSON readability alone.",
+            "setup": "What must the receiver validate before accepting the handoff?",
+            "repair": "Check schema, integer units, request agreement and policy; permit only bounded evidence-based correction.",
+            "proof": "Corrected proposal uses 12000 cents and is reauthorized; unclear source values remain unresolved."
+          }
+        },
+        {
+          "focus": "Diligence",
+          "plain": "The payment reply is lost after submission, leaving execution uncertain.",
+          "boundary": "Reconcile the same operation identifier against provider status; retain unknown status and escalate if unresolved.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "A timeout is an unknown outcome",
+            "what": "The payment reply is lost after submission, leaving execution uncertain.",
+            "why": "Responsible recovery must establish the business outcome instead of inventing success or blindly repeating a write.",
+            "setup": "What evidence can distinguish a missing response from an unexecuted operation?",
+            "repair": "Reconcile the same operation identifier against provider status; retain unknown status and escalate if unresolved.",
+            "proof": "Fictional status lookup confirms receipt CR1 for r17; no second credit is issued."
+          }
+        },
+        {
+          "focus": "Delegation + Diligence",
+          "plain": "A valid owner requests 210 dollars, above the fictional 180-dollar automatic-approval threshold.",
+          "boundary": "Hold the payment and transfer the evidence, proposed amount and approval reason to staff.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Eligibility and ownership differ",
+            "what": "A valid owner requests 210 dollars, above the fictional 180-dollar automatic-approval threshold.",
+            "why": "A bounded model role does not own approval policy; transfer the pending decision to an accountable person.",
+            "setup": "Does ownership alone satisfy the current amount policy?",
+            "repair": "Hold the payment and transfer the evidence, proposed amount and approval reason to staff.",
+            "proof": "Handoff says proposed 210 dollars; not issued, with a named next owner."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "course_index": 0,
+          "where": "layer-2",
+          "what": "Understand explanation versus authority",
+          "why": "Fluent text and tool proposals do not authenticate the caller.",
+          "how": "Keep model interpretation separate from application identity and execution.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "assert authorized(session.subject, order.owner) before dispatch_credit()"
+          },
+          "evidence": "A wrong-account case is rejected before any payment call.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Understand explanation versus authority",
+          "decision_reason": "Fluent text and tool proposals do not authenticate the caller."
+        },
+        {
+          "course_index": 1,
+          "where": "layer-4",
+          "what": "Use the 4Ds on the action boundary",
+          "why": "The readable handoff contains the wrong units.",
+          "how": "Describe units; discern source agreement; retain diligence over execution.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "validate_schema(proposal); compare_amount_to_source(proposal.amount_minor,12000)"
+          },
+          "evidence": "The unit mismatch is rejected without fabricating a receipt.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Use the 4Ds on the action boundary",
+          "decision_reason": "The readable handoff contains the wrong units."
+        },
+        {
+          "course_index": 2,
+          "where": "before",
+          "what": "Choose a bounded API service",
+          "why": "The support workflow already has trusted identity and business records.",
+          "how": "Use a backend client with narrowly scoped tools; add capability only when the story requires it.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "design={entry:\"backend API\",initial:\"read-only explanation\",write_owner:\"application\"}"
+          },
+          "evidence": "A decision record names the model role and deterministic controls.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Choose a bounded API service",
+          "decision_reason": "The support workflow already has trusted identity and business records."
+        },
+        {
+          "course_index": 3,
+          "where": "before",
+          "what": "Evaluate the model on action failures",
+          "why": "A stronger model can still select the wrong tool or misstate a timeout.",
+          "how": "Use the same fixtures for lookup routing, units, denied ownership, lost reply and staff approval.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "evaluate(candidates,[\"read query\",\"wrong owner\",\"wrong units\",\"lost reply\",\"approval needed\"])"
+          },
+          "evidence": "Case-level correctness plus measured latency and cost.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Evaluate the model on action failures",
+          "decision_reason": "A stronger model can still select the wrong tool or misstate a timeout."
+        },
+        {
+          "course_index": 4,
+          "where": "layer-3",
+          "what": "Implement the client-tool loop",
+          "why": "Declaring a tool does not execute it.",
+          "how": "Inspect assistant tool_use name/input; validate and execute the authorized operation; return tool_result correlated through tool_use_id.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "if response.stop_reason==\"tool_use\":\n  result=authorized_dispatch(block.name,block.input)\n  return_observed_tool_result(block.id,result)"
+          },
+          "evidence": "Trace connects the proposal, backend execution and real tool result; no invented receipt.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Implement the client-tool loop",
+          "decision_reason": "Declaring a tool does not execute it."
+        },
+        {
+          "course_index": 5,
+          "where": "after",
+          "what": "Build a scoped financial-action patch",
+          "why": "The permission gate must exist in code, not only narrative.",
+          "how": "Explore callers, plan the change, implement and test forbidden and recovery paths; review diff before commit.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "CLAUDE.md: money-moving invariants and test commands\nrun_tests([\"wrong owner\",\"units\",\"duplicate operation\",\"staff approval\"])"
+          },
+          "evidence": "Actual test output and reviewed patch; guidance alone is not enforcement.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Build a scoped financial-action patch",
+          "decision_reason": "The permission gate must exist in code, not only narrative."
+        },
+        {
+          "course_index": 6,
+          "where": "layer-3",
+          "what": "Separate MCP exposure from business authority",
+          "why": "A reusable server may expose lookup/credit tools, but does not confer payment permission.",
+          "how": "If MCP is needed, define tool contracts and host permissions; keep trusted authorization and idempotent payment ownership in the service.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "mcp_tool(\"lookup_order\") -> authorized_order_service\n# A resource is content; a prompt is a template; neither grants credit authority."
+          },
+          "evidence": "Observed permitted calls and denied cases at the actual business boundary.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Separate MCP exposure from business authority",
+          "decision_reason": "A reusable server may expose lookup/credit tools, but does not confer payment permission."
+        },
+        {
+          "course_index": 7,
+          "where": "before",
+          "what": "Keep this transaction free of unnecessary specialists",
+          "why": "One refund decision is tightly coupled to a single operation record.",
+          "how": "Start with one bounded model turn/tool loop; separate investigators only for demonstrated independent evidence needs.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "architecture=\"one bounded assistant + deterministic transaction service\""
+          },
+          "evidence": "No-subagent baseline with explicit final action owner.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Keep this transaction free of unnecessary specialists",
+          "decision_reason": "One refund decision is tightly coupled to a single operation record."
+        },
+        {
+          "course_index": 8,
+          "where": "before",
+          "what": "Match each product to its job",
+          "why": "The representative needs the support screen, while the engineer needs developer tooling.",
+          "how": "Use an embedded API service for the governed action and Claude Code for implementation; do not move identity checks into chat.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "products={user:\"support app\",runtime:\"approved model API\",build:\"Claude Code\"}"
+          },
+          "evidence": "Documented responsibility boundaries for user, backend and developer.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Match each product to its job",
+          "decision_reason": "The representative needs the support screen, while the engineer needs developer tooling."
+        },
+        {
+          "course_index": 9,
+          "where": "after",
+          "what": "Protect payment and model processing routes",
+          "why": "A gateway outage must not reroute sensitive case data or duplicate a credit.",
+          "how": "Verify approved endpoint feature support, identity, data handling and timeout behavior; preserve payment state independently.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "on_gateway_error: retain_operation_state(); do_not_use_unapproved_fallback()"
+          },
+          "evidence": "Approved route configuration and failure tests; no residency inferred from a gateway name.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Protect payment and model processing routes",
+          "decision_reason": "A gateway outage must not reroute sensitive case data or duplicate a credit."
+        },
+        {
+          "course_index": 10,
+          "where": "after",
+          "what": "Pilot safe resolution rather than fluent replies",
+          "why": "An attractive refund demo may hide duplicate or unauthorized actions.",
+          "how": "Measure baseline handling time and incorrect actions; pilot with denied, recovery and escalation cases before expanding.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "success=[\"correct resolution\",\"no unauthorized credit\",\"no duplicate credit\",\"honest pending state\"]"
+          },
+          "evidence": "Observed case outcomes and accountable approval of rollout.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Pilot safe resolution rather than fluent replies",
+          "decision_reason": "An attractive refund demo may hide duplicate or unauthorized actions."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "Applied to this case: Keep model interpretation separate from application identity and execution.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Applied to this case: Describe units; discern source agreement; retain diligence over execution.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Applied to this case: Use a backend client with narrowly scoped tools; add capability only when the story requires it.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Applied to this case: Use the same fixtures for lookup routing, units, denied ownership, lost reply and staff approval.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "Applied to this case: Inspect assistant tool_use name/input; validate and execute the authorized operation; return tool_result correlated through tool_use_id.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Applied to this case: Explore callers, plan the change, implement and test forbidden and recovery paths; review diff before commit.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "Applied to this case: If MCP is needed, define tool contracts and host permissions; keep trusted authorization and idempotent payment ownership in the service.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Applied to this case: Start with one bounded model turn/tool loop; separate investigators only for demonstrated independent evidence needs.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Applied to this case: Use an embedded API service for the governed action and Claude Code for implementation; do not move identity checks into chat.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Applied to this case: Verify approved endpoint feature support, identity, data handling and timeout behavior; preserve payment state independently.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Applied to this case: Measure baseline handling time and incorrect actions; pilot with denied, recovery and escalation cases before expanding.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "layout": {
+        "nodes": {
+          "screen": {
+            "x": 40,
+            "y": 40
+          },
+          "backend": {
+            "x": 360,
+            "y": 40
+          },
+          "claude": {
+            "x": 720,
+            "y": 40
+          },
+          "orders": {
+            "x": 40,
+            "y": 300
+          },
+          "tools": {
+            "x": 720,
+            "y": 300
+          },
+          "gate": {
+            "x": 360,
+            "y": 300
+          },
+          "session": {
+            "x": 40,
+            "y": 560
+          },
+          "payment": {
+            "x": 360,
+            "y": 560
+          },
+          "ledger": {
+            "x": 720,
+            "y": 560
+          },
+          "human": {
+            "x": 360,
+            "y": 820
+          }
+        },
+        "routes": {
+          "backend>claude": [
+            [
+              550,
+              82
+            ],
+            [
+              720,
+              82
+            ]
+          ],
+          "backend>gate": [
+            [
+              455,
+              164
+            ],
+            [
+              455,
+              300
+            ]
+          ],
+          "backend>orders": [
+            [
+              360,
+              82
+            ],
+            [
+              340,
+              82
+            ],
+            [
+              340,
+              342
+            ],
+            [
+              230,
+              342
+            ]
+          ],
+          "backend>payment": [
+            [
+              550,
+              82
+            ],
+            [
+              570,
+              82
+            ],
+            [
+              570,
+              602
+            ],
+            [
+              550,
+              602
+            ]
+          ],
+          "claude>backend": [
+            [
+              720,
+              122
+            ],
+            [
+              550,
+              122
+            ]
+          ],
+          "claude>tools": [
+            [
+              815,
+              164
+            ],
+            [
+              815,
+              300
+            ]
+          ],
+          "gate>human": [
+            [
+              550,
+              342
+            ],
+            [
+              570,
+              342
+            ],
+            [
+              570,
+              862
+            ],
+            [
+              550,
+              862
+            ]
+          ],
+          "gate>payment": [
+            [
+              455,
+              424
+            ],
+            [
+              455,
+              560
+            ]
+          ],
+          "ledger>backend": [
+            [
+              720,
+              642
+            ],
+            [
+              700,
+              642
+            ],
+            [
+              700,
+              122
+            ],
+            [
+              550,
+              122
+            ]
+          ],
+          "orders>backend": [
+            [
+              230,
+              382
+            ],
+            [
+              250,
+              382
+            ],
+            [
+              250,
+              122
+            ],
+            [
+              360,
+              122
+            ]
+          ],
+          "payment>backend": [
+            [
+              550,
+              642
+            ],
+            [
+              570,
+              642
+            ],
+            [
+              570,
+              122
+            ],
+            [
+              550,
+              122
+            ]
+          ],
+          "payment>ledger": [
+            [
+              550,
+              642
+            ],
+            [
+              720,
+              642
+            ]
+          ],
+          "screen>backend": [
+            [
+              230,
+              122
+            ],
+            [
+              360,
+              122
+            ]
+          ],
+          "session>gate": [
+            [
+              230,
+              642
+            ],
+            [
+              250,
+              642
+            ],
+            [
+              250,
+              382
+            ],
+            [
+              360,
+              382
+            ]
+          ],
+          "tools>backend": [
+            [
+              720,
+              382
+            ],
+            [
+              700,
+              382
+            ],
+            [
+              700,
+              122
+            ],
+            [
+              550,
+              122
+            ]
+          ]
+        },
+        "width": 990,
+        "height": 1030
+      },
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose the authorization and tool-result boundary",
+          "context": "The backend receives an authenticated support session and an untrusted message naming order O4 and account A9. The assistant can propose lookup_order or issue_credit. Order ownership and current credit policy reside in business services.",
+          "stem": "Which dispatch design best prevents an unauthorized credit while retaining a correct client-tool interaction?",
+          "options": [
+            "Validate issue_credit arguments against input_schema, execute the payment, then compare the returned order owner with the account in the user message before displaying the result.",
+            "Derive the principal from the trusted session, validate tool arguments, load authoritative ownership/policy and authorize the exact action before execution; correlate the observed outcome to the assistant call using tool_use_id.",
+            "Have the model call lookup_order before issue_credit and treat its subsequent choice of the write tool as evidence that ownership and policy were satisfied.",
+            "Authorize the initial conversation once, bind it to the account in the message, and allow later schema-valid credit calls within that conversation without repeating action-level checks."
+          ],
+          "answer": 1,
+          "explanations": [
+            "Schema validity does not establish entitlement. Checking after payment is too late, and the message account is not trusted identity.",
+            "The application checks identity, argument semantics and current action authority before the side effect; tool_use_id correlates the observed result but does not itself authorize execution.",
+            "Reading ownership evidence helps interpretation, but model tool selection is not an application-enforced authorization decision.",
+            "Conversation authorization does not establish current permission for each changed order, amount or policy condition. The principal must come from trusted identity."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Reconcile a timed-out credit without duplicating it",
+          "context": "The authorized request for USD120 uses logical operation r17. The payment service times out after accepting the submission. The provider supports lookup by a persisted idempotency key. No receipt has reached the backend.",
+          "stem": "Which recovery sequence most directly preserves correct financial state?",
+          "options": [
+            "Return a tool_result with is_error=true, create r18 and retry the credit immediately because an errored model continuation cannot represent a completed payment.",
+            "Reuse r17 in the model prompt and let the assistant decide whether to retry from the likelihood that the provider received the request.",
+            "Persist r17 and its provider key as outcome unknown; query authoritative operation status, record any observed receipt and retry only under the provider\u2019s idempotency contract; retain pending escalation if status cannot be established.",
+            "Treat the missing receipt as failure, remove r17 from the operation ledger and replay the original issue_credit tool_use so the next response has a clean history."
+          ],
+          "answer": 2,
+          "explanations": [
+            "A tool-result error describes observed failure information; it does not prove the payment did not execute. A new logical key can duplicate the credit.",
+            "A prompt identifier does not provide durable deduplication or authoritative settlement status. Probability is not business evidence.",
+            "This retains the unknown state and uses the provider\u2019s actual status/idempotency semantics. No new credit or success claim is inferred from the timeout.",
+            "Deleting the unknown operation loses recovery evidence. Replaying a proposal does not establish whether its prior side effect occurred."
+          ]
+        }
+      ]
+    },
+    "as-02-document-pipeline": {
+      "teachingEdition": "integrated-v2",
+      "designIntro": "A clerk uploads invoices for intake, not payment. The first invoice, EL-8, is a fictional source record containing USD84.50 and no purchase-order number. The application must decide which extracted records can enter the receiving system and what happens to each failed file.",
+      "deliveryIntro": "Translate this design into tested implementation, approved processing and a measured pilot. The following are design choices to verify, not a claim that a deployment or business outcome already happened.",
+      "overviewRoute": [
+        "Accept a file and propose fields from its evidence",
+        "Validate the receiving contract and source meaning",
+        "Record a separate outcome for every file",
+        "Retry transient failures, quarantine unreadable sources and version acceptance rules"
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Backend batch/queue worker calling the approved model API; a file is a distinct tracked unit."
+        ],
+        [
+          "Capability features",
+          "Extract a draft with a declared receiving schema; add validation and per-source outcome tracking, not an autonomous payment agent."
+        ],
+        [
+          "Model",
+          "Compare exact fields, missing-value handling and failure classification on representative files, then latency and cost."
+        ],
+        [
+          "Context",
+          "Supply the actual authorized file plus receiving contract/version. A filename or terminal API status is not accepted invoice evidence."
+        ]
+      ],
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "Claude drafts fields from invoice EL-8; the receiving application has not accepted them.",
+          "boundary": "Keep the draft linked to source evidence and require receiving validation.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Extraction proposes, receiving code accepts",
+            "what": "Claude drafts fields from invoice EL-8; the receiving application has not accepted them.",
+            "why": "Describe the limited extraction task and distinguish intake from payment.",
+            "setup": "Which values are visible, and who owns the acceptance decision?",
+            "repair": "Keep the draft linked to source evidence and require receiving validation.",
+            "proof": "Invoice value remains USD84.50; absent purchase order remains absent; no payment is made."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "The proposal uses fractional cents and omits a required nullable key.",
+          "boundary": "Reject 84.5 cents and the omitted key; use 8450 cents and explicit null only because the source supports them.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Valid JSON can violate the contract",
+            "what": "The proposal uses fractional cents and omits a required nullable key.",
+            "why": "Syntax is only one check; meaning, units and required fields must match the receiver.",
+            "setup": "Compare total_minor and purchase_order with the declared contract and source.",
+            "repair": "Reject 84.5 cents and the omitted key; use 8450 cents and explicit null only because the source supports them.",
+            "proof": "Receiver accepts only the corrected, validated contract; model completion is not acceptance."
+          }
+        },
+        {
+          "focus": "Diligence",
+          "plain": "Clear PDF, unreadable scan and transient API failure need different outcomes.",
+          "boundary": "Track stable source IDs, validate successes, quarantine unreadable input and retry only eligible transient failures within limits.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Transport status differs from per-file success",
+            "what": "Clear PDF, unreadable scan and transient API failure need different outcomes.",
+            "why": "Responsible operation preserves successful work and explains each failure.",
+            "setup": "What evidence distinguishes unusable source data from a retryable request error?",
+            "repair": "Track stable source IDs, validate successes, quarantine unreadable input and retry only eligible transient failures within limits.",
+            "proof": "doc-A remains accepted; doc-B needs preparation/review; doc-C receives bounded eligible retry."
+          }
+        },
+        {
+          "focus": "Description + Diligence",
+          "plain": "A new contract allows an absent purchase-order key to be omitted.",
+          "boundary": "Version the schema/validator and test old/new fixtures while retaining provenance and historic records.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Contract changes are versioned design changes",
+            "what": "A new contract allows an absent purchase-order key to be omitted.",
+            "why": "Change the receiver rule deliberately without inventing evidence or rewriting historical acceptance.",
+            "setup": "Which validation rule changed, and which source facts did not?",
+            "repair": "Version the schema/validator and test old/new fixtures while retaining provenance and historic records.",
+            "proof": "New omissions follow the new contract; missing purchase-order evidence is never fabricated."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "course_index": 0,
+          "where": "layer-2",
+          "what": "Treat extraction as a fallible proposal",
+          "why": "Readable output can contain semantically wrong units.",
+          "how": "Check schema and source agreement at the receiving boundary.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "assert integer(total_minor) and total_minor==source_amount_in_cents"
+          },
+          "evidence": "Rejected malformed draft and accepted corrected source-supported record.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Treat extraction as a fallible proposal",
+          "decision_reason": "Readable output can contain semantically wrong units."
+        },
+        {
+          "course_index": 1,
+          "where": "layer-3",
+          "what": "Apply diligence per source",
+          "why": "Folder-level success hides the unreadable and transiently failed files.",
+          "how": "Track outcomes and next owners for every source, not just aggregate completion.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "outcomes[source_id]={status,error_class,attempts,contract_version}"
+          },
+          "evidence": "Accepted, quarantined and retry-pending sources remain distinguishable.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Apply diligence per source",
+          "decision_reason": "Folder-level success hides the unreadable and transiently failed files."
+        },
+        {
+          "course_index": 2,
+          "where": "before",
+          "what": "Choose an intake worker",
+          "why": "The job is bounded file processing with deterministic acceptance.",
+          "how": "Use a queue/worker and model extraction; select structured output features after verifying current support.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "design={entry:\"worker API\",model_role:\"draft fields\",acceptance_owner:\"receiver\"}"
+          },
+          "evidence": "A declared contract and an explicit no-payment boundary.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Choose an intake worker",
+          "decision_reason": "The job is bounded file processing with deterministic acceptance."
+        },
+        {
+          "course_index": 3,
+          "where": "before",
+          "what": "Evaluate model quality on actual invoices",
+          "why": "A larger model cannot repair a corrupt scan or unavailable request by guessing.",
+          "how": "Compare field accuracy, missing values and error behavior on fixed representative fixtures.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "evaluate(candidates,[\"clear invoice\",\"missing PO\",\"ambiguous total\",\"unreadable scan\"])"
+          },
+          "evidence": "Field-level outcomes and measured cost/latency, not a fluent summary.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Evaluate model quality on actual invoices",
+          "decision_reason": "A larger model cannot repair a corrupt scan or unavailable request by guessing."
+        },
+        {
+          "course_index": 4,
+          "where": "layer-2",
+          "what": "Separate structured output from business validation",
+          "why": "A schema constrains shape but not whether USD84.50 became 8450 cents.",
+          "how": "Use supported structured-output/schema mechanisms as appropriate, then validate units and evidence in receiving code.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "draft=extract(file,contract_version)\nvalidate_shape(draft); validate_source_agreement(draft,file)"
+          },
+          "evidence": "Both syntactic and semantic rejection fixtures; no acceptance inferred from stop_reason.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Separate structured output from business validation",
+          "decision_reason": "A schema constrains shape but not whether USD84.50 became 8450 cents."
+        },
+        {
+          "course_index": 5,
+          "where": "after",
+          "what": "Implement observable processing",
+          "why": "Retries and schema changes need tested code paths.",
+          "how": "Use Claude Code to inspect the worker and validator, plan a scoped patch and execute targeted fixtures; record invariants in CLAUDE.md.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "tests=[\"fractional cents\",\"missing nullable key\",\"retry budget\",\"schema versions\"]\nreview_diff_after_actual_test_run()"
+          },
+          "evidence": "Reviewed diff and actual tests; generated plans are not executed evidence.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Implement observable processing",
+          "decision_reason": "Retries and schema changes need tested code paths."
+        },
+        {
+          "course_index": 6,
+          "where": "layer-1",
+          "what": "Use MCP only when it solves source access",
+          "why": "An uploaded file is already available; an MCP server is not mandatory.",
+          "how": "If an approved source repository is remote, distinguish resource discovery/read from extraction tools and prompt templates.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "if remote_repository_needed: authorized_read(source_uri)\n# Include actual returned file content, not URI alone."
+          },
+          "evidence": "Trace demonstrates source bytes/content delivered with stable provenance.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Use MCP only when it solves source access",
+          "decision_reason": "An uploaded file is already available; an MCP server is not mandatory."
+        },
+        {
+          "course_index": 7,
+          "where": "before",
+          "what": "Avoid a specialist for each file by default",
+          "why": "Independent files need worker concurrency, not necessarily independent agents.",
+          "how": "Begin with deterministic queue fan-out; add a specialist only for a separately justified interpretive task.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "parallel_workers(process_one_file); retain_source_id()"
+          },
+          "evidence": "Per-source outcomes without invented shared-agent memory.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Avoid a specialist for each file by default",
+          "decision_reason": "Independent files need worker concurrency, not necessarily independent agents."
+        },
+        {
+          "course_index": 8,
+          "where": "before",
+          "what": "Match product to batch intake",
+          "why": "A clerk upload workflow differs from a developer coding session.",
+          "how": "Keep governed intake in the application; developer tooling builds it and reviewed chat exploration may analyze sample fixtures.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "surfaces={intake:\"application\",runtime:\"approved API\",implementation:\"Claude Code\"}"
+          },
+          "evidence": "User access and processing ownership remain explicit.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Match product to batch intake",
+          "decision_reason": "A clerk upload workflow differs from a developer coding session."
+        },
+        {
+          "course_index": 9,
+          "where": "after",
+          "what": "Approve file processing and retry routes",
+          "why": "Invoices may contain sensitive supplier and financial data.",
+          "how": "Verify endpoint, file handling/retention, identity and residency requirements; do not fail over to unapproved processors.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "approved_route(file.classification); log_minimal_status_not_invoice_text()"
+          },
+          "evidence": "Configuration and failure tests establish the actual boundary.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Approve file processing and retry routes",
+          "decision_reason": "Invoices may contain sensitive supplier and financial data."
+        },
+        {
+          "course_index": 10,
+          "where": "after",
+          "what": "Deliver a measured intake pilot",
+          "why": "Fast completion is not the same as accurate accepted records.",
+          "how": "Measure baseline review effort, field errors, quarantine rate and recovery outcomes; agree owner thresholds before expansion.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "metrics=[\"accepted accuracy\",\"unreadable rate\",\"eligible retry recovery\",\"review time\"]"
+          },
+          "evidence": "Observed results, source-level audit and a recorded expansion decision.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Deliver a measured intake pilot",
+          "decision_reason": "Fast completion is not the same as accurate accepted records."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "Applied to this case: Check schema and source agreement at the receiving boundary.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Applied to this case: Track outcomes and next owners for every source, not just aggregate completion.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Applied to this case: Use a queue/worker and model extraction; select structured output features after verifying current support.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Applied to this case: Compare field accuracy, missing values and error behavior on fixed representative fixtures.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "Applied to this case: Use supported structured-output/schema mechanisms as appropriate, then validate units and evidence in receiving code.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Applied to this case: Use Claude Code to inspect the worker and validator, plan a scoped patch and execute targeted fixtures; record invariants in CLAUDE.md.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "Applied to this case: If an approved source repository is remote, distinguish resource discovery/read from extraction tools and prompt templates.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "layer-1"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Applied to this case: Begin with deterministic queue fan-out; add a specialist only for a separately justified interpretive task.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Applied to this case: Keep governed intake in the application; developer tooling builds it and reviewed chat exploration may analyze sample fixtures.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Applied to this case: Verify endpoint, file handling/retention, identity and residency requirements; do not fail over to unapproved processors.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Applied to this case: Measure baseline review effort, field errors, quarantine rate and recovery outcomes; agree owner thresholds before expansion.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "layout": {
+        "nodes": {
+          "source": {
+            "x": 40,
+            "y": 40
+          },
+          "worker": {
+            "x": 340,
+            "y": 40
+          },
+          "extract": {
+            "x": 640,
+            "y": 40
+          },
+          "check": {
+            "x": 640,
+            "y": 300
+          },
+          "ledger": {
+            "x": 340,
+            "y": 300
+          },
+          "review": {
+            "x": 40,
+            "y": 300
+          }
+        },
+        "routes": {
+          "check>ledger": [
+            [
+              640,
+              342
+            ],
+            [
+              530,
+              342
+            ]
+          ],
+          "extract>check": [
+            [
+              735,
+              164
+            ],
+            [
+              735,
+              300
+            ]
+          ],
+          "ledger>review": [
+            [
+              340,
+              342
+            ],
+            [
+              230,
+              342
+            ]
+          ],
+          "source>worker": [
+            [
+              230,
+              82
+            ],
+            [
+              340,
+              82
+            ]
+          ],
+          "worker>extract": [
+            [
+              530,
+              122
+            ],
+            [
+              640,
+              122
+            ]
+          ]
+        },
+        "width": 910,
+        "height": 510
+      },
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose the receiving validation contract",
+          "context": "Invoice EL-8 states USD84.50 and has no purchase-order number. Contract v1 requires total_minor to be an integer number of cents and purchase_order to be present as a string or null. The model returns {\"total_minor\":84.5}.",
+          "stem": "Which receiving sequence best preserves the source meaning and the declared handoff contract?",
+          "options": [
+            "Parse the JSON, round total_minor to the nearest integer and omit purchase_order because no value appeared on the source.",
+            "Use a supported structured-output schema when available, then validate the result against contract v1 and source units; reject the current draft and permit bounded correction to 8450 cents with purchase_order:null from the supplied evidence.",
+            "Accept the draft if the model response completed normally; convert dollars to cents only in the downstream payment formatter so intake remains schema-independent.",
+            "Change purchase_order to optional and total_minor to a general number for this request, preserving the original output as the new schema example."
+          ],
+          "answer": 1,
+          "explanations": [
+            "Rounding produces 84 or 85 cents rather than USD84.50, and omitting the key violates this v1 contract. Source absence does not authorize schema changes.",
+            "Structure can constrain shape, while receiving validation separately checks units and evidence. The correction is justified by the stated source and explicit nullable contract.",
+            "Model completion is not receiving acceptance. Deferring unit interpretation allows invalid records through and this intake scenario does not authorize payment.",
+            "A receiver contract is a versioned agreement, not something inferred from a malformed instance. Broadening it here conceals the unit and missing-key defects."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Recover a partially processed invoice folder",
+          "context": "The source ledger shows doc-A accepted under contract v1, doc-B unreadable, and doc-C failed with a transient service error before extraction. A consumer now proposes contract v2, where absent purchase_order may be omitted.",
+          "stem": "Which processing plan best preserves useful work and a defensible acceptance history?",
+          "options": [
+            "Resubmit all three files under v2, overwrite the v1 rows and count any completed model response as accepted so the folder has one consistent version.",
+            "Retry doc-B and doc-C with the same backoff policy, retain doc-A, and infer missing purchase-order values from earlier accepted invoices to avoid review.",
+            "Keep doc-A\u2019s accepted v1 record; route doc-B for preparation/review, retry eligible doc-C within a budget, validate each returned draft and record the applicable contract version; test v1/v2 fixtures before changing future acceptance.",
+            "Migrate doc-A to v2 immediately by removing all null fields, quarantine every remaining failure permanently and report the folder complete because no requests remain running."
+          ],
+          "answer": 2,
+          "explanations": [
+            "Reprocessing erases accepted history and repeats successful work. Terminal model responses still need schema and semantic validation.",
+            "Unreadable source data needs preparation or human resolution rather than an identical transport retry. Purchase-order evidence must not be borrowed or fabricated.",
+            "This separates error causes, preserves successful outcomes and provenance, and makes the contract change explicit without silently rewriting historic acceptance.",
+            "A contract allowing one absent field does not justify removing every null or rewriting history. No running requests is not equivalent to complete accepted coverage."
+          ]
+        }
+      ]
+    },
+    "as-04-research-system": {
+      "teachingEdition": "integrated-v2",
+      "designIntro": "A warehouse owner must choose one mobile-scanner pilot for next month. Glove usability, offline recovery, staff training and rollout feasibility all matter. The team investigates evidence rather than treating a polished recommendation as approval.",
+      "deliveryIntro": "Translate this design into tested implementation, approved processing and a measured pilot. The following are design choices to verify, not a claim that a deployment or business outcome already happened.",
+      "overviewRoute": [
+        "Name the warehouse decision and required evidence",
+        "Delegate only distinct bounded investigations",
+        "Check returned claims and missing dimensions",
+        "Preserve gaps and let the accountable owner approve; simplify a later lookup"
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "A bounded research workflow owned by the application/coordinator; distinguish model delegation from automatic business approval."
+        ],
+        [
+          "Capability features",
+          "Start from supplied evidence. Add specialist investigation only for independent evidence needs, not to make the diagram impressive."
+        ],
+        [
+          "Model",
+          "Evaluate coverage, attribution, uncertainty and integration quality alongside elapsed time and cost."
+        ],
+        [
+          "Context",
+          "Each worker needs its own explicit goal, constraints and permitted sources; prior coordinator conversation is not implicit shared context."
+        ]
+      ],
+      "fluencyLayers": [
+        {
+          "focus": "Description + Discernment",
+          "plain": "The initial scanner proposal must address gloves, offline use, training and a one-month pilot.",
+          "boundary": "Keep a decision scope and attributed evidence for every necessary dimension.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Plausible recommendations can omit requirements",
+            "what": "The initial scanner proposal must address gloves, offline use, training and a one-month pilot.",
+            "why": "A useful recommendation answers the actual decision, not a general question about mobile devices.",
+            "setup": "Name the required dimensions and check which have evidence.",
+            "repair": "Keep a decision scope and attributed evidence for every necessary dimension.",
+            "proof": "The owner receives a proposal tied to a feasible next-month pilot, not unqualified praise."
+          }
+        },
+        {
+          "focus": "Delegation",
+          "plain": "Connectivity and ergonomics require different investigations; follow-up depends on findings.",
+          "boundary": "Brief distinct specialists; keep training and feasibility with the coordinator and integrate all returns.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Specialists need an integration owner",
+            "what": "Connectivity and ergonomics require different investigations; follow-up depends on findings.",
+            "why": "Delegate bounded evidence work while retaining responsibility for the complete recommendation.",
+            "setup": "Which investigations are independent, and which decisions remain with the coordinator?",
+            "repair": "Brief distinct specialists; keep training and feasibility with the coordinator and integrate all returns.",
+            "proof": "Every required dimension has a named owner and attributed findings or a visible gap."
+          }
+        },
+        {
+          "focus": "Description",
+          "plain": "A worker told compare what we discussed lacks glove and timeline constraints.",
+          "boundary": "Pass scoped goal, one-month constraint, permitted sources and claim/source/uncertainty return contract.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Isolated context requires explicit handoff",
+            "what": "A worker told compare what we discussed lacks glove and timeline constraints.",
+            "why": "A task label cannot transfer facts absent from the worker context.",
+            "setup": "What exact goal, sources and constraints does this worker need?",
+            "repair": "Pass scoped goal, one-month constraint, permitted sources and claim/source/uncertainty return contract.",
+            "proof": "Returned findings are checked against the actual brief rather than assumed shared memory."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "The connectivity worker times out while other findings return in valid JSON.",
+          "boundary": "Check coverage and provenance, keep good findings, follow up within limits and retain unresolved offline risk if needed.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Complete JSON is not complete research",
+            "what": "The connectivity worker times out while other findings return in valid JSON.",
+            "why": "A syntactic handoff may conceal missing evidence; preserve success without overstating completeness.",
+            "setup": "Which required dimension lacks a successful, supported result?",
+            "repair": "Check coverage and provenance, keep good findings, follow up within limits and retain unresolved offline risk if needed.",
+            "proof": "No unsupported offline claim; a remaining gap is visible to the approval owner."
+          }
+        },
+        {
+          "focus": "Delegation",
+          "plain": "A later task needs one approved scanner model from a known catalog.",
+          "boundary": "Use the bounded lookup, retain access/applicability/output checks and remove unnecessary delegation.",
+          "courses": [
+            0,
+            1
+          ],
+          "integration": {
+            "concept": "Architecture should shrink when the task shrinks",
+            "what": "A later task needs one approved scanner model from a known catalog.",
+            "why": "Extra agents add cost and failure states when no investigation remains.",
+            "setup": "Does this task still need independent research or just an authorized lookup?",
+            "repair": "Use the bounded lookup, retain access/applicability/output checks and remove unnecessary delegation.",
+            "proof": "One supported catalog result answers the changed request without an agent hierarchy."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "course_index": 0,
+          "where": "layer-4",
+          "what": "Do not confuse fluency with completeness",
+          "why": "A polished summary can hide a timed-out investigation.",
+          "how": "Evaluate dimension coverage and provenance separately from narrative quality.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "assert required_dimensions <= supported_or_explicitly_unresolved_dimensions"
+          },
+          "evidence": "Offline gap remains visible despite a valid response object.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Do not confuse fluency with completeness",
+          "decision_reason": "A polished summary can hide a timed-out investigation."
+        },
+        {
+          "course_index": 1,
+          "where": "layer-3",
+          "what": "Describe the delegated work fully",
+          "why": "The worker has no implicit knowledge of gloves or next month.",
+          "how": "Use the 4Ds to scope delegated responsibility and judge its evidence before integrating.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "brief={goal,constraints,permitted_sources,return_fields:[claim,source,uncertainty]}"
+          },
+          "evidence": "Worker return can be traced to explicit assignment and sources.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Describe the delegated work fully",
+          "decision_reason": "The worker has no implicit knowledge of gloves or next month."
+        },
+        {
+          "course_index": 2,
+          "where": "before",
+          "what": "Start with the research decision",
+          "why": "The user needs one feasible pilot, not unconstrained autonomous browsing.",
+          "how": "Use supplied evidence first and add tools only for missing evidence; keep approval with the warehouse owner.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "decision={pilot_count:1,horizon:\"next month\",dimensions:[\"gloves\",\"offline\",\"training\",\"feasibility\"]}"
+          },
+          "evidence": "A measurable scope and explicit final decision owner.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Start with the research decision",
+          "decision_reason": "The user needs one feasible pilot, not unconstrained autonomous browsing."
+        },
+        {
+          "course_index": 3,
+          "where": "before",
+          "what": "Compare models on evidence integration",
+          "why": "A convincing recommendation may omit offline recovery.",
+          "how": "Evaluate identical coverage/gap fixtures, then compare latency and total investigation cost.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "evaluate(candidates,[\"all evidence\",\"missing connectivity\",\"conflicting claims\",\"simple lookup\"])"
+          },
+          "evidence": "Case-level coverage and attribution results with actual cost/time.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Compare models on evidence integration",
+          "decision_reason": "A convincing recommendation may omit offline recovery."
+        },
+        {
+          "course_index": 4,
+          "where": "layer-2",
+          "what": "Operate a bounded investigation loop",
+          "why": "The next research action depends on observed findings.",
+          "how": "Define narrow search/read tools, handle actual results and stop on covered dimensions or explicit limits.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "while budget_remaining and open_questions:\n  result=authorized_investigation(next_question)\n  integrate_observed_claims_and_gaps(result)"
+          },
+          "evidence": "Tool traces and an explicit stop/escalation condition; no endless autonomous loop.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Operate a bounded investigation loop",
+          "decision_reason": "The next research action depends on observed findings."
+        },
+        {
+          "course_index": 5,
+          "where": "after",
+          "what": "Build and test the coordinator contract",
+          "why": "The handoff and coverage checkpoint must work in the implementation.",
+          "how": "Explore runtime/callers, plan scoped contract checks, implement and run timeout/missing-field fixtures before committing.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "CLAUDE.md: coverage and source invariants\ntests=[\"worker timeout\",\"missing dimension\",\"source omission\",\"simple lookup bypass\"]"
+          },
+          "evidence": "Actual passing/failing evidence and reviewed diff, not a generated assurance.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Build and test the coordinator contract",
+          "decision_reason": "The handoff and coverage checkpoint must work in the implementation."
+        },
+        {
+          "course_index": 6,
+          "where": "layer-3",
+          "what": "Connect permitted evidence without granting authority",
+          "why": "Research sources may be exposed by MCP resources or search tools.",
+          "how": "Distinguish tools, resources and reusable prompts; load returned content and preserve provenance, rather than equating discovery with evidence.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "resource=discover(source_uri)\ncontent=authorized_read(resource)\nattach_source_locator(content)"
+          },
+          "evidence": "Trace shows permitted content used for each attributed claim.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Connect permitted evidence without granting authority",
+          "decision_reason": "Research sources may be exposed by MCP resources or search tools."
+        },
+        {
+          "course_index": 7,
+          "where": "layer-2",
+          "what": "Design bounded specialists",
+          "why": "Separate expertise helps only when evidence needs differ.",
+          "how": "Give each worker a complete brief and explicit return fields; coordinator integrates and handles partial failure.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "assign(connectivity,ergonomics); coordinator_owns(training,feasibility,final_synthesis)"
+          },
+          "evidence": "Coverage ledger names owners, results and remaining uncertainty.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Design bounded specialists",
+          "decision_reason": "Separate expertise helps only when evidence needs differ."
+        },
+        {
+          "course_index": 8,
+          "where": "before",
+          "what": "Choose a research workflow surface",
+          "why": "Warehouse owner review and engineering implementation are different jobs.",
+          "how": "Use an approved application/research interface for the decision and developer tooling to build the workflow; do not imply all hosts share delegation features.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "surfaces={review:\"approved owner workspace\",runtime:\"verified tool/delegation host\",build:\"Claude Code\"}"
+          },
+          "evidence": "Product choice reflects permissions, review and actual supported features.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Choose a research workflow surface",
+          "decision_reason": "Warehouse owner review and engineering implementation are different jobs."
+        },
+        {
+          "course_index": 9,
+          "where": "after",
+          "what": "Keep evidence on approved routes",
+          "why": "Supplier information and internal warehouse plans may be sensitive.",
+          "how": "Verify endpoint, source access, logging, regional processing and delegation support; a gateway does not prove parity.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "for hop in data_flow: verify_identity_processing_and_logs(hop)\nblock_unapproved_fallback()"
+          },
+          "evidence": "Approved processing inventory and actual route/failure configuration.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Keep evidence on approved routes",
+          "decision_reason": "Supplier information and internal warehouse plans may be sensitive."
+        },
+        {
+          "course_index": 10,
+          "where": "after",
+          "what": "Pilot the decision process itself",
+          "why": "A research demo is not proof the scanner rollout will succeed.",
+          "how": "Capture baseline research effort and missing-risk rate, test with warehouse users and obtain owner approval for the physical pilot.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature or executed result",
+            "pseudocode": "metrics=[\"coverage\",\"source traceability\",\"time to review\",\"visible unresolved risks\"]"
+          },
+          "evidence": "Observed review outcomes and an owner decision; no invented business benefit.",
+          "not_demonstrated": "Applies the published course-summary pattern to this fictional case; not the full syllabus, a configured product, executed test or official exam question. Verify current product/API support before runnable implementation.",
+          "decision_title": "Pilot the decision process itself",
+          "decision_reason": "A research demo is not proof the scanner rollout will succeed."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "Applied to this case: Evaluate dimension coverage and provenance separately from narrative quality.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Applied to this case: Use the 4Ds to scope delegated responsibility and judge its evidence before integrating.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Applied to this case: Use supplied evidence first and add tools only for missing evidence; keep approval with the warehouse owner.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Applied to this case: Evaluate identical coverage/gap fixtures, then compare latency and total investigation cost.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "Applied to this case: Define narrow search/read tools, handle actual results and stop on covered dimensions or explicit limits.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Applied to this case: Explore runtime/callers, plan scoped contract checks, implement and run timeout/missing-field fixtures before committing.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "Applied to this case: Distinguish tools, resources and reusable prompts; load returned content and preserve provenance, rather than equating discovery with evidence.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Applied to this case: Give each worker a complete brief and explicit return fields; coordinator integrates and handles partial failure.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Applied to this case: Use an approved application/research interface for the decision and developer tooling to build the workflow; do not imply all hosts share delegation features.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Applied to this case: Verify endpoint, source access, logging, regional processing and delegation support; a gateway does not prove parity.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Applied to this case: Capture baseline research effort and missing-risk rate, test with warehouse users and obtain owner approval for the physical pilot.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "layout": {
+        "nodes": {
+          "request": {
+            "x": 40,
+            "y": 40
+          },
+          "coord": {
+            "x": 340,
+            "y": 40
+          },
+          "special": {
+            "x": 640,
+            "y": 40
+          },
+          "ledger": {
+            "x": 640,
+            "y": 300
+          },
+          "owner": {
+            "x": 340,
+            "y": 560
+          }
+        },
+        "routes": {
+          "coord>owner": [
+            [
+              435,
+              164
+            ],
+            [
+              435,
+              560
+            ]
+          ],
+          "coord>special": [
+            [
+              530,
+              82
+            ],
+            [
+              640,
+              82
+            ]
+          ],
+          "ledger>coord": [
+            [
+              640,
+              382
+            ],
+            [
+              620,
+              382
+            ],
+            [
+              620,
+              122
+            ],
+            [
+              530,
+              122
+            ]
+          ],
+          "request>coord": [
+            [
+              230,
+              122
+            ],
+            [
+              340,
+              122
+            ]
+          ],
+          "special>coord": [
+            [
+              640,
+              122
+            ],
+            [
+              530,
+              122
+            ]
+          ],
+          "special>ledger": [
+            [
+              735,
+              164
+            ],
+            [
+              735,
+              300
+            ]
+          ]
+        },
+        "width": 910,
+        "height": 770
+      },
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Define the specialist handoff contract",
+          "context": "A warehouse pilot must launch next month. The coordinator owns feasibility and training; proposed specialists investigate glove usability and offline recovery. Workers have isolated contexts and access only to their supplied permitted sources.",
+          "stem": "Which assignment design best supports a complete, source-backed recommendation?",
+          "options": [
+            "Pass each worker a specialty name and the coordinator\u2019s conversation identifier; require valid JSON and let the final synthesis infer any omitted pilot constraints.",
+            "Give each worker the complete warehouse decision, relevant one-month and glove constraints, permitted sources and bounded specialty; require attributed claims, uncertainty and failure state, while the coordinator tracks every required dimension and owns synthesis.",
+            "Give every worker all available repository documents and ask each to choose the pilot independently; select the recommendation supported by the greatest number of matching responses.",
+            "Ask the coordinator to draft its final recommendation first, then request specialist JSON objects that confirm the selected device so the output schema remains consistent."
+          ],
+          "answer": 1,
+          "explanations": [
+            "A conversation identifier does not transfer unseen context. Valid JSON does not supply missing constraints or establish complete evidence.",
+            "The brief makes each worker\u2019s actual context and responsibility explicit. Attributed returns and dimension-level coverage let the coordinator integrate evidence and expose gaps.",
+            "Unbounded duplicated work increases noise and may expose irrelevant material. Agreement among generated recommendations is not evidence that all required dimensions were investigated.",
+            "Confirmation-first investigation can hide contrary or missing evidence. A consistent schema is not a substitute for independent findings and honest uncertainty."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Finalize with a missing offline investigation",
+          "context": "Glove usability and training findings have source evidence. The connectivity worker times out. Its JSON envelope contains all required keys but offline recovery remains unknown. The pilot owner must decide whether next-month rollout is feasible.",
+          "stem": "Which finalization policy best preserves decision usefulness without concealing the failed investigation?",
+          "options": [
+            "Accept the envelope because required keys are present, assign offline recovery the average confidence of the successful workers and mark the recommendation complete.",
+            "Discard all findings and rerun every specialist until their responses arrive together, then use response order to assemble the coverage report.",
+            "Preserve the supported findings, mark offline recovery unresolved in the dimension ledger, attempt a bounded targeted follow-up if justified, and give the owner the attributed evidence and explicit remaining feasibility risk if it stays unresolved.",
+            "Choose a device based on glove usability now and treat missing connectivity findings as an implementation task, since the coordinator has enough evidence to produce a fluent recommendation."
+          ],
+          "answer": 2,
+          "explanations": [
+            "Presence of keys checks shape, not source-backed coverage. Averaged confidence cannot replace the missing connectivity evidence.",
+            "This discards valid work and response order does not establish assignment identity. Follow-up should target the missing requirement and preserve provenance.",
+            "This keeps partial success useful while making the missing required evidence and next owner visible. It does not pretend the pilot is approved.",
+            "Offline recovery is a stated feasibility requirement. Relabeling the unresolved requirement does not establish it or authorize launch."
+          ]
+        }
+      ]
+    }
+  }
+}

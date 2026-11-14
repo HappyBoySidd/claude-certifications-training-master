@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-22">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Lab 03 — An MCP server, wired into Claude Code with a guardrail hook (CCAR-F, CCDV-F, CCAR-P)">
+<title>Lab 03 — An MCP server, wired into Claude Code with a guardrail hook (CCAR-F, CCDV-F, CCAR-P) · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../assets/site.css?v=21c6a0ac682a">
+<script defer src="../assets/diagram-annotations.js?v=7a2c6a4df9e1"></script><script defer src="../assets/site.js?v=dac542edefb2"></script>
+<link rel="stylesheet" href="../assets/technical-bridges.css?v=bb37752895d2"><script defer src="../assets/technical-bridges-data.js?v=1cb4e92c8c7a"></script><script defer src="../assets/technical-bridges.js?v=778e575618b6"></script><link rel="stylesheet" href="../assets/course-coach.css?v=d2af8f112d7f"><script defer src="../assets/course-coach-data.js?v=a1d70be458c8"></script><script defer src="../assets/course-coach.js?v=76f8c674d0d9"></script><link rel="stylesheet" href="../assets/viewer.css?v=76723c43548d"><script defer src="../assets/vendor/mermaid-12.1.0.min.js"></script><script defer src="../assets/viewer.js?v=85c369026fb2"></script><link rel="stylesheet" href="../assets/diagram-annotations.css?v=8882e7acffbe"></head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../exams/ccao-f.html">CCAO-F</a><a href="../exams/ccar-f.html">CCAR-F</a><a href="../exams/ccdv-f.html">CCDV-F</a><a href="../exams/ccar-p.html">CCAR-P</a><a href="../lessons/index.html">Lessons</a><a href="../simulations/index.html">Simulations</a><a href="../labs/index.html">Labs</a><a href="../insights.html">Insights</a><a href="../resources.html">Resources</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true"> / </span><a href="../labs/index.html">Labs</a><span aria-hidden="true"> / </span><span><a class="xref" href="../labs/03-CCAR-F-mcp-server-claude-code.html">Lab 03: An MCP server, wired into Claude Code with a guardrail hook</a></span></nav>
+<div class="learning-layout"><article class="prose"><h1 id="lab-03--an-mcp-server-wired-into-claude-code-with-a-guardrail-hook-ccar-f-ccdv-f-ccar-p">Lab 03 — An MCP server, wired into Claude Code with a guardrail hook (CCAR-F, CCDV-F, CCAR-P)</h1><nav class="cc-route" aria-label="Connected architecture learning"><a href="../exams/ccar-f.html#decision-workbench">Learning home and decision coach</a> · <a href="../lessons/ccar-f/objectives/index.html">Objective map</a> · <a href="../lessons/ccar-f/architecture-studio/index.html">Application stories</a></nav><details class="cc-course" id="decision-workbench" data-course-route="labs/03-CCAR-F-mcp-server-claude-code.html"><summary>Learn, decide and inspect a worked architecture example here</summary><p>Predict the result, check the stated setup, run the bounded experiment and compare observed evidence with your prediction.</p><p>Reading and paper reasoning need no setup. Runnable exercises retain their own prerequisites below.</p><button type="button" class="cc-attempt-gate">I have attempted the exercise — open a separate worked example</button><div class="cc-mount" hidden></div><noscript><p><a href="../lessons/ccar-f/objectives/index.html">Read the full objective lessons and their diagrams</a></p></noscript></details><nav class="tb-route" aria-label="Plain language to technical learning"><strong>Plain ↔ technical:</strong> <a href="../lessons/ccar-f/technical-bridges.html">Mechanism examples and terminology</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.4">1.4</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.5">1.5</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.7">1.7</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-2.1">2.1</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-2.2">2.2</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-2.3">2.3</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-2.4">2.4</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-3.1">3.1</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-3.6">3.6</a></nav><nav class="variant-links" aria-label="Scenario learning route"><a href="../lessons/ccar-f/architecture-studio/00-foundations.html">Start with an application</a> · <a href="../lessons/ccar-f/learning-journey.html">Full learning journey</a> · <a href="../lessons/ccar-f/architecture-studio/index.html">Learn architecture through eight application cases</a> · <a href="../lessons/ccar-f/scenario-studio.html">Practise 30 decision variants</a></nav>
+<h2 id="read-the-experiment-before-building">Read the experiment before building</h2>
+<p><strong>Two ways to use this lab:</strong> read and predict with no setup, or run the separately identified fixtures/build steps after completing their prerequisites below. These layers are paper experiments until you execute an implementation. An expected trace is not a captured run. Use fictional records in a disposable folder; do not connect real customer data or business effects. Keep input, expected result, observed result and recovery evidence separately.</p>
+<h3 id="stage-1--two-tools-sound-equally-useful">Stage 1 — Two tools sound equally useful</h3>
+<p>A service assistant handles a balance question and an address change. Both tools are named <code>manage_account</code> and described as “manage customer data.” A balance request sometimes triggers the write operation. The working one-tool demo hid this ambiguity.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which tool-interface change most directly improves selection reliability while preserving the read/write boundary?</p>
+<p>A. Use one generic tool and explain all differences in a long system prompt.</p>
+<p>B. Give each capability a distinct purpose, precise description, input <abbr data-tip="A structural contract for fields and types. Matching it does not prove the values agree with evidence or business rules." aria-label="schema">schema</abbr> and side-effect boundary.</p>
+<p>C. Add more overlapping aliases so the model has more options.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice B.</strong> Name the actual job, such as read balance versus propose address change, and state when each is appropriate. A hides the distinction inside one broad interface; C increases confusion. A schema describes accepted arguments; authorization is a separate check.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">customer need → distinct tool purpose → typed arguments → runtime authorization → service result</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Use a balance request and an address request. Record the selected capability and arguments separately from permission and execution outcome. A selected write tool does not authorize the write.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> The model chooses the correct tool but supplies an invalid account ID. A: redesign names alone; B: validate arguments and return a specific correctable error without executing.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. Correct selection and valid arguments are different requirements. Repair the failing layer.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-2.1.html">2.1</a>, <a href="../lessons/ccar-f/objectives/objective-2.3.html">2.3</a>.</p>
+<h3 id="stage-2--an-unavailable-service-looks-like-an-empty-account">Stage 2 — An unavailable service looks like an empty account</h3>
+<p>The balance tool normally returns current funds. Today the server cannot reach the bank service. It returns an empty list and the assistant says the customer has no accounts. The error was hidden as ordinary data.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which MCP tool-result contract best supports correct error propagation and recovery?</p>
+<p>A. Return an empty successful result on every failure.</p>
+<p>B. Return an explicit failure category and useful retryability context without exposing secrets; preserve available partial data as partial.</p>
+<p>C. Ask the model to infer the failure from response length.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice B.</strong> The caller must distinguish “there are no accounts” from “we could not check.” A confuses those meanings; C guesses. Permission denial, invalid input, insufficient stock and transient outage need different responses.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">business API failure → tool failure category → caller recovery policy
+confirmed empty data → successful empty result → ordinary answer</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Inject a timeout, bad input and permission denial. Expect different categories; do not retry permanent invalid input as though waiting would fix it.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> The service denies access. A: retry with higher model confidence; B: stop that action and use the approved permission/escalation route.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. Confidence cannot grant access. Keep access failures separate from temporary outages.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-2.2.html">2.2</a>.</p>
+<h3 id="stage-3--a-proposal-becomes-a-money-movement">Stage 3 — A proposal becomes a money movement</h3>
+<p>The customer now requests a refund. A person approves USD 80 for ORD4, but a later proposal changes to USD 90. The old design remembers only “approved: yes.” That broad flag would let a changed action through.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which control best enforces approval scope before execution of a side-effecting tool?</p>
+<p>A. Instruct Claude to remember the approved amount.</p>
+<p>B. Validate the current principal, order, amount and approval validity against the bound proposal in the runtime/backend before submitting the action.</p>
+<p>C. Execute first and inspect the model explanation afterward.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice B.</strong> The program compares this exact action with what was approved. A model reminder can help behavior but cannot replace that gate. C finds the problem after money may already move. A hook can intercept an attempted call; business authorization still belongs at the authoritative service boundary.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">proposal → approval bound to exact action → runtime/backend gate → business API
+changed target, amount or expired approval → deny or request new approval</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Keep the approval record and action fields. Changing one field must block submission; a matching permitted action still needs a real business receipt before being called settled.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> The write timed out after submission. A: blindly resubmit; B: inspect the business operation status with the operation key before deciding whether retry is safe.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. Timeout means the caller lacks a result, not that the operation failed. Reconciliation prevents a duplicate effect.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-1.4.html">1.4</a>, <a href="../lessons/ccar-f/objectives/objective-1.5.html">1.5</a>, <a href="../lessons/ccar-f/objectives/objective-1.7.html">1.7</a>.</p>
+<p><strong>Supports:</strong> CCAR-F <a class="xref" href="../lessons/ccar-f/L02-tool-design-and-mcp-integration.html">Lesson 2: Tool Design and MCP Integration</a>, <a class="xref" href="../lessons/ccar-f/L03-claude-code-configuration-and-workflows.html">Lesson 3: Claude Code Configuration and Workflows</a> · CCDV-F <a class="xref" href="../lessons/ccdv-f/L05-tools-and-mcps.html">Lesson 5: Tools and MCPs</a>, <a class="xref" href="../lessons/ccdv-f/L06-security-and-safety.html">Lesson 6: Security and Safety</a>, <a class="xref" href="../lessons/ccdv-f/L07-claude-code-eval-and-debugging.html">Lesson 7: Claude Code, Eval and Debugging</a> · CCAR-P <a class="xref" href="../lessons/ccar-p/L04-governance-safety-and-risk-management.html">Lesson 4: Governance, Safety and Risk Management</a>, <a class="xref" href="../lessons/ccar-p/L07-developer-productivity-and-enablement.html">Lesson 7: Developer Productivity and Enablement</a> · <strong>Time:</strong> 2–3 hours · <strong>Needs:</strong> Claude Code, Python 3.10+, and <code>pip install mcp</code>.</p>
+<h2 id="understand-the-design-before-setup">Understand the design before setup</h2><details class="tb-inline" id="tb-mechanism-1-4" data-technical-bridge="1.4"><summary>Plain ↔ technical · execution-time authorization / prerequisite gate</summary><p>Related objective example. Keep the current case's facts and chosen answer separate. For a decision, choose before opening this study help.</p><label>Mechanism <select class="tb-select"><option value="1.4">1.4 · execution-time authorization / prerequisite gate</option><option value="1.5">1.5 · PreToolUse / PostToolUse</option><option value="1.7">1.7 · session_id / resume</option><option value="2.1">2.1 · tools / name</option><option value="2.2">2.2 · tool_result / is_error</option><option value="2.3">2.3 · tools allowlist / tool_choice</option><option value="2.4">2.4 · MCP / JSON-RPC</option><option value="3.1">3.1 · CLAUDE.md / nested instructions</option><option value="3.6">3.6 · claude -p / --output-format json</option></select></label><div class="tb-slot"><div class="tb-pair" data-objective="1.4"><div class="tb-plain"><h3>In everyday language</h3><p>The program that can change a record must check the prerequisites immediately before the change. If blocked, pass the next owner a complete case.</p><p><strong>Does not establish:</strong> Selecting the right tool or passing JSON validation does not authorize that action.</p></div><div class="tb-precise"><h3>In technical terms</h3><p class="tb-terms"><code>execution-time authorization</code> <code>prerequisite gate</code> <code>scoped approval</code> <code>human handoff</code></p><details><summary>Inspect the technical example</summary><p class="tb-artifact-label">Application control-flow pseudocode — fictional policy, not a Claude API feature</p><pre tabindex="0" aria-label="Technical example"><code>if trusted_session.account != order.owner:
+    return blocked(&quot;ownership_mismatch&quot;)
+if proposed_cents &gt; 18000 and not scoped_staff_approval:
+    return pending_review(case, evidence, proposed_cents, operation_state)
+submit_credit(permitted_exact_action)</code></pre><p><strong>Read it as:</strong> The trusted login comes from the application, not the proposed tool arguments. The review packet says whether money was submitted or is only proposed.</p></details><p class="tb-source"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls">Official mechanism reference</a></p></div></div></div></details>
+<p>Before executing this lab, read the <a href="../lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html">grounded assistant and MCP boundary</a> and its plain-language/technical choices. Reading requires no credentials; <strong>running this lab does require the setup, account, environment and permission prerequisites below</strong>. Keep its real execution evidence separate from the paper case and local Lab08 fixture. Use the <a href="../lessons/ccar-f/learning-journey.html">full learning journey</a> to return to objectives, practice and repair.</p>
+<h2 id="connect-this-build-to-scenario-decisions">Connect this build to scenario decisions</h2>
+<p><strong>Before building:</strong> <a href="../lessons/ccar-f/scenario-studio.html">Choose a case in the scenario studio</a>. Predict the result before running each failure injection.</p>
+<p>Compare a denied permission, insufficient stock and an uncertain reservation result. They need different recovery. Verify connection, tool inclusion and execution authority separately; do not infer settlement or safe unattended execution from a mode flag.</p>
+<p><strong>Evidence to keep:</strong> synthetic input, observed tool/result or hook outcome, expectation, actual failure category, recovery and a changed-condition retest. Do not mark this lab complete from reading alone.</p>
+<ul><li><a href="../lessons/ccar-f/objectives/objective-1.4.html#variant-fv-04">FV-04 — Bind approval to this action</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=1.4&amp;variant=FV-04">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.1.html#variant-fv-08">FV-08 — Make capabilities distinguishable</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=2.1&amp;variant=FV-08">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.2.html#variant-fv-09">FV-09 — Route the actual error category</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=2.2&amp;variant=FV-09">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.4.html#variant-fv-11">FV-11 — Separate connection from inclusion</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=2.4&amp;variant=FV-11">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-3.1.html#variant-fv-13">FV-13 — Put instructions at their real scope</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=3.1&amp;variant=FV-13">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-3.6.html#variant-fv-18">FV-18 — Run CI with observable failure</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=3.6&amp;variant=FV-18">Test the decision</a></li></ul>
+<p><strong>After building:</strong> explain which constraint changes the answer, then use <a href="../lessons/ccar-f/decision-atlas.html">drawings</a>, <a href="../lessons/ccar-f/flashcards.html">recall</a> and <a href="../simulations/ccar-f/index.html">simulations</a> to transfer the mechanism.</p>
+<h2 id="what-youll-build-and-why">What you'll build and why</h2><p class="tb-section-link"><a href="#tb-mechanism-1-4">Related technical reference · execution-time authorization / prerequisite gate</a></p>
+<p>You'll build a tiny inventory tool server, plug it into Claude Code, and put guard rails around it. The point is to feel, hands-on, where a rule has to live so it really holds.</p>
+<pre><code class="lang-text">you ──&gt; Claude Code ──(MCP)──&gt; inventory server ──&gt; inventory.json
+             │
+             ├── PreToolUse hooks: block rm -rf, ask before big reservations
+             ├── CLAUDE.md + .claude/rules/: project memory
+             └── restock-report skill: runs in its own forked context</code></pre>
+<p>Words you'll meet, in plain terms:</p>
+<ul><li><strong>MCP (Model Context Protocol):</strong> a standard way for an app like Claude Code to talk to a "server" program that offers tools.</li><li><strong>MCP server:</strong> a small program that lists tools and runs them when asked.</li><li><strong>Tool:</strong> one action the model can ask for, such as <code>get_item</code>.</li><li><strong><code>isError</code>:</strong> a flag on a tool result that says "this call failed". Without it, the client treats the result as a success.</li><li><strong>Scope:</strong> where a server is registered. <em>Project</em> scope lives in <code>.mcp.json</code> and is shared with the team; <em>user</em> scope lives in your own <code>~/.claude.json</code>.</li><li><strong>Hook:</strong> a script Claude Code runs at a fixed moment, such as just before a tool call (<strong><abbr data-tip="A supported hook event before tool execution. A blocking check must use the correct runtime decision and cover the relevant execution path." aria-label="PreToolUse">PreToolUse</abbr></strong>). Its answer can block or pause the call. The model can't talk its way past it.</li><li><strong>Skill:</strong> a folder with a <code>SKILL.md</code> file that packages instructions Claude Code can run on request.</li><li><strong>Forked context (<code>context: fork</code>):</strong> the skill runs in a separate sub-context, so its working notes don't fill your main conversation.</li><li><strong>Plan mode:</strong> Claude Code proposes a plan and waits for your OK before it edits anything.</li></ul>
+<p>Task numbers refer to the task statements in the official exam guide.</p>
+<h2 id="why-this-matters-on-the-exam">Why this matters on the exam</h2><p class="tb-section-link"><a href="#tb-mechanism-1-4">Related technical reference · execution-time authorization / prerequisite gate</a></p>
+<ul><li>A rule that <em>must</em> hold belongs in a hook or in code, not in the prompt.</li><li>Shared config is committed, and secrets are expanded from environment variables.</li><li>Good tool descriptions and structured errors decide whether the agent recovers.</li></ul>
+<p><strong>Done when:</strong></p>
+<ul><li><code>/mcp</code> shows <code>inventory</code> as connected (approve the project server when asked the first time)</li><li>Claude calls <code>get_item</code> and <code>reserve_item</code> at least once each, and you can point to both calls in the transcript</li><li><code>/mcp</code> shows your user-scope <code>echo</code> server and the project <code>inventory</code> server at the same time</li><li>asking to reserve 1,000 units returns an <code>isError</code> result; the agent does not retry and tells you the quantity actually available</li><li><code>grep -rn INVENTORY_TOKEN .</code> over the repo finds only the <code>${INVENTORY_TOKEN:-}</code> placeholder and the line in <code>server.py</code> that reads it, never a real token value</li><li>with the token unset, every tool call returns the <code>permission</code> error</li><li>the hook blocks each of <code>rm -rf build/</code>, <code>rm -fr build/</code> and <code>rm -r -f build/</code>, and the <code>build/</code> folder still exists afterwards</li><li>reserving 20 units shows you an approval prompt; reserving 5 does not</li><li><code>/memory</code> lists the <code>tests.md</code> rule while you work on a <code>test_*.py</code> file and not while you work on <code>server.py</code></li><li><code>restock-report</code> runs in a forked context and can use only the read tools (<code>list_items</code> and <code>get_item</code>)</li><li>your "What I learned" section has two lines: one on what plan mode gave you, one on what it cost</li></ul>
+<h2 id="steps">Steps</h2>
+<h3 id="1-a-three-tool-server">1. A three-tool server</h3>
+<p><em>Practises: tasks 2.1 and 2.2.</em></p>
+<p>Write a server with the official Python MCP SDK (<code>FastMCP</code>):</p>
+<ul><li><code>list_items()</code>: returns every SKU with its name, so the agent can find SKUs it wasn't told.</li><li><code>get_item(sku)</code>: reads one item from a small local JSON file.</li><li><code>reserve_item(sku, qty)</code>: a <strong>write</strong> action. It checks stock and returns an error if there isn't enough.</li></ul>
+<p>Sample <code>inventory.json</code>, next to <code>server.py</code>:</p>
+<pre><code class="lang-json">{
+  &quot;SKU-001&quot;: {&quot;name&quot;: &quot;Blue mug&quot;, &quot;qty&quot;: 12},
+  &quot;SKU-002&quot;: {&quot;name&quot;: &quot;Desk lamp&quot;, &quot;qty&quot;: 3},
+  &quot;SKU-003&quot;: {&quot;name&quot;: &quot;Notebook&quot;, &quot;qty&quot;: 0}
+}</code></pre>
+<p>At start-up, the server reads <code>INVENTORY_TOKEN</code> from <code>os.environ</code>. If it's missing <strong>or empty</strong>, every tool call is refused with a <code>permission</code> error. (Empty matters: see step 2.)</p>
+<p>Return errors as a result with <code>isError: true</code>. A plain returned dict reaches the client as a <em>success</em>, so the agent can't tell anything went wrong. Inside that error result, put a body with these fields:</p>
+<ul><li><code>errorCategory</code>: <code>transient</code>, <code>validation</code> or <code>permission</code></li><li><code>isRetryable</code>: for example <code>false</code> for "not enough stock"</li><li>a plain sentence on what to do instead</li></ul>
+<p><code>errorCategory</code> and <code>isRetryable</code> are the fields the CCAR-F exam guide (task 2.2) describes. They are <strong>your</strong> body fields, not fields defined by the MCP spec. The spec only gives you <code>isError</code> and the content.</p>
+<p>Example error body for "reserve 1,000 of SKU-001":</p>
+<pre><code class="lang-json">{
+  &quot;errorCategory&quot;: &quot;validation&quot;,
+  &quot;isRetryable&quot;: false,
+  &quot;message&quot;: &quot;Only 12 of SKU-001 are in stock. Ask the user whether to reserve 12 or fewer.&quot;
+}</code></pre>
+<p>Skeleton (marked parts are yours to fill in; check the current Python SDK docs for how to return a result with <code>isError</code> set):</p>
+<pre><code class="lang-python">import json, os
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP(&quot;inventory&quot;)
+TOKEN = os.environ.get(&quot;INVENTORY_TOKEN&quot;, &quot;&quot;)   # &quot;&quot; when unset or set to empty
+
+def error(category, retryable, message):
+    # YOUR CODE: return a tool result with isError: true whose text content is
+    # json.dumps({&quot;errorCategory&quot;: category, &quot;isRetryable&quot;: retryable, &quot;message&quot;: message})
+    ...
+
+@mcp.tool()
+def list_items():
+    &quot;&quot;&quot;YOUR DESCRIPTION: lists every SKU and name; read-only; use it to find SKUs.&quot;&quot;&quot;
+    # YOUR CODE: token check, then return [{&quot;sku&quot;: ..., &quot;name&quot;: ...}, ...]
+
+@mcp.tool()
+def get_item(sku: str):
+    &quot;&quot;&quot;YOUR DESCRIPTION: what it does, the input with an example (&quot;SKU-001&quot;),
+    and when NOT to use it (it never changes stock).&quot;&quot;&quot;
+    if not TOKEN:
+        return error(&quot;permission&quot;, False, &quot;INVENTORY_TOKEN is not set. Ask the user to set it.&quot;)
+    # YOUR CODE: read inventory.json and return the item, or a validation error for an unknown SKU
+
+@mcp.tool()
+def reserve_item(sku: str, qty: int):
+    &quot;&quot;&quot;YOUR DESCRIPTION: a write action; call get_item first; say when NOT to use it.&quot;&quot;&quot;
+    # YOUR CODE: token check, stock check, then update inventory.json
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run()</code></pre>
+<p>Write each tool description in full: what it does, its inputs with examples, and when <em>not</em> to use it.</p>
+<p><strong>How you know it worked:</strong> <code>python3 server.py</code> starts and waits quietly for input (stop it with Ctrl+C). After step 2, asking Claude "how many SKU-001 are there?" makes it call <code>get_item</code> and answer 12.</p>
+<h3 id="2-register-it-for-the-whole-team">2. Register it for the whole team</h3>
+<p><em>Practises: task 2.4.</em></p>
+<p>Create <code>.mcp.json</code> at the repo root, which is committed, so everyone gets the same server. Secrets come in through environment variables:</p>
+<pre><code class="lang-json">{
+  &quot;mcpServers&quot;: {
+    &quot;inventory&quot;: {
+      &quot;command&quot;: &quot;python3&quot;,
+      &quot;args&quot;: [&quot;server.py&quot;],
+      &quot;env&quot;: { &quot;INVENTORY_TOKEN&quot;: &quot;${INVENTORY_TOKEN:-}&quot; }
+    }
+  }
+}</code></pre>
+<p>Use <code>python3</code>: on macOS a bare <code>python</code> often doesn't exist. Run <code>claude</code> from the repo root, or put an absolute path to <code>server.py</code> in <code>args</code>.</p>
+<p>Why <code>${INVENTORY_TOKEN:-}</code> and not <code>${INVENTORY_TOKEN}</code>: if the variable is unset, Claude Code still loads the config, shows a warning in <code>claude mcp list</code>, and passes the literal text <code>${INVENTORY_TOKEN}</code> to the server. Your server would then see a "token" that isn't empty and might accept it. The <code>:-</code> form with nothing after it expands to an empty string instead, and your server treats empty as missing (<a class="ext" href="https://code.claude.com/docs/en/mcp" rel="noopener">Claude Code MCP docs</a>, <a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs).</p>
+<p>Personal or experimental servers go in your user config, <code>~/.claude.json</code>. Add a tiny echo server there. Save this as <code>~/mcp-echo/echo_server.py</code>:</p>
+<pre><code class="lang-python">from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP(&quot;echo&quot;)
+
+@mcp.tool()
+def echo(text: str) -&gt; str:
+    &quot;&quot;&quot;Return the text unchanged. Use only to test that MCP is wired up.&quot;&quot;&quot;
+    return text
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run()</code></pre>
+<p>Then register it at user scope (use your own absolute path):</p>
+<pre><code class="lang-bash">claude mcp add --scope user echo -- python3 /Users/YOU/mcp-echo/echo_server.py</code></pre>
+<p><strong>How you know it worked:</strong> <code>claude mcp list</code> shows both <code>echo</code> and <code>inventory</code>, and <code>/mcp</code> inside Claude Code shows both as connected at the same time.</p>
+<h3 id="3-project-memory-and-a-skill">3. Project memory and a skill</h3>
+<p><em>Practises: tasks 3.1, 3.2, 3.3 and 3.4.</em></p>
+<p><em>Practises: tasks 3.1–3.4.</em> Do these as four small parts and check each one before moving on.</p>
+<h4 id="3a-trim-claudemd">3a. Trim <code>CLAUDE.md</code></h4>
+<p>Run <code>/init</code>, then trim the <code>CLAUDE.md</code> it creates to the rules that matter, for example "always call get_item before reserve_item".</p>
+<p><strong>How you know it worked:</strong> run <code>/memory</code> and see your trimmed <code>CLAUDE.md</code> listed; ask Claude to reserve 2 of SKU-002 and see it call <code>get_item</code> first.</p>
+<h4 id="3b-the-restock-report-skill">3b. The <code>restock-report</code> skill</h4>
+<p>Create <code>.claude/skills/restock-report/SKILL.md</code> with <code>context: fork</code>.</p>
+<p>Careful: <code>allowed-tools</code> <strong>pre-approves</strong> the tools you list, so Claude can use them without asking. It does <strong>not</strong> stop the skill from using other tools. To actually restrict it, either:</p>
+<ul><li>list the tools to block in <code>disallowed-tools</code>, or</li><li>point the skill at a narrow subagent with <code>agent:</code> (together with <code>context: fork</code>), and give that subagent only the read tools. A report should never be able to reserve stock.</li></ul>
+<p>The second route is cleaner here. A sketch (check the field names in the <a class="ext" href="https://code.claude.com/docs/en/skills" rel="noopener">skills docs</a> and <a class="ext" href="https://code.claude.com/docs/en/sub-agents" rel="noopener">subagents docs</a>, <a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs):</p>
+<pre><code class="lang-markdown">---
+name: restock-report
+description: List items with qty under 5 and suggest a restock amount for each.
+context: fork
+agent: inventory-reader
+allowed-tools: mcp__inventory__list_items, mcp__inventory__get_item
+---
+Call list_items to get every SKU, then get_item for each one, and report which are under 5.</code></pre>
+<p>…with <code>.claude/agents/inventory-reader.md</code> whose <code>tools:</code> list holds only <code>mcp__inventory__list_items</code> and <code>mcp__inventory__get_item</code> (no <code>reserve_item</code>). (A plain command in <code>.claude/commands/</code> also works; the skill is what the guide tests.)</p>
+<p><strong>How you know it worked:</strong> running <code>/restock-report</code> returns SKU-002 and SKU-003, and your main conversation shows only the final report, not the step-by-step calls. Asking the skill to also run <code>ls</code> fails or is refused.</p>
+<h4 id="3c-a-path-scoped-rule">3c. A path-scoped rule</h4>
+<p>Add <code>.claude/rules/tests.md</code> with <code>paths: [&quot;**/test_*.py&quot;]</code> in its front matter (check the field name in the <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">memory docs</a>, <a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs).</p>
+<p><strong>How you know it worked:</strong> create <code>test_server.py</code>, ask Claude to edit it, then run <code>/memory</code> and see <code>tests.md</code> listed. Work on <code>server.py</code> instead and <code>/memory</code> doesn't list it. (Trust <code>/memory</code>, not Claude's own description of which rules apply.)</p>
+<h4 id="3d-plan-mode-versus-direct">3d. Plan mode versus direct</h4>
+<p>Run one multi-file change (for example "add a <code>location</code> field everywhere") in plan mode, and one single-line fix directly.</p>
+<p><strong>How you know it worked:</strong> in plan mode Claude shows a plan and edits nothing until you approve; the direct fix just happens. Write your two lines in "What I learned".</p>
+<h3 id="4-a-guardrail-hook">4. A guardrail hook</h3>
+<p><em>Practises: tasks 1.5 and 3.2.</em></p>
+<p>In <code>.claude/settings.json</code>, add two <strong>PreToolUse</strong> hooks:</p>
+<pre><code class="lang-json">{
+  &quot;hooks&quot;: {
+    &quot;PreToolUse&quot;: [
+      {
+        &quot;matcher&quot;: &quot;Bash&quot;,
+        &quot;hooks&quot;: [{ &quot;type&quot;: &quot;command&quot;, &quot;command&quot;: &quot;python3 .claude/hooks/block_rm.py&quot; }]
+      },
+      {
+        &quot;matcher&quot;: &quot;mcp__inventory__reserve_item&quot;,
+        &quot;hooks&quot;: [{ &quot;type&quot;: &quot;command&quot;, &quot;command&quot;: &quot;python3 .claude/hooks/ask_big_reserve.py&quot; }]
+      }
+    ]
+  }
+}</code></pre>
+<p><strong>Hook 1, <code>block_rm.py</code>.</strong> It reads the tool call as JSON on stdin, takes <code>tool_input.command</code>, and, if it matches a recursive force delete (<code>rm -rf</code>, <code>rm -fr</code>, <code>rm -r -f</code>), prints a reason to <strong>stderr</strong> and exits with code 2. Exit code 2 blocks the call, and the stderr text is what gets fed back to Claude. A plain substring check for <code>rm -rf</code> misses the other two.</p>
+<pre><code class="lang-python">import json, re, sys
+
+data = json.load(sys.stdin)
+cmd = data.get(&quot;tool_input&quot;, {}).get(&quot;command&quot;, &quot;&quot;)
+# YOUR CODE: a regex that catches rm with both -r and -f, in any order or split across flags
+if re.search(r&quot;YOUR_PATTERN&quot;, cmd):
+    print(&quot;Blocked: recursive force delete. Delete specific files instead.&quot;, file=sys.stderr)
+    sys.exit(2)
+sys.exit(0)</code></pre>
+<p><strong>Hook 2, <code>ask_big_reserve.py</code>.</strong> When <code>tool_input.qty</code> is over 10, it prints this JSON to stdout and <strong>exits 0</strong> (exit 0 is the intended code when you print JSON; exit 2 would block the call no matter what the JSON says):</p>
+<pre><code class="lang-json">{
+  &quot;hookSpecificOutput&quot;: {
+    &quot;hookEventName&quot;: &quot;PreToolUse&quot;,
+    &quot;permissionDecision&quot;: &quot;ask&quot;,
+    &quot;permissionDecisionReason&quot;: &quot;Reserving more than 10 units needs a human OK.&quot;
+  }
+}</code></pre>
+<p><code>permissionDecision</code> takes <code>allow</code>, <code>deny</code>, <code>ask</code> or <code>defer</code>. For 10 or fewer, print nothing and exit 0. See the <a class="ext" href="https://code.claude.com/docs/en/hooks" rel="noopener">hooks docs</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs) for the exact input and output format.</p>
+<p>The approval hook is a pattern the CCAR-F, CCDV-F and CCAR-P guides all cover: a hard rule enforced in code, not in the prompt. That's why this one lab supports all three exams.</p>
+<p><strong>How you know it worked:</strong> run <code>/hooks</code> and see both hooks listed. Step 5 tests them.</p>
+<h3 id="5-try-to-break-it">5. Try to break it</h3>
+<p><em>Practises: tasks 2.2 and 1.5.</em> For each test, the expected result is in brackets. Write down what the agent actually did.</p>
+<ul><li>Ask Claude to reserve 1,000 of SKU-001. [An <code>isError</code> result with <code>isRetryable: false</code>; Claude does not retry and tells you only 12 are in stock.]</li><li>Ask it to "clean up with rm -rf build/", then with <code>rm -fr</code> and <code>rm -r -f</code>. [All three are blocked; Claude shows your stderr reason; <code>ls build/</code> still works.]</li><li>Ask it to reserve 20 of SKU-001. [An approval prompt with your reason comes first; after you approve, the server returns the stock error, because only 12 are in stock. That's expected.] Then 5 units. [No prompt.]</li><li>Unset the variable (<code>unset INVENTORY_TOKEN</code>), restart <code>claude</code>, and ask for SKU-001. [<code>claude mcp list</code> still shows the server; every tool call returns the <code>permission</code> error, because the server sees an empty value.] Then change <code>.mcp.json</code> back to <code>${INVENTORY_TOKEN}</code> for a moment and repeat. [<code>claude mcp list</code> warns, and the server receives the literal text <code>${INVENTORY_TOKEN}</code>. If your check is only "is it set?", the call wrongly succeeds.] Put the <code>:-</code> back.</li></ul>
+<h2 id="common-traps">Common traps</h2><p class="tb-section-link"><a href="#tb-mechanism-1-4">Related technical reference · execution-time authorization / prerequisite gate</a></p>
+<div class="tbl"><table><thead><tr><th>Trap</th><th>Symptom you'll see</th></tr></thead><tbody><tr><td>Returning a plain dict for an error</td><td>Claude says the reservation "worked" when it didn't</td></tr><tr><td><code>${VAR}</code> without <code>:-</code> and an unset variable</td><td><code>claude mcp list</code> warns; the server gets the literal <code>${INVENTORY_TOKEN}</code> as its token</td></tr><tr><td>Substring check for <code>rm -rf</code> only</td><td><code>rm -fr build/</code> runs and the folder is gone</td></tr><tr><td>Hook prints a reason but exits 1</td><td>The call still runs; exit 1 doesn't block</td></tr><tr><td>Printing the <code>ask</code> JSON and exiting 2</td><td>The call is blocked instead of asking; exit 2 always blocks, whatever the JSON says</td></tr><tr><td>Using <code>allowed-tools</code> to restrict a skill</td><td>The skill still runs other tools, it just asks first</td></tr><tr><td>Bare <code>python</code> in <code>.mcp.json</code> on macOS</td><td><code>/mcp</code> shows <code>inventory</code> as failed</td></tr><tr><td>Putting the real token in <code>.mcp.json</code></td><td><code>grep</code> finds the token in a committed file</td></tr></tbody></table></div>
+<p>Sources: CCAR-F official exam guide v1.0 (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>), task statements 1.5, 2.1–2.4 and 3.1–3.4, Exercises 1 and 2; CCDV-F guide domains 7 and 8 (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>); <a class="ext" href="https://modelcontextprotocol.io" rel="noopener">MCP</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs); <a class="ext" href="https://code.claude.com/docs/en/mcp" rel="noopener">Claude Code MCP</a>, <a class="ext" href="https://code.claude.com/docs/en/hooks" rel="noopener">hooks</a>, <a class="ext" href="https://code.claude.com/docs/en/skills" rel="noopener">skills</a>, <a class="ext" href="https://code.claude.com/docs/en/sub-agents" rel="noopener">subagents</a>, <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">memory</a> and <a class="ext" href="https://code.claude.com/docs/en/settings" rel="noopener">settings</a> (all <a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs).</p>
+<h2 id="next">Next</h2>
+<p>Next: <a href="../simulations/ccar-f/SIM-05-developer-productivity.html">SIM-05</a>.</p>
+<h2 id="what-i-learned">What I learned</h2>
+<ul><li>Plan mode gave me:</li><li>Plan mode cost me:</li></ul>
+<h2 id="decision-variant-failure-acceptance">Decision-variant failure acceptance</h2><details class="tb-inline" id="tb-mechanism-1-5" data-technical-bridge="1.5"><summary>Plain ↔ technical · PreToolUse / PostToolUse</summary><p>Related objective example. Keep the current case's facts and chosen answer separate. For a decision, choose before opening this study help.</p><label>Mechanism <select class="tb-select"><option value="1.5">1.5 · PreToolUse / PostToolUse</option><option value="2.2">2.2 · tool_result / is_error</option><option value="2.4">2.4 · MCP / JSON-RPC</option></select></label><div class="tb-slot"><div class="tb-pair" data-objective="1.5"><div class="tb-plain"><h3>In everyday language</h3><p>A before-action hook can stop a prohibited call. An after-action hook can inspect an observed result, but cannot undo a completed side effect.</p><p><strong>Does not establish:</strong> A PostToolUse check cannot retroactively prevent an effect that has already occurred; hook control is not a replacement for business authorization.</p></div><div class="tb-precise"><h3>In technical terms</h3><p class="tb-terms"><code>PreToolUse</code> <code>PostToolUse</code> <code>hookSpecificOutput</code> <code>permissionDecision</code></p><details><summary>Inspect the technical example</summary><p class="tb-artifact-label">Actual PreToolUse hook JSON decision shape; illustrative denial reason</p><pre tabindex="0" aria-label="Technical example"><code>{&quot;hookSpecificOutput&quot;:{&quot;hookEventName&quot;:&quot;PreToolUse&quot;,&quot;permissionDecision&quot;:&quot;deny&quot;,&quot;permissionDecisionReason&quot;:&quot;This action is outside the permitted task scope.&quot;}}</code></pre><p><strong>Read it as:</strong> This is hook output for the named lifecycle event, not a message sent as tool_result. Hook behavior depends on the event; verify the configured handler actually runs.</p></details><p class="tb-source"><a href="https://code.claude.com/docs/en/hooks">Official mechanism reference</a></p></div></div></div></details>
+<p>Use the existing synthetic fixture and a disposable local state. Retain input, trace, failed check and recovery evidence; these tests do not authorize production effects.</p>
+<ul><li><strong>FV-09:</strong> Return success with an empty record list, a permission denial and a timeout in separate runs. Record three different recoveries; do not treat all as retryable. <a href="../lessons/ccar-f/objectives/objective-2.2.html#variant-fv-09">Exact teaching repair</a>.</li><li><strong>FV-11:</strong> Connect the server without explicitly including a resource. Inspect the host discovery/inclusion trace and avoid claiming invisible data was used. <a href="../lessons/ccar-f/objectives/objective-2.4.html#variant-fv-11">Exact teaching repair</a>.</li><li><strong>FV-05:</strong> Place a validation failure after the synthetic write. Show why a pre-action gate is needed to prevent it and why a post-result check cannot undo it. <a href="../lessons/ccar-f/objectives/objective-1.5.html#variant-fv-05">Exact teaching repair</a>.</li></ul>
+<a id="benchmark-evidence-tasks"></a>
+<h2 id="objective-evidence-tasks--predict-inspect-explain">Objective evidence tasks — predict, inspect, explain</h2>
+<p><strong>Optional offline files:</strong> <a href="../downloads/benchmark_exercises.py" download>Python inspector</a> and <a href="../downloads/benchmark-fixtures.json" download>synthetic fixture data</a>. Save both beside each other; run the script with Python 3. The output validates only the controlled example, not Claude runtime behavior.</p>
+<p>These original tasks extend this existing LAB without replacing its integration setup. Each contains its own input, failure and checkable result. You can read them without installation. Optional Python replay is offline; live tool routing, permissions, rule loading and third-party services remain unverified until you run those integration steps.</p>
+<ul><li><a href="#benchmark-exercise-1-5">1.5: Objective 1.5 — Use hooks to normalize results and intercept actions</a></li><li><a href="#benchmark-exercise-2-1">2.1: Objective 2.1 — Design tool interfaces that are hard to confuse</a></li><li><a href="#benchmark-exercise-2-2">2.2: Objective 2.2 — Return errors that support the right recovery</a></li><li><a href="#benchmark-exercise-2-3">2.3: Objective 2.3 — Scope each agent’s tools and control tool choice</a></li><li><a href="#benchmark-exercise-2-4">2.4: Objective 2.4 — Integrate MCP with the right scope and discoverability</a></li><li><a href="#benchmark-exercise-3-1">3.1: Objective 3.1 — Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization</a></li><li><a href="#benchmark-exercise-3-2">3.2: Objective 3.2 — Create and configure custom slash commands and skills</a></li><li><a href="#benchmark-exercise-3-3">3.3: Objective 3.3 — Apply path-specific rules for conditional convention loading</a></li></ul>
+<a id="benchmark-exercise-1-5"></a>
+<h3 id="worked-evidence-task--15-test-the-boundary">Worked evidence task — 1.5: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A pre-execution gate denies a credit call, while a second run detects a violation only after the call. Which trace demonstrates prevention rather than detection?</p>
+<p><strong>In everyday terms:</strong> A warning after money moved is useful evidence, but it did not prevent the move.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;operation&quot;: &quot;issue_credit&quot;,
+  &quot;before_hook&quot;: &quot;deny&quot;,
+  &quot;after_hook&quot;: &quot;flag&quot;,
+  &quot;service_call_count_before&quot;: 0
+}</code></pre>
+<h4 id="break-choose-repair-prove">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Run one denial before execution and one detection after execution. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Count service invocations separately for the pre-call denial and the post-call alert. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Denied pre-call produces no side effect; post-call inspection cannot undo an already completed action. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-1.5.html#intercept">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.5 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.5</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;pre_denial_service_calls&quot;: 0,
+  &quot;post_detection_service_calls&quot;: 1,
+  &quot;post_detection_undo_proven&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> A warning after money moved is useful evidence, but it did not prevent the move. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agent-sdk/overview" rel="noopener">Claude Agent SDK Overview</a> · <a class="ext" href="https://platform.claude.com/docs/en/agent-sdk/hooks" rel="noopener">Claude Agent SDK Hooks Documentation</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-2-1"></a>
+<h3 id="worked-evidence-task--21-test-the-boundary">Worked evidence task — 2.1: test the boundary</h3>
+<p><strong>Original technical decision.</strong> Read-only delivery questions and authorized credit requests share a tool catalog. Which routing evaluation distinguishes description quality from prompt conflict?</p>
+<p><strong>In everyday terms:</strong> Count the actual choices. Do not report an improvement before testing it.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-1">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;tools&quot;: {
+    &quot;read_status&quot;: &quot;lookup only&quot;,
+    &quot;issue_credit&quot;: &quot;mutates; authorization required&quot;
+  },
+  &quot;requests&quot;: [
+    &quot;Where is order O17?&quot;,
+    &quot;Was O17 delivered?&quot;,
+    &quot;Show tracking for O17&quot;,
+    &quot;Which carrier has O17?&quot;,
+    &quot;Read the status of O17&quot;,
+    &quot;Has O17 shipped?&quot;,
+    &quot;Apply the approved credit for case C17&quot;,
+    &quot;Issue the authorized credit on O17&quot;,
+    &quot;Execute the approved refund for C18&quot;,
+    &quot;Read order O18&quot;
+  ],
+  &quot;oracle&quot;: [
+    &quot;read_status&quot;,
+    &quot;read_status&quot;,
+    &quot;read_status&quot;,
+    &quot;read_status&quot;,
+    &quot;read_status&quot;,
+    &quot;read_status&quot;,
+    &quot;issue_credit&quot;,
+    &quot;issue_credit&quot;,
+    &quot;issue_credit&quot;,
+    &quot;read_status&quot;
+  ],
+  &quot;method&quot;: &quot;count chosen tool equal to oracle / 10; retain unparseable/abstain separately; repeat only in an isolated new session&quot;
+}</code></pre>
+<h4 id="break-choose-repair-prove-1">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Test confusing read/write descriptions with a held-out set of requests. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Record one chosen tool per held-out request, keep abstentions visible and compare with the supplied oracle in an isolated run. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Compare observed routing before/after without promising a fixed improvement rate; inspect conflicting instructions. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-2.1.html#worked-example-decision-alternative-and-trade-off">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.1 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.1</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;request_count&quot;: 10,
+  &quot;oracle_read_count&quot;: 7,
+  &quot;oracle_write_count&quot;: 3,
+  &quot;observed_choices&quot;: null,
+  &quot;observed_accuracy&quot;: null,
+  &quot;reason&quot;: &quot;No model routing run performed; compare actual choices with this oracle later&quot;
+}</code></pre>
+<p><strong>Why this matters:</strong> Count the actual choices. Do not report an improvement before testing it. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool" rel="noopener">tool search docs</a> · <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" rel="noopener">Tool use — Anthropic API Documentation</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-2-2"></a>
+<h3 id="worked-evidence-task--22-test-the-boundary">Worked evidence task — 2.2: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A request stream contains an unknown tool, access denial, timeout and successful empty search. Which recovery policy preserves protocol and execution distinctions?</p>
+<p><strong>In everyday terms:</strong> No matches is different from being unable to search.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-2">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;results&quot;: [
+    {
+      &quot;jsonrpc_error&quot;: &quot;unknown tool&quot;
+    },
+    {
+      &quot;isError&quot;: true,
+      &quot;cause&quot;: &quot;access_denied&quot;
+    },
+    {
+      &quot;isError&quot;: true,
+      &quot;cause&quot;: &quot;timeout&quot;
+    },
+    {
+      &quot;isError&quot;: false,
+      &quot;matches&quot;: []
+    }
+  ]
+}</code></pre>
+<h4 id="break-choose-repair-prove-2">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Inject unknown tool name, denied call, timeout and successful empty search. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Classify each cause first; repair the name, resolve authority, retry only a justified transient failure, and preserve empty success. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Identify protocol versus execution failure; preserve unknown and empty distinctions and recovery evidence. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-2.2.html#objective-22--return-errors-that-support-the-right-recovery">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.2 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.2</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;classification&quot;: [
+    &quot;protocol error: unknown tool&quot;,
+    &quot;execution error: denied&quot;,
+    &quot;execution error: timeout&quot;,
+    &quot;success: empty matches&quot;
+  ],
+  &quot;retry_candidate_indexes&quot;: [
+    2
+  ],
+  &quot;empty_is_failure&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> No matches is different from being unable to search. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://modelcontextprotocol.io/docs/concepts/tools" rel="noopener">MCP Specification — Tool Results</a> · <a class="ext" href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools#error-handling" rel="noopener">MCP Specification — Tools, Error Handling</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-2-3"></a>
+<h3 id="worked-evidence-task--23-test-the-boundary">Worked evidence task — 2.3: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A synthesis worker needs merge and source-date verification but also sees refund and delete tools. Which capability boundary reduces unnecessary mutation risk?</p>
+<p><strong>In everyday terms:</strong> Give the worker what it needs for this job, not every available tool.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-3">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;role&quot;: &quot;synthesis&quot;,
+  &quot;needs&quot;: [
+    &quot;merge&quot;,
+    &quot;verify source date&quot;
+  ],
+  &quot;unneeded&quot;: [
+    &quot;issue_credit&quot;,
+    &quot;delete_record&quot;,
+    &quot;unrestricted_search&quot;
+  ]
+}</code></pre>
+<h4 id="break-choose-repair-prove-3">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Give a synthesizer unnecessary mutating tools, then a narrow fact-check capability. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Keep the needed synthesis and checking capabilities; remove unrelated write capabilities from this role. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Justify capability scope and distinguish role overload from ambiguous descriptions. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-2.3.html#scope">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.3 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.3</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;retain&quot;: [
+    &quot;merge&quot;,
+    &quot;verify source date&quot;
+  ],
+  &quot;remove&quot;: [
+    &quot;issue_credit&quot;,
+    &quot;delete_record&quot;,
+    &quot;unrestricted_search&quot;
+  ],
+  &quot;role&quot;: &quot;synthesis&quot;
+}</code></pre>
+<p><strong>Why this matters:</strong> Give the worker what it needs for this job, not every available tool. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools#forcing-tool-use" rel="noopener">define-tools page</a> · <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool" rel="noopener">tool search docs</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-2-4"></a>
+<h3 id="worked-evidence-task--24-test-the-boundary">Worked evidence task — 2.4: test the boundary</h3>
+<p><strong>Original technical decision.</strong> Project MCP configuration references a token variable, but the environment is unprovisioned and no resource was read. Which evidence supports a successful integration claim?</p>
+<p><strong>In everyday terms:</strong> A configuration file is a plan to connect. It is not proof of a connection or retrieved content.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-4">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;scope&quot;: &quot;project&quot;,
+  &quot;config_file&quot;: &quot;.mcp.json&quot;,
+  &quot;token_variable&quot;: &quot;DOCS_TOKEN&quot;,
+  &quot;token_provisioned&quot;: false,
+  &quot;server_connected&quot;: false,
+  &quot;resource_read&quot;: false
+}</code></pre>
+<h4 id="break-choose-repair-prove-4">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Use project-shared server configuration with missing environment provisioning and disconnected content. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Verify provisioning, connection, discovery and actual resource inclusion separately without embedding secrets. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Separate configuration scope, connection, discovery and actual resource inclusion; no embedded secret. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-2.4.html#config">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.4 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 2.4</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;configuration_scope&quot;: &quot;project&quot;,
+  &quot;secret_value_in_fixture&quot;: false,
+  &quot;provisioned&quot;: false,
+  &quot;connected&quot;: false,
+  &quot;resource_included&quot;: false,
+  &quot;integration_proven&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> A configuration file is a plan to connect. It is not proof of a connection or retrieved content. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://code.claude.com/docs/en/mcp" rel="noopener">MCP documentation</a> · <a class="ext" href="https://code.claude.com/docs/en/mcp" rel="noopener">MCP Server Configuration — Claude Code Documentation</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-3-1"></a>
+<h3 id="worked-evidence-task--31-test-the-boundary">Worked evidence task — 3.1: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A teammate lacks one developer’s home instructions and project guidance contains opposing naming rules. Which repair addresses distribution without assuming settings override behavior?</p>
+<p><strong>In everyday terms:</strong> Your home file does not travel with the repository to another person.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-5">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;home_rules&quot;: [
+    &quot;team style&quot;
+  ],
+  &quot;repo_rules&quot;: [
+    &quot;use snake_case&quot;,
+    &quot;use camelCase&quot;
+  ],
+  &quot;new_teammate_has_home_rules&quot;: false
+}</code></pre>
+<h4 id="break-choose-repair-prove-5">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Place team rules only in one developer home directory and add contradictory project text. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Put shared guidance in the repository and reconcile conflicting instructions explicitly; inspect settings precedence separately. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Explain missing team distribution and distinguish instruction loading from settings precedence. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-3.1.html#foundation">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.1 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.1</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;home_rule_distributed&quot;: false,
+  &quot;project_conflict&quot;: true,
+  &quot;repair&quot;: &quot;repository-shared reconciled guidance&quot;,
+  &quot;settings_precedence_tested&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> Your home file does not travel with the repository to another person. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">Claude Code memory docs</a> · <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">How Claude remembers your project (CLAUDE.md and auto memory)</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-3-2"></a>
+<h3 id="worked-evidence-task--32-test-the-boundary">Worked evidence task — 3.2: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A reusable release procedure accepts a candidate ID and should execute in an isolated context with Read access. Which artifacts separate procedure, universal rule and actual permission?</p>
+<p><strong>In everyday terms:</strong> A written instruction can request a boundary, but the runtime has to enforce it.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-6">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;workflow&quot;: &quot;release_check&quot;,
+  &quot;argument&quot;: &quot;candidate_id&quot;,
+  &quot;universal_rule&quot;: &quot;do not expose secrets&quot;,
+  &quot;isolated_output&quot;: true,
+  &quot;required_capability&quot;: &quot;Read&quot;
+}</code></pre>
+<h4 id="break-choose-repair-prove-6">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Move a reusable procedure into a skill with an argument and a limited execution context. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Define the reusable procedure and argument, preserve the universal secret rule, and test isolation and permissions in the actual installed runtime. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Identify actual loading/invocation behavior and verify permission behavior independently of prompt text. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-3.2.html#foundation">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.2 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.2</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;procedure&quot;: &quot;release_check&quot;,
+  &quot;argument&quot;: &quot;candidate_id&quot;,
+  &quot;universal_rule&quot;: &quot;do not expose secrets&quot;,
+  &quot;requested_capability&quot;: &quot;Read&quot;,
+  &quot;runtime_isolation_verified&quot;: false,
+  &quot;runtime_permissions_verified&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> A written instruction can request a boundary, but the runtime has to enforce it. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://code.claude.com/docs/en/skills" rel="noopener">skills frontmatter reference</a> · <a class="ext" href="https://code.claude.com/docs/en/skills" rel="noopener">Claude Code skills docs</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-3-3"></a>
+<h3 id="worked-evidence-task--33-test-the-boundary">Worked evidence task — 3.3: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A test-only path rule is evaluated in two fresh sessions, one matching and one not. Which experiment avoids attributing cached guidance to new conditional loading?</p>
+<p><strong>In everyday terms:</strong> Start clean so yesterday’s loaded rule cannot confuse today’s test.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-7">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;rule_path&quot;: &quot;**/*.test.ts&quot;,
+  &quot;match&quot;: &quot;packages/a/x.test.ts&quot;,
+  &quot;nonmatch&quot;: &quot;packages/b/main.ts&quot;,
+  &quot;sessions&quot;: [
+    &quot;fresh-A&quot;,
+    &quot;fresh-B&quot;
+  ],
+  &quot;no_cross_session_history&quot;: true
+}</code></pre>
+<h4 id="break-choose-repair-prove-7">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Put tests in several packages, then compare a global convention with a path-scoped rule. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Record the matched path per fresh session and inspect loaded guidance; do not treat path matching as a security boundary. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Use fresh isolated sessions for matching and nonmatching paths, inspect loaded guidance, and record observed loading. Previously loaded guidance is not automatically revoked; conditional loading is not a security boundary. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-3.3.html#foundation">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.3 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 3.3</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;match_path&quot;: true,
+  &quot;nonmatch_path&quot;: false,
+  &quot;isolated_sessions&quot;: true,
+  &quot;actual_guidance_loading_observed&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> Start clean so yesterday’s loaded rule cannot confuse today’s test. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">Claude Code Memory and Rules Documentation</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details><nav class="prevnext" aria-label="Previous and next"><a class="prev" href="../labs/02-CCAR-F-coordinator-extraction.html">← <small>Lab 02</small> An agent loop, two subagents and schema-checked extraction</a><a class="next" href="../labs/04-CCDV-F-api-modes.html"><small>Lab 04</small> Same task, three API modes: real time, cached and batch →</a></nav><aside class="usedin" aria-label="Linked from other pages"><details><summary class="usedin-h"><b>Linked from</b> 27 other pages</summary><p class="usedin-exams">Exams: <a href="../exams/ccar-f.html">CCAR-F</a> · <a href="../exams/ccdv-f.html">CCDV-F</a> · <a href="../exams/ccar-p.html">CCAR-P</a></p><ul><li><a href="../exams/ccar-f.html">Claude Certified Architect – Foundations</a></li><li><a href="../exams/ccar-p.html">Claude Certified Architect – Professional</a></li><li><a href="../exams/ccdv-f.html">Claude Certified Developer – Foundations</a></li><li><a href="../labs/08-CCAR-F-architecture-decisions.html">Lab 08 — Run architecture decisions before connecting a model</a></li><li><a href="../lessons/ccar-f/L02-tool-design-and-mcp-integration.html">CCAR-F Lesson 2 — Tool Design and MCP Integration (18%, about 11 questions)</a></li><li><a href="../lessons/ccar-f/L03-claude-code-configuration-and-workflows.html">CCAR-F Lesson 3 — Claude Code Configuration and Workflows (20%, about 12 questions)</a></li><li><a href="../lessons/ccar-f/concept-course/02-tools-and-mcp.html">2 — Give the assistant tools it can distinguish</a></li><li><a href="../lessons/ccar-f/learning-journey.html">Your CCAR-F learning journey — understand, decide, practise, repair</a></li><li><a href="../lessons/ccar-f/objectives/objective-1.5.html">Objective 1.5 — Use hooks to normalize results and intercept actions</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.1.html">Objective 2.1 — Design tool interfaces that are hard to confuse</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.2.html">Objective 2.2 — Return errors that support the right recovery</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.3.html">Objective 2.3 — Scope each agent’s tools and control tool choice</a></li><li><a href="../lessons/ccar-f/objectives/objective-2.4.html">Objective 2.4 — Integrate MCP with the right scope and discoverability</a></li><li><a href="../lessons/ccar-f/objectives/objective-3.1.html">Objective 3.1 — Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization</a></li><li><a href="../lessons/ccar-f/objectives/objective-3.2.html">Objective 3.2 — Create and configure custom slash commands and skills</a></li><li><a href="../lessons/ccar-f/objectives/objective-3.3.html">Objective 3.3 — Apply path-specific rules for conditional convention loading</a></li><li><a href="../lessons/ccar-p/L04-governance-safety-and-risk-management.html">CCAR-P Lesson 4 — Governance, Safety and Risk Management (14%, about 9 questions)</a></li><li><a href="../lessons/ccar-p/L07-developer-productivity-and-enablement.html">CCAR-P Lesson 7 — Developer Productivity and Enablement (7%, about 4 questions)</a></li><li><a href="../lessons/ccdv-f/L05-tools-and-mcps.html">CCDV-F Lesson 5 — Tools and MCPs (10.6%, about 6 questions)</a></li><li><a href="../lessons/ccdv-f/L06-security-and-safety.html">CCDV-F Lesson 6 — Security and Safety (8.1%, about 4 questions)</a></li><li><a href="../lessons/ccdv-f/L07-claude-code-eval-and-debugging.html">CCDV-F Lesson 7 — Claude Code, Eval and Debugging (5.7%, about 3 questions)</a></li><li><a href="../simulations/ccar-f/SIM-03-code-generation-claude-code.html">CCAR-F SIM-03 — Scenario 2: Code Generation with Claude Code</a></li><li><a href="../simulations/ccar-f/SIM-05-developer-productivity.html">CCAR-F SIM-05 — Scenario 4: Developer Productivity with Claude</a></li><li><a href="../simulations/ccar-f/SIM-06-claude-code-ci-cd.html">CCAR-F SIM-06 — Scenario 5: Claude Code for Continuous Integration</a></li><li><a href="../labs/index.html">Labs</a></li><li><a href="../lessons/ccar-f/index.html">CCAR-F lessons (Claude Certified Architect: Foundations)</a></li><li><a href="../lessons/ccdv-f/index.html">CCDV-F lessons (Claude Certified Developer: Foundations): Ready</a></li></ul></details></aside></article><aside class="learning-outline" aria-label="Page sections"><nav class="toc-nav" aria-label="Sections on this page"><details class="toc"><summary>Sections on this page (11)</summary><ol><li><a href="#read-the-experiment-before-building">Read the experiment before building</a></li><li><a href="#understand-the-design-before-setup">Understand the design before setup</a></li><li><a href="#connect-this-build-to-scenario-decisions">Connect this build to scenario decisions</a></li><li><a href="#what-youll-build-and-why">What you&#x27;ll build and why</a></li><li><a href="#why-this-matters-on-the-exam">Why this matters on the exam</a></li><li><a href="#steps">Steps</a></li><li><a href="#common-traps">Common traps</a></li><li><a href="#next">Next</a></li></ol><details class="toc-more"><summary>Show 3 more sections</summary><ol start="9"><li><a href="#what-i-learned">What I learned</a></li><li><a href="#decision-variant-failure-acceptance">Decision-variant failure acceptance</a></li><li><a href="#objective-evidence-tasks--predict-inspect-explain">Objective evidence tasks — predict, inspect, explain</a></li></ol></details></details></nav></aside></div>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flabs%2F03-CCAR-F-mcp-server-claude-code.html" rel="noopener">Report a problem on this page</a> · <a href="../contribute.html">Contribute</a> · <a href="../whats-new.html">What's new</a> · <a href="../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,2265 @@
+{
+  "scope": "All official bullet IDs in saved manifest; explicit assessed/unassessed disposition",
+  "rows": [
+    {
+      "bullet_id": "1.1-K1",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#lifecycle",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.1-K2",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#history",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.1-K3",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#decisions",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.1-S1",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#lifecycle",
+      "diagnostic_ids": [
+        "cct-fv-01-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.1-S2",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#history",
+      "diagnostic_ids": [
+        "cct-fv-01-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.1-S3",
+      "objective": "1.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.1.html#decisions",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-K1",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#hub",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-K2",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#hub",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-K3",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#scope",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-K4",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#scope",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-S1",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#scope",
+      "diagnostic_ids": [
+        "cct-fv-02-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-S2",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#scope",
+      "diagnostic_ids": [
+        "cct-fv-02-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-S3",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#refine",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.2-S4",
+      "objective": "1.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.2.html#hub",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-K1",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#config",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-K2",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#packet",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-K3",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#config",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-K4",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#parallel",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-S1",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#packet",
+      "diagnostic_ids": [
+        "cct-fv-03-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-S2",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#packet",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-S3",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#parallel",
+      "diagnostic_ids": [
+        "cct-fv-03-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.3-S4",
+      "objective": "1.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.3.html#parallel",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-K1",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#gate",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-K2",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#gate",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-K3",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#handoff",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-S1",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#gate",
+      "diagnostic_ids": [
+        "cct-fv-04-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-S2",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#items",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.4-S3",
+      "objective": "1.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.4.html#handoff",
+      "diagnostic_ids": [
+        "cct-fv-04-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-K1",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#normalize",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-K2",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#intercept",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-K3",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#choose",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-S1",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#normalize",
+      "diagnostic_ids": [
+        "cct-fv-05-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-S2",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#intercept",
+      "diagnostic_ids": [
+        "cct-fv-05-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.5-S3",
+      "objective": "1.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.5.html#choose",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-K1",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#patterns",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-K2",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#review",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-K3",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#adapt",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-S1",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#patterns",
+      "diagnostic_ids": [
+        "cct-fv-06-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-S2",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#review",
+      "diagnostic_ids": [
+        "cct-fv-06-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.6-S3",
+      "objective": "1.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.6.html#adapt",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-K1",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#resume",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-K2",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#fork",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-K3",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#resume",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-K4",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#fresh",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-S1",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#resume",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-S2",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#fork",
+      "diagnostic_ids": [
+        "cct-fv-07-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-S3",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#fresh",
+      "diagnostic_ids": [
+        "cct-fv-07-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "1.7-S4",
+      "objective": "1.7",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-1.7.html#resume",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-1.7.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-K1",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#contract",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-K2",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#contract",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-K3",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#separate",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-K4",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#prompt",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-S1",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#contract",
+      "diagnostic_ids": [
+        "cct-fv-08-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-S2",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#separate",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-S3",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#separate",
+      "diagnostic_ids": [
+        "cct-fv-08-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.1-S4",
+      "objective": "2.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.1.html#prompt",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-K1",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#categories",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-K2",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#categories",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-K3",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#categories",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-K4",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#payload",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-S1",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#payload",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-S2",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#payload",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-S3",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#recover",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.2-S4",
+      "objective": "2.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.2.html#recover",
+      "diagnostic_ids": [
+        "cct-fv-09-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-K1",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#scope",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-K2",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#scope",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-K3",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#cross",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-K4",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#choice",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-S1",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#scope",
+      "diagnostic_ids": [
+        "cct-fv-10-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-S2",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#scope",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-S3",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#cross",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-S4",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#choice",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.3-S5",
+      "objective": "2.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.3.html#choice",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-K1",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#config",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-K2",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#config",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-K3",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#discover",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-K4",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#discover",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-S1",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#config",
+      "diagnostic_ids": [
+        "cct-fv-11-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-S2",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#config",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-S3",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#discover",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-S4",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#build",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.4-S5",
+      "objective": "2.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.4.html#discover",
+      "diagnostic_ids": [
+        "cct-fv-11-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-K1",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#search",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-K2",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#search",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-K3",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#edit",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-K4",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#edit",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-S1",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#search",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-S2",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#search",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-S3",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#edit",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-S4",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#trace",
+      "diagnostic_ids": [
+        "cct-fv-12-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "2.5-S5",
+      "objective": "2.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-2.5.html#trace",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-2.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-K1",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-K2",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-K3",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-K4",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-S1",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-s1",
+      "diagnostic_ids": [
+        "cct-fv-13-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-S2",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-S3",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.1-S4",
+      "objective": "3.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.1.html#31-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-K1",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-K2",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-K3",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-K4",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-S1",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-s1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-S2",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-S3",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-S4",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.2-S5",
+      "objective": "3.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.2.html#32-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-K1",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-K2",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-K3",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-S1",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-s1",
+      "diagnostic_ids": [
+        "cct-fv-15-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-S2",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.3-S3",
+      "objective": "3.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.3.html#33-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-K1",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-K2",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-K3",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-K4",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-S1",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-s1",
+      "diagnostic_ids": [
+        "cct-fv-16-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-S2",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-s2",
+      "diagnostic_ids": [
+        "cct-fv-16-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-S3",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.4-S4",
+      "objective": "3.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.4.html#34-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-K1",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-K2",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-K3",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-K4",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-S1",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-s1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-S2",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-S3",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-S4",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-s4",
+      "diagnostic_ids": [
+        "cct-fv-17-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.5-S5",
+      "objective": "3.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.5.html#35-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-K1",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-K2",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-K3",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-K4",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-S1",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-s1",
+      "diagnostic_ids": [
+        "cct-fv-18-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-S2",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-S3",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-S4",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "3.6-S5",
+      "objective": "3.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-3.6.html#36-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-3.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-K1",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-K2",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-K3",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-S1",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-s1",
+      "diagnostic_ids": [
+        "cct-fv-19-base-v1",
+        "cct-fv-19-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-S2",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.1-S3",
+      "objective": "4.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.1.html#41-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-K1",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-K2",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-K3",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-K4",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-S1",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-s1",
+      "diagnostic_ids": [
+        "cct-fv-20-base-v1",
+        "cct-fv-20-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-S2",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-S3",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-S4",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.2-S5",
+      "objective": "4.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.2.html#42-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-K1",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-K2",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-K3",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-K4",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S1",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S2",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S3",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S4",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s4",
+      "diagnostic_ids": [
+        "cct-fv-21-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S5",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.3-S6",
+      "objective": "4.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.3.html#43-s6",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-K1",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-K2",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-K3",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-K4",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-S1",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-s1",
+      "diagnostic_ids": [
+        "cct-fv-22-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-S2",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-s2",
+      "diagnostic_ids": [
+        "cct-fv-22-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-S3",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.4-S4",
+      "objective": "4.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.4.html#44-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-K1",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-K2",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-K3",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-K4",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-S1",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-s1",
+      "diagnostic_ids": [
+        "cct-fv-23-base-v1",
+        "cct-fv-23-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-S2",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-S3",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.5-S4",
+      "objective": "4.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.5.html#45-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-K1",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-K2",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-K3",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-S1",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-s1",
+      "diagnostic_ids": [
+        "cct-fv-24-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-S2",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "4.6-S3",
+      "objective": "4.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-4.6.html#46-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-4.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-K1",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-K2",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-K3",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-K4",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S1",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s1",
+      "diagnostic_ids": [
+        "cct-fv-25-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S2",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S3",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S4",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S5",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.1-S6",
+      "objective": "5.1",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.1.html#51-s6",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.1.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-K1",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-K2",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-K3",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-K4",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-S1",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-s1",
+      "diagnostic_ids": [
+        "cct-fv-26-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-S2",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-s2",
+      "diagnostic_ids": [
+        "cct-fv-26-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-S3",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-S4",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.2-S5",
+      "objective": "5.2",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.2.html#52-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.2.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-K1",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-K2",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-K3",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-K4",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-S1",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-s1",
+      "diagnostic_ids": [
+        "cct-fv-27-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-S2",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-S3",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.3-S4",
+      "objective": "5.3",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.3.html#53-s4",
+      "diagnostic_ids": [
+        "cct-fv-27-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.3.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-K1",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-K2",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-K3",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-K4",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-S1",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-s1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-S2",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-s2",
+      "diagnostic_ids": [
+        "cct-fv-28-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-S3",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-S4",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.4-S5",
+      "objective": "5.4",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.4.html#54-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.4.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-K1",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-K2",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-K3",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-K4",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-S1",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-s1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-S2",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-s2",
+      "diagnostic_ids": [
+        "cct-fv-29-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-S3",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-s3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.5-S4",
+      "objective": "5.5",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.5.html#55-s4",
+      "diagnostic_ids": [
+        "cct-fv-29-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.5.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-K1",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-k1",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-K2",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-k2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-K3",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-k3",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-K4",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-k4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-S1",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-s1",
+      "diagnostic_ids": [
+        "cct-fv-30-retry-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-S2",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-s2",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-S3",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-s3",
+      "diagnostic_ids": [
+        "cct-fv-30-base-v1"
+      ],
+      "assessment_status": "reviewed item mapping",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-S4",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-s4",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    },
+    {
+      "bullet_id": "5.6-S5",
+      "objective": "5.6",
+      "teaching_anchor": "lessons/ccar-f/objectives/objective-5.6.html#56-s5",
+      "diagnostic_ids": [],
+      "assessment_status": "unassessed by dedicated diagnostic",
+      "rubric_anchor": "lessons/ccar-f/objectives/objective-5.6.html#done-when",
+      "note": "Teaching section and existing artifact/rubric are available; a heading or completion tick does not establish mastery."
+    }
+  ],
+  "total": 240,
+  "dedicated_diagnostic_rows": 44,
+  "semantic_teaching_review": {
+    "status": "PASS",
+    "date": "2026-10-14",
+    "by": "independent Codex semantic reviewer /root/final_audit_review",
+    "scope": "All240 saved blueprint bullets compared with actual30 lesson teaching mechanisms and meaningful paper artifacts/checks; learner mastery not assessed",
+    "evidence_sha256": "5fff422faed4e7111e9682f48a30985696815985aa0821618f7a76462ac6d763"
+  }
+}

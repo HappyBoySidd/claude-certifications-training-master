@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-21">
+<meta name="reviewed-source" content="recorded">
+<meta name="description" content="CCAR-F scenario walkthroughs">
+<title>CCAR-F scenario walkthroughs · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../../../assets/site.css?v=21c6a0ac682a">
+<script defer src="../../../assets/diagram-annotations.js?v=7a2c6a4df9e1"></script><script defer src="../../../assets/site.js?v=dac542edefb2"></script>
+<link rel="stylesheet" href="../../../assets/viewer.css?v=76723c43548d"><script defer src="../../../assets/vendor/mermaid-12.1.0.min.js"></script><script defer src="../../../assets/viewer.js?v=85c369026fb2"></script><link rel="stylesheet" href="../../../assets/technical-bridges.css?v=bb37752895d2"><script defer src="../../../assets/technical-bridges-data.js?v=1cb4e92c8c7a"></script><script defer src="../../../assets/technical-bridges.js?v=778e575618b6"></script><link rel="stylesheet" href="../../../assets/course-coach.css?v=d2af8f112d7f"><script defer src="../../../assets/course-coach-data.js?v=a1d70be458c8"></script><script defer src="../../../assets/course-coach.js?v=76f8c674d0d9"></script><link rel="stylesheet" href="../../../assets/diagram-annotations.css?v=8882e7acffbe"></head>
+<body class="t-architect">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../../../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../../../index.html">Home</a><a href="../../../curriculum.html">Curriculum</a><a href="../../../exams/ccao-f.html">CCAO-F</a><a href="../../../exams/ccar-f.html" aria-current="page">CCAR-F</a><a href="../../../exams/ccdv-f.html">CCDV-F</a><a href="../../../exams/ccar-p.html">CCAR-P</a><a href="../../../lessons/index.html">Lessons</a><a href="../../../simulations/index.html">Simulations</a><a href="../../../labs/index.html">Labs</a><a href="../../../insights.html">Insights</a><a href="../../../resources.html">Resources</a><a href="../../../faq.html">FAQ</a><a href="../../../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap with-side">
+<aside class="side" aria-label="In this exam"><details class="course-nav" open><summary>Course navigation</summary><p class="side-exam"><span class="pill">CCAR-F</span> Architect F</p><ul class="side-list"><li><a href="../../../exams/ccar-f.html">Study plan</a></li><li><a href="../../../lessons/ccar-f/architecture-studio/00-foundations.html">Start: picture an application</a></li><li class="side-h">Lessons</li><li><a href="../../../lessons/ccar-f/L00-orientation.html"><b>L00</b> Orientation: how the Architect exam thinks</a></li><li class="side-dom"><details><summary><b>L01</b> Agentic Architecture and Orchestration <span class="w">27%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L01-agentic-architecture-and-orchestration.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.1.html"><b>1.1</b> Build an agentic loop that knows when to continue</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.2.html"><b>1.2</b> Coordinate specialists without losing the whole question</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.3.html"><b>1.3</b> Spawn agents with complete, attributable context</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.4.html"><b>1.4</b> Enforce prerequisites and hand off a complete case</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.5.html"><b>1.5</b> Use hooks to normalize results and intercept actions</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.6.html"><b>1.6</b> Choose a task decomposition pattern that fits uncertainty</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.7.html"><b>1.7</b> Resume or fork sessions without trusting stale evidence</a></li></ul></details></li><li class="side-dom"><details><summary><b>L02</b> Tool Design and MCP Integration <span class="w">18%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L02-tool-design-and-mcp-integration.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.1.html"><b>2.1</b> Design tool interfaces that are hard to confuse</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.2.html"><b>2.2</b> Return errors that support the right recovery</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.3.html"><b>2.3</b> Scope each agent’s tools and control tool choice</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.4.html"><b>2.4</b> Integrate MCP with the right scope and discoverability</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.5.html"><b>2.5</b> Use built-in tools to investigate and edit incrementally</a></li></ul></details></li><li class="side-dom"><details><summary><b>L03</b> Claude Code Configuration and Workflows <span class="w">20%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L03-claude-code-configuration-and-workflows.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.1.html"><b>3.1</b> Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.2.html"><b>3.2</b> Create and configure custom slash commands and skills</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.3.html"><b>3.3</b> Apply path-specific rules for conditional convention loading</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.4.html"><b>3.4</b> Determine when to use plan mode vs direct execution</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.5.html"><b>3.5</b> Apply iterative refinement techniques for progressive improvement</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.6.html"><b>3.6</b> Integrate Claude Code into CI/CD pipelines</a></li></ul></details></li><li class="side-dom"><details><summary><b>L04</b> Prompt Engineering and Structured Output <span class="w">20%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L04-prompt-engineering-and-structured-output.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.1.html"><b>4.1</b> Design prompts with explicit criteria to improve precision and reduce false positives</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.2.html"><b>4.2</b> Apply few-shot prompting to improve output consistency and quality</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.3.html"><b>4.3</b> Enforce structured output using tool use and JSON schemas</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.4.html"><b>4.4</b> Implement validation, retry, and feedback loops for extraction quality</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.5.html"><b>4.5</b> Design efficient batch processing strategies</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.6.html"><b>4.6</b> Design multi-instance and multi-pass review architectures</a></li></ul></details></li><li class="side-dom"><details><summary><b>L05</b> Context Management and Reliability <span class="w">15%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L05-context-management-and-reliability.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.1.html"><b>5.1</b> Manage conversation context to preserve critical information across long interactions</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.2.html"><b>5.2</b> Design effective escalation and ambiguity resolution patterns</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.3.html"><b>5.3</b> Implement error propagation strategies across multi-agent systems</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.4.html"><b>5.4</b> Manage context effectively in large codebase exploration</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.5.html"><b>5.5</b> Design human review workflows and confidence calibration</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.6.html"><b>5.6</b> Preserve information provenance and handle uncertainty in multi-source synthesis</a></li></ul></details></li><li class="side-h">Practice and reference</li><li><a href="../../../lessons/ccar-f/flashcards.html">Flashcards</a></li><li><a href="../../../lessons/ccar-f/hard-drills.html">Hard drills</a></li><li><a href="../../../lessons/ccar-f/decision-atlas.html">Architecture decision atlas</a></li><li><a href="../../../lessons/ccar-f/decision-conversation.html">Architecture decisions</a></li><li><a href="../../../lessons/ccar-f/skill-coverage.html">Official skill coverage and next checks</a></li><li><a href="../../../lessons/ccar-f/scenario-studio.html">Scenario learning studio</a></li><li><a href="../../../lessons/ccar-f/learning-journey.html">Understand, decide, practise, repair</a></li><li><a href="../../../lessons/ccar-f/last-minute-prep.html">Last-minute preparation checklist</a></li><li><a href="../../../lessons/ccar-f/mechanism-clinic.html">Choose the control that meets the requirement</a></li><li><a href="../../../lessons/ccar-f/choice-workshop.html">Decide under competing constraints</a></li><li><a href="../../../lessons/ccar-f/deep-practice/index.html">Deep practice</a></li><li><a href="../../../lessons/ccar-f/deep-practice/code-level-flows.html">Code-level flows</a></li><li><a href="../../../lessons/ccar-f/deep-practice/conditions-and-errors.html">Conditions and errors</a></li><li><a href="../../../lessons/ccar-f/deep-practice/decision-charts.html">Decision charts</a></li><li><a href="../../../lessons/ccar-f/deep-practice/sequence-diagrams.html">Sequence diagrams</a></li><li><a href="../../../lessons/ccar-f/deep-practice/tie-breaker-rules.html">Tie-breaker rules for close answers</a></li><li><a href="../../../lessons/ccar-f/objectives/index.html">Objective lessons</a></li><li><a href="../../../lessons/ccar-f/scenario-walkthroughs/index.html" aria-current="page">Scenario walkthroughs</a></li><li><a href="../../../lessons/ccar-f/architecture-studio/index.html">Learn to think like a Claude application architect</a></li><li><a href="../../../lessons/ccar-f/objectives/practice-coverage.html">Practice coverage by objective</a></li><li><a href="../../../lessons/ccar-f/objectives/progress.html">Your progress (this browser)</a></li><li><a href="../../../lessons/ccar-f/scenario-walkthroughs/signals-and-errors.html">Signals, errors and missed what-ifs</a></li><li class="side-h">Simulations</li><li><a href="../../../simulations/ccar-f/SIM-01-full-mock.html"><b>SIM-01</b> Full mock exams</a></li><li><a href="../../../simulations/ccar-f/SIM-02-customer-support-agent.html"><b>SIM-02</b> Scenario 1: Customer Support Resolution Agent</a></li><li><a href="../../../simulations/ccar-f/SIM-03-code-generation-claude-code.html"><b>SIM-03</b> Scenario 2: Code Generation with Claude Code</a></li><li><a href="../../../simulations/ccar-f/SIM-04-multi-agent-research.html"><b>SIM-04</b> Scenario 3: Multi-Agent Research System</a></li><li><a href="../../../simulations/ccar-f/SIM-05-developer-productivity.html"><b>SIM-05</b> Scenario 4: Developer Productivity with Claude</a></li><li><a href="../../../simulations/ccar-f/SIM-06-claude-code-ci-cd.html"><b>SIM-06</b> Scenario 5: Claude Code for Continuous Integration</a></li><li><a href="../../../simulations/ccar-f/SIM-07-structured-data-extraction.html"><b>SIM-07</b> Scenario 6: Structured Data Extraction</a></li><li class="side-h">Labs</li><li><a href="../../../labs/02-CCAR-F-coordinator-extraction.html"><b>Lab 02</b> An agent loop, two subagents and schema-checked extraction</a></li><li><a href="../../../labs/03-CCAR-F-mcp-server-claude-code.html"><b>Lab 03</b> An MCP server, wired into Claude Code with a guardrail hook</a></li><li><a href="../../../labs/08-CCAR-F-architecture-decisions.html"><b>Lab 08</b> Run architecture decisions before connecting a model</a></li></ul></details></aside>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../../index.html">Home</a><span aria-hidden="true"> / </span><a href="../../../exams/ccar-f.html">CCAR-F</a><span aria-hidden="true"> / </span><a href="../../../lessons/ccar-f/index.html">Lessons</a><span aria-hidden="true"> / </span><span>CCAR-F scenario walkthroughs</span></nav>
+<article class="prose"><h1 id="ccar-f-scenario-walkthroughs">CCAR-F scenario walkthroughs</h1><nav class="cc-route" aria-label="Connected architecture learning"><a href="../../../exams/ccar-f.html#decision-workbench">Learning home and decision coach</a> · <a href="../../../lessons/ccar-f/objectives/index.html">Objective map</a> · <a href="../../../lessons/ccar-f/architecture-studio/index.html">Application stories</a></nav><details class="cc-course" id="decision-workbench" data-course-route="lessons/ccar-f/scenario-walkthroughs/index.html"><summary>Learn, decide and inspect a worked architecture example here</summary><p>Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.</p><p>No installation or API key is required for this reading and decision coach.</p><div class="cc-mount"></div><noscript><p><a href="../../../lessons/ccar-f/objectives/index.html">Read the full objective lessons and their diagrams</a></p></noscript></details><nav class="tb-route" aria-label="Plain language to technical learning"><strong>Plain ↔ technical:</strong> <a href="../../../lessons/ccar-f/technical-bridges.html">Mechanism examples and terminology</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.1">1.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.2">1.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.3">1.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.4">1.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.5">1.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.6">1.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.7">1.7</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.1">2.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.2">2.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.3">2.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.4">2.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.5">2.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.1">3.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.2">3.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.3">3.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.4">3.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.5">3.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.6">3.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.1">4.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.2">4.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.3">4.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.4">4.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.5">4.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.6">4.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.1">5.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.2">5.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.3">5.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.4">5.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.5">5.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.6">5.6</a></nav><p><a href="signals-and-errors.html">Signals, errors and missed what-ifs across all six scenarios</a></p><nav class="variant-links" aria-label="Scenario learning route"><a href="../architecture-studio/00-foundations.html">Start with an application</a> · <a href="../learning-journey.html">Full learning journey</a> · <a href="../architecture-studio/index.html">Learn architecture through eight application cases</a> · <a href="../scenario-studio.html">Practise 30 decision variants</a></nav>
+<p><strong>Your learning route:</strong> Start with <a href="../architecture-studio/00-foundations.html">one application you can picture</a>, then <a href="../architecture-studio/index.html">choose a complete situation</a>. Each taught layer shows a failure, asks a technical original exam-style question first, then explains the repair simply after you choose. Use this directory for its particular depth, not as another mandatory course. <a href="../learning-journey.html">Return to the complete learning journey</a>.</p>
+<p>The saved July 2026 exam guide v1.0 describes selection of 4 of these 6 scenario families (<a class="xref" href="../../../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>). This is the saved blueprint baseline, not an exhaustive inventory of possible application problems. Each page walks one scenario from start to finish, the way you would design it for real:</p>
+<ul><li><strong>The whole job in one chart:</strong> the order of steps, the decisions and the failure paths.</li><li><strong>Step by step:</strong> what you decide at each step, the design rule (exam wording where it matters), and what can go wrong, with the exact signal or error code and what the design does about it.</li><li><strong>Try the paper decisions:</strong> 10 what-if questions with answers, written for this site. They are practice, not real exam questions.</li></ul>
+<p><strong>How to study one scenario (about 45 minutes the first time):</strong> read the walkthrough (20 min), try its 10 what-ifs with the answers closed (10 min), then run the matching simulation (15 min).</p>
+<p><strong>Reading the charts.</strong> Each box is a step. Each diamond is a decision. A green <strong>PICK</strong> box is the right move. A pink dashed <strong>NOT</strong> box is the tempting trap.</p>
+<div class="scenario-map"><div class="scn-card"><p class="scn-title"><span class="scn-num">1</span> <a href="wt-01-customer-support-agent.html">Customer Support Resolution Agent</a></p><p class="scn-key"><b>Remember it as:</b> asked for a human, escalate. A rule that must hold goes in code. Policy is silent,
+escalate. Everything else, resolve it.</p><p class="scn-dom">Domains 1, 2 and 5: Agentic Architecture and Orchestration · Tool Design and MCP Integration · Context Management and Reliability</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-01-customer-support-agent.html">Walkthrough</a> · 2. <a href="wt-01-customer-support-agent.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-02-customer-support-agent.html">Simulation 2</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-1.1.html">1.1</a> · <a href="../objectives/objective-1.4.html">1.4</a> · <a href="../objectives/objective-1.5.html">1.5</a> · <a href="../objectives/objective-2.1.html">2.1</a> · <a href="../objectives/objective-2.2.html">2.2</a> · <a href="../objectives/objective-4.5.html">4.5</a> · <a href="../objectives/objective-5.1.html">5.1</a> · <a href="../objectives/objective-5.2.html">5.2</a> · <a href="../objectives/objective-5.3.html">5.3</a></p></div><div class="scn-card"><p class="scn-title"><span class="scn-num">2</span> <a href="wt-02-code-generation-claude-code.html">Code Generation with Claude Code</a></p><p class="scn-key"><b>Remember it as:</b> rules for everyone go in <code>CLAUDE.md</code>, rules for one file type go in path rules, and rules
+that must always hold go in hooks. Plan the big jobs, just do the small ones, and show examples when
+words fail.</p><p class="scn-dom">Domains 3 and 5: Claude Code Configuration and Workflows · Context Management and Reliability</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-02-code-generation-claude-code.html">Walkthrough</a> · 2. <a href="wt-02-code-generation-claude-code.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-03-code-generation-claude-code.html">Simulation 3</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-1.5.html">1.5</a> · <a href="../objectives/objective-1.7.html">1.7</a> · <a href="../objectives/objective-2.5.html">2.5</a> · <a href="../objectives/objective-3.1.html">3.1</a> · <a href="../objectives/objective-3.2.html">3.2</a> · <a href="../objectives/objective-3.3.html">3.3</a> · <a href="../objectives/objective-3.4.html">3.4</a> · <a href="../objectives/objective-3.5.html">3.5</a> · <a href="../objectives/objective-4.6.html">4.6</a> · <a href="../objectives/objective-5.4.html">5.4</a></p></div><div class="scn-card"><p class="scn-title"><span class="scn-num">3</span> <a href="wt-03-multi-agent-research.html">Multi-Agent Research System</a></p><p class="scn-key"><b>Remember it as:</b> split wide, pass context explicitly, recover locally, keep every claim tied to its
+source, loop until coverage is good, say what's missing.</p><p class="scn-dom">Domains 1, 2 and 5: Agentic Architecture and Orchestration · Tool Design and MCP Integration · Context Management and Reliability</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-03-multi-agent-research.html">Walkthrough</a> · 2. <a href="wt-03-multi-agent-research.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-04-multi-agent-research.html">Simulation 4</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-1.2.html">1.2</a> · <a href="../objectives/objective-1.3.html">1.3</a> · <a href="../objectives/objective-2.2.html">2.2</a> · <a href="../objectives/objective-2.3.html">2.3</a> · <a href="../objectives/objective-5.1.html">5.1</a> · <a href="../objectives/objective-5.3.html">5.3</a> · <a href="../objectives/objective-5.4.html">5.4</a> · <a href="../objectives/objective-5.6.html">5.6</a></p></div><div class="scn-card"><p class="scn-title"><span class="scn-num">4</span> <a href="wt-04-developer-productivity.html">Developer Productivity with Claude</a></p><p class="scn-key"><b>Remember it as:</b> names mean Glob and text means Grep. Read in slices, hand big questions to a
+subagent, and write it down. Connect outside systems through MCP, and automate anything you repeat.</p><p class="scn-dom">Domains 1, 2 and 3: Agentic Architecture and Orchestration · Tool Design and MCP Integration · Claude Code Configuration and Workflows</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-04-developer-productivity.html">Walkthrough</a> · 2. <a href="wt-04-developer-productivity.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-05-developer-productivity.html">Simulation 5</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-1.5.html">1.5</a> · <a href="../objectives/objective-2.1.html">2.1</a> · <a href="../objectives/objective-2.2.html">2.2</a> · <a href="../objectives/objective-2.3.html">2.3</a> · <a href="../objectives/objective-2.4.html">2.4</a> · <a href="../objectives/objective-2.5.html">2.5</a> · <a href="../objectives/objective-3.1.html">3.1</a> · <a href="../objectives/objective-3.2.html">3.2</a> · <a href="../objectives/objective-3.3.html">3.3</a> · <a href="../objectives/objective-3.4.html">3.4</a> · <a href="../objectives/objective-3.5.html">3.5</a> · <a href="../objectives/objective-4.6.html">4.6</a> · <a href="../objectives/objective-5.1.html">5.1</a> · <a href="../objectives/objective-5.4.html">5.4</a></p></div><div class="scn-card"><p class="scn-title"><span class="scn-num">5</span> <a href="wt-05-claude-code-ci-cd.html">Claude Code for Continuous Integration</a></p><p class="scn-key"><b>Remember it as:</b> if someone is waiting, run now; if it can wait, batch it only when it is independent Messages requests and the deadline still holds if the batch expires. Give it context through the repo.
+Report only new findings, never let a session review its own code, write criteria that cut noise, and
+gate the merge on facts.</p><p class="scn-dom">Domains 3 and 4: Claude Code Configuration and Workflows · Prompt Engineering and Structured Output</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-05-claude-code-ci-cd.html">Walkthrough</a> · 2. <a href="wt-05-claude-code-ci-cd.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-06-claude-code-ci-cd.html">Simulation 6</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-1.6.html">1.6</a> · <a href="../objectives/objective-3.6.html">3.6</a> · <a href="../objectives/objective-4.1.html">4.1</a> · <a href="../objectives/objective-4.2.html">4.2</a> · <a href="../objectives/objective-4.4.html">4.4</a> · <a href="../objectives/objective-4.5.html">4.5</a> · <a href="../objectives/objective-4.6.html">4.6</a></p></div><div class="scn-card"><p class="scn-title"><span class="scn-num">6</span> <a href="wt-06-structured-data-extraction.html">Structured Data Extraction</a></p><p class="scn-key"><b>Remember it as:</b> immediate or dependent work needs its appropriate immediate/local lane. Batch is a candidate only for independent eligible requests without a local iterative loop, with deadline tolerance and an expiry/recovery budget. Read the file. Select a tool using a mode supported by the actual runtime; enforce shape with supported strict/<abbr data-tip="A structural contract for fields and types. Matching it does not prove the values agree with evidence or business rules." aria-label="schema">schema</abbr> mechanisms and validate meaning separately. An allowed optional null is not itself a human-review trigger; required missing, ambiguous or conflicting evidence may be. Log what failed.</p><p class="scn-dom">Domains 4 and 5: Prompt Engineering and Structured Output · Context Management and Reliability</p><p class="scn-time">About 45 minutes: read 20 min, then what-ifs 10 min, then simulation 15 min</p><p class="scn-links">1. <a href="wt-06-structured-data-extraction.html">Walkthrough</a> · 2. <a href="wt-06-structured-data-extraction.html#run-it-for-real-10-what-if-questions">What-ifs</a> · 3. <a href="../../../simulations/ccar-f/SIM-07-structured-data-extraction.html">Simulation 7</a></p><p class="scn-obj">Fill gaps with objective lessons (optional): <a href="../objectives/objective-2.3.html">2.3</a> · <a href="../objectives/objective-4.2.html">4.2</a> · <a href="../objectives/objective-4.3.html">4.3</a> · <a href="../objectives/objective-4.4.html">4.4</a> · <a href="../objectives/objective-4.5.html">4.5</a> · <a href="../objectives/objective-5.5.html">5.5</a></p></div></div>
+<p><strong>In real life (beyond the exam).</strong> Each page ends with where this design shows up at work, what production adds, an architect's checklist and two real-life what-ifs. Read it after the exam part. Keep saved-blueprint terminology distinct from current runtime support. Do not infer an official answer for an unseen item or use obsolete runtime behavior in production.</p>
+<p><strong>You're done with a scenario when</strong> you can say, for each what-if, the decision and the failure move with the answer still closed. Then open each one and fix any miss.</p>
+<p><strong>One rule for every scenario.</strong> The exam guide is from July 2026. Where today's product differs, each page distinguishes the saved-guide teaching baseline from current runtime behavior. Verify the applicable exam guide before relying on that baseline. The full list is in <a href="../deep-practice/conditions-and-errors.html#exam-answer-vs-today">exam answer vs today</a>.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>Claude Certified Architect – Foundations exam guide v1.0 (Anthropic, July 2026): the six scenarios, the task statements each page cites, and the 12 sample questions that every practice question here was checked against so none repeats one (<a class="xref" href="../../../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>).</li><li>Anthropic docs (<a class="xref" href="../../../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>): API errors, stop reasons, tool use, structured outputs, Message Batches, PDF support, Agent SDK, Claude Code hooks, settings, skills, CLI and MCP. Each is listed in the <a href="../deep-practice/conditions-and-errors.html#link-key">conditions and errors link key</a>. Checked 2026-10-07.</li></ul>
+<h2 id="read-these-decisions-conditionally">Read these decisions conditionally</h2>
+<p>Batch requires independent eligible Messages requests, no dependent local iterative state, and an explicit deadline/expiry/recovery contract. Waiting overnight alone is insufficient; the 24-hour processing window does not guarantee successful completion. Tool choice selects a supported invocation mode; strict/schema enforcement constrains structure; application evidence checks establish meaning. A declared optional null need not trigger human review; required missing, ambiguous or conflicting evidence follows the stated review policy. These qualifications apply to gallery previews as well as full walkthroughs.</p><section><h2>The six job flows at a glance</h2><div class="scenario-map"><section class="scn-card"><h3><a href="wt-01-customer-support-agent.html">WT 01 customer support agent</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-1" data-teaching-key="diagram-106">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. Customer message arrives&quot;])
+    Q1{&quot;2. Did they ask for a human?&quot;}
+    H[&quot;PICK: escalate now&quot;]
+    Q2{&quot;3. How many customers did get_customer match?&quot;}
+    ASK[&quot;Ask for another identifier&quot;]
+    Q3{&quot;4. More than one issue?&quot;}
+    SPLIT[&quot;Split into items, investigate each&quot;]
+    INV[&quot;5. Investigate: lookup_order&quot;]
+    Q5{&quot;Tool result?&quot;}
+    TR[&quot;Transient: retry, then explain&quot;]
+    EMP[&quot;No match: valid empty result&quot;]
+    Q6{&quot;6. Does policy clearly cover it?&quot;}
+    ESC[&quot;Escalate with handoff summary&quot;]
+    Q7{&quot;7. Refund over the limit?&quot;}
+    HOOK[&quot;PICK: your own code (a hook) blocks process_refund before it runs&quot;]
+    DO[&quot;Resolve with process_refund&quot;]
+    END([&quot;8. Confirm, keep case facts&quot;])
+    HO([&quot;8. Person takes over with the handoff summary&quot;])
+    T1[&quot;NOT: prompt rule only&quot;]
+    T2[&quot;NOT: escalate on sentiment&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes&quot; --&gt; H --&gt; HO
+    Q1 -- &quot;no&quot; --&gt; Q2
+    Q2 -- &quot;several (Guide 5.2)&quot; --&gt; ASK
+    Q2 -- &quot;none (practice)&quot; --&gt; ASK
+    ASK --&gt; Q2
+    Q2 -- &quot;exactly one&quot; --&gt; Q3
+    Q3 -- &quot;yes&quot; --&gt; SPLIT --&gt; INV
+    Q3 -- &quot;no&quot; --&gt; INV
+    INV --&gt; Q5
+    Q5 -- &quot;timeout&quot; --&gt; TR
+    Q5 -- &quot;no matches&quot; --&gt; EMP
+    Q5 -- &quot;data&quot; --&gt; Q6
+    TR --&gt; Q6
+    EMP --&gt; Q6
+    Q6 -- &quot;silent or exception&quot; --&gt; ESC
+    Q6 -- &quot;yes&quot; --&gt; Q7
+    Q7 -- &quot;yes&quot; --&gt; HOOK --&gt; ESC
+    Q7 -- &quot;no&quot; --&gt; DO --&gt; END
+    ESC --&gt; HO
+    HOOK -.- T1
+    H -.- T2
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q1,Q2,Q3,Q5,Q6,Q7 decision
+    class S,ASK,SPLIT,INV,TR,EMP,ESC,DO,END,HO action
+    class H,HOOK rightPath
+    class T1,T2 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section><section class="scn-card"><h3><a href="wt-02-code-generation-claude-code.html">WT 02 code generation claude code</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-2" data-teaching-key="diagram-113">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. Set up the team&#x27;s Claude Code&quot;])
+    Q1{&quot;Where does each rule belong?&quot;}
+    CM[&quot;Project CLAUDE.md, in git&quot;]
+    RU[&quot;.claude/rules/ with paths:&quot;]
+    HK[&quot;Hook in .claude/settings.json&quot;]
+    CMD[&quot;2. Shared commands and skills&quot;]
+    T([&quot;3. A task arrives&quot;])
+    Q3{&quot;Big, open, many files?&quot;}
+    PL[&quot;PICK: plan mode first&quot;]
+    DX[&quot;PICK: direct execution&quot;]
+    EX[&quot;4. Make the change: Edit, or Read + Write&quot;]
+    Q5{&quot;5. Do checks pass?&quot;}
+    FB[&quot;Hook or test failures go back to Claude&quot;]
+    Q6{&quot;6. Output still not what you meant?&quot;}
+    IO[&quot;2-3 input/output examples or tests first&quot;]
+    DONE([&quot;7. Save the session state and findings&quot;])
+    T1[&quot;NOT: NEVER in capitals in CLAUDE.md&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;everyone, always&quot; --&gt; CM
+    Q1 -- &quot;one file type&quot; --&gt; RU
+    Q1 -- &quot;must always hold&quot; --&gt; HK
+    CM --&gt; CMD
+    RU --&gt; CMD
+    HK --&gt; CMD
+    CMD --&gt; T --&gt; Q3
+    Q3 -- &quot;yes&quot; --&gt; PL --&gt; EX
+    Q3 -- &quot;no, clear and small&quot; --&gt; DX --&gt; EX
+    EX --&gt; Q5
+    Q5 -- &quot;no&quot; --&gt; FB --&gt; EX
+    Q5 -- &quot;yes&quot; --&gt; Q6
+    Q6 -- &quot;yes&quot; --&gt; IO --&gt; EX
+    Q6 -- &quot;no&quot; --&gt; DONE
+    HK -.- T1
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q1,Q3,Q5,Q6 decision
+    class S,CM,RU,HK,CMD,T,EX,FB,IO,DONE action
+    class PL,DX rightPath
+    class T1 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section><section class="scn-card"><h3><a href="wt-03-multi-agent-research.html">WT 03 multi agent research</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-3" data-teaching-key="diagram-119">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. Topic arrives at the coordinator&quot;])
+    Q1{&quot;2. Simple question or broad topic?&quot;}
+    ONE[&quot;Answer with one subagent or none&quot;]
+    DEC[&quot;Split into distinct subtopics and source types&quot;]
+    SP[&quot;3. Spawn subagents in parallel, context in each prompt&quot;]
+    Q4{&quot;4. Did each search and analysis succeed?&quot;}
+    LOC[&quot;Subagent retries transient errors itself&quot;]
+    UP[&quot;Pass up: failure type, what was tried, partial results&quot;]
+    EMP[&quot;Valid empty result: no sources found&quot;]
+    SYN[&quot;5. Synthesis keeps claim-source links&quot;]
+    Q6{&quot;6. Sources disagree?&quot;}
+    ANN[&quot;PICK: annotate both, with dates&quot;]
+    Q7{&quot;7. Coverage good enough?&quot;}
+    RE[&quot;Re-delegate targeted searches&quot;]
+    REP([&quot;8. Report with coverage notes&quot;])
+    T1[&quot;NOT: kill the run on one failure&quot;]
+    T2[&quot;NOT: average the numbers&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;simple&quot; --&gt; ONE --&gt; REP
+    Q1 -- &quot;broad&quot; --&gt; DEC --&gt; SP --&gt; Q4
+    Q4 -- &quot;timeout&quot; --&gt; LOC
+    LOC -- &quot;fixed&quot; --&gt; SYN
+    LOC -- &quot;still failing&quot; --&gt; UP --&gt; SYN
+    Q4 -- &quot;no matches&quot; --&gt; EMP --&gt; SYN
+    Q4 -- &quot;yes&quot; --&gt; SYN
+    SYN --&gt; Q6
+    Q6 -- &quot;yes&quot; --&gt; ANN --&gt; Q7
+    Q6 -- &quot;no&quot; --&gt; Q7
+    Q7 -- &quot;gaps&quot; --&gt; RE --&gt; SP
+    Q7 -- &quot;yes&quot; --&gt; REP
+    UP -.- T1
+    ANN -.- T2
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q1,Q4,Q6,Q7 decision
+    class S,ONE,DEC,SP,LOC,UP,EMP,SYN,RE,REP action
+    class ANN rightPath
+    class T1,T2 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section><section class="scn-card"><h3><a href="wt-04-developer-productivity.html">WT 04 developer productivity</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-4" data-teaching-key="diagram-127">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. Question about an unfamiliar repo&quot;])
+    MAP[&quot;Read CLAUDE.md, README, top folders&quot;]
+    Q2{&quot;2. Know a file name pattern or text inside files?&quot;}
+    GL[&quot;Glob for names&quot;]
+    GR[&quot;Grep for content&quot;]
+    RD[&quot;3. Read only what matters, follow imports&quot;]
+    Q4{&quot;4. Broad question, lots of output?&quot;}
+    SUB[&quot;PICK: subagent returns a summary&quot;]
+    NOTE[&quot;Write findings to a scratchpad&quot;]
+    Q5{&quot;5. Needs an outside system?&quot;}
+    MCP[&quot;MCP server tool or resource&quot;]
+    Q6{&quot;6. Big change across many files?&quot;}
+    PL[&quot;Plan mode, then execute&quot;]
+    DX[&quot;Direct edit&quot;]
+    AUTO([&quot;7. Repeating task: make it a skill or hook&quot;])
+    T1[&quot;NOT: read every file up front&quot;]
+    S --&gt; MAP --&gt; Q2
+    Q2 -- &quot;name&quot; --&gt; GL --&gt; RD
+    Q2 -- &quot;text&quot; --&gt; GR --&gt; RD
+    RD --&gt; Q4
+    Q4 -- &quot;yes&quot; --&gt; SUB --&gt; NOTE
+    Q4 -- &quot;no&quot; --&gt; NOTE
+    NOTE --&gt; Q5
+    Q5 -- &quot;yes&quot; --&gt; MCP --&gt; Q6
+    Q5 -- &quot;no&quot; --&gt; Q6
+    Q6 -- &quot;yes&quot; --&gt; PL --&gt; AUTO
+    Q6 -- &quot;no&quot; --&gt; DX --&gt; AUTO
+    RD -.- T1
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q2,Q4,Q5,Q6 decision
+    class S,MAP,GL,GR,RD,NOTE,MCP,PL,DX,AUTO action
+    class SUB rightPath
+    class T1 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section><section class="scn-card"><h3><a href="wt-05-claude-code-ci-cd.html">WT 05 claude code ci cd</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-5" data-teaching-key="diagram-132">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. PR opened, or nightly job starts&quot;])
+    Q1{&quot;Is a merge or a person waiting?&quot;}
+    SY[&quot;2. claude -p, JSON output with a schema&quot;]
+    BA[&quot;Batch only if: independent Messages requests, deadline allows expiry and a resubmit&quot;]
+    CTX[&quot;3. Context: CLAUDE.md, git diff, existing tests&quot;]
+    Q4{&quot;4. New commit on a PR already reviewed?&quot;}
+    PRI[&quot;Add prior findings: report only new ones&quot;]
+    Q5{&quot;5. Big PR?&quot;}
+    SPL[&quot;Per-file passes plus one cross-file pass&quot;]
+    REV[&quot;6. Independent reviewer instance&quot;]
+    CRIT[&quot;7. Criteria that cut noise: what to report, severities with examples&quot;]
+    Q8{&quot;Valid findings JSON?&quot;}
+    POST[&quot;PICK: inline PR comments&quot;]
+    FAIL[&quot;Retry with the exact error&quot;]
+    G([&quot;8. Merge gate on real test exit codes&quot;])
+    NP([&quot;Do not merge: needs a person&quot;])
+    T1[&quot;NOT: author session reviews itself&quot;]
+    T2[&quot;NOT: Batch for the pre-merge check&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes&quot; --&gt; SY --&gt; CTX
+    Q1 -- &quot;no&quot; --&gt; BA --&gt; CTX
+    CTX --&gt; Q4
+    Q4 -- &quot;yes&quot; --&gt; PRI --&gt; Q5
+    Q4 -- &quot;no&quot; --&gt; Q5
+    Q5 -- &quot;yes&quot; --&gt; SPL --&gt; REV
+    Q5 -- &quot;no&quot; --&gt; REV
+    REV --&gt; CRIT --&gt; Q8
+    Q8 -- &quot;yes&quot; --&gt; POST --&gt; G
+    Q8 -- &quot;no&quot; --&gt; FAIL
+    FAIL -- &quot;fixed&quot; --&gt; Q8
+    FAIL -- &quot;still invalid&quot; --&gt; NP
+    REV -.- T1
+    SY -.- T2
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q1,Q4,Q5,Q8 decision
+    class S,SY,BA,CTX,PRI,SPL,REV,CRIT,FAIL,G,NP action
+    class POST rightPath
+    class T1,T2 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section><section class="scn-card"><h3><a href="wt-06-structured-data-extraction.html">WT 06 structured data extraction</a></h3><details class="point-aid"><summary>Inspect this walkthrough flow here</summary><div class="mmd"><pre class="mermaid" id="cc-chart-6" data-teaching-key="diagram-135">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;1. Document arrives&quot;])
+    Q1{&quot;2. Independent eligible requests, no local loop, tolerant deadline and recovery?&quot;}
+    SY[&quot;Messages API, one call&quot;]
+    BA[&quot;Batch API, submit on a cycle&quot;]
+    P3[&quot;3. Prepare input by file type&quot;]
+    Q4{&quot;4. Did the API call succeed?&quot;}
+    RB[&quot;Wait and retry: 429, 500, 529&quot;]
+    FX[&quot;Fix the request: 400, 401, 403, 404, 413&quot;]
+    Q5{&quot;Did you get a complete tool call?&quot;}
+    MT[&quot;max_tokens: raise limit, do not use the cut-off call&quot;]
+    Q6{&quot;6. Does the JSON pass the schema?&quot;}
+    R6[&quot;Retry with doc, failed output and exact errors&quot;]
+    Q7{&quot;7. Do the values agree, like totals?&quot;}
+    R7[&quot;Both values on the page: retry once with the mismatch&quot;]
+    Q8{&quot;8. Any risky field: low confidence, required null, conflict?&quot;}
+    HUM[&quot;PICK: human review&quot;]
+    OK[&quot;PICK: accept, spot-check each type&quot;]
+    DN[&quot;9. Load downstream, log error patterns&quot;]
+    T1[&quot;NOT: retry until it passes&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;no: immediate or dependent lane&quot; --&gt; SY --&gt; P3
+    Q1 -- &quot;yes: batch candidate&quot; --&gt; BA --&gt; P3
+    P3 --&gt; Q4
+    Q4 -- &quot;temporary error&quot; --&gt; RB --&gt; Q4
+    Q4 -- &quot;request is wrong&quot; --&gt; FX
+    FX -- &quot;request fixed, call again&quot; --&gt; Q4
+    Q4 -- &quot;yes, 200&quot; --&gt; Q5
+    Q5 -- &quot;cut off&quot; --&gt; MT --&gt; Q4
+    Q5 -- &quot;text, no tool call&quot; --&gt; R6
+    Q5 -- &quot;yes&quot; --&gt; Q6
+    Q6 -- &quot;no&quot; --&gt; R6
+    R6 -- &quot;fixed&quot; --&gt; Q6
+    R6 -- &quot;still failing, or the fact is not in the file&quot; --&gt; HUM
+    Q6 -- &quot;yes&quot; --&gt; Q7
+    Q7 -- &quot;no, both numbers readable&quot; --&gt; R7 --&gt; Q8
+    Q7 -- &quot;no, a number is missing or unreadable&quot; --&gt; HUM
+    Q7 -- &quot;yes&quot; --&gt; Q8
+    Q8 -- &quot;yes&quot; --&gt; HUM
+    Q8 -- &quot;no&quot; --&gt; OK
+    OK --&gt; DN
+    HUM --&gt; DN
+    R6 -.- T1
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    class Q1,Q4,Q5,Q6,Q7,Q8 decision
+    class S,SY,BA,P3,RB,FX,MT,R6,R7,DN action
+    class HUM,OK rightPath
+    class T1 trap
+</pre></div><p>Use the labelled choices, exceptions and recovery paths. Open the walkthrough for the full textual step-by-step explanation.</p></details></section></div></section></article>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../../../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flessons%2Fccar-f%2Fscenario-walkthroughs%2Findex.html" rel="noopener">Report a problem on this page</a> · <a href="../../../contribute.html">Contribute</a> · <a href="../../../whats-new.html">What's new</a> · <a href="../../../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../../../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

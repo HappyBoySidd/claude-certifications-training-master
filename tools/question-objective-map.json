@@ -1,0 +1,2796 @@
+{
+ "exam": "CCAR-F",
+ "bank": "practice/question-bank.json",
+ "method": "Task-level mappings reviewed against official task statements; source-specific ambiguity and quarantined records retained explicitly. Clear task mapping is not full individual skill-bullet mastery.",
+ "review": {
+  "state": "independent subset and legacy task mapping reviewed",
+  "independent_check": "accuracy_review2026-10-14; exact item dispositions in assessment/canonical-item-review.json; uncertain mappings retained; PLAN-02 eight-item corrected batch navigation_regression2026-10-21; 18 OPL task-level mappings independently reviewed benchmark_ingestion2026-10-22"
+ },
+ "questions": {
+  "official-ccar-1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "programmatic prerequisite gate before order/refund tools = workflow enforcement"
+  },
+  "official-ccar-2": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "tool descriptions with formats, examples and boundaries"
+  },
+  "official-ccar-3": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "explicit escalation criteria with few-shot examples"
+  },
+  "official-ccar-4": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "project-scoped custom slash command in .claude/commands/"
+  },
+  "official-ccar-5": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "plan mode for a multi-file architectural change"
+  },
+  "official-ccar-6": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "path-specific rules with glob frontmatter"
+  },
+  "official-ccar-7": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.6",
+    "1.2"
+   ],
+   "note": "narrow decomposition by the coordinator; fits decomposition (1.6) and coordinator scope (1.2)"
+  },
+  "official-ccar-8": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "structured error context propagated to the coordinator"
+  },
+  "official-ccar-9": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "scoped verify tool given to one subagent = tool distribution"
+  },
+  "official-ccar-10": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "-p flag for non-interactive CI runs"
+  },
+  "official-ccar-11": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "batch API for overnight report only"
+  },
+  "official-ccar-12": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6",
+    "1.6"
+   ],
+   "note": "per-file passes plus an integration pass = multi-pass review (4.6); also names the 1.6 task statement"
+  },
+  "amey-architect-foundations-practice-1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "loop stall detection; escalation (5.2) also plausible"
+  },
+  "amey-architect-foundations-practice-2": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "policy cap enforced in a hook"
+  },
+  "amey-architect-foundations-practice-5": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1",
+    "3.3"
+   ],
+   "note": "project CLAUDE.md for team rule plus path-scoped rules"
+  },
+  "amey-architect-foundations-practice-8": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "nullable schema field with conditional validation"
+  },
+  "amey-architect-foundations-practice-9": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "accuracy from a sample across all documents, not only validated ones"
+  },
+  "amey-architect-foundations-practice-10": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "overlapping file tools: consolidate or differentiate descriptions"
+  },
+  "amey-architect-foundations-practice-12": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "when to spawn subagents for separate context; 1.2 also plausible"
+  },
+  "amey-architect-foundations-practice-13": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "loop terminates on stop_reason end_turn"
+  },
+  "amey-architect-foundations-practice-14": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "generic risk property; no single task statement"
+  },
+  "amey-architect-foundations-practice-15": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "human confirmation for an unverifiable step; 5.2 also plausible"
+  },
+  "amey-architect-foundations-practice-16": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "deterministic implementation vs agent; decomposition fit is loose"
+  },
+  "amey-architect-foundations-practice-19": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "what suits headless runs in automation"
+  },
+  "amey-architect-foundations-practice-20": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "skill vs subagent; 1.3 also plausible"
+  },
+  "amey-architect-foundations-practice-22": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "conventions in one person's local config instead of the project CLAUDE.md"
+  },
+  "amey-architect-foundations-practice-26": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "fixing prompt/schema/model version for consistency; no single task statement"
+  },
+  "amey-architect-foundations-practice-27": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "separating instruction, data and format; not named by a CCAR-F task statement"
+  },
+  "amey-architect-foundations-practice-30": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.1",
+    "2.1"
+   ],
+   "note": "trim tool payloads; context management (5.1) is the first fit, tool design (2.1) also plausible"
+  },
+  "amey-architect-foundations-practice-31": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "what a tool description contains"
+  },
+  "amey-architect-foundations-practice-35": {
+   "domain": "Context Management & Reliability",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "production health metrics; no single task statement"
+  },
+  "amey-architect-foundations-mock1-1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "stale prior-customer context; session state (1.7) also plausible"
+  },
+  "amey-architect-foundations-mock1-2": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "structured error with category and retryable flag"
+  },
+  "amey-architect-foundations-mock1-3": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "conditions that route to escalate_to_human"
+  },
+  "amey-architect-foundations-mock1-4": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "tool descriptions that separate similar tools"
+  },
+  "amey-architect-foundations-mock1-5": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "path-scoped rule for backend files"
+  },
+  "amey-architect-foundations-mock1-6": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "when plan mode beats direct execution"
+  },
+  "amey-architect-foundations-mock1-7": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "shared slash command or skill in the repository"
+  },
+  "amey-architect-foundations-mock1-8": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "subagents return structured findings, not raw sources = context management"
+  },
+  "amey-architect-foundations-mock1-9": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "claim and source kept together across handoffs"
+  },
+  "amey-architect-foundations-mock1-10": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "propagated error with context for retry/exclude/abort"
+  },
+  "amey-architect-foundations-mock1-11": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "print mode with JSON output and schema in a pipeline"
+  },
+  "amey-architect-foundations-mock1-12": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "explicit review criteria to cut false positives"
+  },
+  "amey-architect-foundations-mock1-13": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "nullable schema field"
+  },
+  "amey-architect-foundations-mock1-14": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "validate and retry with the error fed back"
+  },
+  "amey-architect-foundations-mock1-15": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "accuracy measured only on validated records is biased"
+  },
+  "amey-architect-foundations-mock2-1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "fixed-order steps as a deterministic workflow; 1.4 also plausible"
+  },
+  "amey-architect-foundations-mock2-2": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "subagent loses parent context unless passed explicitly"
+  },
+  "amey-architect-foundations-mock2-3": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "human checkpoint or reversibility for production writes; generic"
+  },
+  "amey-architect-foundations-mock2-4": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "traces for diagnosis; no single task statement"
+  },
+  "amey-architect-foundations-mock2-5": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "repository-wide conventions in committed CLAUDE.md"
+  },
+  "amey-architect-foundations-mock2-6": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "headless Claude Code check on every pull request"
+  },
+  "amey-architect-foundations-mock2-7": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "what a hook is; Agent SDK hooks (1.5) vs Claude Code hooks unclear"
+  },
+  "amey-architect-foundations-mock2-8": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "schema the model must satisfy, validated on receipt"
+  },
+  "amey-architect-foundations-mock2-9": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "explicit representation for absent values"
+  },
+  "amey-architect-foundations-mock2-10": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "examples covering unusual formats"
+  },
+  "amey-architect-foundations-mock2-11": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "tool surface redesign signal; 2.3 also plausible"
+  },
+  "amey-architect-foundations-mock2-12": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5",
+    "2.3"
+   ],
+   "note": "authorisation outside the model; hook (1.5) or tool scope (2.3)"
+  },
+  "amey-architect-foundations-mock2-13": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3",
+    "2.4"
+   ],
+   "note": "over-broad MCP query tool; 2.3 first, 2.4 also plausible"
+  },
+  "amey-architect-foundations-mock2-14": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.1",
+    "5.4"
+   ],
+   "note": "Independent review: long-conversation versus codebase exploration context degradation both fit; uncertain distinction retained."
+  },
+  "amey-architect-foundations-mock2-15": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "explicit carried-forward summary across compaction"
+  },
+  "amey-architect-foundations-mock3-1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "repeated identical expensive calls point at loop/state design; 5.1 also plausible"
+  },
+  "amey-architect-foundations-mock3-2": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "when work belongs in separate subagents; 1.2 also plausible"
+  },
+  "amey-architect-foundations-mock3-3": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "reversibility or confirmation; generic"
+  },
+  "amey-architect-foundations-mock3-4": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "oversized CLAUDE.md crowds out what matters"
+  },
+  "amey-architect-foundations-mock3-5": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "what makes a skill worth committing"
+  },
+  "amey-architect-foundations-mock3-6": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "committed vs per-developer configuration"
+  },
+  "amey-architect-foundations-mock3-7": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "retry then fail explicitly on validation failure"
+  },
+  "amey-architect-foundations-mock3-8": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "validate at the boundary so retry is still possible"
+  },
+  "amey-architect-foundations-mock3-9": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "provenance field in an extraction schema; 4.3 also plausible"
+  },
+  "amey-architect-foundations-mock3-10": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "near-duplicate tools give no basis for choice"
+  },
+  "amey-architect-foundations-mock3-11": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "clear error so the model can correct the call"
+  },
+  "amey-architect-foundations-mock3-12": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "remove an unneeded MCP write tool; least privilege tool distribution, 2.4 also plausible"
+  },
+  "amey-architect-foundations-mock3-13": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.1",
+    "5.4"
+   ],
+   "note": "repeated work as an early context failure signal"
+  },
+  "amey-architect-foundations-mock3-14": {
+   "domain": "Context Management & Reliability",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "defined success criterion; generic"
+  },
+  "amey-architect-foundations-mock3-15": {
+   "domain": "Context Management & Reliability",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "detection step with a defined action; generic"
+  },
+  "CCARF-DP-001": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-002": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-003": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-004": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-005": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Saved guide compresses schema tool use into a guarantee. Current strict enforcement must be explicit; ordinary input_schema descriptions alone do not guarantee schema compliance. Key remains best exam-baseline option, with visible implementation caveat."
+  },
+  "CCARF-DP-006": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order."
+  },
+  "CCARF-DP-007": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-008": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-009": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-010": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Format normalization cannot infer locale/year/currency from ambiguous source. Preserve original and unresolved interpretation; nullable/error contract and source checks needed before downstream acceptance."
+  },
+  "CCARF-DP-011": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order."
+  },
+  "CCARF-DP-012": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order."
+  },
+  "CCARF-DP-013": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-014": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-015": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-016": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-017": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-018": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-019": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Successful completion cannot always be guaranteed from a 24-hour batch expiry window. Six-hour arithmetic is conditional on successful processing and excludes recovery."
+  },
+  "CCARF-DP-020": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-021": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-022": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-023": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "any alone does not ensure exactly one tool call; disable_parallel_tool_use is needed in compatible modes. Forced record_findings with an allowed empty list is also defensible, contrary to its distractor explanation."
+  },
+  "CCARF-DP-024": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Keyed option says auto (or any) permits final text completion. any requires a tool call and cannot substitute for auto in the completion phase."
+  },
+  "CCARF-DP-025": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order."
+  },
+  "CCARF-DP-026": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Displayed disjoint counts and segment accuracies produce 95.974896%, not 97.1%. Clarify unlike metric denominators or correct the overall fixture before diagnostic use."
+  },
+  "CCARF-DP-027": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-028": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-029": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-030": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-031": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-032": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-033": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-034": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Saved-guide /memory answer must remain visibly contrasted with current /context loaded-file inspection and later instruction-loading evidence; listing locations is not proof of loaded content."
+  },
+  "CCARF-DP-035": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-036": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-037": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-038": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-039": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-040": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-041": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-042": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-043": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-044": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-045": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "Current scripted bare mode can skip project instructions/hooks/MCP discovery. Preserve supplied-context and structured_output caveat; verify installed flags before runnable use."
+  },
+  "CCARF-DP-046": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-047": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Direct Bash deny enforces matching calls, not every indirect program invocation. Existing security-boundary caveat must remain visible; pre-tool matching alone also needs robust coverage."
+  },
+  "CCARF-DP-048": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-049": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-050": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-051": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Edit|Write covers those tool edits, not every filesystem mutation through Bash or other tools. This is a scoped feedback example, not a guarantee every possible file change is checked."
+  },
+  "CCARF-DP-052": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-053": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Edit|Write covers those tool edits, not every filesystem mutation through Bash or other tools. This is a scoped feedback example, not a guarantee every possible file change is checked."
+  },
+  "CCARF-DP-054": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "PostToolUse signaling principle is correct, but tsc commonly emits diagnostics on stdout; the example captures only stderr. Capture both streams to deliver actual diagnostics."
+  },
+  "CCARF-DP-055": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-056": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-057": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-058": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-059": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-060": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-061": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-062": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Saved Task/allowedTools exam baseline differs from current Agent definitions and permission semantics. Existing caveat must be shown; allow-list preapproval is not pool restriction."
+  },
+  "CCARF-DP-063": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-064": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-065": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-066": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-067": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-068": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Normalization requires supported post-tool output replacement with matching output shape and explicit parsing/ambiguity handling; hook presence alone does not establish successful normalization."
+  },
+  "CCARF-DP-069": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-070": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-071": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-072": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-073": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-074": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "fork_session is SDK terminology; CLI uses --fork-session with resume. Existing distinction must remain visible."
+  },
+  "CCARF-DP-075": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "A human request is not the only later escalation trigger: policy gap, inability to progress or new authorization issues also apply. Key is best for this currently resolvable case."
+  },
+  "CCARF-DP-076": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-077": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-078": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Purpose-specific tools are sensible here; a validated mode router with explicit contracts is also legitimate. Do not teach that one tool with modes necessarily has vague boundaries."
+  },
+  "CCARF-DP-079": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-080": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-081": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-082": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-083": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-084": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-085": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-086": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-087": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-088": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-089": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-090": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-091": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-092": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-093": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-094": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-095": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-096": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-097": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-098": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-099": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-100": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-101": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-102": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-103": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-DP-104": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-001": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-002": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-003": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-004": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-005": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-006": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-007": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-008": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-009": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-010": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-011": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-012": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Saved-guide forced-choice answer is conditional on a compatible model and thinking mode. Existing current-doc caveat must be visible before assessment; auto plus strict schema does not guarantee invocation or prerequisite order."
+  },
+  "CCARF-HD-013": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-014": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Saved-guide /memory answer must remain visibly contrasted with current /context loaded-file inspection and later instruction-loading evidence; listing locations is not proof of loaded content."
+  },
+  "CCARF-HD-015": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "Exam-baseline allowed-tools restriction statement is false for current Code; retain visible correction to disallowed-tools/tool pool restriction, and block Edit/Write/Bash or other mutation capabilities as appropriate."
+  },
+  "CCARF-HD-016": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-017": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-018": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-019": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "Current scripted bare mode can skip project instructions/hooks/MCP discovery. Preserve supplied-context and structured_output caveat; verify installed flags before runnable use."
+  },
+  "CCARF-HD-020": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-021": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-022": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-023": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Saved guide compresses schema tool use into a guarantee. Current strict enforcement must be explicit; ordinary input_schema descriptions alone do not guarantee schema compliance. Key remains best exam-baseline option, with visible implementation caveat."
+  },
+  "CCARF-HD-024": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Eight-hour scheduling arithmetic leaves four hours only conditional on successful batch completion; an expiring batch cannot guarantee successful SLA completion."
+  },
+  "CCARF-HD-025": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-026": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-027": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-028": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-029": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-030": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-031": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-032": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-033": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-034": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-035": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Normalization requires supported post-tool output replacement with matching output shape and explicit parsing/ambiguity handling; hook presence alone does not establish successful normalization."
+  },
+  "CCARF-HD-036": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-037": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "argument-hint is an autocomplete hint, not a missing-input prompt or validator. Add explicit instruction to request/validate absent release number; do not treat frontmatter alone as required-input enforcement."
+  },
+  "CCARF-HD-038": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-039": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Format normalization cannot infer locale/year/currency from ambiguous source. Preserve original and unresolved interpretation; nullable/error contract and source checks needed before downstream acceptance."
+  },
+  "CCARF-HD-040": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-041": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Calibration and criticality routing is best among options but does not solve 300 flags/50 slots alone. Capacity overflow, backlog/escalation and independent holdout policy remain required."
+  },
+  "CCARF-HD-042": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "uncertain",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Beyond saved guide. Current refusal fallback is model/eligibility-dependent; apply supported fallback policy rather than indiscriminately switching models. Truncated tool calls must not be executed."
+  },
+  "CCARF-HD-043": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-044": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "CCARF-HD-045": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Stem, answer and alternatives are sound for the stated synthetic constraints and align with the saved objective."
+  },
+  "cct-fv-01-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-01-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-02-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-02-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-03-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-03-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-04-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-04-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-05-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-05-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-06-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-06-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-07-base-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-07-retry-v1": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.7"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-08-base-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-08-retry-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-09-base-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-09-retry-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-10-base-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-10-retry-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-11-base-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-11-retry-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-12-base-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-12-retry-v1": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-13-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-13-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-14-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-14-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-15-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-15-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-16-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-16-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-17-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-17-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-18-base-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-18-retry-v1": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-19-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-19-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-20-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-20-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-21-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-21-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-22-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-22-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-23-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-23-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-24-base-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-24-retry-v1": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-25-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-25-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-26-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-26-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.2"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-27-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-27-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-28-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-28-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.4"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-29-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-29-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.5"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-30-base-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "cct-fv-30-retry-v1": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Independent task-level review accuracy_review2026-10-14; exact skill diagnostics reported separately."
+  },
+  "CCARF-P2-001": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 1.3"
+  },
+  "CCARF-P2-002": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.5"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 1.5"
+  },
+  "CCARF-P2-003": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 2.4"
+  },
+  "CCARF-P2-004": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 2.4"
+  },
+  "CCARF-P2-005": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 4.5"
+  },
+  "CCARF-P2-006": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; settings-policy behavior is supplementary to the saved CLAUDE.md objective, not direct coverage"
+  },
+  "CCARF-P2-007": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "unmapped",
+   "confidence": null,
+   "objectives": [],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; settings-policy behavior is supplementary to the saved CLAUDE.md objective, not direct coverage"
+  },
+  "CCARF-P2-008": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.1"
+   ],
+   "note": "PLAN-02 independent corrected-item review2026-10-21; stated requirement maps to 5.1"
+  },
+  "OPL-01-A": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Bound explicit specialist input and minimum Read/Edit capability; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-01-B": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.3"
+   ],
+   "note": "Bound explicit specialist input and minimum Read/Edit capability; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-02-A": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Digest-bound trusted pre-execution approval; permission versus effect receipt; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-02-B": {
+   "domain": "Agentic Architecture & Orchestration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "1.4"
+   ],
+   "note": "Digest-bound trusted pre-execution approval; permission versus effect receipt; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-03-A": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "MCP protocol dispatch error versus executed business validation error; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-03-B": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.2"
+   ],
+   "note": "MCP protocol dispatch error versus executed business validation error; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-04-A": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "SDK settingSources project loading versus tool discovery/content read; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-04-B": {
+   "domain": "Tool Design & MCP Integration",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "2.4"
+   ],
+   "note": "SDK settingSources project loading versus tool discovery/content read; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-06-A": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "CLI structured_output plus current-candidate evidence binding; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-06-B": {
+   "domain": "Claude Code Configuration & Workflows",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "3.6"
+   ],
+   "note": "CLI structured_output plus current-candidate evidence binding; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-07-A": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Schema validity versus direct source/quote factual acceptance; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-07-B": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.3"
+   ],
+   "note": "Schema validity versus direct source/quote factual acceptance; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-08-A": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Batch terminal status/per-ID recovery versus partial/all-input release barrier; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-08-B": {
+   "domain": "Prompt Engineering & Structured Output",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "4.5"
+   ],
+   "note": "Batch terminal status/per-ID recovery versus partial/all-input release barrier; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-09-A": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Correlated parallel tool results plus cause-specific targeted recovery; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-09-B": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.3"
+   ],
+   "note": "Correlated parallel tool results plus cause-specific targeted recovery; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-10-A": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Citation support versus designated authoritative supersession; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  },
+  "OPL-10-B": {
+   "domain": "Context Management & Reliability",
+   "status": "mapped",
+   "confidence": "clear",
+   "objectives": [
+    "5.6"
+   ],
+   "note": "Citation support versus designated authoritative supersession; independent original-item review 2026-10-22; reinforcement only, not proof of complete skill-bullet assessment."
+  }
+ }
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-22">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Design style guide">
+<title>Design style guide · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="assets/site.css?v=21c6a0ac682a">
+<script defer src="assets/site.js?v=dac542edefb2"></script>
+</head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="index.html">Home</a><a href="curriculum.html">Curriculum</a><a href="exams/ccao-f.html">CCAO-F</a><a href="exams/ccar-f.html">CCAR-F</a><a href="exams/ccdv-f.html">CCDV-F</a><a href="exams/ccar-p.html">CCAR-P</a><a href="lessons/index.html">Lessons</a><a href="simulations/index.html">Simulations</a><a href="labs/index.html">Labs</a><a href="insights.html">Insights</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true"> / </span><span>Design style guide</span></nav>
+
+<h1>Design style guide</h1>
+<p class="lede">A reference for contributors. Use these tokens and components so every page looks and feels consistent.</p>
+
+<section class="block prose">
+<h2>1. Principles</h2>
+<ul>
+<li><b>One idea at a time.</b> Each section or paragraph covers one concept. Split anything that spans two.</li>
+<li><b>No outside fonts, scripts or images.</b> Nothing loads from a CDN or third-party domain.</li>
+<li><b>4.5:1 contrast minimum.</b> Every foreground token passes WCAG AA against its background (see swatches below).</li>
+<li><b>Works on phones and in print.</b> Responsive layout down to 320 px; the print stylesheet hides navigation.</li>
+<li><b>Dark mode built in.</b> All colours are CSS custom properties; dark values swap automatically via the toggle or <code>prefers-color-scheme</code>.</li>
+<li><b>No tracking.</b> No cookies, no analytics, no calls to other domains.</li>
+</ul>
+</section>
+
+<section class="block">
+<h2>2. Colour</h2>
+
+<p class="muted" style="margin-bottom:8px"><em>Background tokens are never used for text, so they have no contrast badge.</em></p>
+<h3>Neutrals</h3>
+<p class="muted">Background, surface, text and border tokens used on every page.</p>
+<div class="tbl"><table><thead><tr><th>Swatch</th><th>Token</th><th>Light</th><th>Dark</th><th>Light contrast (bg / surface)</th><th>Dark contrast (bg / surface)</th></tr></thead><tbody><tr><td><span class="swatch" style="background:var(--bg)"></span></td><td><code>--bg</code></td><td>#fbfaf7</td><td>#14161c</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--surface)"></span></td><td><code>--surface</code></td><td>#ffffff</td><td>#1b1e26</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--sunk)"></span></td><td><code>--sunk</code></td><td>#f3f1ea</td><td>#22262f</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--ink)"></span></td><td><code>--ink</code></td><td>#1d2433</td><td>#e9e7e1</td><td class="cr"><span class="cr-ok">✓&thinsp;14.9:1</span> / <span class="cr-ok">✓&thinsp;15.5:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;14.6:1</span> / <span class="cr-ok">✓&thinsp;13.5:1</span></td></tr><tr><td><span class="swatch" style="background:var(--muted)"></span></td><td><code>--muted</code></td><td>#4f5869</td><td>#b3b8c3</td><td class="cr"><span class="cr-ok">✓&thinsp;6.9:1</span> / <span class="cr-ok">✓&thinsp;7.2:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;9.1:1</span> / <span class="cr-ok">✓&thinsp;8.4:1</span></td></tr><tr><td><span class="swatch" style="background:var(--line)"></span></td><td><code>--line</code></td><td>#e2ded3</td><td>#333845</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--accent)"></span></td><td><code>--accent</code></td><td>#9f2d4a</td><td>#f08aa6</td><td class="cr"><span class="cr-ok">✓&thinsp;6.8:1</span> / <span class="cr-ok">✓&thinsp;7.1:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;7.7:1</span> / <span class="cr-ok">✓&thinsp;7.1:1</span></td></tr></tbody></table></div>
+
+<h3>Track colours</h3>
+<p class="muted">Each colour is the identity of one certification group. Apply it only on content that belongs to that track.</p>
+<div class="tier-row" style="margin:12px 0">
+  <div class="tier" style="border-left-color:var(--associate)"><b style="color:var(--associate)">Associate · teal</b><span>CCAO-F — for consultants, sellers and delivery leads who guide customers to the right Claude use cases.</span></div>
+  <div class="tier" style="border-left-color:var(--architect)"><b style="color:var(--architect)">Architect · indigo</b><span>CCAR-F and CCAR-P — for architects designing agentic systems with Claude, MCP and Claude Code.</span></div>
+  <div class="tier" style="border-left-color:var(--developer)"><b style="color:var(--developer)">Developer · amber</b><span>CCDV-F — for engineers building with the Claude API, the Agent SDK, Claude Code and MCP.</span></div>
+</div>
+<div class="tbl"><table><thead><tr><th>Swatch</th><th>Token</th><th>Light</th><th>Dark</th><th>Light contrast (bg / surface)</th><th>Dark contrast (bg / surface)</th></tr></thead><tbody><tr><td><span class="swatch" style="background:var(--associate)"></span></td><td><code>--associate</code></td><td>#0f766e</td><td>#4fd1c1</td><td class="cr"><span class="cr-ok">✓&thinsp;5.2:1</span> / <span class="cr-ok">✓&thinsp;5.5:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;9.7:1</span> / <span class="cr-ok">✓&thinsp;8.9:1</span></td></tr><tr><td><span class="swatch" style="background:var(--architect)"></span></td><td><code>--architect</code></td><td>#4f46e5</td><td>#a5a1ff</td><td class="cr"><span class="cr-ok">✓&thinsp;6.0:1</span> / <span class="cr-ok">✓&thinsp;6.3:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;7.9:1</span> / <span class="cr-ok">✓&thinsp;7.3:1</span></td></tr><tr><td><span class="swatch" style="background:var(--developer)"></span></td><td><code>--developer</code></td><td>#a44b08</td><td>#f5b056</td><td class="cr"><span class="cr-ok">✓&thinsp;5.6:1</span> / <span class="cr-ok">✓&thinsp;5.9:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;9.7:1</span> / <span class="cr-ok">✓&thinsp;8.9:1</span></td></tr><tr><td><span class="swatch" style="background:var(--associate-soft)"></span></td><td><code>--associate-soft</code></td><td>#e6f4f2</td><td>#16302e</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--architect-soft)"></span></td><td><code>--architect-soft</code></td><td>#ecebfd</td><td>#25244a</td><td class="cr" colspan="2"><em>background only</em></td></tr><tr><td><span class="swatch" style="background:var(--developer-soft)"></span></td><td><code>--developer-soft</code></td><td>#fbf0e3</td><td>#3a2a16</td><td class="cr" colspan="2"><em>background only</em></td></tr></tbody></table></div>
+
+<h3>Tier colours</h3>
+<p class="muted">Tell readers how much weight to give a fact. T1 = Anthropic original (always wins). T2 = guides by others. T3 = blogs and sites. TF = field reports from colleagues.</p>
+<div class="tbl"><table><thead><tr><th>Swatch</th><th>Token</th><th>Light</th><th>Dark</th><th>Light contrast (bg / surface)</th><th>Dark contrast (bg / surface)</th></tr></thead><tbody><tr><td><span class="swatch" style="background:var(--t1)"></span></td><td><code>--t1</code></td><td>#0f766e</td><td>#4fd1c1</td><td class="cr"><span class="cr-ok">✓&thinsp;5.2:1</span> / <span class="cr-ok">✓&thinsp;5.5:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;9.7:1</span> / <span class="cr-ok">✓&thinsp;8.9:1</span></td></tr><tr><td><span class="swatch" style="background:var(--t2)"></span></td><td><code>--t2</code></td><td>#4f46e5</td><td>#a5a1ff</td><td class="cr"><span class="cr-ok">✓&thinsp;6.0:1</span> / <span class="cr-ok">✓&thinsp;6.3:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;7.9:1</span> / <span class="cr-ok">✓&thinsp;7.3:1</span></td></tr><tr><td><span class="swatch" style="background:var(--t3)"></span></td><td><code>--t3</code></td><td>#6b7280</td><td>#aab0bb</td><td class="cr"><span class="cr-ok">✓&thinsp;4.6:1</span> / <span class="cr-ok">✓&thinsp;4.8:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;8.3:1</span> / <span class="cr-ok">✓&thinsp;7.6:1</span></td></tr><tr><td><span class="swatch" style="background:var(--tf)"></span></td><td><code>--tf</code></td><td>#b45309</td><td>#f5b056</td><td class="cr"><span class="cr-ok">✓&thinsp;4.8:1</span> / <span class="cr-ok">✓&thinsp;5.0:1</span></td><td class="cr"><span class="cr-ok">✓&thinsp;9.7:1</span> / <span class="cr-ok">✓&thinsp;8.9:1</span></td></tr></tbody></table></div>
+</section>
+
+<section class="block prose">
+<h2>3. Type</h2>
+<p><b>System sans</b> (<code>--font</code>) — ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif. Body text everywhere.</p>
+<p><b>Serif</b> (<code>--serif</code>) — ui-serif, Iowan Old Style, Palatino Linotype, Georgia, serif. Used for <code>h1</code> and card headings.</p>
+<p><b>Monospace</b> (<code>--mono</code>) — ui-monospace, SF Mono, Menlo, Consolas, monospace. Inline code and code blocks.</p>
+<ul>
+<li>Body: 17 px / 1.62 line-height.</li>
+<li><span class="lede">Lede: 1.15 rem, muted — the one-sentence purpose of a page or section.</span></li>
+<li><span class="eyebrow">Eyebrow: 0.78 rem, uppercase, track colour — context label above an h1.</span></li>
+<li>H1 uses <code>--serif</code>, clamp 1.9–2.7 rem. H2: 1.45 rem. H3: 1.12 rem. Both sans-serif.</li>
+</ul>
+</section>
+
+<section class="block">
+<h2>4. Components</h2>
+<p class="muted">Rendered live with the real CSS classes. Copy the markup; don't recreate styles by hand.</p>
+
+<h3>Buttons</h3>
+<p><a class="btn" href="#">Primary button</a> <a class="btn ghost" href="#" style="margin-left:10px">Ghost button</a></p>
+<p class="muted small">Use <code>.btn</code> for the main call-to-action. Use <code>.btn.ghost</code> for a secondary action beside a primary.</p>
+
+<h3>Pills</h3>
+<p>
+  <span class="pill" style="background:var(--associate)">CCAO-F</span>
+  <span class="pill" style="background:var(--architect);margin-left:6px">CCAR-F</span>
+  <span class="pill" style="background:var(--developer);margin-left:6px">CCDV-F</span>
+</p>
+<p class="muted small">Exam-code badges on cards and sidebar entries. The background is the track colour via <code>var(--track)</code>.</p>
+
+<h3>Card</h3>
+<div class="cards" style="max-width:360px">
+  <article class="card c-architect">
+    <p class="card-k"><span class="pill">CCAR-F</span> Architect · Foundations</p>
+    <h3>Claude Certified Architect – Foundations</h3>
+    <p class="card-who">For architects designing agentic systems.</p>
+    <a class="btn" href="#">Open the plan</a>
+  </article>
+</div>
+<p class="muted small">Use <code>.card</code> with a <code>.c-&lt;track&gt;</code> modifier. The top border uses <code>--track</code>. Cards stack to full width on mobile.</p>
+
+<h3>Tier boxes</h3>
+<div class="tier-row" style="max-width:540px;margin:12px 0">
+  <div class="tier t1"><b>Tier 1 · Anthropic original</b><span>Exam guides, docs, Academy courses. Always wins a conflict.</span></div>
+  <div class="tier t2"><b>Tier 2 · Guides by others</b><span>Only where Tier 1 is silent, and labelled.</span></div>
+</div>
+<p class="muted small">Use <code>.tier.t1</code>, <code>.tier.t2</code>, <code>.tier.t3</code>, <code>.tier.tf</code>.</p>
+
+<h3>Eyebrow and lede</h3>
+<p class="eyebrow">Section label</p>
+<p class="lede">A lede describes the section purpose in one plain sentence, 64 characters or fewer.</p>
+
+<h3>Table</h3>
+<div class="tbl"><table><thead><tr><th>Token</th><th>Light value</th><th>Used for</th></tr></thead><tbody>
+<tr><td><code>--bg</code></td><td>#fbfaf7</td><td>Page background</td></tr>
+<tr><td><code>--ink</code></td><td>#1d2433</td><td>Body text</td></tr>
+</tbody></table></div>
+<p class="muted small">Wrap every table in <code>&lt;div class="tbl"&gt;</code> for horizontal scroll on mobile.</p>
+
+<h3>External link</h3>
+<p><a class="ext" href="#" rel="noopener">External link</a> — the CSS appends ↗ automatically.</p>
+</section>
+
+<section class="block prose">
+<h2>5. Writing style</h2>
+<ul>
+<li><b>Short sentences.</b> One idea per sentence. If it needs a semicolon, split it into two sentences.</li>
+<li><b>Plain words.</b> Write “use” not “utilise”. Write “check” not “verify the accuracy of”.</li>
+<li><b>Cite source and tier for every fact.</b> For example: <em>Source: CCAR-F exam guide §3 (Tier 1).</em></li>
+<li><b>No real exam questions.</b> Candidates sign a confidentiality agreement. Simulations and practice items are original.</li>
+<li><b>Colleague names withheld</b> until each person agrees. Use “a colleague” as the placeholder.</li>
+</ul>
+<h3>Lesson shape</h3>
+<ol>
+<li><b>Big idea.</b> One sentence — what this lesson proves.</li>
+<li><b>What to know.</b> The exam-weight domain, named sections and key terms.</li>
+<li><b>Worked example.</b> A realistic scenario with a clear right answer and an explanation of why.</li>
+<li><b>Traps.</b> The two or three wrong answers the exam expects you to confuse with the right one.</li>
+<li><b>Try it.</b> One concrete action: paste a prompt, run an API call, or sketch a diagram.</li>
+<li><b>Done when.</b> The observable outcome that confirms you understood the lesson.</li>
+</ol>
+</section>
+
+<section class="block prose">
+<h2>6. How to propose a design change</h2>
+<p>Open an issue through the <a href="contribute.html">Contribute</a> page. Include:</p>
+<ol>
+<li>What looks or behaves wrong, and which page.</li>
+<li>Which token or class is involved (for example <code>--accent</code> or <code>.btn</code>).</li>
+<li>A concrete suggestion: a new token value, a class change, or a new component.</li>
+</ol>
+<p>Every change goes through the design-system review gate. One fix regenerates all impacted pages from the same token.</p>
+</section>
+
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Fstyle-guide.html" rel="noopener">Report a problem on this page</a> · <a href="contribute.html">Contribute</a> · <a href="whats-new.html">What's new</a> · <a href="faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

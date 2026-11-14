@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-22">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Study plans, lessons, simulations and labs for Anthropic&#x27;s four Claude certifications.">
+<title>Home · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="assets/site.css?v=21c6a0ac682a">
+<script defer src="assets/diagram-annotations.js?v=7a2c6a4df9e1"></script><script defer src="assets/site.js?v=dac542edefb2"></script>
+<link rel="stylesheet" href="assets/diagram-annotations.css?v=8882e7acffbe"></head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="curriculum.html">Curriculum</a><a href="exams/ccao-f.html">CCAO-F</a><a href="exams/ccar-f.html">CCAR-F</a><a href="exams/ccdv-f.html">CCDV-F</a><a href="exams/ccar-p.html">CCAR-P</a><a href="lessons/index.html">Lessons</a><a href="simulations/index.html">Simulations</a><a href="labs/index.html">Labs</a><a href="insights.html">Insights</a><a href="resources.html">Resources</a><a href="faq.html">FAQ</a><a href="about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+
+
+<section class="hero">
+  <p class="eyebrow">Four Anthropic exams · three tracks · one plan</p>
+  <h1>Pass the Claude certifications, one clear step at a time.</h1>
+  <p class="lede">Lessons written from Anthropic's own exam guides and docs, scenario simulations with coach keys,
+  hands-on labs, and what colleagues who passed wish they'd known.</p>
+  <p class="start"><b>Where to start:</b> if you don't write code, start with <a href="exams/ccao-f.html">CCAO-F</a> (8–12 hours, $99).
+  If you design or build with Claude, start with <a href="exams/ccar-f.html">CCAR-F</a>: Anthropic's partner training advised architects to start there (relayed by a colleague, see <a href="insights.html">Insights</a>), and a colleague who passed all four says everything else builds on it.</p>
+  <div class="hero-cta"><a class="btn" href="#paths">Choose your path</a> <a class="btn ghost" href="curriculum.html">See the whole curriculum</a></div><p class="latest small"><b>Latest update:</b> v0.35, 2026-10-22: B-117–B-122: Connected objective exercises and practice · <a href="whats-new.html">What's new</a> · <a href="faq.html">FAQ</a></p>
+</section>
+<section id="paths" class="block">
+  <h2>Which path fits you?</h2>
+  <div class="chooser" role="group" aria-label="Pick your role">
+    <button type="button" data-path="CCAO-F,CCAR-F" aria-pressed="false"><b>I don't write code</b><small>I help teams use Claude. CCAO-F first teaches the question style, then CCAR-F.</small></button>
+    <button type="button" data-path="CCAR-F,CCAR-P" aria-pressed="false"><b>I design Claude solutions</b><small>Architect Foundations, then Professional while it's fresh.</small></button>
+    <button type="button" data-path="CCAR-F,CCDV-F" aria-pressed="false"><b>I write code with Claude</b><small>CCAR-F, then CCDV-F within two weeks: they overlap by about two-thirds.</small></button>
+    <button type="button" data-path="CCAR-F,CCAR-P,CCDV-F,CCAO-F" aria-pressed="true"><b>I want all four</b><small>The core exam first, the easiest last.</small></button>
+  </div>
+  <div class="planner" data-hours="{&quot;CCAO-F&quot;: [[8, 12], &quot;ccao-f&quot;], &quot;CCAR-F&quot;: [[20, 25], &quot;ccar-f&quot;], &quot;CCDV-F&quot;: [[10, 15], &quot;ccdv-f&quot;], &quot;CCAR-P&quot;: [[15, 20], &quot;ccar-p&quot;]}">
+    <label for="hpw">Hours a week I can study: <output id="hpw-out" for="hpw">8</output></label>
+    <input id="hpw" type="range" min="2" max="20" value="8">
+    <ol class="plan-out" aria-live="polite"></ol>
+    <p class="muted small">Uses the upper end of each exam's study-hours range. The reasons for each order are in the <a href="curriculum.html#1-recommended-order-it-depends-on-who-you-are">curriculum</a>.</p>
+  </div>
+  <div class="curriculum-map-frame" tabindex="0" role="group" aria-label="Curriculum map; scroll horizontally on narrow screens"><svg class="map" viewBox="0 0 760 246" role="img" aria-labelledby="map-t map-d"><title id="map-t">Curriculum map</title><desc id="map-d">Three tracks. Associate: CCAO-F. Architect: CCAR-F, then CCAR-P; CCAR-F is recommended first but not required. Developer: CCDV-F, which overlaps about two-thirds with CCAR-F.</desc><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs><g class="lane l-associate"><rect class="lane-bg" x="0" y="6" width="760" height="68" rx="12"/><text x="20" y="46" class="lane-t">Associate</text><a href="exams/ccao-f.html" class="node" data-code="CCAO-F"><rect x="190" y="16" width="210" height="48" rx="10"/><text x="206" y="39" class="node-c">CCAO-F</text><text x="206" y="57" class="node-l">Foundations</text></a></g><g class="lane l-architect"><rect class="lane-bg" x="0" y="84" width="760" height="68" rx="12"/><text x="20" y="124" class="lane-t">Architect</text><a href="exams/ccar-f.html" class="node" data-code="CCAR-F"><rect x="190" y="94" width="210" height="48" rx="10"/><text x="206" y="117" class="node-c">CCAR-F</text><text x="206" y="135" class="node-l">Foundations</text></a><a href="exams/ccar-p.html" class="node" data-code="CCAR-P"><rect x="490" y="94" width="210" height="48" rx="10"/><text x="506" y="117" class="node-c">CCAR-P</text><text x="506" y="135" class="node-l">Professional</text></a><path class="edge" d="M402 118 H484" marker-end="url(#arr)"/><text x="404" y="110" class="edge-t">recommended</text></g><g class="lane l-developer"><rect class="lane-bg" x="0" y="162" width="760" height="68" rx="12"/><text x="20" y="202" class="lane-t">Developer</text><a href="exams/ccdv-f.html" class="node" data-code="CCDV-F"><rect x="190" y="172" width="210" height="48" rx="10"/><text x="206" y="195" class="node-c">CCDV-F</text><text x="206" y="213" class="node-l">Foundations</text></a></g></svg></div><p class="map-scroll-hint">On a narrow screen, scroll the map left and right. Each exam box is a link.</p>
+</section>
+<section class="block">
+  <h2>The four exams</h2>
+  <div class="cards">
+<article class="card c-associate">
+  <p class="card-k"><span class="pill">CCAO-F</span> Associate · Foundations</p>
+  <h3><a href="exams/ccao-f.html">Claude Certified Associate – Foundations</a></h3>
+  <p class="card-who">Consultants, sellers and delivery leads who guide customers to the right Claude use cases.</p>
+  <dl class="facts">
+    <div><dt>Questions</dt><dd>60</dd></div><div><dt>Time</dt><dd>120 min</dd></div>
+    <div><dt>Pass</dt><dd>720</dd></div><div><dt>List price</dt><dd>$99</dd></div>
+    <div><dt>Study</dt><dd>8–12 h</dd></div>
+  </dl>
+  <ul class="bars compact" aria-label="Domain weights"><li><span class="bl">Output Evaluation and Validation</span><span class="bt" aria-hidden="true"><span class="bf" style="width:100%"></span></span><span class="bv">21%</span></li><li><span class="bl">Workflow Integration and Solution Design</span><span class="bt" aria-hidden="true"><span class="bf" style="width:76%"></span></span><span class="bv">16%</span></li><li><span class="bl">Governance, Risk, and Responsible Use</span><span class="bt" aria-hidden="true"><span class="bf" style="width:71%"></span></span><span class="bv">15%</span></li><li><span class="bl">Prompting and Task Execution</span><span class="bt" aria-hidden="true"><span class="bf" style="width:67%"></span></span><span class="bv">14%</span></li><li><span class="bl">Product and Model Selection</span><span class="bt" aria-hidden="true"><span class="bf" style="width:57%"></span></span><span class="bv">12%</span></li><li><span class="bl">Configuration and Knowledge Management</span><span class="bt" aria-hidden="true"><span class="bf" style="width:57%"></span></span><span class="bv">12%</span></li><li><span class="bl">Troubleshooting and Optimization</span><span class="bt" aria-hidden="true"><span class="bf" style="width:48%"></span></span><span class="bv">10%</span></li></ul>
+  <p class="card-count">8 lessons · 5 scenario simulations + mock plan · 1 lab</p>
+  <a class="btn" href="exams/ccao-f.html">Open the CCAO-F plan</a>
+</article>
+<article class="card c-architect">
+  <p class="card-k"><span class="pill">CCAR-F</span> Architect · Foundations</p>
+  <h3><a href="exams/ccar-f.html">Claude Certified Architect – Foundations</a></h3>
+  <p class="card-who">Architects designing agentic systems with Claude, MCP and Claude Code.</p>
+  <dl class="facts">
+    <div><dt>Questions</dt><dd>60</dd></div><div><dt>Time</dt><dd>120 min</dd></div>
+    <div><dt>Pass</dt><dd>720</dd></div><div><dt>List price</dt><dd>$125</dd></div>
+    <div><dt>Study</dt><dd>20–25 h</dd></div>
+  </dl>
+  <ul class="bars compact" aria-label="Domain weights"><li><span class="bl">Agentic Architecture and Orchestration</span><span class="bt" aria-hidden="true"><span class="bf" style="width:100%"></span></span><span class="bv">27%</span></li><li><span class="bl">Claude Code Configuration and Workflows</span><span class="bt" aria-hidden="true"><span class="bf" style="width:74%"></span></span><span class="bv">20%</span></li><li><span class="bl">Prompt Engineering and Structured Output</span><span class="bt" aria-hidden="true"><span class="bf" style="width:74%"></span></span><span class="bv">20%</span></li><li><span class="bl">Tool Design and MCP Integration</span><span class="bt" aria-hidden="true"><span class="bf" style="width:67%"></span></span><span class="bv">18%</span></li><li><span class="bl">Context Management and Reliability</span><span class="bt" aria-hidden="true"><span class="bf" style="width:56%"></span></span><span class="bv">15%</span></li></ul>
+  <p class="card-count">6 lessons · 6 scenario simulations + mock plan · 3 labs</p>
+  <a class="btn" href="exams/ccar-f.html">Open the CCAR-F plan</a>
+</article>
+<article class="card c-developer">
+  <p class="card-k"><span class="pill">CCDV-F</span> Developer · Foundations</p>
+  <h3><a href="exams/ccdv-f.html">Claude Certified Developer – Foundations</a></h3>
+  <p class="card-who">Engineers building with the Claude API, the Agent SDK, Claude Code and MCP.</p>
+  <dl class="facts">
+    <div><dt>Questions</dt><dd>53</dd></div><div><dt>Time</dt><dd>120 min</dd></div>
+    <div><dt>Pass</dt><dd>720</dd></div><div><dt>List price</dt><dd>$125</dd></div>
+    <div><dt>Study</dt><dd>10–15 h</dd></div>
+  </dl>
+  <ul class="bars compact" aria-label="Domain weights"><li><span class="bl">Applications and Integration</span><span class="bt" aria-hidden="true"><span class="bf" style="width:100%"></span></span><span class="bv">33.1%</span></li><li><span class="bl">Model Selection and Optimization</span><span class="bt" aria-hidden="true"><span class="bf" style="width:51%"></span></span><span class="bv">16.8%</span></li><li><span class="bl">Agents and Workflows</span><span class="bt" aria-hidden="true"><span class="bf" style="width:44%"></span></span><span class="bv">14.7%</span></li><li><span class="bl">Prompt and Context Engineering</span><span class="bt" aria-hidden="true"><span class="bf" style="width:33%"></span></span><span class="bv">11%</span></li><li><span class="bl">Tools and MCPs</span><span class="bt" aria-hidden="true"><span class="bf" style="width:32%"></span></span><span class="bv">10.6%</span></li><li><span class="bl">Security and Safety</span><span class="bt" aria-hidden="true"><span class="bf" style="width:24%"></span></span><span class="bv">8.1%</span></li><li><span class="bl">Claude Code, Eval and Debugging</span><span class="bt" aria-hidden="true"><span class="bf" style="width:17%"></span></span><span class="bv">5.7%</span></li></ul>
+  <p class="card-count">8 lessons · 6 scenario simulations + mock plan · 4 labs</p>
+  <a class="btn" href="exams/ccdv-f.html">Open the CCDV-F plan</a>
+</article>
+<article class="card c-architect">
+  <p class="card-k"><span class="pill">CCAR-P</span> Architect · Professional</p>
+  <h3><a href="exams/ccar-p.html">Claude Certified Architect – Professional</a></h3>
+  <p class="card-who">Senior architects owning end-to-end Claude solutions, evaluation and governance.</p>
+  <dl class="facts">
+    <div><dt>Questions</dt><dd>63</dd></div><div><dt>Time</dt><dd>120 min</dd></div>
+    <div><dt>Pass</dt><dd>720</dd></div><div><dt>List price</dt><dd>$175</dd></div>
+    <div><dt>Study</dt><dd>15–20 h</dd></div>
+  </dl>
+  <ul class="bars compact" aria-label="Domain weights"><li><span class="bl">Integration</span><span class="bt" aria-hidden="true"><span class="bf" style="width:100%"></span></span><span class="bv">19%</span></li><li><span class="bl">Solution Design and Architecture</span><span class="bt" aria-hidden="true"><span class="bf" style="width:89%"></span></span><span class="bv">17%</span></li><li><span class="bl">Evaluation, Testing and Optimization</span><span class="bt" aria-hidden="true"><span class="bf" style="width:84%"></span></span><span class="bv">16%</span></li><li><span class="bl">Governance, Safety and Risk Management</span><span class="bt" aria-hidden="true"><span class="bf" style="width:74%"></span></span><span class="bv">14%</span></li><li><span class="bl">Stakeholder Communication and Lifecycle</span><span class="bt" aria-hidden="true"><span class="bf" style="width:74%"></span></span><span class="bv">14%</span></li><li><span class="bl">Models, Prompting and Context</span><span class="bt" aria-hidden="true"><span class="bf" style="width:68%"></span></span><span class="bv">13%</span></li><li><span class="bl">Developer Productivity and Enablement</span><span class="bt" aria-hidden="true"><span class="bf" style="width:37%"></span></span><span class="bv">7%</span></li></ul>
+  <p class="card-count">8 lessons · 6 scenario simulations + mock plan · 3 labs</p>
+  <a class="btn" href="exams/ccar-p.html">Open the CCAR-P plan</a>
+</article></div>
+  <p class="src-note">Question counts, time, pass mark and price: the official exam guides, section 5. Study hours: this curriculum.</p>
+</section>
+<section class="block">
+  <h2>How every exam is studied here</h2>
+  <ol class="steps">
+    <li><b>Choose a learning route</b><span>Start with your exam plan. For CCAR-F, use <a href="lessons/ccar-f/concept-course/index.html">concept coaching</a> before deeper objectives when the application is unfamiliar.</span></li>
+    <li><b>Learn or diagnose</b><span>Build understanding first when you are new. Experienced learners can use an optional diagnostic to identify weak domains, then repair them.</span></li>
+    <li><b>Connect lessons and objectives</b><span>Follow the recommended route, trace the data and compare technical alternatives. Use domain weights to allocate practice, not to skip prerequisites.</span></li>
+    <li><b>Trace and practise</b><span>Begin with the supplied paper exercises, then follow each relevant lab's prerequisites. Keep simulated controls and actual tool execution evidence separate.</span></li>
+    <li><b>Simulate decisions</b><span>Commit to a mechanism before opening the <abbr data-tip="The answer key at the end of a simulation. Work the decisions first, then open it." aria-label="The answer key at the end of a simulation. Work the decisions first, then open it.">coach key</abbr>. Explain alternatives and retry later with a changed constraint.</span></li>
+    <li><b>Check readiness, then book</b><span>Review fresh decisions and remaining objective gaps before choosing an exam date. Practice scores do not predict certification marks; confirm current registration and ID requirements.</span></li>
+  </ol>
+</section>
+<section class="block">
+  <h2>Where the facts come from</h2>
+  <div class="tier-row">
+    <div class="tier t1"><b><a class="xref" href="about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a> · Anthropic original</b><span>Exam guides, docs, Anthropic Academy courses, Anthropic posts and videos. Always wins.</span></div>
+    <div class="tier t2"><b><a class="xref" href="about.html#source-tiers"><abbr data-tip="Tier 2: guides and lessons by others. Used only where Tier 1 is silent, and labelled." aria-label="Tier 2: guides and lessons by others. Used only where Tier 1 is silent, and labelled.">Tier 2</abbr></a> · Guides and lessons by others</b><span>Study guides, courses, repos and video lessons. Only where <a class="xref" href="about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a> is silent, and labelled.</span></div>
+    <div class="tier t3"><b><a class="xref" href="about.html#source-tiers"><abbr data-tip="Tier 3: a lower source tier. See the source tiers table on the About page." aria-label="Tier 3: a lower source tier. See the source tiers table on the About page.">Tier 3</abbr></a> · Blogs and sites</b><span>Useful for ideas. Never the only source for a fact.</span></div>
+    <div class="tier tf"><b>Field reports</b><span>What colleagues who passed said. Changes emphasis, never facts.</span></div>
+  </div>
+</section>
+
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Findex.html" rel="noopener">Report a problem on this page</a> · <a href="contribute.html">Contribute</a> · <a href="whats-new.html">What's new</a> · <a href="faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

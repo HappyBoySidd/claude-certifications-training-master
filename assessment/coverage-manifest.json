@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "exam": "CCAR-F",
+  "claim": "Initial task-level diagnostic coverage, not exhaustive skill mastery or official exam prediction",
+  "question_count": 60,
+  "objective_count": 30,
+  "variant_count": 30,
+  "review_state": "author-proposed",
+  "objectives": {
+    "1.1": {
+      "variant_id": "FV-01",
+      "question_ids": [
+        "cct-fv-01-base-v1",
+        "cct-fv-01-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.1-S1",
+        "1.1-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.2": {
+      "variant_id": "FV-02",
+      "question_ids": [
+        "cct-fv-02-base-v1",
+        "cct-fv-02-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.2-S1",
+        "1.2-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.3": {
+      "variant_id": "FV-03",
+      "question_ids": [
+        "cct-fv-03-base-v1",
+        "cct-fv-03-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.3-S1",
+        "1.3-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.4": {
+      "variant_id": "FV-04",
+      "question_ids": [
+        "cct-fv-04-base-v1",
+        "cct-fv-04-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.4-S1",
+        "1.4-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.5": {
+      "variant_id": "FV-05",
+      "question_ids": [
+        "cct-fv-05-base-v1",
+        "cct-fv-05-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.5-S1",
+        "1.5-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.6": {
+      "variant_id": "FV-06",
+      "question_ids": [
+        "cct-fv-06-base-v1",
+        "cct-fv-06-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.6-S1",
+        "1.6-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "1.7": {
+      "variant_id": "FV-07",
+      "question_ids": [
+        "cct-fv-07-base-v1",
+        "cct-fv-07-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "1.7-S2",
+        "1.7-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "2.1": {
+      "variant_id": "FV-08",
+      "question_ids": [
+        "cct-fv-08-base-v1",
+        "cct-fv-08-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "2.1-S1",
+        "2.1-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "2.2": {
+      "variant_id": "FV-09",
+      "question_ids": [
+        "cct-fv-09-base-v1",
+        "cct-fv-09-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "2.2-S1",
+        "2.2-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "2.3": {
+      "variant_id": "FV-10",
+      "question_ids": [
+        "cct-fv-10-base-v1",
+        "cct-fv-10-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "2.3-S1",
+        "2.3-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "2.4": {
+      "variant_id": "FV-11",
+      "question_ids": [
+        "cct-fv-11-base-v1",
+        "cct-fv-11-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "2.4-S1",
+        "2.4-S5"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "2.5": {
+      "variant_id": "FV-12",
+      "question_ids": [
+        "cct-fv-12-base-v1",
+        "cct-fv-12-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "2.5-S3",
+        "2.5-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.1": {
+      "variant_id": "FV-13",
+      "question_ids": [
+        "cct-fv-13-base-v1",
+        "cct-fv-13-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.1-S1",
+        "3.1-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.2": {
+      "variant_id": "FV-14",
+      "question_ids": [
+        "cct-fv-14-base-v1",
+        "cct-fv-14-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.2-S4",
+        "3.2-S5"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.3": {
+      "variant_id": "FV-15",
+      "question_ids": [
+        "cct-fv-15-base-v1",
+        "cct-fv-15-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.3-S1",
+        "3.3-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.4": {
+      "variant_id": "FV-16",
+      "question_ids": [
+        "cct-fv-16-base-v1",
+        "cct-fv-16-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.4-S1",
+        "3.4-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.5": {
+      "variant_id": "FV-17",
+      "question_ids": [
+        "cct-fv-17-base-v1",
+        "cct-fv-17-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.5-S2",
+        "3.5-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "3.6": {
+      "variant_id": "FV-18",
+      "question_ids": [
+        "cct-fv-18-base-v1",
+        "cct-fv-18-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "3.6-S1"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.1": {
+      "variant_id": "FV-19",
+      "question_ids": [
+        "cct-fv-19-base-v1",
+        "cct-fv-19-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.1-S1"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.2": {
+      "variant_id": "FV-20",
+      "question_ids": [
+        "cct-fv-20-base-v1",
+        "cct-fv-20-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.2-S1"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.3": {
+      "variant_id": "FV-21",
+      "question_ids": [
+        "cct-fv-21-base-v1",
+        "cct-fv-21-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.3-S1",
+        "4.3-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.4": {
+      "variant_id": "FV-22",
+      "question_ids": [
+        "cct-fv-22-base-v1",
+        "cct-fv-22-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.4-S1",
+        "4.4-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.5": {
+      "variant_id": "FV-23",
+      "question_ids": [
+        "cct-fv-23-base-v1",
+        "cct-fv-23-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.5-S1"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "4.6": {
+      "variant_id": "FV-24",
+      "question_ids": [
+        "cct-fv-24-base-v1",
+        "cct-fv-24-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "4.6-S1"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.1": {
+      "variant_id": "FV-25",
+      "question_ids": [
+        "cct-fv-25-base-v1",
+        "cct-fv-25-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.1-S1",
+        "5.1-S5"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.2": {
+      "variant_id": "FV-26",
+      "question_ids": [
+        "cct-fv-26-base-v1",
+        "cct-fv-26-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.2-S1",
+        "5.2-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.3": {
+      "variant_id": "FV-27",
+      "question_ids": [
+        "cct-fv-27-base-v1",
+        "cct-fv-27-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.3-S1",
+        "5.3-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.4": {
+      "variant_id": "FV-28",
+      "question_ids": [
+        "cct-fv-28-base-v1",
+        "cct-fv-28-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.4-S1",
+        "5.4-S2"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.5": {
+      "variant_id": "FV-29",
+      "question_ids": [
+        "cct-fv-29-base-v1",
+        "cct-fv-29-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.5-S2",
+        "5.5-S4"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    },
+    "5.6": {
+      "variant_id": "FV-30",
+      "question_ids": [
+        "cct-fv-30-base-v1",
+        "cct-fv-30-retry-v1"
+      ],
+      "primary_skill_bullets": [
+        "5.6-S1",
+        "5.6-S3"
+      ],
+      "covered_all_skill_bullets": false,
+      "status": "draft-awaiting-independent-review"
+    }
+  },
+  "industries": {
+    "Finance": 20,
+    "Legal": 20,
+    "Marketing": 20
+  },
+  "multi_answer_count": 0,
+  "multi_answer_note": "These fixtures deliberately test one best architectural decision; no artificial select-N items were added."
+}

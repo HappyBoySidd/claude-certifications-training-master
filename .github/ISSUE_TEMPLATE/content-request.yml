@@ -1,0 +1,40 @@
+name: Request content
+description: Suggest a topic, lab, simulation or a better explanation.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: exam
+    attributes:
+      label: Which exam?
+      options: ["CCAO-F Associate", "CCAR-F Architect Foundations", "CCDV-F Developer Foundations", "CCAR-P Architect Professional", "All or the site in general"]
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of content?
+      options: ["A new topic or lesson section", "A simulation", "A lab", "A clearer explanation of an existing page", "A site feature", "Other"]
+    validations: {required: true}
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would help, and why. Link the page if it's about an existing one.
+    validations: {required: true}
+  - type: textarea
+    id: source
+    attributes:
+      label: Source (optional)
+      description: A link to Anthropic's docs, exam guide or course that covers it. Only share material you're allowed to share.
+  - type: dropdown
+    id: credit
+    attributes:
+      label: May we credit you by name in the release notes?
+      options: ["No, keep me anonymous", "Yes, use my name"]
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Confirmation
+      options:
+        - label: This contains no actual exam questions or answers.
+          required: true

@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.pyc
+names.txt
+questions.json
+12-Progress/
+TRACKER.md
+session-logs/
+09-Proof/
+private/
+.env
+.env.*
+.local/
+
+# Local authoring/review evidence and private merge staging; never publish.
+/output/
+
+# Private learning records: defense in depth beyond the export allowlist.
+11-Lessons-Learned/debriefs/
+content/11-Lessons-Learned/debriefs/
+**/*coaching-log*
+**/*coaching_log*

@@ -1,0 +1,43 @@
+name: Report a problem
+description: A wrong fact, a broken link, a confusing page or a design issue.
+title: "[Problem] "
+labels: ["defect"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. **Please don't include actual exam questions or answers.**
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The page's address. It's filled in for you when you use the link at the bottom of a page.
+      placeholder: "https://git.soma.salesforce.com/pages/akumthekar/claude-certifications-training/..."
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options: ["Wrong fact", "Out of date", "Broken link", "Confusing", "Design or layout", "Other"]
+    validations: {required: true}
+  - type: textarea
+    id: wrong
+    attributes: {label: "What's wrong?"}
+    validations: {required: true}
+  - type: textarea
+    id: should
+    attributes:
+      label: What should it say or do?
+      description: For a wrong fact, add the link you're going by (Anthropic's docs or exam guide if you can).
+  - type: dropdown
+    id: credit
+    attributes:
+      label: May we credit you by name in the release notes?
+      options: ["No, keep me anonymous", "Yes, use my name"]
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Confirmation
+      options:
+        - label: This contains no actual exam questions or answers.
+          required: true

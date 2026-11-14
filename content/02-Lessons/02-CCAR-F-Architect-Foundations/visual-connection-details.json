@@ -1,0 +1,764 @@
+{
+  "lessons": {
+    "as-01-action-service": {
+      "screen>backend|case C17": {
+        "summary": "case C17 \u2014 Turn a support-screen request into an application job.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCase C17; order O4; request USD120. Later transfer: request USD210. Claimed account A9 is not verified identity.",
+        "instruction": "Associate the request with the case and trusted session. Retain the requested amount separately from permission to execute.",
+        "check": "The backend must not accept account claims or requested money movement as authorization."
+      },
+      "backend>claude|request + evidence": {
+        "summary": "request + evidence \u2014 Give Claude the job and evidence needed to interpret it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC17/O4 request plus observed order and policy results; exact source amount and currency.",
+        "instruction": "Investigate within the allowed tool set. Explain blocked or unresolved outcomes honestly. Request actions only when relevant.",
+        "check": "The application controls evidence inclusion and capabilities. A prompt is guidance, not the execution-time permission boundary."
+      },
+      "claude>backend|explain / propose": {
+        "summary": "explain / propose \u2014 Receive an explanation or proposed tool call, not a completed transaction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nPossible proposal: issue_credit for O4, amount_minor12000, currencyUSD. A mistaken proposal uses120, which means USD1.20.",
+        "instruction": "Inspect the requested capability and arguments. Return actual tool results to the model rather than inventing a receipt.",
+        "check": "Validate units, evidence agreement and current authorization independently; model completion is not business settlement."
+      },
+      "backend>orders|read O4": {
+        "summary": "read O4 \u2014 Read current order evidence and applicable policy.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOrder O4; case C17. Read ownership, delivery evidence and current credit policy.",
+        "instruction": "Retrieve the records the current authenticated request may access. Keep evidence tied to O4.",
+        "check": "Use authoritative records, not a model-provided verified flag. An unavailable read is not an empty successful result."
+      },
+      "orders>backend|facts + policy": {
+        "summary": "facts + policy \u2014 Return facts and policy without executing a credit.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nO4 owner and delivery facts; current automatic-credit threshold USD180 /18000 cents in the transfer fixture.",
+        "instruction": "Preserve values, units and policy provenance so later checks can compare them with the proposed action.",
+        "check": "A read result establishes only its actual evidence; it does not authorize an arbitrary amount or prove a payment occurred."
+      },
+      "backend>payment|unsafe action path": {
+        "summary": "unsafe action path \u2014 The broken demo reaches a money-moving boundary without enough checks.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nProposed credit for O4/USD120; claimed A9; trusted ownership has not been established in the unsafe scene.",
+        "instruction": "The demo dispatches the proposed credit directly to the payment boundary. Its trace has not established trusted ownership. Read this as the broken path currently being investigated, not a validated production design.",
+        "check": "Current missing evidence: verified ownership and applicable action authority. This scene does not demonstrate those checks running or a successful credit receipt."
+      },
+      "backend>gate|proposed credit": {
+        "summary": "proposed credit \u2014 Submit the proposed action to checks owned by application code.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC17/O4, proposed amount and currency, trusted order evidence and current policy. Transfer:21000 cents; automatic limit18000; staff approval absent.",
+        "instruction": "Compare exact action with trusted account binding, current policy and supported duplicate-operation rules before dispatch.",
+        "check": "Valid JSON and appropriate tool selection do not establish permission. Return a named block or review reason when checks fail."
+      },
+      "session>gate|trusted identity": {
+        "summary": "trusted identity \u2014 Use trusted identity rather than the account named in a message.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nMismatch fixture: trusted session account A2; O4 owner A9.",
+        "instruction": "Check that the authenticated actor can perform this action on this order under current policy.",
+        "check": "A2 versus A9 fails the required ownership relation. A model-supplied verified flag must not override it."
+      },
+      "gate>payment|only if permitted": {
+        "summary": "only if permitted \u2014 Execute only the credit the application has actually permitted.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nValidated O4 amount/currency and the logical operation identity. No dispatch when ownership or policy fails.",
+        "instruction": "Call the payment integration only after the current action passes permission and policy checks. Follow the provider\u2019s actual operation-key rules.",
+        "check": "Submitting a request is not confirmation. Preserve returned status or an explicit unknown result if acknowledgement is lost."
+      },
+      "claude>tools|choose capability": {
+        "summary": "choose capability \u2014 Choose between evidence retrieval and a financial action.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDelivery question: \u201cWas O4 delivered?\u201d Tools:lookup_order and issue_credit.",
+        "instruction": "Read each tool\u2019s purpose, inputs and side effects. Select lookup_order for the read-only question.",
+        "check": "Choosing a tool does not execute it. tool_choice controls model requests; it does not provide ownership, policy or business-result evidence."
+      },
+      "tools>backend|request, not execution": {
+        "summary": "request, not execution \u2014 Return the selected capability and proposed inputs to the runtime.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nlookup_order(O4) for delivery evidence; issue_credit proposals require a different guarded path.",
+        "instruction": "Dispatch a permitted read or validate a proposed write in its execution handler. Append the observed result for the next model turn.",
+        "check": "Descriptions must distinguish read versus write. Do not run the credit tool merely because both tools mention an order."
+      },
+      "payment>backend|reply lost": {
+        "summary": "reply lost \u2014 A network timeout reports an observation gap.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOperation r17 submitted; acknowledgement lost; local status unknown; no confirmed receipt yet.",
+        "instruction": "Preserve the observed timeout and the submitted operation identity r17. The current response contains no authoritative provider outcome.",
+        "check": "Current observation: acknowledgement absent. The edge does not establish either failed execution or successful settlement; the receipt is still unconfirmed."
+      },
+      "payment>ledger|provider evidence": {
+        "summary": "provider evidence \u2014 Record authoritative provider evidence for the same operation.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nr17 status lookup may establish succeeded with receipt CR1. If confirmation is unavailable, retain unknown.",
+        "instruction": "Associate the provider result with r17 and retain the observed receipt or unresolved status.",
+        "check": "Only actual returned evidence can establish settlement. A request, assistant sentence or tool-selection stop does not establish CR1."
+      },
+      "ledger>backend|known / unresolved": {
+        "summary": "known / unresolved \u2014 Give the application the known outcome and what remains unresolved.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nr17\u2192CR1 when confirmed; otherwise r17\u2192UNKNOWN. Confirmed replay fixture makes zero additional credit calls.",
+        "instruction": "Reuse the established receipt or keep an explicit pending/handoff state. Do not present an unknown operation as refunded.",
+        "check": "Reconcile identity and provider status before supported replay. Supported idempotency depends on the receiving provider\u2019s real contract."
+      },
+      "gate>human|hold + handoff": {
+        "summary": "hold + handoff \u2014 Hand off the exact blocked proposal to an authorized owner.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nTransfer:C17/O4; proposed USD210/21000 cents; automatic limitUSD180/18000; ownership verified; staff approval absent; operation not submitted.",
+        "instruction": "Request scoped staff review with the amount, evidence, policy reason and current not-issued state.",
+        "check": "The queue entry is not approval. The final response must say the credit was not issued and identify the next owner."
+      }
+    },
+    "as-02-document-pipeline": {
+      "source>worker|doc-A": {
+        "summary": "doc-A \u2014 Give the worker the original invoice and stable source identity.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\ndoc-A:Example Lamps; invoiceEL-8; totalUSD84.50; PO not shown. Archive adds doc-B unreadable and doc-C transient API failure.",
+        "instruction": "Keep the source text and identity available through extraction and acceptance. Unreadable preparation needs its own outcome.",
+        "check": "Do not invent a PO or treat an unreadable source as an empty but successfully extracted invoice."
+      },
+      "worker>extract|invoice text": {
+        "summary": "invoice text \u2014 Ask for a draft accounting record grounded in this invoice.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nEL-8 text plus the receiving agreement: invoice_id, integer total_minor, USD currency and purchase_order presence/null rule.",
+        "instruction": "Extract supported values; represent absent PO according to the intended contract. Do not infer tax or pay the invoice.",
+        "check": "A model turn produces a proposal. It does not mark downstream acceptance or complete the archive."
+      },
+      "extract>check|draft + source": {
+        "summary": "draft + source \u2014 Validate a draft against both its shape and source meaning.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nBad handoff:total_minor84.5 and missing PO key. Supported correction:8450 cents and purchase_order:null. Shape-valid845 still disagrees with USD84.50.",
+        "instruction": "Return field-specific defects and source evidence for bounded repair. Check units, currency and source agreement before accepting.",
+        "check": "Consumer v1 requires nullable PO; v2 may allow omission. Validate the intended version, not a universal assumption about null/omission."
+      },
+      "check>ledger|per-ID state": {
+        "summary": "per-ID state \u2014 Record acceptance and failures independently for every source.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\ndoc-A:validated/accepted; doc-B:unreadable/quarantined; doc-C:transient API error/retry_pending.",
+        "instruction": "Persist preparation, API, validation and downstream states under stable source/version identity. Keep accepted work.",
+        "check": "Terminal processing is not all-item success. Match by identity rather than returned position; missing required work remains partial."
+      },
+      "ledger>review|unreadable/conflicting": {
+        "summary": "unreadable/conflicting \u2014 Send evidence problems that another generation cannot honestly resolve.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nUnreadable doc-B or conflicting source totals; include source identity, failed preparation/check and named ambiguity.",
+        "instruction": "Assign a person or preparation step to the unresolved evidence while preserving accepted files.",
+        "check": "Review is pending until resolved. A source conflict must not be replaced with a plausible invented amount or missing PO."
+      }
+    },
+    "as-03-grounded-assistant": {
+      "ask>search|pump question": {
+        "summary": "Atlas pump question \u2014 Search for the exact machine within the authorized scope.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nQuestion:Atlas pump cooling interval. Applicable fixture:atlas-pump-manual-rev3 page8 says20minutes; atlas-pump-manual-rev1 is superseded under the supplied catalog rule.",
+        "instruction": "Use the machine identifier and entitlement context when selecting approved source evidence.",
+        "check": "An official Beacon pump or Cascade pump instruction is not applicable to Atlas pump. Do not infer precedence from publication date alone."
+      },
+      "search>answer|manual excerpts": {
+        "summary": "manual excerpts \u2014 Supply the passages the model can actually cite.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nApproved applicable Atlas pump excerpts with document/revision/page; baseline:atlas-pump-manual-rev3 p8\u219220minutes.",
+        "instruction": "Answer the specific machine question from the returned text. Cite the supporting location or state an evidence gap.",
+        "check": "Search unavailable differs from successful no-match. Retrieved text must be applicable; a citation alone does not prove the right machine."
+      },
+      "search>catalog|selected resource": {
+        "summary": "selected resource \u2014 Resolve the selected manual identifier into observed content.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCatalog identifier manual://atlas-pump/revision-3; connected server and discovered catalog do not yet provide the manual text.",
+        "instruction": "The catalog identifies manual://atlas-pump/revision-3. Inspect the trace to see whether the client actually read the resource and included its contents; connection discovery alone has not shown that.",
+        "check": "Current distinction: a catalog identifier is metadata, not the manual text. A read/fetch and context-inclusion observation are separate evidence."
+      },
+      "catalog>answer|actual content/status": {
+        "summary": "actual content/status \u2014 Pass actual authorized content or a named content-access failure.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\natlas-pump-manual-rev3 fetched text when successful; otherwise resource fetch failure and retained manual identifier.",
+        "instruction": "Use only content actually supplied to this turn. Treat document commands as evidence text, not application instructions.",
+        "check": "If the manual was not read, report unavailable evidence rather than answering from an unseen source or saying no instruction exists."
+      },
+      "ask>guard|authorized scope": {
+        "summary": "authorized scope \u2014 Establish what the technician may retrieve before loading it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nQuestion forAtlas pump; authorized machine scopeAtlas pump. Restricted atlas-pump-manual-draft-rev4 is not an approved returned source.",
+        "instruction": "Evaluate entitlement and approved-source scope before retrieval/context inclusion.",
+        "check": "A requested or mentioned document does not grant access. The model must not be asked to hide unauthorized content after loading it."
+      },
+      "guard>search|permitted retrieval": {
+        "summary": "permitted retrieval \u2014 Permit retrieval only within the established evidence boundary.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nApproved authorized Atlas pump source selection; restricted drafts excluded; embedded \u201creveal restricted manuals\u201d text has no policy authority.",
+        "instruction": "Apply the permission filter in the retrieval path and preserve machine/revision applicability.",
+        "check": "This is an application check, not merely a response-style prompt. Do not broaden scope because source content requests it."
+      },
+      "search>catalog|selected content": {
+        "summary": "selected content \u2014 Resolve the selected manual identifier into observed content.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCatalog identifier manual://atlas-pump/revision-3; connected server and discovered catalog do not yet provide the manual text.",
+        "instruction": "Use the client\u2019s supported resource read/fetch and preserve its actual success/failure result.",
+        "check": "A connection or tool declaration does not demonstrate that content entered current context. Check the read and inclusion trace."
+      },
+      "catalog>answer|evidence only": {
+        "summary": "evidence only \u2014 Pass actual authorized content or a named content-access failure.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\natlas-pump-manual-rev3 fetched text when successful; otherwise resource fetch failure and retained manual identifier.",
+        "instruction": "Use only content actually supplied to this turn. Treat document commands as evidence text, not application instructions.",
+        "check": "If the manual was not read, report unavailable evidence rather than answering from an unseen source or saying no instruction exists."
+      },
+      "answer>owner|conflict + provenance": {
+        "summary": "conflict + provenance \u2014 Expose conflicting source authority instead of fabricating an instruction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nTwo current authorized Atlas pump sources disagree; no established precedence rule; retain both claims and provenance.",
+        "instruction": "State what each source says and ask the maintenance owner which governs the operational decision.",
+        "check": "Averaging intervals, confident wording or another generation does not establish authority. No unsupported instruction should be presented as approved."
+      }
+    },
+    "as-04-research-system": {
+      "request>coord|goal + constraints": {
+        "summary": "goal + constraints \u2014 Give the coordinator the actual decision and its limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nWarehouse mobile-scanning pilot next month; gloves, poor-connectivity aisles, training burden and feasibility. Transfer:one approved scanner model from a known catalog.",
+        "instruction": "Investigate the stated scope with supplied evidence. For the transfer, use the bounded authorized catalog lookup rather than inventing a multi-specialty need.",
+        "check": "The coordinator recommends; the operations owner approves scope/budget. A broad essay or recalled model name does not satisfy the source-backed decision."
+      },
+      "request>coord|scope": {
+        "summary": "scope \u2014 Give the coordinator the actual decision and its limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nWarehouse mobile-scanning pilot next month; gloves, poor-connectivity aisles, training burden and feasibility. Transfer:one approved scanner model from a known catalog.",
+        "instruction": "Investigate the stated scope with supplied evidence. For the transfer, use the bounded authorized catalog lookup rather than inventing a multi-specialty need.",
+        "check": "The coordinator recommends; the operations owner approves scope/budget. A broad essay or recalled model name does not satisfy the source-backed decision."
+      },
+      "coord>special|bounded assignment": {
+        "summary": "bounded assignment \u2014 Create a specialty assignment that can stand alone.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity or ergonomics question; one-month pilot constraint; relevant sources; expected claim/source/location/scope/uncertainty return. Broken brief:\u201cCompare what we discussed.\u201d",
+        "instruction": "Pass the relevant facts, allowed scope and return expectations explicitly; the isolated worker cannot assume parent conversation access.",
+        "check": "A JSON output schema does not replace the missing task context. Avoid unbounded transcript transfer or private untracked conclusions."
+      },
+      "special>coord|source-linked findings": {
+        "summary": "source-linked findings \u2014 Return source-backed findings and the limitations of that specialty.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity/ergonomics findings with source pointers; a timed-out connectivity worker has not completed its assigned investigation.",
+        "instruction": "Preserve supported claims and make failures or missing evidence explicit for the single synthesis owner.",
+        "check": "A confident summary or tidy payload does not prove required coverage. Do not fill a failed return with general-knowledge estimates."
+      },
+      "coord>special|vague assignment": {
+        "summary": "vague assignment \u2014 Create a specialty assignment that can stand alone.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nBroken worker brief: \u201cCompare the options we discussed.\u201d Missing: one-month pilot limit, gloves, relevant sources, specialty scope and return expectations.",
+        "instruction": "The isolated worker receives the quoted vague assignment. The current transfer does not include earlier parent conversation, the one-month constraint or relevant source context.",
+        "check": "Observed gap: the assignment references context the worker has not received. A schema-valid return would not establish that the missing constraints were understood."
+      },
+      "coord>special|self-contained brief": {
+        "summary": "self-contained brief \u2014 Create a specialty assignment that can stand alone.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity or ergonomics question; one-month pilot constraint; relevant sources; expected claim/source/location/scope/uncertainty return. Broken brief:\u201cCompare what we discussed.\u201d",
+        "instruction": "Pass the relevant facts, allowed scope and return expectations explicitly; the isolated worker cannot assume parent conversation access.",
+        "check": "A JSON output schema does not replace the missing task context. Avoid unbounded transcript transfer or private untracked conclusions."
+      },
+      "special>coord|claim + source + uncertainty": {
+        "summary": "claim + source + uncertainty \u2014 Return source-backed findings and the limitations of that specialty.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity/ergonomics findings with source pointers; a timed-out connectivity worker has not completed its assigned investigation.",
+        "instruction": "Preserve supported claims and make failures or missing evidence explicit for the single synthesis owner.",
+        "check": "A confident summary or tidy payload does not prove required coverage. Do not fill a failed return with general-knowledge estimates."
+      },
+      "coord>special|brief": {
+        "summary": "brief \u2014 Create a specialty assignment that can stand alone.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity or ergonomics question; one-month pilot constraint; relevant sources; expected claim/source/location/scope/uncertainty return. Broken brief:\u201cCompare what we discussed.\u201d",
+        "instruction": "Pass the relevant facts, allowed scope and return expectations explicitly; the isolated worker cannot assume parent conversation access.",
+        "check": "A JSON output schema does not replace the missing task context. Avoid unbounded transcript transfer or private untracked conclusions."
+      },
+      "special>coord|partial returns": {
+        "summary": "partial returns \u2014 Return source-backed findings and the limitations of that specialty.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nConnectivity/ergonomics findings with source pointers; a timed-out connectivity worker has not completed its assigned investigation.",
+        "instruction": "Preserve supported claims and make failures or missing evidence explicit for the single synthesis owner.",
+        "check": "A confident summary or tidy payload does not prove required coverage. Do not fill a failed return with general-knowledge estimates."
+      },
+      "special>ledger|findings/status": {
+        "summary": "findings/status \u2014 Reconcile each expected specialty with what actually returned.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nExpected:connectivity and ergonomics. Observed:ergonomics supported; connectivity timeout. Coordinator retains training/pilot-feasibility responsibilities.",
+        "instruction": "Record contributor identity, outcome and evidence against each required dimension.",
+        "check": "Schema conformance is separate from coverage. Keep valid findings while flagging the specific missing investigation."
+      },
+      "ledger>coord|coverage gaps": {
+        "summary": "coverage gaps \u2014 Make the missing work visible before final synthesis.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRequired dimensions:connectivity, ergonomics, training, pilot feasibility; supported or explicitly unresolved.",
+        "instruction": "Use the bounded follow-up for the specific gap or preserve it as a stated limit in the recommendation.",
+        "check": "A budget stop does not turn the remaining gap into success. Do not restart supported dimensions without a new reason."
+      },
+      "coord>owner|recommendation + limits": {
+        "summary": "recommendation + limits \u2014 Submit a recommendation with evidence and explicit decision limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOne-month pilot recommendation; supporting findings; connectivity gap if unresolved; scope and budget still require owner acceptance.",
+        "instruction": "Separate established findings, unresolved questions and proposed commitments. Ask for the owner\u2019s actual decision.",
+        "check": "Model confidence and elegant presentation do not approve a pilot. Partial coverage must remain visible."
+      },
+      "coord>owner|recommendation": {
+        "summary": "recommendation \u2014 Submit a recommendation with evidence and explicit decision limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOne-month pilot recommendation; supporting findings; connectivity gap if unresolved; scope and budget still require owner acceptance.",
+        "instruction": "Separate established findings, unresolved questions and proposed commitments. Ask for the owner\u2019s actual decision.",
+        "check": "Model confidence and elegant presentation do not approve a pilot. Partial coverage must remain visible."
+      },
+      "request>coord|authorized catalog evidence": {
+        "summary": "authorized catalog evidence \u2014 Give the coordinator the actual decision and its limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nWarehouse mobile-scanning pilot next month; gloves, poor-connectivity aisles, training burden and feasibility. Transfer:one approved scanner model from a known catalog.",
+        "instruction": "Investigate the stated scope with supplied evidence. For the transfer, use the bounded authorized catalog lookup rather than inventing a multi-specialty need.",
+        "check": "The coordinator recommends; the operations owner approves scope/budget. A broad essay or recalled model name does not satisfy the source-backed decision."
+      }
+    },
+    "as-05-code-change": {
+      "request>code|expected meaning": {
+        "summary": "expected meaning \u2014 Locate where the business meaning is implemented.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nR-7:deposit null\u2192unknown; R-8:deposit0\u2192known zero. importer.py currently uses record.get(\"deposit\") or0.",
+        "instruction": "Find the importer, callers and existing fixtures that govern this distinction. Work in the disposable checkout.",
+        "check": "The request authorizes a proposal, not production booking changes. Do not assume one line is the only affected boundary."
+      },
+      "code>claude|current implementation": {
+        "summary": "current implementation \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "request>code|contract": {
+        "summary": "contract \u2014 Locate where the business meaning is implemented.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nR-7:deposit null\u2192unknown; R-8:deposit0\u2192known zero. importer.py currently uses record.get(\"deposit\") or0.",
+        "instruction": "Find the importer, callers and existing fixtures that govern this distinction. Work in the disposable checkout.",
+        "check": "The request authorizes a proposal, not production booking changes. Do not assume one line is the only affected boundary."
+      },
+      "code>claude|current files": {
+        "summary": "current files \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "code>claude|scoped evidence": {
+        "summary": "scoped evidence \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "claude>tests|proposed patch": {
+        "summary": "proposed patch \u2014 Check the proposed change against actual boundary behavior.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nPatch to preserve null; R-7 must remain unknown through reporting; R-8 must retain legitimate zero. Broken trace:null\u2192formatter0\u2192settled.",
+        "instruction": "Run relevant boundary/regression checks and report expected versus observed output. Revise using the failing formatter location and trace.",
+        "check": "Narrow local success does not close an end-to-end failure. Do not broaden every formatter\u2019s contract without evidence."
+      },
+      "code>claude|evidence": {
+        "summary": "evidence \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "claude>tests|patch": {
+        "summary": "patch \u2014 Check the proposed change against actual boundary behavior.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nPatch to preserve null; R-7 must remain unknown through reporting; R-8 must retain legitimate zero. Broken trace:null\u2192formatter0\u2192settled.",
+        "instruction": "Run relevant boundary/regression checks and report expected versus observed output. Revise using the failing formatter location and trace.",
+        "check": "Narrow local success does not close an end-to-end failure. Do not broaden every formatter\u2019s contract without evidence."
+      },
+      "code>claude|relevant files": {
+        "summary": "relevant files \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "rules>claude|scoped guidance": {
+        "summary": "scoped guidance \u2014 Load the convention where it is relevant and the procedure when needed.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nShared unknown-value invariant; importer path-specific guidance; reusable checking procedure in a skill.",
+        "instruction": "Apply shared project guidance and matching file rules. Invoke the review procedure for its task rather than loading every detailed procedure everywhere.",
+        "check": "Instructions guide work; they do not demonstrate correctness. Personal memory alone does not distribute a team-required rule."
+      },
+      "code>claude|files": {
+        "summary": "files \u2014 Supply focused code evidence rather than an issue-only guess.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nimporter.py defaulting; report.py balance_known=deposit is not None; relevant formatter/caller code and R-7/R-8 fixtures.",
+        "instruction": "Use Glob/Grep to locate uses, Read relevant implementation, then plan targeted changes against the contract.",
+        "check": "A passing importer test cannot prove report behavior. Avoid replacing modules or loading unrelated repository content without a demonstrated need."
+      },
+      "rules>claude|guidance": {
+        "summary": "guidance \u2014 Load the convention where it is relevant and the procedure when needed.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nShared unknown-value invariant; importer path-specific guidance; reusable checking procedure in a skill.",
+        "instruction": "Apply shared project guidance and matching file rules. Invoke the review procedure for its task rather than loading every detailed procedure everywhere.",
+        "check": "Instructions guide work; they do not demonstrate correctness. Personal memory alone does not distribute a team-required rule."
+      },
+      "tests>owner|boundary evidence + diff": {
+        "summary": "boundary evidence + diff \u2014 Hand review ownership the diff and observed behavior.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nR-7:unknown/not settled; R-8:0/known; proposed diff and actual check outcomes.",
+        "instruction": "Review the scoped proposal and evidence before any separately authorized release.",
+        "check": "Passing checks and model approval are not deployment. Report skipped or failed checks honestly; preserve production unchanged in this exercise."
+      },
+      "tests>owner|evidence": {
+        "summary": "evidence \u2014 Hand review ownership the diff and observed behavior.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nR-7:unknown/not settled; R-8:0/known; proposed diff and actual check outcomes.",
+        "instruction": "Review the scoped proposal and evidence before any separately authorized release.",
+        "check": "Passing checks and model approval are not deployment. Report skipped or failed checks honestly; preserve production unchanged in this exercise."
+      },
+      "request>claude|known string": {
+        "summary": "known string \u2014 Use a smaller workflow for a known wording-only task.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nTransfer:one known typo in help text, no data-flow or behavioral change.",
+        "instruction": "Make the bounded string edit and inspect its rendered wording under normal review/release ownership.",
+        "check": "Do not reuse the earlier large dependency investigation merely because it was useful for a different uncertainty."
+      },
+      "claude>owner|edit + rendered check": {
+        "summary": "edit + rendered check \u2014 Show the small edit and the relevant visible check.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nKnown help-text replacement plus observed rendered wording; no production edit implied.",
+        "instruction": "Present the bounded change for the normal owner process.",
+        "check": "Importer tests do not establish the requested wording. Small scope does not bypass release authority."
+      }
+    },
+    "as-06-ci-review": {
+      "packet>model|diff + contract + tests": {
+        "summary": "diff + contract + tests \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "packet>model|partial context": {
+        "summary": "partial context \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "packet>model|explicit packet": {
+        "summary": "explicit packet \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "model>gate|exit + envelope + payload": {
+        "summary": "exit + envelope + payload \u2014 Check execution mechanics before using a review result.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nProcess exit status; actual result envelope; findings payload. Valid empty findings differs from failed execution or invalid payload.",
+        "instruction": "Inspect the run status and expected payload shape before forwarding candidates. In headless mode, retain bounded capabilities.",
+        "check": "Parseable JSON alone does not prove process success or semantic correctness. Review failure must remain a visible failure, not \u201cno findings.\u201d"
+      },
+      "packet>model|packet": {
+        "summary": "packet \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "model>gate|payload": {
+        "summary": "payload \u2014 Check execution mechanics before using a review result.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nProcess exit status; actual result envelope; findings payload. Valid empty findings differs from failed execution or invalid payload.",
+        "instruction": "Inspect the run status and expected payload shape before forwarding candidates. In headless mode, retain bounded capabilities.",
+        "check": "Parseable JSON alone does not prove process success or semantic correctness. Review failure must remain a visible failure, not \u201cno findings.\u201d"
+      },
+      "packet>model|criteria + evidence": {
+        "summary": "criteria + evidence \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "gate>integration|candidate findings": {
+        "summary": "candidate findings \u2014 Verify evidence and combined behavior, not just local formatting.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCandidate F2:currency:null becomesUSD at charge.py:18 despite the blocking contract. Evaluation transfer:valid empty findings although this known defect remains.",
+        "instruction": "Trace candidate defects through requirements, changed code, callers and fixtures. For known-defect evaluation, record a miss rather than inventing a finding.",
+        "check": "A schema-valid claim is not proven true. A valid empty array is not a safety certification when the fixture demonstrates a missed defect."
+      },
+      "gate>integration|candidates": {
+        "summary": "candidates \u2014 Verify evidence and combined behavior, not just local formatting.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCandidate F2:currency:null becomesUSD at charge.py:18 despite the blocking contract. Evaluation transfer:valid empty findings although this known defect remains.",
+        "instruction": "Trace candidate defects through requirements, changed code, callers and fixtures. For known-defect evaluation, record a miss rather than inventing a finding.",
+        "check": "A schema-valid claim is not proven true. A valid empty array is not a safety certification when the fixture demonstrates a missed defect."
+      },
+      "packet>model|diff + requirements": {
+        "summary": "diff + requirements \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "model>gate|process/payload": {
+        "summary": "process/payload \u2014 Check execution mechanics before using a review result.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nProcess exit status; actual result envelope; findings payload. Valid empty findings differs from failed execution or invalid payload.",
+        "instruction": "Inspect the run status and expected payload shape before forwarding candidates. In headless mode, retain bounded capabilities.",
+        "check": "Parseable JSON alone does not prove process success or semantic correctness. Review failure must remain a visible failure, not \u201cno findings.\u201d"
+      },
+      "integration>ledger|supported findings": {
+        "summary": "supported findings \u2014 Record supported findings or the observed evaluation miss.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nF1 resolved; F2 still supported. In the changed-condition evaluation, the reviewer missed known F2.",
+        "instruction": "Reconcile current evidence with existing finding state. Retain new/still-unresolved defects; record capability misses separately for improvement.",
+        "check": "Do not suppress all previously seen IDs: unresolved findings can remain relevant. Do not repeat resolved F1 as a new defect."
+      },
+      "ledger>post|new/unresolved only": {
+        "summary": "new/unresolved only \u2014 Publish only checked findings within the separate permission boundary.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCurrent supported F2 with location and consequence; resolved F1 omitted; failed/invalid review not published as success.",
+        "instruction": "Use the separately authorized posting service for eligible findings. Preserve review scope and status.",
+        "check": "A comment is not approval or merge authority. No reviewer prompt can confer capabilities or credentials withheld by the application."
+      },
+      "packet>model|known defect fixture": {
+        "summary": "known defect fixture \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "model>gate|valid empty payload": {
+        "summary": "valid empty payload \u2014 Check execution mechanics before using a review result.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRun succeeds; findings:[]; known currency:null defect remains in the evaluation fixture.",
+        "instruction": "Inspect the run status and expected payload shape before forwarding candidates. In headless mode, retain bounded capabilities.",
+        "check": "Parseable JSON alone does not prove process success or semantic correctness. Review failure must remain a visible failure, not \u201cno findings.\u201d"
+      },
+      "gate>integration|evaluation result": {
+        "summary": "evaluation result \u2014 Verify evidence and combined behavior, not just local formatting.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRun succeeds; findings:[]; known currency:null defect remains in the evaluation fixture.",
+        "instruction": "Trace candidate defects through requirements, changed code, callers and fixtures. For known-defect evaluation, record a miss rather than inventing a finding.",
+        "check": "A schema-valid claim is not proven true. A valid empty array is not a safety certification when the fixture demonstrates a missed defect."
+      },
+      "packet>model|evaluation packet": {
+        "summary": "evaluation packet \u2014 Give an independent reviewer the evidence and actionable criteria.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nDiff, business contract, existing invoice(overrides) fixture; charge.py:18 defaults missing currency toUSD; F1 resolved/F2 unaddressed where supplied.",
+        "instruction": "Review reachable contract violations, using triggering input, current location and consequence. Exclude harmless style and avoid simply agreeing with the author.",
+        "check": "No interactive operator is available. A partial packet or schema-only request does not establish adequate review context."
+      },
+      "model>gate|output": {
+        "summary": "output \u2014 Check execution mechanics before using a review result.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nProcess exit status; actual result envelope; findings payload. Valid empty findings differs from failed execution or invalid payload.",
+        "instruction": "Inspect the run status and expected payload shape before forwarding candidates. In headless mode, retain bounded capabilities.",
+        "check": "Parseable JSON alone does not prove process success or semantic correctness. Review failure must remain a visible failure, not \u201cno findings.\u201d"
+      },
+      "gate>integration|known-defect check": {
+        "summary": "known-defect check \u2014 Verify evidence and combined behavior, not just local formatting.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRun succeeds; findings:[]; known currency:null defect remains in the evaluation fixture.",
+        "instruction": "Trace candidate defects through requirements, changed code, callers and fixtures. For known-defect evaluation, record a miss rather than inventing a finding.",
+        "check": "A schema-valid claim is not proven true. A valid empty array is not a safety certification when the fixture demonstrates a missed defect."
+      },
+      "integration>ledger|miss recorded": {
+        "summary": "miss recorded \u2014 Record supported findings or the observed evaluation miss.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRun succeeds; findings:[]; known currency:null defect remains in the evaluation fixture.",
+        "instruction": "Reconcile current evidence with existing finding state. Retain new/still-unresolved defects; record capability misses separately for improvement.",
+        "check": "Do not suppress all previously seen IDs: unresolved findings can remain relevant. Do not repeat resolved F1 as a new defect."
+      }
+    },
+    "as-07-work-queue": {
+      "jobs>route|deadline + dependencies": {
+        "summary": "deadline + dependencies \u2014 Classify work by deadline and evidence dependency.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1:120seconds, needs live read_booking. N-1..N-500:independent supplied PDFs;30hour report target with2hours reserved for validation/assembly.",
+        "instruction": "Decide whether the job needs a waiting interaction, deferred independent extraction or staged evidence acquisition.",
+        "check": "Price, confidence and polling frequency do not establish latency or capacity. In the transfer, archive independence has changed."
+      },
+      "jobs>route|two deadlines": {
+        "summary": "two deadlines \u2014 Classify work by deadline and evidence dependency.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1:120seconds, needs live read_booking. N-1..N-500:independent supplied PDFs;30hour report target with2hours reserved for validation/assembly.",
+        "instruction": "Decide whether the job needs a waiting interaction, deferred independent extraction or staged evidence acquisition.",
+        "check": "Price, confidence and polling frequency do not establish latency or capacity. In the transfer, archive independence has changed."
+      },
+      "jobs>route|requirements": {
+        "summary": "requirements \u2014 Classify work by deadline and evidence dependency.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1:120seconds, needs live read_booking. N-1..N-500:independent supplied PDFs;30hour report target with2hours reserved for validation/assembly.",
+        "instruction": "Decide whether the job needs a waiting interaction, deferred independent extraction or staged evidence acquisition.",
+        "check": "Price, confidence and polling frequency do not establish latency or capacity. In the transfer, archive independence has changed."
+      },
+      "route>live|U-1 urgent": {
+        "summary": "U-1 urgent \u2014 Give the application runtime the urgent or dependent interaction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1 needs live booking evidence before clarification. Transfer:archive requests now need model-selected read_booking too.",
+        "instruction": "Execute supported local tools in the application, return observed results, and budget the interaction honestly.",
+        "check": "A tool declaration is not execution. Synchronous routing alone does not guarantee capacity or a deadline."
+      },
+      "route>batch|independent archive": {
+        "summary": "independent archive \u2014 Submit only work whose evidence and timing fit deferred processing.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nArchive PDFs are supplied and independent in the original scene; their result IDs retain source/version association.",
+        "instruction": "Assess the whole processing/validation/report path and fallback policy before using the deferred lane.",
+        "check": "The edge labeled \u201cold assumption\u201d is deliberately broken after live dependencies appear; do not interpret it as a working new architecture."
+      },
+      "route>live|U-1": {
+        "summary": "U-1 \u2014 Give the application runtime the urgent or dependent interaction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1 needs live booking evidence before clarification. Transfer:archive requests now need model-selected read_booking too.",
+        "instruction": "Execute supported local tools in the application, return observed results, and budget the interaction honestly.",
+        "check": "A tool declaration is not execution. Synchronous routing alone does not guarantee capacity or a deadline."
+      },
+      "route>batch|archive": {
+        "summary": "archive \u2014 Submit only work whose evidence and timing fit deferred processing.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nArchive PDFs are supplied and independent in the original scene; their result IDs retain source/version association.",
+        "instruction": "Assess the whole processing/validation/report path and fallback policy before using the deferred lane.",
+        "check": "The edge labeled \u201cold assumption\u201d is deliberately broken after live dependencies appear; do not interpret it as a working new architecture."
+      },
+      "live>ledger|interaction outcome": {
+        "summary": "interaction outcome \u2014 Keep the observed live outcome and its unresolved state.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1 read_booking may time out with no side effect; clarification may require bounded retry or handoff.",
+        "instruction": "Record actual read result or failure against U-1. Return linked observed evidence for any next model turn.",
+        "check": "A read timeout is not missing booking evidence successfully retrieved. Do not claim clarification completed without its required facts."
+      },
+      "batch>ledger|custom_id + status": {
+        "summary": "custom_id + status \u2014 Correlate unordered API results before validating acceptance.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nReturned:N-3 success,N-1 error,N-2 success. Fixture may also containN-4 expired. Identity is stable custom_id linked to source/version.",
+        "instruction": "Join by identity, preserve successes and store API outcome separately from validation/downstream state.",
+        "check": "Arrival order is not submission order. Terminal batch state does not prove every required invoice succeeded or was accepted."
+      },
+      "batch>ledger|outcomes": {
+        "summary": "outcomes \u2014 Correlate unordered API results before validating acceptance.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nReturned:N-3 success,N-1 error,N-2 success. Fixture may also containN-4 expired. Identity is stable custom_id linked to source/version.",
+        "instruction": "Join by identity, preserve successes and store API outcome separately from validation/downstream state.",
+        "check": "Arrival order is not submission order. Terminal batch state does not prove every required invoice succeeded or was accepted."
+      },
+      "live>ledger|read status": {
+        "summary": "read status \u2014 Keep the observed live outcome and its unresolved state.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1 read_booking may time out with no side effect; clarification may require bounded retry or handoff.",
+        "instruction": "Record actual read result or failure against U-1. Return linked observed evidence for any next model turn.",
+        "check": "A read timeout is not missing booking evidence successfully retrieved. Do not claim clarification completed without its required facts."
+      },
+      "ledger>recover|named failure/effect state": {
+        "summary": "named failure/effect state \u2014 Recover only the specific failed or unknown work.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nN-1 context-too-large\u2192repair/chunk with source identity; N-4 expired\u2192deadline-aware retry/fallback; U-1 read timeout\u2192bounded retry; PAY-9 effect unknown.",
+        "instruction": "Choose repair, eligible retry, authoritative status reconciliation or explicit handoff by failure cause and side-effect risk.",
+        "check": "Keep N-2/N-3 successes. Unknown PAY-9 requires reconciliation before supported replay; missing required work means partial, not complete."
+      },
+      "jobs>route|new dependencies": {
+        "summary": "new dependencies \u2014 Classify work by deadline and evidence dependency.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1:120seconds, needs live read_booking. N-1..N-500:independent supplied PDFs;30hour report target with2hours reserved for validation/assembly.",
+        "instruction": "Decide whether the job needs a waiting interaction, deferred independent extraction or staged evidence acquisition.",
+        "check": "Price, confidence and polling frequency do not establish latency or capacity. In the transfer, archive independence has changed."
+      },
+      "route>batch|old assumption": {
+        "summary": "old assumption \u2014 Submit only work whose evidence and timing fit deferred processing.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nArchive PDFs are supplied and independent in the original scene; their result IDs retain source/version association.",
+        "instruction": "The old routing assumption still sends archive work to the deferred lane although the scene has introduced a local lookup dependency. No local execution has been observed on this arrow.",
+        "check": "Current gap: the required booking result is not present. A tool declaration, requested arguments or submitted batch does not show local read_booking execution."
+      },
+      "ledger>recover|failures": {
+        "summary": "failures \u2014 Recover only the specific failed or unknown work.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nN-1 context-too-large\u2192repair/chunk with source identity; N-4 expired\u2192deadline-aware retry/fallback; U-1 read timeout\u2192bounded retry; PAY-9 effect unknown.",
+        "instruction": "Choose repair, eligible retry, authoritative status reconciliation or explicit handoff by failure cause and side-effect risk.",
+        "check": "Keep N-2/N-3 successes. Unknown PAY-9 requires reconciliation before supported replay; missing required work means partial, not complete."
+      },
+      "jobs>route|deadline + dependency": {
+        "summary": "deadline + dependency \u2014 Classify work by deadline and evidence dependency.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1:120seconds, needs live read_booking. N-1..N-500:independent supplied PDFs;30hour report target with2hours reserved for validation/assembly.",
+        "instruction": "Decide whether the job needs a waiting interaction, deferred independent extraction or staged evidence acquisition.",
+        "check": "Price, confidence and polling frequency do not establish latency or capacity. In the transfer, archive independence has changed."
+      },
+      "route>live|execute required lookup": {
+        "summary": "execute required lookup \u2014 Give the application runtime the urgent or dependent interaction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nU-1 needs live booking evidence before clarification. Transfer:archive requests now need model-selected read_booking too.",
+        "instruction": "Execute supported local tools in the application, return observed results, and budget the interaction honestly.",
+        "check": "A tool declaration is not execution. Synchronous routing alone does not guarantee capacity or a deadline."
+      },
+      "live>batch|eligible staged evidence": {
+        "summary": "eligible staged evidence \u2014 Stage actual dependency evidence before deferred extraction.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nTransfer:observed read_booking result needed by the archive extraction; only eligible independent staged inputs continue.",
+        "instruction": "Have the application execute the lookup, attach the observed evidence to the next request and reassess deadline/capacity.",
+        "check": "Do not pass tool arguments as if they were lookup results or inject an empty success to satisfy an unmet prerequisite."
+      },
+      "batch>ledger|ID-correlated result": {
+        "summary": "ID-correlated result \u2014 Correlate unordered API results before validating acceptance.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nReturned:N-3 success,N-1 error,N-2 success. Fixture may also containN-4 expired. Identity is stable custom_id linked to source/version.",
+        "instruction": "Join by identity, preserve successes and store API outcome separately from validation/downstream state.",
+        "check": "Arrival order is not submission order. Terminal batch state does not prove every required invoice succeeded or was accepted."
+      },
+      "ledger>recover|recovery state": {
+        "summary": "recovery state \u2014 Recover only the specific failed or unknown work.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nN-1 context-too-large\u2192repair/chunk with source identity; N-4 expired\u2192deadline-aware retry/fallback; U-1 read timeout\u2192bounded retry; PAY-9 effect unknown.",
+        "instruction": "Choose repair, eligible retry, authoritative status reconciliation or explicit handoff by failure cause and side-effect risk.",
+        "check": "Keep N-2/N-3 successes. Unknown PAY-9 requires reconciliation before supported replay; missing required work means partial, not complete."
+      }
+    },
+    "as-08-resumable-case": {
+      "saved>model|dated facts + unknowns": {
+        "summary": "dated facts + unknowns \u2014 Restore dated observations without treating them as current authority.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; old approvalUSD60/policyv3; requestedUSD187.20/currentv4; OP-6 unknown. Broken summary omits amount/version/unknown effect.",
+        "instruction": "Treat the checkpoint as evidence of what was recorded. Identify what must be refreshed and what prior effect must be reconciled.",
+        "check": "A restored transcript or valid JSON state does not authorize the new amount. The missing OP-6 detail cannot safely be reconstructed from confidence."
+      },
+      "saved>model|historical checkpoint": {
+        "summary": "historical checkpoint \u2014 Restore dated observations without treating them as current authority.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; old approvalUSD60/policyv3; requestedUSD187.20/currentv4; OP-6 unknown. Broken summary omits amount/version/unknown effect.",
+        "instruction": "Treat the checkpoint as evidence of what was recorded. Identify what must be refreshed and what prior effect must be reconciled.",
+        "check": "A restored transcript or valid JSON state does not authorize the new amount. The missing OP-6 detail cannot safely be reconstructed from confidence."
+      },
+      "saved>model|dated facts": {
+        "summary": "dated facts \u2014 Restore dated observations without treating them as current authority.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; old approvalUSD60/policyv3; requestedUSD187.20/currentv4; OP-6 unknown. Broken summary omits amount/version/unknown effect.",
+        "instruction": "Treat the checkpoint as evidence of what was recorded. Identify what must be refreshed and what prior effect must be reconciled.",
+        "check": "A restored transcript or valid JSON state does not authorize the new amount. The missing OP-6 detail cannot safely be reconstructed from confidence."
+      },
+      "model>refresh|current action": {
+        "summary": "current action \u2014 Submit the exact current action and the evidence that governs it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRequestedUSD187.20 underv4 versus oldUSD60/v3 approval; source dates and action scope. Transfer:one stale narrative detail cannot affect the decision.",
+        "instruction": "Check current applicable evidence and scoped approval conditions. Refresh what can change the decision while retaining unaffected verified work.",
+        "check": "Identity continuity or model agreement does not establish unchanged authority. Age alone does not justify deleting all valid evidence."
+      },
+      "refresh>status|authorized OP-6 lookup": {
+        "summary": "authorized OP-6 lookup \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "saved>model|summary": {
+        "summary": "summary \u2014 Restore dated observations without treating them as current authority.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; old approvalUSD60/policyv3; requestedUSD187.20/currentv4; OP-6 unknown. Broken summary omits amount/version/unknown effect.",
+        "instruction": "Treat the checkpoint as evidence of what was recorded. Identify what must be refreshed and what prior effect must be reconciled.",
+        "check": "A restored transcript or valid JSON state does not authorize the new amount. The missing OP-6 detail cannot safely be reconstructed from confidence."
+      },
+      "refresh>status|OP-6 lookup": {
+        "summary": "OP-6 lookup \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "saved>brief|critical facts": {
+        "summary": "critical facts \u2014 Preserve facts that compaction must not erase.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; exact187.20 request; approval60/v3; currentv4; OP-6 unknown; dated source pointers and commitments.",
+        "instruction": "Keep decision-critical facts in durable application state and build a concise current working packet from them.",
+        "check": "A short \u201crefund discussed\u201d summary drops the conditions that determine safety. Do not replace exact amounts or unknown effects with inferred conclusions."
+      },
+      "brief>model|focused current context": {
+        "summary": "focused current context \u2014 Give the investigator a focused brief with inspectable sources.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCurrent request187.20; stale scoped approval60/v3; OP-6 unknown; next safe investigation is authorized status lookup.",
+        "instruction": "Reason from exact current constraints, follow source pointers when needed and preserve uncertainty in recommendations.",
+        "check": "A smaller prompt is useful only if it retains or retrieves decisive facts. The brief itself does not establish fresh evidence or current approval."
+      },
+      "saved>brief|facts": {
+        "summary": "facts \u2014 Preserve facts that compaction must not erase.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; exact187.20 request; approval60/v3; currentv4; OP-6 unknown; dated source pointers and commitments.",
+        "instruction": "Keep decision-critical facts in durable application state and build a concise current working packet from them.",
+        "check": "A short \u201crefund discussed\u201d summary drops the conditions that determine safety. Do not replace exact amounts or unknown effects with inferred conclusions."
+      },
+      "brief>model|working context": {
+        "summary": "working context \u2014 Give the investigator a focused brief with inspectable sources.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCurrent request187.20; stale scoped approval60/v3; OP-6 unknown; next safe investigation is authorized status lookup.",
+        "instruction": "Reason from exact current constraints, follow source pointers when needed and preserve uncertainty in recommendations.",
+        "check": "A smaller prompt is useful only if it retains or retrieves decisive facts. The brief itself does not establish fresh evidence or current approval."
+      },
+      "model>refresh|action": {
+        "summary": "action \u2014 Submit the exact current action and the evidence that governs it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRequestedUSD187.20 underv4 versus oldUSD60/v3 approval; source dates and action scope. Transfer:one stale narrative detail cannot affect the decision.",
+        "instruction": "Check current applicable evidence and scoped approval conditions. Refresh what can change the decision while retaining unaffected verified work.",
+        "check": "Identity continuity or model agreement does not establish unchanged authority. Age alone does not justify deleting all valid evidence."
+      },
+      "refresh>status|payment check": {
+        "summary": "payment check \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "brief>model|focused context": {
+        "summary": "focused context \u2014 Give the investigator a focused brief with inspectable sources.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCurrent request187.20; stale scoped approval60/v3; OP-6 unknown; next safe investigation is authorized status lookup.",
+        "instruction": "Reason from exact current constraints, follow source pointers when needed and preserve uncertainty in recommendations.",
+        "check": "A smaller prompt is useful only if it retains or retrieves decisive facts. The brief itself does not establish fresh evidence or current approval."
+      },
+      "refresh>status|payment status": {
+        "summary": "payment status \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "status>review|evidence + gap": {
+        "summary": "evidence + gap \u2014 Keep unresolved payment risk visible despite review capacity limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nBooking evidence supported; payment investigation failed/OP-6 unresolved. Fixture:five mandatory cases, capacitythree.",
+        "instruction": "Route by explicit risk policy, preserve successful evidence and keep owned pending/overflow states when review cannot finish now.",
+        "check": "Queue capacity is not evidence of correctness. Do not treat the failed specialist as an empty success or auto-approve because no reviewer is free."
+      },
+      "brief>review|source-linked packet": {
+        "summary": "source-linked packet \u2014 Give the human a self-contained evidence packet.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCase/booking IDs, requested amount, old approval scope, current policy, supported booking findings and unknown payment state with source pointers.",
+        "instruction": "State known facts, contradictions, failed checks, decision requested and the current owner/pending status.",
+        "check": "A handoff must not omit the one unknown effect or broaden the old approval. The receiver should not need the entire chat to identify what is blocked."
+      },
+      "brief>model|context": {
+        "summary": "context \u2014 Give the investigator a focused brief with inspectable sources.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nCurrent request187.20; stale scoped approval60/v3; OP-6 unknown; next safe investigation is authorized status lookup.",
+        "instruction": "Reason from exact current constraints, follow source pointers when needed and preserve uncertainty in recommendations.",
+        "check": "A smaller prompt is useful only if it retains or retrieves decisive facts. The brief itself does not establish fresh evidence or current approval."
+      },
+      "model>refresh|applicability": {
+        "summary": "applicability \u2014 Submit the exact current action and the evidence that governs it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRequestedUSD187.20 underv4 versus oldUSD60/v3 approval; source dates and action scope. Transfer:one stale narrative detail cannot affect the decision.",
+        "instruction": "Check current applicable evidence and scoped approval conditions. Refresh what can change the decision while retaining unaffected verified work.",
+        "check": "Identity continuity or model agreement does not establish unchanged authority. Age alone does not justify deleting all valid evidence."
+      },
+      "refresh>status|critical unknown": {
+        "summary": "critical unknown \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "status>review|remaining gap": {
+        "summary": "remaining gap \u2014 Keep unresolved payment risk visible despite review capacity limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nBooking evidence supported; payment investigation failed/OP-6 unresolved. Fixture:five mandatory cases, capacitythree.",
+        "instruction": "Route by explicit risk policy, preserve successful evidence and keep owned pending/overflow states when review cannot finish now.",
+        "check": "Queue capacity is not evidence of correctness. Do not treat the failed specialist as an empty success or auto-approve because no reviewer is free."
+      },
+      "saved>brief|valid retained facts": {
+        "summary": "valid retained facts \u2014 Preserve facts that compaction must not erase.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nC-41/B-52; exact187.20 request; approval60/v3; currentv4; OP-6 unknown; dated source pointers and commitments.",
+        "instruction": "Keep decision-critical facts in durable application state and build a concise current working packet from them.",
+        "check": "A short \u201crefund discussed\u201d summary drops the conditions that determine safety. Do not replace exact amounts or unknown effects with inferred conclusions."
+      },
+      "model>refresh|critical applicability": {
+        "summary": "critical applicability \u2014 Submit the exact current action and the evidence that governs it.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nRequestedUSD187.20 underv4 versus oldUSD60/v3 approval; source dates and action scope. Transfer:one stale narrative detail cannot affect the decision.",
+        "instruction": "Check current applicable evidence and scoped approval conditions. Refresh what can change the decision while retaining unaffected verified work.",
+        "check": "Identity continuity or model agreement does not establish unchanged authority. Age alone does not justify deleting all valid evidence."
+      },
+      "refresh>status|OP-6": {
+        "summary": "OP-6 \u2014 Investigate the unresolved previous effect before a new effect.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nOP-6 status unknown; authorized status access required; no confirmed receipt yet.",
+        "instruction": "Query authoritative operation status. If committed withR-6, preserve the receipt and do not replay; if inaccessible, keep unknown and hand off.",
+        "check": "Reconciliation is not permission for a new action. A receipt establishes the effect, not that historical authorization was correct."
+      },
+      "status>review|unresolved decision": {
+        "summary": "unresolved decision \u2014 Keep unresolved payment risk visible despite review capacity limits.",
+        "payload": "Illustrative application data \u2014 not an SDK signature.\nData on this connection:\nBooking evidence supported; payment investigation failed/OP-6 unresolved. Fixture:five mandatory cases, capacitythree.",
+        "instruction": "Route by explicit risk policy, preserve successful evidence and keep owned pending/overflow states when review cannot finish now.",
+        "check": "Queue capacity is not evidence of correctness. Do not treat the failed specialist as an empty success or auto-approve because no reviewer is free."
+      }
+    }
+  }
+}

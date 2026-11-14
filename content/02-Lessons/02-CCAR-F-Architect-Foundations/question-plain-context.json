@@ -1,0 +1,122 @@
+{
+  "1.1": {
+    "base": "The claims assistant asked for two lookups, u1 and u2. Both have finished. Decide what the program sends back to Claude next.",
+    "transfer": "The model has stopped talking, but a submitted settlement still has an unknown outcome. Decide what the application should do now."
+  },
+  "1.2": {
+    "base": "The law firm needs three kinds of comparison, but the proposed research covers only prices. Decide how to correct the investigation.",
+    "transfer": "A lawyer needs one policy\u2019s current retention period, and one lookup has already supplied the authoritative clause and date. Decide how much coordination this task needs."
+  },
+  "1.3": {
+    "base": "A specialist cannot see the earlier conversation. Other workers found campaign claims with conflicting dates. Decide what the coordinator must send it.",
+    "transfer": "Two channel audits do not depend on each other, but both are needed before the summary. Decide how to start them."
+  },
+  "1.4": {
+    "base": "Approval covered one account, amount and proposal version. The destination and version have changed. Decide how the program handles that approval.",
+    "transfer": "A customer wants a person to handle an unresolved transfer dispute. The officer cannot see the chat. Decide how to hand the case over."
+  },
+  "1.5": {
+    "base": "Two document tools return dates in different formats. The original evidence must remain available, and nothing is being changed outside the application. Choose where to make the dates consistent.",
+    "transfer": "A legal hold must prevent deletion, but the current check runs after deletion. Decide how to correct that sequence."
+  },
+  "1.6": {
+    "base": "Every campaign file needs the same three checks, followed by a check across files. Decide how to divide this known sequence of work.",
+    "transfer": "Nobody yet knows why the campaign launch failed. Each log finding could reveal another dependency. Decide how to organize the investigation."
+  },
+  "1.7": {
+    "base": "A saved contract investigation refers to an old file. Both the files and the user\u2019s access have changed since yesterday. Decide what must be checked before reusing its findings.",
+    "transfer": "An analyst wants two independent readings of the same checked starting point, while keeping the original investigation intact. Choose how to arrange the sessions."
+  },
+  "2.1": {
+    "base": "Two payment tools have vague names and do not explain that one drafts while the other executes. Decide how to make their jobs clearer.",
+    "transfer": "A proposed universal tool accepts any action name, but the application needs separate reading and payment capabilities. Decide which interface preserves that distinction."
+  },
+  "2.2": {
+    "base": "A campaign lookup succeeded and found no records. Decide whether that result needs recovery.",
+    "transfer": "A campaign creation request was sent, but the reply timed out. It may already have succeeded, and the service accepts an idempotency key. Decide what to establish before another creation attempt."
+  },
+  "2.3": {
+    "base": "A policy researcher only needs to read documents. Its coordinator also has a deletion capability. Decide which tools the researcher should receive.",
+    "transfer": "A proposed call has the required data shape but names an account the requester cannot access. Decide what the application should do."
+  },
+  "2.4": {
+    "base": "The team wants shared, reviewed MCP configuration in its repository, but each developer uses different credentials. Decide what belongs in the shared file.",
+    "transfer": "An MCP server is connected and advertises a resource, but the host has not discovered or placed that resource in the agent\u2019s context. Decide what to verify."
+  },
+  "2.5": {
+    "base": "An incorrect unsubscribe URL comes from somewhere in hundreds of templates. Decide how to find its source and make a small repair.",
+    "transfer": "The requested output is a new standalone CSV with a defined schema. After checking the destination, decide which file operation fits."
+  },
+  "3.1": {
+    "base": "The team\u2019s repository conventions apply to everyone. One analyst also has a personal tone preference. Decide where each instruction belongs.",
+    "transfer": "A directory instruction conflicts with project policy about retaining evidence, and the conflict affects the output. Decide how the agent should proceed."
+  },
+  "3.2": {
+    "base": "The team repeatedly creates evidence packets using the same kinds of inputs and destination. Decide which reusable instruction artifact fits.",
+    "transfer": "The user has supplied a short, complete task that probably will not recur. Decide whether it needs a reusable artifact."
+  },
+  "3.3": {
+    "base": "A payment testing rule applies only under backend/payments. Decide how to limit the instruction to that part of the repository.",
+    "transfer": "An evidence-attribution rule applies to every generated artifact, wherever it is created. Decide how broadly the instruction should apply."
+  },
+  "3.4": {
+    "base": "The proposed change crosses authentication, ingestion and retention, and its dependencies and acceptance conditions are unclear. Decide how to begin.",
+    "transfer": "The task is one reviewed label correction with an exact replacement and no behavior change. Decide how to begin."
+  },
+  "3.5": {
+    "base": "The date parser has failed twice, and the only feedback was \u201cimprove it.\u201d Decide what more useful feedback to give.",
+    "transfer": "Two different attempts still fail the same precise test. The team keeps repeating its first diagnosis without gathering more evidence. Decide what to change about the approach."
+  },
+  "3.6": {
+    "base": "A nightly audit must read local files, run tests and produce a record another program can read, with nobody at the terminal. Choose the runtime.",
+    "transfer": "Another job summarizes 2,000 independent texts already supplied to it. It needs no local files or dependent tool sequence and can finish later. Decide which runtime can be considered."
+  },
+  "4.1": {
+    "base": "The scanner mistakes clauses that forbid fees for clauses that charge fees. Decide how to make the judging instructions more precise.",
+    "transfer": "The policy owner has not decided whether one kind of conditional cost is prohibited. Decide the next step before treating the rule as settled."
+  },
+  "4.2": {
+    "base": "The classifier handles ordinary promotions but misreads disclaimers and conditional offers. Decide which examples would address that pattern.",
+    "transfer": "A new market uses promotions not represented in the original examples, and separate test results show repeated mistakes. Decide what to update."
+  },
+  "4.3": {
+    "base": "The invoice does not contain a purchase-order number, and the approved record allows an empty value for it. Decide what the extractor should put there.",
+    "transfer": "The invoice says PO-782, but a correctly shaped output says PO-728. Decide which check can catch this difference."
+  },
+  "4.4": {
+    "base": "The proposed invoice record says 890 even though both its line totals and the source show 980. Decide how to recover.",
+    "transfer": "The permitted correction attempts are exhausted, and two source pages still disagree about the total. Decide what happens next."
+  },
+  "4.5": {
+    "base": "Independent campaign snippets can be classified overnight and finish at different times. No local runtime is needed. Choose a processing design.",
+    "transfer": "The approval task now needs each answer before forming the next question, must finish within five minutes and may need a person\u2019s clarification. Choose a processing design."
+  },
+  "4.6": {
+    "base": "A consequential contract conclusion needs checking against its source, but the reviewer has received only the original writer\u2019s conclusion. Decide how to improve review.",
+    "transfer": "The task only formats low-risk internal material, and an exact rule-based checker is available. Decide how much review is appropriate."
+  },
+  "5.1": {
+    "base": "The conversation is getting too long, but one unusual jurisdiction exception determines the final action. Decide what the shortened working state must retain.",
+    "transfer": "After the conversation was shortened, the policy changed and the saved summary no longer establishes the relevant exception. Decide what to do."
+  },
+  "5.2": {
+    "base": "The customer explicitly wants a person to handle disputed billing, and policy allows the handoff. Decide the assistant\u2019s next step.",
+    "transfer": "The customer says a report is confusing but has not asked for a person. Policy says first clarify which measure is disputed. Decide the next step."
+  },
+  "5.3": {
+    "base": "Two workers supplied valid findings. A third hit a temporary timeout, and its missing source is required for the conclusion. Decide how to handle the incomplete work.",
+    "transfer": "This assignment permits a partial overview. An optional source cannot be recovered now. Decide what kind of output is appropriate."
+  },
+  "5.4": {
+    "base": "One generated campaign URL is wrong in a large codebase. Decide how to investigate before editing.",
+    "transfer": "The first focused read shows that the URL code uses a shared helper serving three services. Decide how far to investigate next."
+  },
+  "5.5": {
+    "base": "The model is strong overall but much weaker on a rare category where mistakes are costly. Decide what the review-routing rule should consider.",
+    "transfer": "The team has checked how its scores relate to real outcomes, but flagged work exceeds reviewer capacity and policy forbids silently discarding it. Decide what the workflow must address."
+  },
+  "5.6": {
+    "base": "Two systems give different contract termination dates and have different update times. Decide what information the combined account must retain.",
+    "transfer": "One research interface returned conflicting dates but removed their source locations. Decide what the research worker must return before the coordinator combines the findings."
+  }
+}

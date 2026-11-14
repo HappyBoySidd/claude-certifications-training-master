@@ -1,0 +1,2064 @@
+{
+  "lessons": {
+    "as-05-code-change": {
+      "teachingEdition": "integrated-v2",
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "Ask for a reviewed patch that preserves the difference between missing and zero.",
+          "boundary": "The business contract belongs to the owner; the agent proposes changes.",
+          "courses": [
+            0,
+            1,
+            5
+          ],
+          "integration": {
+            "concept": "Generation versus verified behavior",
+            "what": "A short expression hides a business distinction.",
+            "why": "Description must include what null and zero mean before editing.",
+            "setup": "Follow one missing deposit and one legitimate zero through the current code.",
+            "repair": "",
+            "proof": "The displayed fixture identifies the expected meanings; it is not an executed test."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "Read where the value goes before changing its first line.",
+          "boundary": "A local-looking edit can break a caller; repository evidence must precede the plan.",
+          "courses": [
+            0,
+            1,
+            5
+          ],
+          "integration": {
+            "concept": "Context selection",
+            "what": "The agent has not yet inspected downstream uses.",
+            "why": "Discernment asks whether the evidence covers the affected boundary.",
+            "setup": "Which caller could reinterpret null after import?",
+            "repair": "Search relevant uses, read callers and fixtures, then propose the smallest consistent change.",
+            "proof": "A scoped caller trace and proposed regression checks; actual execution remains required."
+          }
+        },
+        {
+          "focus": "Description + Diligence",
+          "plain": "Put the right instruction in the right place and check that it loads.",
+          "boundary": "Rules and skills guide; code and deterministic checks enforce.",
+          "courses": [
+            1,
+            5
+          ],
+          "integration": {
+            "concept": "Instruction scope",
+            "what": "Importer guidance should not overwhelm documentation tasks.",
+            "why": "Useful context is relevant context, not every available instruction.",
+            "setup": "Which rule must apply whenever importer paths change?",
+            "repair": "Use concise shared guidance, path-scoped rules and a separately reusable review skill.",
+            "proof": "A relevant-scope loading check plus executed invariant tests, not just a new instruction file."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "The customer sees the whole report, not just a passing importer test.",
+          "boundary": "A narrow pass does not establish end-to-end acceptance.",
+          "courses": [
+            0,
+            1,
+            10
+          ],
+          "integration": {
+            "concept": "Evaluation coverage",
+            "what": "The formatter still converts unknown into settled zero.",
+            "why": "A test must exercise the behavior named by the success criterion.",
+            "setup": "Show the exact failing trace before choosing another change.",
+            "repair": "Target the formatter boundary and rerun both null and zero report cases.",
+            "proof": "Required result: R-7 unknown/not settled; R-8 known zero. This illustration does not execute the test."
+          }
+        },
+        {
+          "focus": "Delegation + Discernment",
+          "plain": "A known typo needs a small edit and a rendered wording check.",
+          "boundary": "Small scope still retains release ownership.",
+          "courses": [
+            1,
+            5,
+            10
+          ],
+          "integration": {
+            "concept": "Proportionate workflow",
+            "what": "The transfer task changes wording, not financial behavior.",
+            "why": "More process is useful only when it resolves actual uncertainty.",
+            "setup": "Which uncertainty remains for one known string?",
+            "repair": "Use the bounded edit, inspect rendering and retain normal review.",
+            "proof": "Correct visible wording and a reviewed diff, rather than irrelevant importer tests."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "where": "layer-4",
+          "what": "A plausible patch can pass a narrow test and still misstate a deposit.",
+          "why": "Code generation predicts a useful edit; it does not observe every caller or prove the business outcome.",
+          "how": "Trace null and legitimate zero through the importer and rendered report; require actual regression output before acceptance.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "fixtures = {\"R-7\": None, \"R-8\": 0}\nassert report(import_record(fixtures[\"R-7\"])).status == \"unknown\"\nassert report(import_record(fixtures[\"R-8\"])).deposit == 0"
+          },
+          "evidence": "Observed end-to-end assertions for both meanings, including the formatter boundary.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 0
+        },
+        {
+          "where": "layer-2",
+          "what": "Delegate a bounded proposal, not ownership of the financial meaning.",
+          "why": "Description supplies the invariant; Discernment checks callers; Diligence retains release accountability.",
+          "how": "Give Claude Code the null-versus-zero rule and proposal-only boundary. Inspect evidence and correct the exact failing path.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "brief = {goal: \"preserve unknown vs zero\", scope: \"importer and affected callers\", authority: \"proposal only\"}\nacceptance = [\"unknown remains unknown\", \"known zero remains zero\"]"
+          },
+          "evidence": "A reviewer can connect every changed line to the contract and its verification.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 1
+        },
+        {
+          "where": "before",
+          "what": "Use Claude Code for a repository change with a small relevant context.",
+          "why": "The task is editing and testing a codebase, not building a new chat service.",
+          "how": "Choose the developer entry point, repository search/read tools and bounded edit capability. Supply the invariant and relevant callers before considering extra reasoning or agent orchestration.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "design = {entry: \"Claude Code in disposable checkout\", capability: \"inspect, edit, run approved checks\", context: \"contract + callers + fixtures\"}"
+          },
+          "evidence": "A scope record names the allowed checkout, commands and expected patch artifact.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 2,
+          "decision_title": "Use Claude Code for a repository change with a small relevant context.",
+          "decision_reason": "The task is editing and testing a codebase, not building a new chat service."
+        },
+        {
+          "where": "before",
+          "what": "Compare models on contract-preserving patches, not confident explanations.",
+          "why": "A stronger model can still overlook a formatter or collapse missing into zero.",
+          "how": "Evaluate approved candidates on unfamiliar callers, exact null semantics, small diffs and failing-trace repair; compare latency and cost after required behavior passes.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "cases = [\"null vs zero\", \"downstream formatter\", \"unrelated caller\", \"typo-only transfer\"]\ncompare_same_cases(approved_candidates, cases)"
+          },
+          "evidence": "Saved patch and test outcomes for the same fixtures; no unsupported model ranking.",
+          "not_demonstrated": "No current model price, limit or feature-parity claim; verify the actual approved product and model support.",
+          "course_index": 3,
+          "decision_title": "Compare models on contract-preserving patches, not confident explanations.",
+          "decision_reason": "A stronger model can still overlook a formatter or collapse missing into zero."
+        },
+        {
+          "where": "layer-2",
+          "what": "A tool request is a proposed operation; the runtime executes it.",
+          "why": "Reading files and running checks require actual tool outcomes; a plan saying tests passed is not evidence.",
+          "how": "Trace the agent request to a permitted search/read/test tool and inspect its returned result. Extended thinking may help reasoning but cannot supply an unread caller; built-in web search is not the private repository.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "proposal = agent.propose(\"run relevant regression checks\")\nresult = approved_runtime.execute(proposal)\nrecord(result.exit_status, result.output)\n# No completed-check claim without the result."
+          },
+          "evidence": "A tool trace and actual check output match the patch under review.",
+          "not_demonstrated": "Conceptual tool loop only. Do not assume Claude Code tools use the same wire contract as a custom Messages client.",
+          "course_index": 4
+        },
+        {
+          "where": "layer-3",
+          "what": "Separate project invariants, scoped rules, reusable skills and enforcement.",
+          "why": "Always-loaded detail wastes context; guidance alone does not enforce a financial invariant.",
+          "how": "Keep concise shared instructions; scope importer rules to relevant paths; package repeated review procedure as a skill; use approved hooks or CI for deterministic checks and inspect the diff before commit.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "CLAUDE.md: preserve business meaning; name test commands\npath rule: Python importer preserves null vs zero\nskill: caller-trace review procedure\nCI: run importer-to-report regression\ncommit: reviewed diff + actual evidence"
+          },
+          "evidence": "Relevant edits receive the rule, unrelated docs avoid full procedure, and tests actually execute.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 5
+        },
+        {
+          "where": "before",
+          "what": "No MCP server is required merely to inspect this local repository.",
+          "why": "An integration layer should solve a real external access need, not rename existing file tools.",
+          "how": "Use permitted local search/read tools. If a later issue tracker integration uses MCP, distinguish callable tools, addressable resources and reusable prompts; enforce issue/repo entitlement in the integration.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "baseline = \"local repository tools\"\nif external_issue_lookup_required:\n    issue = authorized_integration.read(issue_id)\n    context.add(issue.content)\n# A discovered resource URI alone is not issue content."
+          },
+          "evidence": "A no-MCP decision for the baseline; if added, actual permitted issue content and access-denial tests.",
+          "not_demonstrated": "No MCP integration configured or protocol support asserted.",
+          "course_index": 6,
+          "decision_title": "No MCP server is required merely to inspect this local repository.",
+          "decision_reason": "An integration layer should solve a real external access need, not rename existing file tools."
+        },
+        {
+          "where": "before",
+          "what": "Keep one scoped coding workflow unless independent work is justified.",
+          "why": "Splitting a tiny patch can multiply handoffs without finding missing callers.",
+          "how": "Use one workflow for this patch. A bounded independent reviewer may inspect the diff plus contract and failing trace, then return evidence and gaps; the owner integrates findings.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "review_brief = {diff, contract, failing_trace, permitted_paths}\nreview_result = {findings, evidence, gaps}\n# Reviewer output is neither a commit nor release approval."
+          },
+          "evidence": "A reason for delegation and a returned evidence packet, rather than unexplained agent agreement.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 7,
+          "decision_title": "Keep one scoped coding workflow unless independent work is justified.",
+          "decision_reason": "Splitting a tiny patch can multiply handoffs without finding missing callers."
+        },
+        {
+          "where": "before",
+          "what": "Use the developer product for implementation and the report for business validation.",
+          "why": "A chat answer about the fix is not an edited repository artifact.",
+          "how": "Keep code work in the approved development environment and validate the resulting report with its owner. Do not introduce an API service just to complete a repository patch.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "artifacts = {developer: \"reviewed diff\", business_owner: \"report fixtures\", release_owner: \"promotion decision\"}"
+          },
+          "evidence": "Each audience sees its actual artifact and retains the correct authority.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 8,
+          "decision_title": "Use the developer product for implementation and the report for business validation.",
+          "decision_reason": "A chat answer about the fix is not an edited repository artifact."
+        },
+        {
+          "where": "after",
+          "what": "A disposable checkout and test pass do not prove production deployment.",
+          "why": "Repository permissions, secrets, runner isolation and promotion are distinct boundaries.",
+          "how": "Run approved checks without production credentials; verify the actual model endpoint and repository-data handling policy; require reviewed promotion evidence and rollback planning for a behavioral change.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "dev_environment = {production_credentials: false, patch_scope: \"bounded\"}\nrelease_requires = [\"reviewed diff\", \"executed tests\", \"owner authorization\", \"promotion evidence\"]"
+          },
+          "evidence": "Check results tied to a commit and a separately recorded release decision.",
+          "not_demonstrated": "No deployment executed; endpoint support, retention, processing location and approved cloud route must be verified.",
+          "course_index": 9,
+          "decision_title": "A disposable checkout and test pass do not prove production deployment.",
+          "decision_reason": "Repository permissions, secrets, runner isolation and promotion are distinct boundaries."
+        },
+        {
+          "where": "after",
+          "what": "Pilot the change against the report users actually rely on.",
+          "why": "Passing importer tests alone missed the customer-visible defect.",
+          "how": "Capture the current unknown/zero failure as baseline, define report-level success, test representative records, review adoption impact and retain a rollback option; scale effort down for the typo-only transfer.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "baseline = {unknown_misreported_as_zero: true}\nacceptance = [\"R-7 unknown\", \"R-8 known zero\", \"no unrelated behavior changed\"]\nrollout = \"review evidence before promotion\""
+          },
+          "evidence": "Actual report outcomes and a proportionate release decision, not a generated checklist.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 10,
+          "decision_title": "Pilot the change against the report users actually rely on.",
+          "decision_reason": "Passing importer tests alone missed the customer-visible defect."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "A plausible patch can pass a narrow test and still misstate a deposit. Trace null and legitimate zero through the importer and rendered report; require actual regression output before acceptance.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Delegate a bounded proposal, not ownership of the financial meaning. Give Claude Code the null-versus-zero rule and proposal-only boundary. Inspect evidence and correct the exact failing path.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Use Claude Code for a repository change with a small relevant context. Choose the developer entry point, repository search/read tools and bounded edit capability. Supply the invariant and relevant callers before considering extra reasoning or agent orchestration.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Compare models on contract-preserving patches, not confident explanations. Evaluate approved candidates on unfamiliar callers, exact null semantics, small diffs and failing-trace repair; compare latency and cost after required behavior passes.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "A tool request is a proposed operation; the runtime executes it. Trace the agent request to a permitted search/read/test tool and inspect its returned result. Extended thinking may help reasoning but cannot supply an unread caller; built-in web search is not the private repository.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Separate project invariants, scoped rules, reusable skills and enforcement. Keep concise shared instructions; scope importer rules to relevant paths; package repeated review procedure as a skill; use approved hooks or CI for deterministic checks and inspect the diff before commit.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "No MCP server is required merely to inspect this local repository. Use permitted local search/read tools. If a later issue tracker integration uses MCP, distinguish callable tools, addressable resources and reusable prompts; enforce issue/repo entitlement in the integration.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Keep one scoped coding workflow unless independent work is justified. Use one workflow for this patch. A bounded independent reviewer may inspect the diff plus contract and failing trace, then return evidence and gaps; the owner integrates findings.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Use the developer product for implementation and the report for business validation. Keep code work in the approved development environment and validate the resulting report with its owner. Do not introduce an API service just to complete a repository patch.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "A disposable checkout and test pass do not prove production deployment. Run approved checks without production credentials; verify the actual model endpoint and repository-data handling policy; require reviewed promotion evidence and rollback planning for a behavioral change.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Pilot the change against the report users actually rely on. Capture the current unknown/zero failure as baseline, define report-level success, test representative records, review adoption impact and retain a rollback option; scale effort down for the typo-only transfer.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Claude Code in an approved disposable checkout; output is a reviewed patch."
+        ],
+        [
+          "Capability features",
+          "Search, Read, scoped edit and approved test execution; no new MCP or multi-agent system by default."
+        ],
+        [
+          "Model",
+          "Compare on null/zero semantics, callers, diff scope and executed checks, then cost and latency."
+        ],
+        [
+          "Context",
+          "Business invariant, relevant code and fixtures; personal memory is not a shared financial contract."
+        ]
+      ],
+      "overviewRoute": [
+        "Business meaning \u2192 relevant callers",
+        "Claude Code \u2192 scoped proposed patch",
+        "Test runner \u2192 actual report outcomes",
+        "Owner \u2192 review and release decision"
+      ],
+      "designIntro": "Before touching code, identify the business meaning, allowed checkout, relevant tools and acceptance evidence.",
+      "deliveryIntro": "Finish with a reviewed diff and actual report checks. Release remains a separate owner-controlled action.",
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose the evidence before editing",
+          "context": "The issue says missing deposits are displayed as zero. The repository is unfamiliar. The task allows a proposal in a disposable checkout, with no production changes.",
+          "stem": "Which initial workflow best preserves the business contract while limiting unnecessary change?",
+          "options": [
+            "Replace the importer default, add null and zero assertions to its unit tests, then submit the local diff without inspecting report callers.",
+            "Search uses, inspect importer and report callers, define null/zero fixtures, then propose a scoped patch and relevant checks.",
+            "Search every occurrence of deposit and replace falsy-value defaults consistently, using the existing full-suite pass as the acceptance condition.",
+            "Read the importer and issue description, preserve the return type expected by its current annotations, and defer report behavior to a separate change."
+          ],
+          "answer": 1,
+          "explanations": [
+            "Importer-only evidence can miss the formatter that still converts null to settled zero.",
+            "This establishes the affected boundary and an observable contract before editing.",
+            "A broad textual replacement can alter unrelated meanings; existing tests may not cover the requested business distinction.",
+            "Current annotations may encode the bug; the task requires tracing the business meaning across the actual callers."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Judge the result, not the patch narrative",
+          "context": "The importer test passes, but the report still marks a missing deposit settled. A reviewer sees only the importer diff.",
+          "stem": "Which next action most directly repairs the verification gap?",
+          "options": [
+            "Add another importer test asserting null preservation and use the two passing importer fixtures as release evidence.",
+            "Give an independent reviewer the importer diff and passing unit-test output, then accept if it reports no findings.",
+            "Provide the failing rendered-report trace, inspect the formatter boundary, and rerun both missing and zero regression cases before review.",
+            "Adjust only the report label for missing deposits while leaving the stored settled flag unchanged, then verify the visible text."
+          ],
+          "answer": 2,
+          "explanations": [
+            "The surviving defect is downstream; more checks at the same boundary do not establish report correctness.",
+            "The reviewer lacks the failing report trace and can repeat the same evidence gap.",
+            "The exact trace targets the remaining defect and guards the valid-zero case.",
+            "The displayed wording could improve while downstream consumers still receive an incorrect settled state."
+          ]
+        }
+      ],
+      "layout": {
+        "width": 980,
+        "height": 570,
+        "nodeWidth": 190,
+        "nodeHeight": 124,
+        "nodes": {
+          "request": {
+            "x": 40,
+            "y": 70
+          },
+          "code": {
+            "x": 350,
+            "y": 70
+          },
+          "claude": {
+            "x": 660,
+            "y": 70
+          },
+          "rules": {
+            "x": 350,
+            "y": 360
+          },
+          "tests": {
+            "x": 660,
+            "y": 360
+          },
+          "owner": {
+            "x": 40,
+            "y": 360
+          }
+        },
+        "routes": {
+          "request>code": [
+            [
+              230,
+              132
+            ],
+            [
+              350,
+              132
+            ]
+          ],
+          "code>claude": [
+            [
+              540,
+              132
+            ],
+            [
+              660,
+              132
+            ]
+          ],
+          "rules>claude": [
+            [
+              540,
+              422
+            ],
+            [
+              600,
+              422
+            ],
+            [
+              600,
+              170
+            ],
+            [
+              660,
+              170
+            ]
+          ],
+          "claude>tests": [
+            [
+              755,
+              194
+            ],
+            [
+              755,
+              360
+            ]
+          ],
+          "tests>owner": [
+            [
+              710,
+              484
+            ],
+            [
+              710,
+              515
+            ],
+            [
+              180,
+              515
+            ],
+            [
+              180,
+              484
+            ]
+          ],
+          "request>claude": [
+            [
+              135,
+              70
+            ],
+            [
+              135,
+              25
+            ],
+            [
+              755,
+              25
+            ],
+            [
+              755,
+              70
+            ]
+          ],
+          "claude>owner": [
+            [
+              850,
+              132
+            ],
+            [
+              925,
+              132
+            ],
+            [
+              925,
+              535
+            ],
+            [
+              135,
+              535
+            ],
+            [
+              135,
+              484
+            ]
+          ]
+        }
+      }
+    },
+    "as-06-ci-review": {
+      "teachingEdition": "integrated-v2",
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "Ask for evidence-backed defects, not general opinions about style.",
+          "boundary": "The reviewer proposes findings; it does not approve or merge.",
+          "courses": [
+            0,
+            1,
+            5
+          ],
+          "integration": {
+            "concept": "Reasoning needs an explicit contract",
+            "what": "The business rule blocks charges when currency is missing.",
+            "why": "Without that contract, a reviewer can confidently discuss the wrong concern.",
+            "setup": "Show the missing-currency fixture and the changed code.",
+            "repair": "",
+            "proof": "The review target is a reachable contract violation, not a completed verification."
+          }
+        },
+        {
+          "focus": "Description + Diligence",
+          "plain": "Give CI enough information to finish without a keyboard.",
+          "boundary": "Permissions and process failure belong in runtime code, not wishful prompts.",
+          "courses": [
+            1,
+            4,
+            5
+          ],
+          "integration": {
+            "concept": "Agent runtime ownership",
+            "what": "An interactive request stalls the unattended run.",
+            "why": "Automation needs explicit input and a bounded success/failure contract.",
+            "setup": "What observation distinguishes a failed process from valid empty findings?",
+            "repair": "Use headless execution with checked process, envelope and schema gates.",
+            "proof": "Failure, invalid output and valid empty findings remain distinct states."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "A parseable finding is useful only if its defect can happen.",
+          "boundary": "JSON validity does not establish technical truth.",
+          "courses": [
+            0,
+            1,
+            10
+          ],
+          "integration": {
+            "concept": "Output structure versus semantic precision",
+            "what": "The payload flags harmless style and misses a currency defect.",
+            "why": "Acceptance needs trigger and consequence evidence, not just the right keys.",
+            "setup": "Which input reaches the claimed bad behavior?",
+            "repair": "Specify actionable defect criteria with path, trigger and contract consequence.",
+            "proof": "F2 cites the missing-currency path; harmless style is not promoted to a payment defect."
+          }
+        },
+        {
+          "focus": "Description + Discernment",
+          "plain": "Trace combined changes, then compare against the finding ledger.",
+          "boundary": "A prior finding may be resolved; a local summary can miss combined behavior.",
+          "courses": [
+            1,
+            7,
+            10
+          ],
+          "integration": {
+            "concept": "Bounded independent verification",
+            "what": "Two files together remove the currency safety path.",
+            "why": "The verifier needs the shared contract and current evidence.",
+            "setup": "Does the current diff still support each finding?",
+            "repair": "Verify the cross-file path and reconcile F1 resolved/F2 supported before posting.",
+            "proof": "Supported F2 remains and resolved F1 is not reposted; publication remains separately authorized."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "Test the reviewer itself before relying on it more.",
+          "boundary": "A valid empty result is no evidence that a known defect is absent.",
+          "courses": [
+            0,
+            1,
+            10
+          ],
+          "integration": {
+            "concept": "Evaluation of probabilistic behavior",
+            "what": "The reviewer returns no findings on a seeded currency defect.",
+            "why": "Process success and review quality must be measured independently.",
+            "setup": "What did the known-answer fixture reveal?",
+            "repair": "Record the false negative, improve the review process and rerun representative positives and negatives.",
+            "proof": "A missed defect is visible in evaluation; this exercise is not a safety certification."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "where": "layer-5",
+          "what": "Valid JSON can contain no useful defect detection.",
+          "why": "Mechanical output validity and semantic review quality are separate axes.",
+          "how": "Keep process/schema checks, but evaluate detection of the known missing-currency defect and harmless-style negatives before increasing reliance.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "mechanical_ok = exit_success and schema_valid(payload)\nquality_ok = detects_known_currency_defect and rejects_harmless_style\n# Neither implies the other."
+          },
+          "evidence": "A case-level false-negative/false-positive report beside process and schema results.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 0
+        },
+        {
+          "where": "layer-3",
+          "what": "Describe reachable defects and inspect the triggering evidence.",
+          "why": "Delegation sets the reviewer role; Description defines useful findings; Discernment verifies consequence; Diligence limits publication.",
+          "how": "Require path, location, triggering input, contract violation and impact. Treat findings as candidates until checked; posting is not merge approval.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "finding = {path: \"charge.py\", trigger: \"currency:null\", consequence: \"USD charge prepared despite block contract\"}\nrole = \"candidate defect reviewer; no approve/merge\""
+          },
+          "evidence": "A supported finding can be reproduced from the supplied trace.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 1
+        },
+        {
+          "where": "before",
+          "what": "Use bounded unattended review execution in CI.",
+          "why": "The runner has no operator to answer an interactive session.",
+          "how": "Choose headless execution, explicit input packet, output schema, allowed tools and visible process failure; keep credentials unable to approve or merge.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "run_contract = {mode: \"headless\", input: \"diff + callers + contract + tests\", output: \"structured findings\", merge_permission: false}"
+          },
+          "evidence": "A run contract with timeout, failure state and restricted capability.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 2,
+          "decision_title": "Use bounded unattended review execution in CI.",
+          "decision_reason": "The runner has no operator to answer an interactive session."
+        },
+        {
+          "where": "before",
+          "what": "Choose a reviewer using defect sensitivity and precision.",
+          "why": "A fluent reviewer or valid empty array may miss the known defect.",
+          "how": "Evaluate approved candidates on the same reachable-defect and harmless-style fixtures; compare recall, actionable precision, latency and cost under the same budget.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "cases = [\"missing currency default\", \"removed caller validation\", \"harmless style\", \"resolved finding\"]\nevaluate_candidates_on_same_cases(cases)"
+          },
+          "evidence": "Saved false positives, false negatives and cost/latency, not a universal best-model assertion.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 3,
+          "decision_title": "Choose a reviewer using defect sensitivity and precision.",
+          "decision_reason": "A fluent reviewer or valid empty array may miss the known defect."
+        },
+        {
+          "where": "layer-2",
+          "what": "Unattended completion requires actual execution and checked output.",
+          "why": "A final text fragment is not proof that the process completed or that its payload is trustworthy.",
+          "how": "Check exit status, transport/envelope and findings schema in order. Separate run failure, invalid payload and valid empty findings. Extra reasoning does not replace those deterministic gates.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "if process_failed: state = \"review_failed\"\nelif not valid_findings_payload: state = \"invalid_output\"\nelse: state = \"reviewed\"\n# [] is valid no-findings, not a safety certificate."
+          },
+          "evidence": "A failure fixture never becomes a successful empty review.",
+          "not_demonstrated": "Conceptual runtime contract, not literal CLI flags or a provider SDK signature.",
+          "course_index": 4
+        },
+        {
+          "where": "layer-2",
+          "what": "Make the review task explicit and keep tooling permissions narrow.",
+          "why": "CLAUDE.md guidance cannot remove forbidden credentials or make interactive prompts disappear.",
+          "how": "Use the approved headless Claude Code workflow, bounded packet and tool allowlist. Put concise review conventions in shared guidance, repeated procedure in a skill and deterministic validation in CI/hooks.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "review_packet = [diff, business_contract, relevant_callers, tests]\npermissions = {read: permitted_repo, merge: false, deploy: false}\nCI: validate process + envelope + findings schema"
+          },
+          "evidence": "Actual noninteractive run or visible failure with no approve/merge capability.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 5
+        },
+        {
+          "where": "before",
+          "what": "MCP is optional for fetching review evidence, not a merge authority.",
+          "why": "A standard integration can expose PR data, but its protocol does not make repository content trusted instructions.",
+          "how": "Use existing checkout evidence initially. If an MCP integration supplies PR context, distinguish tools/resources/prompts and enforce repository access; keep source text as evidence and posting credentials separate.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "context_source = \"checked-out diff\"\nif mcp_pr_context_needed:\n    evidence = permitted_pr_read(pr_id)\n# Read entitlement never grants merge capability."
+          },
+          "evidence": "A no-MCP baseline or an authorized evidence-read trace with restricted capabilities.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 6,
+          "decision_title": "MCP is optional for fetching review evidence, not a merge authority.",
+          "decision_reason": "A standard integration can expose PR data, but its protocol does not make repository content trusted instructions."
+        },
+        {
+          "where": "layer-4",
+          "what": "An independent reviewer needs a complete, bounded evidence packet.",
+          "why": "Independence of generation does not compensate for missing cross-file contracts.",
+          "how": "Separate producer and verifier if justified; give each the diff, callers and trigger. Require source-backed findings and have the application reconcile ledger states before publishing.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "reviewer_input = {diff, caller_contracts, fixtures}\nverifier_output = {reproduced_consequence, evidence, gaps}\nreconcile(current_findings, prior_ledger)"
+          },
+          "evidence": "Verified F2 remains; resolved F1 is not reposted.",
+          "not_demonstrated": "The lesson describes logical roles, not a launched product-specific subagent or guaranteed isolation.",
+          "course_index": 7
+        },
+        {
+          "where": "before",
+          "what": "This is a CI reviewer, not an interactive chat or autonomous merger.",
+          "why": "The intended output is useful checked findings returned to developers.",
+          "how": "Use an unattended developer/runtime surface suitable for the approved runner. Keep developer interpretation and separate posting ownership explicit.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "surface = \"unattended CI review\"\noutputs = [\"checked findings\", \"explicit failure\"]\nnot_outputs = [\"automatic merge approval\"]"
+          },
+          "evidence": "A consumer can distinguish a failed review, valid no-findings and actionable findings.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 8,
+          "decision_title": "This is a CI reviewer, not an interactive chat or autonomous merger.",
+          "decision_reason": "The intended output is useful checked findings returned to developers."
+        },
+        {
+          "where": "after",
+          "what": "Separate model execution, validation and publication trust boundaries.",
+          "why": "A malformed response, failed gateway or leaked runner credential can invalidate the review system.",
+          "how": "Use an approved endpoint and isolated runner, minimal repository permissions, redacted logs and a separate limited posting service. Test fail-closed behavior without silent unapproved endpoint fallback.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "review_runner = {read_only_repo: true, merge_credentials: false}\nposting_service.accept(checked_reconciled_findings)\n# Endpoint failure remains visible; do not publish partial output as success."
+          },
+          "evidence": "Negative tests for process errors, invalid schema, unauthorized publication and sensitive logging.",
+          "not_demonstrated": "No deployed isolation or residency guarantee; verify the actual host, endpoint feature support and organizational policy.",
+          "course_index": 9,
+          "decision_title": "Separate model execution, validation and publication trust boundaries.",
+          "decision_reason": "A malformed response, failed gateway or leaked runner credential can invalidate the review system."
+        },
+        {
+          "where": "after",
+          "what": "Earn reliance through a measured reviewer pilot.",
+          "why": "A technically successful run that misses the seeded defect cannot justify more trust.",
+          "how": "Capture manual-review baseline, seeded defect recall, actionable precision, duplicate rate, latency and cost. Pilot with human review and expand only against agreed evidence.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "acceptance = {known_defect_detected: true, harmless_style_rejected: true, resolved_findings_not_reposted: true}\nreport_false_negatives_and_false_positives()"
+          },
+          "evidence": "A case-level evaluation and explicit human decision on reliance; zero findings never means safe.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 10,
+          "decision_title": "Earn reliance through a measured reviewer pilot.",
+          "decision_reason": "A technically successful run that misses the seeded defect cannot justify more trust."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "Valid JSON can contain no useful defect detection. Keep process/schema checks, but evaluate detection of the known missing-currency defect and harmless-style negatives before increasing reliance.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-5"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Describe reachable defects and inspect the triggering evidence. Require path, location, triggering input, contract violation and impact. Treat findings as candidates until checked; posting is not merge approval.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Use bounded unattended review execution in CI. Choose headless execution, explicit input packet, output schema, allowed tools and visible process failure; keep credentials unable to approve or merge.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Choose a reviewer using defect sensitivity and precision. Evaluate approved candidates on the same reachable-defect and harmless-style fixtures; compare recall, actionable precision, latency and cost under the same budget.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "Unattended completion requires actual execution and checked output. Check exit status, transport/envelope and findings schema in order. Separate run failure, invalid payload and valid empty findings. Extra reasoning does not replace those deterministic gates.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Make the review task explicit and keep tooling permissions narrow. Use the approved headless Claude Code workflow, bounded packet and tool allowlist. Put concise review conventions in shared guidance, repeated procedure in a skill and deterministic validation in CI/hooks.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "MCP is optional for fetching review evidence, not a merge authority. Use existing checkout evidence initially. If an MCP integration supplies PR context, distinguish tools/resources/prompts and enforce repository access; keep source text as evidence and posting credentials separate.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "An independent reviewer needs a complete, bounded evidence packet. Separate producer and verifier if justified; give each the diff, callers and trigger. Require source-backed findings and have the application reconcile ledger states before publishing.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "This is a CI reviewer, not an interactive chat or autonomous merger. Use an unattended developer/runtime surface suitable for the approved runner. Keep developer interpretation and separate posting ownership explicit.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Separate model execution, validation and publication trust boundaries. Use an approved endpoint and isolated runner, minimal repository permissions, redacted logs and a separate limited posting service. Test fail-closed behavior without silent unapproved endpoint fallback.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Earn reliance through a measured reviewer pilot. Capture manual-review baseline, seeded defect recall, actionable precision, duplicate rate, latency and cost. Pilot with human review and expand only against agreed evidence.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Unattended CI review, with explicit inputs and visible failures."
+        ],
+        [
+          "Capability features",
+          "Read/inspect and candidate findings; deterministic output gates, no merge permission."
+        ],
+        [
+          "Model",
+          "Evaluate detection and actionable precision on the same seeded fixtures before cost comparison."
+        ],
+        [
+          "Context",
+          "Diff, relevant callers, contract, tests and prior finding states; not every file by default."
+        ]
+      ],
+      "overviewRoute": [
+        "Diff + contract + tests \u2192 reviewer",
+        "Reviewer \u2192 process and schema gate",
+        "Verifier \u2192 cross-file consequence",
+        "Ledger \u2192 reconciled findings",
+        "Posting service \u2192 authorized comments"
+      ],
+      "designIntro": "Design a reviewer that can fail visibly and cannot silently become an approver.",
+      "deliveryIntro": "Measure missed defects and noise before expanding reliance; retain human release authority.",
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose unattended boundaries",
+          "context": "A CI runner has no operator. It may read the repository and propose review findings, but must not approve, merge or deploy.",
+          "stem": "Which execution design most directly satisfies this contract?",
+          "options": [
+            "Run headless with the explicit diff and output schema; treat any parseable findings payload as a completed review even if the process exit status is nonzero.",
+            "Run headless with a read-only repository token but retain approve/merge permissions on the model-invoked PR integration, controlled by review instructions.",
+            "Use explicit headless input, restricted permissions, structured output and separate process/schema failure handling.",
+            "Run headless with restricted tools; convert timeout or invalid output into an empty findings array so the posting service uses one uniform result schema."
+          ],
+          "answer": 2,
+          "explanations": [
+            "A parseable partial payload does not establish successful execution.",
+            "Read-only Git access does not remove approve/merge capability from a separate integration.",
+            "Inputs, permissions and visible failure are implemented at the correct boundaries.",
+            "Failure and valid no-findings must remain distinguishable."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Decide whether reliance can increase",
+          "context": "Every run exits successfully and emits valid schema. A seeded missing-currency defect is repeatedly missed, and harmless style is reported.",
+          "stem": "Which evidence is needed before increasing reliance?",
+          "options": [
+            "Increase the allowed thinking budget and require a second review pass, then promote if both runs emit valid findings schemas.",
+            "Measure case-level defect recall and actionable precision after improving evidence/criteria, with human review retained.",
+            "Evaluate only on recently accepted real pull requests, treating agreement with prior human approval as a negative-defect label.",
+            "Tighten the output schema to require path and line fields, then use the reduced number of findings as the precision metric."
+          ],
+          "answer": 1,
+          "explanations": [
+            "More reasoning and schema validity do not demonstrate detection of the known defect.",
+            "This measures semantic quality and keeps responsibility explicit.",
+            "Prior acceptance is not proof of defect absence, and this removes known positive fixtures needed to measure missed defects.",
+            "Location fields improve structure but neither prove reachable consequences nor measure false negatives."
+          ]
+        }
+      ],
+      "layout": {
+        "width": 980,
+        "height": 570,
+        "nodeWidth": 190,
+        "nodeHeight": 124,
+        "nodes": {
+          "packet": {
+            "x": 40,
+            "y": 70
+          },
+          "model": {
+            "x": 350,
+            "y": 70
+          },
+          "gate": {
+            "x": 660,
+            "y": 70
+          },
+          "integration": {
+            "x": 660,
+            "y": 360
+          },
+          "ledger": {
+            "x": 350,
+            "y": 360
+          },
+          "post": {
+            "x": 40,
+            "y": 360
+          }
+        },
+        "routes": {
+          "packet>model": [
+            [
+              230,
+              132
+            ],
+            [
+              350,
+              132
+            ]
+          ],
+          "model>gate": [
+            [
+              540,
+              132
+            ],
+            [
+              660,
+              132
+            ]
+          ],
+          "gate>integration": [
+            [
+              755,
+              194
+            ],
+            [
+              755,
+              360
+            ]
+          ],
+          "integration>ledger": [
+            [
+              660,
+              422
+            ],
+            [
+              540,
+              422
+            ]
+          ],
+          "ledger>post": [
+            [
+              350,
+              422
+            ],
+            [
+              230,
+              422
+            ]
+          ]
+        }
+      }
+    },
+    "as-07-work-queue": {
+      "teachingEdition": "integrated-v2",
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "A waiting clerk and an overnight archive have different needs.",
+          "boundary": "A batch lane is not an interactive response guarantee.",
+          "courses": [
+            1,
+            2,
+            10
+          ],
+          "integration": {
+            "concept": "Task shaping before execution",
+            "what": "U-1 needs live evidence in two minutes; archive inputs are supplied.",
+            "why": "Description must include deadlines and dependencies before choosing a lane.",
+            "setup": "Name who is waiting and what evidence each job still needs.",
+            "repair": "",
+            "proof": "The stated budgets describe requirements, not measured throughput."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "Choose the whole completion path, not just a cheaper model call.",
+          "boundary": "Processing, validation and report assembly all consume the archive deadline.",
+          "courses": [
+            0,
+            1,
+            3
+          ],
+          "integration": {
+            "concept": "Latency and dependency tradeoffs",
+            "what": "Sending every request to a deferred lane misses the waiting user.",
+            "why": "A low price cannot override an unmet interaction deadline.",
+            "setup": "Which work can run independently and which needs live lookup?",
+            "repair": "Route live work interactively; assess the archive lane against its whole time budget.",
+            "proof": "A justified route and capacity check; no promise that a provider completes within the target."
+          }
+        },
+        {
+          "focus": "Description + Discernment",
+          "plain": "Keep each answer attached to its invoice, even when results arrive out of order.",
+          "boundary": "Generation cannot fix a broken identity join.",
+          "courses": [
+            0,
+            1,
+            4
+          ],
+          "integration": {
+            "concept": "Asynchronous result identity",
+            "what": "N-3 succeeds before N-1 errors and N-2 succeeds.",
+            "why": "Result order is not invoice identity.",
+            "setup": "What key follows the request all the way through validation?",
+            "repair": "Join by explicit IDs and track transport, schema, semantics and required coverage separately.",
+            "proof": "N-2/N-3 valid; N-1 failed; required coverage remains partial."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "Fix invalid inputs, retry temporary reads carefully, and reconcile uncertain payments first.",
+          "boundary": "An unknown write outcome is not a failed write.",
+          "courses": [
+            1,
+            4,
+            10
+          ],
+          "integration": {
+            "concept": "Cause-specific recovery",
+            "what": "The fixture mixes invalid input, a transient read and PAY-9 timeout.",
+            "why": "A blanket retry can duplicate a financial effect while not repairing bad input.",
+            "setup": "What do we know about the effect before deciding recovery?",
+            "repair": "Retain successes; repair invalid data, bound safe retries and reconcile PAY-9 before another action.",
+            "proof": "A receipt or explicit unknown is preserved; no invented success or duplicate resend."
+          }
+        },
+        {
+          "focus": "Delegation + Discernment",
+          "plain": "A proposed booking lookup must actually run before the extraction uses its answer.",
+          "boundary": "A tool declaration or arguments are not an observed result.",
+          "courses": [
+            0,
+            1,
+            4,
+            6
+          ],
+          "integration": {
+            "concept": "Client-tool execution ownership",
+            "what": "The archive now depends on model-selected live evidence.",
+            "why": "Its old independence assumption no longer holds.",
+            "setup": "Who executes the lookup and supplies the result to the model?",
+            "repair": "Use application orchestration; prefetch or stage suitable evidence, then batch eligible independent work.",
+            "proof": "The trace links the proposal, authorized lookup, actual result and subsequent extraction."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "where": "layer-3",
+          "what": "The model output can be plausible while attached to the wrong invoice.",
+          "why": "Generation quality cannot repair broken request/result identity.",
+          "how": "Carry each invoice identifier from submission through outcome validation and report assembly; never zip asynchronous result order to input order.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "results_by_id = {r.custom_id: r for r in returned_results}\nfor required_id in required_ids:\n    validate_and_record(required_id, results_by_id.get(required_id))"
+          },
+          "evidence": "Out-of-order N-3/N-1/N-2 still produces correct per-invoice state and explicit partial coverage.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 0
+        },
+        {
+          "where": "layer-4",
+          "what": "Choose recovery by cause, not one instruction to try again.",
+          "why": "Discernment separates invalid inputs, transient reads and unknown payment effects; Diligence protects against duplicate financial actions.",
+          "how": "Delegate extraction, describe identity and required coverage, inspect actual error categories, and retain unknown side effects until authoritative reconciliation.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "policy = {invalid_input: \"repair\", transient_read: \"bounded retry\", unknown_write: \"reconcile first\"}\n# Never erase successful results or unknown effects."
+          },
+          "evidence": "Successes remain intact; PAY-9 is reconciled or explicitly unknown; required gaps keep the report partial.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 1
+        },
+        {
+          "where": "before",
+          "what": "Separate the waiting user from independent deferred archive work.",
+          "why": "Different deadlines and evidence dependencies require different orchestration lanes.",
+          "how": "Choose an interactive application path for U-1 and evaluate a deferred batch for supplied independent archive inputs. Account for validation and assembly inside the 30-hour target.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "jobs = {\"U-1\": {deadline_seconds: 120, needs_live_lookup: true}, archive: {independent: true, target_hours: 30, downstream_hours: 2}}\nroute_by_deadline_and_dependency(jobs)"
+          },
+          "evidence": "A complete time budget and dependency classification, not a cheaper-lane promise.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 2,
+          "decision_title": "Separate the waiting user from independent deferred archive work.",
+          "decision_reason": "Different deadlines and evidence dependencies require different orchestration lanes."
+        },
+        {
+          "where": "before",
+          "what": "Choose models on extraction validity and end-to-end completion.",
+          "why": "Cheap individual generations may increase validation failures or miss the useful deadline.",
+          "how": "Compare approved candidates on invoice-field accuracy, abstention on missing data, schema validity, retry rate and total cost; include model/queue/validation latency in the lane budget.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "score = {field_accuracy, unsupported_fields, schema_errors, retry_rate, total_latency, total_cost}\ncompare_same_invoice_cases(approved_candidates, score)"
+          },
+          "evidence": "Saved case-level quality and whole-path latency/cost, not a universal fastest or cheapest claim.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 3,
+          "decision_title": "Choose models on extraction validity and end-to-end completion.",
+          "decision_reason": "Cheap individual generations may increase validation failures or miss the useful deadline."
+        },
+        {
+          "where": "layer-5",
+          "what": "A batch may return a client-tool proposal; the application must execute the dependency.",
+          "why": "Tool definitions and tool_use requests are not local function execution or observed booking evidence.",
+          "how": "Have the runtime validate the proposed read, execute the authorized lookup, correlate its result and continue the model. Prefetch or stage evidence where appropriate; batch only eligible independent work.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "if response.requests_client_tool:\n    lookup = authorized_read_booking(response.input)\n    continuation = observed_result_for_same_call(response.id, lookup)\n# Final extraction follows actual dependency evidence."
+          },
+          "evidence": "A trace proves the booking lookup happened before final extraction; failure remains an evidence gap.",
+          "not_demonstrated": "Conceptual client-tool loop; it does not claim provider batches execute local handlers or guarantee a deadline.",
+          "course_index": 4
+        },
+        {
+          "where": "after",
+          "what": "Build and test routing, identity and recovery as separate code boundaries.",
+          "why": "A prompt cannot enforce correlation or idempotent recovery on its own.",
+          "how": "Use Claude Code to inspect queue and ingestion callers, patch scoped boundaries, run out-of-order/error/unknown-write tests and review the diff. Shared instructions describe invariants; CI executes checks.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "tests = [\"out-of-order IDs\", \"missing required result\", \"invalid input\", \"transient read\", \"PAY-9 unknown\", \"tool dependency\"]\ninspect(); patch(); execute(tests); review_diff()"
+          },
+          "evidence": "Actual tests tied to the patch plus an owner-reviewed release decision.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 5,
+          "decision_title": "Build and test routing, identity and recovery as separate code boundaries.",
+          "decision_reason": "A prompt cannot enforce correlation or idempotent recovery on its own."
+        },
+        {
+          "where": "layer-5",
+          "what": "MCP can expose booking access but does not run it merely because it is connected.",
+          "why": "Tools, resources and prompts have different purposes; access and execution still need a host/runtime.",
+          "how": "Use an approved callable booking tool if the task needs a live operation; a resource may supply addressable content and a prompt a reusable interaction. Verify permitted execution and actual returned evidence, whichever integration is chosen.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "integration = {tool: \"authorized booking lookup\", resource: \"permitted static reference\", prompt: \"reusable extraction brief\"}\n# A connection/catalog entry is not a completed lookup."
+          },
+          "evidence": "Authorized lookup output or explicit failure, not an inferred result from its arguments.",
+          "not_demonstrated": "MCP is an integration option, not required for the baseline supplied-PDF archive or a permission guarantee.",
+          "course_index": 6
+        },
+        {
+          "where": "before",
+          "what": "Independent invoices do not require a hierarchy of specialist agents.",
+          "why": "Batch concurrency is not the same as multi-agent delegation.",
+          "how": "Start with independent requests and deterministic aggregation. Add a bounded specialist only for a genuinely distinct investigation, with required return fields and partial-failure handling.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "baseline = \"independent extraction requests + deterministic ledger\"\nif separate_investigation_needed:\n    brief = {scope, permitted_sources, expected_findings, failure_state}"
+          },
+          "evidence": "A reason for delegation and a bounded evidence return; no automatic completeness from agent count.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 7,
+          "decision_title": "Independent invoices do not require a hierarchy of specialist agents.",
+          "decision_reason": "Batch concurrency is not the same as multi-agent delegation."
+        },
+        {
+          "where": "before",
+          "what": "Use an application workflow that owns jobs and result state.",
+          "why": "An interactive chat cannot substitute for a reliable asynchronous job ledger.",
+          "how": "Keep U-1 in the waiting-user interface and archive submission/status/report assembly in the backend; use developer tooling to implement that service.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "surfaces = {clerk: \"interactive application\", archive: \"backend job workflow\", implementation: \"developer tooling\"}\nowner_of_job_state = \"application\""
+          },
+          "evidence": "Each job has a known owner, deadline and visible completion state.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 8,
+          "decision_title": "Use an application workflow that owns jobs and result state.",
+          "decision_reason": "An interactive chat cannot substitute for a reliable asynchronous job ledger."
+        },
+        {
+          "where": "after",
+          "what": "Validate endpoint support, queue behavior and sensitive-data boundaries.",
+          "why": "Batch availability, feature support and processing policy vary by approved surface; a gateway is not a residency guarantee.",
+          "how": "Verify the actual endpoint supports the chosen model and batch/tool contract; document invoice data handling, logs, quotas and failure routing. Never silently route sensitive inputs to an unapproved fallback.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "deployment_checks = [\"approved endpoint\", \"batch support\", \"quota\", \"data handling\", \"sensitive logs\", \"timeout behavior\"]\nfail_visibly_on_unapproved_route()"
+          },
+          "evidence": "Endpoint-specific evidence and tested failure paths, not a cloud-wide parity claim.",
+          "not_demonstrated": "No deployed system or current price/limit/turnaround guarantee is asserted.",
+          "course_index": 9,
+          "decision_title": "Validate endpoint support, queue behavior and sensitive-data boundaries.",
+          "decision_reason": "Batch availability, feature support and processing policy vary by approved surface; a gateway is not a residency guarantee."
+        },
+        {
+          "where": "after",
+          "what": "Deliver a pilot measured by complete useful output, not submitted requests.",
+          "why": "A report with required invoices missing is partial even if most extractions succeeded.",
+          "how": "Capture manual baseline and required-ID coverage, agree accuracy/deadline criteria, include recovery and downstream validation time, then expand only on observed results and owned exception handling.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "coverage = valid_required_ids / required_ids\ncompletion = all_required_valid and report_assembled\npilot_metrics = [coverage, field_accuracy, elapsed_to_report, retry_cost, unresolved_effects]"
+          },
+          "evidence": "Observed end-to-end report quality and explicit partial/complete status with an owner.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 10,
+          "decision_title": "Deliver a pilot measured by complete useful output, not submitted requests.",
+          "decision_reason": "A report with required invoices missing is partial even if most extractions succeeded."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "The model output can be plausible while attached to the wrong invoice. Carry each invoice identifier from submission through outcome validation and report assembly; never zip asynchronous result order to input order.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Choose recovery by cause, not one instruction to try again. Delegate extraction, describe identity and required coverage, inspect actual error categories, and retain unknown side effects until authoritative reconciliation.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Separate the waiting user from independent deferred archive work. Choose an interactive application path for U-1 and evaluate a deferred batch for supplied independent archive inputs. Account for validation and assembly inside the 30-hour target.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Choose models on extraction validity and end-to-end completion. Compare approved candidates on invoice-field accuracy, abstention on missing data, schema validity, retry rate and total cost; include model/queue/validation latency in the lane budget.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "A batch may return a client-tool proposal; the application must execute the dependency. Have the runtime validate the proposed read, execute the authorized lookup, correlate its result and continue the model. Prefetch or stage evidence where appropriate; batch only eligible independent work.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-5"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Build and test routing, identity and recovery as separate code boundaries. Use Claude Code to inspect queue and ingestion callers, patch scoped boundaries, run out-of-order/error/unknown-write tests and review the diff. Shared instructions describe invariants; CI executes checks.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "MCP can expose booking access but does not run it merely because it is connected. Use an approved callable booking tool if the task needs a live operation; a resource may supply addressable content and a prompt a reusable interaction. Verify permitted execution and actual returned evidence, whichever integration is chosen.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "layer-5"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Independent invoices do not require a hierarchy of specialist agents. Start with independent requests and deterministic aggregation. Add a bounded specialist only for a genuinely distinct investigation, with required return fields and partial-failure handling.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Use an application workflow that owns jobs and result state. Keep U-1 in the waiting-user interface and archive submission/status/report assembly in the backend; use developer tooling to implement that service.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Validate endpoint support, queue behavior and sensitive-data boundaries. Verify the actual endpoint supports the chosen model and batch/tool contract; document invoice data handling, logs, quotas and failure routing. Never silently route sensitive inputs to an unapproved fallback.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Deliver a pilot measured by complete useful output, not submitted requests. Capture manual baseline and required-ID coverage, agree accuracy/deadline criteria, include recovery and downstream validation time, then expand only on observed results and owned exception handling.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Backend application: interactive live path plus evaluated deferred archive lane."
+        ],
+        [
+          "Capability features",
+          "Independent requests first; client-tool execution when required; deterministic ID ledger and cause-specific recovery."
+        ],
+        [
+          "Model",
+          "Evaluate extraction quality, unsupported fields and total completion cost/latency on the same cases."
+        ],
+        [
+          "Context",
+          "Per-invoice authorized evidence and exact identity; dependency results must exist before final extraction."
+        ]
+      ],
+      "overviewRoute": [
+        "Jobs \u2192 classify deadline and dependency",
+        "Live lookup or independent archive batch",
+        "Results \u2192 ID-correlated validation",
+        "Ledger \u2192 cause-specific recovery",
+        "Assembly \u2192 complete or explicit partial report"
+      ],
+      "designIntro": "First decide what can wait and what evidence must exist; do not confuse batching, parallelism and delegation.",
+      "deliveryIntro": "Measure useful completed reports and recovery cost. Keep required gaps and unknown financial effects visible.",
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose lanes from the actual requirements",
+          "context": "A clerk needs a live booking answer within 120 seconds. Five hundred supplied independent invoices feed a report due in 30 hours, including two hours for validation and assembly.",
+          "stem": "Which initial design best respects these constraints?",
+          "options": [
+            "Use deferred batches for both lanes and poll the waiting-user request more frequently, keeping the same completion service-level expectation.",
+            "Use a live path for the clerk and evaluate a deferred batch for independent archives against the full report budget.",
+            "Use a live path for the clerk and select the archive batch when its provider processing window fits 30 hours, allocating validation and assembly after batch completion.",
+            "Use synchronous calls for both lanes and size archive concurrency from model-call latency alone, then add report assembly when all responses finish."
+          ],
+          "answer": 1,
+          "explanations": [
+            "Polling frequency does not change a deferred processing deadline into an interactive one.",
+            "The design distinguishes dependency and deadline while preserving validation time.",
+            "The 30-hour target already includes downstream work; consuming the whole budget in provider processing risks missing it.",
+            "The capacity estimate omits validation and assembly and must be evaluated against the whole completion budget."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Recover without duplicating effects",
+          "context": "N-2 and N-3 validated successfully; N-1 has invalid input. A separate payment PAY-9 timed out and may have committed. The report requires all invoice IDs.",
+          "stem": "Which recovery design best preserves truth and successful work?",
+          "options": [
+            "Retain successful invoices, retry N-1 unchanged within the transient-error budget, and resend PAY-9 under a new operation key if its response is still absent.",
+            "Repair N-1 and keep the report partial, but mark PAY-9 failed when its request timeout expires so the normal retry worker can handle it.",
+            "Retain successes, repair N-1 input, reconcile PAY-9 status before another effect, and keep required coverage partial until resolved.",
+            "Preserve successful results and repair N-1; retry PAY-9 with its original operation key without checking provider idempotency semantics or authoritative status."
+          ],
+          "answer": 2,
+          "explanations": [
+            "Invalid input needs repair, and a new key can duplicate an already committed payment.",
+            "A timeout is an unknown outcome, not evidence that the financial operation failed.",
+            "Recovery follows cause and preserves unresolved state.",
+            "Same-key retry is only safe under a verified provider idempotency contract; the fixture requires reconciliation of the unknown effect first."
+          ]
+        }
+      ],
+      "layout": {
+        "width": 980,
+        "height": 570,
+        "nodeWidth": 190,
+        "nodeHeight": 124,
+        "nodes": {
+          "jobs": {
+            "x": 40,
+            "y": 70
+          },
+          "route": {
+            "x": 350,
+            "y": 70
+          },
+          "live": {
+            "x": 660,
+            "y": 70
+          },
+          "batch": {
+            "x": 350,
+            "y": 360
+          },
+          "ledger": {
+            "x": 660,
+            "y": 360
+          },
+          "recover": {
+            "x": 40,
+            "y": 360
+          }
+        },
+        "routes": {
+          "jobs>route": [
+            [
+              230,
+              132
+            ],
+            [
+              350,
+              132
+            ]
+          ],
+          "route>live": [
+            [
+              540,
+              132
+            ],
+            [
+              660,
+              132
+            ]
+          ],
+          "route>batch": [
+            [
+              445,
+              194
+            ],
+            [
+              445,
+              360
+            ]
+          ],
+          "batch>ledger": [
+            [
+              540,
+              422
+            ],
+            [
+              660,
+              422
+            ]
+          ],
+          "live>ledger": [
+            [
+              785,
+              194
+            ],
+            [
+              785,
+              360
+            ]
+          ],
+          "ledger>recover": [
+            [
+              755,
+              484
+            ],
+            [
+              755,
+              535
+            ],
+            [
+              135,
+              535
+            ],
+            [
+              135,
+              484
+            ]
+          ],
+          "live>batch": [
+            [
+              690,
+              194
+            ],
+            [
+              690,
+              265
+            ],
+            [
+              500,
+              265
+            ],
+            [
+              500,
+              360
+            ]
+          ]
+        }
+      }
+    },
+    "as-08-resumable-case": {
+      "teachingEdition": "integrated-v2",
+      "fluencyLayers": [
+        {
+          "focus": "Delegation + Description",
+          "plain": "Resume yesterday\u2019s facts, but compare them with today\u2019s request.",
+          "boundary": "Saved history does not expand the old approval.",
+          "courses": [
+            0,
+            1,
+            2
+          ],
+          "integration": {
+            "concept": "Durable memory versus current authority",
+            "what": "The saved approval is USD60/v3; today asks USD187.20/v4.",
+            "why": "The difference must be explicit before the model recommends another action.",
+            "setup": "Name the exact changed amount, policy and unresolved operation.",
+            "repair": "",
+            "proof": "The checkpoint supplies dated observations, not current permission."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "Ask whether this exact action is approved now and what the earlier payment actually did.",
+          "boundary": "A schema-valid checkpoint and matching customer identity are insufficient.",
+          "courses": [
+            1,
+            4,
+            6
+          ],
+          "integration": {
+            "concept": "Freshness and authorization",
+            "what": "The word approved hides different amount and policy conditions.",
+            "why": "Useful past work can remain while its authority no longer applies.",
+            "setup": "Which source establishes current scope, and what is OP-6\u2019s status?",
+            "repair": "Refresh consequential evidence, compare scoped authority and reconcile the operation before new effects.",
+            "proof": "The new action stays blocked pending authority and OP-6 reconciliation; no transaction is executed here."
+          }
+        },
+        {
+          "focus": "Description + Discernment",
+          "plain": "Shorten repetition, not the amount, approval version or unknown payment.",
+          "boundary": "A summary is not the durable system of record.",
+          "courses": [
+            0,
+            1,
+            2
+          ],
+          "integration": {
+            "concept": "Lossy compaction",
+            "what": "The compact text forgets OP-6 and the exact approval.",
+            "why": "The model cannot reliably retrieve a constraint it no longer knows is missing.",
+            "setup": "Which facts must be carried explicitly into the next interaction?",
+            "repair": "Persist exact critical state and source pointers; derive a focused current brief.",
+            "proof": "The example brief retains C-41/B-52, USD187.20, USD60/v3 and OP-6 unknown."
+          }
+        },
+        {
+          "focus": "Discernment + Diligence",
+          "plain": "Keep the booking findings, expose the failed payment check, and assign the pending decision.",
+          "boundary": "A busy review queue cannot convert missing evidence into approval.",
+          "courses": [
+            0,
+            1,
+            7,
+            10
+          ],
+          "integration": {
+            "concept": "Partial evidence and accountable handoff",
+            "what": "One specialist failed and review capacity is constrained.",
+            "why": "Coverage is about required evidence, not average confidence or available staff.",
+            "setup": "What remains unknown and who owns it while waiting?",
+            "repair": "Preserve supported results, name the gap and use risk-based owned pending/overflow states.",
+            "proof": "The handoff includes sources, failed checks, unknown effect and requested decision; no unsupported refund."
+          }
+        },
+        {
+          "focus": "Discernment",
+          "plain": "Refresh what can change the action, while retaining unaffected verified facts.",
+          "boundary": "Age alone is not a reason to discard everything.",
+          "courses": [
+            1,
+            2,
+            10
+          ],
+          "integration": {
+            "concept": "Decision-relevant freshness",
+            "what": "The transfer fixture changes only an irrelevant narrative detail.",
+            "why": "Proportionate checking follows consequence and applicability.",
+            "setup": "Could this stale fact change amount, policy, ownership or OP-6 status?",
+            "repair": "Retain unaffected findings, refresh critical evidence and continue reconciling consequential unknowns.",
+            "proof": "No stale permission is reused; irrelevant aging does not trigger a complete restart."
+          }
+        }
+      ],
+      "pathApplications": [
+        {
+          "where": "layer-3",
+          "what": "A fluent summary can erase the one fact that makes another payment unsafe.",
+          "why": "Model summarization is lossy; confidence does not preserve exact amounts, approval scope or unknown effects.",
+          "how": "Keep exact IDs, amounts, source versions and unresolved operations in durable application state; assemble a focused working brief from those records.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "critical = {case: \"C-41\", booking: \"B-52\", requested: \"USD187.20\", approved: \"USD60/v3\", operation: \"OP-6 unknown\"}\nbrief = current_relevant_view(critical, source_pointers)"
+          },
+          "evidence": "The resumed brief retains every decision-critical constraint and points to inspectable records.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 0
+        },
+        {
+          "where": "layer-2",
+          "what": "Reuse useful facts without treating old approval as new permission.",
+          "why": "Delegation may ask Claude to investigate; Diligence keeps the current financial authorization outside model memory.",
+          "how": "Describe the current amount/policy, inspect historical applicability and reconcile unknown operations before a new action. Preserve disagreements and pending ownership.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "responsibility = {summarize: \"Claude\", authorization: \"application + owner\", operation_status: \"transaction service\"}\n# A remembered approval flag is not current authority."
+          },
+          "evidence": "The case retains valid observations while the new action stays blocked pending required checks.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 1
+        },
+        {
+          "where": "before",
+          "what": "Design an application-owned resume boundary, not just a restored conversation.",
+          "why": "Session continuity helps reasoning but does not establish fresh policy or settled transaction state.",
+          "how": "Choose the governed case application, durable checkpoint, focused context and explicit reconciliation capabilities before adding a longer prompt or autonomous agents.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "resume_design = {entry: \"case application\", state: \"durable facts + sources + unknowns\", capability: \"refresh + reconcile\", context: \"focused current brief\"}"
+          },
+          "evidence": "A design record separates history, current evidence, authority and unresolved effects.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 2,
+          "decision_title": "Design an application-owned resume boundary, not just a restored conversation.",
+          "decision_reason": "Session continuity helps reasoning but does not establish fresh policy or settled transaction state."
+        },
+        {
+          "where": "before",
+          "what": "Evaluate models on exact state retention and honest uncertainty.",
+          "why": "A larger context window does not guarantee preservation of approval scope or unresolved effects.",
+          "how": "Compare approved candidates on long-history compaction, changed policy/amount, partial specialist failure and stale irrelevant detail; measure factual retention, unsupported closure, latency and cost.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "cases = [\"approval60/v3 vs request187.20/v4\", \"OP-6 unknown\", \"partial payment investigation\", \"irrelevant stale detail\"]\nmeasure_exact_fact_retention_and_unsupported_closure(cases)"
+          },
+          "evidence": "Saved case-level results including omitted constraints and false-completion errors.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 3,
+          "decision_title": "Evaluate models on exact state retention and honest uncertainty.",
+          "decision_reason": "A larger context window does not guarantee preservation of approval scope or unresolved effects."
+        },
+        {
+          "where": "layer-2",
+          "what": "A resumed model must receive observed current status, not an invented payment result.",
+          "why": "Tool selection and stored session state do not execute a status query.",
+          "how": "Have application code authorize OP-6 status access, execute the lookup and correlate actual results to the model continuation. Preserve failure as unknown; extra reasoning cannot settle it.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "status = authorized_transaction_lookup(\"OP-6\")\nif status.unavailable: preserve(\"unknown\")\nelse: record_observed_status_and_receipt(status)\n# Never infer settlement from a proposed tool call."
+          },
+          "evidence": "A service receipt or explicit unknown, with current authority checked separately.",
+          "not_demonstrated": "Conceptual client-tool flow; exact wire fields and host lifecycle support require current official verification.",
+          "course_index": 4
+        },
+        {
+          "where": "after",
+          "what": "Implement durable-state invariants and resume tests with scoped code work.",
+          "why": "Instructions to remember important facts cannot replace persisted state and tested resume behavior.",
+          "how": "Use Claude Code to inspect checkpoint and action callers, patch the exact state contract, run changed-amount/policy/unknown-effect tests, review the diff and commit evidence. Package repeated review as a skill; CI enforces invariants.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "tests = [\"preserve OP-6 unknown\", \"no widened approval\", \"partial specialist failure\", \"full review queue\", \"retain unaffected facts\"]\ninspect_callers(); patch_state_contract(); execute(tests); review_diff()"
+          },
+          "evidence": "Actual resume and authorization-negative tests tied to the reviewed change.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 5,
+          "decision_title": "Implement durable-state invariants and resume tests with scoped code work.",
+          "decision_reason": "Instructions to remember important facts cannot replace persisted state and tested resume behavior."
+        },
+        {
+          "where": "layer-2",
+          "what": "MCP may provide status access; it is not durable business memory or permission.",
+          "why": "A resource address or connected server does not prove OP-6 was read or authorize another payment.",
+          "how": "Distinguish an authorized status tool, source resources and reusable handoff prompts. Record the actual observed result in application state; keep entitlement and financial approval separately enforced.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "status_tool = \"permitted OP-6 lookup\"\nresource = \"dated applicable policy content\"\nprompt = \"reusable investigation brief\"\n# Protocol connection is neither a receipt nor approval."
+          },
+          "evidence": "Authorized read outcome and dated source content, or visible access/read failure.",
+          "not_demonstrated": "No MCP deployment is required by the baseline or demonstrated by this lesson.",
+          "course_index": 6
+        },
+        {
+          "where": "layer-4",
+          "what": "Specialists return bounded findings, including explicit failure.",
+          "why": "Successful booking research cannot silently stand in for failed payment research.",
+          "how": "Give specialists relevant source-linked briefs and required return states. The coordinator preserves supported facts, exposes missing payment evidence and routes unresolved risk to an owner.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "specialist_results = {booking: \"supported\", payment: \"failed; OP-6 unresolved\"}\ncomplete = all_required_evidence_supported(specialist_results)\n# False: retain partial state and hand off."
+          },
+          "evidence": "A coverage record distinguishes success, failure and missing evidence; no unsupported finalization.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 7
+        },
+        {
+          "where": "before",
+          "what": "Use a governed case application for state and authority; a chat interface is only a view.",
+          "why": "A conversational memory is not the authoritative approval or transaction ledger.",
+          "how": "Keep durable case state and access in the application, the model as investigator, and responsible people as financial decision owners. Use developer tooling to build the controls.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "surfaces = {user: \"case workspace\", reasoning: \"bounded model interaction\", authority: \"business system + owner\"}"
+          },
+          "evidence": "A clear ownership map and reproducible access/approval checks, independent of UI surface.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 8,
+          "decision_title": "Use a governed case application for state and authority; a chat interface is only a view.",
+          "decision_reason": "A conversational memory is not the authoritative approval or transaction ledger."
+        },
+        {
+          "where": "after",
+          "what": "Protect checkpoints, source access and transaction reconciliation across sessions.",
+          "why": "Restoring data through an approved endpoint does not itself guarantee residency, freshness or correct entitlements.",
+          "how": "Verify actual storage/endpoint data policy, identity propagation, retention, least privilege, logs and failure routing; keep checkpoint schema/version and source provenance. No unapproved fallback or stale approval reuse.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "deployment_checks = [\"state access\", \"identity\", \"retention\", \"approved model endpoint\", \"policy version\", \"status-service failure\"]\nfail_closed_for_new_effect_when_required_authority_missing()"
+          },
+          "evidence": "Endpoint/storage-specific evidence and negative resume tests; no generic cloud guarantee.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 9,
+          "decision_title": "Protect checkpoints, source access and transaction reconciliation across sessions.",
+          "decision_reason": "Restoring data through an approved endpoint does not itself guarantee residency, freshness or correct entitlements."
+        },
+        {
+          "where": "after",
+          "what": "Pilot safe continuation and capacity-aware handoff, not faster closure alone.",
+          "why": "A full human queue is not permission to hide missing payment evidence.",
+          "how": "Baseline rework and unsafe-resume errors, define exact fact-retention and handoff criteria, test representative interrupted cases and queue overflow, and assign owned pending states before expansion.",
+          "technical_artifact": {
+            "label": "Illustrative application-owned pseudocode / design record; not an SDK signature, executed test, or deployed configuration",
+            "pseudocode": "metrics = [\"lost critical facts\", \"unsupported closure\", \"time to reconcile\", \"owned pending cases\", \"review overflow\"]\nacceptance = \"no widened authority or hidden required gap\""
+          },
+          "evidence": "Observed pilot results and an explicit capacity/risk decision; unresolved cases remain owned.",
+          "not_demonstrated": "This is a design exercise, not an executed implementation or a guarantee of correctness.",
+          "course_index": 10,
+          "decision_title": "Pilot safe continuation and capacity-aware handoff, not faster closure alone.",
+          "decision_reason": "A full human queue is not permission to hide missing payment evidence."
+        }
+      ],
+      "courseConnections": [
+        {
+          "title": "AI Capabilities and Limitations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-capabilities-and-limitations",
+          "connection": "A fluent summary can erase the one fact that makes another payment unsafe. Keep exact IDs, amounts, source versions and unresolved operations in durable application state; assemble a focused working brief from those records.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-3"
+        },
+        {
+          "title": "AI Fluency for Builders",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/ai-fluency-for-builders",
+          "connection": "Reuse useful facts without treating old approval as new permission. Describe the current amount/policy, inspect historical applicability and reconcile unknown operations before a new action. Preserve disagreements and pending ownership.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Platform and Model Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-model-foundations",
+          "connection": "Design an application-owned resume boundary, not just a restored conversation. Choose the governed case application, durable checkpoint, focused context and explicit reconciliation capabilities before adding a longer prompt or autonomous agents.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Choosing the right Claude model",
+          "url": "https://academy.claude.com/tutorials/choosing-the-right-claude-model",
+          "connection": "Evaluate models on exact state retention and honest uncertainty. Compare approved candidates on long-history compaction, changed policy/amount, partial specialist failure and stale irrelevant detail; measure factual retention, unsupported closure, latency and cost.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Claude Platform 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-platform-101",
+          "connection": "A resumed model must receive observed current status, not an invented payment result. Have application code authorize OP-6 status access, execute the lookup and correlate actual results to the model continuation. Preserve failure as unknown; extra reasoning cannot settle it.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Claude Code 101",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/claude-code-101",
+          "connection": "Implement durable-state invariants and resume tests with scoped code work. Use Claude Code to inspect checkpoint and action callers, patch the exact state contract, run changed-amount/policy/unknown-effect tests, review the diff and commit evidence. Package repeated review as a skill; CI enforces invariants.",
+          "local": "../concept-course/03-code-workflows-and-ci.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Introduction to Model Context Protocol",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-model-context-protocol",
+          "connection": "MCP may provide status access; it is not durable business memory or permission. Distinguish an authorized status tool, source resources and reusable handoff prompts. Record the actual observed result in application state; keep entitlement and financial approval separately enforced.",
+          "local": "../concept-course/02-tools-and-mcp.html",
+          "applied_where": "layer-2"
+        },
+        {
+          "title": "Introduction to subagents",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/introduction-to-subagents",
+          "connection": "Specialists return bounded findings, including explicit failure. Give specialists relevant source-linked briefs and required return states. The coordinator preserves supported facts, exposes missing payment evidence and routes unresolved risk to an owner.",
+          "local": "../concept-course/01-application-and-agent-loop.html",
+          "applied_where": "layer-4"
+        },
+        {
+          "title": "Product Foundations",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/product-foundations",
+          "connection": "Use a governed case application for state and authority; a chat interface is only a view. Keep durable case state and access in the application, the model as investigator, and responsible people as financial decision owners. Use developer tooling to build the controls.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "before"
+        },
+        {
+          "title": "Deployment Architecture",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/deployment-architecture",
+          "connection": "Protect checkpoints, source access and transaction reconciliation across sessions. Verify actual storage/endpoint data policy, identity propagation, retention, least privilege, logs and failure routing; keep checkpoint schema/version and source provenance. No unapproved fallback or stale approval reuse.",
+          "local": "../concept-course/06-putting-it-together.html",
+          "applied_where": "after"
+        },
+        {
+          "title": "Delivery Methodology",
+          "url": "https://anthropic-partners.skilljar.com/path/claude-architect/delivery-methodology",
+          "connection": "Pilot safe continuation and capacity-aware handoff, not faster closure alone. Baseline rework and unsafe-resume errors, define exact fact-retention and handoff criteria, test representative interrupted cases and queue overflow, and assign owned pending states before expansion.",
+          "local": "../concept-course/05-context-reliability-and-evaluation.html",
+          "applied_where": "after"
+        }
+      ],
+      "foundationDecisions": [
+        [
+          "Entry point",
+          "Governed case workspace backed by durable application state."
+        ],
+        [
+          "Capability features",
+          "Current evidence refresh, authorized status reconciliation and explicit partial handoff; no automatic new financial effect."
+        ],
+        [
+          "Model",
+          "Evaluate exact fact retention, honest unknowns and scoped authority before comparing cost/latency."
+        ],
+        [
+          "Context",
+          "Small current brief plus durable IDs, exact amounts, source versions and unresolved effects."
+        ]
+      ],
+      "overviewRoute": [
+        "Checkpoint \u2192 exact historical state",
+        "Working brief \u2192 current investigation",
+        "Application \u2192 freshness and authority checks",
+        "Transaction service \u2192 observed status",
+        "Owner queue \u2192 explicit pending decision"
+      ],
+      "designIntro": "Start by separating what was observed yesterday from what is permitted and known today.",
+      "deliveryIntro": "Prove safe resume and owned handoff under interruption and queue limits; faster closure alone is not success.",
+      "designReviewQuestions": [
+        {
+          "position": "before",
+          "title": "Choose the resume boundary",
+          "context": "Yesterday: approval USD60 under policy v3; OP-6 unknown. Today: request USD187.20 under policy v4. Durable conversation history exists.",
+          "stem": "Which design best supports continuation without widening authority?",
+          "options": [
+            "Restore the exact checkpoint and reconcile OP-6, then reuse the saved approval because the customer and booking identifiers match.",
+            "Refresh policy v4 and obtain approval for USD187.20, then issue a new payment while leaving OP-6 for later reconciliation.",
+            "Retain exact historical state, refresh consequential evidence, reconcile OP-6 and revalidate current action authority before new effects.",
+            "Reconcile OP-6 and refresh policy text, then ask the model to infer whether the old USD60 approval covers the larger request under the new policy."
+          ],
+          "answer": 2,
+          "explanations": [
+            "Matching identity does not extend approval to a changed amount or policy version.",
+            "Fresh authority for a new amount does not remove the duplicate-effect risk from OP-6.",
+            "The design separates useful history, present authority and unresolved effects.",
+            "The model cannot grant authority that has not been established for the exact current action."
+          ]
+        },
+        {
+          "position": "after",
+          "title": "Handle constrained human review",
+          "context": "Booking evidence is supported; payment investigation failed and OP-6 remains unknown. Five mandatory cases need review, but only three can be reviewed today.",
+          "stem": "Which operational design preserves valid work without hiding risk?",
+          "options": [
+            "Preserve the payment gap in logs but close cases whose aggregate specialist confidence exceeds the existing threshold, sampling them for later audit.",
+            "Keep supported findings, name required gaps and assign explicit pending/overflow owners under risk-based criteria.",
+            "Keep unresolved cases pending in one shared queue without case-level owners until review capacity becomes available.",
+            "Retry the failed payment specialist once, then treat a second timeout as an empty result so the available evidence can be finalized."
+          ],
+          "answer": 1,
+          "explanations": [
+            "A logged gap remains required evidence; aggregate confidence cannot resolve it.",
+            "The design retains evidence and accountable unresolved states.",
+            "Pending status without ownership leaves no accountable follow-up, prioritization or overflow handling.",
+            "A repeated timeout remains failed investigation, not evidence that the result is empty."
+          ]
+        }
+      ],
+      "layout": {
+        "width": 980,
+        "height": 570,
+        "nodeWidth": 190,
+        "nodeHeight": 124,
+        "nodes": {
+          "saved": {
+            "x": 40,
+            "y": 70
+          },
+          "model": {
+            "x": 350,
+            "y": 70
+          },
+          "refresh": {
+            "x": 660,
+            "y": 70
+          },
+          "status": {
+            "x": 660,
+            "y": 360
+          },
+          "brief": {
+            "x": 350,
+            "y": 360
+          },
+          "review": {
+            "x": 40,
+            "y": 360
+          }
+        },
+        "routes": {
+          "saved>model": [
+            [
+              230,
+              132
+            ],
+            [
+              350,
+              132
+            ]
+          ],
+          "model>refresh": [
+            [
+              540,
+              132
+            ],
+            [
+              660,
+              132
+            ]
+          ],
+          "refresh>status": [
+            [
+              755,
+              194
+            ],
+            [
+              755,
+              360
+            ]
+          ],
+          "saved>brief": [
+            [
+              135,
+              194
+            ],
+            [
+              135,
+              270
+            ],
+            [
+              390,
+              270
+            ],
+            [
+              390,
+              360
+            ]
+          ],
+          "brief>model": [
+            [
+              445,
+              360
+            ],
+            [
+              445,
+              194
+            ]
+          ],
+          "status>review": [
+            [
+              755,
+              484
+            ],
+            [
+              755,
+              535
+            ],
+            [
+              135,
+              535
+            ],
+            [
+              135,
+              484
+            ]
+          ],
+          "brief>review": [
+            [
+              350,
+              422
+            ],
+            [
+              230,
+              422
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

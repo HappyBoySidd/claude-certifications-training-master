@@ -1,0 +1,2398 @@
+{
+  "schema_version": 1,
+  "scope": "97 canonical source routes plus 6 generated destinations = 103 public CCAR-F surfaces. Objective mapping denotes explicit related routes, not mastery or full skill assessment.",
+  "pages": [
+    {
+      "route": "exams/ccar-f.html",
+      "family": "entry-and-curriculum",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose your CCAR-F starting route, then move from a concrete application to concepts, practice and exam rehearsal.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Navigation exposes the explicit complete objective chooser. These IDs are routing choices, not claims that this page teaches every objective.",
+      "sources": [
+        "01-Curriculum/02-Architect-Track/CCAR-F.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/flashcards.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Recall the mechanism from a short prompt before revealing its explanation.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/FLASHCARDS.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/hard-drills.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose between close architecture alternatives before opening each answer.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/HARD-DRILLS.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L00-orientation.html",
+      "family": "orientation",
+      "objectives": [],
+      "intent": "Choose a concrete application and understand how the study routes fit together.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L00-orientation.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L01-agentic-architecture-and-orchestration.html",
+      "family": "domain-lesson",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7"
+      ],
+      "intent": "Understand the domain through its existing application cases, technical decisions and changed constraints.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L01-agentic-architecture-and-orchestration.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L02-tool-design-and-mcp-integration.html",
+      "family": "domain-lesson",
+      "objectives": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5"
+      ],
+      "intent": "Understand the domain through its existing application cases, technical decisions and changed constraints.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L02-tool-design-and-mcp-integration.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L03-claude-code-configuration-and-workflows.html",
+      "family": "domain-lesson",
+      "objectives": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.6"
+      ],
+      "intent": "Understand the domain through its existing application cases, technical decisions and changed constraints.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L03-claude-code-configuration-and-workflows.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L04-prompt-engineering-and-structured-output.html",
+      "family": "domain-lesson",
+      "objectives": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "intent": "Understand the domain through its existing application cases, technical decisions and changed constraints.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L04-prompt-engineering-and-structured-output.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/L05-context-management-and-reliability.html",
+      "family": "domain-lesson",
+      "objectives": [
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Understand the domain through its existing application cases, technical decisions and changed constraints.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/L05-context-management-and-reliability.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/index.html",
+      "family": "navigation",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Navigation exposes the explicit complete objective chooser. These IDs are routing choices, not claims that this page teaches every objective.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/README.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/00-foundations.html",
+      "family": "application-primer",
+      "objectives": [],
+      "intent": "Follow a customer refund request and identify which program owns each step.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/00-foundations.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-01-action-service.html",
+      "family": "application",
+      "objectives": [
+        "1.1",
+        "1.4",
+        "1.5",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "intent": "Follow Architect a support action service from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-01-action-service.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-02-document-pipeline.html",
+      "family": "application",
+      "objectives": [
+        "2.3",
+        "4.3",
+        "4.4",
+        "4.5",
+        "5.5"
+      ],
+      "intent": "Follow Architect an invoice-intake pipeline from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-02-document-pipeline.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html",
+      "family": "application",
+      "objectives": [
+        "1.1",
+        "2.4",
+        "5.1",
+        "5.3",
+        "5.6"
+      ],
+      "intent": "Follow Architect a grounded knowledge assistant from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-03-grounded-assistant.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-04-research-system.html",
+      "family": "application",
+      "objectives": [
+        "1.2",
+        "1.3",
+        "1.6",
+        "5.3",
+        "5.6"
+      ],
+      "intent": "Follow Architect a research system when the next question is unknown from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-04-research-system.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-05-code-change.html",
+      "family": "application",
+      "objectives": [
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "5.4"
+      ],
+      "intent": "Follow Change an unfamiliar application safely from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-05-code-change.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-06-ci-review.html",
+      "family": "application",
+      "objectives": [
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.6"
+      ],
+      "intent": "Follow Design an unattended review that can fail honestly from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-06-ci-review.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-07-work-queue.html",
+      "family": "application",
+      "objectives": [
+        "1.1",
+        "2.2",
+        "4.5",
+        "5.3"
+      ],
+      "intent": "Follow Route urgent work and overnight work deliberately from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-07-work-queue.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/as-08-resumable-case.html",
+      "family": "application",
+      "objectives": [
+        "1.7",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Follow Resume a long-running case without inheriting false authority from a small working example through failure, decision and repair.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-08-resumable-case.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/architecture-studio/index.html",
+      "family": "navigation",
+      "objectives": [],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/choice-workshop.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.2",
+        "1.4",
+        "2.1",
+        "2.3",
+        "2.4",
+        "4.3",
+        "4.4",
+        "5.3",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Identify the changed constraint and select the mechanism that addresses it.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/choice-workshop.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/01-application-and-agent-loop.html",
+      "family": "concept",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.4"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Follow a refund from the screen to a receipt.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/01-application-and-agent-loop.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/02-tools-and-mcp.html",
+      "family": "concept",
+      "objectives": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Give the assistant tools it can distinguish.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/02-tools-and-mcp.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/03-code-workflows-and-ci.html",
+      "family": "concept",
+      "objectives": [
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.6"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Change a refund rule without losing the architecture.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/03-code-workflows-and-ci.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/04-prompts-extraction-and-batch.html",
+      "family": "concept",
+      "objectives": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Turn an invoice into a checked record.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/04-prompts-extraction-and-batch.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/05-context-reliability-and-evaluation.html",
+      "family": "concept",
+      "objectives": [
+        "1.3",
+        "1.7",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Resume a case without losing what is known.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/05-context-reliability-and-evaluation.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "family": "concept",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.4",
+        "2.1",
+        "2.4",
+        "4.3",
+        "4.5",
+        "5.1",
+        "5.3",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Connect the named application parts and data flow to the technical mechanisms in Put it together: a bank balance and transaction assistant.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/concept-course/index.html",
+      "family": "navigation",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Look up a decision family and trace it to a worked objective example.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/decision-conversation.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Say your decision and rejected alternative aloud before using the coach explanation.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-conversation.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/01-agentic-architecture-and-orchestration.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "5.2"
+      ],
+      "intent": "Choose the architecture mechanism under the stated constraints, then check the existing explanation and retest a changed condition.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/01-agentic-architecture-and-orchestration.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/02-tool-design-and-mcp-integration.html",
+      "family": "deep-practice",
+      "objectives": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5"
+      ],
+      "intent": "Choose the architecture mechanism under the stated constraints, then check the existing explanation and retest a changed condition.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/02-tool-design-and-mcp-integration.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/03-claude-code-configuration-and-workflows.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.4",
+        "1.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.5"
+      ],
+      "intent": "Choose the architecture mechanism under the stated constraints, then check the existing explanation and retest a changed condition.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/03-claude-code-configuration-and-workflows.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/04-prompt-engineering-and-structured-output.html",
+      "family": "deep-practice",
+      "objectives": [
+        "2.3",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.2",
+        "5.5"
+      ],
+      "intent": "Choose the architecture mechanism under the stated constraints, then check the existing explanation and retest a changed condition.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/04-prompt-engineering-and-structured-output.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/05-context-management-and-reliability.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.7",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose the architecture mechanism under the stated constraints, then check the existing explanation and retest a changed condition.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/05-context-management-and-reliability.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/index.html",
+      "family": "deep-practice",
+      "objectives": [],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.3",
+        "3.4",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "intent": "Trace the program branch, handoff and observed result in a concrete code-level flow.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/conditions-and-errors.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.3",
+        "1.5",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.6",
+        "4.3",
+        "4.5",
+        "4.6"
+      ],
+      "intent": "Match an exact runtime signal to the operation that produced it and its recovery boundary.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/conditions-and-errors.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.6",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "intent": "Follow a decision branch and name the constraint that changes its path.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "family": "deep-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "2.2",
+        "2.4",
+        "2.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.4",
+        "4.5",
+        "5.1"
+      ],
+      "intent": "Trace who sends each message, who executes the work and which reply establishes the result.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/deep-practice/tie-breaker-rules.html",
+      "family": "deep-practice",
+      "objectives": [
+        "4.3",
+        "4.4",
+        "4.6",
+        "5.2",
+        "5.5"
+      ],
+      "intent": "Compare the governing constraint with the closest competing architecture choice.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/tie-breaker-rules.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/last-minute-prep.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Scan the final concept checklist and revisit anything you cannot explain without help.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/last-minute-prep.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/learning-journey.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.4",
+        "1.6",
+        "1.7",
+        "3.1",
+        "3.6",
+        "4.3",
+        "4.5",
+        "5.3"
+      ],
+      "intent": "Choose a learning loop from application explanation through independent retest.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/learning-journey.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/mechanism-clinic.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.3",
+        "4.4",
+        "5.1",
+        "5.3",
+        "5.4",
+        "5.5"
+      ],
+      "intent": "Diagnose which technical mechanism fixes a concrete failure before checking the explanation.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/mechanism-clinic.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/industry-cases.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Transfer the same architecture decision to a different industry situation before checking the model answer.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/INDUSTRY-CASES.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/finance-legal-marketing-tracks.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose finance, legal or marketing examples while retaining the objective links.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/PRIORITY-INDUSTRY-TRACKS.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/index.html",
+      "family": "navigation",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Navigation exposes the explicit complete objective chooser. These IDs are routing choices, not claims that this page teaches every objective.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.1.html",
+      "family": "objective",
+      "objectives": [
+        "1.1"
+      ],
+      "intent": "Understand and practise this decision: Claude asks to look up an order. Your program performs the lookup, sends its observed result back, and asks Claude to continue. Stopping the model is separate from proving a payment finished.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.1.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.2.html",
+      "family": "objective",
+      "objectives": [
+        "1.2"
+      ],
+      "intent": "Understand and practise this decision: Specialists investigate bounded parts of a question. One coordinator still checks whether the whole question was answered.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.2.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.3.html",
+      "family": "objective",
+      "objectives": [
+        "1.3"
+      ],
+      "intent": "Understand and practise this decision: An isolated specialist needs the actual assignment and relevant facts, not a reference to a conversation it has not received.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.3.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.4.html",
+      "family": "objective",
+      "objectives": [
+        "1.4"
+      ],
+      "intent": "Understand and practise this decision: The program that can change a record must check the prerequisites immediately before the change. If blocked, pass the next owner a complete case.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.4.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.5.html",
+      "family": "objective",
+      "objectives": [
+        "1.5"
+      ],
+      "intent": "Understand and practise this decision: A before-action hook can stop a prohibited call. An after-action hook can inspect an observed result, but cannot undo a completed side effect.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.5.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.6.html",
+      "family": "objective",
+      "objectives": [
+        "1.6"
+      ],
+      "intent": "Understand and practise this decision: Choose the simplest work pattern that fits what you know. A fixed recipe suits known steps; an evolving investigation may need a coordinator to choose the next question.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.6.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-1.7.html",
+      "family": "objective",
+      "objectives": [
+        "1.7"
+      ],
+      "intent": "Understand and practise this decision: A saved conversation helps you continue an investigation. It does not refresh an old policy or give permission for a different payment.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.7.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-2.1.html",
+      "family": "objective",
+      "objectives": [
+        "2.1"
+      ],
+      "intent": "Understand and practise this decision: Give each capability a clear job, inputs and effect so the model can distinguish reading an order from changing its financial record.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.1.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-2.2.html",
+      "family": "objective",
+      "objectives": [
+        "2.2"
+      ],
+      "intent": "Understand and practise this decision: Return a clear observed failure so the next decision can distinguish bad input, temporary trouble and an unknown financial effect.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.2.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-2.3.html",
+      "family": "objective",
+      "objectives": [
+        "2.3"
+      ],
+      "intent": "Understand and practise this decision: Limit which capabilities a task can request, then decide whether the model may choose freely or must request a specific tool. Neither setting grants business permission.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.3.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-2.4.html",
+      "family": "objective",
+      "objectives": [
+        "2.4"
+      ],
+      "intent": "Understand and practise this decision: An MCP connection advertises capabilities. Your client still has to discover the tool, call it and bring back the result. A project-wide connection is different from one person\u2019s local setup.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.4.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-2.5.html",
+      "family": "objective",
+      "objectives": [
+        "2.5"
+      ],
+      "intent": "Understand and practise this decision: First find the relevant files, then inspect their contents, and only then make a small change. Tool names describe different jobs, not interchangeable ways to guess what a repository contains.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.5.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.1.html",
+      "family": "objective",
+      "objectives": [
+        "3.1"
+      ],
+      "intent": "Understand and practise this decision: Keep stable team guidance in the project, specialized guidance near the relevant code, and personal preferences separate. Instruction text helps Claude reason; it is not an access-control setting.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.1.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.2.html",
+      "family": "objective",
+      "objectives": [
+        "3.2"
+      ],
+      "intent": "Understand and practise this decision: A skill packages a repeatable procedure. You can expose it as a named command and decide whether Claude may invoke it automatically.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.2.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.3.html",
+      "family": "objective",
+      "objectives": [
+        "3.3"
+      ],
+      "intent": "Understand and practise this decision: Load the importer convention when importer files are involved, instead of making every documentation task carry it.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.3.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.4.html",
+      "family": "objective",
+      "objectives": [
+        "3.4"
+      ],
+      "intent": "Understand and practise this decision: Explore and propose first when the change has unknown dependencies. For a known typo, a small direct edit with a rendered check is more proportionate.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.4.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.5.html",
+      "family": "objective",
+      "objectives": [
+        "3.5"
+      ],
+      "intent": "Understand and practise this decision: Give the next iteration the exact failing example and expected result. \u201cTry harder\u201d does not tell the coding agent what survived the first patch.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.5.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-3.6.html",
+      "family": "objective",
+      "objectives": [
+        "3.6"
+      ],
+      "intent": "Understand and practise this decision: A CI job must finish or fail visibly without waiting for a person at a terminal. Keep review authority separate from posting, approval and merge authority.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.6.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.1.html",
+      "family": "objective",
+      "objectives": [
+        "4.1"
+      ],
+      "intent": "Understand and practise this decision: Tell the reviewer what counts as a real defect and what does not. Require a concrete triggering input and consequence, not just severe wording.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.1.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.2.html",
+      "family": "objective",
+      "objectives": [
+        "4.2"
+      ],
+      "intent": "Understand and practise this decision: Show examples that teach the boundary cases, not just several copies of an easy success.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.2.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.3.html",
+      "family": "objective",
+      "objectives": [
+        "4.3"
+      ],
+      "intent": "Understand and practise this decision: Choose the mechanism for the boundary you need: a machine-readable final response or valid arguments for a requested tool. Then check whether the values are actually supported.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.3.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.4.html",
+      "family": "objective",
+      "objectives": [
+        "4.4"
+      ],
+      "intent": "Understand and practise this decision: A receiver should reject the exact bad field, allow a limited evidence-based correction, and preserve unresolved cases rather than looping forever.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.4.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.5.html",
+      "family": "objective",
+      "objectives": [
+        "4.5"
+      ],
+      "intent": "Understand and practise this decision: A completed batch can contain different outcomes, and its result order need not match submission order. Keep identity and business acceptance separate.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.5.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-4.6.html",
+      "family": "objective",
+      "objectives": [
+        "4.6"
+      ],
+      "intent": "Understand and practise this decision: Different review passes should inspect different risks, then verify candidate findings against the actual code path. Repeating the same prompt does not make the result independent.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.6.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.1.html",
+      "family": "objective",
+      "objectives": [
+        "5.1"
+      ],
+      "intent": "Understand and practise this decision: Keep a small working brief without losing the exact facts that decide the next action. A summary is useful only if critical uncertainty survives.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.1.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.2.html",
+      "family": "objective",
+      "objectives": [
+        "5.2"
+      ],
+      "intent": "Understand and practise this decision: Escalate when a decision needs authority or evidence you do not have. Give the next owner the precise unresolved question, not a vague summary.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.2.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.3.html",
+      "family": "objective",
+      "objectives": [
+        "5.3"
+      ],
+      "intent": "Understand and practise this decision: A failed specialist must remain visibly failed when its result reaches the coordinator. Preserve successful evidence without claiming the whole job is complete.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.3.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.4.html",
+      "family": "objective",
+      "objectives": [
+        "5.4"
+      ],
+      "intent": "Understand and practise this decision: Explore a large repository by following evidence from the symptom into its actual dependencies. Keep the paths and findings so you do not reread everything.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.4.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.5.html",
+      "family": "objective",
+      "objectives": [
+        "5.5"
+      ],
+      "intent": "Understand and practise this decision: Measure errors on the cases that matter and compare confidence with actual outcomes. A good average can hide a costly weak group, and the review queue needs an explicit overflow policy.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.5.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/objective-5.6.html",
+      "family": "objective",
+      "objectives": [
+        "5.6"
+      ],
+      "intent": "Understand and practise this decision: Keep each claim attached to its source and time. A neat combined answer must not erase disagreement or pretend two systems have identical authority.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.6.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-studio.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose a decision to strengthen and connect its worked case, practice and transfer task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-studio.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/index.html",
+      "family": "navigation",
+      "objectives": [],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "family": "walkthrough",
+      "objectives": [
+        "1.1",
+        "1.4",
+        "1.5",
+        "2.1",
+        "2.2",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "intent": "Trace Customer Support Resolution Agent and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "family": "walkthrough",
+      "objectives": [
+        "1.5",
+        "1.7",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "5.4"
+      ],
+      "intent": "Trace Code Generation with Claude Code and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "family": "walkthrough",
+      "objectives": [
+        "1.2",
+        "1.3",
+        "1.6",
+        "2.3",
+        "5.1",
+        "5.3",
+        "5.4",
+        "5.6"
+      ],
+      "intent": "Trace Multi-Agent Research System and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "family": "walkthrough",
+      "objectives": [
+        "1.5",
+        "1.7",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "5.1",
+        "5.4"
+      ],
+      "intent": "Trace Developer Productivity with Claude and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-05-claude-code-ci-cd.html",
+      "family": "walkthrough",
+      "objectives": [
+        "1.6",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.4",
+        "4.5",
+        "4.6"
+      ],
+      "intent": "Trace Claude Code for Continuous Integration and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "family": "walkthrough",
+      "objectives": [
+        "2.3",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.5"
+      ],
+      "intent": "Trace Structured Data Extraction and stop at each existing decision before revealing its explanation.",
+      "mode": "learn",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/skill-coverage.html",
+      "family": "reference-or-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Check which official skill statements have teaching and assessment evidence without treating coverage as mastery.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/skill-coverage.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/index.html",
+      "family": "navigation",
+      "objectives": [
+        "1.4"
+      ],
+      "intent": "Choose the relevant lesson, scenario or practice route from this directory; return here to select the next task.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/README.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-01-full-mock.html",
+      "family": "simulation",
+      "objectives": [],
+      "intent": "Complete a timed rehearsal with coaching closed, then classify and repair each miss.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "No verified objective-level mapping in this source. Keep the page context and linked route choices; do not substitute all thirty objectives. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-01-full-mock.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-02-customer-support-agent.html",
+      "family": "simulation",
+      "objectives": [
+        "1.1",
+        "1.4",
+        "1.5",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "intent": "Attempt Scenario 1: Customer Support Resolution Agent independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-02-customer-support-agent.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-03-code-generation-claude-code.html",
+      "family": "simulation",
+      "objectives": [
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "5.4"
+      ],
+      "intent": "Attempt Scenario 2: Code Generation with Claude Code independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-03-code-generation-claude-code.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-04-multi-agent-research.html",
+      "family": "simulation",
+      "objectives": [
+        "1.2",
+        "1.3",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.6"
+      ],
+      "intent": "Attempt Scenario 3: Multi-Agent Research System independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-04-multi-agent-research.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-05-developer-productivity.html",
+      "family": "simulation",
+      "objectives": [
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "5.1",
+        "5.4"
+      ],
+      "intent": "Attempt Scenario 4: Developer Productivity with Claude independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-05-developer-productivity.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-06-claude-code-ci-cd.html",
+      "family": "simulation",
+      "objectives": [
+        "1.1",
+        "3.1",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.4"
+      ],
+      "intent": "Attempt Scenario 5: Claude Code for Continuous Integration independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-06-claude-code-ci-cd.md"
+      ]
+    },
+    {
+      "route": "simulations/ccar-f/SIM-07-structured-data-extraction.html",
+      "family": "simulation",
+      "objectives": [
+        "2.3",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.5"
+      ],
+      "intent": "Attempt Scenario 6: Structured Data Extraction independently, then use the coach key to explain each decision.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "04-Simulations/02-CCAR-F-Architect-Foundations/SIM-07-structured-data-extraction.md"
+      ]
+    },
+    {
+      "route": "labs/02-CCAR-F-coordinator-extraction.html",
+      "family": "lab",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.6",
+        "2.3",
+        "4.1",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.3"
+      ],
+      "intent": "Predict the result, check the stated setup, run the bounded experiment and compare observed evidence with your prediction.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "06-Labs/02-CCAR-F-coordinator-extraction/README.md"
+      ]
+    },
+    {
+      "route": "labs/03-CCAR-F-mcp-server-claude-code.html",
+      "family": "lab",
+      "objectives": [
+        "1.4",
+        "1.5",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "3.1",
+        "3.6"
+      ],
+      "intent": "Predict the result, check the stated setup, run the bounded experiment and compare observed evidence with your prediction.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "06-Labs/03-CCAR-F-mcp-server-claude-code/README.md"
+      ]
+    },
+    {
+      "route": "labs/08-CCAR-F-architecture-decisions.html",
+      "family": "lab",
+      "objectives": [
+        "1.4",
+        "1.5",
+        "1.7",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.6"
+      ],
+      "intent": "Predict the result, check the stated setup, run the bounded experiment and compare observed evidence with your prediction.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "Use only the objective links, named task statements and mapped decision variants present in the canonical source. They establish related routes, not a claim that every skill is assessed. Keep procedural setup visible; withhold answer-bearing coaching until a prediction, option or attempted response is committed.",
+      "sources": [
+        "06-Labs/08-CCAR-F-architecture-decisions/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/technical-bridges.html",
+      "family": "technical-atlas",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose an objective and compare the ordinary explanation with its exact technical artifact.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "The generated atlas deliberately enumerates all thirty authored objective bridges.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/technical-objective-bridges.json"
+      ]
+    },
+    {
+      "route": "practice/index.html",
+      "family": "hosted-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose a CCAR-F question set, commit an answer, then compare the mechanism and rejected alternative; use timed mode without coaching.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "CCAR-F bank records carry item-level objective tags. All thirty are filter choices only; attach help to each actual question tag, never inject every objective into an untagged item. Preserve bank and learner progress.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/technical-objective-bridges.json",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/decision-variants.html",
+      "family": "changed-constraint-practice",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Choose again when a governing constraint changes, then compare the original mechanism with the new requirement.",
+      "mode": "exercise",
+      "help_policy": "after-commitment",
+      "reason": "All thirty variants carry explicit primary_objective metadata; gate coaching per attempted variant.",
+      "sources": [
+        "02-Lessons/02-CCAR-F-Architect-Foundations/decision-variants.json"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/practice-coverage.html",
+      "family": "coverage-utility",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Inspect which objectives have mapped practice and which mappings remain uncertain.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Context-only coverage utility; objective rows route to actual learning and practice. Counts do not establish mastery.",
+      "sources": [
+        "site/coverage.py",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/objectives/progress.html",
+      "family": "progress-utility",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Review this browser\u2019s opened, checked and practice records and choose what to revisit.",
+      "mode": "navigate",
+      "help_policy": "study",
+      "reason": "Context-only local progress navigation; self-report and observed attempts must remain distinct from mastery.",
+      "sources": [
+        "site/progress.py",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/README.md"
+      ]
+    },
+    {
+      "route": "lessons/ccar-f/scenario-walkthroughs/signals-and-errors.html",
+      "family": "signals-reference",
+      "objectives": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "2.5",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5",
+        "4.6",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ],
+      "intent": "Locate a runtime signal or missed what-if and return to the source walkthrough\u2019s exact decision.",
+      "mode": "reference",
+      "help_policy": "study",
+      "reason": "Objective tags derive only from explicit Guide tags in authored walkthrough answers; attach help per tagged entry, not every objective to every signal.",
+      "sources": [
+        "site/scenario_signals.py",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+        "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md"
+      ]
+    }
+  ]
+}

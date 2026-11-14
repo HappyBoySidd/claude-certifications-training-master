@@ -1,0 +1,1106 @@
+{
+  "schema_version": 1,
+  "policy": "Original unscored boundary cues. target_stage indexes existing story decisions. A target after the current stage is a related later decision, never current-state evidence. Correct options and rationales are not included.",
+  "lessons": {
+    "as-01-action-service": {
+      "nodes": {
+        "screen": {
+          "prompt": "A request names an account and an order. Which claims may the action handler trust when resolving the authenticated principal and resource ownership?",
+          "target_stage": 1,
+          "why_here": "A typed account name tells us what was requested; it does not prove who may act.",
+          "scope": "decision"
+        },
+        "backend": {
+          "prompt": "A client-tool invocation conforms to input_schema but conflicts with source evidence. Which receiving-boundary checks are still required before execution?",
+          "target_stage": 3,
+          "why_here": "The program must interpret the proposed values before it can decide what to do.",
+          "scope": "decision"
+        },
+        "claude": {
+          "prompt": "Claude returns a tool_use content block. Which interface and routing choices determine whether the proposed capability matches the current request?",
+          "target_stage": 2,
+          "why_here": "A proposed capability must match the job; receiving a proposal does not establish execution.",
+          "scope": "decision"
+        },
+        "orders": {
+          "prompt": "Which authoritative ownership and policy evidence must be bound to the authenticated request before a mutation is considered?",
+          "target_stage": 1,
+          "why_here": "Order records provide facts that a customer message cannot establish.",
+          "scope": "decision"
+        },
+        "gate": {
+          "prompt": "Ownership is verified but the requested amount exceeds the automatic approval scope. Which state transition and review handoff are permitted?",
+          "target_stage": 5,
+          "why_here": "Identity and the amount rule are different conditions.",
+          "scope": "decision"
+        },
+        "tools": {
+          "prompt": "Read and write tools have overlapping descriptions. Which definition and capability-scoping changes address repeated selection of a mutation for a lookup?",
+          "target_stage": 2,
+          "why_here": "Similar tool descriptions can make the model choose the wrong job.",
+          "scope": "decision"
+        },
+        "session": {
+          "prompt": "The message account_id differs from the trusted session principal. Where must ownership and exact action scope be enforced?",
+          "target_stage": 1,
+          "why_here": "The logged-in identity and the typed account claim are different evidence.",
+          "scope": "decision"
+        },
+        "payment": {
+          "prompt": "A submitted operation times out before its result is observed. Which recovery is valid under the provider\u2019s stated idempotency and status contract?",
+          "target_stage": 4,
+          "why_here": "A missing reply leaves the business outcome uncertain.",
+          "scope": "decision"
+        },
+        "ledger": {
+          "prompt": "How should an operation with an unknown provider outcome retain its identity and evidence across recovery attempts?",
+          "target_stage": 4,
+          "why_here": "The application needs to remember which action it is trying to settle.",
+          "scope": "decision"
+        },
+        "human": {
+          "prompt": "What source evidence, approval scope and operation state must a pending_review handoff preserve without implying completion?",
+          "target_stage": 5,
+          "why_here": "The next reviewer needs the blocked decision and what has actually happened.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "screen>backend|case C17": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Support screen sends \u201ccase C17\u201d to Application backend. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "backend>claude|request + evidence": {
+          "prompt": "The same assistant must support delivery questions and eligible credit requests. Both tools currently say \u201chandle an order,\u201d causing repeated write-tool selection on read-only questions. Which interface and routing change best addresses the root cause without forcing every future request into one capability?",
+          "target_stage": 2,
+          "why_here": "Application backend sends \u201crequest + evidence\u201d to Claude. This boundary connects to the existing decision about separate read from write.",
+          "scope": "decision"
+        },
+        "claude>backend|explain / propose": {
+          "prompt": "The same assistant must support delivery questions and eligible credit requests. Both tools currently say \u201chandle an order,\u201d causing repeated write-tool selection on read-only questions. Which interface and routing change best addresses the root cause without forcing every future request into one capability?",
+          "target_stage": 2,
+          "why_here": "Claude sends \u201cexplain / propose\u201d to Application backend. This boundary connects to the existing decision about separate read from write.",
+          "scope": "decision"
+        },
+        "backend>orders|read O4": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Application backend sends \u201cread O4\u201d to Order & policy records. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "orders>backend|facts + policy": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Order & policy records sends \u201cfacts + policy\u201d to Application backend. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "backend>payment|unsafe action path": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Application backend sends \u201cunsafe action path\u201d to Payment service. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "backend>gate|proposed credit": {
+          "prompt": "A proposed issue_credit call passes the configured input schema, yet conflicts with the source amount. Which receiving-boundary check and correction policy should run before execution?",
+          "target_stage": 3,
+          "why_here": "Application backend sends \u201cproposed credit\u201d to Permission check. This boundary connects to the existing decision about check the proposed data.",
+          "scope": "decision"
+        },
+        "session>gate|trusted identity": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Trusted login session sends \u201ctrusted identity\u201d to Permission check. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "gate>payment|only if permitted": {
+          "prompt": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+          "target_stage": 1,
+          "why_here": "Permission check sends \u201conly if permitted\u201d to Payment service. This boundary connects to the existing decision about stop an unsafe credit.",
+          "scope": "decision"
+        },
+        "claude>tools|choose capability": {
+          "prompt": "The same assistant must support delivery questions and eligible credit requests. Both tools currently say \u201chandle an order,\u201d causing repeated write-tool selection on read-only questions. Which interface and routing change best addresses the root cause without forcing every future request into one capability?",
+          "target_stage": 2,
+          "why_here": "Claude sends \u201cchoose capability\u201d to Tool interfaces. This boundary connects to the existing decision about separate read from write.",
+          "scope": "decision"
+        },
+        "tools>backend|request, not execution": {
+          "prompt": "The same assistant must support delivery questions and eligible credit requests. Both tools currently say \u201chandle an order,\u201d causing repeated write-tool selection on read-only questions. Which interface and routing change best addresses the root cause without forcing every future request into one capability?",
+          "target_stage": 2,
+          "why_here": "Tool interfaces sends \u201crequest, not execution\u201d to Application backend. This boundary connects to the existing decision about separate read from write.",
+          "scope": "decision"
+        },
+        "payment>backend|reply lost": {
+          "prompt": "A permitted credit times out after submission. The provider supports status lookup by operation ID and same-key replay under a documented idempotency contract. Which recovery preserves the original operation and avoids an unsupported duplicate write?",
+          "target_stage": 4,
+          "why_here": "Payment service sends \u201creply lost\u201d to Application backend. This boundary connects to the existing decision about recover a lost reply.",
+          "scope": "decision"
+        },
+        "payment>ledger|provider evidence": {
+          "prompt": "A permitted credit times out after submission. The provider supports status lookup by operation ID and same-key replay under a documented idempotency contract. Which recovery preserves the original operation and avoids an unsupported duplicate write?",
+          "target_stage": 4,
+          "why_here": "Payment service sends \u201cprovider evidence\u201d to Operation record. This boundary connects to the existing decision about recover a lost reply.",
+          "scope": "decision"
+        },
+        "ledger>backend|known / unresolved": {
+          "prompt": "A permitted credit times out after submission. The provider supports status lookup by operation ID and same-key replay under a documented idempotency contract. Which recovery preserves the original operation and avoids an unsupported duplicate write?",
+          "target_stage": 4,
+          "why_here": "Operation record sends \u201cknown / unresolved\u201d to Application backend. This boundary connects to the existing decision about recover a lost reply.",
+          "scope": "decision"
+        },
+        "gate>human|hold + handoff": {
+          "prompt": "The authenticated customer owns O4, but the requested credit exceeds the automatic approval limit. Which state transition and handoff preserve the policy boundary and allow review without implying completion?",
+          "target_stage": 5,
+          "why_here": "Permission check sends \u201chold + handoff\u201d to Staff review. This boundary connects to the existing decision about change the requirement.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-02-document-pipeline": {
+      "nodes": {
+        "source": {
+          "prompt": "Which source-to-field evidence must survive an extraction handoff so a schema-conforming invoice can be checked for meaning?",
+          "target_stage": 1,
+          "why_here": "The original invoice lets the receiver check what the proposed fields mean.",
+          "scope": "decision"
+        },
+        "worker": {
+          "prompt": "A collection contains valid, transiently failed and unreadable files. Which per-file outcome and recovery policy preserves completed work?",
+          "target_stage": 2,
+          "why_here": "Different files may need different next steps.",
+          "scope": "decision"
+        },
+        "extract": {
+          "prompt": "The model emits invoice data that the receiving program cannot use. Which output contract should govern the handoff?",
+          "target_stage": 1,
+          "why_here": "Readable text is not necessarily the record the next program accepts.",
+          "scope": "decision"
+        },
+        "check": {
+          "prompt": "The receiving agreement changes. Which producer and validator changes preserve an explicit versioned contract?",
+          "target_stage": 3,
+          "why_here": "Both ends need to agree on the same record format and meaning.",
+          "scope": "decision"
+        },
+        "ledger": {
+          "prompt": "How should each source file retain its own accepted, retryable or unresolved outcome without reprocessing successful files?",
+          "target_stage": 2,
+          "why_here": "One failed file should not erase the rest of the run.",
+          "scope": "decision"
+        },
+        "review": {
+          "prompt": "Which unresolved extraction cases require source-linked human review rather than an automatic retry?",
+          "target_stage": 2,
+          "why_here": "A reviewer needs the original ambiguity rather than an invented value.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "source>worker|doc-A": {
+          "prompt": "Which recovery design best isolates heterogeneous failures without discarding completed work or overstating archive completeness?",
+          "target_stage": 2,
+          "why_here": "Invoice EL-8 sends \u201cdoc-A\u201d to Take a queued file. This boundary connects to the existing decision about three files need three different outcomes.",
+          "scope": "decision"
+        },
+        "worker>extract|invoice text": {
+          "prompt": "An extraction agent completes its turn, but the receiving worker rejects this handoff. Which change best repairs the boundary while preserving source fidelity and limiting repeated model calls?",
+          "target_stage": 1,
+          "why_here": "Take a queued file sends \u201cinvoice text\u201d to Propose invoice fields. This boundary connects to the existing decision about the receiving program cannot use it.",
+          "scope": "decision"
+        },
+        "extract>check|draft + source": {
+          "prompt": "An extraction agent completes its turn, but the receiving worker rejects this handoff. Which change best repairs the boundary while preserving source fidelity and limiting repeated model calls?",
+          "target_stage": 1,
+          "why_here": "Propose invoice fields sends \u201cdraft + source\u201d to Check the handoff. This boundary connects to the existing decision about the receiving program cannot use it.",
+          "scope": "decision"
+        },
+        "check>ledger|per-ID state": {
+          "prompt": "Which recovery design best isolates heterogeneous failures without discarding completed work or overstating archive completeness?",
+          "target_stage": 2,
+          "why_here": "Check the handoff sends \u201cper-ID state\u201d to Remember every file. This boundary connects to the existing decision about three files need three different outcomes.",
+          "scope": "decision"
+        },
+        "ledger>review|unreadable/conflicting": {
+          "prompt": "Which recovery design best isolates heterogeneous failures without discarding completed work or overstating archive completeness?",
+          "target_stage": 2,
+          "why_here": "Remember every file sends \u201cunreadable/conflicting\u201d to Resolve real ambiguity. This boundary connects to the existing decision about three files need three different outcomes.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-03-grounded-assistant": {
+      "nodes": {
+        "ask": {
+          "prompt": "A question identifies model Atlas pump. Which retrieval constraints prevent evidence for a different model or revision from being treated as applicable?",
+          "target_stage": 1,
+          "why_here": "The requested product determines which instructions can answer it.",
+          "scope": "decision"
+        },
+        "search": {
+          "prompt": "Retrieved excerpts are plausible but belong to Beacon pump. What evidence establishes applicability to the requested Atlas pump procedure?",
+          "target_stage": 1,
+          "why_here": "Similar-looking instructions can belong to the wrong product.",
+          "scope": "decision"
+        },
+        "answer": {
+          "prompt": "Two approved sources disagree. Which response and escalation preserve provenance and unresolved authority?",
+          "target_stage": 4,
+          "why_here": "A polished answer cannot settle an unresolved source conflict.",
+          "scope": "decision"
+        },
+        "catalog": {
+          "prompt": "An MCP resource appears in resources/list. Which additional operation and observed outcome establish whether its contents were actually available?",
+          "target_stage": 2,
+          "why_here": "Seeing a resource name is different from reading its contents.",
+          "scope": "decision"
+        },
+        "guard": {
+          "prompt": "Retrieved source text contains instructions to expose restricted manuals. How should that text be classified relative to authorized application instructions?",
+          "target_stage": 3,
+          "why_here": "A document can contain commands that are merely document content.",
+          "scope": "decision"
+        },
+        "owner": {
+          "prompt": "What source provenance and conflicting claims must reach the authority owner before the assistant resolves a disputed procedure?",
+          "target_stage": 4,
+          "why_here": "The owner needs to see why the sources disagree.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "ask>search|pump question": {
+          "prompt": "Which retrieval-and-answer design most directly prevents a confident but inapplicable instruction?",
+          "target_stage": 1,
+          "why_here": "Technician asks about Atlas pump sends \u201cAtlas pump question\u201d to Find the right manual. This boundary connects to the existing decision about a plausible answer belongs to m3.",
+          "scope": "decision"
+        },
+        "search>answer|manual excerpts": {
+          "prompt": "Which retrieval-and-answer design most directly prevents a confident but inapplicable instruction?",
+          "target_stage": 1,
+          "why_here": "Find the right manual sends \u201cmanual excerpts\u201d to Explain with a citation. This boundary connects to the existing decision about a plausible answer belongs to m3.",
+          "scope": "decision"
+        },
+        "search>catalog|selected resource": {
+          "prompt": "The team expects Claude to answer from atlas-pump-manual-rev3. Which verification is necessary before relying on that resource?",
+          "target_stage": 2,
+          "why_here": "Find the right manual sends \u201cselected resource\u201d to Read what was connected. This boundary connects to the existing decision about connected does not mean read.",
+          "scope": "decision"
+        },
+        "catalog>answer|actual content/status": {
+          "prompt": "The team expects Claude to answer from atlas-pump-manual-rev3. Which verification is necessary before relying on that resource?",
+          "target_stage": 2,
+          "why_here": "Read what was connected sends \u201cactual content/status\u201d to Explain with a citation. This boundary connects to the existing decision about connected does not mean read.",
+          "scope": "decision"
+        },
+        "ask>guard|authorized scope": {
+          "prompt": "Which defense preserves both the access boundary and the distinction between source evidence and instructions?",
+          "target_stage": 3,
+          "why_here": "Technician asks about Atlas pump sends \u201cauthorized scope\u201d to Keep source text as data. This boundary connects to the existing decision about a paragraph asks to expose restricted manuals.",
+          "scope": "decision"
+        },
+        "guard>search|permitted retrieval": {
+          "prompt": "Which defense preserves both the access boundary and the distinction between source evidence and instructions?",
+          "target_stage": 3,
+          "why_here": "Keep source text as data sends \u201cpermitted retrieval\u201d to Find the right manual. This boundary connects to the existing decision about a paragraph asks to expose restricted manuals.",
+          "scope": "decision"
+        },
+        "search>catalog|selected content": {
+          "prompt": "The team expects Claude to answer from atlas-pump-manual-rev3. Which verification is necessary before relying on that resource?",
+          "target_stage": 2,
+          "why_here": "Find the right manual sends \u201cselected content\u201d to Read what was connected. This boundary connects to the existing decision about connected does not mean read.",
+          "scope": "decision"
+        },
+        "catalog>answer|evidence only": {
+          "prompt": "The team expects Claude to answer from atlas-pump-manual-rev3. Which verification is necessary before relying on that resource?",
+          "target_stage": 2,
+          "why_here": "Read what was connected sends \u201cevidence only\u201d to Explain with a citation. This boundary connects to the existing decision about connected does not mean read.",
+          "scope": "decision"
+        },
+        "answer>owner|conflict + provenance": {
+          "prompt": "Which finalization policy is most appropriate for the unresolved source authority?",
+          "target_stage": 4,
+          "why_here": "Explain with a citation sends \u201cconflict + provenance\u201d to Resolve conflicting authority. This boundary connects to the existing decision about two approved sources disagree.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-04-research-system": {
+      "nodes": {
+        "request": {
+          "prompt": "The new task is a bounded catalog lookup rather than open-ended investigation. Which orchestration complexity is justified by its dependencies?",
+          "target_stage": 4,
+          "why_here": "A simpler job may need a different approach.",
+          "scope": "decision"
+        },
+        "coord": {
+          "prompt": "The next investigation depends on newly discovered evidence. Which control structure can adapt while retaining explicit scope and stopping conditions?",
+          "target_stage": 1,
+          "why_here": "Some questions cannot be fully sequenced before the first answer arrives.",
+          "scope": "decision"
+        },
+        "special": {
+          "prompt": "A specialist has isolated context. What must its assignment contain to make its investigation self-contained and bounded?",
+          "target_stage": 2,
+          "why_here": "The worker cannot rely on a conversation it has not received.",
+          "scope": "decision"
+        },
+        "ledger": {
+          "prompt": "The aggregate JSON is valid but one required specialist has not returned. Which completeness and uncertainty checks are still necessary?",
+          "target_stage": 3,
+          "why_here": "A tidy record may hide an unanswered part of the assignment.",
+          "scope": "decision"
+        },
+        "owner": {
+          "prompt": "What evidence of coverage and unresolved specialist work should accompany a recommendation before approval?",
+          "target_stage": 3,
+          "why_here": "The decision owner needs the gaps as well as the recommendation.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "request>coord|goal + constraints": {
+          "prompt": "Which orchestration most appropriately combines adaptive investigation with accountable coverage and synthesis?",
+          "target_stage": 1,
+          "why_here": "Choose one pilot sends \u201cgoal + constraints\u201d to Follow the open questions. This boundary connects to the existing decision about the next question depends on what you discover.",
+          "scope": "decision"
+        },
+        "request>coord|scope": {
+          "prompt": "Which orchestration most appropriately combines adaptive investigation with accountable coverage and synthesis?",
+          "target_stage": 1,
+          "why_here": "Choose one pilot sends \u201cscope\u201d to Follow the open questions. This boundary connects to the existing decision about the next question depends on what you discover.",
+          "scope": "decision"
+        },
+        "coord>special|bounded assignment": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Follow the open questions sends \u201cbounded assignment\u201d to Investigate specialties. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "special>coord|source-linked findings": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Investigate specialties sends \u201csource-linked findings\u201d to Follow the open questions. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "coord>special|vague assignment": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Follow the open questions sends \u201cvague assignment\u201d to Investigate specialties. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "coord>special|self-contained brief": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Follow the open questions sends \u201cself-contained brief\u201d to Investigate specialties. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "special>coord|claim + source + uncertainty": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Investigate specialties sends \u201cclaim + source + uncertainty\u201d to Follow the open questions. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "coord>special|brief": {
+          "prompt": "Which delegation change best enables a useful bounded subagent return without overloading or overexposing context?",
+          "target_stage": 2,
+          "why_here": "Follow the open questions sends \u201cbrief\u201d to Investigate specialties. This boundary connects to the existing decision about \u201ccompare what we discussed\u201d is not a brief.",
+          "scope": "decision"
+        },
+        "special>coord|partial returns": {
+          "prompt": "Which receiving and synthesis policy best preserves useful evidence while avoiding an unsupported completeness claim?",
+          "target_stage": 3,
+          "why_here": "Investigate specialties sends \u201cpartial returns\u201d to Follow the open questions. This boundary connects to the existing decision about a tidy json object hides a missing worker.",
+          "scope": "decision"
+        },
+        "special>ledger|findings/status": {
+          "prompt": "Which receiving and synthesis policy best preserves useful evidence while avoiding an unsupported completeness claim?",
+          "target_stage": 3,
+          "why_here": "Investigate specialties sends \u201cfindings/status\u201d to Check every required dimension. This boundary connects to the existing decision about a tidy json object hides a missing worker.",
+          "scope": "decision"
+        },
+        "ledger>coord|coverage gaps": {
+          "prompt": "Which receiving and synthesis policy best preserves useful evidence while avoiding an unsupported completeness claim?",
+          "target_stage": 3,
+          "why_here": "Check every required dimension sends \u201ccoverage gaps\u201d to Follow the open questions. This boundary connects to the existing decision about a tidy json object hides a missing worker.",
+          "scope": "decision"
+        },
+        "coord>owner|recommendation + limits": {
+          "prompt": "Which receiving and synthesis policy best preserves useful evidence while avoiding an unsupported completeness claim?",
+          "target_stage": 3,
+          "why_here": "Follow the open questions sends \u201crecommendation + limits\u201d to Approve the pilot. This boundary connects to the existing decision about a tidy json object hides a missing worker.",
+          "scope": "decision"
+        },
+        "coord>owner|recommendation": {
+          "prompt": "Which receiving and synthesis policy best preserves useful evidence while avoiding an unsupported completeness claim?",
+          "target_stage": 3,
+          "why_here": "Follow the open questions sends \u201crecommendation\u201d to Approve the pilot. This boundary connects to the existing decision about a tidy json object hides a missing worker.",
+          "scope": "decision"
+        },
+        "request>coord|authorized catalog evidence": {
+          "prompt": "Which architecture should be considered first under the changed scope?",
+          "target_stage": 4,
+          "why_here": "Choose one pilot sends \u201cauthorized catalog evidence\u201d to Follow the open questions. This boundary connects to the existing decision about the next job is just a catalog lookup.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-05-code-change": {
+      "nodes": {
+        "request": {
+          "prompt": "A one-line change alters how unknown deposits are represented. Which caller and business-contract evidence is needed before modifying it?",
+          "target_stage": 1,
+          "why_here": "A small edit can change meaning elsewhere.",
+          "scope": "decision"
+        },
+        "code": {
+          "prompt": "Which repository investigation establishes consumers and invariants affected by this importer change?",
+          "target_stage": 1,
+          "why_here": "Reading the changed line alone does not reveal its callers.",
+          "scope": "decision"
+        },
+        "claude": {
+          "prompt": "The new request changes only a known typo. Which proportional workflow is justified by that bounded scope?",
+          "target_stage": 4,
+          "why_here": "The size and risk of the request affect the needed investigation.",
+          "scope": "decision"
+        },
+        "rules": {
+          "prompt": "The relevant rule is repeated across scopes. Which instruction placement and loading behavior apply to the current files?",
+          "target_stage": 2,
+          "why_here": "A convention needs to reach the place where the change happens.",
+          "scope": "decision"
+        },
+        "tests": {
+          "prompt": "The importer unit test passes while the rendered report is wrong. Which verification boundary tests the required user-visible invariant?",
+          "target_stage": 3,
+          "why_here": "A green local test can miss the result people actually use.",
+          "scope": "decision"
+        },
+        "owner": {
+          "prompt": "Which diff and boundary evidence should a reviewer inspect before accepting this behavior change?",
+          "target_stage": 3,
+          "why_here": "A reviewer needs evidence of the full effect, not only the edited line.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "request>code|expected meaning": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Preserve unknown deposits sends \u201cexpected meaning\u201d to Inspect importer and callers. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "code>claude|current implementation": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201ccurrent implementation\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "request>code|contract": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Preserve unknown deposits sends \u201ccontract\u201d to Inspect importer and callers. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "code>claude|current files": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201ccurrent files\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "code>claude|scoped evidence": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201cscoped evidence\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "claude>tests|proposed patch": {
+          "prompt": "Which next feedback loop most directly closes the surviving contract defect without expanding the patch indiscriminately?",
+          "target_stage": 3,
+          "why_here": "Propose a bounded patch sends \u201cproposed patch\u201d to Check the whole report. This boundary connects to the existing decision about the importer test passes; the report lies.",
+          "scope": "decision"
+        },
+        "code>claude|evidence": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201cevidence\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "claude>tests|patch": {
+          "prompt": "Which next feedback loop most directly closes the surviving contract defect without expanding the patch indiscriminately?",
+          "target_stage": 3,
+          "why_here": "Propose a bounded patch sends \u201cpatch\u201d to Check the whole report. This boundary connects to the existing decision about the importer test passes; the report lies.",
+          "scope": "decision"
+        },
+        "code>claude|relevant files": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201crelevant files\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "rules>claude|scoped guidance": {
+          "prompt": "Which instruction organization best separates shared scope from task-specific procedure?",
+          "target_stage": 2,
+          "why_here": "Load the relevant convention sends \u201cscoped guidance\u201d to Propose a bounded patch. This boundary connects to the existing decision about the right rule appears everywhere.",
+          "scope": "decision"
+        },
+        "code>claude|files": {
+          "prompt": "Which Claude Code workflow is most appropriate before editing this unfamiliar cross-component behavior?",
+          "target_stage": 1,
+          "why_here": "Inspect importer and callers sends \u201cfiles\u201d to Propose a bounded patch. This boundary connects to the existing decision about one line has callers.",
+          "scope": "decision"
+        },
+        "rules>claude|guidance": {
+          "prompt": "Which instruction organization best separates shared scope from task-specific procedure?",
+          "target_stage": 2,
+          "why_here": "Load the relevant convention sends \u201cguidance\u201d to Propose a bounded patch. This boundary connects to the existing decision about the right rule appears everywhere.",
+          "scope": "decision"
+        },
+        "tests>owner|boundary evidence + diff": {
+          "prompt": "Which next feedback loop most directly closes the surviving contract defect without expanding the patch indiscriminately?",
+          "target_stage": 3,
+          "why_here": "Check the whole report sends \u201cboundary evidence + diff\u201d to Review before release. This boundary connects to the existing decision about the importer test passes; the report lies.",
+          "scope": "decision"
+        },
+        "tests>owner|evidence": {
+          "prompt": "Which next feedback loop most directly closes the surviving contract defect without expanding the patch indiscriminately?",
+          "target_stage": 3,
+          "why_here": "Check the whole report sends \u201cevidence\u201d to Review before release. This boundary connects to the existing decision about the importer test passes; the report lies.",
+          "scope": "decision"
+        },
+        "request>claude|known string": {
+          "prompt": "Which workflow is proportionate to this changed task?",
+          "target_stage": 4,
+          "why_here": "Preserve unknown deposits sends \u201cknown string\u201d to Propose a bounded patch. This boundary connects to the existing decision about the next request is only a typo.",
+          "scope": "decision"
+        },
+        "claude>owner|edit + rendered check": {
+          "prompt": "Which next feedback loop most directly closes the surviving contract defect without expanding the patch indiscriminately?",
+          "target_stage": 3,
+          "why_here": "Propose a bounded patch sends \u201cedit + rendered check\u201d to Review before release. This boundary connects to the existing decision about the importer test passes; the report lies.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-06-ci-review": {
+      "nodes": {
+        "packet": {
+          "prompt": "The reviewer emits valid JSON containing an incorrect finding. What task, diff and evidence contract must the review packet make available?",
+          "target_stage": 2,
+          "why_here": "The reviewer needs enough evidence to judge the actual change.",
+          "scope": "decision"
+        },
+        "model": {
+          "prompt": "A review returns zero findings for a known-defect fixture. Which evaluation evidence determines whether the reviewer missed the defect?",
+          "target_stage": 4,
+          "why_here": "An empty answer can be a miss rather than proof the code is safe.",
+          "scope": "decision"
+        },
+        "gate": {
+          "prompt": "A CI invocation waits for interactive input or yields an envelope without a usable payload. Which process and output-contract checks distinguish these failures?",
+          "target_stage": 1,
+          "why_here": "The automation must finish and return the record the next step expects.",
+          "scope": "decision"
+        },
+        "integration": {
+          "prompt": "Two individually plausible changes interact incorrectly. Which combined-behavior evidence should be required before accepting the review?",
+          "target_stage": 3,
+          "why_here": "Separate checks may miss a failure caused by the changes together.",
+          "scope": "decision"
+        },
+        "ledger": {
+          "prompt": "A known evaluation defect is missed. How should that miss remain visible rather than being counted as a successful empty review?",
+          "target_stage": 4,
+          "why_here": "The evaluation needs to remember its blind spots.",
+          "scope": "decision"
+        },
+        "post": {
+          "prompt": "Which actor owns publication authority for the validated review output?",
+          "target_stage": null,
+          "why_here": "Validated findings and permission to publish are separate concerns.",
+          "scope": "context-only",
+          "reason": "Publication ownership is context for this node; no existing stage question directly tests publication authorization."
+        }
+      },
+      "edges": {
+        "packet>model|diff + contract + tests": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201cdiff + contract + tests\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "packet>model|partial context": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201cpartial context\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "packet>model|explicit packet": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201cexplicit packet\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "model>gate|exit + envelope + payload": {
+          "prompt": "Which execution architecture best fits unattended review while preserving the permission boundary?",
+          "target_stage": 1,
+          "why_here": "Look for reachable defects sends \u201cexit + envelope + payload\u201d to Check the run and payload. This boundary connects to the existing decision about the automation waits for a keyboard.",
+          "scope": "decision"
+        },
+        "packet>model|packet": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201cpacket\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "model>gate|payload": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Look for reachable defects sends \u201cpayload\u201d to Check the run and payload. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "packet>model|criteria + evidence": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201ccriteria + evidence\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "gate>integration|candidate findings": {
+          "prompt": "Which review pipeline best detects combined behavior and produces useful rerun output?",
+          "target_stage": 3,
+          "why_here": "Check the run and payload sends \u201ccandidate findings\u201d to Check combined behavior. This boundary connects to the existing decision about two local changes fail together.",
+          "scope": "decision"
+        },
+        "gate>integration|candidates": {
+          "prompt": "Which review pipeline best detects combined behavior and produces useful rerun output?",
+          "target_stage": 3,
+          "why_here": "Check the run and payload sends \u201ccandidates\u201d to Check combined behavior. This boundary connects to the existing decision about two local changes fail together.",
+          "scope": "decision"
+        },
+        "packet>model|diff + requirements": {
+          "prompt": "Which review specification change most directly improves actionable precision without suppressing reachable defects?",
+          "target_stage": 2,
+          "why_here": "Give the reviewer evidence sends \u201cdiff + requirements\u201d to Look for reachable defects. This boundary connects to the existing decision about valid json reports the wrong thing.",
+          "scope": "decision"
+        },
+        "model>gate|process/payload": {
+          "prompt": "Which execution architecture best fits unattended review while preserving the permission boundary?",
+          "target_stage": 1,
+          "why_here": "Look for reachable defects sends \u201cprocess/payload\u201d to Check the run and payload. This boundary connects to the existing decision about the automation waits for a keyboard.",
+          "scope": "decision"
+        },
+        "integration>ledger|supported findings": {
+          "prompt": "Which review pipeline best detects combined behavior and produces useful rerun output?",
+          "target_stage": 3,
+          "why_here": "Check combined behavior sends \u201csupported findings\u201d to Do not repeat resolved findings. This boundary connects to the existing decision about two local changes fail together.",
+          "scope": "decision"
+        },
+        "ledger>post|new/unresolved only": {
+          "prompt": "Which actor is authorized to publish these new or unresolved findings?",
+          "target_stage": null,
+          "why_here": "This handoff carries findings into the publishing boundary.",
+          "scope": "context-only",
+          "reason": "No existing stage decision directly tests publication authorization; do not manufacture an unrelated decision jump."
+        },
+        "packet>model|known defect fixture": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Give the reviewer evidence sends \u201cknown defect fixture\u201d to Look for reachable defects. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        },
+        "model>gate|valid empty payload": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Look for reachable defects sends \u201cvalid empty payload\u201d to Check the run and payload. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        },
+        "gate>integration|evaluation result": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Check the run and payload sends \u201cevaluation result\u201d to Check combined behavior. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        },
+        "packet>model|evaluation packet": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Give the reviewer evidence sends \u201cevaluation packet\u201d to Look for reachable defects. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        },
+        "model>gate|output": {
+          "prompt": "Which execution architecture best fits unattended review while preserving the permission boundary?",
+          "target_stage": 1,
+          "why_here": "Look for reachable defects sends \u201coutput\u201d to Check the run and payload. This boundary connects to the existing decision about the automation waits for a keyboard.",
+          "scope": "decision"
+        },
+        "gate>integration|known-defect check": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Check the run and payload sends \u201cknown-defect check\u201d to Check combined behavior. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        },
+        "integration>ledger|miss recorded": {
+          "prompt": "What should the team do before increasing reliance on this reviewer?",
+          "target_stage": 4,
+          "why_here": "Check combined behavior sends \u201cmiss recorded\u201d to Do not repeat resolved findings. This boundary connects to the existing decision about the reviewer returns zero findings on a known defect.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-07-work-queue": {
+      "nodes": {
+        "jobs": {
+          "prompt": "One request has an interactive deadline while another can wait. Which latency and dependency constraints determine the processing mode?",
+          "target_stage": 1,
+          "why_here": "The waiting person and the archive have different clocks.",
+          "scope": "decision"
+        },
+        "route": {
+          "prompt": "An archive job now requires live tool interaction. Which dependency changes invalidate its previous processing assumption?",
+          "target_stage": 4,
+          "why_here": "A changed requirement can make the old lane unsuitable.",
+          "scope": "decision"
+        },
+        "live": {
+          "prompt": "A clerk is waiting on a required lookup. Which processing behavior satisfies the interaction deadline?",
+          "target_stage": 1,
+          "why_here": "The person needs an answer during the current interaction.",
+          "scope": "decision"
+        },
+        "batch": {
+          "prompt": "Independent results arrive out of submission order. Which identifier should bind each outcome to its original request?",
+          "target_stage": 2,
+          "why_here": "Arrival order cannot tell us which file a result belongs to.",
+          "scope": "decision"
+        },
+        "ledger": {
+          "prompt": "How should custom_id and per-item status reconstruct source-to-result correspondence independently of response order?",
+          "target_stage": 2,
+          "why_here": "Each result needs a stable name that points back to its source.",
+          "scope": "decision"
+        },
+        "recover": {
+          "prompt": "Items fail for different causes and may have different effect states. Which classification determines retry, correction or unresolved review?",
+          "target_stage": 3,
+          "why_here": "A single retry rule does not fit every failure.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "jobs>route|deadline + dependencies": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Two jobs, two clocks sends \u201cdeadline + dependencies\u201d to Choose the processing lane. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "jobs>route|two deadlines": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Two jobs, two clocks sends \u201ctwo deadlines\u201d to Choose the processing lane. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "jobs>route|requirements": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Two jobs, two clocks sends \u201crequirements\u201d to Choose the processing lane. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "route>live|U-1 urgent": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Choose the processing lane sends \u201cU-1 urgent\u201d to Serve the waiting clerk. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "route>batch|independent archive": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Choose the processing lane sends \u201cindependent archive\u201d to Process supplied independent files. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "route>live|U-1": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Choose the processing lane sends \u201cU-1\u201d to Serve the waiting clerk. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "route>batch|archive": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Choose the processing lane sends \u201carchive\u201d to Process supplied independent files. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "live>ledger|interaction outcome": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Serve the waiting clerk sends \u201cinteraction outcome\u201d to Match results to their source. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "batch>ledger|custom_id + status": {
+          "prompt": "Which ingestion design best preserves result identity and accurate downstream completion?",
+          "target_stage": 2,
+          "why_here": "Process supplied independent files sends \u201ccustom_id + status\u201d to Match results to their source. This boundary connects to the existing decision about the results arrive out of order.",
+          "scope": "decision"
+        },
+        "batch>ledger|outcomes": {
+          "prompt": "Which ingestion design best preserves result identity and accurate downstream completion?",
+          "target_stage": 2,
+          "why_here": "Process supplied independent files sends \u201coutcomes\u201d to Match results to their source. This boundary connects to the existing decision about the results arrive out of order.",
+          "scope": "decision"
+        },
+        "live>ledger|read status": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Serve the waiting clerk sends \u201cread status\u201d to Match results to their source. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "ledger>recover|named failure/effect state": {
+          "prompt": "Which recovery policy best preserves successful work while matching failure cause and side-effect risk?",
+          "target_stage": 3,
+          "why_here": "Match results to their source sends \u201cnamed failure/effect state\u201d to Recover according to cause. This boundary connects to the existing decision about three errors are not one retry rule.",
+          "scope": "decision"
+        },
+        "jobs>route|new dependencies": {
+          "prompt": "How should orchestration change when archive requests acquire this dependency?",
+          "target_stage": 4,
+          "why_here": "Two jobs, two clocks sends \u201cnew dependencies\u201d to Choose the processing lane. This boundary connects to the existing decision about the archives now need live tools.",
+          "scope": "decision"
+        },
+        "route>batch|old assumption": {
+          "prompt": "How should orchestration change when archive requests acquire this dependency?",
+          "target_stage": 4,
+          "why_here": "Choose the processing lane sends \u201cold assumption\u201d to Process supplied independent files. This boundary connects to the existing decision about the archives now need live tools.",
+          "scope": "decision"
+        },
+        "ledger>recover|failures": {
+          "prompt": "Which recovery policy best preserves successful work while matching failure cause and side-effect risk?",
+          "target_stage": 3,
+          "why_here": "Match results to their source sends \u201cfailures\u201d to Recover according to cause. This boundary connects to the existing decision about three errors are not one retry rule.",
+          "scope": "decision"
+        },
+        "jobs>route|deadline + dependency": {
+          "prompt": "Which route selection best fits both latency and evidence-dependency constraints?",
+          "target_stage": 1,
+          "why_here": "Two jobs, two clocks sends \u201cdeadline + dependency\u201d to Choose the processing lane. This boundary connects to the existing decision about the cheap lane misses the interaction.",
+          "scope": "decision"
+        },
+        "route>live|execute required lookup": {
+          "prompt": "How should orchestration change when archive requests acquire this dependency?",
+          "target_stage": 4,
+          "why_here": "Choose the processing lane sends \u201cexecute required lookup\u201d to Serve the waiting clerk. This boundary connects to the existing decision about the archives now need live tools.",
+          "scope": "decision"
+        },
+        "live>batch|eligible staged evidence": {
+          "prompt": "How should orchestration change when archive requests acquire this dependency?",
+          "target_stage": 4,
+          "why_here": "Serve the waiting clerk sends \u201celigible staged evidence\u201d to Process supplied independent files. This boundary connects to the existing decision about the archives now need live tools.",
+          "scope": "decision"
+        },
+        "batch>ledger|ID-correlated result": {
+          "prompt": "Which ingestion design best preserves result identity and accurate downstream completion?",
+          "target_stage": 2,
+          "why_here": "Process supplied independent files sends \u201cID-correlated result\u201d to Match results to their source. This boundary connects to the existing decision about the results arrive out of order.",
+          "scope": "decision"
+        },
+        "ledger>recover|recovery state": {
+          "prompt": "Which recovery policy best preserves successful work while matching failure cause and side-effect risk?",
+          "target_stage": 3,
+          "why_here": "Match results to their source sends \u201crecovery state\u201d to Recover according to cause. This boundary connects to the existing decision about three errors are not one retry rule.",
+          "scope": "decision"
+        }
+      }
+    },
+    "as-08-resumable-case": {
+      "nodes": {
+        "saved": {
+          "prompt": "A retained checkpoint says approved without exact action scope or freshness. What must be re-established before applying that approval today?",
+          "target_stage": 1,
+          "why_here": "Yesterday\u2019s short note may not authorize today\u2019s action.",
+          "scope": "decision"
+        },
+        "model": {
+          "prompt": "A historical detail cannot change the current decision. Which relevance and context-selection rule should govern its inclusion?",
+          "target_stage": 4,
+          "why_here": "Not every old fact needs to consume today\u2019s working attention.",
+          "scope": "decision"
+        },
+        "refresh": {
+          "prompt": "Which current applicability and approval evidence must be checked before a resumed action proceeds?",
+          "target_stage": 1,
+          "why_here": "The case may have changed since it was last saved.",
+          "scope": "decision"
+        },
+        "status": {
+          "prompt": "A required specialist fails while the payment status remains unresolved. Which evidence and gap must survive escalation?",
+          "target_stage": 3,
+          "why_here": "Missing evidence must stay visible when responsibility changes.",
+          "scope": "decision"
+        },
+        "brief": {
+          "prompt": "Compaction removes an unresolved operation or approval limitation. Which critical facts must survive the working-summary transformation?",
+          "target_stage": 2,
+          "why_here": "A shorter note must not erase the fact that makes the next action unsafe.",
+          "scope": "decision"
+        },
+        "review": {
+          "prompt": "Review capacity is full and an important risk remains unresolved. Which bounded handoff and fallback preserve responsibility without claiming resolution?",
+          "target_stage": 3,
+          "why_here": "Passing the case on does not itself settle the risk.",
+          "scope": "decision"
+        }
+      },
+      "edges": {
+        "saved>model|dated facts + unknowns": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Pick up yesterday\u2019s work sends \u201cdated facts + unknowns\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "saved>model|historical checkpoint": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Pick up yesterday\u2019s work sends \u201chistorical checkpoint\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "saved>model|dated facts": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Pick up yesterday\u2019s work sends \u201cdated facts\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "model>refresh|current action": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Form today\u2019s working brief sends \u201ccurrent action\u201d to Check what changed. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "refresh>status|authorized OP-6 lookup": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201cauthorized OP-6 lookup\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "saved>model|summary": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Pick up yesterday\u2019s work sends \u201csummary\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "refresh>status|OP-6 lookup": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201cOP-6 lookup\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "saved>brief|critical facts": {
+          "prompt": "Which state/context design most appropriately supports safe continuation under that budget?",
+          "target_stage": 2,
+          "why_here": "Pick up yesterday\u2019s work sends \u201ccritical facts\u201d to Keep critical facts exact. This boundary connects to the existing decision about a shorter summary drops the dangerous detail.",
+          "scope": "decision"
+        },
+        "brief>model|focused current context": {
+          "prompt": "Which refresh policy is proportionate under this changed evidence condition?",
+          "target_stage": 4,
+          "why_here": "Keep critical facts exact sends \u201cfocused current context\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about one old detail cannot change the decision.",
+          "scope": "decision"
+        },
+        "saved>brief|facts": {
+          "prompt": "Which state/context design most appropriately supports safe continuation under that budget?",
+          "target_stage": 2,
+          "why_here": "Pick up yesterday\u2019s work sends \u201cfacts\u201d to Keep critical facts exact. This boundary connects to the existing decision about a shorter summary drops the dangerous detail.",
+          "scope": "decision"
+        },
+        "brief>model|working context": {
+          "prompt": "Which state/context design most appropriately supports safe continuation under that budget?",
+          "target_stage": 2,
+          "why_here": "Keep critical facts exact sends \u201cworking context\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about a shorter summary drops the dangerous detail.",
+          "scope": "decision"
+        },
+        "model>refresh|action": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Form today\u2019s working brief sends \u201caction\u201d to Check what changed. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "refresh>status|payment check": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201cpayment check\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "brief>model|focused context": {
+          "prompt": "Which refresh policy is proportionate under this changed evidence condition?",
+          "target_stage": 4,
+          "why_here": "Keep critical facts exact sends \u201cfocused context\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about one old detail cannot change the decision.",
+          "scope": "decision"
+        },
+        "refresh>status|payment status": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201cpayment status\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "status>review|evidence + gap": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Ask what OP-6 did sends \u201cevidence + gap\u201d to Hand over unresolved risk. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "brief>review|source-linked packet": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Keep critical facts exact sends \u201csource-linked packet\u201d to Hand over unresolved risk. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "brief>model|context": {
+          "prompt": "Which state/context design most appropriately supports safe continuation under that budget?",
+          "target_stage": 2,
+          "why_here": "Keep critical facts exact sends \u201ccontext\u201d to Form today\u2019s working brief. This boundary connects to the existing decision about a shorter summary drops the dangerous detail.",
+          "scope": "decision"
+        },
+        "model>refresh|applicability": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Form today\u2019s working brief sends \u201capplicability\u201d to Check what changed. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "refresh>status|critical unknown": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201ccritical unknown\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "status>review|remaining gap": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Ask what OP-6 did sends \u201cremaining gap\u201d to Hand over unresolved risk. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "saved>brief|valid retained facts": {
+          "prompt": "Which state/context design most appropriately supports safe continuation under that budget?",
+          "target_stage": 2,
+          "why_here": "Pick up yesterday\u2019s work sends \u201cvalid retained facts\u201d to Keep critical facts exact. This boundary connects to the existing decision about a shorter summary drops the dangerous detail.",
+          "scope": "decision"
+        },
+        "model>refresh|critical applicability": {
+          "prompt": "Which resume policy best preserves useful work without converting old state into current authorization?",
+          "target_stage": 1,
+          "why_here": "Form today\u2019s working brief sends \u201ccritical applicability\u201d to Check what changed. This boundary connects to the existing decision about \u201capproved\u201d is too broad a memory.",
+          "scope": "decision"
+        },
+        "refresh>status|OP-6": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Check what changed sends \u201cOP-6\u201d to Ask what OP-6 did. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        },
+        "status>review|unresolved decision": {
+          "prompt": "Which finalization and handoff policy best handles both partial evidence and review-capacity limits?",
+          "target_stage": 3,
+          "why_here": "Ask what OP-6 did sends \u201cunresolved decision\u201d to Hand over unresolved risk. This boundary connects to the existing decision about one specialist fails and review is full.",
+          "scope": "decision"
+        }
+      }
+    }
+  }
+}

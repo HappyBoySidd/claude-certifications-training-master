@@ -1,0 +1,558 @@
+{
+  "lessons": {
+    "as-01-action-service": {
+      "screen": {
+        "short": "Application UI",
+        "terms": [
+          "application user interface",
+          "untrusted request input"
+        ],
+        "objective_id": "1.4",
+        "meaning": "The support application collects the request; its displayed account claim is input, not an authenticated principal."
+      },
+      "backend": {
+        "short": "Messages client / executor",
+        "terms": [
+          "Messages API client",
+          "tool_use",
+          "tool_result",
+          "client-tool execution"
+        ],
+        "objective_id": "1.1",
+        "meaning": "Application code sends model messages, executes permitted client-tool requests and returns their observed results."
+      },
+      "claude": {
+        "short": "tool_use / text response",
+        "terms": [
+          "tool_use",
+          "text content block",
+          "stop_reason"
+        ],
+        "objective_id": "1.1",
+        "meaning": "Claude returns a proposed client-tool call or explanation; application code owns execution and checks the response stop reason."
+      },
+      "orders": {
+        "short": "Trusted business evidence",
+        "terms": [
+          "system of record",
+          "source provenance",
+          "current business policy"
+        ],
+        "objective_id": "5.6",
+        "meaning": "The business system supplies attributable ownership and policy evidence for the application to check against the proposal."
+      },
+      "gate": {
+        "short": "Execution-time authorization",
+        "terms": [
+          "execution-time authorization",
+          "prerequisite gate",
+          "scoped approval"
+        ],
+        "objective_id": "1.4",
+        "meaning": "The action handler enforces trusted ownership and current policy before dispatching this exact credit."
+      },
+      "tools": {
+        "short": "tools[] / input_schema",
+        "terms": [
+          "tools",
+          "name",
+          "description",
+          "input_schema",
+          "tool_choice"
+        ],
+        "objective_id": "2.1",
+        "meaning": "The tool designer defines distinguishable read and write interfaces that the model can request but cannot self-authorize."
+      },
+      "session": {
+        "short": "Authenticated principal",
+        "terms": [
+          "authenticated principal",
+          "trusted session",
+          "identity-to-account binding"
+        ],
+        "objective_id": "1.4",
+        "meaning": "The identity provider and application establish the caller binding used by the action handler instead of trusting typed account names."
+      },
+      "payment": {
+        "short": "External side-effect API",
+        "terms": [
+          "external business API",
+          "side effect",
+          "provider receipt"
+        ],
+        "objective_id": "2.2",
+        "meaning": "The payment provider owns the credit effect and its authoritative outcome; a model response is not that outcome."
+      },
+      "ledger": {
+        "short": "Idempotency / reconciliation",
+        "terms": [
+          "operation identity",
+          "idempotency contract",
+          "reconciliation",
+          "unknown business outcome"
+        ],
+        "objective_id": "2.2",
+        "meaning": "The application keeps the logical operation identity and checks provider evidence before any supported replay."
+      },
+      "human": {
+        "short": "Scoped human handoff",
+        "terms": [
+          "human escalation",
+          "pending_review",
+          "scoped approval"
+        ],
+        "objective_id": "5.2",
+        "meaning": "The authorized reviewer receives the exact blocked action and evidence while the application preserves its not-issued state."
+      }
+    },
+    "as-02-document-pipeline": {
+      "source": {
+        "short": "Source document evidence",
+        "terms": [
+          "source document",
+          "source identity",
+          "provenance"
+        ],
+        "objective_id": "5.6",
+        "meaning": "Intake preserves the invoice and its identity so extracted values remain attributable to actual source evidence."
+      },
+      "worker": {
+        "short": "Background job orchestration",
+        "terms": [
+          "application background worker",
+          "preparation state",
+          "job identity"
+        ],
+        "objective_id": "4.5",
+        "meaning": "The application worker prepares and tracks each queued source independently before downstream acceptance."
+      },
+      "extract": {
+        "short": "Structured extraction proposal",
+        "terms": [
+          "structured output",
+          "output_config.format",
+          "schema conformance"
+        ],
+        "objective_id": "4.3",
+        "meaning": "Claude proposes invoice fields under the selected output contract; the receiving application still decides acceptance."
+      },
+      "check": {
+        "short": "Consumer / semantic validation",
+        "terms": [
+          "consumer contract",
+          "required fields",
+          "semantic validation",
+          "bounded repair"
+        ],
+        "objective_id": "4.4",
+        "meaning": "The receiver checks both schema requirements and source meaning, including cents, currency and absent purchase-order evidence."
+      },
+      "ledger": {
+        "short": "Per-source outcome state",
+        "terms": [
+          "source/version identity",
+          "partial success",
+          "validation state",
+          "downstream acceptance"
+        ],
+        "objective_id": "4.5",
+        "meaning": "The application records preparation, API, validation and acceptance outcomes separately so failures do not discard successes."
+      },
+      "review": {
+        "short": "Ambiguity escalation",
+        "terms": [
+          "evidence ambiguity",
+          "human review",
+          "unreadable source",
+          "quarantine"
+        ],
+        "objective_id": "5.2",
+        "meaning": "A named reviewer or preparation owner resolves unreadable or conflicting evidence instead of authorizing invented extraction values."
+      }
+    },
+    "as-03-grounded-assistant": {
+      "ask": {
+        "short": "Authorized request scope",
+        "terms": [
+          "application request",
+          "machine identifier",
+          "access scope"
+        ],
+        "objective_id": "1.4",
+        "meaning": "The technician supplies the machine question while the application binds it to the caller\u2019s permitted evidence scope."
+      },
+      "search": {
+        "short": "Scoped evidence retrieval",
+        "terms": [
+          "retrieval filtering",
+          "machine/revision scope",
+          "authorized context inclusion"
+        ],
+        "objective_id": "5.6",
+        "meaning": "The backend retrieves applicable approved sources within access scope before Claude synthesizes an answer."
+      },
+      "answer": {
+        "short": "Grounded text / citations",
+        "terms": [
+          "text response",
+          "claim-source mapping",
+          "citation",
+          "applicability"
+        ],
+        "objective_id": "5.6",
+        "meaning": "Claude explains supplied applicable evidence with source references; it does not grant document access or settle unsupported authority."
+      },
+      "catalog": {
+        "short": "MCP resources/read",
+        "terms": [
+          "MCP resource URI",
+          "resources/list",
+          "resources/read",
+          "context inclusion"
+        ],
+        "objective_id": "2.4",
+        "meaning": "The client reads the selected MCP resource and includes returned content in context; tool invocation and catalog discovery are separate mechanisms."
+      },
+      "guard": {
+        "short": "Access / instruction boundary",
+        "terms": [
+          "authorization",
+          "retrieved-content injection",
+          "instruction/data boundary"
+        ],
+        "objective_id": "1.4",
+        "meaning": "Application access checks and instruction boundaries prevent document text from granting itself permissions or control authority."
+      },
+      "owner": {
+        "short": "Source-authority escalation",
+        "terms": [
+          "source conflict",
+          "authority resolution",
+          "human decision owner"
+        ],
+        "objective_id": "5.2",
+        "meaning": "The maintenance owner resolves conflicting operational authority after receiving both attributed claims."
+      }
+    },
+    "as-04-research-system": {
+      "request": {
+        "short": "Decision contract",
+        "terms": [
+          "business decision scope",
+          "constraints",
+          "acceptance criteria"
+        ],
+        "objective_id": "1.6",
+        "meaning": "The operations owner defines the bounded pilot decision that determines whether adaptive investigation is justified."
+      },
+      "coord": {
+        "short": "Coordinator / synthesis",
+        "terms": [
+          "coordinator-subagent pattern",
+          "task decomposition",
+          "coverage reconciliation",
+          "synthesis"
+        ],
+        "objective_id": "1.2",
+        "meaning": "The coordinator assigns bounded investigations and retains ownership of required coverage and the final recommendation."
+      },
+      "special": {
+        "short": "Isolated-context subagent",
+        "terms": [
+          "isolated context",
+          "self-contained brief",
+          "return contract",
+          "claim-source mapping"
+        ],
+        "objective_id": "1.3",
+        "meaning": "Each specialist in this design receives a complete bounded brief and returns attributable findings to the coordinator."
+      },
+      "ledger": {
+        "short": "Coverage / failure ledger",
+        "terms": [
+          "expected contributors",
+          "partial success",
+          "error propagation",
+          "coverage ledger"
+        ],
+        "objective_id": "5.3",
+        "meaning": "The application compares required investigations with observed returns and preserves named failures rather than inventing completeness."
+      },
+      "owner": {
+        "short": "Human decision authority",
+        "terms": [
+          "human approval boundary",
+          "budget authority",
+          "recommendation versus commitment"
+        ],
+        "objective_id": "5.2",
+        "meaning": "The operations owner decides pilot scope and spending; a synthesized recommendation does not commit either."
+      }
+    },
+    "as-05-code-change": {
+      "request": {
+        "short": "Business behavior contract",
+        "terms": [
+          "acceptance criterion",
+          "unknown versus zero",
+          "regression fixture"
+        ],
+        "objective_id": "3.5",
+        "meaning": "The business requirement defines the distinct missing-value and legitimate-zero outcomes that the coding change must preserve."
+      },
+      "code": {
+        "short": "Glob / Grep / Read evidence",
+        "terms": [
+          "Glob",
+          "Grep",
+          "Read",
+          "dependency trace"
+        ],
+        "objective_id": "2.5",
+        "meaning": "The developer investigates current importer code, callers and fixtures before deciding where a repair belongs."
+      },
+      "claude": {
+        "short": "Claude Code tool workflow",
+        "terms": [
+          "Claude Code",
+          "Read",
+          "Edit",
+          "Bash",
+          "scoped patch"
+        ],
+        "objective_id": "2.5",
+        "meaning": "The coding agent searches and inspects relevant code, proposes targeted edits and reports observed checks within the authorized scope."
+      },
+      "rules": {
+        "short": "Path rules / SKILL.md",
+        "terms": [
+          ".claude/rules/",
+          "paths",
+          "SKILL.md",
+          "conditional loading"
+        ],
+        "objective_id": "3.3",
+        "meaning": "Maintainers separate file-matched conventions from reusable skill procedures so relevant guidance reaches importer work."
+      },
+      "tests": {
+        "short": "Boundary regression checks",
+        "terms": [
+          "reproduction",
+          "expected versus observed",
+          "end-to-end trace",
+          "regression testing"
+        ],
+        "objective_id": "3.5",
+        "meaning": "The test runner follows missing and zero values through the report boundary rather than treating an importer-only pass as completion."
+      },
+      "owner": {
+        "short": "Review / release boundary",
+        "terms": [
+          "review ownership",
+          "proposed patch",
+          "release authorization"
+        ],
+        "objective_id": "3.4",
+        "meaning": "The release owner evaluates the scoped proposal and evidence before a separately authorized production change."
+      }
+    },
+    "as-06-ci-review": {
+      "packet": {
+        "short": "Explicit review context",
+        "terms": [
+          "diff",
+          "business contract",
+          "test fixture",
+          "review criteria"
+        ],
+        "objective_id": "4.1",
+        "meaning": "The CI application supplies the contract, change and fixtures that let the reviewer distinguish reachable defects from harmless style."
+      },
+      "model": {
+        "short": "Headless Claude Code review",
+        "terms": [
+          "claude -p",
+          "noninteractive review",
+          "evidence-backed findings"
+        ],
+        "objective_id": "3.6",
+        "meaning": "The unattended reviewer proposes findings from supplied evidence without acquiring posting or merge authority."
+      },
+      "gate": {
+        "short": "Exit / envelope / schema gate",
+        "terms": [
+          "process exit status",
+          "result envelope",
+          "payload validation",
+          "valid empty findings"
+        ],
+        "objective_id": "3.6",
+        "meaning": "The CI runtime distinguishes failed execution and invalid output from a successful run before evaluating its review payload."
+      },
+      "integration": {
+        "short": "Cross-file verification",
+        "terms": [
+          "multi-pass review",
+          "integration data path",
+          "candidate verification"
+        ],
+        "objective_id": "4.6",
+        "meaning": "The verifier checks whether combined changes produce the alleged contract failure and verifies candidate findings independently."
+      },
+      "ledger": {
+        "short": "Finding-state reconciliation",
+        "terms": [
+          "finding identity",
+          "resolved finding",
+          "unresolved finding",
+          "capability miss"
+        ],
+        "objective_id": "4.6",
+        "meaning": "The application reconciles current evidence with prior findings so resolved noise disappears while still-supported defects remain."
+      },
+      "post": {
+        "short": "Authorized publication API",
+        "terms": [
+          "publication boundary",
+          "separate execution authority",
+          "review comment"
+        ],
+        "objective_id": "3.6",
+        "meaning": "The posting service publishes only eligible checked findings under its own authorization and does not approve or merge the change."
+      }
+    },
+    "as-07-work-queue": {
+      "jobs": {
+        "short": "Latency / dependency contract",
+        "terms": [
+          "latency budget",
+          "evidence dependency",
+          "independent requests"
+        ],
+        "objective_id": "4.5",
+        "meaning": "Application workload requirements distinguish a waiting live lookup from deferred extraction of supplied independent files."
+      },
+      "route": {
+        "short": "Application workload routing",
+        "terms": [
+          "synchronous versus deferred",
+          "dependency-aware routing",
+          "deadline budget"
+        ],
+        "objective_id": "4.5",
+        "meaning": "The backend chooses a processing lane from urgency and dependency requirements instead of price or model confidence alone."
+      },
+      "live": {
+        "short": "tool_use \u2192 tool_result loop",
+        "terms": [
+          "Messages API",
+          "tool_use",
+          "client-tool execution",
+          "tool_result"
+        ],
+        "objective_id": "1.1",
+        "meaning": "The client runtime executes a permitted live read and returns its matching observed result before the next model iteration."
+      },
+      "batch": {
+        "short": "Message Batches API",
+        "terms": [
+          "Message Batches",
+          "asynchronous processing",
+          "independent request",
+          "batch outcome"
+        ],
+        "objective_id": "4.5",
+        "meaning": "The batch service processes eligible supplied requests asynchronously but does not run the application\u2019s local client-tool handlers."
+      },
+      "ledger": {
+        "short": "custom_id result correlation",
+        "terms": [
+          "custom_id",
+          "source/version mapping",
+          "result.type",
+          "downstream validation"
+        ],
+        "objective_id": "4.5",
+        "meaning": "The application joins unordered API results to stable source identities and checks business acceptance separately."
+      },
+      "recover": {
+        "short": "Cause / effect-aware recovery",
+        "terms": [
+          "bounded retry",
+          "invalid input repair",
+          "unknown side effect",
+          "reconciliation"
+        ],
+        "objective_id": "2.2",
+        "meaning": "Application recovery distinguishes unusable input, transient reads and uncertain writes before choosing repair, retry or status investigation."
+      }
+    },
+    "as-08-resumable-case": {
+      "saved": {
+        "short": "Durable application checkpoint",
+        "terms": [
+          "durable business state",
+          "source pointers",
+          "scoped approval",
+          "unknown effect"
+        ],
+        "objective_id": "5.1",
+        "meaning": "The application preserves exact historical facts and unknown outcomes independently of whether the conversation can be resumed."
+      },
+      "model": {
+        "short": "Context-based investigation",
+        "terms": [
+          "working context",
+          "source-grounded reasoning",
+          "session continuation"
+        ],
+        "objective_id": "1.7",
+        "meaning": "Claude uses restored context to investigate the current request without treating past conversation as fresh authorization."
+      },
+      "refresh": {
+        "short": "Freshness / authority checks",
+        "terms": [
+          "decision relevance",
+          "current policy",
+          "approval scope",
+          "revalidation"
+        ],
+        "objective_id": "1.7",
+        "meaning": "Application checks refresh facts that can change the current action while retaining unaffected verified work."
+      },
+      "status": {
+        "short": "Authoritative reconciliation",
+        "terms": [
+          "operation identity",
+          "provider status",
+          "unknown outcome",
+          "safe replay boundary"
+        ],
+        "objective_id": "2.2",
+        "meaning": "The runtime queries the transaction authority for OP-6 evidence before considering any supported replay or new effect."
+      },
+      "brief": {
+        "short": "Decision-critical context",
+        "terms": [
+          "context budget",
+          "focused brief",
+          "exact amounts",
+          "source pointers"
+        ],
+        "objective_id": "5.1",
+        "meaning": "The application forms a compact working packet that retains exact approval limits, current requests and unresolved effects."
+      },
+      "review": {
+        "short": "Owned pending / escalation",
+        "terms": [
+          "human handoff",
+          "review capacity",
+          "overflow policy",
+          "unresolved evidence"
+        ],
+        "objective_id": "5.5",
+        "meaning": "The human-review workflow retains explicit ownership and pending states when mandatory review exceeds available capacity."
+      }
+    }
+  }
+}

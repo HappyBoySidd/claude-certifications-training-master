@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-16">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Lab 05 — An evaluation harness with a regression check (CCAR-P, CCDV-F)">
+<title>Lab 05 — An evaluation harness with a regression check (CCAR-P, CCDV-F) · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../assets/site.css?v=21c6a0ac682a">
+<script defer src="../assets/site.js?v=dac542edefb2"></script>
+</head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../exams/ccao-f.html">CCAO-F</a><a href="../exams/ccar-f.html">CCAR-F</a><a href="../exams/ccdv-f.html">CCDV-F</a><a href="../exams/ccar-p.html">CCAR-P</a><a href="../lessons/index.html">Lessons</a><a href="../simulations/index.html">Simulations</a><a href="../labs/index.html">Labs</a><a href="../insights.html">Insights</a><a href="../resources.html">Resources</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true"> / </span><a href="../labs/index.html">Labs</a><span aria-hidden="true"> / </span><span><a class="xref" href="../labs/05-CCAR-P-eval-harness.html">Lab 05: An evaluation harness with a regression check</a></span></nav>
+<article class="prose"><h1 id="lab-05--an-evaluation-harness-with-a-regression-check-ccar-p-ccdv-f">Lab 05 — An evaluation harness with a regression check (CCAR-P, CCDV-F)</h1>
+<p><strong>Supports:</strong> CCAR-P <a class="xref" href="../lessons/ccar-p/L01-integration.html">Lesson 1: Integration</a> (step 7), <a class="xref" href="../lessons/index.html">Lesson 3</a> · CCDV-F <a class="xref" href="../lessons/ccdv-f/L07-claude-code-eval-and-debugging.html">Lesson 7: Claude Code, Eval and Debugging</a> · <strong>Time:</strong> 3 hours, plus 1 hour for step 7 · <strong>Needs:</strong> the extractor from <a href="02-CCAR-F-coordinator-extraction.html">lab 02</a>, or any small Claude task you already have; for step 7, a small document set.</p>
+<p><strong>Done when:</strong></p>
+<ul><li>one command runs a 30-case test set and prints a score by metric</li><li>a prompt change that makes things worse <strong>fails</strong> the run</li><li>you can say which failures are prompt problems, retrieval or context problems, or model-fit problems</li><li>you have recall@5 for keyword, vector and hybrid retrieval, and can say which question types each one wins</li></ul>
+<h2 id="steps">Steps</h2>
+<h3 id="1-a-test-set-before-any-tuning">1. A test set before any tuning</h3>
+<p>Write 30 cases in a <code>cases.jsonl</code> file, each with an input, the expected output or key facts, and a tag:</p>
+<div class="tbl"><table><thead><tr><th>Tag</th><th>Share</th><th>Example</th></tr></thead><tbody><tr><td>normal</td><td>60%</td><td>a clean invoice</td></tr><tr><td>edge</td><td>25%</td><td>a missing date, two currencies, a handwritten total</td></tr><tr><td>adversarial</td><td>15%</td><td>text inside the document saying "ignore your instructions"</td></tr></tbody></table></div>
+<h3 id="2-three-kinds-of-grader">2. Three kinds of grader</h3>
+<ul><li><strong>Code-graded</strong>, for anything exact: the JSON is valid, the total matches, the date is ISO.</li><li><strong>Model-graded</strong>, for judgment: a second Claude call with a short <strong>rubric</strong> that returns a 1–5 score <em>and a reason</em>. Check the grader itself on 5 cases you've scored by hand.</li><li><strong>Human review</strong>, only for the cases the other two disagree on.</li></ul>
+<h3 id="3-metrics-that-match-the-goal">3. Metrics that match the goal</h3>
+<p>Report accuracy (per field), cost (tokens per case), latency (p50 and p95) and a safety pass rate (the adversarial cases). Averages hide failures, so also print the <strong>worst 3 cases</strong>.</p>
+<h3 id="4-the-regression-gate">4. The regression gate</h3>
+<ul><li>Save today's scores as <code>baseline.json</code>.</li><li>The harness exits with a failure if any metric drops by more than your threshold, for example 2 points of accuracy, or if any adversarial case fails.</li><li>Now make the prompt worse on purpose, for example by deleting the examples, and confirm the gate catches it.</li></ul>
+<h3 id="5-ab-a-real-change">5. A/B a real change</h3>
+<ul><li>Change one thing: add two examples, switch model tier, or raise the effort level.</li><li>Run both versions on the same 30 cases and compare them metric by metric.</li><li>Decide with the numbers, and write the trade-off in one line, for example "+4 accuracy, +30% cost".</li></ul>
+<h3 id="6-diagnose-the-failures">6. Diagnose the failures</h3>
+<p>For each failure, ask in this order:</p>
+<ol><li>Was the needed information in the context at all? If not, it's a retrieval or context problem.</li><li>Was the instruction clear and in the right place? If not, it's a prompt problem.</li><li>Did it fail anyway? Then it may be a model-fit problem.</li></ol>
+<p>Log the answer next to the case.</p>
+<h3 id="7-retrieval-comparison">7. Retrieval comparison</h3>
+<p>This step is for CCAR-P <a class="xref" href="../lessons/ccar-p/L01-integration.html">Lesson 1: Integration</a>. It checks whether the <em>search</em> part finds the right text before Claude ever sees it. About 1 hour.</p>
+<ul><li>Take a small document set, for example 10–15 policy pages or README files, and split it into chunks along its headings.</li><li>Write about 20 question and right-chunk pairs in <code>retrieval.jsonl</code>: the question, the ID of the chunk that answers it, and a tag:</li></ul>
+<div class="tbl"><table><thead><tr><th>Tag</th><th>Example</th></tr></thead><tbody><tr><td>exact</td><td>"What is error code E-2207?" (a code, a name, a part number)</td></tr><tr><td>paraphrase</td><td>"Can I bring my partner on a work trip?" when the doc says "companion travel"</td></tr><tr><td>mixed</td><td>a concept plus an exact term, for example "refund rules for plan P-40"</td></tr></tbody></table></div>
+<ul><li>Run the same questions three ways: <strong>keyword-only</strong> (BM25 or plain keyword search), <strong>vector-only</strong> (embeddings), and <strong>hybrid</strong> (both, results merged).</li><li>Score <strong>recall@5</strong>: the share of questions where the right chunk is in the top 5 results. Print it per method and per tag.</li><li>Write one line per tag saying which method won, for example "exact: keyword 95%, vector 60%". Expect keyword to win on exact terms, vector on paraphrases, and hybrid to be the safest overall.</li></ul>
+<p>Sources: CCAR-P official exam guide, Domain 4 "Evaluation, Testing &amp; Optimization" and Domain 3 retrieval objectives; <a class="ext" href="https://www.anthropic.com/news/contextual-retrieval" rel="noopener">contextual retrieval</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, for keyword plus embeddings); <a class="ext" href="https://docs.claude.com/en/docs/test-and-evaluate/develop-tests" rel="noopener">define success criteria and build evaluations</a>; <a class="ext" href="https://docs.claude.com/en/docs/test-and-evaluate/strengthen-guardrails/reduce-hallucinations" rel="noopener">reduce hallucinations</a>.</p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>-</p><nav class="prevnext" aria-label="Previous and next"><a class="prev" href="../labs/04-CCDV-F-api-modes.html">← <small>Lab 04</small> Same task, three API modes: real time, cached and batch</a><a class="next" href="../labs/08-CCAR-F-architecture-decisions.html"><small>Lab 08</small> Run architecture decisions before connecting a model →</a></nav><aside class="usedin" aria-label="Linked from other pages"><details><summary class="usedin-h"><b>Linked from</b> 5 other pages</summary><p class="usedin-exams">Exams: <a href="../exams/ccdv-f.html">CCDV-F</a> · <a href="../exams/ccar-p.html">CCAR-P</a></p><ul><li><a href="../exams/ccar-p.html">Claude Certified Architect – Professional</a></li><li><a href="../exams/ccdv-f.html">Claude Certified Developer – Foundations</a></li><li><a href="../lessons/ccar-p/L01-integration.html">CCAR-P Lesson 1 — Integration (19%, about 12 questions, the BIGGEST)</a></li><li><a href="../lessons/ccar-p/L03-evaluation-testing-and-optimization.html">CCAR-P Lesson 3 — Evaluation, Testing and Optimization (16%, about 10 questions)</a></li><li><a href="../labs/index.html">Labs</a></li></ul></details></aside></article>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flabs%2F05-CCAR-P-eval-harness.html" rel="noopener">Report a problem on this page</a> · <a href="../contribute.html">Contribute</a> · <a href="../whats-new.html">What's new</a> · <a href="../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

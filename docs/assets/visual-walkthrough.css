@@ -1,0 +1,249 @@
+/* Visual scenario teaching surface. Scoped to visual-lesson; reference typography stays intact. */
+body.visual-lesson { --vl-ai:#eee9ff; --vl-ai-edge:#7061b7; --vl-software:#e3efff; --vl-software-edge:#4775a5; --vl-data:#edf0f3; --vl-data-edge:#697586; --vl-new:#087f70; }
+.visual-lesson .wrap.with-side { display:block; width:100%; padding-top:22px; }
+.visual-lesson .side, .visual-lesson .learning-outline { display:none; }
+.visual-lesson .learning-layout { display:block; }
+.visual-lesson main, .visual-lesson .prose { min-width:0; width:100%; max-width:none; }
+.vl-hero { max-width:1100px; margin:0 0 24px; }
+.vl-hero h1 { font-size:clamp(2rem,3.4vw,3.4rem); line-height:1.1; margin:8px 0 14px; max-width:24ch; }
+.vl-hero p { max-width:76ch; margin:8px 0; }
+.vl-eyebrow, .vl-hero .eyebrow { color:var(--muted); font:700 .76rem/1.4 var(--font); text-transform:uppercase; letter-spacing:.09em; }
+.vl-badges { display:flex; flex-wrap:wrap; gap:7px; margin:12px 0; }
+.vl-badges span, .vl-badges small { background:var(--sunk); border:1px solid var(--line); border-radius:30px; padding:3px 10px; font-size:.78rem; color:var(--muted); }
+.vl-player { border:1px solid var(--line); border-radius:18px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow); margin:20px 0 30px; }
+.vl-player button { font:inherit; font-weight:600; cursor:pointer; color:var(--ink); border:1px solid var(--line); border-radius:8px; background:var(--surface); padding:9px 12px; min-height:42px; }
+.vl-player button:hover { border-color:var(--architect); background:var(--architect-soft); }
+.vl-player button:focus-visible, .vl-map [tabindex]:focus-visible { outline:3px solid var(--architect); outline-offset:3px; }
+.vl-player button:disabled { cursor:default; opacity:.5; }
+.vl-stage-nav { padding:14px 18px; background:var(--sunk); border-bottom:1px solid var(--line); overflow:auto; }
+.vl-stage-nav ol { list-style:none; display:flex; gap:8px; margin:0; padding:0; width:max-content; min-width:100%; }
+.vl-stage-nav li { flex:1; margin:0; }
+.vl-stage-nav button { text-align:left; white-space:nowrap; font-size:.81rem; }
+.vl-stage-nav button[aria-current="step"] { background:var(--ink); border-color:var(--ink); color:var(--bg); }
+.vl-workspace { display:grid; grid-template-columns:minmax(0,1.85fr) minmax(300px,1fr); align-items:start; }
+.vl-visual { padding:20px; min-width:0; }
+.vl-visual h2, .vl-coach h2 { font-family:var(--font); border:0; padding:0; margin:0 0 10px; font-size:1.15rem; line-height:1.35; }
+.vl-change { min-height:2.8em; margin:0 0 12px; color:var(--muted); font-size:.9rem; line-height:1.45; }
+.vl-change strong { color:var(--vl-new); }
+.vl-map-toolbar { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; align-items:center; }
+.vl-map-toolbar button { font-size:.78rem; padding:6px 10px; min-height:36px; }
+.vl-map-frame { background:#fafcff; border:1px solid #dce4ec; border-radius:12px; overflow:auto; width:100%; max-height:540px; overscroll-behavior:contain; }
+.vl-map { display:block; max-width:none; margin:0 auto; color:#24364a; }
+.vl-map text { fill:#24364a; font:15px var(--font); }
+.vl-map .vl-node rect { fill:var(--vl-data); stroke:var(--vl-data-edge); stroke-width:1.5; rx:12px; }
+.vl-map .vl-node.kind-ai rect { fill:var(--vl-ai); stroke:var(--vl-ai-edge); }
+.vl-map .vl-node.kind-software rect { fill:var(--vl-software); stroke:var(--vl-software-edge); }
+.vl-map .vl-node.kind-data rect { fill:var(--vl-data); stroke:var(--vl-data-edge); }
+.vl-map .vl-node.is-new rect { stroke:var(--vl-new); stroke-width:3; }
+.vl-map .vl-node.is-focus rect { stroke:#162e4d; stroke-width:3; }
+.vl-map .vl-node { cursor:pointer; }
+.vl-map .vl-node:hover rect { stroke-width:3; }
+.vl-map .vl-edge { stroke:#72839a; stroke-width:2; fill:none; }
+.vl-map .vl-edge text, .vl-map text.vl-edge { stroke:none; fill:#4f627b; font-size:13px; }
+.vl-coach { padding:24px; border-left:1px solid var(--line); background:var(--surface); min-width:0; }
+.vl-coach .vl-title { font-size:clamp(1.3rem,1.5vw,1.7rem); line-height:1.25; margin:5px 0 12px; }
+.vl-narration { font-size:1rem; line-height:1.65; margin:0 0 14px; }
+.vl-audio { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0; }
+.vl-audio button { font-size:.8rem; }
+.vl-audio small { flex-basis:100%; color:var(--muted); }
+.vl-packet { border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:16px 0; }
+.vl-packet label, .vl-packet > strong, .vl-packet > p:first-child { display:block; font-size:.76rem; font-weight:700; padding:8px 12px; margin:0; background:var(--sunk); color:var(--muted); }
+.vl-packet pre { font-size:.82rem; line-height:1.6; margin:0; padding:12px; white-space:pre-wrap; overflow-wrap:anywhere; border:0; border-radius:0; }
+.vl-question { border-top:1px solid var(--line); padding-top:16px; margin-top:18px; }
+.vl-question > p { font-weight:650; line-height:1.5; }
+.vl-option { display:block; width:100%; margin:8px 0; text-align:left; font-size:.89rem!important; font-weight:400!important; line-height:1.55; }
+.vl-option.is-selected { border-color:var(--architect); outline:2px solid var(--architect); outline-offset:0; }
+.vl-option.is-correct { background:#e5f5ed; border-color:#16734d; color:#164b34; }
+.vl-option.is-wrong { background:#fff1eb; border-color:#a44826; color:#78381e; }
+.vl-translation { margin:12px 0; border:0; padding:0; font-size:.88rem; }
+.vl-translation summary { color:var(--architect); cursor:pointer; padding:6px 0; }
+.vl-translation p { line-height:1.6; }
+.vl-feedback { background:var(--sunk); border-left:3px solid var(--vl-new); padding:12px 14px; margin:14px 0; font-size:.91rem; line-height:1.6; }
+.vl-controls { display:flex; gap:8px; justify-content:space-between; flex-wrap:wrap; padding:14px 20px; background:var(--sunk); border-top:1px solid var(--line); }
+.vl-controls button:last-child { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.vl-inspector { background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--vl-new); border-radius:8px; padding:14px 16px; margin:14px 0 0; font-size:.88rem; line-height:1.55; }
+.vl-inspector[hidden], .vl-feedback[hidden] { display:none; }
+.vl-inspector h3 { margin:0 0 8px; font-size:1rem; }
+.vl-inspector p { margin:6px 0; }
+.vl-reference { border:1px solid var(--line); border-radius:12px; padding:18px 22px; margin:24px 0; }
+.vl-reference > summary { cursor:pointer; font-size:1.08rem; font-weight:700; }
+.vl-reference[open] > summary { margin-bottom:24px; }
+.vl-reference .prose > p, .vl-reference > p { max-width:78ch; }
+.vl-finish { border:1px solid var(--line); border-radius:12px; background:var(--sunk); padding:20px 24px; margin:20px 0; }
+.vl-finish p { max-width:76ch; }
+@media(min-width:1800px) { .vl-workspace { grid-template-columns:minmax(0,2fr) minmax(380px,1fr); } .vl-map-frame { max-height:620px; } }
+@media(max-width:1050px) { .vl-workspace { grid-template-columns:minmax(0,1.35fr) minmax(290px,1fr); } .vl-visual,.vl-coach { padding:16px; } }
+@media(max-width:800px) { .vl-workspace { display:block; } .vl-coach { border-left:0; border-top:1px solid var(--line); } .vl-map-frame { max-height:390px; } .vl-change { min-height:0; } .vl-stage-nav { padding:12px; } .vl-hero h1 { max-width:100%; } }
+@media(max-width:480px) { .visual-lesson .wrap.with-side { padding-left:12px; padding-right:12px; } .vl-player { border-radius:12px; } .vl-visual,.vl-coach { padding:14px; } .vl-map-frame { max-height:320px; } .vl-map-toolbar { gap:5px; } .vl-map-toolbar button { padding:6px 8px; } .vl-controls { padding:12px; gap:6px; } .vl-controls button { font-size:.82rem; padding:8px 10px; } .vl-reference { padding:16px; } }
+@media(prefers-reduced-motion:reduce) { .vl-player *, .vl-player *::before, .vl-player *::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
+@media print { .visual-lesson .wrap.with-side { display:block; padding:0; } .vl-player { box-shadow:none; break-inside:avoid; } .vl-stage-nav,.vl-audio,.vl-map-toolbar,.vl-controls { display:none; } .vl-workspace { display:block; } .vl-map-frame { max-height:none; overflow:visible; } .vl-coach { border-left:0; } .vl-reference { border:0; padding:0; } }
+
+.vl-map .vl-edge-label-bg { fill: #fafcff; opacity: .96; }
+.vl-map .vl-edge-label { font-size: 11px; fill: #425773; }
+.vl-map .vl-node-title { font-size: 15px; font-weight: 650; }
+.vl-map .vl-node-subtitle { font-size: 12px; }
+.vl-map .vl-new-label { font-size: 11px; fill: #087f70; font-weight: 700; }
+.visual-show-course .side { display: block; }
+.visual-show-course .wrap.with-side { display: grid; }
+
+/* Keep navigation and narration beside the evolving map. */
+.vl-controls { position: sticky; top: var(--header-h); z-index: 3; align-items: center; }
+.vl-controls .vl-audio { margin: 0; align-items: center; }
+.vl-controls .vl-audio span { font-size: .72rem; color: var(--muted); }
+.vl-change { display:flex; align-items:center; gap:12px; min-height: 30px; }
+.vl-step-count { flex:none; padding:3px 8px; border-radius:6px; background:var(--sunk); font-weight:700; }
+.vl-legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.vl-legend span { padding:3px 8px; border:1px solid #cad5e2; border-radius:20px; font-size:.72rem; color:#27384d; background:#f3f6fa; }
+.vl-legend .kind-ai { background:var(--vl-ai); }
+.vl-legend .kind-software { background:var(--vl-software); }
+.vl-packet > span { display:block; padding:7px 12px; background:var(--sunk); font-size:.76rem; font-weight:700; color:var(--muted); }
+.vl-course-toggle { font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); padding:4px 10px; border-radius:8px; }
+.vl-node.is-new rect { animation:vl-add .45s ease-out; }
+@keyframes vl-add { from { stroke-width:7; } to { stroke-width:3; } }
+@media(min-width:801px) { .vl-coach { max-height: min(750px,calc(100vh - 180px)); overflow:auto; overscroll-behavior:contain; } .vl-visual { position:sticky; top:calc(var(--header-h) + 80px); } .vl-map-frame { max-height:420px; } }
+@media(max-width:600px) { .vl-progress, .vl-controls .vl-audio span { display:none; } .vl-controls { gap:6px; padding:10px; } .vl-controls button { min-height:38px; padding:6px 9px; } .vl-controls .vl-replay { font-size:0; width:38px; } .vl-replay::after { content:'↺'; font-size:18px; } .vl-hero { margin-bottom:12px; } .vl-hero h1 { font-size:1.9rem; } }
+
+/* Creative review: labels remain readable when the diagram is fit to a desktop column. */
+.vl-map .vl-edge-label { font-size:13px; }
+.vl-map .vl-node-subtitle { font-size:13px; }
+.vl-map .vl-new-label { font-size:12px; }
+/* Keep the teaching map as a light drawing sheet in either theme; its semantic fills are fixed. */
+:root[data-theme="dark"] .vl-map-frame { color-scheme:light; border-color:#61738a; }
+:root[data-theme="dark"] .vl-change strong { color:#68d6c4; }
+:root[data-theme="dark"] .vl-inspector { border-left-color:#68d6c4; }
+:root[data-theme="dark"] .vl-feedback { border-left-color:#68d6c4; }
+
+/* Clip rounded corners without creating a scrolling ancestor that defeats sticky playback. */
+.vl-player { overflow:clip; }
+.vl-map.is-compact .vl-edge-label, .vl-map.is-compact .vl-edge-label-bg { display:none; }
+.vl-map.is-compact .vl-node-title { font-size:17px; }
+.vl-connections { margin:10px 0; padding:8px 12px; border:1px solid var(--line); border-radius:8px; font-size:.86rem; }
+.vl-connections summary { cursor:pointer; font-weight:600; }
+.vl-controls { top:calc(var(--header-h) + 8px); box-shadow:0 3px 8px #0001; }
+.vl-title { scroll-margin-top:calc(var(--header-h) + 130px); }
+.vl-player .vl-option.is-wrong, .vl-player .vl-option.is-wrong:hover { background:#fff1eb; border-color:#a44826; color:#78381e; }
+.vl-player .vl-option.is-correct, .vl-player .vl-option.is-correct:hover { background:#e5f5ed; border-color:#16734d; color:#164b34; }
+
+.vl-flow { border:1px solid var(--line); background:var(--sunk); border-radius:10px; padding:10px 12px; margin:10px 0; }
+.vl-flow-caption { font-size:.92rem; font-weight:650; line-height:1.5; margin:0 0 8px; }
+.vl-flow>div { display:flex; gap:8px; flex-wrap:wrap; }
+.vl-flow small { display:block; margin-top:8px; color:var(--muted); line-height:1.4; }
+.vl-map .vl-edge { stroke:#235a95; stroke-width:3; color:#235a95; fill:none; stroke-linejoin:miter; }
+.vl-map .is-sender rect { stroke:#235a95; stroke-width:3; }
+.vl-map .is-receiver rect { stroke:#087f70; stroke-width:4; }
+.vl-connections .vl-connection-link { text-align:left; font-size:.82rem; width:100%; }
+.vl-connections li { margin:6px 0; }
+.vl-context { white-space:pre-wrap; overflow-wrap:anywhere; font-size:.8rem; line-height:1.55; padding:12px; border:1px solid var(--line); border-radius:8px; margin:8px 0 14px; }
+.vl-context-label { font-size:.76rem; color:var(--muted); margin:0; }
+@media(min-width:801px){.vl-map-frame { max-height:620px; }.vl-coach { max-height:calc(100vh - 170px); }}
+@media(max-width:800px){.vl-map-frame { max-height:440px; }}
+
+.vl-context { overflow-wrap:normal; overflow-x:auto; word-break:normal; }
+
+/* Inspection is a visible teaching surface, never a hidden prerequisite. */
+.vl-technical { background:var(--sunk); border:1px solid var(--line); border-top:3px solid #4775a5; border-radius:8px; padding:16px; margin:18px 0; }
+.vl-technical h3 { font-size:1rem; line-height:1.4; margin:6px 0 10px; }
+.vl-technical p { font-size:.9rem; line-height:1.55; }
+.vl-technical pre { font-size:.78rem; white-space:pre-wrap; overflow-wrap:anywhere; padding:12px; background:var(--surface); border:1px solid var(--line); border-radius:6px; margin:8px 0 14px; }
+.vl-technical dl { display:block; font-size:.85rem; margin:12px 0 0; }
+.vl-technical dt { font-weight:700; margin:12px 0 3px; color:var(--muted); }
+.vl-technical dd { margin:0; line-height:1.55; }
+.vl-technical .vl-inspector { margin:0; padding:0; border:0; background:transparent; }
+.vl-inspector-close { position:static; font-size:.8rem!important; margin-top:12px; }
+.vl-stage-evidence { margin:12px 0; border:1px solid var(--line); padding:10px 12px; border-radius:8px; font-size:.86rem; }
+.vl-stage-evidence summary { cursor:pointer; font-weight:600; }
+.vl-map .vl-node-affordance { font-size:10px; font-weight:700; fill:#235a95; text-decoration:underline; }
+.vl-map [role="button"] { cursor:pointer; }
+.vl-map .vl-edge { stroke-width:2.2; }
+.vl-edge-hit { fill:none; stroke:transparent; stroke-width:16; pointer-events:stroke; }
+.vl-inline-label-bg { fill:#fff; stroke:#bdcddd; stroke-width:1; }
+.vl-inline-label { fill:#23496c; font:600 12px var(--font); }
+.vl-map [role="button"]:focus-visible .vl-inline-label-bg { stroke:#5145cd; stroke-width:3; }
+@media(max-width:800px){.vl-technical { margin-top:14px; }.vl-packet { margin:8px 0; }}
+
+.vl-map .vl-node-affordance { font-size:12px; }
+.vl-map.is-compact .vl-node-affordance { font-size:14px; }
+
+.vl-map .vl-node-purpose { fill:#294155; font:400 13px var(--font); }
+.vl-map .vl-why-divider { stroke:#087f70; stroke-width:1; }
+.vl-map .vl-why-label { fill:#065b50; font:700 10px var(--font); }
+.vl-map .vl-why-text { fill:#183e37; font:500 13px var(--font); }
+.vl-map .is-new rect { fill:#eef9f5; }
+.vl-map .dg-inspected rect { stroke:#245c9e!important; stroke-width:4px!important; }
+@media(min-width:801px){.vl-map-frame { max-height:760px; }}
+
+.vl-local-focus { display:none; }
+@media(max-width:600px) { .vl-local-focus { display:block; border-left:4px solid #008677; background:var(--sunk,#f3f8f6); padding:12px; margin:8px 0; font:14px/1.5 system-ui; } .vl-local-focus strong { display:block; font-size:14px; } .vl-local-focus p { margin:5px 0 12px; font-size:14px; } }
+
+.vl-map [role="button"] { user-select:none; -webkit-user-select:none; touch-action:manipulation; }
+
+/* Boundary coaching is authored, local, and unscored. */
+.vl-boundary-study { border-top:1px solid var(--line); margin-top:18px;padding-top:16px; }
+.vl-boundary-study h4 { font:700 18px/1.4 var(--font);margin:12px 0; }
+.vl-boundary-study .vl-boundary-prompt { font-weight:600; }
+.vl-boundary-context { color:var(--muted); }
+.vl-boundary-study details { margin:14px 0; }
+.vl-boundary-study pre { max-width:100%;overflow:auto;white-space:pre;font-size:14px; }
+.vl-boundary-option { display:block;width:100%;text-align:left;margin:10px 0;white-space:normal;overflow-wrap:anywhere; }
+.vl-boundary-option[aria-pressed=true] { border:2px solid var(--architect); }
+.vl-boundary-feedback { border-left:4px solid var(--architect);padding:12px;background:var(--sunk); }
+.vl-flow-decision { margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:16px; }
+.vl-flow-decision p { margin:0 0 10px; }
+.vl-boundary-return { grid-column:1/-1; }
+
+/* AS03 pacing pilot: other application players retain their published interaction. */
+.vl-pilot .vl-trace-tool {margin:8px 0 14px;border:1px solid var(--line);border-radius:8px;background:var(--sunk);}
+.vl-pilot .vl-trace-tool > summary {padding:12px;cursor:pointer;font-weight:600;}
+.vl-pilot .vl-flow {margin:0;border:0;}
+.vl-pilot .vl-map-frame {max-height:560px;}
+.vl-pilot .vl-local-focus {display:block;background:var(--sunk);border-left:3px solid var(--vl-new);padding:10px 14px;margin:0 0 12px;font-size:15px;}
+.vl-pilot .vl-local-focus p {margin:4px 0;}
+.vl-pilot .vl-coach .tb-stage {margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:8px;}
+.vl-pilot .vl-coach .tb-pair {display:block;}
+.vl-pilot .vl-coach .tb-plain {display:none;}
+.vl-pilot .vl-coach .tb-stage h2 {font-size:1rem;}
+.vl-pilot .vl-coach .tb-stage pre {font-size:14px;}
+.vl-pilot .vl-edge {stroke:#4775a5;}
+.vl-pilot .vl-map-toolbar span {font-size:14px;}
+.vl-pilot .vl-flow-decision {display:none;}
+
+.vl-pilot .vl-undelivered .vl-edge {stroke-dasharray:6 4;stroke:#97602b;}
+
+.vl-pilot .vl-coach .tb-stage pre {white-space:pre-wrap;overflow-wrap:anywhere;}
+
+.vl-pilot .vl-fluency {border-left:3px solid var(--vl-new);background:var(--sunk);padding:12px 14px;margin:16px 0;}
+.vl-pilot .vl-fluency h3 {font-size:1rem;margin:0 0 8px;}
+.vl-pilot .vl-fluency p {margin:8px 0;font-size:15px;line-height:1.55;}
+.vl-course-connections {border:1px solid var(--line);border-radius:12px;padding:20px;margin:24px 0;max-width:1100px;}
+.vl-course-connections details {margin-top:16px;padding:12px;background:var(--sunk);border-radius:8px;}
+.vl-course-connections summary {cursor:pointer;font-weight:650;}
+.vl-course-connections h3 {font-size:1rem;margin-bottom:5px;}
+.vl-course-connections li {margin:18px 0;}
+.vl-course-connections li p {margin:5px 0;}
+
+.vl-design-chapter {margin:24px 0;padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--surface);}
+.vl-design-chapter > p {max-width:90ch;}
+.vl-pattern-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0;}
+.vl-pattern-card {border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0;background:var(--sunk);}
+.vl-pattern-card h3 {font-size:1.05rem;margin:0 0 12px;}
+.vl-pattern-card p {font-size:15px;line-height:1.6;margin:10px 0;}
+.vl-pattern-card pre,.vl-design-question pre {font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;}
+.vl-pattern-card summary {cursor:pointer;font-weight:600;}
+.vl-context-patterns h2 {margin:24px 0 12px;font-size:1.1rem;}
+.vl-context-patterns .vl-pattern-card {margin:12px 0;}
+.vl-service-route {list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:0;margin:20px 0;}
+.vl-service-route li {border:1px solid #4775a5;background:#e3efff;color:#24364a;border-radius:8px;padding:14px;font-size:15px;line-height:1.5;position:relative;}
+.vl-service-route li:not(:last-child)::after {content:'→';position:absolute;right:-13px;top:35%;font-weight:700;background:var(--surface);}
+.vl-design-question {padding:18px;border:1px solid var(--line);border-radius:10px;max-width:1000px;margin:20px 0;}
+.vl-design-option {display:block;text-align:left;width:100%;margin:8px 0;padding:12px;font:inherit;line-height:1.5;background:var(--surface);border:1px solid var(--line);border-radius:8px;cursor:pointer;}
+.vl-design-option[aria-pressed=true] {border:2px solid var(--architect);background:var(--architect-soft);}
+.vl-design-option:focus-visible {outline:3px solid var(--architect);outline-offset:2px;}
+.vl-design-feedback {background:var(--sunk);padding:12px;margin-top:14px;}
+@media(max-width:800px){.vl-pattern-grid {grid-template-columns:1fr;}.vl-service-route {grid-template-columns:1fr;}.vl-service-route li:not(:last-child)::after {content:'↓';right:50%;top:auto;bottom:-16px;}.vl-design-chapter {padding:16px;}}
+
+.vl-pilot .vl-plain-recap .tb-plain {display:block;}
+.vl-start-now {display:inline-block;padding:10px 14px;border:1px solid var(--architect);border-radius:8px;font-weight:650;margin:8px 0;}
+.vl-optional-design {margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:8px;}
+.vl-optional-design > summary {font-weight:650;cursor:pointer;}
+
+.vl-map-extent{font-size:14px;font-weight:600;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:6px 0;}

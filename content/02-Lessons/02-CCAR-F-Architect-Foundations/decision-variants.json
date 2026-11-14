@@ -1,0 +1,1481 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-14",
+  "variants": [
+    {
+      "variant_id": "FV-01",
+      "primary_objective": "1.1",
+      "title": "Confirm the effect before retrying",
+      "family_id": "support",
+      "family_title": "Support and regulated actions",
+      "canonical_source": "objectives/objective-1.1.md",
+      "canonical_anchor": "variant-fv-01",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-01",
+      "walkthrough_step": 1,
+      "base_case": "A support agent has one refund tool call pending. Return tool_result with its matching tool_use_id and continue the conversation; keep the business transaction status separately.",
+      "changed_constraint": "The model returns end_turn, but the payment request timed out. Stop the model loop; do not describe the refund as committed.",
+      "failure": "A network timeout leaves operation r-17 unknown. Query r-17 status or reconcile by idempotency key before sending another refund.",
+      "mechanism_artifact": "stop_reason=tool_use; pending_id=t17; operation_id=r17; business_status=unknown",
+      "nearest_alternative": "A blind refund retry can duplicate a committed transaction. Model termination is not proof of settlement.",
+      "conditional_cue": "Stop the loop on its signal; settle the effect from its receipt.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-01",
+      "official_skill_bullets": [
+        "1.1-K1",
+        "1.1-K2",
+        "1.1-K3",
+        "1.1-S1",
+        "1.1-S2",
+        "1.1-S3"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-01-base-v1",
+        "cct-fv-01-retry-v1"
+      ],
+      "sources": [
+        "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-01",
+      "simulation_check_id": "SIM-FV-01",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "D11 includes explicit model loop versus business effect state branches.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-02",
+      "primary_objective": "1.2",
+      "title": "Cover dimensions before synthesizing",
+      "family_id": "multi-agent",
+      "family_title": "Multi-agent research",
+      "canonical_source": "objectives/objective-1.2.md",
+      "canonical_anchor": "variant-fv-02",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-02",
+      "walkthrough_step": 2,
+      "base_case": "A legal team compares three vendors on evidence retention, integration cost and deployment permissions. Assign dimensions, require source-tagged findings and let the coordinator integrate the comparison.",
+      "changed_constraint": "The task becomes one known price lookup from an authorized source. One scoped agent is sufficient; decomposition overhead adds no evidence.",
+      "failure": "Cost returns, but retention is missing. Re-delegate retention with an explicit gap; do not publish a complete comparison.",
+      "mechanism_artifact": "coverage={retention:pending,cost:complete,permissions:complete}; owner=coordinator",
+      "nearest_alternative": "Assigning one vendor to each specialist can hide inconsistent criteria unless the return contracts enforce the same dimensions.",
+      "conditional_cue": "Split by evidence need; count coverage before conclusion.",
+      "diagram_id": "D02",
+      "repair_anchor": "variant-fv-02",
+      "official_skill_bullets": [
+        "1.2-K1",
+        "1.2-K2",
+        "1.2-K3",
+        "1.2-K4",
+        "1.2-S1",
+        "1.2-S2",
+        "1.2-S3",
+        "1.2-S4"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-02-base-v1",
+        "cct-fv-02-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agent-sdk/subagents",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-02",
+      "simulation_check_id": "SIM-FV-02",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-03",
+      "primary_objective": "1.3",
+      "title": "Send an attributable handoff",
+      "family_id": "multi-agent",
+      "family_title": "Multi-agent research",
+      "canonical_source": "objectives/objective-1.3.md",
+      "canonical_anchor": "variant-fv-03",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-03",
+      "walkthrough_step": 3,
+      "base_case": "A marketing specialist checks audience evidence. Send the precise question, permitted data, exclusions, cited upstream findings and output contract, not a reference to another unseen chat.",
+      "changed_constraint": "New consent evidence invalidates the audience assumption. Send the changed evidence and require a revised conclusion.",
+      "failure": "The specialist claims it used a result never included in its brief. Reject that claim and resend the bounded evidence packet.",
+      "mechanism_artifact": "brief={question:segment_fit,scope:consented_records,evidence:[source:CRM42],return:[finding,source,limits]}",
+      "nearest_alternative": "Shared task naming is not shared conversation context; a bare \u201cuse the earlier findings\u201d instruction is insufficient.",
+      "conditional_cue": "Send scope, source and shape; never assume shared memory.",
+      "diagram_id": "D03",
+      "repair_anchor": "variant-fv-03",
+      "official_skill_bullets": [
+        "1.3-K1",
+        "1.3-K2",
+        "1.3-K3",
+        "1.3-K4",
+        "1.3-S1",
+        "1.3-S2",
+        "1.3-S3",
+        "1.3-S4"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-03-base-v1",
+        "cct-fv-03-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agent-sdk/subagents",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-03",
+      "simulation_check_id": "SIM-FV-03",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-04",
+      "primary_objective": "1.4",
+      "title": "Bind approval to this action",
+      "family_id": "support",
+      "family_title": "Support and regulated actions",
+      "canonical_source": "objectives/objective-1.4.md",
+      "canonical_anchor": "variant-fv-04",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-04",
+      "walkthrough_step": 3,
+      "base_case": "A finance support workflow proposes a 40-unit credit for account A and proposal v2. Trusted verification, scope and current approval are checked by the action handler before the effect.",
+      "changed_constraint": "The target changes to account B or amount changes to 80. Invalidate the prior approval and request the newly scoped authorization.",
+      "failure": "Verification expires between draft and execute. Reject the protected action and hand off the complete case with blocked status.",
+      "mechanism_artifact": "gate={account:A,proposal:v2,amount:40,verified:true,approval:current}; requested={account:B,proposal:v2}",
+      "nearest_alternative": "A prompt reminding Claude to verify cannot enforce the backend boundary. Read-only investigation follows its own access policy.",
+      "conditional_cue": "Bind identity, scope and version; changed target means new gate.",
+      "diagram_id": "D01",
+      "repair_anchor": "variant-fv-04",
+      "official_skill_bullets": [
+        "1.4-K1",
+        "1.4-K2",
+        "1.4-K3",
+        "1.4-S1",
+        "1.4-S2",
+        "1.4-S3"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-04-base-v1",
+        "cct-fv-04-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/hooks",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-04",
+      "simulation_check_id": "SIM-FV-04",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-05",
+      "primary_objective": "1.5",
+      "title": "Separate prevention from detection",
+      "family_id": "support",
+      "family_title": "Support and regulated actions",
+      "canonical_source": "objectives/objective-1.5.md",
+      "canonical_anchor": "variant-fv-05",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-05",
+      "walkthrough_step": 7,
+      "base_case": "A fictional service normalizes a successful date result after the tool returns while retaining the original value and parse status.",
+      "changed_constraint": "The requirement becomes preventing an irreversible account mutation. Move the authorization check before execution, in the application or supported pre-tool control.",
+      "failure": "A post-result check finds a bad write already happened. Record the effect and invoke reviewed compensation or escalation; result replacement does not undo it.",
+      "mechanism_artifact": "trace=proposal -> precheck -> execute -> effect -> postcheck; raw_date=03/04; locale=unknown",
+      "nearest_alternative": "A post-action hook can change model-visible output where supported, but cannot retroactively block the completed effect.",
+      "conditional_cue": "Before prevents; after detects; retain raw evidence.",
+      "diagram_id": "D07",
+      "repair_anchor": "variant-fv-05",
+      "official_skill_bullets": [
+        "1.5-K1",
+        "1.5-K2",
+        "1.5-K3",
+        "1.5-S1",
+        "1.5-S2",
+        "1.5-S3"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-05-base-v1",
+        "cct-fv-05-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/hooks",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-05",
+      "simulation_check_id": "SIM-FV-05",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-06",
+      "primary_objective": "1.6",
+      "title": "Choose decomposition by uncertainty",
+      "family_id": "multi-agent",
+      "family_title": "Multi-agent research",
+      "canonical_source": "objectives/objective-1.6.md",
+      "canonical_anchor": "variant-fv-06",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-06",
+      "walkthrough_step": 2,
+      "base_case": "A government intake follows a known sequence: validate, classify, route. Use an explicit workflow with defined outputs and stop states.",
+      "changed_constraint": "The task becomes an open-ended investigation with unknown evidence paths. Use bounded adaptive decomposition and review discovered gaps.",
+      "failure": "After ten iterations the agent has activity but no evidence for one requirement. Stop or re-plan using the coverage ledger, not iteration count alone.",
+      "mechanism_artifact": "steps=[validate,classify,route]; done={valid:true,route_assigned:true}; missing=[]",
+      "nearest_alternative": "Multiple agents do not cure an unclear completion contract. Fixed steps are easier to test when the process is known.",
+      "conditional_cue": "Known path: workflow; unknown path: bounded discovery.",
+      "diagram_id": "D02",
+      "repair_anchor": "variant-fv-06",
+      "official_skill_bullets": [
+        "1.6-K1",
+        "1.6-K2",
+        "1.6-K3",
+        "1.6-S1",
+        "1.6-S2",
+        "1.6-S3"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-06-base-v1",
+        "cct-fv-06-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agent-sdk/subagents",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-06",
+      "simulation_check_id": "SIM-FV-06",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-07",
+      "primary_objective": "1.7",
+      "title": "Resume with fresh permissions",
+      "family_id": "reliability",
+      "family_title": "Context and reliability",
+      "canonical_source": "objectives/objective-1.7.md",
+      "canonical_anchor": "variant-fv-07",
+      "walkthrough_source": "scenario-walkthroughs/WT-04-developer-productivity.md",
+      "walkthrough_anchor": "variant-fv-07",
+      "walkthrough_step": 4,
+      "base_case": "An interrupted legal repository investigation resumes with source pointers and a checkpoint. Re-read changed files and revalidate permissions before continuing.",
+      "changed_constraint": "The learner wants an alternative investigation without replacing the existing trajectory. Fork the session, but revalidate the same mutable assumptions.",
+      "failure": "A stored path was renamed and prior access revoked. Reacquire current evidence; do not trust an old tool result just because the session resumed.",
+      "mechanism_artifact": "checkpoint={commit:abc,paths:[policy.md],permissions_checked:old}; current_commit:def",
+      "nearest_alternative": "Resume and fork preserve or branch state; neither renews authorization nor makes stale evidence current.",
+      "conditional_cue": "Resume the reasoning; refresh the mutable evidence.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-07",
+      "official_skill_bullets": [
+        "1.7-K1",
+        "1.7-K2",
+        "1.7-K3",
+        "1.7-K4",
+        "1.7-S1",
+        "1.7-S2",
+        "1.7-S3",
+        "1.7-S4"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-07-base-v1",
+        "cct-fv-07-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-07",
+      "simulation_check_id": "SIM-FV-07",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-08",
+      "primary_objective": "2.1",
+      "title": "Make capabilities distinguishable",
+      "family_id": "mcp",
+      "family_title": "MCP integration",
+      "canonical_source": "objectives/objective-2.1.md",
+      "canonical_anchor": "variant-fv-08",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-08",
+      "walkthrough_step": 5,
+      "base_case": "A support catalog separates get_balance, draft_credit and execute_credit. Descriptions specify read versus proposal versus mutation, required scope and return status.",
+      "changed_constraint": "Two tools both say \u201cmanage account.\u201d Rename them and tighten schemas/descriptions so capability boundaries are clear.",
+      "failure": "Claude picks execute_credit for a lookup. Reject the call at the handler, then repair the catalog rather than merely lengthening the prompt.",
+      "mechanism_artifact": "get_balance(account_id)->amount; draft_credit(account_id,amount)->proposal; execute_credit(proposal_id,approval)->receipt",
+      "nearest_alternative": "A universal tool can conceal prohibited effects and confuse selection; splitting should follow real capability boundaries, not arbitrary tool-count ceilings.",
+      "conditional_cue": "Name the effect; describe the boundary; validate the arguments.",
+      "diagram_id": "D01",
+      "repair_anchor": "variant-fv-08",
+      "official_skill_bullets": [
+        "2.1-K1",
+        "2.1-K2",
+        "2.1-K3",
+        "2.1-K4",
+        "2.1-S1",
+        "2.1-S2",
+        "2.1-S3",
+        "2.1-S4"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-08-base-v1",
+        "cct-fv-08-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-08",
+      "simulation_check_id": "SIM-FV-08",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-09",
+      "primary_objective": "2.2",
+      "title": "Route the actual error category",
+      "family_id": "mcp",
+      "family_title": "MCP integration",
+      "canonical_source": "objectives/objective-2.2.md",
+      "canonical_anchor": "variant-fv-09",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-09",
+      "walkthrough_step": 5,
+      "base_case": "An MCP lookup succeeds with records=[]; report no matching record and clarify filters rather than retrying a supposed outage.",
+      "changed_constraint": "A timeout is transient and read-only. Retry with a bounded policy. A permission refusal instead requires changed authorization or escalation.",
+      "failure": "A write times out after submission. Query operation status before retrying; a transient category alone does not establish safe re-execution.",
+      "mechanism_artifact": "application_result={status:success,records:[]}; failure={category:permission,retryable:false}",
+      "nearest_alternative": "MCP protocol errors and the application payload are different layers; error strings alone do not define a safe recovery policy.",
+      "conditional_cue": "Empty is evidence; timeout is uncertainty; denied needs authority.",
+      "diagram_id": "D04",
+      "repair_anchor": "variant-fv-09",
+      "official_skill_bullets": [
+        "2.2-K1",
+        "2.2-K2",
+        "2.2-K3",
+        "2.2-K4",
+        "2.2-S1",
+        "2.2-S2",
+        "2.2-S3",
+        "2.2-S4"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-09-base-v1",
+        "cct-fv-09-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-09",
+      "simulation_check_id": "SIM-FV-09",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-10",
+      "primary_objective": "2.3",
+      "title": "Scope tools to the assigned role",
+      "family_id": "mcp",
+      "family_title": "MCP integration",
+      "canonical_source": "objectives/objective-2.3.md",
+      "canonical_anchor": "variant-fv-10",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-10",
+      "walkthrough_step": 3,
+      "base_case": "Research specialists get only their relevant read tools. A separate authorized executor handles accepted mutations; the coordinator tracks ownership.",
+      "changed_constraint": "One bounded read-only lookup fits a single agent with two relevant tools. Do not add agents merely to satisfy a tool-count slogan.",
+      "failure": "Forced tool choice invokes the named tool with invalid semantics. Authorization and application validation still reject it.",
+      "mechanism_artifact": "tools={research:[search,read],executor:[approved_write]}; proposal_owner=coordinator",
+      "nearest_alternative": "tool_choice governs invocation; it does not prove business permission, factual truth or a sound result.",
+      "conditional_cue": "Choose the call; separately prove permission and meaning.",
+      "diagram_id": "D02",
+      "repair_anchor": "variant-fv-10",
+      "official_skill_bullets": [
+        "2.3-K1",
+        "2.3-K2",
+        "2.3-K3",
+        "2.3-K4",
+        "2.3-S1",
+        "2.3-S2",
+        "2.3-S3",
+        "2.3-S4",
+        "2.3-S5"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-10-base-v1",
+        "cct-fv-10-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-10",
+      "simulation_check_id": "SIM-FV-10",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-11",
+      "primary_objective": "2.4",
+      "title": "Separate connection from inclusion",
+      "family_id": "enterprise",
+      "family_title": "Enterprise cross-system data",
+      "canonical_source": "objectives/objective-2.4.md",
+      "canonical_anchor": "variant-fv-11",
+      "walkthrough_source": "scenario-walkthroughs/WT-04-developer-productivity.md",
+      "walkthrough_anchor": "variant-fv-11",
+      "walkthrough_step": 5,
+      "base_case": "A shared marketing repository uses safe project MCP configuration with secrets provided outside committed files. Inspect the actual host\u2019s tool/resource discovery behavior.",
+      "changed_constraint": "A developer tests a personal server. Keep its configuration in the appropriate personal/local scope instead of committing credentials to the team project.",
+      "failure": "The server connects but the expected resource is not in model context. Check listing, host support and explicit inclusion; do not claim automatic availability.",
+      "mechanism_artifact": "project_config={server:crm,secret:environment}; trace=[connected,listed,included]",
+      "nearest_alternative": "Connectivity is not proof that every resource was discovered or supplied. Resource behavior depends on host support and invocation.",
+      "conditional_cue": "Connect, discover, include: prove each stage.",
+      "diagram_id": "D05",
+      "repair_anchor": "variant-fv-11",
+      "official_skill_bullets": [
+        "2.4-K1",
+        "2.4-K2",
+        "2.4-K3",
+        "2.4-K4",
+        "2.4-S1",
+        "2.4-S2",
+        "2.4-S3",
+        "2.4-S4",
+        "2.4-S5"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-11-base-v1",
+        "cct-fv-11-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/mcp",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-11",
+      "simulation_check_id": "SIM-FV-11",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-12",
+      "primary_objective": "2.5",
+      "title": "Search before making a scoped edit",
+      "family_id": "mcp",
+      "family_title": "MCP integration",
+      "canonical_source": "objectives/objective-2.5.md",
+      "canonical_anchor": "variant-fv-12",
+      "walkthrough_source": "scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "walkthrough_anchor": "variant-fv-12",
+      "walkthrough_step": 4,
+      "base_case": "An unfamiliar education repository needs a one-function fix. Glob relevant paths, Grep the symbol, Read callers and tests, then Edit the precise existing region.",
+      "changed_constraint": "A genuinely new standalone artifact has no existing file to patch. Write the new file after verifying its placement and contract.",
+      "failure": "A broad replacement changes unrelated handlers. Restore the unintended changes and inspect the focused diff and targeted behavior.",
+      "mechanism_artifact": "evidence=[paths,symbol_hits,caller_read,test_read]; change={file:handler.py,region:retry_condition}",
+      "nearest_alternative": "Dumping or rewriting the repository risks losing context and unrelated code. Tool selection follows the task, not a fixed ritual for every edit.",
+      "conditional_cue": "Locate, inspect, change, prove; create only when new.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-12",
+      "official_skill_bullets": [
+        "2.5-K1",
+        "2.5-K2",
+        "2.5-K3",
+        "2.5-K4",
+        "2.5-S1",
+        "2.5-S2",
+        "2.5-S3",
+        "2.5-S4",
+        "2.5-S5"
+      ],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-12-base-v1",
+        "cct-fv-12-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-12",
+      "simulation_check_id": "SIM-FV-12",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-13",
+      "primary_objective": "3.1",
+      "title": "Put instructions at their real scope",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.1.md",
+      "canonical_anchor": "variant-fv-13",
+      "walkthrough_source": "scenario-walkthroughs/WT-04-developer-productivity.md",
+      "walkthrough_anchor": "variant-fv-13",
+      "walkthrough_step": 1,
+      "base_case": "A shared repository convention belongs in project instructions; personal preferences stay in personal configuration. Trace which nested instructions apply to the current path.",
+      "changed_constraint": "A package-specific convention is added. Put it at the package scope rather than copying it into every project instruction file.",
+      "failure": "Two applicable files disagree on test behavior. Surface and resolve the conflict using the runtime\u2019s documented loading/scope rules.",
+      "mechanism_artifact": "instructions={shared:CLAUDE.md,package:services/CLAUDE.md,personal:user}; target=services/api.py",
+      "nearest_alternative": "More copies increase drift. Instruction files guide model behavior; they do not replace enforced permission checks.",
+      "conditional_cue": "Shared at project; specific at path; resolve conflicts.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-13",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-13-base-v1",
+        "cct-fv-13-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-13",
+      "simulation_check_id": "SIM-FV-13",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "D11 includes instruction hierarchy scope and conflict inspection.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-14",
+      "primary_objective": "3.2",
+      "title": "Give reusable skills a contract",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.2.md",
+      "canonical_anchor": "variant-fv-14",
+      "walkthrough_source": "scenario-walkthroughs/WT-04-developer-productivity.md",
+      "walkthrough_anchor": "variant-fv-14",
+      "walkthrough_step": 7,
+      "base_case": "A repeated reviewed-release brief becomes a scoped skill with required commit, evidence paths and output expectations. Check discovery and allowed dependencies.",
+      "changed_constraint": "A single ad hoc explanation is needed. Use a brief rather than creating a reusable asset without repeated need.",
+      "failure": "The skill is invoked without the reviewed commit. Stop with a missing-input message instead of inventing a build identity.",
+      "mechanism_artifact": "skill_input={reviewed_commit,tests,evidence}; output={changes,limits,next_action}",
+      "nearest_alternative": "A reusable skill is not permission to publish. Invocation and downstream authorization remain separate.",
+      "conditional_cue": "Reuse the workflow; require its inputs; preserve permission.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-14",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-14-base-v1",
+        "cct-fv-14-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-14",
+      "simulation_check_id": "SIM-FV-14",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "D11 includes reusable invocation input and permission checks.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-15",
+      "primary_objective": "3.3",
+      "title": "Load rules for the affected paths",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.3.md",
+      "canonical_anchor": "variant-fv-15",
+      "walkthrough_source": "scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "walkthrough_anchor": "variant-fv-15",
+      "walkthrough_step": 1,
+      "base_case": "Backend and test conventions are scoped to their respective path patterns. Predict applicable rules for a change touching both areas and verify actual loading.",
+      "changed_constraint": "A security policy genuinely applies across the repository. Move that requirement to an appropriate broader scope.",
+      "failure": "A test file moved outside the expected glob, so its rule was not loaded. Correct the scope and check a matching and nonmatching path.",
+      "mechanism_artifact": "paths=[services/api.py,tests/test_api.py]; rules={backend:services/**,testing:tests/**}",
+      "nearest_alternative": "Duplicating every rule into the main prompt can hide mismatches and flood context; path scope must match actual files.",
+      "conditional_cue": "Match the path; verify the rule; broaden only when shared.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-15",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-15-base-v1",
+        "cct-fv-15-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-15",
+      "simulation_check_id": "SIM-FV-15",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "D11 includes path-match and actual-loading checks.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-16",
+      "primary_objective": "3.4",
+      "title": "Plan when uncertainty crosses boundaries",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.4.md",
+      "canonical_anchor": "variant-fv-16",
+      "walkthrough_source": "scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "walkthrough_anchor": "variant-fv-16",
+      "walkthrough_step": 3,
+      "base_case": "A cross-service authentication change has unclear callers and migration impact. Inspect evidence, produce a plan and review dependencies before editing.",
+      "changed_constraint": "The task becomes a precise typo in an isolated documented comment. Direct execution and a focused check are proportionate.",
+      "failure": "An apparently small edit reveals a shared API dependency. Pause to revise the plan rather than continuing under the old assumption.",
+      "mechanism_artifact": "plan={affected:[client,server,tests],unknown:[migration],acceptance:[old_client_works]}",
+      "nearest_alternative": "Always planning adds overhead to bounded simple work; always executing can miss uncertain dependencies.",
+      "conditional_cue": "Plan the unknown boundaries; execute the bounded known edit.",
+      "diagram_id": "D02",
+      "repair_anchor": "variant-fv-16",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-16-base-v1",
+        "cct-fv-16-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-16",
+      "simulation_check_id": "SIM-FV-16",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-17",
+      "primary_objective": "3.5",
+      "title": "Change the hypothesis after repeated failure",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.5.md",
+      "canonical_anchor": "variant-fv-17",
+      "walkthrough_source": "scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "walkthrough_anchor": "variant-fv-17",
+      "walkthrough_step": 6,
+      "base_case": "A date parser fails on one fixture. Supply actual input, expected result, failing assertion and relevant code; make a targeted change and re-run the fixture plus nearby cases.",
+      "changed_constraint": "Feedback says only \u201cmake it better.\u201d First obtain a reproducible criterion rather than guessing a redesign.",
+      "failure": "The same failure survives two identical retries. Investigate a new cause, such as locale interpretation or preprocessing, instead of repeating the same prompt.",
+      "mechanism_artifact": "feedback={input:03/04,locale:en_GB,expected:2026-04-03,actual:2026-03-04,check:date_locale}",
+      "nearest_alternative": "More iterations do not imply learning. Narrow evidence and hypothesis changes matter more than request length.",
+      "conditional_cue": "Example, expectation, evidence; failed hypothesis must change.",
+      "diagram_id": "D12",
+      "repair_anchor": "variant-fv-17",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-17-base-v1",
+        "cct-fv-17-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-17",
+      "simulation_check_id": "SIM-FV-17",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-18",
+      "primary_objective": "3.6",
+      "title": "Run CI with observable failure",
+      "family_id": "code-ci",
+      "family_title": "Claude Code and CI",
+      "canonical_source": "objectives/objective-3.6.md",
+      "canonical_anchor": "variant-fv-18",
+      "walkthrough_source": "scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+      "walkthrough_anchor": "variant-fv-18",
+      "walkthrough_step": 2,
+      "base_case": "A scheduled repository-dependent Code review runs headless with available credentials, scoped permissions, project context, exit handling and retained artifacts. Parse its CLI envelope before validating the findings payload.",
+      "changed_constraint": "The work becomes independent eligible Messages requests with no local iterative state and a tolerant deadline. Consider batch; an urgent dependent tool loop remains a different runtime.",
+      "failure": "Missing credentials or malformed findings must produce an observable failure or bounded repair, never an empty \u201cpassed\u201d report.",
+      "mechanism_artifact": "ci_packet={commit,permissions,environment,prompt,exit_code,envelope,findings}; accept=all_required_checks_pass",
+      "nearest_alternative": "Nonblocking alone does not justify Messages Batch. JSON CLI output alone does not prove the findings schema or source accuracy.",
+      "conditional_cue": "Runtime by dependency; gate by validated evidence.",
+      "diagram_id": "D08",
+      "repair_anchor": "variant-fv-18",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-18-base-v1",
+        "cct-fv-18-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-18",
+      "simulation_check_id": "SIM-FV-18",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-19",
+      "primary_objective": "4.1",
+      "title": "Define a finding with evidence criteria",
+      "family_id": "extraction",
+      "family_title": "Structured extraction",
+      "canonical_source": "objectives/objective-4.1.md",
+      "canonical_anchor": "variant-fv-19",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-19",
+      "walkthrough_step": 7,
+      "base_case": "A legal clause review flags only an explicit unilateral termination right without the fictional required notice. Provide threshold, exclusions and source locator expectations.",
+      "changed_constraint": "The policy wording is ambiguous about mutual termination. Ask for clarification or label the case uncertain instead of treating every termination mention as a violation.",
+      "failure": "False positives cluster around historical examples. Add the exclusion and test borderline cases against actual text.",
+      "mechanism_artifact": "finding_rule={trigger:unilateral_right,required:notice,evidence:clause_locator,exclude:historical_example}",
+      "nearest_alternative": "\u201cBe careful\u201d does not operationalize the criterion. A longer prompt without measurable boundaries can preserve the same errors.",
+      "conditional_cue": "Name trigger, exclusion and evidence before flagging.",
+      "diagram_id": "D10",
+      "repair_anchor": "variant-fv-19",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-19-base-v1",
+        "cct-fv-19-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-19",
+      "simulation_check_id": "SIM-FV-19",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "D10 includes finding criterion, exclusion and source evidence before field validation.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-20",
+      "primary_objective": "4.2",
+      "title": "Teach the edges with representative examples",
+      "family_id": "extraction",
+      "family_title": "Structured extraction",
+      "canonical_source": "objectives/objective-4.2.md",
+      "canonical_anchor": "variant-fv-20",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-20",
+      "walkthrough_step": 5,
+      "base_case": "A finance extraction prompt includes ordinary invoices, absent tax IDs and source conflicts, with explanations of allowed nulls and unresolved values.",
+      "changed_constraint": "A new document population uses credit notes and negative amounts. Revise the example distribution and validate on unseen cases.",
+      "failure": "All examples are clean positive invoices; the model invents rare fields. Add realistic counterexamples rather than simply adding more clean examples.",
+      "mechanism_artifact": "examples=[ordinary,missing_field,conflict,credit_note]; holdout=unseen_edge_cases",
+      "nearest_alternative": "Few-shot consistency is not a factual guarantee. Examples should represent the relevant error modes, not leak held-out answers.",
+      "conditional_cue": "Examples teach boundaries; holdouts test transfer.",
+      "diagram_id": "D10",
+      "repair_anchor": "variant-fv-20",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-20-base-v1",
+        "cct-fv-20-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-20",
+      "simulation_check_id": "SIM-FV-20",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-21",
+      "primary_objective": "4.3",
+      "title": "Validate shape and truth separately",
+      "family_id": "extraction",
+      "family_title": "Structured extraction",
+      "canonical_source": "objectives/objective-4.3.md",
+      "canonical_anchor": "variant-fv-21",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-21",
+      "walkthrough_step": 4,
+      "base_case": "Use supported strict schema enforcement for an extraction tool, then independently validate source evidence and arithmetic. Tool selection, structural conformance and semantic validity are separate checks.",
+      "changed_constraint": "A field truly absent from the source may be null only when the declared contract allows it. A wrong non-null amount does not call for a nullable-only repair.",
+      "failure": "The JSON is well typed but says 900 where the source says 90. Reject the semantic mismatch and return the exact failed check.",
+      "mechanism_artifact": "candidate={amount:900,currency:USD}; source={amount:90}; shape=pass; source_match=fail",
+      "nearest_alternative": "Forcing a tool call does not prove schema adherence unless the applicable mechanism enforces it; even conforming output can be wrong.",
+      "conditional_cue": "Call, shape, truth: three proofs, not one.",
+      "diagram_id": "D09",
+      "repair_anchor": "variant-fv-21",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-21-base-v1",
+        "cct-fv-21-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-21",
+      "simulation_check_id": "SIM-FV-21",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-22",
+      "primary_objective": "4.4",
+      "title": "Repair the failed check within a budget",
+      "family_id": "extraction",
+      "family_title": "Structured extraction",
+      "canonical_source": "objectives/objective-4.4.md",
+      "canonical_anchor": "variant-fv-22",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-22",
+      "walkthrough_step": 6,
+      "base_case": "An invoice candidate\u2019s subtotal plus tax differs from total. Return the precise values, source locators and failed arithmetic check for a bounded correction.",
+      "changed_constraint": "The source itself contains contradictory totals. Preserve both values and route review instead of asking Claude to manufacture reconciliation.",
+      "failure": "The retry budget is exhausted. Escalate with source, previous outputs, failed checks and unresolved discrepancy.",
+      "mechanism_artifact": "failed_check={subtotal:80,tax:8,total:100,expected:88}; retry_budget=2; status=unresolved",
+      "nearest_alternative": "Retrying the whole document without diagnostic feedback can repeat the error or mutate correct fields.",
+      "conditional_cue": "Repair the named failure; stop when evidence cannot resolve it.",
+      "diagram_id": "D10",
+      "repair_anchor": "variant-fv-22",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-22-base-v1",
+        "cct-fv-22-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-22",
+      "simulation_check_id": "SIM-FV-22",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-23",
+      "primary_objective": "4.5",
+      "title": "Choose batch by dependencies and deadline",
+      "family_id": "extraction",
+      "family_title": "Structured extraction",
+      "canonical_source": "objectives/objective-4.5.md",
+      "canonical_anchor": "variant-fv-23",
+      "walkthrough_source": "scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+      "walkthrough_anchor": "variant-fv-23",
+      "walkthrough_step": 1,
+      "base_case": "Independent eligible document requests tolerate delayed completion and have per-item recovery. Messages Batch is a candidate; retain custom IDs and item states.",
+      "changed_constraint": "A result is needed before the next dependent local tool step or a tight user deadline. Use the appropriate immediate/interactive runtime instead.",
+      "failure": "Some items expire or fail. Recover those items with their recorded inputs; do not treat a submission as completed work.",
+      "mechanism_artifact": "items={i1:succeeded,i2:expired,i3:errored}; recovery=[i2,i3]; deadline_policy=explicit",
+      "nearest_alternative": "A 24-hour processing window is not a guaranteed finish time. Batch does not substitute for a local Code agent loop with filesystem state.",
+      "conditional_cue": "Independent plus tolerant plus recoverable; otherwise another lane.",
+      "diagram_id": "D06",
+      "repair_anchor": "variant-fv-23",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-23-base-v1",
+        "cct-fv-23-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-23",
+      "simulation_check_id": "SIM-FV-23",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-24",
+      "primary_objective": "4.6",
+      "title": "Give the critic independent evidence",
+      "family_id": "reliability",
+      "family_title": "Context and reliability",
+      "canonical_source": "objectives/objective-4.6.md",
+      "canonical_anchor": "variant-fv-24",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-24",
+      "walkthrough_step": 8,
+      "base_case": "A producer proposes extracted claims; a separate critic checks source locators, omissions and contradictions under explicit criteria. Resolve disagreement by evidence.",
+      "changed_constraint": "A simple low-risk formatting task has deterministic validation. Extra model passes may not justify their cost.",
+      "failure": "Both instances share a misleading summary and agree. Give the critic original sources or a different check; agreement alone is not validation.",
+      "mechanism_artifact": "producer={claims,sources}; critic={criteria,original_sources,failed_checks}; dispute={claim,source,verdict}",
+      "nearest_alternative": "Repeated identical prompts can amplify the same blind spot. Independence needs evidence and criteria, not just another instance.",
+      "conditional_cue": "Separate the reviewer\u2019s evidence; resolve with the source.",
+      "diagram_id": "D12",
+      "repair_anchor": "variant-fv-24",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-24-base-v1",
+        "cct-fv-24-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-24",
+      "simulation_check_id": "SIM-FV-24",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-25",
+      "primary_objective": "5.1",
+      "title": "Compact the decision state, not just prose",
+      "family_id": "reliability",
+      "family_title": "Context and reliability",
+      "canonical_source": "objectives/objective-5.1.md",
+      "canonical_anchor": "variant-fv-25",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-25",
+      "walkthrough_step": 5,
+      "base_case": "A long marketing investigation stores the current question, accepted constraints, unresolved issues, source pointers and next bounded action before compaction.",
+      "changed_constraint": "Source consent or policy changes. Refresh the relevant evidence and revise the stored decision state.",
+      "failure": "A summary drops the \u201cdo not contact\u201d exception. Restore it from the source before proceeding; never infer that omitted means revoked.",
+      "mechanism_artifact": "state={question,constraints:[no_contact],sources:[CRM42],unresolved:[consent_age],next:verify}",
+      "nearest_alternative": "Keeping every transcript token can overwhelm context. A compact record must retain decisive exceptions and reacquisition paths.",
+      "conditional_cue": "Keep decisions and exceptions; reacquire the detail.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-25",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-25-base-v1",
+        "cct-fv-25-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-25",
+      "simulation_check_id": "SIM-FV-25",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-26",
+      "primary_objective": "5.2",
+      "title": "Honor explicit escalation with context",
+      "family_id": "support",
+      "family_title": "Support and regulated actions",
+      "canonical_source": "objectives/objective-5.2.md",
+      "canonical_anchor": "variant-fv-26",
+      "walkthrough_source": "scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "walkthrough_anchor": "variant-fv-26",
+      "walkthrough_step": 2,
+      "base_case": "A customer explicitly asks for a human. Route promptly with verified identity status, issues, evidence, attempted and blocked actions, and next owner.",
+      "changed_constraint": "The customer says \u201cthis is frustrating\u201d without requesting a person. Clarify or continue according to the fictional support policy; do not invent an escalation mandate.",
+      "failure": "The handoff says credit issued, but only a proposal exists. Correct status and include the operation ledger before transferring.",
+      "mechanism_artifact": "handoff={identity_status,issues,confirmed,proposed,blocked,reason,next_owner}",
+      "nearest_alternative": "A transcript dump does not ensure an actionable handoff; a vague complaint is not identical to an explicit human request.",
+      "conditional_cue": "Hear the trigger; hand over facts, status and next action.",
+      "diagram_id": "D01",
+      "repair_anchor": "variant-fv-26",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-26-base-v1",
+        "cct-fv-26-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/hooks",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-26",
+      "simulation_check_id": "SIM-FV-26",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-27",
+      "primary_objective": "5.3",
+      "title": "Propagate partial success without hiding failure",
+      "family_id": "multi-agent",
+      "family_title": "Multi-agent research",
+      "canonical_source": "objectives/objective-5.3.md",
+      "canonical_anchor": "variant-fv-27",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-27",
+      "walkthrough_step": 4,
+      "base_case": "Specialists return findings and structured failures to the coordinator. Preserve successful evidence and decide which missing dimensions block the final claim.",
+      "changed_constraint": "The unavailable source is explicitly optional. Publish a bounded partial answer with the omission and limitations visible.",
+      "failure": "A mandatory permissions source fails. Target that recovery or stop the affected conclusion; do not replace its facts with another specialist\u2019s guess.",
+      "mechanism_artifact": "result={dimension:permissions,status:failed,reason:access_denied,retryable:false}; aggregate=partial",
+      "nearest_alternative": "Discarding all successes wastes evidence; silently dropping a failed mandatory dimension fabricates completeness.",
+      "conditional_cue": "Keep the successes; name the gap; block dependent claims.",
+      "diagram_id": "D03",
+      "repair_anchor": "variant-fv-27",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-27-base-v1",
+        "cct-fv-27-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://platform.claude.com/docs/en/agent-sdk/subagents",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-27",
+      "simulation_check_id": "SIM-FV-27",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-28",
+      "primary_objective": "5.4",
+      "title": "Build a minimal code evidence ledger",
+      "family_id": "reliability",
+      "family_title": "Context and reliability",
+      "canonical_source": "objectives/objective-5.4.md",
+      "canonical_anchor": "variant-fv-28",
+      "walkthrough_source": "scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "walkthrough_anchor": "variant-fv-28",
+      "walkthrough_step": 4,
+      "base_case": "A large codebase bug starts with targeted symbol search, relevant caller reads and a file/dependency ledger. Expand only the evidence path needed for the defect.",
+      "changed_constraint": "The failure crosses the API boundary. Add the adjacent client/server dependencies and contract tests rather than preserving an artificially narrow scope.",
+      "failure": "Compaction loses a function\u2019s exception condition. Re-read the actual file at the current commit before editing.",
+      "mechanism_artifact": "ledger={commit,files:[handler,caller],symbols:[retry],unresolved:[ownership],next:test_contract}",
+      "nearest_alternative": "A guessed summary cannot replace current code evidence. Reading the whole repository also makes the decisive detail harder to retain.",
+      "conditional_cue": "Map the path; read the dependency; refresh before edit.",
+      "diagram_id": "D11",
+      "repair_anchor": "variant-fv-28",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-28-base-v1",
+        "cct-fv-28-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/memory",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-28",
+      "simulation_check_id": "SIM-FV-28",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-29",
+      "primary_objective": "5.5",
+      "title": "Test risk slices and review capacity",
+      "family_id": "reliability",
+      "family_title": "Context and reliability",
+      "canonical_source": "objectives/objective-5.5.md",
+      "canonical_anchor": "variant-fv-29",
+      "walkthrough_source": "scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "walkthrough_anchor": "variant-fv-29",
+      "walkthrough_step": 8,
+      "base_case": "A finance extractor has high overall accuracy but weaker rare-currency performance. Evaluate severity-weighted slices on independent holdout and calibrate review thresholds with actual human capacity.",
+      "changed_constraint": "A review queue exceeds available capacity. Apply a declared overflow policy or reduce scope; do not silently accept low-confidence items.",
+      "failure": "Distribution drift breaks calibration. Recalibrate on suitable data and evaluate on a separate holdout; do not tune against the final test set.",
+      "mechanism_artifact": "metrics={overall:0.98,rare_currency:0.70}; capacity=20; queued=35; overflow=hold",
+      "nearest_alternative": "The average can hide dangerous categories; confidence scores alone are not calibrated correctness probabilities.",
+      "conditional_cue": "Average, slice, severity, capacity: check all four.",
+      "diagram_id": "D12",
+      "repair_anchor": "variant-fv-29",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-29-base-v1",
+        "cct-fv-29-retry-v1"
+      ],
+      "sources": [
+        "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests"
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-29",
+      "simulation_check_id": "SIM-FV-29",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    },
+    {
+      "variant_id": "FV-30",
+      "primary_objective": "5.6",
+      "title": "Keep sources through a join",
+      "family_id": "enterprise",
+      "family_title": "Enterprise cross-system data",
+      "canonical_source": "objectives/objective-5.6.md",
+      "canonical_anchor": "variant-fv-30",
+      "walkthrough_source": "scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "walkthrough_anchor": "variant-fv-30",
+      "walkthrough_step": 6,
+      "base_case": "Separate finance and CRM interfaces return revenue and customer records with timestamps and field-level provenance. Join only under a declared identifier rule.",
+      "changed_constraint": "The host offers supported federation. It may simplify retrieval, but still retain origin, time and conflict checks.",
+      "failure": "CRM says customer active while finance reports suspended at a different date. Preserve both assertions and their scope; ask for policy or current authoritative evidence.",
+      "mechanism_artifact": "row={customer_id:C7,revenue:{value:120,source:FIN9,as_of:d1},status:{value:active,source:CRM4,as_of:d2}}",
+      "nearest_alternative": "A joined table can erase provenance and make mismatched-age sources look consistent. Federation does not establish truth by itself.",
+      "conditional_cue": "Join identifiers; retain origins; expose disagreement.",
+      "diagram_id": "D05",
+      "repair_anchor": "variant-fv-30",
+      "official_skill_bullets": [],
+      "skill_mapping_status": "task-level mapping; individual bullet diagnostic coverage reviewed separately",
+      "question_ids": [
+        "cct-fv-30-base-v1",
+        "cct-fv-30-retry-v1"
+      ],
+      "sources": [
+        {
+          "url": "https://code.claude.com/docs/en/mcp",
+          "review_date": "2026-10-14",
+          "scope": "runtime reference; synthetic workflow policy is project-authored"
+        }
+      ],
+      "review_status": "independently-reviewed task-level teaching",
+      "industry_context": "Synthetic Finance, Legal, Marketing, Education or Government transfer; no regulatory assurance",
+      "difficulty": "applied decision and changed constraint",
+      "artifact_id": "ART-FV-30",
+      "simulation_check_id": "SIM-FV-30",
+      "assessment_phases": [
+        "base",
+        "retry"
+      ],
+      "assessment_disposition": "Two graded questions plus a free-response simulation rubric; no separate third graded item claimed.",
+      "diagram_scope_note": "Use the named condition/recovery branches as an illustrative procedure; runtime references and packet assumptions define its limits.",
+      "reviewer": "accuracy_review",
+      "review_scope": "Technical packet and task alignment; exact skill-bullet diagnostic coverage remains separate."
+    }
+  ]
+}

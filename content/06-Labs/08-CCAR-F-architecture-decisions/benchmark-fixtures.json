@@ -1,0 +1,380 @@
+{
+  "provenance": "Original synthetic local exercises; no external questions or customer records",
+  "records": {
+    "1.1": {
+      "responses": [
+        {
+          "text": "I will check",
+          "stop_reason": "tool_use",
+          "id": "t17"
+        },
+        {
+          "tool_result_for": "t17",
+          "status": "timeout"
+        },
+        {
+          "stop_reason": "max_tokens"
+        }
+      ],
+      "task_complete": false
+    },
+    "1.2": {
+      "required": [
+        "security",
+        "cost",
+        "migration"
+      ],
+      "returned": [
+        "security",
+        "cost"
+      ],
+      "deadline_minutes": 15
+    },
+    "1.3": {
+      "specialist": "synthesizer",
+      "prior_context": null,
+      "finding": {
+        "claim": "unit cost 8",
+        "locator": null
+      },
+      "allowed_tools": [
+        "merge"
+      ]
+    },
+    "1.4": {
+      "approval": {
+        "account": "A17",
+        "amount_minor": 12000,
+        "expires": "10:00"
+      },
+      "proposed": {
+        "account": "A18",
+        "amount_minor": 12000,
+        "time": "10:01"
+      }
+    },
+    "1.5": {
+      "operation": "issue_credit",
+      "before_hook": "deny",
+      "after_hook": "flag",
+      "service_call_count_before": 0
+    },
+    "1.6": {
+      "jobA": {
+        "steps": [
+          "parse",
+          "validate",
+          "publish"
+        ],
+        "stable": true
+      },
+      "jobB": {
+        "incident_cause": "unknown",
+        "next_step": "depends on logs"
+      }
+    },
+    "1.7": {
+      "checkpoint": {
+        "file_digest": "aa",
+        "approval": "old"
+      },
+      "current": {
+        "file_digest": "bb",
+        "approval": "expired"
+      },
+      "unchanged_tasks": [
+        "parse schema"
+      ]
+    },
+    "2.1": {
+      "tools": {
+        "read_status": "lookup only",
+        "issue_credit": "mutates; authorization required"
+      },
+      "requests": [
+        "Where is order O17?",
+        "Was O17 delivered?",
+        "Show tracking for O17",
+        "Which carrier has O17?",
+        "Read the status of O17",
+        "Has O17 shipped?",
+        "Apply the approved credit for case C17",
+        "Issue the authorized credit on O17",
+        "Execute the approved refund for C18",
+        "Read order O18"
+      ],
+      "oracle": [
+        "read_status",
+        "read_status",
+        "read_status",
+        "read_status",
+        "read_status",
+        "read_status",
+        "issue_credit",
+        "issue_credit",
+        "issue_credit",
+        "read_status"
+      ],
+      "method": "count chosen tool equal to oracle / 10; retain unparseable/abstain separately; repeat only in an isolated new session"
+    },
+    "2.2": {
+      "results": [
+        {
+          "jsonrpc_error": "unknown tool"
+        },
+        {
+          "isError": true,
+          "cause": "access_denied"
+        },
+        {
+          "isError": true,
+          "cause": "timeout"
+        },
+        {
+          "isError": false,
+          "matches": []
+        }
+      ]
+    },
+    "2.3": {
+      "role": "synthesis",
+      "needs": [
+        "merge",
+        "verify source date"
+      ],
+      "unneeded": [
+        "issue_credit",
+        "delete_record",
+        "unrestricted_search"
+      ]
+    },
+    "2.4": {
+      "scope": "project",
+      "config_file": ".mcp.json",
+      "token_variable": "DOCS_TOKEN",
+      "token_provisioned": false,
+      "server_connected": false,
+      "resource_read": false
+    },
+    "2.5": {
+      "entry": "src/main.ts",
+      "export_chain": [
+        "src/index.ts",
+        "src/api.ts"
+      ],
+      "target": "legacyPrice",
+      "repeated_anchor": "return amount;",
+      "test_path": "src/__tests__/price.test.ts"
+    },
+    "3.1": {
+      "home_rules": [
+        "team style"
+      ],
+      "repo_rules": [
+        "use snake_case",
+        "use camelCase"
+      ],
+      "new_teammate_has_home_rules": false
+    },
+    "3.2": {
+      "workflow": "release_check",
+      "argument": "candidate_id",
+      "universal_rule": "do not expose secrets",
+      "isolated_output": true,
+      "required_capability": "Read"
+    },
+    "3.3": {
+      "rule_path": "**/*.test.ts",
+      "match": "packages/a/x.test.ts",
+      "nonmatch": "packages/b/main.ts",
+      "sessions": [
+        "fresh-A",
+        "fresh-B"
+      ],
+      "no_cross_session_history": true
+    },
+    "3.4": {
+      "taskA": "fix known misspelled identifier in one file",
+      "taskB": "migrate persistence adapter; rollback policy undecided"
+    },
+    "3.5": {
+      "examples": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": "",
+          "output": null
+        }
+      ],
+      "unseen_input": "0",
+      "unresolved": "string zero policy requires clarification"
+    },
+    "3.6": {
+      "review_digest": "A1",
+      "candidate_digest": "B2",
+      "policy": "no carry-forward; any candidate change requires fresh acceptance evidence",
+      "stdout": "structured review envelope"
+    },
+    "4.1": {
+      "cases": [
+        {
+          "kind": "reachable null dereference",
+          "evidence": "unguarded call"
+        },
+        {
+          "kind": "style difference",
+          "evidence": "local convention accepts it"
+        },
+        {
+          "kind": "comment mismatch",
+          "evidence": "no execution trace supplied"
+        }
+      ]
+    },
+    "4.2": {
+      "source_examples": [
+        "amount in table",
+        "amount in prose"
+      ],
+      "unseen": "same field split across two paragraphs",
+      "format": "fixed record; missing evidence nullable"
+    },
+    "4.3": {
+      "schema_valid": true,
+      "output": {
+        "amount_minor": 12000,
+        "reference": null
+      },
+      "source_supported_amount_minor": 1200,
+      "source_reference_absent": true
+    },
+    "4.4": {
+      "line_items": [
+        20,
+        30
+      ],
+      "stated_total": 60,
+      "retry_budget": 1,
+      "source_has_missing_item": false
+    },
+    "4.5": {
+      "input_ids": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "output_order": [
+        "D3",
+        "D1",
+        "D2"
+      ],
+      "outcomes": {
+        "D1": "success",
+        "D2": "permission_denied",
+        "D3": "timeout"
+      },
+      "retry_budget": 1,
+      "deadline": "next-day review"
+    },
+    "4.6": {
+      "fixture_A": "module A emits amount_minor=12000",
+      "fixture_B": "module B reads amount_minor as dollars",
+      "local_checks": "both accept integers",
+      "integration_check": "expected USD120; actual USD12000",
+      "review_context": "fresh artifact packet, not author rationale"
+    },
+    "5.1": {
+      "facts": {
+        "amount": "83.47",
+        "deadline": "2026-10-30",
+        "case_id": "C17",
+        "source_state": "disputed"
+      },
+      "summary": "customer wants refund soon"
+    },
+    "5.2": {
+      "messages": [
+        "I am upset; where is my order?",
+        "Please transfer me to a human",
+        "Two customer accounts share this name",
+        "Policy does not cover this exception"
+      ]
+    },
+    "5.3": {
+      "specialists": {
+        "A": {
+          "success": "supported finding"
+        },
+        "B": {
+          "success": "supported finding"
+        },
+        "C": {
+          "error": "access_denied"
+        },
+        "D": {
+          "error": "timeout"
+        }
+      },
+      "remaining_retry_budget": 1
+    },
+    "5.4": {
+      "manifest": {
+        "finished": [
+          "schema review"
+        ],
+        "pending": [
+          "call-site review"
+        ],
+        "source_digest": "A1"
+      },
+      "current_digest": "A2"
+    },
+    "5.5": {
+      "training_bins": [
+        {
+          "segment": "typed_amount",
+          "correct": 98,
+          "n": 100
+        },
+        {
+          "segment": "handwritten_amount",
+          "correct": 6,
+          "n": 10
+        }
+      ],
+      "separate_holdout": [
+        {
+          "segment": "typed_amount",
+          "correct": 19,
+          "n": 20
+        },
+        {
+          "segment": "handwritten_amount",
+          "correct": 2,
+          "n": 5
+        }
+      ],
+      "review_capacity": 8,
+      "operation": "calculate per-segment accuracy; propose a policy; do not fit and assess on the same sample"
+    },
+    "5.6": {
+      "sources": [
+        {
+          "id": "S1",
+          "date": "2026-09-01",
+          "population": "all accounts",
+          "value": 20
+        },
+        {
+          "id": "S2",
+          "date": "2026-10-01",
+          "population": "premium accounts",
+          "value": 30
+        }
+      ],
+      "claim": "value increased from 20 to 30 across all accounts"
+    }
+  }
+}

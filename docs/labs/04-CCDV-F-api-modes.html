@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-16">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Lab 04 — Same task, three API modes: real time, cached and batch (CCDV-F, CCAR-P)">
+<title>Lab 04 — Same task, three API modes: real time, cached and batch (CCDV-F, CCAR-P) · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../assets/site.css?v=21c6a0ac682a">
+<script defer src="../assets/site.js?v=dac542edefb2"></script>
+</head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../exams/ccao-f.html">CCAO-F</a><a href="../exams/ccar-f.html">CCAR-F</a><a href="../exams/ccdv-f.html">CCDV-F</a><a href="../exams/ccar-p.html">CCAR-P</a><a href="../lessons/index.html">Lessons</a><a href="../simulations/index.html">Simulations</a><a href="../labs/index.html">Labs</a><a href="../insights.html">Insights</a><a href="../resources.html">Resources</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true"> / </span><a href="../labs/index.html">Labs</a><span aria-hidden="true"> / </span><span><a class="xref" href="../labs/04-CCDV-F-api-modes.html">Lab 04: Same task, three API modes: real time, cached and batch</a></span></nav>
+<div class="learning-layout"><article class="prose"><h1 id="lab-04--same-task-three-api-modes-real-time-cached-and-batch-ccdv-f-ccar-p">Lab 04 — Same task, three API modes: real time, cached and batch (CCDV-F, CCAR-P)</h1>
+<p><strong>Supports:</strong> CCDV-F <a class="xref" href="../lessons/ccdv-f/L01-applications-and-integration.html">Lesson 1: Applications and Integration</a>, <a class="xref" href="../lessons/ccdv-f/L02-model-selection-and-optimization.html">Lesson 2: Model Selection and Optimization</a> · CCAR-P <a class="xref" href="../lessons/ccar-p/L06-models-prompting-and-context.html">Lesson 6: Models, Prompting and Context</a> · <strong>Time:</strong> 2 hours · <strong>Needs:</strong> Python 3.10+, <code>pip install anthropic</code>, an API key (see the laptop note in <a href="02-CCAR-F-coordinator-extraction.html">lab 02</a>).</p>
+<p><strong>Done when:</strong> you have a small table of latency, input tokens, cached tokens and relative cost for the same 20 requests run three ways, and you can say in one sentence when each mode wins.</p>
+<h2 id="setup">Setup</h2>
+<ul><li>Choose one task, such as "classify this support email into 1 of 6 categories and give a reason".</li><li>Write a long, <strong>fixed</strong> system prompt of several thousand tokens: the policy, category definitions and examples. Keep it the same on every request.</li><li>Make 20 short emails as the varying input.</li></ul>
+<h2 id="run-a--real-time-no-caching">Run A — real time, no caching</h2>
+<ul><li>Call <code>client.messages.create(...)</code> 20 times.</li><li>Record wall-clock time and <code>response.usage.input_tokens</code> / <code>output_tokens</code>.</li><li>Try <code>stream=True</code> once and note the time to the first token versus the full response.</li></ul>
+<h2 id="run-b--real-time-with-prompt-caching">Run B — real time with prompt caching</h2>
+<ul><li>Put the fixed system prompt <strong>first</strong>, with <code>cache_control: {&quot;type&quot;: &quot;ephemeral&quot;}</code> on its last block.</li><li>Rerun the 20 requests. From the second request on, check <code>usage.cache_read_input_tokens</code> against <code>cache_creation_input_tokens</code>.</li><li>The cache matches only an <strong>identical prefix</strong>. Change one word in the system prompt and watch the reads drop to zero.</li><li>Minimum cacheable length and cache lifetime vary. Check the <a class="ext" href="https://docs.claude.com/en/docs/build-with-claude/prompt-caching" rel="noopener">prompt caching docs</a>.</li></ul>
+<h2 id="run-c--message-batches-api">Run C — Message Batches API</h2>
+<ul><li>Submit all 20 requests as one batch with <code>client.messages.batches.create(requests=[...])</code>, giving each one a <code>custom_id</code>.</li><li>Poll until the batch ends, then read the results by <code>custom_id</code>. Results can come back in any order.</li><li>Note that batch trades speed for cost: results arrive asynchronously, within a window of up to 24 hours. See the <a class="ext" href="https://docs.claude.com/en/docs/build-with-claude/batch-processing" rel="noopener">batch processing docs</a>.</li></ul>
+<h2 id="compare">Compare</h2>
+<div class="tbl"><table><thead><tr><th>Mode</th><th>Time to results</th><th>Input tokens billed at full price</th><th>Best when</th></tr></thead><tbody><tr><td>A real time</td><td></td><td></td><td>a user is waiting, and every prompt is different</td></tr><tr><td>B cached</td><td></td><td></td><td>a large prompt prefix repeats across calls</td></tr><tr><td>C batch</td><td></td><td></td><td>nobody is waiting, and cost matters most</td></tr></tbody></table></div>
+<p>Use the current <a class="ext" href="https://docs.claude.com/en/docs/about-claude/pricing" rel="noopener">pricing page</a> to turn tokens into cost. Don't use remembered numbers.</p>
+<h2 id="bonus">Bonus</h2>
+<ul><li>Add simple retry with backoff for <code>429</code> (rate limited) and overloaded errors.</li><li>Rerun A on a smaller and a larger model tier, and compare quality on 5 emails.</li></ul>
+<p>Sources: CCDV-F official exam guide v1.0, Domain 2 "Claude API Mechanics" and Domain 5 "Cost and Token Management"; the docs linked above; <a class="ext" href="https://docs.claude.com/en/docs/build-with-claude/streaming" rel="noopener">streaming</a>; <a class="ext" href="https://docs.claude.com/en/api/rate-limits" rel="noopener">rate limits</a>.</p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>-</p><nav class="prevnext" aria-label="Previous and next"><a class="prev" href="../labs/03-CCAR-F-mcp-server-claude-code.html">← <small>Lab 03</small> An MCP server, wired into Claude Code with a guardrail hook</a><a class="next" href="../labs/05-CCAR-P-eval-harness.html"><small>Lab 05</small> An evaluation harness with a regression check →</a></nav><aside class="usedin" aria-label="Linked from other pages"><details><summary class="usedin-h"><b>Linked from</b> 9 other pages</summary><p class="usedin-exams">Exams: <a href="../exams/ccdv-f.html">CCDV-F</a> · <a href="../exams/ccar-p.html">CCAR-P</a></p><ul><li><a href="../exams/ccar-p.html">Claude Certified Architect – Professional</a></li><li><a href="../exams/ccdv-f.html">Claude Certified Developer – Foundations</a></li><li><a href="../lessons/ccar-p/L06-models-prompting-and-context.html">CCAR-P Lesson 6 — Models, Prompting and Context (13%, about 8 questions)</a></li><li><a href="../lessons/ccdv-f/L00-orientation.html">CCDV-F Lesson 0 — Orientation: how the Developer exam thinks</a></li><li><a href="../lessons/ccdv-f/L01-applications-and-integration.html">CCDV-F Lesson 1 — Applications and Integration (33.1%, about 18 questions)</a></li><li><a href="../lessons/ccdv-f/L02-model-selection-and-optimization.html">CCDV-F Lesson 2 — Model Selection and Optimization (16.8%, about 9 questions)</a></li><li><a href="../resources.html">Resources</a></li><li><a href="../labs/index.html">Labs</a></li><li><a href="../lessons/ccdv-f/index.html">CCDV-F lessons (Claude Certified Developer: Foundations): Ready</a></li></ul></details></aside></article><aside class="learning-outline" aria-label="Page sections"><nav class="toc-nav" aria-label="Sections on this page"><details class="toc"><summary>Sections on this page (7)</summary><ol><li><a href="#setup">Setup</a></li><li><a href="#run-a--real-time-no-caching">Run A — real time, no caching</a></li><li><a href="#run-b--real-time-with-prompt-caching">Run B — real time with prompt caching</a></li><li><a href="#run-c--message-batches-api">Run C — Message Batches API</a></li><li><a href="#compare">Compare</a></li><li><a href="#bonus">Bonus</a></li><li><a href="#what-i-learned">What I learned</a></li></ol></details></nav></aside></div>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flabs%2F04-CCDV-F-api-modes.html" rel="noopener">Report a problem on this page</a> · <a href="../contribute.html">Contribute</a> · <a href="../whats-new.html">What's new</a> · <a href="../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

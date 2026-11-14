@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Frequently asked questions
+    url: https://git.soma.salesforce.com/pages/akumthekar/claude-certifications-training/faq.html
+    about: Quick answers about the site, studying, practice questions and how to help.
+  - name: What's new
+    url: https://git.soma.salesforce.com/pages/akumthekar/claude-certifications-training/whats-new.html
+    about: Every release and what changed.

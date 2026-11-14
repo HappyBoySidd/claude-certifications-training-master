@@ -1,0 +1,2946 @@
+{
+  "schema_version": 1,
+  "policy": "Reviewed diagram-level learning cues for all actual CCAR-F source Mermaid blocks in the 97-route inventory, including retained AS reference charts. Related practice never asserts diagram-node execution or imports another example fixture as current evidence. Existing application-canvas coaching remains separate.",
+  "entries": [
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/00-foundations.md",
+      "route": "lessons/ccar-f/architecture-studio/00-foundations.html",
+      "index": 0,
+      "title": "Follow the same request from the screen to the receipt",
+      "objective_ids": [
+        "1.1",
+        "1.4",
+        "2.1",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-01",
+        "FV-04",
+        "FV-08",
+        "FV-21"
+      ],
+      "technical_prompt": "Across the screen, Messages client, action validator and payment service, which component owns proposal, permission, execution and receipt evidence?",
+      "plain_prompt": "Follow who asks, who checks, who acts and who proves the result.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Follow the same request from the screen to the receipt boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/01-application-and-agent-loop.md",
+      "route": "lessons/ccar-f/concept-course/01-application-and-agent-loop.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The model knows the question but not the order",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "A delivery-status question requires order evidence absent from the model context. Which authorized lookup, tool_result correlation and evidence inclusion make the explanation grounded?",
+      "plain_prompt": "The model knows the question but not the order. How does it get the actual order facts?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - The model knows the question but not the order boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/01-application-and-agent-loop.md",
+      "route": "lessons/ccar-f/concept-course/01-application-and-agent-loop.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A proposed call is mistaken for work completed",
+      "objective_ids": [
+        "1.1",
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-01",
+        "FV-04"
+      ],
+      "technical_prompt": "Claude proposes a client-tool invocation. Which runtime execution, matching tool_result and independent business receipt distinguish a request from completed work?",
+      "plain_prompt": "Claude asking for an action is not the action happening. What proves each step?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - A proposed call is mistaken for work completed boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/01-application-and-agent-loop.md",
+      "route": "lessons/ccar-f/concept-course/01-application-and-agent-loop.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 The investigation never stops",
+      "objective_ids": [
+        "2.2",
+        "5.2"
+      ],
+      "variant_ids": [
+        "FV-09",
+        "FV-26"
+      ],
+      "technical_prompt": "Repeated tool timeouts consume the investigation budget. Which bounded progress policy and evidence-rich handoff stop unproductive execution without claiming resolution?",
+      "plain_prompt": "When repeated attempts do not help, stop safely and hand over what you know.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - The investigation never stops boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/02-tools-and-mcp.md",
+      "route": "lessons/ccar-f/concept-course/02-tools-and-mcp.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The names do not tell the model what is safe",
+      "objective_ids": [
+        "2.1",
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-08",
+        "FV-04"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - The names do not tell the model what is safe boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/02-tools-and-mcp.md",
+      "route": "lessons/ccar-f/concept-course/02-tools-and-mcp.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A selection setting is used as an authorization rule",
+      "objective_ids": [
+        "2.1",
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-08",
+        "FV-04"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - A selection setting is used as an authorization rule boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/02-tools-and-mcp.md",
+      "route": "lessons/ccar-f/concept-course/02-tools-and-mcp.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A reusable connection becomes a confusing boundary",
+      "objective_ids": [
+        "2.4",
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-11",
+        "FV-09"
+      ],
+      "technical_prompt": "An MCP client requests a capability backed by a business API. Which protocol result and service-enforced access checks determine what evidence the client can actually supply?",
+      "plain_prompt": "Track the request through the connector to the real service, then check what came back.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - A reusable connection becomes a confusing boundary boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/03-code-workflows-and-ci.md",
+      "route": "lessons/ccar-f/concept-course/03-code-workflows-and-ci.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The right-looking edit misses a caller",
+      "objective_ids": [
+        "2.5",
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-12",
+        "FV-16"
+      ],
+      "technical_prompt": "A bounded repository defect affects existing callers. Which Glob, Grep, Read and targeted edit sequence obtains sufficient evidence without loading the entire repository?",
+      "plain_prompt": "How do you find the right files and their callers before changing a small part?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - The right-looking edit misses a caller boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/03-code-workflows-and-ci.md",
+      "route": "lessons/ccar-f/concept-course/03-code-workflows-and-ci.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 Team guidance is confused with a procedure",
+      "objective_ids": [
+        "3.1",
+        "3.3",
+        "3.2"
+      ],
+      "variant_ids": [
+        "FV-13",
+        "FV-15",
+        "FV-14"
+      ],
+      "technical_prompt": "Shared and nested repository guidance apply to different file scopes. Which applicable instruction sources and conflict rules govern the target file?",
+      "plain_prompt": "Which instructions really apply to the file you are changing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - Team guidance is confused with a procedure boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/03-code-workflows-and-ci.md",
+      "route": "lessons/ccar-f/concept-course/03-code-workflows-and-ci.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 The CI reviewer is both noisy and unattended",
+      "objective_ids": [
+        "3.6",
+        "4.1"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-19"
+      ],
+      "technical_prompt": "An unattended review produces noisy candidate findings. Which headless run, output validation and evidence criteria are required before a finding can gate a change?",
+      "plain_prompt": "Make sure the job runs, its result can be read, and each reported problem has evidence.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - The CI reviewer is both noisy and unattended boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/04-prompts-extraction-and-batch.md",
+      "route": "lessons/ccar-f/concept-course/04-prompts-extraction-and-batch.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 A successful agent handoff has the wrong shape",
+      "objective_ids": [
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-21"
+      ],
+      "technical_prompt": "A candidate satisfies its JSON schema but disagrees with the original source. Which structural and semantic checks must remain separate at the receiving boundary?",
+      "plain_prompt": "The record has the right shape. Does it also say the right thing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - A successful agent handoff has the wrong shape boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/04-prompts-extraction-and-batch.md",
+      "route": "lessons/ccar-f/concept-course/04-prompts-extraction-and-batch.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 The valid date came from the wrong label",
+      "objective_ids": [
+        "4.2",
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-20",
+        "FV-22"
+      ],
+      "technical_prompt": "An extracted date is schema-valid but belongs to the wrong source label. Which contrasting examples and precise correction feedback preserve the intended field meaning?",
+      "plain_prompt": "A valid date can still be the wrong date. Which label did it come from?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - The valid date came from the wrong label boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/04-prompts-extraction-and-batch.md",
+      "route": "lessons/ccar-f/concept-course/04-prompts-extraction-and-batch.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 Ten thousand documents produce mixed outcomes",
+      "objective_ids": [
+        "4.5",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-23",
+        "FV-21"
+      ],
+      "technical_prompt": "A large document run mixes preparation failures, API failures and semantically invalid outputs. Which per-file identity, status and recovery boundaries preserve accepted work?",
+      "plain_prompt": "Keep a separate outcome for each file, and fix only the files that need the right kind of help.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - Ten thousand documents produce mixed outcomes boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/05-context-reliability-and-evaluation.md",
+      "route": "lessons/ccar-f/concept-course/05-context-reliability-and-evaluation.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 A short summary loses the uncertain payment",
+      "objective_ids": [
+        "5.1",
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-25",
+        "FV-07"
+      ],
+      "technical_prompt": "A compacted case loses an unresolved payment and source age. Which durable facts, current policy and authoritative status checks must precede resumed action?",
+      "plain_prompt": "Before resuming, recover what is unknown and check whether the old facts still apply.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - A short summary loses the uncertain payment boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/05-context-reliability-and-evaluation.md",
+      "route": "lessons/ccar-f/concept-course/05-context-reliability-and-evaluation.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A partial team result becomes an overconfident conclusion",
+      "objective_ids": [
+        "5.3",
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-27",
+        "FV-30"
+      ],
+      "technical_prompt": "One required specialist or tool fails while others return useful evidence. Which partial-result and dependency policy preserves successes without claiming complete coverage?",
+      "plain_prompt": "Keep the useful work, name the missing part, and avoid conclusions that depend on it.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - A partial team result becomes an overconfident conclusion boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/05-context-reliability-and-evaluation.md",
+      "route": "lessons/ccar-f/concept-course/05-context-reliability-and-evaluation.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A green average hides the risky failures",
+      "objective_ids": [
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-29"
+      ],
+      "technical_prompt": "Aggregate accuracy is acceptable but a high-risk slice fails and review demand exceeds capacity. Which held-out evaluation, confidence calibration and overflow policy govern release?",
+      "plain_prompt": "Which risky mistakes are hidden by the average, and what happens when reviewers cannot handle the queue?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - A green average hides the risky failures boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The demo answers the wrong financial question",
+      "objective_ids": [
+        "4.3",
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-30"
+      ],
+      "technical_prompt": "The account API returns multiple balance types and timestamps. Which question-to-field and provenance checks support an available-spending answer rather than a different balance?",
+      "plain_prompt": "The number is real, but is it the number the customer asked for?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 1 - The demo answers the wrong financial question boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 The larger architecture loses a specialist\u2019s evidence",
+      "objective_ids": [
+        "1.2",
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-02",
+        "FV-27"
+      ],
+      "technical_prompt": "A coordinator has evidence for some comparison dimensions but not a required dimension. Which delegation and synthesis policy preserves explicit coverage?",
+      "plain_prompt": "Which part of the question is still unanswered, and who should investigate it?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 2 - The larger architecture loses a specialist\u2019s evidence boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A working system becomes expensive and hard to trust",
+      "objective_ids": [
+        "5.1",
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-25",
+        "FV-29"
+      ],
+      "technical_prompt": "A bank assistant becomes expensive after duplicate context grows. Which request traces, minimized context change and risk-sliced regression evidence justify a cost optimization?",
+      "plain_prompt": "Find what is making the bill grow, change that part, and check that useful answers stay reliable.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Layer 3 - A working system becomes expensive and hard to trust boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 3,
+      "title": "Reveal 1 \u2014 Follow one authorized request",
+      "objective_ids": [
+        "1.1",
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-01",
+        "FV-04"
+      ],
+      "technical_prompt": "A bank UI sends a scoped question through the backend and client-tool runtime. Which component establishes identity, selects a read tool, executes it and returns matching evidence?",
+      "plain_prompt": "Who checks the caller, who asks for the lookup and who brings the real account facts back?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Reveal 1 - Follow one authorized request boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 4,
+      "title": "Reveal 2 \u2014 Add integration and delegation only when needed",
+      "objective_ids": [
+        "1.2",
+        "1.3",
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-02",
+        "FV-03",
+        "FV-11"
+      ],
+      "technical_prompt": "A coordinator delegates account and transaction investigations through scoped MCP integrations. Which self-contained briefs, access controls and evidence returns justify the added components?",
+      "plain_prompt": "Why add helpers and connectors, what does each receive, and what evidence comes back?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Reveal 2 - Add integration and delegation only when needed boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/concept-course/06-putting-it-together.md",
+      "route": "lessons/ccar-f/concept-course/06-putting-it-together.html",
+      "index": 5,
+      "title": "Reveal 3 \u2014 Surround the request path with production controls",
+      "objective_ids": [
+        "5.5",
+        "5.1"
+      ],
+      "variant_ids": [
+        "FV-29",
+        "FV-25"
+      ],
+      "technical_prompt": "The request path is surrounded by state, telemetry, evaluation and usage controls. Which observable evidence and bounded responsibilities make those controls useful without granting them action authority?",
+      "plain_prompt": "What do the surrounding controls help you remember, measure and test\u2014and what can they not approve?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Reveal 3 - Surround the request path with production controls boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 0,
+      "title": "D01 \u2014 Authorize the exact action",
+      "objective_ids": [
+        "1.4",
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-04",
+        "FV-01"
+      ],
+      "technical_prompt": "A proposed mutation names a resource different from the approved scope. Which trusted identity, ownership and exact-action checks must run before execution?",
+      "plain_prompt": "Does this permission really cover this customer, this action and this amount?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D01 - Authorize the exact action boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 1,
+      "title": "D02 \u2014 Choose the agent structure",
+      "objective_ids": [
+        "1.6",
+        "1.2"
+      ],
+      "variant_ids": [
+        "FV-06",
+        "FV-02"
+      ],
+      "technical_prompt": "The next step may depend on newly discovered evidence. Which decomposition and stopping policy distinguishes a deterministic workflow from adaptive orchestration?",
+      "plain_prompt": "Are the steps known already, or will you choose the next step after learning something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D02 - Choose the agent structure boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 2,
+      "title": "D03 \u2014 Pass evidence and propagate partial results",
+      "objective_ids": [
+        "1.3",
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-03",
+        "FV-27"
+      ],
+      "technical_prompt": "An isolated specialist must investigate a bounded claim. Which task context, source locators, constraints and return contract must be supplied explicitly?",
+      "plain_prompt": "What must you tell a helper so it can do this job without guessing what you discussed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D03 - Pass evidence and propagate partial results boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 3,
+      "title": "D04 \u2014 Recover according to the result",
+      "objective_ids": [
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-09"
+      ],
+      "technical_prompt": "A tool returns no records, malformed input, denied access or a transient failure. Which result classification and bounded recovery preserve the actual outcome?",
+      "plain_prompt": "Was nothing found, did the request fail, or do we still not know what happened?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D04 - Recover according to the result boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 4,
+      "title": "D05 \u2014 Preserve lineage across systems",
+      "objective_ids": [
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-30"
+      ],
+      "technical_prompt": "Sources disagree after a cross-system join. Which declared identifier, per-field provenance, timestamps and authority rule support a defensible synthesis?",
+      "plain_prompt": "Which record came from where, and which source decides when they disagree?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D05 - Preserve lineage across systems boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 5,
+      "title": "D06 \u2014 Select the runtime by dependency",
+      "objective_ids": [
+        "3.6",
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-23"
+      ],
+      "technical_prompt": "A job may require local iterative tools, human interaction or only independent model requests. Which runtime and deadline constraints distinguish interactive Code, headless Code and Message Batches?",
+      "plain_prompt": "Does this job need a live tool loop, a person, or just independent requests that can wait?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D06 - Select the runtime by dependency boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 6,
+      "title": "D07 \u2014 Understand side-effect timing",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D07 - Understand side-effect timing boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 7,
+      "title": "D08 \u2014 Validate a CI report before gating",
+      "objective_ids": [
+        "3.6",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-21"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D08 - Validate a CI report before gating boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 8,
+      "title": "D09 \u2014 Keep invocation, shape and truth separate",
+      "objective_ids": [
+        "2.1",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-08",
+        "FV-21"
+      ],
+      "technical_prompt": "A task requires a particular tool and a valid record. Which responsibilities belong separately to tool_choice, supported schema constraints and source/business validation?",
+      "plain_prompt": "Choosing a tool, getting the right shape and getting the truth are three different jobs.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D09 - Keep invocation, shape and truth separate boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 9,
+      "title": "D10 \u2014 Handle missing values and wrong values differently",
+      "objective_ids": [
+        "4.4",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-22",
+        "FV-21"
+      ],
+      "technical_prompt": "A validator identifies a source-backed mismatch. Which precise feedback, bounded correction and unresolved-state policy avoid endless retries or invented repairs?",
+      "plain_prompt": "Tell the model exactly what failed, limit retries, and keep unclear evidence unresolved.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D10 - Handle missing values and wrong values differently boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 10,
+      "title": "D10 criterion lane \u2014 FV-19",
+      "objective_ids": [
+        "4.1"
+      ],
+      "variant_ids": [
+        "FV-19"
+      ],
+      "technical_prompt": "A review prompt produces plausible but noisy findings. Which explicit violation criteria, exclusions and source evidence distinguish an actionable finding from unsupported inference?",
+      "plain_prompt": "What exactly counts as a problem, and where is the evidence?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-19 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 11,
+      "title": "D11 \u2014 Recover from verified checkpoints",
+      "objective_ids": [
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-07"
+      ],
+      "technical_prompt": "A saved session contains useful history and possibly stale tool results. Which evidence and permission must be refreshed before resuming or branching the work?",
+      "plain_prompt": "What from the old session can you reuse, and what could have changed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D11 - Recover from verified checkpoints boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 12,
+      "title": "D11 companion lanes \u2014 protocol and instruction state",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "A response ends with end_turn while a previously submitted mutation has no confirmed receipt. Which model-loop and business-outcome states must remain distinct before recovery?",
+      "plain_prompt": "When Claude stops talking, how do you check whether the real action actually finished?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D11 companion lanes - protocol and instruction state boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 13,
+      "title": "D11 companion lanes \u2014 protocol and instruction state",
+      "objective_ids": [
+        "3.1",
+        "3.3"
+      ],
+      "variant_ids": [
+        "FV-13",
+        "FV-15"
+      ],
+      "technical_prompt": "Shared and nested repository guidance apply to different file scopes. Which applicable instruction sources and conflict rules govern the target file?",
+      "plain_prompt": "Which instructions really apply to the file you are changing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D11 companion lanes - protocol and instruction state boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 14,
+      "title": "D11 companion lanes \u2014 protocol and instruction state",
+      "objective_ids": [
+        "3.2"
+      ],
+      "variant_ids": [
+        "FV-14"
+      ],
+      "technical_prompt": "A reusable skill is invoked without required evidence inputs. Which input contract and authorization checks prevent an unsupported completion claim?",
+      "plain_prompt": "Does the reusable procedure have what it needs, and permission to do the job?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D11 companion lanes - protocol and instruction state boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/decision-atlas.md",
+      "route": "lessons/ccar-f/decision-atlas.html",
+      "index": 15,
+      "title": "D12 \u2014 Evaluate important slices and resolve review disagreements",
+      "objective_ids": [
+        "5.5",
+        "4.6"
+      ],
+      "variant_ids": [
+        "FV-29",
+        "FV-24"
+      ],
+      "technical_prompt": "Aggregate accuracy is acceptable but a high-risk slice fails and review demand exceeds capacity. Which held-out evaluation, confidence calibration and overflow policy govern release?",
+      "plain_prompt": "Which risky mistakes are hidden by the average, and what happens when reviewers cannot handle the queue?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the D12 - Evaluate important slices and resolve review disagreements boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 0,
+      "title": "Flow 1: How does an extraction pipeline decide what a person checks?",
+      "objective_ids": [
+        "4.3",
+        "4.4",
+        "5.5",
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22",
+        "FV-29",
+        "FV-23"
+      ],
+      "technical_prompt": "An extraction pipeline checks latency, schema, totals and risky fields. Which failed boundary determines routing, bounded correction or human review?",
+      "plain_prompt": "Find which check failed before deciding whether to wait, retry, correct or ask a person.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 1: How does an extraction pipeline decide what a person checks? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 1,
+      "title": "Flow 2: How does the agent loop know when to stop?",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "The Messages API returns tool_use, end_turn or another stop_reason. Which continuation preserves tool-call results while distinguishing a completed model turn from application acceptance?",
+      "plain_prompt": "Read the response status, return the requested tool evidence and handle other stopping reasons separately.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 2: How does the agent loop know when to stop? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 2,
+      "title": "Flow 3: How should an MCP tool report each kind of result?",
+      "objective_ids": [
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-09"
+      ],
+      "technical_prompt": "An MCP tools/call returns a protocol failure, tool execution error or successful empty result. Which error layer and result representation preserve the difference?",
+      "plain_prompt": "Was the request invalid, did the tool fail, or did it work and find nothing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 3: How should an MCP tool report each kind of result? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 3,
+      "title": "Flow 4: How does a support agent enforce rules and hand off?",
+      "objective_ids": [
+        "5.2",
+        "1.4",
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-26",
+        "FV-04",
+        "FV-05"
+      ],
+      "technical_prompt": "A customer explicitly requests a human or a policy gap prevents autonomous resolution. Which handoff preserves identity, attempted actions, evidence and actual operation state?",
+      "plain_prompt": "When should you hand over, and what does the next person need to know?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 4: How does a support agent enforce rules and hand off? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 4,
+      "title": "Flow 5: How does a hook block a tool call?",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 5: How does a hook block a tool call? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 5,
+      "title": "Flow 6: Resume, fork or start fresh when you come back?",
+      "objective_ids": [
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-07"
+      ],
+      "technical_prompt": "A saved session contains useful history and possibly stale tool results. Which evidence and permission must be refreshed before resuming or branching the work?",
+      "plain_prompt": "What from the old session can you reuse, and what could have changed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 6: Resume, fork or start fresh when you come back? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 6,
+      "title": "Flow 7: How does Claude Code review a pull request in CI?",
+      "objective_ids": [
+        "3.6",
+        "4.6"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-24"
+      ],
+      "technical_prompt": "A CI review reruns after a new commit. Which headless process, prior findings, independent evidence review and findings-payload validation preserve useful incremental output?",
+      "plain_prompt": "Run without prompts, check the actual findings and avoid repeating already reported issues.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 7: How does Claude Code review a pull request in CI? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/code-level-flows.md",
+      "route": "lessons/ccar-f/deep-practice/code-level-flows.html",
+      "index": 7,
+      "title": "Flow 8: How do you explore a big codebase without flooding context?",
+      "objective_ids": [
+        "2.5",
+        "5.4",
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-12",
+        "FV-28",
+        "FV-16"
+      ],
+      "technical_prompt": "A bounded repository defect affects existing callers. Which Glob, Grep, Read and targeted edit sequence obtains sufficient evidence without loading the entire repository?",
+      "plain_prompt": "How do you find the right files and their callers before changing a small part?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Flow 8: How do you explore a big codebase without flooding context? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 0,
+      "title": "What does each shape mean?",
+      "objective_ids": [],
+      "variant_ids": [],
+      "technical_prompt": "Diagram notation legend: distinguish decision nodes, action nodes, recommended paths and cautions.",
+      "plain_prompt": "Use the shape key to read the other drawings.",
+      "scope": "context-only",
+      "reason": "This is a visual notation legend, not an application boundary or assessment scenario."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 1,
+      "title": "0. Which chart do I need?",
+      "objective_ids": [],
+      "variant_ids": [],
+      "technical_prompt": "Navigation map: select a chart by the architectural decision it explains.",
+      "plain_prompt": "Choose the chart that matches the problem you are trying to understand.",
+      "scope": "context-only",
+      "reason": "This diagram is an index of charts and domains. It does not depict an executing system."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 2,
+      "title": "1. Batch API or synchronous calls?",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 1. Batch API or synchronous calls? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 3,
+      "title": "1b. Running a batch: when to submit, what to resend?",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "A batch ends with unordered succeeded, errored, canceled or expired items. Which custom_id correlation and cause-specific resend policy preserve accepted results?",
+      "plain_prompt": "Match each result to its original job and resend only the unresolved work for the right reason.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 1b. Running a batch: when to submit, what to resend? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 4,
+      "title": "2. Which `tool_choice` setting?",
+      "objective_ids": [
+        "2.1",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-08",
+        "FV-21"
+      ],
+      "technical_prompt": "A task allows automatic selection, requires some tool or requires one named tool. Which tool_choice setting expresses that invocation requirement without establishing argument truth or authorization?",
+      "plain_prompt": "Do you want Claude to choose, require a tool, or require one particular tool\u2014and what does that still not prove?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 2. Which `tool_choice` setting? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 5,
+      "title": "3. When does the agent loop stop?",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "The Messages API returns tool_use, end_turn or another stop_reason. Which response-driven loop transition is appropriate instead of interpreting completion from prose alone?",
+      "plain_prompt": "Use the response status to decide whether to run tools, continue or end the model turn.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 3. When does the agent loop stop? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 6,
+      "title": "4. A rule must always hold. Hook or prompt?",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 4. A rule must always hold. Hook or prompt? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 7,
+      "title": "5a. Fixed chain of steps, or a plan that adapts?",
+      "objective_ids": [
+        "1.6"
+      ],
+      "variant_ids": [
+        "FV-06"
+      ],
+      "technical_prompt": "The next step may depend on newly discovered evidence. Which decomposition and stopping policy distinguishes a deterministic workflow from adaptive orchestration?",
+      "plain_prompt": "Are the steps known already, or will you choose the next step after learning something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 5a. Fixed chain of steps, or a plan that adapts? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 8,
+      "title": "5b. What does each subagent get?",
+      "objective_ids": [
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-03"
+      ],
+      "technical_prompt": "An isolated specialist must investigate a bounded claim. Which task context, source locators, constraints and return contract must be supplied explicitly?",
+      "plain_prompt": "What must you tell a helper so it can do this job without guessing what you discussed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 5b. What does each subagent get? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 9,
+      "title": "6. Resume the old session, fork it, or start fresh?",
+      "objective_ids": [
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-07"
+      ],
+      "technical_prompt": "A saved session contains useful history and possibly stale tool results. Which evidence and permission must be refreshed before resuming or branching the work?",
+      "plain_prompt": "What from the old session can you reuse, and what could have changed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 6. Resume the old session, fork it, or start fresh? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 10,
+      "title": "7. Claude keeps picking the wrong tool. What do I fix first?",
+      "objective_ids": [
+        "2.1"
+      ],
+      "variant_ids": [
+        "FV-08"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 7. Claude keeps picking the wrong tool. What do I fix first? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 11,
+      "title": "8a. Where does an MCP server's config live?",
+      "objective_ids": [
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-11"
+      ],
+      "technical_prompt": "A team shares an MCP server integration while users retain local credentials. Which documented configuration scope separates shared server setup from personal settings and secrets?",
+      "plain_prompt": "What should the team share, and what must stay specific to each user?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 8a. Where does an MCP server's config live? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 12,
+      "title": "8b. Where does a team rule live?",
+      "objective_ids": [
+        "3.1"
+      ],
+      "variant_ids": [
+        "FV-13"
+      ],
+      "technical_prompt": "Shared and nested repository guidance apply to different file scopes. Which applicable instruction sources and conflict rules govern the target file?",
+      "plain_prompt": "Which instructions really apply to the file you are changing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 8b. Where does a team rule live? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 13,
+      "title": "9. Plan mode, or just make the change?",
+      "objective_ids": [
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-16"
+      ],
+      "technical_prompt": "A proposed change crosses client, server and compatibility boundaries. Which investigation and revised acceptance plan should precede implementation?",
+      "plain_prompt": "What else will break if you make this change, and what must the plan account for?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 9. Plan mode, or just make the change? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 14,
+      "title": "10. What does a Claude Code run in CI need?",
+      "objective_ids": [
+        "3.6"
+      ],
+      "variant_ids": [
+        "FV-18"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 10. What does a Claude Code run in CI need? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 15,
+      "title": "10b. Who reviews the code in CI?",
+      "objective_ids": [
+        "3.6",
+        "4.6"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-24"
+      ],
+      "technical_prompt": "A CI review reruns after new commits. Which independent review context and prior-findings contract support new actionable findings without repeating the previous report?",
+      "plain_prompt": "Let the reviewer inspect the change independently and know what was already reported.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 10b. Who reviews the code in CI? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 16,
+      "title": "11. A tool or subagent failed. What should it send back?",
+      "objective_ids": [
+        "2.2",
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-09",
+        "FV-27"
+      ],
+      "technical_prompt": "A tool or specialist returns empty success, transient failure or lasting failure. Which typed result and bounded recovery retain partial evidence and avoid disguising failure as no matches?",
+      "plain_prompt": "Do not turn an error into an empty answer. Say what failed and what still worked.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 11. A tool or subagent failed. What should it send back? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 17,
+      "title": "12. The output is wrong. Schema, retry, or a check in code?",
+      "objective_ids": [
+        "4.3",
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22"
+      ],
+      "technical_prompt": "A candidate satisfies its JSON schema but disagrees with the original source. Which structural and semantic checks must remain separate at the receiving boundary?",
+      "plain_prompt": "The record has the right shape. Does it also say the right thing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 12. The output is wrong. Schema, retry, or a check in code? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 18,
+      "title": "13. Hand it to a person: escalation or human review?",
+      "objective_ids": [
+        "5.2",
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-26",
+        "FV-29"
+      ],
+      "technical_prompt": "Live support escalation and offline extraction review have different triggers. Which explicit request or policy gap controls handoff, and which calibration evidence controls review sampling?",
+      "plain_prompt": "A customer asking for a person is different from deciding which extracted records need checking.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 13. Hand it to a person: escalation or human review? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/decision-charts.md",
+      "route": "lessons/ccar-f/deep-practice/decision-charts.html",
+      "index": 19,
+      "title": "14. Context is filling up or facts are getting lost. Which fix?",
+      "objective_ids": [
+        "5.1",
+        "5.4"
+      ],
+      "variant_ids": [
+        "FV-25",
+        "FV-28"
+      ],
+      "technical_prompt": "Context degradation may reflect lost exact facts, oversized tool output, misplaced findings or broad code exploration. Which mechanism addresses the observed cause?",
+      "plain_prompt": "First name what is getting lost or too large, then choose the matching fix.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 14. Context is filling up or facts are getting lost. Which fix? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 0,
+      "title": "1. The agent loop: who sends what until Claude is done?",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "A client-tool conversation spans multiple Messages requests. Which preserved assistant content, user tool_result and matching tool_use_id keep the loop valid until the model turn ends?",
+      "plain_prompt": "Keep the question, tool request and real result together across calls.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 1. The agent loop: who sends what until Claude is done? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 1,
+      "title": "2. Coordinator and subagents: what does each helper see?",
+      "objective_ids": [
+        "1.2",
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-02",
+        "FV-03"
+      ],
+      "technical_prompt": "A coordinator invokes isolated specialists. Which explicit assignment context and source-linked returns enable integration without assuming shared conversation history?",
+      "plain_prompt": "Each helper needs its own useful brief, and the coordinator must know where each finding came from.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 2. Coordinator and subagents: what does each helper see? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 2,
+      "title": "3. A PreToolUse hook: how does it block a tool call?",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 3. A PreToolUse hook: how does it block a tool call? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 3,
+      "title": "4. MCP: how does a tool error get back to Claude?",
+      "objective_ids": [
+        "2.2",
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-09",
+        "FV-11"
+      ],
+      "technical_prompt": "An MCP tool fails behind a Messages client. Which MCP isError and Messages tool_result/is_error mapping preserves the failure and original tool-use correlation?",
+      "plain_prompt": "The connector and Claude use different envelopes. Carry the real failure back without losing which call it belongs to.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 4. MCP: how does a tool error get back to Claude? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 4,
+      "title": "5. Message Batches: how do you get results and resend failures?",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 5. Message Batches: how do you get results and resend failures? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 5,
+      "title": "6. A CI review: how does Claude Code run with nobody at the keyboard?",
+      "objective_ids": [
+        "3.6"
+      ],
+      "variant_ids": [
+        "FV-18"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the 6. A CI review: how does Claude Code run with nobody at the keyboard? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 6,
+      "title": "Tree A. Which built-in tool for this file job?",
+      "objective_ids": [
+        "2.5"
+      ],
+      "variant_ids": [
+        "FV-12"
+      ],
+      "technical_prompt": "A repository task involves path search, content search, reading or precise mutation. Which built-in tool and uniqueness checks fit the evidence needed before editing?",
+      "plain_prompt": "Are you finding a filename, finding text, reading it, or changing it? Use the tool for that job.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Tree A. Which built-in tool for this file job? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/deep-practice/sequence-diagrams.md",
+      "route": "lessons/ccar-f/deep-practice/sequence-diagrams.html",
+      "index": 7,
+      "title": "Tree B. Review comments are noisy or uneven. Which prompt fix?",
+      "objective_ids": [
+        "4.1",
+        "4.2"
+      ],
+      "variant_ids": [
+        "FV-19",
+        "FV-20"
+      ],
+      "technical_prompt": "Review comments are vague, noisy or inconsistent. Which explicit criteria and representative few-shot examples improve precision without hiding unsupported findings?",
+      "plain_prompt": "Tell the reviewer exactly what counts, show useful examples and inspect the noisy category.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the Tree B. Review comments are noisy or uneven. Which prompt fix? boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/learning-journey.md",
+      "route": "lessons/ccar-f/learning-journey.html",
+      "index": 0,
+      "title": "Follow one complete arc",
+      "objective_ids": [],
+      "variant_ids": [],
+      "technical_prompt": "Learning sequence: move from explanation and supplied contracts to unseen variations and timed recall.",
+      "plain_prompt": "Learn it, trace it, try a changed example, then check what you can explain later.",
+      "scope": "context-only",
+      "reason": "This diagram organizes study activities rather than specifying an application mechanism."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.1.md",
+      "route": "lessons/ccar-f/objectives/objective-1.1.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-01",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "A response ends with end_turn while a previously submitted mutation has no confirmed receipt. Which model-loop and business-outcome states must remain distinct before recovery?",
+      "plain_prompt": "When Claude stops talking, how do you check whether the real action actually finished?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-01 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.2.md",
+      "route": "lessons/ccar-f/objectives/objective-1.2.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-02",
+      "objective_ids": [
+        "1.2"
+      ],
+      "variant_ids": [
+        "FV-02"
+      ],
+      "technical_prompt": "A coordinator has evidence for some comparison dimensions but not a required dimension. Which delegation and synthesis policy preserves explicit coverage?",
+      "plain_prompt": "Which part of the question is still unanswered, and who should investigate it?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-02 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.3.md",
+      "route": "lessons/ccar-f/objectives/objective-1.3.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-03",
+      "objective_ids": [
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-03"
+      ],
+      "technical_prompt": "An isolated specialist must investigate a bounded claim. Which task context, source locators, constraints and return contract must be supplied explicitly?",
+      "plain_prompt": "What must you tell a helper so it can do this job without guessing what you discussed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-03 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.4.md",
+      "route": "lessons/ccar-f/objectives/objective-1.4.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-04",
+      "objective_ids": [
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-04"
+      ],
+      "technical_prompt": "A proposed mutation names a resource different from the approved scope. Which trusted identity, ownership and exact-action checks must run before execution?",
+      "plain_prompt": "Does this permission really cover this customer, this action and this amount?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-04 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.5.md",
+      "route": "lessons/ccar-f/objectives/objective-1.5.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-05",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-05 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.6.md",
+      "route": "lessons/ccar-f/objectives/objective-1.6.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-06",
+      "objective_ids": [
+        "1.6"
+      ],
+      "variant_ids": [
+        "FV-06"
+      ],
+      "technical_prompt": "The next step may depend on newly discovered evidence. Which decomposition and stopping policy distinguishes a deterministic workflow from adaptive orchestration?",
+      "plain_prompt": "Are the steps known already, or will you choose the next step after learning something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-06 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-1.7.md",
+      "route": "lessons/ccar-f/objectives/objective-1.7.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-07",
+      "objective_ids": [
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-07"
+      ],
+      "technical_prompt": "A saved session contains useful history and possibly stale tool results. Which evidence and permission must be refreshed before resuming or branching the work?",
+      "plain_prompt": "What from the old session can you reuse, and what could have changed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-07 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.1.md",
+      "route": "lessons/ccar-f/objectives/objective-2.1.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-08",
+      "objective_ids": [
+        "2.1"
+      ],
+      "variant_ids": [
+        "FV-08"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-08 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.2.md",
+      "route": "lessons/ccar-f/objectives/objective-2.2.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-09",
+      "objective_ids": [
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-09"
+      ],
+      "technical_prompt": "A tool returns no records, malformed input, denied access or a transient failure. Which result classification and bounded recovery preserve the actual outcome?",
+      "plain_prompt": "Was nothing found, did the request fail, or do we still not know what happened?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-09 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.3.md",
+      "route": "lessons/ccar-f/objectives/objective-2.3.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-10",
+      "objective_ids": [
+        "2.3"
+      ],
+      "variant_ids": [
+        "FV-10"
+      ],
+      "technical_prompt": "A research specialist needs search and read capabilities but not mutation authority. Which tool exposure and execution-boundary controls preserve that role?",
+      "plain_prompt": "What tools should this helper have, and who is allowed to make the final change?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-10 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.4.md",
+      "route": "lessons/ccar-f/objectives/objective-2.4.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-11",
+      "objective_ids": [
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-11"
+      ],
+      "technical_prompt": "An MCP connection exposes capability metadata. What explicit invocation or resource-read evidence is required before treating content as model-visible context?",
+      "plain_prompt": "Being connected is not the same as reading the document. What was actually supplied?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-11 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-2.5.md",
+      "route": "lessons/ccar-f/objectives/objective-2.5.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-12",
+      "objective_ids": [
+        "2.5"
+      ],
+      "variant_ids": [
+        "FV-12"
+      ],
+      "technical_prompt": "A bounded repository defect affects existing callers. Which Glob, Grep, Read and targeted edit sequence obtains sufficient evidence without loading the entire repository?",
+      "plain_prompt": "How do you find the right files and their callers before changing a small part?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-12 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.1.md",
+      "route": "lessons/ccar-f/objectives/objective-3.1.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-13",
+      "objective_ids": [
+        "3.1"
+      ],
+      "variant_ids": [
+        "FV-13"
+      ],
+      "technical_prompt": "Shared and nested repository guidance apply to different file scopes. Which applicable instruction sources and conflict rules govern the target file?",
+      "plain_prompt": "Which instructions really apply to the file you are changing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-13 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.2.md",
+      "route": "lessons/ccar-f/objectives/objective-3.2.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-14",
+      "objective_ids": [
+        "3.2"
+      ],
+      "variant_ids": [
+        "FV-14"
+      ],
+      "technical_prompt": "A reusable skill is invoked without required evidence inputs. Which input contract and authorization checks prevent an unsupported completion claim?",
+      "plain_prompt": "Does the reusable procedure have what it needs, and permission to do the job?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-14 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.3.md",
+      "route": "lessons/ccar-f/objectives/objective-3.3.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-15",
+      "objective_ids": [
+        "3.3"
+      ],
+      "variant_ids": [
+        "FV-15"
+      ],
+      "technical_prompt": "A test moves outside a path-scoped rule pattern. Which matching and nonmatching checks establish whether the intended guidance loads for affected files?",
+      "plain_prompt": "Will this rule still reach the file after it moves?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-15 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.4.md",
+      "route": "lessons/ccar-f/objectives/objective-3.4.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-16",
+      "objective_ids": [
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-16"
+      ],
+      "technical_prompt": "A proposed change crosses client, server and compatibility boundaries. Which investigation and revised acceptance plan should precede implementation?",
+      "plain_prompt": "What else will break if you make this change, and what must the plan account for?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-16 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.5.md",
+      "route": "lessons/ccar-f/objectives/objective-3.5.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-17",
+      "objective_ids": [
+        "3.5"
+      ],
+      "variant_ids": [
+        "FV-17"
+      ],
+      "technical_prompt": "A focused test continues to fail after a correction attempt. Which evidence-driven change of hypothesis and neighboring regression checks should guide the next iteration?",
+      "plain_prompt": "What did the failed test teach you, and what will you try differently?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-17 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-3.6.md",
+      "route": "lessons/ccar-f/objectives/objective-3.6.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-18",
+      "objective_ids": [
+        "3.6"
+      ],
+      "variant_ids": [
+        "FV-18"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-18 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.1.md",
+      "route": "lessons/ccar-f/objectives/objective-4.1.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-19",
+      "objective_ids": [
+        "4.1"
+      ],
+      "variant_ids": [
+        "FV-19"
+      ],
+      "technical_prompt": "A review prompt produces plausible but noisy findings. Which explicit violation criteria, exclusions and source evidence distinguish an actionable finding from unsupported inference?",
+      "plain_prompt": "What exactly counts as a problem, and where is the evidence?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-19 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.2.md",
+      "route": "lessons/ccar-f/objectives/objective-4.2.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-20",
+      "objective_ids": [
+        "4.2"
+      ],
+      "variant_ids": [
+        "FV-20"
+      ],
+      "technical_prompt": "Extraction examples omit missing, conflicting and borderline fields. Which representative few-shot and unseen evaluation cases test the intended decision contract?",
+      "plain_prompt": "Have you shown and tested the awkward cases, not just the easy examples?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-20 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.3.md",
+      "route": "lessons/ccar-f/objectives/objective-4.3.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-21",
+      "objective_ids": [
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-21"
+      ],
+      "technical_prompt": "A candidate satisfies its JSON schema but disagrees with the original source. Which structural and semantic checks must remain separate at the receiving boundary?",
+      "plain_prompt": "The record has the right shape. Does it also say the right thing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-21 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.4.md",
+      "route": "lessons/ccar-f/objectives/objective-4.4.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-22",
+      "objective_ids": [
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-22"
+      ],
+      "technical_prompt": "A validator identifies a source-backed mismatch. Which precise feedback, bounded correction and unresolved-state policy avoid endless retries or invented repairs?",
+      "plain_prompt": "Tell the model exactly what failed, limit retries, and keep unclear evidence unresolved.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-22 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.5.md",
+      "route": "lessons/ccar-f/objectives/objective-4.5.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-23",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-23 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-4.6.md",
+      "route": "lessons/ccar-f/objectives/objective-4.6.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-24",
+      "objective_ids": [
+        "4.6"
+      ],
+      "variant_ids": [
+        "FV-24"
+      ],
+      "technical_prompt": "A producer returns claims and citations. Which independent source and criterion access lets a critic detect omissions and contradictions rather than repeat the producer?",
+      "plain_prompt": "Can the checker see the original evidence and find what the first answer missed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-24 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.1.md",
+      "route": "lessons/ccar-f/objectives/objective-5.1.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-25",
+      "objective_ids": [
+        "5.1"
+      ],
+      "variant_ids": [
+        "FV-25"
+      ],
+      "technical_prompt": "Compaction removes a constraint or unresolved operation from a long-running task. Which durable decision state and source refresh preserve safe continuation?",
+      "plain_prompt": "What facts must survive a shorter summary so you do not make the wrong next move?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-25 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.2.md",
+      "route": "lessons/ccar-f/objectives/objective-5.2.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-26",
+      "objective_ids": [
+        "5.2"
+      ],
+      "variant_ids": [
+        "FV-26"
+      ],
+      "technical_prompt": "A customer explicitly requests a human or a policy gap prevents autonomous resolution. Which handoff preserves identity, attempted actions, evidence and actual operation state?",
+      "plain_prompt": "When should you hand over, and what does the next person need to know?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-26 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.3.md",
+      "route": "lessons/ccar-f/objectives/objective-5.3.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-27",
+      "objective_ids": [
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-27"
+      ],
+      "technical_prompt": "One required specialist or tool fails while others return useful evidence. Which partial-result and dependency policy preserves successes without claiming complete coverage?",
+      "plain_prompt": "Keep the useful work, name the missing part, and avoid conclusions that depend on it.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-27 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.4.md",
+      "route": "lessons/ccar-f/objectives/objective-5.4.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-28",
+      "objective_ids": [
+        "5.4"
+      ],
+      "variant_ids": [
+        "FV-28"
+      ],
+      "technical_prompt": "A large code investigation exceeds working context. Which compact source ledger and targeted current-file rereads preserve the exception condition needed for a safe edit?",
+      "plain_prompt": "How do you keep the important file facts without carrying the whole codebase in memory?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-28 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.5.md",
+      "route": "lessons/ccar-f/objectives/objective-5.5.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-29",
+      "objective_ids": [
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-29"
+      ],
+      "technical_prompt": "Aggregate accuracy is acceptable but a high-risk slice fails and review demand exceeds capacity. Which held-out evaluation, confidence calibration and overflow policy govern release?",
+      "plain_prompt": "Which risky mistakes are hidden by the average, and what happens when reviewers cannot handle the queue?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-29 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/objectives/objective-5.6.md",
+      "route": "lessons/ccar-f/objectives/objective-5.6.html",
+      "index": 0,
+      "title": "Learn the decision in context \u2014 FV-30",
+      "objective_ids": [
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-30"
+      ],
+      "technical_prompt": "Sources disagree after a cross-system join. Which declared identifier, per-field provenance, timestamps and authority rule support a defensible synthesis?",
+      "plain_prompt": "Which record came from where, and which source decides when they disagree?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-30 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "5.2",
+        "1.4",
+        "2.1",
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-26",
+        "FV-04",
+        "FV-08",
+        "FV-09"
+      ],
+      "technical_prompt": "A support message may request a human, identify multiple records or require policy-controlled action. Which ordered checks prevent premature mutation and preserve a complete handoff?",
+      "plain_prompt": "Understand the message, identify the right customer, check the rule, then act or hand over.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-01",
+      "objective_ids": [
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-01"
+      ],
+      "technical_prompt": "A response ends with end_turn while a previously submitted mutation has no confirmed receipt. Which model-loop and business-outcome states must remain distinct before recovery?",
+      "plain_prompt": "When Claude stops talking, how do you check whether the real action actually finished?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-01 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-26",
+      "objective_ids": [
+        "5.2"
+      ],
+      "variant_ids": [
+        "FV-26"
+      ],
+      "technical_prompt": "A customer explicitly requests a human or a policy gap prevents autonomous resolution. Which handoff preserves identity, attempted actions, evidence and actual operation state?",
+      "plain_prompt": "When should you hand over, and what does the next person need to know?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-26 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 3,
+      "title": "Learn the decision in context \u2014 FV-04",
+      "objective_ids": [
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-04"
+      ],
+      "technical_prompt": "A proposed mutation names a resource different from the approved scope. Which trusted identity, ownership and exact-action checks must run before execution?",
+      "plain_prompt": "Does this permission really cover this customer, this action and this amount?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-04 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 4,
+      "title": "Learn the decision in context \u2014 FV-08",
+      "objective_ids": [
+        "2.1"
+      ],
+      "variant_ids": [
+        "FV-08"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-08 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 5,
+      "title": "Learn the decision in context \u2014 FV-09",
+      "objective_ids": [
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-09"
+      ],
+      "technical_prompt": "A tool returns no records, malformed input, denied access or a transient failure. Which result classification and bounded recovery preserve the actual outcome?",
+      "plain_prompt": "Was nothing found, did the request fail, or do we still not know what happened?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-09 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-01-customer-support-agent.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-01-customer-support-agent.html",
+      "index": 6,
+      "title": "Learn the decision in context \u2014 FV-05",
+      "objective_ids": [
+        "1.5"
+      ],
+      "variant_ids": [
+        "FV-05"
+      ],
+      "technical_prompt": "A mandatory rule must prevent a side effect. Which pre-execution enforcement point can block the action, and why is post-result processing insufficient?",
+      "plain_prompt": "Where must the stop sign sit so the action never happens when the rule fails?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-05 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "3.1",
+        "3.3",
+        "3.4",
+        "2.5"
+      ],
+      "variant_ids": [
+        "FV-13",
+        "FV-15",
+        "FV-16",
+        "FV-12"
+      ],
+      "technical_prompt": "A team code workflow combines project guidance, path-scoped rules and a behavior change. Which loading scope and investigation sequence protect callers before a focused edit?",
+      "plain_prompt": "Put guidance where it applies, inspect what depends on the change, then verify it.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-15",
+      "objective_ids": [
+        "3.3"
+      ],
+      "variant_ids": [
+        "FV-15"
+      ],
+      "technical_prompt": "A test moves outside a path-scoped rule pattern. Which matching and nonmatching checks establish whether the intended guidance loads for affected files?",
+      "plain_prompt": "Will this rule still reach the file after it moves?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-15 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-16",
+      "objective_ids": [
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-16"
+      ],
+      "technical_prompt": "A proposed change crosses client, server and compatibility boundaries. Which investigation and revised acceptance plan should precede implementation?",
+      "plain_prompt": "What else will break if you make this change, and what must the plan account for?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-16 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 3,
+      "title": "Learn the decision in context \u2014 FV-12",
+      "objective_ids": [
+        "2.5"
+      ],
+      "variant_ids": [
+        "FV-12"
+      ],
+      "technical_prompt": "A bounded repository defect affects existing callers. Which Glob, Grep, Read and targeted edit sequence obtains sufficient evidence without loading the entire repository?",
+      "plain_prompt": "How do you find the right files and their callers before changing a small part?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-12 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 4,
+      "title": "Learn the decision in context \u2014 FV-28",
+      "objective_ids": [
+        "5.4"
+      ],
+      "variant_ids": [
+        "FV-28"
+      ],
+      "technical_prompt": "A large code investigation exceeds working context. Which compact source ledger and targeted current-file rereads preserve the exception condition needed for a safe edit?",
+      "plain_prompt": "How do you keep the important file facts without carrying the whole codebase in memory?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-28 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-02-code-generation-claude-code.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-02-code-generation-claude-code.html",
+      "index": 5,
+      "title": "Learn the decision in context \u2014 FV-17",
+      "objective_ids": [
+        "3.5"
+      ],
+      "variant_ids": [
+        "FV-17"
+      ],
+      "technical_prompt": "A focused test continues to fail after a correction attempt. Which evidence-driven change of hypothesis and neighboring regression checks should guide the next iteration?",
+      "plain_prompt": "What did the failed test teach you, and what will you try differently?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-17 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "1.2",
+        "1.3",
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-02",
+        "FV-03",
+        "FV-27"
+      ],
+      "technical_prompt": "A research request may be narrow or require specialist evidence. Which decomposition, explicit briefs and partial-result policy avoid unnecessary orchestration or unsupported synthesis?",
+      "plain_prompt": "Use helpers when the job needs them, give each a clear task and keep track of missing evidence.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-02",
+      "objective_ids": [
+        "1.2"
+      ],
+      "variant_ids": [
+        "FV-02"
+      ],
+      "technical_prompt": "A coordinator has evidence for some comparison dimensions but not a required dimension. Which delegation and synthesis policy preserves explicit coverage?",
+      "plain_prompt": "Which part of the question is still unanswered, and who should investigate it?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-02 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-06",
+      "objective_ids": [
+        "1.6"
+      ],
+      "variant_ids": [
+        "FV-06"
+      ],
+      "technical_prompt": "The next step may depend on newly discovered evidence. Which decomposition and stopping policy distinguishes a deterministic workflow from adaptive orchestration?",
+      "plain_prompt": "Are the steps known already, or will you choose the next step after learning something?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-06 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 3,
+      "title": "Learn the decision in context \u2014 FV-03",
+      "objective_ids": [
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-03"
+      ],
+      "technical_prompt": "An isolated specialist must investigate a bounded claim. Which task context, source locators, constraints and return contract must be supplied explicitly?",
+      "plain_prompt": "What must you tell a helper so it can do this job without guessing what you discussed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-03 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 4,
+      "title": "Learn the decision in context \u2014 FV-10",
+      "objective_ids": [
+        "2.3"
+      ],
+      "variant_ids": [
+        "FV-10"
+      ],
+      "technical_prompt": "A research specialist needs search and read capabilities but not mutation authority. Which tool exposure and execution-boundary controls preserve that role?",
+      "plain_prompt": "What tools should this helper have, and who is allowed to make the final change?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-10 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 5,
+      "title": "Learn the decision in context \u2014 FV-27",
+      "objective_ids": [
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-27"
+      ],
+      "technical_prompt": "One required specialist or tool fails while others return useful evidence. Which partial-result and dependency policy preserves successes without claiming complete coverage?",
+      "plain_prompt": "Keep the useful work, name the missing part, and avoid conclusions that depend on it.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-27 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 6,
+      "title": "Learn the decision in context \u2014 FV-25",
+      "objective_ids": [
+        "5.1"
+      ],
+      "variant_ids": [
+        "FV-25"
+      ],
+      "technical_prompt": "Compaction removes a constraint or unresolved operation from a long-running task. Which durable decision state and source refresh preserve safe continuation?",
+      "plain_prompt": "What facts must survive a shorter summary so you do not make the wrong next move?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-25 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-03-multi-agent-research.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-03-multi-agent-research.html",
+      "index": 7,
+      "title": "Learn the decision in context \u2014 FV-30",
+      "objective_ids": [
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-30"
+      ],
+      "technical_prompt": "Sources disagree after a cross-system join. Which declared identifier, per-field provenance, timestamps and authority rule support a defensible synthesis?",
+      "plain_prompt": "Which record came from where, and which source decides when they disagree?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-30 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "2.5",
+        "5.4",
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-12",
+        "FV-28",
+        "FV-07"
+      ],
+      "technical_prompt": "An unfamiliar repository question may require targeted search, bounded delegation or a plan. Which evidence needs and uncertainty justify each next step?",
+      "plain_prompt": "Find the relevant files first, then decide whether the job is small, needs a helper or needs a plan.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-13",
+      "objective_ids": [
+        "3.1"
+      ],
+      "variant_ids": [
+        "FV-13"
+      ],
+      "technical_prompt": "Shared and nested repository guidance apply to different file scopes. Which applicable instruction sources and conflict rules govern the target file?",
+      "plain_prompt": "Which instructions really apply to the file you are changing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-13 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-07",
+      "objective_ids": [
+        "1.7"
+      ],
+      "variant_ids": [
+        "FV-07"
+      ],
+      "technical_prompt": "A saved session contains useful history and possibly stale tool results. Which evidence and permission must be refreshed before resuming or branching the work?",
+      "plain_prompt": "What from the old session can you reuse, and what could have changed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-07 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "index": 3,
+      "title": "Learn the decision in context \u2014 FV-11",
+      "objective_ids": [
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-11"
+      ],
+      "technical_prompt": "An MCP connection exposes capability metadata. What explicit invocation or resource-read evidence is required before treating content as model-visible context?",
+      "plain_prompt": "Being connected is not the same as reading the document. What was actually supplied?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-11 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-04-developer-productivity.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-04-developer-productivity.html",
+      "index": 4,
+      "title": "Learn the decision in context \u2014 FV-14",
+      "objective_ids": [
+        "3.2"
+      ],
+      "variant_ids": [
+        "FV-14"
+      ],
+      "technical_prompt": "A reusable skill is invoked without required evidence inputs. Which input contract and authorization checks prevent an unsupported completion claim?",
+      "plain_prompt": "Does the reusable procedure have what it needs, and permission to do the job?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-14 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-05-claude-code-ci-cd.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "3.6",
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-23"
+      ],
+      "technical_prompt": "A CI job differs from delayed independent archive work. Which latency and local-tool dependencies determine runtime, and which output checks establish usable review findings?",
+      "plain_prompt": "Choose the right kind of run, then check that it really returned useful review evidence.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-05-claude-code-ci-cd.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-23",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-23 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-05-claude-code-ci-cd.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-05-claude-code-ci-cd.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-18",
+      "objective_ids": [
+        "3.6"
+      ],
+      "variant_ids": [
+        "FV-18"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-18 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 0,
+      "title": "The whole job in one chart",
+      "objective_ids": [
+        "4.3",
+        "4.4",
+        "4.5",
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22",
+        "FV-23",
+        "FV-29"
+      ],
+      "technical_prompt": "A document pipeline may process independently in batch, reject malformed structure, detect wrong totals or require calibrated review. Which boundary determines the next action for each item?",
+      "plain_prompt": "Choose how to process each document, then check its shape, meaning and need for review.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the The whole job in one chart boundary sequence. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 1,
+      "title": "Learn the decision in context \u2014 FV-21",
+      "objective_ids": [
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-21"
+      ],
+      "technical_prompt": "A candidate satisfies its JSON schema but disagrees with the original source. Which structural and semantic checks must remain separate at the receiving boundary?",
+      "plain_prompt": "The record has the right shape. Does it also say the right thing?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-21 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 2,
+      "title": "Learn the decision in context \u2014 FV-20",
+      "objective_ids": [
+        "4.2"
+      ],
+      "variant_ids": [
+        "FV-20"
+      ],
+      "technical_prompt": "Extraction examples omit missing, conflicting and borderline fields. Which representative few-shot and unseen evaluation cases test the intended decision contract?",
+      "plain_prompt": "Have you shown and tested the awkward cases, not just the easy examples?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-20 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 3,
+      "title": "Learn the decision in context \u2014 FV-22",
+      "objective_ids": [
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-22"
+      ],
+      "technical_prompt": "A validator identifies a source-backed mismatch. Which precise feedback, bounded correction and unresolved-state policy avoid endless retries or invented repairs?",
+      "plain_prompt": "Tell the model exactly what failed, limit retries, and keep unclear evidence unresolved.",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-22 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 4,
+      "title": "Learn the decision in context \u2014 FV-19",
+      "objective_ids": [
+        "4.1"
+      ],
+      "variant_ids": [
+        "FV-19"
+      ],
+      "technical_prompt": "A review prompt produces plausible but noisy findings. Which explicit violation criteria, exclusions and source evidence distinguish an actionable finding from unsupported inference?",
+      "plain_prompt": "What exactly counts as a problem, and where is the evidence?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-19 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 5,
+      "title": "Learn the decision in context \u2014 FV-24",
+      "objective_ids": [
+        "4.6"
+      ],
+      "variant_ids": [
+        "FV-24"
+      ],
+      "technical_prompt": "A producer returns claims and citations. Which independent source and criterion access lets a critic detect omissions and contradictions rather than repeat the producer?",
+      "plain_prompt": "Can the checker see the original evidence and find what the first answer missed?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-24 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/scenario-walkthroughs/WT-06-structured-data-extraction.md",
+      "route": "lessons/ccar-f/scenario-walkthroughs/wt-06-structured-data-extraction.html",
+      "index": 6,
+      "title": "Learn the decision in context \u2014 FV-29",
+      "objective_ids": [
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-29"
+      ],
+      "technical_prompt": "Aggregate accuracy is acceptable but a high-risk slice fails and review demand exceeds capacity. Which held-out evaluation, confidence calibration and overflow policy govern release?",
+      "plain_prompt": "Which risky mistakes are hidden by the average, and what happens when reviewers cannot handle the queue?",
+      "scope": "related-decision",
+      "reason": "The diagram explicitly shows the worked FV-29 progression. Linked variants are separate practice situations; their fixture data is not evidence that this drawing executed an action."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-01-action-service.md",
+      "route": "lessons/ccar-f/architecture-studio/as-01-action-service.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 A request becomes an unsafe action",
+      "objective_ids": [
+        "1.4"
+      ],
+      "variant_ids": [
+        "FV-04"
+      ],
+      "technical_prompt": "A proposed mutation names a resource different from the approved scope. Which trusted identity, ownership and exact-action checks must run before execution?",
+      "plain_prompt": "Does this permission really cover this customer, this action and this amount?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 A request becomes an unsafe action. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-01-action-service.md",
+      "route": "lessons/ccar-f/architecture-studio/as-01-action-service.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 Two similar tools invite the wrong choice",
+      "objective_ids": [
+        "2.1"
+      ],
+      "variant_ids": [
+        "FV-08"
+      ],
+      "technical_prompt": "Read and mutation tools share ambiguous descriptions. Which purpose, input and side-effect distinctions should the tool interface expose before changing selection controls?",
+      "plain_prompt": "How will Claude know which tool only reads and which tool changes something?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 Two similar tools invite the wrong choice. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-01-action-service.md",
+      "route": "lessons/ccar-f/architecture-studio/as-01-action-service.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A timeout leaves the outcome unknown",
+      "objective_ids": [
+        "1.1",
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-01",
+        "FV-09"
+      ],
+      "technical_prompt": "A payment request times out after submission. Which preserved operation identity and authoritative status evidence distinguish a missing reply from a failed effect?",
+      "plain_prompt": "The reply disappeared. Did the payment also fail, or do you need to check the original action?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 A timeout leaves the outcome unknown. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-01-action-service.md",
+      "route": "lessons/ccar-f/architecture-studio/as-01-action-service.html",
+      "index": 3,
+      "title": "Decide the boundaries in order",
+      "objective_ids": [
+        "1.4",
+        "2.1",
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-04",
+        "FV-08",
+        "FV-01"
+      ],
+      "technical_prompt": "A support investigation can read evidence and later propose a credit. Which trusted authorization, operation identity and confirmed receipt checks separate those boundaries?",
+      "plain_prompt": "Reading facts, asking for a credit, permitting it and confirming it are different steps.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Decide the boundaries in order. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-02-document-pipeline.md",
+      "route": "lessons/ccar-f/architecture-studio/as-02-document-pipeline.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The handoff cannot be read",
+      "objective_ids": [
+        "4.3",
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22"
+      ],
+      "technical_prompt": "A candidate satisfies its JSON schema but disagrees with the original source. Which structural and semantic checks must remain separate at the receiving boundary?",
+      "plain_prompt": "The record has the right shape. Does it also say the right thing?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 The handoff cannot be read. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-02-document-pipeline.md",
+      "route": "lessons/ccar-f/architecture-studio/as-02-document-pipeline.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A readable handoff is still wrong",
+      "objective_ids": [
+        "4.3",
+        "4.4"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22"
+      ],
+      "technical_prompt": "An extracted amount of 845 satisfies the declared shape but conflicts with source USD84.50 and the cents contract. Which receiving check establishes the mismatch before accepting a record?",
+      "plain_prompt": "The number is readable, but is it in the right units and does it match the invoice?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 A readable handoff is still wrong. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-02-document-pipeline.md",
+      "route": "lessons/ccar-f/architecture-studio/as-02-document-pipeline.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 The intake grows from one file to many",
+      "objective_ids": [
+        "4.5",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-23",
+        "FV-21"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 The intake grows from one file to many. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-02-document-pipeline.md",
+      "route": "lessons/ccar-f/architecture-studio/as-02-document-pipeline.html",
+      "index": 3,
+      "title": "Make the architecture decisions",
+      "objective_ids": [
+        "4.3",
+        "4.4",
+        "5.5"
+      ],
+      "variant_ids": [
+        "FV-21",
+        "FV-22",
+        "FV-29"
+      ],
+      "technical_prompt": "A queued document worker may return malformed, source-conflicting or ambiguous data. Which per-document validator, bounded repair and review policy governs acceptance?",
+      "plain_prompt": "For each file, check whether you can fix the output from evidence or need a person to resolve the source.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Make the architecture decisions. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-03-grounded-assistant.md",
+      "route": "lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The confident answer belongs to another machine",
+      "objective_ids": [
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-30"
+      ],
+      "technical_prompt": "A technician asks about M4 while retrieval may return another machine or revision. Which applicability filters and source-provenance checks justify the cited instruction?",
+      "plain_prompt": "Is this instruction for the right machine and version?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 The confident answer belongs to another machine. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-03-grounded-assistant.md",
+      "route": "lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A configured source was never read",
+      "objective_ids": [
+        "2.4"
+      ],
+      "variant_ids": [
+        "FV-11"
+      ],
+      "technical_prompt": "An MCP connection exposes capability metadata. What explicit invocation or resource-read evidence is required before treating content as model-visible context?",
+      "plain_prompt": "Being connected is not the same as reading the document. What was actually supplied?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 A configured source was never read. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-03-grounded-assistant.md",
+      "route": "lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 The document tries to become an instruction",
+      "objective_ids": [
+        "1.4",
+        "5.6"
+      ],
+      "variant_ids": [
+        "FV-04",
+        "FV-30"
+      ],
+      "technical_prompt": "Retrieved documentation contains instructions that conflict with the user access scope. Which retrieval access controls and source-versus-instruction distinction preserve the boundary?",
+      "plain_prompt": "A document can supply facts, but it cannot grant access or take over the rules.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 The document tries to become an instruction. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-03-grounded-assistant.md",
+      "route": "lessons/ccar-f/architecture-studio/as-03-grounded-assistant.html",
+      "index": 3,
+      "title": "Decide how grounding works",
+      "objective_ids": [
+        "5.6",
+        "5.2"
+      ],
+      "variant_ids": [
+        "FV-30",
+        "FV-26"
+      ],
+      "technical_prompt": "An authorized retrieval packet contains missing or conflicting evidence. Which bounded follow-up and authority-owner handoff prevent an unsupported cited answer?",
+      "plain_prompt": "Look again only where it can help; if the sources still disagree, name the gap and hand it over.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Decide how grounding works. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-04-research-system.md",
+      "route": "lessons/ccar-f/architecture-studio/as-04-research-system.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The question stops fitting one fixed search",
+      "objective_ids": [
+        "1.2",
+        "1.6"
+      ],
+      "variant_ids": [
+        "FV-02",
+        "FV-06"
+      ],
+      "technical_prompt": "A warehouse investigation has several evidence dimensions. Which bounded specialist assignments and coordinator coverage checks justify moving beyond one fixed search?",
+      "plain_prompt": "Break the investigation into useful questions and make sure none of the required questions disappears.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 The question stops fitting one fixed search. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-04-research-system.md",
+      "route": "lessons/ccar-f/architecture-studio/as-04-research-system.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 A specialist cannot understand its assignment",
+      "objective_ids": [
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-03"
+      ],
+      "technical_prompt": "An isolated specialist must investigate a bounded claim. Which task context, source locators, constraints and return contract must be supplied explicitly?",
+      "plain_prompt": "What must you tell a helper so it can do this job without guessing what you discussed?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 A specialist cannot understand its assignment. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-04-research-system.md",
+      "route": "lessons/ccar-f/architecture-studio/as-04-research-system.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A well-formed handoff hides a missing investigation",
+      "objective_ids": [
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-27"
+      ],
+      "technical_prompt": "One required specialist or tool fails while others return useful evidence. Which partial-result and dependency policy preserves successes without claiming complete coverage?",
+      "plain_prompt": "Keep the useful work, name the missing part, and avoid conclusions that depend on it.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 A well-formed handoff hides a missing investigation. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-04-research-system.md",
+      "route": "lessons/ccar-f/architecture-studio/as-04-research-system.html",
+      "index": 3,
+      "title": "Choose a pattern before choosing a team",
+      "objective_ids": [
+        "1.6",
+        "1.2",
+        "1.3"
+      ],
+      "variant_ids": [
+        "FV-06",
+        "FV-02",
+        "FV-03"
+      ],
+      "technical_prompt": "The next step may depend on newly discovered evidence. Which decomposition and stopping policy distinguishes a deterministic workflow from adaptive orchestration?",
+      "plain_prompt": "Are the steps known already, or will you choose the next step after learning something?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Choose a pattern before choosing a team. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-05-code-change.md",
+      "route": "lessons/ccar-f/architecture-studio/as-05-code-change.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 A one-line patch changes a shared meaning",
+      "objective_ids": [
+        "2.5",
+        "3.4"
+      ],
+      "variant_ids": [
+        "FV-12",
+        "FV-16"
+      ],
+      "technical_prompt": "A bounded repository defect affects existing callers. Which Glob, Grep, Read and targeted edit sequence obtains sufficient evidence without loading the entire repository?",
+      "plain_prompt": "How do you find the right files and their callers before changing a small part?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 A one-line patch changes a shared meaning. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-05-code-change.md",
+      "route": "lessons/ccar-f/architecture-studio/as-05-code-change.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 The new convention loads in the wrong places",
+      "objective_ids": [
+        "3.1",
+        "3.3",
+        "3.2"
+      ],
+      "variant_ids": [
+        "FV-13",
+        "FV-15",
+        "FV-14"
+      ],
+      "technical_prompt": "A code convention belongs in shared guidance, path-scoped rules or an on-demand skill. Which discovery and loading behavior determines the appropriate placement?",
+      "plain_prompt": "Put background, file-specific rules and reusable procedures in the places that actually reach the task.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 The new convention loads in the wrong places. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-05-code-change.md",
+      "route": "lessons/ccar-f/architecture-studio/as-05-code-change.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 Tests pass but the customer report is wrong",
+      "objective_ids": [
+        "3.5",
+        "4.3"
+      ],
+      "variant_ids": [
+        "FV-17",
+        "FV-21"
+      ],
+      "technical_prompt": "Importer tests pass but a downstream formatter still misstates an unknown value. Which specific failed-path evidence and regression cases should drive the next correction?",
+      "plain_prompt": "A green test missed the visible mistake. Test the path that still says the wrong thing.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 Tests pass but the customer report is wrong. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-05-code-change.md",
+      "route": "lessons/ccar-f/architecture-studio/as-05-code-change.html",
+      "index": 3,
+      "title": "Make the architecture decisions",
+      "objective_ids": [
+        "3.4",
+        "3.5"
+      ],
+      "variant_ids": [
+        "FV-16",
+        "FV-17"
+      ],
+      "technical_prompt": "A business-contract change affects importer behavior and callers. Which focused investigation, boundary tests, diff and human release evidence support the patch?",
+      "plain_prompt": "Check what the change means to every affected caller, then show the evidence for release.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Make the architecture decisions. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-06-ci-review.md",
+      "route": "lessons/ccar-f/architecture-studio/as-06-ci-review.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The unattended run waits for a person",
+      "objective_ids": [
+        "3.6"
+      ],
+      "variant_ids": [
+        "FV-18"
+      ],
+      "technical_prompt": "An unattended Claude Code review must return a usable findings payload. Which headless execution, permission, exit-status and output-validation checks distinguish a valid run from a failed process?",
+      "plain_prompt": "Can this run without a person at the keyboard, and how will you know it produced usable results?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 The unattended run waits for a person. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-06-ci-review.md",
+      "route": "lessons/ccar-f/architecture-studio/as-06-ci-review.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 Machine-readable output still says something false",
+      "objective_ids": [
+        "4.1",
+        "4.2"
+      ],
+      "variant_ids": [
+        "FV-19",
+        "FV-20"
+      ],
+      "technical_prompt": "A review prompt produces plausible but noisy findings. Which explicit violation criteria, exclusions and source evidence distinguish an actionable finding from unsupported inference?",
+      "plain_prompt": "What exactly counts as a problem, and where is the evidence?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 Machine-readable output still says something false. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-06-ci-review.md",
+      "route": "lessons/ccar-f/architecture-studio/as-06-ci-review.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 Local reviews miss the combined change",
+      "objective_ids": [
+        "4.6",
+        "5.3"
+      ],
+      "variant_ids": [
+        "FV-24",
+        "FV-27"
+      ],
+      "technical_prompt": "Individually plausible local changes interact incorrectly. Which integration trace and independent source checks must precede the final finding ledger?",
+      "plain_prompt": "Check what the changes do together, not only whether each file looks reasonable.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 Local reviews miss the combined change. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-06-ci-review.md",
+      "route": "lessons/ccar-f/architecture-studio/as-06-ci-review.html",
+      "index": 3,
+      "title": "Decision sequence",
+      "objective_ids": [
+        "3.6",
+        "4.1"
+      ],
+      "variant_ids": [
+        "FV-18",
+        "FV-19"
+      ],
+      "technical_prompt": "A review process produces candidate findings for publication. Which process, schema, source-evidence and ledger checks establish validated output before an authorized publishing step?",
+      "plain_prompt": "A review must run, return readable results and support its claims before someone authorized publishes them.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Decision sequence. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-07-work-queue.md",
+      "route": "lessons/ccar-f/architecture-studio/as-07-work-queue.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 One cheap lane misses an urgent deadline",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 One cheap lane misses an urgent deadline. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-07-work-queue.md",
+      "route": "lessons/ccar-f/architecture-studio/as-07-work-queue.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 Results come back in a different order",
+      "objective_ids": [
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-23"
+      ],
+      "technical_prompt": "Batch outcomes arrive in a different order from N-1, N-2 and N-3. Which custom_id and source join reconstructs each outcome without losing unresolved items?",
+      "plain_prompt": "Match the result by its ID, not by where it appears in the list.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 Results come back in a different order. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-07-work-queue.md",
+      "route": "lessons/ccar-f/architecture-studio/as-07-work-queue.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 Different failures need different remedies",
+      "objective_ids": [
+        "2.2",
+        "4.5"
+      ],
+      "variant_ids": [
+        "FV-09",
+        "FV-23"
+      ],
+      "technical_prompt": "Work items fail because of invalid arguments, transient errors or an unknown remote effect. Which cause-specific recovery preserves successes and avoids duplicate effects?",
+      "plain_prompt": "Different failures need different fixes; do not resend everything in one way.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 Different failures need different remedies. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-07-work-queue.md",
+      "route": "lessons/ccar-f/architecture-studio/as-07-work-queue.html",
+      "index": 3,
+      "title": "Numbered decision sequence",
+      "objective_ids": [
+        "4.5",
+        "2.2"
+      ],
+      "variant_ids": [
+        "FV-23",
+        "FV-09"
+      ],
+      "technical_prompt": "Requests differ in latency, client-tool dependency and failure state. Which synchronous or batch route, stable custom_id correlation and selective recovery meet those constraints?",
+      "plain_prompt": "Can these jobs wait, can they run independently, and which individual jobs actually need another attempt?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Numbered decision sequence. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-08-resumable-case.md",
+      "route": "lessons/ccar-f/architecture-studio/as-08-resumable-case.html",
+      "index": 0,
+      "title": "Layer 1 \u2014 The world changed while the session slept",
+      "objective_ids": [
+        "1.7",
+        "1.4",
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-07",
+        "FV-04",
+        "FV-01"
+      ],
+      "technical_prompt": "A saved approval and policy version differ from the current request. Which source refresh, exact-action authority and unknown-operation checks must precede continuation?",
+      "plain_prompt": "Old permission may not cover today\u2019s request. Check what changed and whether the old action finished.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 1 \u2014 The world changed while the session slept. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-08-resumable-case.md",
+      "route": "lessons/ccar-f/architecture-studio/as-08-resumable-case.html",
+      "index": 1,
+      "title": "Layer 2 \u2014 The summary loses the one fact that matters",
+      "objective_ids": [
+        "5.1"
+      ],
+      "variant_ids": [
+        "FV-25"
+      ],
+      "technical_prompt": "Compaction removes a constraint or unresolved operation from a long-running task. Which durable decision state and source refresh preserve safe continuation?",
+      "plain_prompt": "What facts must survive a shorter summary so you do not make the wrong next move?",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 2 \u2014 The summary loses the one fact that matters. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-08-resumable-case.md",
+      "route": "lessons/ccar-f/architecture-studio/as-08-resumable-case.html",
+      "index": 2,
+      "title": "Layer 3 \u2014 A partial specialist return looks final",
+      "objective_ids": [
+        "5.3",
+        "5.5",
+        "5.2"
+      ],
+      "variant_ids": [
+        "FV-27",
+        "FV-29",
+        "FV-26"
+      ],
+      "technical_prompt": "A booking specialist succeeds while payment evidence fails and review capacity is limited. Which partial-result and overflow policy prevents unsupported finalization?",
+      "plain_prompt": "Keep what worked, name what did not, and do not approve just because the review queue is full.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Layer 3 \u2014 A partial specialist return looks final. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    },
+    {
+      "source": "02-Lessons/02-CCAR-F-Architect-Foundations/architecture-studio/AS-08-resumable-case.md",
+      "route": "lessons/ccar-f/architecture-studio/as-08-resumable-case.html",
+      "index": 3,
+      "title": "Decision sequence and reversals",
+      "objective_ids": [
+        "1.7",
+        "1.4",
+        "1.1"
+      ],
+      "variant_ids": [
+        "FV-07",
+        "FV-04",
+        "FV-01"
+      ],
+      "technical_prompt": "A resumed case has mutable policy, old approval and an unresolved operation. Which order of refresh, status reconciliation and scoped authorization preserves a valid final outcome?",
+      "plain_prompt": "Refresh the facts, settle what happened, check permission and only then decide the next action.",
+      "scope": "related-decision",
+      "reason": "The retained reference diagram shows Decision sequence and reversals. The linked variants exercise the same named boundary in separate practice situations; their fixtures are not execution evidence for this reference drawing."
+    }
+  ]
+}

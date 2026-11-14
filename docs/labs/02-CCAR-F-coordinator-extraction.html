@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-22">
+<meta name="reviewed-source" content="n/a">
+<meta name="description" content="Lab 02 — An agent loop, two subagents and schema-checked extraction (CCAR-F, CCDV-F)">
+<title>Lab 02 — An agent loop, two subagents and schema-checked extraction (CCAR-F, CCDV-F) · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../assets/site.css?v=21c6a0ac682a">
+<script defer src="../assets/diagram-annotations.js?v=7a2c6a4df9e1"></script><script defer src="../assets/site.js?v=dac542edefb2"></script>
+<link rel="stylesheet" href="../assets/technical-bridges.css?v=bb37752895d2"><script defer src="../assets/technical-bridges-data.js?v=1cb4e92c8c7a"></script><script defer src="../assets/technical-bridges.js?v=778e575618b6"></script><link rel="stylesheet" href="../assets/course-coach.css?v=d2af8f112d7f"><script defer src="../assets/course-coach-data.js?v=a1d70be458c8"></script><script defer src="../assets/course-coach.js?v=76f8c674d0d9"></script><link rel="stylesheet" href="../assets/viewer.css?v=76723c43548d"><script defer src="../assets/vendor/mermaid-12.1.0.min.js"></script><script defer src="../assets/viewer.js?v=85c369026fb2"></script><link rel="stylesheet" href="../assets/diagram-annotations.css?v=8882e7acffbe"></head>
+<body class="t-neutral">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../exams/ccao-f.html">CCAO-F</a><a href="../exams/ccar-f.html">CCAR-F</a><a href="../exams/ccdv-f.html">CCDV-F</a><a href="../exams/ccar-p.html">CCAR-P</a><a href="../lessons/index.html">Lessons</a><a href="../simulations/index.html">Simulations</a><a href="../labs/index.html">Labs</a><a href="../insights.html">Insights</a><a href="../resources.html">Resources</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap no-side">
+
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true"> / </span><a href="../labs/index.html">Labs</a><span aria-hidden="true"> / </span><span><a class="xref" href="../labs/02-CCAR-F-coordinator-extraction.html">Lab 02: An agent loop, two subagents and schema-checked extraction</a></span></nav>
+<div class="learning-layout"><article class="prose"><h1 id="lab-02--an-agent-loop-two-subagents-and-schema-checked-extraction-ccar-f-ccdv-f">Lab 02 — An agent loop, two subagents and schema-checked extraction (CCAR-F, CCDV-F)</h1><nav class="cc-route" aria-label="Connected architecture learning"><a href="../exams/ccar-f.html#decision-workbench">Learning home and decision coach</a> · <a href="../lessons/ccar-f/objectives/index.html">Objective map</a> · <a href="../lessons/ccar-f/architecture-studio/index.html">Application stories</a></nav><details class="cc-course" id="decision-workbench" data-course-route="labs/02-CCAR-F-coordinator-extraction.html"><summary>Learn, decide and inspect a worked architecture example here</summary><p>Predict the result, check the stated setup, run the bounded experiment and compare observed evidence with your prediction.</p><p>Reading and paper reasoning need no setup. Runnable exercises retain their own prerequisites below.</p><button type="button" class="cc-attempt-gate">I have attempted the exercise — open a separate worked example</button><div class="cc-mount" hidden></div><noscript><p><a href="../lessons/ccar-f/objectives/index.html">Read the full objective lessons and their diagrams</a></p></noscript></details><nav class="tb-route" aria-label="Plain language to technical learning"><strong>Plain ↔ technical:</strong> <a href="../lessons/ccar-f/technical-bridges.html">Mechanism examples and terminology</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.1">1.1</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.2">1.2</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.3">1.3</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-1.6">1.6</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-4.3">4.3</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-4.4">4.4</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-4.5">4.5</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-4.6">4.6</a> · <a href="../lessons/ccar-f/technical-bridges.html#technical-5.3">5.3</a></nav><nav class="variant-links" aria-label="Scenario learning route"><a href="../lessons/ccar-f/architecture-studio/00-foundations.html">Start with an application</a> · <a href="../lessons/ccar-f/learning-journey.html">Full learning journey</a> · <a href="../lessons/ccar-f/architecture-studio/index.html">Learn architecture through eight application cases</a> · <a href="../lessons/ccar-f/scenario-studio.html">Practise 30 decision variants</a></nav>
+<h2 id="read-the-experiment-before-building">Read the experiment before building</h2>
+<p><strong>Two ways to use this lab:</strong> read and predict with no setup, or run the separately identified fixtures/build steps after completing their prerequisites below. These layers are paper experiments until you execute an implementation. An expected trace is not a captured run. Use fictional records in a disposable folder; do not connect real customer data or business effects. Keep input, expected result, observed result and recovery evidence separately.</p>
+<h3 id="stage-1--another-investigator-joins-but-receives-the-wrong-brief">Stage 1 — Another investigator joins, but receives the wrong brief</h3>
+<p>The support case now needs both an order check and a policy check. Each specialist works in a separate conversation. The coordinator tells the policy specialist “use what the other agent found,” but sends neither the order nor its evidence. The reply confidently discusses a different product.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which coordinator-subagent design best preserves <abbr data-tip="A worker reasons with its supplied context, not an assumed shared conversation. Give it a self-contained task and relevant evidence." aria-label="context isolation">context isolation</abbr> while enabling evidence-grounded synthesis?</p>
+<p>A. Assume all subagents inherit the coordinator conversation automatically.</p>
+<p>B. Broadcast all transcripts to every specialist indefinitely.</p>
+<p>C. Pass a bounded brief containing the task, relevant facts, source references and expected return contract; validate the returned evidence before synthesis.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice C.</strong> A separate conversation needs an explicit briefing packet. C supplies what this job requires and lets the receiver check it. A assumes memory that may not exist; B carries unrelated history, extra cost and potentially unnecessary sensitive data.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">coordinator → bounded brief → specialist → result + sources + status
+receiver checks required fields and evidence → integrated answer</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Remove the order reference from the brief: the specialist must flag missing evidence rather than supply a made-up answer. Restore it and trace the returned claim back to that order.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> Both checks can be completed reliably with one agent and two tools. A: always add specialists; B: keep the simpler design unless specialization solves a demonstrated requirement.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. More agents are not a quality guarantee. Split work when independent expertise, context or work boundaries justify the coordination cost.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-1.2.html">1.2</a>, <a href="../lessons/ccar-f/objectives/objective-1.3.html">1.3</a>, <a href="../lessons/ccar-f/objectives/objective-1.6.html">1.6</a>.</p>
+<h3 id="stage-2--the-handoff-parses-but-the-invoice-is-wrong">Stage 2 — The <abbr data-tip="Transfer unresolved work with evidence, current state, reason and next owner; do not label it successful completion." aria-label="handoff">handoff</abbr> parses, but the invoice is wrong</h3>
+<p>A document worker sends a record to an accounting application. It contains vendor, currency and total. The record is valid JSON, but says USD 900 while the invoice says USD 90. Here JSON is the container crossing this handoff; the business failure is the wrong extracted amount.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which receiving-side validation best prevents <abbr data-tip="A structural contract for fields and types. Matching it does not prove the values agree with evidence or business rules." aria-label="schema">schema</abbr>-valid but unsupported extracted values from reaching the downstream system?</p>
+<p>A. Accept every record that parses as JSON.</p>
+<p>B. Apply schema/type checks plus source-grounded semantic checks, preserve discrepancies and use bounded repair or review.</p>
+<p>C. Ask the model for a higher confidence score and skip the source check.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice B.</strong> Check both the shape and meaning. A schema can verify a numeric amount field, but the source decides which amount is supported. A validates only the container; C does not provide independent evidence. Constrained output helps at its supported boundary; it does not make source facts true.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">invoice text → extracted record → shape check → source/amount check
+wrong amount → specific feedback or review; supported value → eligible downstream record</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Use USD 90 and USD 900 test outputs against the same source. Both may pass type checks; only the supported amount may pass the business check. Preserve the source and failed value.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> The vendor name is absent from all supplied material. A: keep retrying until one appears; B: mark unresolved and retrieve missing evidence or route to review.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. Retry can repair a reading error, not create absent evidence. Optional/<abbr data-tip="The field may explicitly contain null. Required presence, allowed null and factual completeness are separate decisions." aria-label="nullable">nullable</abbr> fields must match the business contract; do not silently waive a required business fact.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-4.3.html">4.3</a>, <a href="../lessons/ccar-f/objectives/objective-4.4.html">4.4</a>.</p>
+<h3 id="stage-3--ten-thousand-files-finish-with-mixed-outcomes">Stage 3 — Ten thousand files finish with mixed outcomes</h3>
+<p>One invoice is easy to inspect. Overnight work now contains 10,000 independent files: 9,700 validate, 180 are unreadable, 100 hit transient service errors and 20 conflict with their sources. Those fictional ledger counts describe content/processing outcomes, not API status names.</p>
+<p><strong>Original exam-style practice — choose ONE.</strong> Which bulk-processing recovery design preserves completed work while making unresolved files visible?</p>
+<p>A. Resubmit all 10,000 items whenever any result fails.</p>
+<p>B. Join results by stable request IDs, keep per-item states, retry eligible transient failures within bounds, repair/quarantine bad inputs and reconcile downstream acknowledgements.</p>
+<p>C. Mark the whole workload successful once the batch reports completion.</p>
+<details><summary>What is this asking? (optional, after reading the choices)</summary>
+<p>Identify the requirement that the current application fails to meet. Compare the proposed mechanisms against that requirement. Explain unfamiliar terms using the context above, then record a choice and your reason before opening the repair.</p>
+</details>
+<details><summary>Reveal the repair and replay evidence</summary>
+<p><strong>Choice B.</strong> The ledger lets you recover the 100 temporary failures without replaying 9,700 accepted items. The unreadable inputs need preparation; the conflicting records need evidence review. A risks duplicate downstream writes; C hides unresolved work. Batch results can arrive out of order.</p>
+<p><strong>Follow the changed path:</strong></p>
+<pre><code class="lang-text">file ID → preparation → request ID → API outcome → output checks → downstream acknowledgement
+unresolved item → retry / repair / quarantine; accepted item → retain checkpoint</code></pre>
+<p>The arrows show information or control moving between components; they do not imply that the model executes backend code itself.</p>
+<p><strong>Replay and inspect:</strong> Reconcile 9,700 + 180 + 100 + 20 = 10,000 before retries. After retries, count every item in exactly one current state and preserve attempt history. An API success still needs content validation.</p>
+</details>
+<p><strong>Changed-constraint decision — choose ONE before revealing:</strong> The next job requires an answer in seconds. A: use asynchronous batch processing regardless of latency; B: select an interactive path with its own bounded recovery.</p>
+<details><summary>Reveal changed-constraint reasoning</summary>
+<p>B. Deadline and dependency shape the design. Batch is for eligible independent work that can wait; it does not replace interactive or ordered workflows.</p>
+</details>
+<p><strong>Objective connections:</strong> <a href="../lessons/ccar-f/objectives/objective-4.5.html">4.5</a>, <a href="../lessons/ccar-f/objectives/objective-4.6.html">4.6</a>.</p>
+<p><strong>Supports:</strong> CCAR-F <a class="xref" href="../lessons/ccar-f/L01-agentic-architecture-and-orchestration.html">Lesson 1: Agentic Architecture and Orchestration</a>, <a class="xref" href="../lessons/ccar-f/L04-prompt-engineering-and-structured-output.html">Lesson 4: Prompt Engineering and Structured Output</a>, <a class="xref" href="../lessons/ccar-f/L05-context-management-and-reliability.html">Lesson 5: Context Management and Reliability</a> · CCDV-F <a class="xref" href="../lessons/ccdv-f/L03-agents-and-workflows.html">Lesson 3: Agents and Workflows</a> (Agents and workflows) and <a class="xref" href="../lessons/index.html">Lesson 4</a> (Prompt and context engineering) · <strong>Time:</strong> 3–4 hours · <strong>Needs:</strong> Python 3.10+, <code>pip install anthropic jsonschema</code>, and an API key.</p>
+<blockquote><p><strong>Salesforce laptops block direct calls to the Anthropic API.</strong> People who passed used either a personal account on a personal laptop, or the internal LLM gateway; ask in #claude-certified-architect-exam-prep. (This comes from colleague debrief notes, on the Insights page under "Hands-on practice".) Never paste company or customer data into a personal account.</p></blockquote>
+<h2 id="understand-the-design-before-setup">Understand the design before setup</h2>
+<p>Before executing this lab, read the <a href="../lessons/ccar-f/architecture-studio/as-01-action-service.html">action-service loop</a> and its plain-language/technical choices. Reading requires no credentials; <strong>running this lab does require the setup, account, environment and permission prerequisites below</strong>. Keep its real execution evidence separate from the paper case and local Lab08 fixture. Use the <a href="../lessons/ccar-f/learning-journey.html">full learning journey</a> to return to objectives, practice and repair.</p>
+<h2 id="connect-this-build-to-scenario-decisions">Connect this build to scenario decisions</h2><details class="tb-inline" id="tb-mechanism-1-1" data-technical-bridge="1.1"><summary>Plain ↔ technical · stop_reason / tool_use</summary><p>Related objective example. Keep the current case's facts and chosen answer separate. For a decision, choose before opening this study help.</p><label>Mechanism <select class="tb-select"><option value="1.1">1.1 · stop_reason / tool_use</option><option value="1.2">1.2 · coordinator-subagent pattern / bounded delegation</option><option value="4.3">4.3 · output_config.format / json_schema</option><option value="4.4">4.4 · consumer validation / semantic validation</option><option value="5.3">5.3 · error propagation / partial success</option></select></label><div class="tb-slot"><div class="tb-pair" data-objective="1.1"><div class="tb-plain"><h3>In everyday language</h3><p>Claude asks to look up an order. Your program performs the lookup, sends its observed result back, and asks Claude to continue. Stopping the model is separate from proving a payment finished.</p><p><strong>Does not establish:</strong> tool_use is a request for client execution, not execution itself; end_turn is not business settlement.</p></div><div class="tb-precise"><h3>In technical terms</h3><p class="tb-terms"><code>stop_reason</code> <code>tool_use</code> <code>tool_result</code> <code>tool_use_id</code> <code>end_turn</code></p><details><summary>Inspect the technical example</summary><p class="tb-artifact-label">Actual Messages content-block shapes; fictional IDs/data; response and next-request excerpts, not a complete API request</p><pre tabindex="0" aria-label="Technical example"><code>Observed assistant response excerpt (stop_reason is RESPONSE metadata):
+{&quot;role&quot;:&quot;assistant&quot;,&quot;stop_reason&quot;:&quot;tool_use&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_use&quot;,&quot;id&quot;:&quot;toolu_order17&quot;,&quot;name&quot;:&quot;lookup_order&quot;,&quot;input&quot;:{&quot;order_id&quot;:&quot;O4&quot;}}]}
+
+YOUR runtime executes the permitted lookup. For the next Messages request,
+append only assistant role + content, followed by the matching result:
+{&quot;role&quot;:&quot;assistant&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_use&quot;,&quot;id&quot;:&quot;toolu_order17&quot;,&quot;name&quot;:&quot;lookup_order&quot;,&quot;input&quot;:{&quot;order_id&quot;:&quot;O4&quot;}}]}
+{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_result&quot;,&quot;tool_use_id&quot;:&quot;toolu_order17&quot;,&quot;content&quot;:&quot;{\&quot;order_id\&quot;:\&quot;O4\&quot;,\&quot;status\&quot;:\&quot;delivered\&quot;}&quot;}]}
+
+Send the updated messages array in the next model request.
+Do not copy response-only stop_reason into an input message.</code></pre><p><strong>Read it as:</strong> The tool_use id and tool_result tool_use_id must match. Input messages contain role and content; stop_reason describes the response. The returned content is observed lookup evidence, not a credit receipt.</p></details><p class="tb-source"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls">Official mechanism reference</a></p></div></div></div></details>
+<p><strong>Before building:</strong> <a href="../lessons/ccar-f/scenario-studio.html">Choose a case in the scenario studio</a>. Predict the result before running each failure injection.</p>
+<p>Inject a tool failure, a schema-valid wrong amount and conflicting totals. Retain successes, send the exact validation error, stop retries at the declared budget and preserve the contradictory source values.</p>
+<p><strong>Evidence to keep:</strong> synthetic input, observed tool/result or hook outcome, expectation, actual failure category, recovery and a changed-condition retest. Do not mark this lab complete from reading alone.</p>
+<ul><li><a href="../lessons/ccar-f/objectives/objective-1.1.html#variant-fv-01">FV-01 — Confirm the effect before retrying</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=1.1&amp;variant=FV-01">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-1.2.html#variant-fv-02">FV-02 — Cover dimensions before synthesizing</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=1.2&amp;variant=FV-02">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.3.html#variant-fv-21">FV-21 — Validate shape and truth separately</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=4.3&amp;variant=FV-21">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.4.html#variant-fv-22">FV-22 — Repair the failed check within a budget</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=4.4&amp;variant=FV-22">Test the decision</a></li><li><a href="../lessons/ccar-f/objectives/objective-5.3.html#variant-fv-27">FV-27 — Propagate partial success without hiding failure</a> · <a href="../practice/index.html?exam=CCAR-F&amp;objective=5.3&amp;variant=FV-27">Test the decision</a></li></ul>
+<p><strong>After building:</strong> explain which constraint changes the answer, then use <a href="../lessons/ccar-f/decision-atlas.html">drawings</a>, <a href="../lessons/ccar-f/flashcards.html">recall</a> and <a href="../simulations/ccar-f/index.html">simulations</a> to transfer the mechanism.</p>
+<h2 id="what-youll-build-and-why">What you'll build and why</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p>You'll write one small "coordinator" agent that hands work to two helper agents: one that searches notes, one that pulls invoice fields into a checked JSON shape. Doing it by hand shows you what an agent loop really is, why helpers get narrow tools, and how retries with a precise error fix bad extractions.</p>
+<pre><code class="lang-text">you ──&gt; coordinator loop
+          ├── research(topic) ──&gt; researcher loop ──&gt; search_notes ──&gt; notes/*.txt
+          └── extract(doc)    ──&gt; extractor loop  ──&gt; record_invoice ──&gt; jsonschema + your rules
+                                                            │ fails? retry with the error (max 2)
+                                                            └── still fails? needs-human-review list</code></pre>
+<p>Words you'll meet, in plain terms:</p>
+<ul><li><strong>Agent loop:</strong> call the model, run any tools it asks for, send the results back, repeat until it says it's done.</li><li><strong><code>stop_reason</code>:</strong> the field on each reply that says why the model stopped. <code>tool_use</code> means "run my tools"; <code>end_turn</code> means "I'm finished".</li><li><strong><code>tool_use</code> / <code>tool_result</code> blocks:</strong> the model's tool request, and your answer to it, linked by the same <code>tool_use_id</code>.</li><li><strong>Coordinator:</strong> the top agent that decides what to do and calls helpers.</li><li><strong>Subagent:</strong> a helper agent, here just a fresh loop with its own system prompt and tools.</li><li><strong>JSON schema:</strong> a description of the exact fields and types a JSON object must have.</li><li><strong><code>tool_choice</code>:</strong> a request setting that can force the model to call one named tool.</li><li><strong><code>is_error</code>:</strong> a flag on a <code>tool_result</code> that tells the model "that call failed".</li></ul>
+<p>Task numbers refer to the task statements in the official exam guide.</p>
+<h2 id="why-this-matters-on-the-exam">Why this matters on the exam</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<ul><li>The loop ends when the model says so (<code>end_turn</code>), not when a counter runs out.</li><li>Subagents get only the tools and context their job needs; more tools means more wandering.</li><li>Tool calls with a schema (forced where the model allows it, otherwise <code>auto</code> + <code>strict: true</code>), plus validation and a retry that quotes the error, are the reliable way to get structured data out.</li><li>A failure must look like a failure. An empty "success" hides it from the coordinator.</li></ul>
+<p><strong>Done when:</strong></p>
+<ul><li>the coordinator loop and the researcher loop each stop because <code>stop_reason == &quot;end_turn&quot;</code> (print the stop reason on the last turn and see <code>end_turn</code>), not because a turn counter ran out</li><li>the extractor returns as soon as it gets a <code>record_invoice</code> call that passes validation, not on <code>end_turn</code>. On a model that supports forcing, you force the tool with <code>tool_choice</code>; on a model that rejects forcing (see Step 3), you use <code>auto</code> plus <code>strict: true</code> and a prompt that says to call the tool, and either way the exit is the valid <code>record_invoice</code> call</li><li>for each subagent call you print its <code>tools</code> list and its first user message, and see: the researcher has only <code>search_notes</code> and gets only the topic; the extractor has only <code>record_invoice</code> and gets only one document</li><li><code>inv_bad_math.txt</code> fails once if the model copies 100.00 into <code>calculated_total</code>, is retried with the exact error message, and passes within 2 retries with <code>calculated_total</code> 90.00, <code>stated_total</code> 100.00 and <code>totals_conflict</code> true</li><li><code>inv_no_vendor.txt</code> ends up on the needs-human-review list after 2 retries, and is not retried a third time</li><li>a failing <code>search_notes</code> call reaches the coordinator as <code>{&quot;status&quot;: &quot;error&quot;, ...}</code>, not as an empty success</li></ul>
+<h2 id="build-it-in-five-steps">Build it in five steps</h2>
+<h3 id="0-set-up-about-20-minutes">0. Set up (about 20 minutes)</h3>
+<p>Make this folder layout:</p>
+<pre><code class="lang-text">lab02/
+  agent.py
+  notes/       5 short .txt files
+  invoices/    5 short .txt files</code></pre>
+<p>Sample notes (one or two lines each is enough):</p>
+<ul><li><code>notes/returns.txt</code>: "Returns are accepted within 30 days with a receipt."</li><li><code>notes/shipping.txt</code>: "Standard shipping takes 3 to 5 business days."</li><li>three more on any topic you like.</li></ul>
+<p>Sample invoices (make 3 clean, plus these 2 broken on purpose):</p>
+<ul><li><code>invoices/inv_ok_1.txt</code>: "Acme Ltd. Date 2026-09-01. Widgets 2 x 25.00 = 50.00. Bolts 1 x 50.00 = 50.00. Total 100.00 USD."</li><li><code>invoices/inv_bad_math.txt</code>: same, but the line items are 40.00 and 50.00 while the total still says 100.00.</li><li><code>invoices/inv_no_vendor.txt</code>: line items and total, but no vendor name anywhere.</li></ul>
+<p><strong>How you know it worked:</strong> <code>ls notes invoices</code> shows 5 files in each.</p>
+<h3 id="1-the-loop-about-45-minutes-about-30-lines">1. The loop (about 45 minutes, about 30 lines)</h3>
+<p><em>Practises: task 1.1.</em></p>
+<ul><li>Call <code>client.messages.create(model=MODEL, max_tokens=..., tools=TOOLS, messages=history)</code>. Pick <code>MODEL</code> from the <a class="ext" href="https://platform.claude.com/docs/en/about-claude/models/overview" rel="noopener">models overview</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs).</li><li>If <code>response.stop_reason == &quot;tool_use&quot;</code>:<ol><li>run each <code>tool_use</code> block</li><li>append the whole assistant turn (<code>{&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: response.content}</code>, including its <code>tool_use</code> blocks), then <strong>one</strong> user turn holding every <code>tool_result</code> block, each with the matching <code>tool_use_id</code></li><li>loop again</li></ol></li><li>If it's <code>&quot;end_turn&quot;</code>, stop and return the text.</li><li>Any other <code>stop_reason</code>, such as <code>max_tokens</code>, is not success: log it and handle it on purpose (raise <code>max_tokens</code>, or fail loudly). The full list of stop reasons can change, so check the current docs.</li><li>Keep a high safety cap, for example 25 turns, and log it if the cap is ever hit. A cap is a seatbelt, not the way the loop is meant to end.</li></ul>
+<p>Skeleton (the marked lines are yours to fill in):</p>
+<pre><code class="lang-python">def run_loop(system, tools, history, tool_impls, cap=25, tool_choice=None):
+    for turn in range(cap):
+        extra = {&quot;tool_choice&quot;: tool_choice} if tool_choice else {}
+        response = client.messages.create(model=MODEL, max_tokens=2048, system=system,
+                                          tools=tools, messages=history, **extra)
+        if response.stop_reason == &quot;end_turn&quot;:
+            return &quot;&quot;.join(b.text for b in response.content if b.type == &quot;text&quot;)
+        if response.stop_reason != &quot;tool_use&quot;:
+            raise RuntimeError(f&quot;Unexpected stop_reason: {response.stop_reason}&quot;)  # YOUR CHOICE
+        history.append({&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: response.content})
+        results = []
+        for block in response.content:
+            if block.type == &quot;tool_use&quot;:
+                output = tool_impls[block.name](**block.input)        # YOUR TOOLS
+                results.append({&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: block.id,
+                                &quot;content&quot;: json.dumps(output)})
+        history.append({&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: results})          # ONE user turn
+    raise RuntimeError(&quot;Safety cap hit&quot;)  # log it: this should never be the normal ending</code></pre>
+<p>The extractor uses the same loop but exits differently: on a valid <code>record_invoice</code> call, not on <code>end_turn</code>. Replace the inner tool step with this variant:</p>
+<pre><code class="lang-python">if block.type == &quot;tool_use&quot; and block.name == &quot;record_invoice&quot;:
+    problem = validate(block.input)            # jsonschema + your rules; None if fine
+    if problem is None: return block.input     # pass: done
+    results.append({&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: block.id,
+                    &quot;is_error&quot;: True, &quot;content&quot;: problem}); retries += 1  # fail: one retry
+    if retries &gt; 2: return {&quot;status&quot;: &quot;needs_review&quot;, &quot;document&quot;: doc, &quot;error&quot;: problem}  # 2 retries used</code></pre>
+<p>What <code>history</code> looks like after one tool round (simplified):</p>
+<pre><code class="lang-python">[
+  {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;What is our returns policy?&quot;},
+  {&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: [
+      {&quot;type&quot;: &quot;tool_use&quot;, &quot;id&quot;: &quot;toolu_01&quot;, &quot;name&quot;: &quot;search_notes&quot;,
+       &quot;input&quot;: {&quot;query&quot;: &quot;returns&quot;}}]},
+  {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: [
+      {&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: &quot;toolu_01&quot;,
+       &quot;content&quot;: &quot;[\&quot;Returns are accepted within 30 days with a receipt.\&quot;]&quot;}]},
+]</code></pre>
+<p><strong>How you know it worked:</strong> the loop runs without errors on a plain question with no tools needed and ends on <code>end_turn</code>. The full tool round is checked at the end of Step 2, once <code>search_notes</code> exists.</p>
+<h3 id="2-two-subagents-with-narrow-tools-about-45-minutes">2. Two subagents with narrow tools (about 45 minutes)</h3>
+<p><em>Practises: tasks 1.2, 1.3 and 2.3.</em></p>
+<p>Make the coordinator's tools <code>research(topic)</code> and <code>extract(document)</code>. Each one calls a fresh loop, which is the subagent, with its own system prompt and its own tool list:</p>
+<div class="tbl"><table><thead><tr><th>Subagent</th><th>Tools</th><th>Gets</th></tr></thead><tbody><tr><td>researcher</td><td><code>search_notes(query)</code>, a fake search over 5 local text files</td><td>the topic only</td></tr><tr><td>extractor</td><td><code>record_invoice(...)</code>, whose input schema is your JSON schema</td><td>one document only</td></tr></tbody></table></div>
+<p>Return a <strong>short, structured result</strong> to the coordinator, not the subagent's whole transcript. If a subagent's tool fails, it returns a structured failure, for example <code>{&quot;status&quot;: &quot;error&quot;, &quot;error&quot;: &quot;search_notes timed out&quot;, &quot;partial_results&quot;: [...]}</code>, so the coordinator can decide what to do. An empty "success" hides the failure.</p>
+<p>The subagent call, in pseudo-code:</p>
+<pre><code class="lang-python">def research(topic):
+    history = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: topic}]          # the topic only, nothing else
+    print([t[&quot;name&quot;] for t in RESEARCH_TOOLS], history[0])  # the Done-when check
+    try:
+        answer = run_loop(RESEARCHER_SYSTEM, RESEARCH_TOOLS, history, {&quot;search_notes&quot;: search_notes})
+        return {&quot;status&quot;: &quot;ok&quot;, &quot;answer&quot;: answer}
+    except ToolFailure as e:                                 # YOUR exception type
+        return {&quot;status&quot;: &quot;error&quot;, &quot;error&quot;: str(e), &quot;partial_results&quot;: e.partial}</code></pre>
+<p><strong>How you know it worked:</strong> the printout shows <code>[&#x27;search_notes&#x27;]</code> and only the topic text. Then ask the researcher "What is our returns policy?": it prints one <code>tool_use</code> turn, then <code>end_turn</code>, and answers "30 days with a receipt".</p>
+<h3 id="3-extraction-through-a-tool-schema-about-45-minutes">3. Extraction through a tool schema (about 45 minutes)</h3>
+<p><em>Practises: task 4.3.</em></p>
+<p><em>Practises: tasks 4.1–4.3.</em></p>
+<ul><li>Define <code>record_invoice</code> with an <code>input_schema</code>: <code>vendor</code>, <code>date</code> (ISO 8601), <code>stated_total</code> and <code>calculated_total</code> (numbers, so a mismatch can be flagged), <code>line_items</code> (array), and <code>confidence</code> (<code>high</code>, <code>medium</code> or <code>low</code>). <code>vendor</code> is <strong>required</strong> and not nullable, so an invoice with no vendor can only end on the review list.</li><li><code>calculated_total</code> must be the sum of <code>line_items</code>; <code>stated_total</code> is what the document says. Add a required boolean <code>totals_conflict</code>: true when they differ. That's a flagged conflict, not a failure.</li><li>Make <code>date</code> nullable (<code>&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]</code>) and tell the model to return null when the document has no date. A required, non-nullable field pushes the model to invent a value.</li><li>Add <code>currency</code> as an enum that includes <code>&quot;other&quot;</code>, plus a <code>currency_detail</code> string for when <code>&quot;other&quot;</code> is chosen.</li><li>Force it with <code>tool_choice={&quot;type&quot;: &quot;tool&quot;, &quot;name&quot;: &quot;record_invoice&quot;}</code>. <strong>Check your model first:</strong> the <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools" rel="noopener">define tools</a> page (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs) says forced <code>tool_choice</code> (<code>any</code> or <code>tool</code>) returns a 400 error on Opus 5.5, Sonnet 5.5, Fable 5.1 and Mythos 5.1. Either use a model that supports forcing (the docs example uses <code>claude-opus-5</code>), or on those models use <code>tool_choice</code> <code>auto</code>, set <code>strict: true</code> on the tool, and tell the model in the prompt to call <code>record_invoice</code>.</li><li>Validate the tool input with <code>jsonschema.validate</code>, then add your own rule: <code>calculated_total</code> equals the sum of <code>line_items</code> (compare in cents, or with <code>decimal.Decimal</code>, not raw floats).</li></ul>
+<p><strong>How you know it worked:</strong> <code>inv_ok_1.txt</code> comes back as a <code>record_invoice</code> input with vendor "Acme Ltd", date "2026-09-01" and both totals 100.00, and <code>jsonschema.validate</code> raises nothing.</p>
+<h3 id="4-validate-and-retry-about-45-minutes">4. Validate and retry (about 45 minutes)</h3>
+<p><em>Practises: tasks 4.4, 5.2 and 5.5.</em></p>
+<p>On failure, send back a <code>tool_result</code> with <code>is_error: true</code> and the exact validation message:</p>
+<pre><code class="lang-python">{&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: block.id, &quot;is_error&quot;: True,
+ &quot;content&quot;: &quot;line items sum to 90.00 but total is 100.00&quot;}</code></pre>
+<p>Put the <code>tool_result</code> blocks first in that user turn, before any text. Because the document and the failed <code>tool_use</code> are already in the history, the <code>is_error</code> result completes the trio the guide names: the original document, the failed extraction and the specific error.</p>
+<p>Allow up to 2 retries, then route the document to a "needs human review" list. Retries fix format and arithmetic slips; they don't help when the information isn't in the document.</p>
+<p>Test it with 5 documents, two of which you've broken on purpose: one with an arithmetic error (should pass after a retry) and one with the required vendor genuinely missing (should end up on the review list).</p>
+<p><strong>How you know it worked:</strong> if the first attempt copies 100.00 into <code>calculated_total</code>, <code>inv_bad_math.txt</code> prints a failed attempt with "line items sum to 90.00 but total is 100.00", then a passing one with <code>calculated_total</code> 90.00, <code>stated_total</code> 100.00 and <code>totals_conflict</code> true. (If the first attempt already gets 90.00, it passes straight away; <code>totals_conflict</code> is what you check.) <code>inv_no_vendor.txt</code> prints two failed retries and then appears on the review list.</p>
+<h2 id="checks-about-30-minutes">Checks (about 30 minutes)</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><em>Practises: tasks 1.3 and 5.1–5.3.</em> Expected results are in brackets.</p>
+<ul><li>Remove the retry and run all 5 invoices. [<code>inv_bad_math.txt</code> now ends as a failure or goes straight to review.] Then put the retry back.</li><li>Give the extractor the search tool too. [It may call <code>search_notes</code> instead of, or before, <code>record_invoice</code>, or try to look up the missing vendor.] Then take the tool away.</li><li>Make <code>search_notes</code> raise an error. [The coordinator receives <code>{&quot;status&quot;: &quot;error&quot;, &quot;error&quot;: ..., &quot;partial_results&quot;: [...]}</code> and says it couldn't search, rather than answering as if the notes were empty.]</li></ul>
+<h2 id="common-traps">Common traps</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<div class="tbl"><table><thead><tr><th>Trap</th><th>Symptom you'll see</th></tr></thead><tbody><tr><td>Stopping on a turn counter</td><td>Answers get cut off, or the loop keeps going after the answer</td></tr><tr><td>Sending each <code>tool_result</code> as its own user turn, or putting text before them</td><td>A 400 error such as "tool_use ids were found without tool_result blocks immediately after"; all <code>tool_result</code> blocks go first in one user turn (<a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use" rel="noopener">parallel tool use</a>, <a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>)</td></tr><tr><td>Forcing <code>tool_choice</code> on a model that rejects it</td><td>A 400 error on the first extractor call; switch model or use <code>auto</code> + <code>strict: true</code></td></tr><tr><td>Dropping the assistant turn before the results</td><td>A 400 error: <code>tool_result</code> with no matching <code>tool_use</code></td></tr><tr><td>Treating <code>max_tokens</code> as success</td><td>Half-finished answers or cut-off JSON</td></tr><tr><td>Required, non-nullable <code>date</code></td><td>The model invents a date for an undated invoice</td></tr><tr><td>Retrying without the exact error</td><td>The same wrong total comes back each time</td></tr><tr><td>Retrying missing data forever</td><td><code>inv_no_vendor.txt</code> burns turns and never finishes</td></tr><tr><td>Comparing totals as raw floats</td><td>A correct invoice fails on 0.1 + 0.2 style rounding</td></tr><tr><td>Passing the whole transcript back to the coordinator</td><td>The coordinator's context fills up fast</td></tr><tr><td>Empty "success" on a failed search</td><td>The coordinator says "no notes found" when the search actually broke</td></tr></tbody></table></div>
+<p>Sources: CCAR-F official exam guide v1.0 (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>), task statements 1.1–1.3, 2.3, 4.1–4.4, 5.1–5.3 and 5.5, and Exercises 3 and 4; <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview" rel="noopener">tool use</a>, <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools" rel="noopener">define tools</a>, <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use" rel="noopener">parallel tool use</a> and <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls" rel="noopener">handle tool calls</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, check the current docs); <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs" rel="noopener">structured outputs</a> (<a class="xref" href="../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>; a separate feature from tool-based extraction; check the current docs).</p>
+<h2 id="next">Next</h2>
+<p>Next: <a href="../simulations/ccar-f/SIM-04-multi-agent-research.html">SIM-04</a>.</p>
+<h2 id="what-i-learned">What I learned</h2>
+<p>-</p>
+<h2 id="decision-variant-failure-acceptance">Decision-variant failure acceptance</h2><details class="tb-inline" id="tb-mechanism-1-3" data-technical-bridge="1.3"><summary>Plain ↔ technical · isolated context / self-contained brief</summary><p>Related objective example. Keep the current case's facts and chosen answer separate. For a decision, choose before opening this study help.</p><label>Mechanism <select class="tb-select"><option value="1.3">1.3 · isolated context / self-contained brief</option><option value="4.3">4.3 · output_config.format / json_schema</option><option value="4.4">4.4 · consumer validation / semantic validation</option><option value="5.3">5.3 · error propagation / partial success</option></select></label><div class="tb-slot"><div class="tb-pair" data-objective="1.3"><div class="tb-plain"><h3>In everyday language</h3><p>An isolated specialist needs the actual assignment and relevant facts, not a reference to a conversation it has not received.</p><p><strong>Does not establish:</strong> An output schema does not supply missing task context; these field names are not reserved Claude API fields.</p></div><div class="tb-precise"><h3>In technical terms</h3><p class="tb-terms"><code>isolated context</code> <code>self-contained brief</code> <code>return contract</code> <code>claim-to-source mapping</code></p><details><summary>Inspect the technical example</summary><p class="tb-artifact-label">Illustrative application brief/return contract — not SDK invocation syntax</p><pre tabindex="0" aria-label="Technical example"><code>brief = {
+  goal: &quot;Compare scanner use with gloves&quot;,
+  constraint: &quot;Pilot next month&quot;,
+  sources: [&quot;S1&quot;, &quot;S2&quot;],
+  return: [&quot;claim&quot;, &quot;source_id&quot;, &quot;locator&quot;, &quot;uncertainty&quot;]
+}
+return = {claim:&quot;...&quot;, source_id:&quot;S1&quot;, locator:&quot;p4&quot;, uncertainty:&quot;...&quot;}</code></pre><p><strong>Read it as:</strong> The fields are your application agreement. They tell the specialist what to investigate and let the coordinator trace each finding.</p></details><p class="tb-source"><a href="https://code.claude.com/docs/en/agent-sdk/subagents">Official mechanism reference</a></p></div></div></div></details>
+<p>Use the existing synthetic fixture and a disposable local state. Retain input, trace, failed check and recovery evidence; these tests do not authorize production effects.</p>
+<ul><li><strong>FV-03:</strong> Omit the upstream evidence from one specialist brief. The reviewer must identify the unsupported finding; send a complete bounded packet and recheck. <a href="../lessons/ccar-f/objectives/objective-1.3.html#variant-fv-03">Exact teaching repair</a>.</li><li><strong>FV-21:</strong> Supply schema-valid amount 900 against source 90. Source/semantic validation must fail even when shape passes. <a href="../lessons/ccar-f/objectives/objective-4.3.html#variant-fv-21">Exact teaching repair</a>.</li><li><strong>FV-22:</strong> Use a contradictory source total. Preserve the discrepancy and stop at the declared retry budget instead of inventing a reconciled number. <a href="../lessons/ccar-f/objectives/objective-4.4.html#variant-fv-22">Exact teaching repair</a>.</li><li><strong>FV-27:</strong> Fail a mandatory specialist source. Preserve successful findings while blocking its dependent conclusion. <a href="../lessons/ccar-f/objectives/objective-5.3.html#variant-fv-27">Exact teaching repair</a>.</li></ul>
+<p><strong>Runnable pilot fixtures:</strong> Run <code>python3 decision_variant_fixtures.py</code> from this lab directory. The synthetic script injects target/amount/expiry changes (FV-04), a schema-valid wrong amount (FV-21), and malformed/error/stale-commit CI reports (FV-18). No network or production effects occur. Its declared envelope is a teaching fixture; inspect the actual installed CLI contract before adapting it.</p>
+<p>Download the complete synthetic decision-variant fixture. Save it in a disposable folder and run <code>python3 decision_variant_fixtures.py</code>. This validates fictional application contracts, not authenticated SDK/API behavior.</p>
+<a id="benchmark-evidence-tasks"></a>
+<h2 id="objective-evidence-tasks--predict-inspect-explain">Objective evidence tasks — predict, inspect, explain</h2>
+<p><strong>Optional offline files:</strong> <a href="../downloads/benchmark_exercises.py" download>Python inspector</a> and <a href="../downloads/benchmark-fixtures.json" download>synthetic fixture data</a>. Save both beside each other; run the script with Python 3. The output validates only the controlled example, not Claude runtime behavior.</p>
+<p>These original tasks extend this existing LAB without replacing its integration setup. Each contains its own input, failure and checkable result. You can read them without installation. Optional Python replay is offline; live tool routing, permissions, rule loading and third-party services remain unverified until you run those integration steps.</p>
+<ul><li><a href="#benchmark-exercise-1-1">1.1: Objective 1.1 — Build an agentic loop that knows when to continue</a></li><li><a href="#benchmark-exercise-1-2">1.2: Objective 1.2 — Coordinate specialists without losing the whole question</a></li><li><a href="#benchmark-exercise-1-3">1.3: Objective 1.3 — Spawn agents with complete, attributable context</a></li><li><a href="#benchmark-exercise-4-2">4.2: Objective 4.2 — Apply few-shot prompting to improve output consistency and quality</a></li><li><a href="#benchmark-exercise-4-3">4.3: Objective 4.3 — Enforce structured output using tool use and JSON schemas</a></li><li><a href="#benchmark-exercise-4-4">4.4: Objective 4.4 — Implement validation, retry, and feedback loops for extraction quality</a></li><li><a href="#benchmark-exercise-4-5">4.5: Objective 4.5 — Design efficient batch processing strategies</a></li></ul>
+<a id="benchmark-exercise-1-1"></a>
+<h3 id="worked-evidence-task--11-test-the-boundary">Worked evidence task — 1.1: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A response contains text, a tool-use request, then a timeout and a truncated continuation. Which lifecycle policy preserves correlation without treating generation interruption as business completion?</p>
+<p><strong>In everyday terms:</strong> A readable sentence is not a transaction receipt. A timeout still belongs to the requested tool; do not lose its identity.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;responses&quot;: [
+    {
+      &quot;text&quot;: &quot;I will check&quot;,
+      &quot;stop_reason&quot;: &quot;tool_use&quot;,
+      &quot;id&quot;: &quot;t17&quot;
+    },
+    {
+      &quot;tool_result_for&quot;: &quot;t17&quot;,
+      &quot;status&quot;: &quot;timeout&quot;
+    },
+    {
+      &quot;stop_reason&quot;: &quot;max_tokens&quot;
+    }
+  ],
+  &quot;task_complete&quot;: false
+}</code></pre>
+<h4 id="break-choose-repair-prove">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Replay mixed text and tool requests, correlated tool results and interrupted generation. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Keep assistant tool requests and matching results together; classify interruption separately from a finished model turn. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> In this fixture end_turn ends the normal model turn. Define separate policies for paused continuation, truncation, refusal, stop sequence and budget/cancellation exits; none alone proves business task completion. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-1.1.html#lifecycle">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.1 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.1</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;tool_request_ids&quot;: [
+    &quot;t17&quot;
+  ],
+  &quot;failed_result_ids&quot;: [
+    &quot;t17&quot;
+  ],
+  &quot;last_stop&quot;: &quot;max_tokens&quot;,
+  &quot;business_complete&quot;: false,
+  &quot;next_policy&quot;: &quot;bounded continuation or documented partial stop; not success&quot;
+}</code></pre>
+<p><strong>Why this matters:</strong> A readable sentence is not a transaction receipt. A timeout still belongs to the requested tool; do not lose its identity. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agent-sdk/overview" rel="noopener">Claude Agent SDK Overview</a> · <a class="ext" href="https://platform.claude.com/docs/en/api/messages" rel="noopener">Messages API Reference</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-1-2"></a>
+<h3 id="worked-evidence-task--12-test-the-boundary">Worked evidence task — 1.2: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A coordinator receives security and cost findings for a comparison that also requires migration analysis. Which completion condition should govern synthesis?</p>
+<p><strong>In everyday terms:</strong> Two useful reports can still leave one part of the question unanswered.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-1">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;required&quot;: [
+    &quot;security&quot;,
+    &quot;cost&quot;,
+    &quot;migration&quot;
+  ],
+  &quot;returned&quot;: [
+    &quot;security&quot;,
+    &quot;cost&quot;
+  ],
+  &quot;deadline_minutes&quot;: 15
+}</code></pre>
+<h4 id="break-choose-repair-prove-1">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Give three requested dimensions but only two specialist reports. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Compare returned dimensions with the required coverage set, and request only the missing investigation. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Coordinator identifies the missing dimension before claiming a complete comparison. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-1.2.html#scope">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.2 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.2</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;missing&quot;: [
+    &quot;migration&quot;
+  ],
+  &quot;complete&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> Two useful reports can still leave one part of the question unanswered. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agent-sdk/overview" rel="noopener">Claude Agent SDK Overview</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-1-3"></a>
+<h3 id="worked-evidence-task--13-test-the-boundary">Worked evidence task — 1.3: test the boundary</h3>
+<p><strong>Original technical decision.</strong> A fresh synthesis specialist receives a claim without a source locator. Which handoff contract makes its output attributable under isolated context?</p>
+<p><strong>In everyday terms:</strong> The next specialist cannot read a conversation it never received.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-2">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;specialist&quot;: &quot;synthesizer&quot;,
+  &quot;prior_context&quot;: null,
+  &quot;finding&quot;: {
+    &quot;claim&quot;: &quot;unit cost 8&quot;,
+    &quot;locator&quot;: null
+  },
+  &quot;allowed_tools&quot;: [
+    &quot;merge&quot;
+  ]
+}</code></pre>
+<h4 id="break-choose-repair-prove-2">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Pass a finding first without, then with, its source locator and explicit tool boundary. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Send the bounded task, source locator and capability boundary explicitly; flag unsupported claims. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Fresh specialist can identify the source and task without inheriting parent conversation. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-1.3.html#packet">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.3 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 1.3</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;source_attributable&quot;: false,
+  &quot;parent_context_available&quot;: false,
+  &quot;allowed_tools&quot;: [
+    &quot;merge&quot;
+  ],
+  &quot;repair_required&quot;: [
+    &quot;task&quot;,
+    &quot;source locator&quot;,
+    &quot;tool boundary&quot;
+  ]
+}</code></pre>
+<p><strong>Why this matters:</strong> The next specialist cannot read a conversation it never received. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://code.claude.com/docs/en/agent-sdk/sessions" rel="noopener">sessions guide</a> · <a class="ext" href="https://platform.claude.com/docs/en/agent-sdk/overview" rel="noopener">Claude Agent SDK Overview</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-4-2"></a>
+<h3 id="worked-evidence-task--42-test-the-boundary">Worked evidence task — 4.2: test the boundary</h3>
+<p><strong>Original technical decision.</strong> An extraction prompt has table and prose examples, but a field is split across two paragraphs. Which evaluation establishes transfer beyond memorized formatting?</p>
+<p><strong>In everyday terms:</strong> The new layout checks whether the rule was learned rather than one example copied.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-3">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;source_examples&quot;: [
+    &quot;amount in table&quot;,
+    &quot;amount in prose&quot;
+  ],
+  &quot;unseen&quot;: &quot;same field split across two paragraphs&quot;,
+  &quot;format&quot;: &quot;fixed record; missing evidence nullable&quot;
+}</code></pre>
+<h4 id="break-choose-repair-prove-3">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Teach one extraction boundary with varied examples and test an unseen arrangement. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Use the unseen arrangement as a separate test and require supporting text for the fixed record. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Improve consistency without treating examples as proof of truth or a universal remedy. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-4.2.html#worked-example">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.2 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.2</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;source_layouts&quot;: 2,
+  &quot;unseen_layout&quot;: &quot;same field split across two paragraphs&quot;,
+  &quot;record_rule&quot;: &quot;fixed record; missing evidence nullable&quot;,
+  &quot;unseen_accuracy_observed&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> The new layout checks whether the rule was learned rather than one example copied. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" rel="noopener">Prompt Engineering Overview</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-4-3"></a>
+<h3 id="worked-evidence-task--43-test-the-boundary">Worked evidence task — 4.3: test the boundary</h3>
+<p><strong>Original technical decision.</strong> An extraction object passes schema validation but reports 12000 minor units where the source supports 1200 and no reference. Which validator must still fail?</p>
+<p><strong>In everyday terms:</strong> The JSON can be well formed and still say the wrong amount.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-4">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;schema_valid&quot;: true,
+  &quot;output&quot;: {
+    &quot;amount_minor&quot;: 12000,
+    &quot;reference&quot;: null
+  },
+  &quot;source_supported_amount_minor&quot;: 1200,
+  &quot;source_reference_absent&quot;: true
+}</code></pre>
+<h4 id="break-choose-repair-prove-4">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Return schema-valid data with an unsupported amount and an absent optional field. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Validate evidence and units after shape validation; retain a nullable absent reference. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Shape validation passes while evidence validation fails; unknown remains representable. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-4.3.html#illustrative-output-contract">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.3 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.3</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;shape_pass&quot;: true,
+  &quot;amount_supported&quot;: false,
+  &quot;reference_unknown_preserved&quot;: true,
+  &quot;accept&quot;: false
+}</code></pre>
+<p><strong>Why this matters:</strong> The JSON can be well formed and still say the wrong amount. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools#forcing-tool-use" rel="noopener">define-tools page</a> · <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/tool-use" rel="noopener">Tool Use (Function Calling)</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-4-4"></a>
+<h3 id="worked-evidence-task--44-test-the-boundary">Worked evidence task — 4.4: test the boundary</h3>
+<p><strong>Original technical decision.</strong> Two line items total 50 while the output claims 60, and one retry is allowed. Which correction request stays grounded when no missing item exists?</p>
+<p><strong>In everyday terms:</strong> Tell it exactly what disagrees; do not ask it to make the numbers look right.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-5">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;line_items&quot;: [
+    20,
+    30
+  ],
+  &quot;stated_total&quot;: 60,
+  &quot;retry_budget&quot;: 1,
+  &quot;source_has_missing_item&quot;: false
+}</code></pre>
+<h4 id="break-choose-repair-prove-5">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Provide failed output, precise validation error and source, then remove the supporting fact. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Send the exact arithmetic mismatch and source, bound the correction attempt, and never invent a balancing item. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Bound correction attempts; stop inventing values when evidence is absent; preserve failed result for diagnosis. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-4.4.html#foundation">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.4 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.4</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;computed_sum&quot;: 50,
+  &quot;stated_total&quot;: 60,
+  &quot;mismatch&quot;: true,
+  &quot;retry_budget&quot;: 1,
+  &quot;invent_missing_item&quot;: false,
+  &quot;preserve_failed_output&quot;: true
+}</code></pre>
+<p><strong>Why this matters:</strong> Tell it exactly what disagrees; do not ask it to make the numbers look right. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs" rel="noopener">Structured Outputs</a> · <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/tool-use" rel="noopener">Tool Use (Function Calling)</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details>
+<a id="benchmark-exercise-4-5"></a>
+<h3 id="worked-evidence-task--45-test-the-boundary">Worked evidence task — 4.5: test the boundary</h3>
+<p><strong>Original technical decision.</strong> Batch results arrive <code>D3</code>,<code>D1</code>,<code>D2</code> with success, denial and timeout outcomes. Which retry strategy preserves completed work and item identity?</p>
+<p><strong>In everyday terms:</strong> Do not match results by their arrival position or rerun everything.</p>
+<p><strong>Before you start:</strong> No account, API key or package installation is needed for the paper task. Optional replay needs Python 3 and the two provided lab files in the same directory. This local inspector models the stated fixture; it does not call Claude, load Claude Code rules or run an MCP server.</p>
+<h4 id="inspect-the-supplied-input-6">Inspect the supplied input</h4>
+<p>All identifiers and business rules here are fictional application data. This is <strong>not an SDK request schema</strong>. Keep the input separate from your proposed decision.</p>
+<pre><code class="lang-json">{
+  &quot;input_ids&quot;: [
+    &quot;D1&quot;,
+    &quot;D2&quot;,
+    &quot;D3&quot;
+  ],
+  &quot;output_order&quot;: [
+    &quot;D3&quot;,
+    &quot;D1&quot;,
+    &quot;D2&quot;
+  ],
+  &quot;outcomes&quot;: {
+    &quot;D1&quot;: &quot;success&quot;,
+    &quot;D2&quot;: &quot;permission_denied&quot;,
+    &quot;D3&quot;: &quot;timeout&quot;
+  },
+  &quot;retry_budget&quot;: 1,
+  &quot;deadline&quot;: &quot;next-day review&quot;
+}</code></pre>
+<h4 id="break-choose-repair-prove-6">Break, choose, repair, prove</h4>
+<ol><li><strong>Break:</strong> Process an out-of-order mixed result stream with success, permanent error and retryable error. Name the exact failed assumption before proposing another component.</li><li><strong>Choose:</strong> Join by document ID, retain success, route denial to authorization and retry only the transient item within budget. Write the nearest alternative you would reject and the requirement it fails.</li><li><strong>Repair:</strong> Write the corrected contract or recovery step, keeping successful evidence and unknowns separate.</li><li><strong>Prove:</strong> Join by request identity, preserve successes and resubmit only justified failures; report partial completion. Record <code>decision</code>, <code>reason</code>, <code>rejected_alternative</code>, <code>evidence</code> and <code>remaining_unknowns</code>.</li></ol>
+<p><a href="../lessons/ccar-f/objectives/objective-4.5.html#supplied-batch-pilot-and-result-fixtures">Revisit the objective explanation</a> · <a href="#benchmark-evidence-tasks">Return to the LAB task index</a></p>
+<p><strong>Optional local replay:</strong> From this LAB folder, first run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.5 --input-only</code> and write your prediction. Then run <code>python3 ../08-CCAR-F-architecture-decisions/benchmark_exercises.py --objective 4.5</code> and compare the fixed-fixture calculations and reference decisions. From a different folder, use the script’s actual path.</p>
+<details class="benchmark-reference"><summary>Compare the offline evidence — after making your decision</summary>
+<p>The local inspector presents <strong>controlled-fixture calculations and authored reference decisions</strong> below. Some fields are calculated (such as counts or arithmetic); policy labels and recovery choices are supplied worked answers for this fixed example, not executed policies or a general-purpose validator. No Claude, rule loader, service or reviewer was run. <code>false</code> or <code>null</code> observations remain unresolved when no corresponding live test was performed.</p>
+<pre><code class="lang-json">{
+  &quot;joined&quot;: {
+    &quot;D1&quot;: &quot;success&quot;,
+    &quot;D2&quot;: &quot;permission_denied&quot;,
+    &quot;D3&quot;: &quot;timeout&quot;
+  },
+  &quot;preserve&quot;: [
+    &quot;D1&quot;
+  ],
+  &quot;authorization_queue&quot;: [
+    &quot;D2&quot;
+  ],
+  &quot;retry&quot;: [
+    &quot;D3&quot;
+  ],
+  &quot;rerun_successes&quot;: false,
+  &quot;completion&quot;: &quot;partial&quot;
+}</code></pre>
+<p><strong>Why this matters:</strong> Do not match results by their arrival position or rerun everything. The output is a self-check for this controlled example, not certification-score evidence. To test the real mechanism, perform the existing LAB’s integration steps in a fresh disposable context and keep its actual trace beside this prediction.</p>
+<p><strong>Primary-source leads for mechanism review:</strong> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener">batch processing docs</a> · <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener">Message Batches API</a>. The external benchmark helped identify the exercise gap; this task and its data were authored here. Current implementation details must be verified against the installed runtime and those primary sources.</p>
+</details><nav class="prevnext" aria-label="Previous and next"><a class="prev" href="../labs/01-CCAO-F-engagement-project.html">← <small>Lab 01</small> A Claude Project that does one job well</a><a class="next" href="../labs/03-CCAR-F-mcp-server-claude-code.html"><small>Lab 03</small> An MCP server, wired into Claude Code with a guardrail hook →</a></nav><aside class="usedin" aria-label="Linked from other pages"><details><summary class="usedin-h"><b>Linked from</b> 26 other pages</summary><p class="usedin-exams">Exams: <a href="../exams/ccar-f.html">CCAR-F</a> · <a href="../exams/ccdv-f.html">CCDV-F</a></p><ul><li><a href="../exams/ccar-f.html">Claude Certified Architect – Foundations</a></li><li><a href="../exams/ccdv-f.html">Claude Certified Developer – Foundations</a></li><li><a href="../labs/04-CCDV-F-api-modes.html">Lab 04 — Same task, three API modes: real time, cached and batch (CCDV-F, CCAR-P)</a></li><li><a href="../labs/05-CCAR-P-eval-harness.html">Lab 05 — An evaluation harness with a regression check (CCAR-P, CCDV-F)</a></li><li><a href="../labs/08-CCAR-F-architecture-decisions.html">Lab 08 — Run architecture decisions before connecting a model</a></li><li><a href="../lessons/ccar-f/L01-agentic-architecture-and-orchestration.html">CCAR-F Lesson 1 — Agentic Architecture and Orchestration (27%, about 16 questions, the BIGGEST)</a></li><li><a href="../lessons/ccar-f/L04-prompt-engineering-and-structured-output.html">CCAR-F Lesson 4 — Prompt Engineering and Structured Output (20%, about 12 questions)</a></li><li><a href="../lessons/ccar-f/concept-course/04-prompts-extraction-and-batch.html">4 — Turn an invoice into a checked record</a></li><li><a href="../lessons/ccar-f/learning-journey.html">Your CCAR-F learning journey — understand, decide, practise, repair</a></li><li><a href="../lessons/ccar-f/objectives/objective-1.1.html">Objective 1.1 — Build an agentic loop that knows when to continue</a></li><li><a href="../lessons/ccar-f/objectives/objective-1.2.html">Objective 1.2 — Coordinate specialists without losing the whole question</a></li><li><a href="../lessons/ccar-f/objectives/objective-1.3.html">Objective 1.3 — Spawn agents with complete, attributable context</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.2.html">Objective 4.2 — Apply few-shot prompting to improve output consistency and quality</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.3.html">Objective 4.3 — Enforce structured output using tool use and JSON schemas</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.4.html">Objective 4.4 — Implement validation, retry, and feedback loops for extraction quality</a></li><li><a href="../lessons/ccar-f/objectives/objective-4.5.html">Objective 4.5 — Design efficient batch processing strategies</a></li><li><a href="../lessons/ccdv-f/L03-agents-and-workflows.html">CCDV-F Lesson 3 — Agents and Workflows (14.7%, about 8 questions)</a></li><li><a href="../lessons/ccdv-f/L04-prompt-and-context-engineering.html">CCDV-F Lesson 4 — Prompt and Context Engineering (11%, about 6 questions)</a></li><li><a href="../resources.html">Resources</a></li><li><a href="../simulations/ccar-f/SIM-01-full-mock.html">CCAR-F SIM-01 — Full mock exams</a></li><li><a href="../simulations/ccar-f/SIM-02-customer-support-agent.html">CCAR-F SIM-02 — Scenario 1: Customer Support Resolution Agent</a></li><li><a href="../simulations/ccar-f/SIM-04-multi-agent-research.html">CCAR-F SIM-04 — Scenario 3: Multi-Agent Research System</a></li><li><a href="../simulations/ccar-f/SIM-07-structured-data-extraction.html">CCAR-F SIM-07 — Scenario 6: Structured Data Extraction</a></li><li><a href="../labs/index.html">Labs</a></li><li><a href="../lessons/ccar-f/index.html">CCAR-F lessons (Claude Certified Architect: Foundations)</a></li><li><a href="../lessons/ccdv-f/index.html">CCDV-F lessons (Claude Certified Developer: Foundations): Ready</a></li></ul></details></aside></article><aside class="learning-outline" aria-label="Page sections"><nav class="toc-nav" aria-label="Sections on this page"><details class="toc"><summary>Sections on this page (12)</summary><ol><li><a href="#read-the-experiment-before-building">Read the experiment before building</a></li><li><a href="#understand-the-design-before-setup">Understand the design before setup</a></li><li><a href="#connect-this-build-to-scenario-decisions">Connect this build to scenario decisions</a></li><li><a href="#what-youll-build-and-why">What you&#x27;ll build and why</a></li><li><a href="#why-this-matters-on-the-exam">Why this matters on the exam</a></li><li><a href="#build-it-in-five-steps">Build it in five steps</a></li><li><a href="#checks-about-30-minutes">Checks (about 30 minutes)</a></li><li><a href="#common-traps">Common traps</a></li></ol><details class="toc-more"><summary>Show 4 more sections</summary><ol start="9"><li><a href="#next">Next</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#decision-variant-failure-acceptance">Decision-variant failure acceptance</a></li><li><a href="#objective-evidence-tasks--predict-inspect-explain">Objective evidence tasks — predict, inspect, explain</a></li></ol></details></details></nav></aside></div>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flabs%2F02-CCAR-F-coordinator-extraction.html" rel="noopener">Report a problem on this page</a> · <a href="../contribute.html">Contribute</a> · <a href="../whats-new.html">What's new</a> · <a href="../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>

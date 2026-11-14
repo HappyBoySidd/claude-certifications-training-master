@@ -1,0 +1,46 @@
+/* Diagram viewer (B63-FX-16). Loaded only on pages with diagrams. */
+.dv { margin: 1em 0; }
+.dv-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 6px; }
+.dv-btn { font: inherit; font-size: .9rem; min-height: 40px; padding: 4px 12px; border: 1px solid var(--track, currentColor); border-radius: 8px; background: transparent; color: var(--track, inherit); cursor: pointer; }
+.dv-btn:hover:not(:disabled) { background: var(--track-soft, rgba(0,0,0,.06)); }
+/* Disabled: no opacity. Muted text on the page background plus a dashed border (text ~7:1, border ~7:1). */
+.dv-btn:disabled { color: var(--muted, #4f5869); border-color: var(--muted, #4f5869); border-style: dashed; background: transparent; cursor: default; }
+.dv-btn:focus-visible, .dv-text summary:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+/* The frame is a fixed light card in both themes, so the ring must be a fixed dark colour (not currentColor). */
+.dv-frame:focus-visible { outline: 3px solid var(--track, #1a1a1a); outline-offset: 2px; box-shadow: 0 0 0 5px #fff; }
+.dv-zoom { font-size: .85rem; color: var(--muted, inherit); margin-left: auto; }
+.dv .dv-frame, .dv-dialog .dv-frame { overflow: auto; max-height: min(70vh, var(--dv-max, 640px)); max-width: 100%; margin: 0; border: 1px solid var(--line, #ccc); border-radius: 10px; background: #fff; color: #1b2430; text-align: left; padding: 16px; box-sizing: border-box; }
+.dv .dv-frame.dv-portrait, .dv-dialog .dv-frame.dv-portrait { max-width: min(100%, 560px); margin-inline: auto; }
+.dv-dialog .dv-frame { max-height: calc(100vh - 260px); }
+.dv-frame pre.mermaid { background: transparent; padding: 0; margin: 0; border: 0; width: max-content; min-width: 100%; max-width: none; overflow: visible; text-align: left; box-sizing: border-box; }
+:root[data-theme="dark"] .dv-frame pre.mermaid { background: transparent; color: inherit; padding: 0; }
+.dv-frame svg { display: block; max-width: none; margin-inline: auto; }
+.dv-frame.dv-drag { cursor: grabbing; user-select: none; }
+.dv-frame { cursor: grab; }
+.dv-hint { font-size: .85rem; color: var(--muted, inherit); margin: 4px 0 0; }
+.dv-text { margin: 6px 0 0; }
+.dv-text summary { cursor: pointer; font-weight: 600; }
+.dv-pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; max-height: 320px; overflow: auto; }
+.dv-steps { margin: 8px 0; padding: 10px 14px; border: 1px solid var(--line, #ccc); border-radius: 10px; }
+.dv-steps-h { font-weight: 700; margin: 0 0 6px; }
+.dv-steps-b { max-height: 320px; overflow: auto; }
+.dv-dialog { width: min(1100px, 96vw); max-height: 96vh; padding: 14px; border: 1px solid var(--line, #888); border-radius: 12px; background: var(--surface, #fff); color: var(--ink, inherit); overflow: auto; }
+.dv-dialog::backdrop { background: rgba(0,0,0,.6); }
+.dv-dhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+.dv-dtitle { font-size: 1.1rem; margin: 0; }
+@media (max-width: 600px) { .dv-dialog { width: 100vw; max-width: 100vw; max-height: 100vh; border-radius: 0; } }
+@media print {
+  .dv-bar, .dv-hint, .dv-steps, .dv-dialog { display: none !important; }
+  .dv .dv-frame { overflow: visible; max-height: none; border: 0; }
+  .dv-frame svg { width: 100% !important; height: auto !important; }
+  .dv-text { display: block; }
+  .dv-text summary { display: none; }
+  .dv-pre { white-space: pre-wrap; }
+}
+
+@media (min-width: 1600px) { :root { --dv-max: 780px; } }
+
+/* Shared teaching panel is a sibling of the bounded diagram viewport. */
+.dv-surface { position:relative; min-width:0; }
+.dv-surface > .dg-card.dg-docked { cursor:auto; }
+.dv-dialog .dv-surface > .dg-card.dg-docked { scroll-margin-top:16px; }

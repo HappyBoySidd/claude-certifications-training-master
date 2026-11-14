@@ -1,0 +1,56 @@
+name: Exam debrief
+description: Share what a Claude certification exam was like, so others can prepare better.
+title: "[Debrief] <exam>"
+labels: ["debrief"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing. **Please don't include actual exam questions or answers.** The exams
+        are covered by a confidentiality agreement. Share topics, emphasis, pacing and prep advice.
+  - type: dropdown
+    id: exam
+    attributes:
+      label: Exam
+      options: ["CCAO-F Associate", "CCAR-F Architect Foundations", "CCDV-F Developer Foundations", "CCAR-P Architect Professional"]
+    validations: {required: true}
+  - type: input
+    id: date
+    attributes: {label: Exam date, placeholder: "YYYY-MM-DD"}
+    validations: {required: true}
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: ["Passed", "Did not pass", "Prefer not to say"]
+  - type: input
+    id: score
+    attributes: {label: "Score (optional, never published)"}
+  - type: textarea
+    id: heavy
+    attributes: {label: "Which topics or domains felt heavy, or surprised you?"}
+  - type: textarea
+    id: helped
+    attributes: {label: "What prep helped most?"}
+  - type: textarea
+    id: skip
+    attributes: {label: "What prep would you skip?"}
+  - type: textarea
+    id: logistics
+    attributes: {label: "Logistics tips (booking, price, time pressure, online or test center)"}
+  - type: input
+    id: hours
+    attributes: {label: "Roughly how many study hours?"}
+  - type: dropdown
+    id: naming
+    attributes:
+      label: May we name you on the Insights page?
+      options: ["No, keep me anonymous", "Yes, use my name"]
+    validations: {required: true}
+  - type: checkboxes
+    id: nda
+    attributes:
+      label: Confirmation
+      options:
+        - label: This debrief contains no actual exam questions or answers.
+          required: true

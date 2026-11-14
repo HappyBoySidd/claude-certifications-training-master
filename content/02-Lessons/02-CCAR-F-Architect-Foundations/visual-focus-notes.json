@@ -1,0 +1,407 @@
+{
+  "lessons": {
+    "as-01-action-service": [
+      {
+        "setup": {
+          "screen": "This is where the representative starts: damaged order O4, case C17, and a request for USD120. The screen asks for help; it does not move money.",
+          "orders": "These stored records tell us what happened to the order. They provide evidence for an explanation before we introduce a credit."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "payment": "The simple demo now reaches a service that can move money. The trace has not established that this caller may credit this order."
+        },
+        "repair": {
+          "gate": "This added check blocks the proposed credit when the trusted account and order owner do not match. The rejected replay makes zero payment calls.",
+          "session": "The check now uses the logged-in identity. The account named in a message is no longer treated as proof of ownership."
+        }
+      },
+      {
+        "setup": {
+          "tools": "Two interfaces both say \u201chandle an order.\u201d Notice how that wording hides the difference between reading delivery status and issuing a credit."
+        },
+        "repair": {
+          "tools": "The repaired descriptions make the read and write jobs distinguishable. A delivery question can select a lookup without requesting a financial action.",
+          "orders": "The answer now comes from an observed order read. No credit is needed to explain whether O4 was delivered."
+        }
+      },
+      {
+        "setup": {
+          "backend": "The proposed number looks valid but means USD1.20, not the requested USD120. Watch the receiving program\u2019s data boundary rather than the model\u2019s confidence."
+        },
+        "repair": {
+          "backend": "The amount is now compared with the request: USD120 becomes12000 cents. The accepted number has the right meaning, not just the right type.",
+          "gate": "Correcting the amount still does not authorize payment. This existing check must separately evaluate the current owner and policy."
+        }
+      },
+      {
+        "setup": {
+          "payment": "The request reached the provider, but its reply disappeared. This service may already have moved money; the timeout alone cannot tell us.",
+          "backend": "The backend currently knows only that acknowledgement is missing. Its local status must not be mistaken for the provider\u2019s actual outcome."
+        },
+        "repair": {
+          "ledger": "The same operation r17 is now tied to observed provider status. Confirmed CR1 avoids another credit; no confirmation leaves the outcome unknown."
+        }
+      },
+      {
+        "setup": {
+          "gate": "Ownership is verified, but the request is now USD210 against a USD180 automatic limit. The amount changes the decision even though the customer is the same."
+        },
+        "repair": {
+          "human": "The proposal now has a named reviewer because the required staff approval is absent. The case remains not issued while that decision is pending.",
+          "gate": "The limit is enforced before dispatch. A verified owner does not make an above-limit proposal automatically permitted."
+        }
+      }
+    ],
+    "as-02-document-pipeline": [
+      {
+        "setup": {
+          "extract": "Claude turns the words on EL-8 into proposed fields. The invoice says USD84.50 and no PO; a draft is useful, but it is not accepted accounting data yet."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "extract": "The draft has fractional cents and no PO key. Its text can be read as JSON while still being unusable by the next program."
+        },
+        "repair": {
+          "check": "The receiver now reports the exact defects and checks the source-backed correction. It also catches a whole-number amount that means the wrong money."
+        }
+      },
+      {
+        "setup": {
+          "check": "The first invoice can pass its checks, but a folder contains other failure types. One accepted result tells us nothing about the unreadable scan or failed request."
+        },
+        "repair": {
+          "ledger": "Every source now keeps its own progress. Accepted A stays accepted while unreadable B and retryable C remain visibly different.",
+          "review": "An unreadable or genuinely conflicting source needs preparation or a person. Another extraction attempt cannot manufacture the missing evidence."
+        }
+      },
+      {
+        "setup": {
+          "review": "The absence of a PO is not automatically a new human-review problem. The consumer\u2019s changed agreement determines whether that absence is acceptable."
+        },
+        "repair": {
+          "check": "The receiver now checks the intended contract version. Allowing an omitted PO changes presence rules; it does not change what the invoice actually supports."
+        }
+      }
+    ],
+    "as-03-grounded-assistant": [
+      {
+        "setup": {
+          "answer": "The useful result is a short instruction tied to the Atlas pump manual, approved revision 3, page 8. A citation gives the technician a place to inspect the evidence."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "answer": "The wording sounds convincing, but it comes from Beacon pump. The problem is whether the evidence applies to Atlas pump, not how confident the sentence sounds."
+        },
+        "repair": {
+          "search": "Retrieval now respects the authorized machine and approved revision. The model receives evidence for the actual question instead of a plausible neighboring machine."
+        }
+      },
+      {
+        "setup": {
+          "answer": "The model is expected to answer from a manual it has not received. Seeing a catalog identifier is not the same as reading the instruction text."
+        },
+        "repair": {
+          "catalog": "The selected manual now has an observed read or fetch outcome. Failed content access remains a visible gap rather than an invented answer."
+        }
+      },
+      {
+        "setup": {
+          "catalog": "A document paragraph now tries to change the rules. It is inside retrieved evidence; its wording does not make it an instruction from the application owner."
+        },
+        "repair": {
+          "guard": "Access is checked before content enters the model, and document commands remain data. This prevents source text from granting itself new authority."
+        }
+      },
+      {
+        "setup": {
+          "answer": "The answer now has two approved Atlas pump sources that disagree. No supplied rule establishes which one governs. Preserve the conflict; a named decision owner is introduced after your choice."
+        },
+        "repair": {
+          "owner": "A named maintenance owner receives both attributed claims. The model does not create a new cooling interval by averaging or choosing the stronger wording."
+        }
+      }
+    ],
+    "as-04-research-system": [
+      {
+        "setup": {
+          "coord": "Someone must keep the warehouse decision together. The job is one feasible pilot next month, not an essay about every possible mobile technology."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "coord": "The next useful question depends on earlier evidence. Notice the need to keep connectivity, glove use, training and pilot feasibility connected."
+        },
+        "repair": {
+          "special": "Bounded specialists now investigate distinct evidence needs. Their work returns to one coordinator rather than becoming disconnected conclusions."
+        }
+      },
+      {
+        "setup": {
+          "special": "This worker sees \u201cwhat we discussed,\u201d but not the discussion. The missing context includes the deadline and constraints that make an answer useful."
+        },
+        "repair": {
+          "special": "The worker now receives a self-contained brief: its question, relevant evidence, limits and expected return. Isolation no longer requires guessing the assignment."
+        }
+      },
+      {
+        "setup": {
+          "special": "Some workers returned useful findings, while connectivity timed out. A tidy return object does not show that every assigned question was investigated."
+        },
+        "repair": {
+          "ledger": "The coordinator can now compare expected work with observed returns. The missing connectivity question remains visible without discarding supported findings.",
+          "owner": "Any unresolved limit travels with the recommendation. A polished report does not approve the pilot or commit the owner\u2019s budget."
+        }
+      },
+      {
+        "setup": {
+          "owner": "The owner\u2019s new request is only a catalog fact. That smaller decision no longer calls for the previous multi-specialty investigation."
+        },
+        "repair": {
+          "coord": "The route is simplified to one authorized lookup and a checked answer. Coordination effort follows the job instead of being retained by habit."
+        }
+      }
+    ],
+    "as-05-code-change": [
+      {
+        "setup": {
+          "claude": "The coding agent must preserve a business distinction: no deposit information differs from a real zero deposit. Its output is a proposed patch, not changed bookings."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "claude": "The obvious one-line edit may affect callers elsewhere. The current question is what uses this value before deciding how much code to change."
+        },
+        "repair": {
+          "code": "Relevant callers and fixtures are now inspected before the patch. They show where missing and zero must retain different meanings.",
+          "tests": "Checks now target those boundaries, not merely whether the edited line runs. R-7 and R-8 must still produce distinct outcomes."
+        }
+      },
+      {
+        "setup": {
+          "tests": "A test can show behavior, but it cannot ensure the right shared convention is present during the next importer task. Notice the separate guidance problem."
+        },
+        "repair": {
+          "rules": "Importer-specific rules now load where relevant, while a skill holds the reusable procedure. Guidance is scoped rather than copied into every unrelated task."
+        }
+      },
+      {
+        "setup": {
+          "tests": "The narrow test passes while the customer-facing report still says settled. This is evidence that the first check did not cover the whole path."
+        },
+        "repair": {
+          "tests": "The replay now follows the value through report rendering. Missing stays unknown, while legitimate zero remains known.",
+          "owner": "The owner receives the scoped diff and observed checks. Passing the new checks still does not mean this exercise deployed to production."
+        }
+      },
+      {
+        "setup": {
+          "owner": "The release boundary stays in place, but the new job is only one known typo. The verification effort should match this smaller output."
+        },
+        "repair": {
+          "claude": "A bounded wording edit and rendered check now fit the task. The earlier dependency investigation is not reused without a new reason."
+        }
+      }
+    ],
+    "as-06-ci-review": [
+      {
+        "setup": {
+          "model": "The reviewer needs to find an actual payment defect: missing currency becomes USD despite the contract. Harmless style is not the same job."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "model": "The unattended run is asking a question, but nobody is at the keyboard. The current process cannot complete as designed."
+        },
+        "repair": {
+          "gate": "The run now has explicit noninteractive mechanics and visible outcome checks. Failed execution stays different from a valid review with no findings."
+        }
+      },
+      {
+        "setup": {
+          "gate": "The payload passes its shape check while reporting the wrong issue. Mechanical validity has not established that the finding is true or useful."
+        },
+        "repair": {
+          "integration": "The candidate is now checked against a triggering input, location and consequence. The missing-currency fixture makes the difference inspectable."
+        }
+      },
+      {
+        "setup": {
+          "integration": "The unsafe behavior appears only when two file changes are combined. Separate local summaries have not established the contract along the complete path."
+        },
+        "repair": {
+          "ledger": "Current evidence is now compared with prior findings. Resolved F1 is omitted; still-supported F2 remains actionable.",
+          "post": "Checked findings may pass to a separately authorized posting service. That publication step does not approve or merge the code."
+        }
+      },
+      {
+        "setup": {
+          "post": "The run could reach publication with a valid empty list, yet the known fixture defect remains. Mechanical success must not be read as proof of safe code."
+        },
+        "repair": {
+          "integration": "Evaluation now records the missed defect and retests the reviewer. Requiring a fabricated finding would hide the capability problem instead of fixing it."
+        }
+      }
+    ],
+    "as-07-work-queue": [
+      {
+        "setup": {
+          "route": "Read the two clocks before choosing a product. The waiting clerk needs live evidence; the archive has supplied independent files and a later report deadline."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "route": "One cheap deferred lane is being used for unlike jobs. Notice the urgent interaction and the report\u2019s full processing-and-validation budget."
+        },
+        "repair": {
+          "live": "The application now runs the waiting interaction and its local lookup. The clerk is no longer placed behind the overnight workload.",
+          "batch": "Independent supplied archives can use a deferred lane when its full timing and fallback policy fit. Deferred does not mean guaranteed by any deadline."
+        }
+      },
+      {
+        "setup": {
+          "batch": "Results are coming back in a different order. Their arrival position cannot tell the receiver which invoice each amount belongs to."
+        },
+        "repair": {
+          "ledger": "Each result now carries a stable source identity into validation. Successful N-2 and N-3 remain distinct from failed N-1."
+        }
+      },
+      {
+        "setup": {
+          "ledger": "The recorded failures have different causes: bad input, a read timeout and an unknown payment effect. One generic retry rule would erase those differences."
+        },
+        "repair": {
+          "recover": "Recovery now follows the cause and effect risk. Completed work stays intact; PAY-9 needs authoritative status rather than a guessed failed state."
+        }
+      },
+      {
+        "setup": {
+          "recover": "The workload itself has changed: extraction now depends on a live lookup. Repeating the old failure policy cannot supply that missing evidence."
+        },
+        "repair": {
+          "route": "The router now considers the new dependency, not just the archive label. Only suitable independent work stays in the deferred lane.",
+          "live": "The application actually executes the required lookup and supplies its observed result. A proposed local tool call is no longer mistaken for execution."
+        }
+      }
+    ],
+    "as-08-resumable-case": [
+      {
+        "setup": {
+          "model": "The resumed agent receives useful history with a warning built into it: old approval60/v3, new request187.20/v4 and OP-6 still unknown."
+        },
+        "repair": {}
+      },
+      {
+        "setup": {
+          "model": "The word \u201capproved\u201d hides the amount and policy that limited yesterday\u2019s permission. Resuming a conversation does not settle today\u2019s action."
+        },
+        "repair": {
+          "refresh": "Current evidence and exact approval conditions are now compared with the new action. Old authority is not silently stretched to the larger amount.",
+          "status": "The unresolved earlier operation now gets its own status investigation. Another refund must not be inferred from an unanswered request."
+        }
+      },
+      {
+        "setup": {
+          "status": "OP-6\u2019s unknown effect is the detail the short summary dropped. Losing that fact can make a repeated payment look like a fresh action."
+        },
+        "repair": {
+          "brief": "The small working brief now keeps exact amounts, scoped approval, unknown effects and source pointers. Shorter context does not require losing decisive facts."
+        }
+      },
+      {
+        "setup": {
+          "brief": "The brief contains supported booking work but still lacks payment evidence. A summary that says complete would conceal that partial investigation."
+        },
+        "repair": {
+          "review": "The handoff now names the missing decision and owner. Limited review capacity produces an explicit pending state, not automatic permission."
+        }
+      },
+      {
+        "setup": {
+          "review": "Not every dated detail needs another full investigation. The new stale narrative fact cannot change the action, authority or unknown payment outcome."
+        },
+        "repair": {
+          "refresh": "Refresh effort now follows decision relevance. Unaffected verified work is retained while policy, approval and OP-6 still receive the checks they need."
+        }
+      }
+    ]
+  },
+  "purposes": {
+    "as-01-action-service": {
+      "screen": "Shows the case and collects the requested help",
+      "backend": "Runs the workflow and handles proposed actions",
+      "claude": "Proposes a tool call or explains the evidence",
+      "orders": "Stores order facts and applicable credit rules",
+      "gate": "Checks whether this proposed action is permitted",
+      "tools": "Describe available actions and their accepted inputs",
+      "session": "Identifies the signed-in account from trusted state",
+      "payment": "Performs a submitted credit and reports its status",
+      "ledger": "Keeps operation identity, status and observed receipts",
+      "human": "Reviews a proposal needing a person\u2019s authority"
+    },
+    "as-02-document-pipeline": {
+      "source": "Provides the original invoice and its identity",
+      "worker": "Takes a file and runs its intake steps",
+      "extract": "Proposes invoice fields from the supplied document",
+      "check": "Checks field structure and agreement with evidence",
+      "ledger": "Keeps each file\u2019s progress and outcome separate",
+      "review": "Resolves unclear or unreadable source evidence"
+    },
+    "as-03-grounded-assistant": {
+      "ask": "Provides the machine question and user scope",
+      "search": "Finds applicable passages within the permitted scope",
+      "answer": "Explains supplied evidence and names its sources",
+      "catalog": "Identifies manuals and exposes readable content",
+      "guard": "Checks access and separates evidence from instructions",
+      "owner": "Decides which unresolved operating instruction governs"
+    },
+    "as-04-research-system": {
+      "request": "Defines the decision, constraints and expected result",
+      "coord": "Coordinates investigation and combines its evidence",
+      "special": "Investigates a bounded question using supplied context",
+      "ledger": "Tracks which required questions have usable evidence",
+      "owner": "Approves the pilot\u2019s actual scope and budget"
+    },
+    "as-05-code-change": {
+      "request": "Defines how missing and zero deposits must differ",
+      "code": "Shows implementation, callers and existing examples",
+      "claude": "Investigates relevant code and proposes a scoped change",
+      "rules": "Supplies relevant conventions and reusable procedures",
+      "tests": "Checks observed behavior against expected outcomes",
+      "owner": "Reviews the proposal and controls its release"
+    },
+    "as-06-ci-review": {
+      "packet": "Supplies changed code, requirements and test evidence",
+      "model": "Proposes defects with a location and consequence",
+      "gate": "Checks run success and usable output structure",
+      "integration": "Checks findings against combined code behavior",
+      "ledger": "Tracks current findings and their earlier status",
+      "post": "Publishes checked findings within granted permissions"
+    },
+    "as-07-work-queue": {
+      "jobs": "Provides each job\u2019s deadline and evidence needs",
+      "route": "Chooses a processing lane for those requirements",
+      "live": "Runs the waiting interaction and its local tools",
+      "batch": "Processes supplied independent requests for later results",
+      "ledger": "Matches each result to its source and outcome",
+      "recover": "Chooses recovery from the failure and effect risk"
+    },
+    "as-08-resumable-case": {
+      "saved": "Stores dated facts, approval scope and pending work",
+      "model": "Builds a current investigation from available evidence",
+      "refresh": "Checks relevant changes and the current action\u2019s authority",
+      "status": "Looks up what the earlier operation actually did",
+      "brief": "Keeps exact critical facts in a smaller working view",
+      "review": "Owns unresolved decisions and visible review overflow"
+    }
+  }
+}

@@ -1,0 +1,1155 @@
+{
+  "lessons": {
+    "as-01-action-service": {
+      "title": "Help a customer get the right refund",
+      "subtitle": "AS-01 \u00b7 Guarded actions and safe recovery",
+      "story": "A damaged order needs a $120 credit. Watch the application grow one problem at a time.",
+      "inputs": "Case C17 \u00b7 Order O4 \u00b7 USD 120 \u00b7 Fictional policy",
+      "next": "as-02-document-pipeline.html",
+      "nodes": {
+        "screen": {
+          "label": [
+            "Support screen",
+            "Case C17 \u00b7 Order O4"
+          ],
+          "kind": "software",
+          "x": 50,
+          "y": 60,
+          "description": "The screen where a representative reads the complaint and sees the result.",
+          "input": "Damaged-order message and requested USD 120.",
+          "output": "A request to the backend; later, a supported result.",
+          "owner": "Support application"
+        },
+        "backend": {
+          "label": [
+            "Application backend",
+            "Owns the workflow"
+          ],
+          "kind": "software",
+          "x": 385,
+          "y": 60,
+          "description": "The program behind the screen. It calls Claude, runs permitted tools and records what actually happened.",
+          "input": "The request, trusted session and returned tool results.",
+          "output": "Evidence for Claude, or a checked action request.",
+          "owner": "Application code"
+        },
+        "claude": {
+          "label": [
+            "Claude",
+            "AI proposes / explains"
+          ],
+          "kind": "ai",
+          "x": 720,
+          "y": 60,
+          "description": "Interprets the request and proposes a tool call or explains evidence. A proposed call is not a completed credit.",
+          "input": "The request, tool definitions and permitted evidence.",
+          "output": "A proposed tool call or a grounded explanation.",
+          "owner": "Model reasoning; execution remains with the application"
+        },
+        "orders": {
+          "label": [
+            "Order & policy records",
+            "Authoritative evidence"
+          ],
+          "kind": "data",
+          "x": 50,
+          "y": 230,
+          "description": "Trusted records establish the order owner, delivery facts and this fictional credit policy.",
+          "input": "Order O4 and an authorized lookup.",
+          "output": "Ownership, damage/delivery facts, and staff-review threshold.",
+          "owner": "Business system of record"
+        },
+        "gate": {
+          "label": [
+            "Permission check",
+            "Software enforces"
+          ],
+          "kind": "software",
+          "x": 385,
+          "y": 230,
+          "description": "An execution-time check stops the action unless trusted ownership and current policy permit this exact proposal.",
+          "input": "Current identity, order owner, amount and approval scope.",
+          "output": "Allowed action, blocked action or staff-review outcome.",
+          "owner": "Application action handler"
+        },
+        "tools": {
+          "label": [
+            "Tool interfaces",
+            "Read or write?"
+          ],
+          "kind": "software",
+          "x": 720,
+          "y": 230,
+          "description": "Named capabilities the application exposes to the model. Read and write descriptions must explain different effects.",
+          "input": "lookup_order for facts; issue_credit for a proposed financial change.",
+          "output": "A request for the selected capability; the runtime checks and executes it.",
+          "owner": "Tool designer and application runtime"
+        },
+        "session": {
+          "label": [
+            "Trusted login session",
+            "Identity, not a claim"
+          ],
+          "kind": "software",
+          "x": 50,
+          "y": 400,
+          "description": "The authenticated identity supplied by the application, not an account name typed into a message.",
+          "input": "An established login session.",
+          "output": "A trusted customer/account binding, subject to current access rules.",
+          "owner": "Identity provider and application"
+        },
+        "payment": {
+          "label": [
+            "Payment service",
+            "Executes permitted credit"
+          ],
+          "kind": "data",
+          "x": 385,
+          "y": 400,
+          "description": "The external service that may issue the credit. A model response cannot stand in for its business outcome.",
+          "input": "A permitted credit request with operation identity.",
+          "output": "A receipt, rejection or uncertain/unavailable response.",
+          "owner": "Payment provider"
+        },
+        "ledger": {
+          "label": [
+            "Operation record",
+            "r17 \u2192 status \u2192 receipt"
+          ],
+          "kind": "software",
+          "x": 720,
+          "y": 400,
+          "description": "Keeps the identity and known status of a logical action so an uncertain result can be reconciled before another write.",
+          "input": "Operation r17 and provider status evidence.",
+          "output": "Known outcome or explicit unresolved status; CR1 only when confirmed.",
+          "owner": "Application and payment status interface"
+        },
+        "human": {
+          "label": [
+            "Staff review",
+            "A named next owner"
+          ],
+          "kind": "software",
+          "x": 50,
+          "y": 550,
+          "description": "A person reviews amounts above this example\u2019s USD 180 limit. Review is not evidence that a payment already happened.",
+          "input": "The case, proposed amount, policy reason and known operation state.",
+          "output": "A scoped approval or rejection under the business policy.",
+          "owner": "Authorized staff reviewer"
+        }
+      },
+      "stages": [
+        {
+          "title": "See the job",
+          "kicker": "A small application that works",
+          "narration": "A customer says order O4 arrived damaged and asks for 120 dollars. The representative opens case C17. Start with a read-only assistant: the backend gets the order and policy, and Claude explains those facts. No money moves in this first version.",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders"
+          ],
+          "highlight": [
+            "screen",
+            "orders"
+          ],
+          "focus": [
+            "screen",
+            "backend"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ]
+          ],
+          "packet": {
+            "label": "One request, real evidence",
+            "body": "Case C17 \u00b7 Order O4\nCustomer request: USD 120\nResult: explain the order; no credit issued."
+          }
+        },
+        {
+          "title": "Stop an unsafe credit",
+          "kicker": "The demo breaks when it can act",
+          "narration": "Now give the application a way to issue a credit. The message names account A9, but a typed account name is not proof of ownership. Watch the new action path: what must prevent a request for the wrong account from reaching the payment service?",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders",
+            "payment"
+          ],
+          "highlight": [
+            "payment"
+          ],
+          "focus": [
+            "backend",
+            "payment"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ],
+            [
+              "backend",
+              "payment",
+              "unsafe action path"
+            ]
+          ],
+          "packet": {
+            "label": "The failure",
+            "body": "Claimed account: A9\nTrusted ownership: not checked\nProposed credit: USD 120\nRisk: an unauthorized financial change."
+          },
+          "question": {
+            "stem": "A client-tool handler receives the following proposed credit. Which implementation reliably prevents an unauthorized mutation, including calls that bypass the conversational path?",
+            "options": [
+              {
+                "text": "Require a verify_account tool call before issue_credit and accept its model-supplied verified flag in the credit handler.",
+                "why": "The sequence is useful guidance, but a caller-supplied flag is not trusted authorization. The mutation handler must independently enforce the ownership predicate."
+              },
+              {
+                "text": "Resolve the caller from trusted session state and enforce ownership, current policy and exact action scope inside the credit handler before calling the provider.",
+                "why": "The handler controls the side effect and rejects this A2/A9 mismatch even when the model selected a validly shaped call."
+              },
+              {
+                "text": "Expose issue_credit only after a successful account lookup, then omit authorization checks from its handler.",
+                "why": "Capability filtering reduces inappropriate proposals but is not a substitute for the execution boundary, especially if another path invokes the handler."
+              },
+              {
+                "text": "Enable strict input-schema validation and require account_id plus verified:true in the tool arguments.",
+                "why": "Schema conformance establishes the shape of supplied values. It does not establish their authority or bind them to the trusted session."
+              }
+            ],
+            "answer": 1,
+            "translation": "The customer wants a credit. The question asks where a mandatory permission check must run\u2014not how to remind Claude about it.",
+            "context": "Illustrative application trace \u2014 not a complete SDK request\ntrusted_session.account_id=A2\norder.O4.owner_account_id=A9\ntool_use: issue_credit({order_id:\"O4\",amount_minor:12000,currency:\"USD\"})",
+            "sources": [
+              {
+                "title": "Anthropic: Client tool execution and results",
+                "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+              }
+            ],
+            "sourceNote": "Official references support the mechanisms. Fictional policy limits, application fixtures and original practice wording are not official exam questions. Provider retry behavior must follow that provider\u2019s actual documented contract."
+          },
+          "repair": {
+            "narration": "Add a permission check in the program that can move the money. It compares the trusted login with the order owner and checks the current policy. In the wrong-owner example, the path stops here: zero payment calls. A permitted proposal can continue; a prompt or tool setting cannot replace this check.",
+            "visible": [
+              "screen",
+              "backend",
+              "claude",
+              "orders",
+              "payment",
+              "gate",
+              "session"
+            ],
+            "highlight": [
+              "gate",
+              "session"
+            ],
+            "focus": [
+              "gate",
+              "payment"
+            ],
+            "edges": [
+              [
+                "screen",
+                "backend",
+                "case C17"
+              ],
+              [
+                "backend",
+                "claude",
+                "request + evidence"
+              ],
+              [
+                "claude",
+                "backend",
+                "explain / propose"
+              ],
+              [
+                "backend",
+                "orders",
+                "read O4"
+              ],
+              [
+                "orders",
+                "backend",
+                "facts + policy"
+              ],
+              [
+                "backend",
+                "gate",
+                "proposed credit"
+              ],
+              [
+                "session",
+                "gate",
+                "trusted identity"
+              ],
+              [
+                "gate",
+                "payment",
+                "only if permitted"
+              ]
+            ],
+            "packet": {
+              "label": "Replay: wrong owner",
+              "body": "Trusted owner \u2260 order owner\nOutcome: BLOCKED\nPayment calls: 0\nNo receipt exists."
+            }
+          }
+        },
+        {
+          "title": "Separate read from write",
+          "kicker": "The tools sound too similar",
+          "narration": "Keep the permission check. The next customer asks only whether O4 was delivered. Both tools are described as \u201chandle an order,\u201d so Claude proposes the credit tool. The account may be valid, but the selected capability is still wrong for the question.",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders",
+            "payment",
+            "gate",
+            "session",
+            "tools"
+          ],
+          "highlight": [
+            "tools"
+          ],
+          "focus": [
+            "claude",
+            "tools"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ],
+            [
+              "backend",
+              "gate",
+              "proposed credit"
+            ],
+            [
+              "session",
+              "gate",
+              "trusted identity"
+            ],
+            [
+              "gate",
+              "payment",
+              "only if permitted"
+            ],
+            [
+              "claude",
+              "tools",
+              "choose capability"
+            ],
+            [
+              "tools",
+              "backend",
+              "request, not execution"
+            ]
+          ],
+          "packet": {
+            "label": "Two confusing interfaces",
+            "body": "lookup_order: \u201chandle an order\u201d\nissue_credit: \u201chandle an order\u201d\nUser asks: \u201cWas O4 delivered?\u201d"
+          },
+          "question": {
+            "stem": "The same assistant must support delivery questions and eligible credit requests. Both tools currently say \u201chandle an order,\u201d causing repeated write-tool selection on read-only questions. Which interface and routing change best addresses the root cause without forcing every future request into one capability?",
+            "options": [
+              {
+                "text": "Give each tool distinct purpose, inputs, side effects and usage boundaries; restrict the available tools for known task scope while keeping execution checks.",
+                "why": "This repairs the ambiguous interface across both request types and reduces unnecessary capability exposure. It does not confuse selection with permission."
+              },
+              {
+                "text": "Leave descriptions unchanged and use tool_choice:{type:\"tool\",name:\"lookup_order\"} for every request in the conversation.",
+                "why": "A named choice can force the current lookup when justified, but applying it to every request prevents legitimate later credits and leaves the interface ambiguity unfixed."
+              },
+              {
+                "text": "Keep both definitions unchanged and set tool_choice:{type:\"any\"} to ensure that Claude calls a tool.",
+                "why": "Requiring some tool does not specify the appropriate tool. Both ambiguous choices remain available."
+              },
+              {
+                "text": "Keep both tools unchanged, enable strict:true, and reject nonconforming arguments in the application.",
+                "why": "Argument conformance does not distinguish the intended read/write job. A wrong tool can receive perfectly valid arguments."
+              }
+            ],
+            "answer": 0,
+            "translation": "One button reads an order; the other changes a financial record. The question asks how to make that difference clear to the model.",
+            "context": "Current tools: lookup_order / issue_credit\nCurrent descriptions: both \u201chandle an order\u201d\nCurrent request: \u201cWas order O4 delivered?\u201d\nFuture requests may ask for credits.",
+            "sources": [
+              {
+                "title": "Anthropic: Define tools",
+                "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools"
+              }
+            ],
+            "sourceNote": "Official references support the mechanisms. Fictional policy limits, application fixtures and original practice wording are not official exam questions. Provider retry behavior must follow that provider\u2019s actual documented contract."
+          },
+          "repair": {
+            "narration": "Make the two capabilities visibly different. Lookup reads delivery facts. Issue credit proposes a financial change and still goes through the permission check. Replay the delivery question along the read path. The answer comes from the order record, and the number of credits issued stays zero.",
+            "visible": [
+              "screen",
+              "backend",
+              "claude",
+              "orders",
+              "payment",
+              "gate",
+              "session",
+              "tools"
+            ],
+            "highlight": [
+              "tools",
+              "orders"
+            ],
+            "focus": [
+              "tools",
+              "backend"
+            ],
+            "edges": [
+              [
+                "screen",
+                "backend",
+                "case C17"
+              ],
+              [
+                "backend",
+                "claude",
+                "request + evidence"
+              ],
+              [
+                "claude",
+                "backend",
+                "explain / propose"
+              ],
+              [
+                "backend",
+                "orders",
+                "read O4"
+              ],
+              [
+                "orders",
+                "backend",
+                "facts + policy"
+              ],
+              [
+                "backend",
+                "gate",
+                "proposed credit"
+              ],
+              [
+                "session",
+                "gate",
+                "trusted identity"
+              ],
+              [
+                "gate",
+                "payment",
+                "only if permitted"
+              ],
+              [
+                "claude",
+                "tools",
+                "choose capability"
+              ],
+              [
+                "tools",
+                "backend",
+                "request, not execution"
+              ]
+            ],
+            "nodeLabels": {
+              "tools": [
+                "Distinct read / write tools",
+                "Purpose \u00b7 inputs \u00b7 effects"
+              ]
+            },
+            "packet": {
+              "label": "Replay: read-only question",
+              "body": "Was O4 delivered? \u2192 lookup_order\nObserved delivery facts \u2192 explanation\nCredits issued: 0"
+            }
+          }
+        },
+        {
+          "title": "Check the proposed data",
+          "kicker": "Readable JSON can still be wrong",
+          "narration": "The customer really does ask for the 120-dollar credit. The model hands the backend a readable record, but amount_minor is 120. The payment interface expects cents. This is a proposed request, not a receipt. Check what those numbers mean before letting the action continue.",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders",
+            "payment",
+            "gate",
+            "session",
+            "tools"
+          ],
+          "highlight": [
+            "backend"
+          ],
+          "focus": [
+            "backend",
+            "gate"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ],
+            [
+              "backend",
+              "gate",
+              "proposed credit"
+            ],
+            [
+              "session",
+              "gate",
+              "trusted identity"
+            ],
+            [
+              "gate",
+              "payment",
+              "only if permitted"
+            ],
+            [
+              "claude",
+              "tools",
+              "choose capability"
+            ],
+            [
+              "tools",
+              "backend",
+              "request, not execution"
+            ]
+          ],
+          "packet": {
+            "label": "Proposed arguments \u2014 not a receipt",
+            "body": "{\"case_id\":\"C17\",\"order_id\":\"O4\",\n \"amount_minor\":120,\"currency\":\"USD\"}\nSource request: USD 120.00"
+          },
+          "question": {
+            "stem": "A proposed issue_credit call passes the configured input schema, yet conflicts with the source amount. Which receiving-boundary check and correction policy should run before execution?",
+            "options": [
+              {
+                "text": "Add an enum for currency and require strict:true; treat any schema-conforming amount as ready for execution.",
+                "why": "A supported strict schema can constrain fields and types, but does not prove this amount agrees with the source or that execution is authorized."
+              },
+              {
+                "text": "Multiply every amount_minor by 100 at the payment adapter so future integer arguments use cents.",
+                "why": "This silently transforms already-correct cents on other calls and cannot distinguish units from a particular value. A verified representation rule must govern the conversion."
+              },
+              {
+                "text": "Validate amount, currency and units against source evidence and policy; reject this mismatch, permit bounded source-based correction, then revalidate the exact action.",
+                "why": "The source establishes 12000 cents. Structure, meaning and permission remain separate checks before the provider is called."
+              },
+              {
+                "text": "Retry the extraction against the same schema until two independently sampled responses agree, then accept the consensus.",
+                "why": "Agreement can repeat the same unit error. The receiver needs an authoritative source-to-contract check, not repeated model agreement."
+              }
+            ],
+            "answer": 2,
+            "translation": "A record can be easy for a program to read and still say the wrong thing. Compare the requested dollars with the cents field.",
+            "context": "Source evidence: requested credit USD 120.00\nContract: amount_minor is integer cents; currency is ISO code\nProposed input: {\"order_id\":\"O4\",\"amount_minor\":120,\"currency\":\"USD\"}\nSchema check: accepted",
+            "sources": [
+              {
+                "title": "Anthropic: Define tools",
+                "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools"
+              },
+              {
+                "title": "Anthropic: Structured outputs and strict tool use",
+                "url": "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
+              }
+            ],
+            "sourceNote": "Official references support the mechanisms. Fictional policy limits, application fixtures and original practice wording are not official exam questions. Provider retry behavior must follow that provider\u2019s actual documented contract."
+          },
+          "repair": {
+            "narration": "The backend checks the proposed values against the request and the tool contract. One hundred twenty dollars is twelve thousand cents. Return that exact mismatch for a bounded correction, then recheck permission for the corrected proposal. If the source is unclear, keep it unresolved rather than inventing a number.",
+            "visible": [
+              "screen",
+              "backend",
+              "claude",
+              "orders",
+              "payment",
+              "gate",
+              "session",
+              "tools"
+            ],
+            "highlight": [
+              "backend",
+              "gate"
+            ],
+            "focus": [
+              "backend",
+              "gate"
+            ],
+            "edges": [
+              [
+                "screen",
+                "backend",
+                "case C17"
+              ],
+              [
+                "backend",
+                "claude",
+                "request + evidence"
+              ],
+              [
+                "claude",
+                "backend",
+                "explain / propose"
+              ],
+              [
+                "backend",
+                "orders",
+                "read O4"
+              ],
+              [
+                "orders",
+                "backend",
+                "facts + policy"
+              ],
+              [
+                "backend",
+                "gate",
+                "proposed credit"
+              ],
+              [
+                "session",
+                "gate",
+                "trusted identity"
+              ],
+              [
+                "gate",
+                "payment",
+                "only if permitted"
+              ],
+              [
+                "claude",
+                "tools",
+                "choose capability"
+              ],
+              [
+                "tools",
+                "backend",
+                "request, not execution"
+              ]
+            ],
+            "nodeLabels": {
+              "backend": [
+                "Application backend",
+                "Checks shape + source units"
+              ]
+            },
+            "packet": {
+              "label": "Replay: corrected from evidence",
+              "body": "USD 120.00 \u2192 amount_minor: 12000\nCurrency: USD \u00b7 Order: O4\nThen check current ownership and policy.\nStill not a payment receipt."
+            }
+          }
+        },
+        {
+          "title": "Recover a lost reply",
+          "kicker": "A timeout is an unknown outcome",
+          "narration": "The checked credit is submitted. Then the connection drops before the reply reaches the backend. The payment might have completed, or it might not. A timeout tells you that the response was missing. It does not tell you whether the money moved.",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders",
+            "payment",
+            "gate",
+            "session",
+            "tools"
+          ],
+          "highlight": [
+            "payment",
+            "backend"
+          ],
+          "focus": [
+            "payment",
+            "backend"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ],
+            [
+              "backend",
+              "gate",
+              "proposed credit"
+            ],
+            [
+              "session",
+              "gate",
+              "trusted identity"
+            ],
+            [
+              "gate",
+              "payment",
+              "only if permitted"
+            ],
+            [
+              "claude",
+              "tools",
+              "choose capability"
+            ],
+            [
+              "tools",
+              "backend",
+              "request, not execution"
+            ],
+            [
+              "payment",
+              "backend",
+              "reply lost"
+            ]
+          ],
+          "packet": {
+            "label": "What we actually know",
+            "body": "Operation: r17\nRequest submitted: yes\nProvider outcome: UNKNOWN\nReceipt: not yet confirmed"
+          },
+          "question": {
+            "stem": "A permitted credit times out after submission. The provider supports status lookup by operation ID and same-key replay under a documented idempotency contract. Which recovery preserves the original operation and avoids an unsupported duplicate write?",
+            "options": [
+              {
+                "text": "Retry with a fresh operation ID after exponential backoff; the elapsed delay separates it from the timed-out request.",
+                "why": "Backoff manages load, not duplicate effects. A new ID can create a second credit if r17 already committed."
+              },
+              {
+                "text": "Persist r17 as unknown, query authoritative status, and use only the documented same-key replay rule if necessary; retain unresolved state when evidence is unavailable.",
+                "why": "This preserves identity, seeks the actual outcome, and makes any retry depend on provider semantics rather than interpreting a timeout as failure."
+              },
+              {
+                "text": "Mark r17 failed when the transport times out; allow the customer to start a new credit request.",
+                "why": "The transport result does not establish the business result. A new customer request can repeat a committed credit."
+              },
+              {
+                "text": "Return an error tool_result and ask Claude to choose whether a new operation is needed, without consulting provider status.",
+                "why": "The model can explain the failure but has no new transaction evidence. Recovery authority and duplicate prevention belong to the application/provider contract."
+              }
+            ],
+            "answer": 1,
+            "translation": "You lost the reply, not necessarily the payment. Find evidence about the original action before deciding whether another write is safe.",
+            "context": "Operation r17 submitted\nResponse: network timeout\nLocal business status: unknown\nProvider receipt: not yet observed",
+            "sources": [
+              {
+                "title": "Stripe: Provider-specific network errors and safe retries (production example)",
+                "url": "https://docs.stripe.com/error-low-level"
+              },
+              {
+                "title": "Stripe: Idempotency contract and limitations (production example)",
+                "url": "https://docs.stripe.com/api/idempotent_requests"
+              }
+            ],
+            "sourceNote": "Official references support the mechanisms. Fictional policy limits, application fixtures and original practice wording are not official exam questions. Provider retry behavior must follow that provider\u2019s actual documented contract."
+          },
+          "repair": {
+            "narration": "Add an operation record so you can ask about the same logical action. In this fictional replay, the status query confirms receipt CR1 for r17. Record that evidence and do not issue another credit. If the query cannot settle the outcome, keep it unknown and escalate under the recovery policy.",
+            "visible": [
+              "screen",
+              "backend",
+              "claude",
+              "orders",
+              "payment",
+              "gate",
+              "session",
+              "tools",
+              "ledger"
+            ],
+            "highlight": [
+              "ledger"
+            ],
+            "focus": [
+              "payment",
+              "ledger"
+            ],
+            "edges": [
+              [
+                "screen",
+                "backend",
+                "case C17"
+              ],
+              [
+                "backend",
+                "claude",
+                "request + evidence"
+              ],
+              [
+                "claude",
+                "backend",
+                "explain / propose"
+              ],
+              [
+                "backend",
+                "orders",
+                "read O4"
+              ],
+              [
+                "orders",
+                "backend",
+                "facts + policy"
+              ],
+              [
+                "backend",
+                "gate",
+                "proposed credit"
+              ],
+              [
+                "session",
+                "gate",
+                "trusted identity"
+              ],
+              [
+                "gate",
+                "payment",
+                "only if permitted"
+              ],
+              [
+                "claude",
+                "tools",
+                "choose capability"
+              ],
+              [
+                "tools",
+                "backend",
+                "request, not execution"
+              ],
+              [
+                "payment",
+                "ledger",
+                "provider evidence"
+              ],
+              [
+                "ledger",
+                "backend",
+                "known / unresolved"
+              ]
+            ],
+            "packet": {
+              "label": "Replay: one logical operation",
+              "body": "r17 \u2192 provider status lookup\nProvider confirms: succeeded \u00b7 receipt CR1\nAdditional credit calls: 0\nNo confirmation? Keep UNKNOWN."
+            }
+          }
+        },
+        {
+          "title": "Change the requirement",
+          "kicker": "Now you make the architecture decision",
+          "narration": "Keep the same application. This time the requested credit is 210 dollars. In this fictional policy, amounts above 180 dollars need staff approval. Ownership is valid, but that does not make the amount eligible for automatic execution. Choose the next action before we add the final branch.",
+          "visible": [
+            "screen",
+            "backend",
+            "claude",
+            "orders",
+            "payment",
+            "gate",
+            "session",
+            "tools",
+            "ledger"
+          ],
+          "highlight": [
+            "gate"
+          ],
+          "focus": [
+            "gate",
+            "payment"
+          ],
+          "edges": [
+            [
+              "screen",
+              "backend",
+              "case C17"
+            ],
+            [
+              "backend",
+              "claude",
+              "request + evidence"
+            ],
+            [
+              "claude",
+              "backend",
+              "explain / propose"
+            ],
+            [
+              "backend",
+              "orders",
+              "read O4"
+            ],
+            [
+              "orders",
+              "backend",
+              "facts + policy"
+            ],
+            [
+              "backend",
+              "gate",
+              "proposed credit"
+            ],
+            [
+              "session",
+              "gate",
+              "trusted identity"
+            ],
+            [
+              "gate",
+              "payment",
+              "only if permitted"
+            ],
+            [
+              "claude",
+              "tools",
+              "choose capability"
+            ],
+            [
+              "tools",
+              "backend",
+              "request, not execution"
+            ],
+            [
+              "payment",
+              "ledger",
+              "provider evidence"
+            ],
+            [
+              "ledger",
+              "backend",
+              "known / unresolved"
+            ]
+          ],
+          "packet": {
+            "label": "One changed constraint",
+            "body": "Requested: USD 210 \u2192 21000 cents\nAutomatic limit: USD 180 \u2192 18000 cents\nOwnership: verified\nStaff approval: absent"
+          },
+          "question": {
+            "stem": "The authenticated customer owns O4, but the requested credit exceeds the automatic approval limit. Which state transition and handoff preserve the policy boundary and allow review without implying completion?",
+            "options": [
+              {
+                "text": "Transition to pending_review without calling the payment API; send source evidence, exact amount/currency, policy version, missing approval and operation state to the authorized reviewer.",
+                "why": "The handoff gives the next owner the exact blocked decision while preserving that no credit has been issued."
+              },
+              {
+                "text": "Keep the proposal in the automatic lane and add \u201cstaff approval required\u201d to the system prompt before regenerating the call.",
+                "why": "Another generation does not supply the missing approval. The runtime must block submission until the applicable approval condition holds."
+              },
+              {
+                "text": "Treat verification plus the model\u2019s policy explanation as approval for this exact amount, while writing an audit entry for later staff inspection.",
+                "why": "Identity and an explanation do not confer scoped approval. An audit record documents a decision; it cannot authorize it retroactively."
+              },
+              {
+                "text": "Submit the credit with a pending-review flag and let the reviewer reverse it if the request is later denied.",
+                "why": "This creates the prohibited financial effect before the stated precondition. Review-after-execution does not satisfy approval-before-execution."
+              }
+            ],
+            "answer": 0,
+            "translation": "The account is correct, but the amount crosses a separate rule. What should the application do while that required approval is missing?",
+            "context": "Current policy: automatic credits <=18000 cents\nProposal: 21000 cents USD\nOwnership: verified\nScoped staff approval: absent\nOperation state: not submitted",
+            "sources": [
+              {
+                "title": "Anthropic: Client tool execution and results",
+                "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+              }
+            ],
+            "sourceNote": "Official references support the mechanisms. Fictional policy limits, application fixtures and original practice wording are not official exam questions. Provider retry behavior must follow that provider\u2019s actual documented contract."
+          },
+          "repair": {
+            "narration": "Add the staff-review branch. The gate holds the payment and transfers a complete case to the next owner. The handoff says \u201cproposed 210 dollars; not issued,\u201d with evidence and the policy reason. You now have separate checks for identity, tool purpose, valid data, permission and a proven business outcome.",
+            "visible": [
+              "screen",
+              "backend",
+              "claude",
+              "orders",
+              "payment",
+              "gate",
+              "session",
+              "tools",
+              "ledger",
+              "human"
+            ],
+            "highlight": [
+              "human",
+              "gate"
+            ],
+            "focus": [
+              "gate",
+              "human"
+            ],
+            "edges": [
+              [
+                "screen",
+                "backend",
+                "case C17"
+              ],
+              [
+                "backend",
+                "claude",
+                "request + evidence"
+              ],
+              [
+                "claude",
+                "backend",
+                "explain / propose"
+              ],
+              [
+                "backend",
+                "orders",
+                "read O4"
+              ],
+              [
+                "orders",
+                "backend",
+                "facts + policy"
+              ],
+              [
+                "backend",
+                "gate",
+                "proposed credit"
+              ],
+              [
+                "session",
+                "gate",
+                "trusted identity"
+              ],
+              [
+                "gate",
+                "payment",
+                "only if permitted"
+              ],
+              [
+                "claude",
+                "tools",
+                "choose capability"
+              ],
+              [
+                "tools",
+                "backend",
+                "request, not execution"
+              ],
+              [
+                "payment",
+                "ledger",
+                "provider evidence"
+              ],
+              [
+                "ledger",
+                "backend",
+                "known / unresolved"
+              ],
+              [
+                "gate",
+                "human",
+                "hold + handoff"
+              ]
+            ],
+            "packet": {
+              "label": "Prove the final state",
+              "body": "Case C17 \u00b7 Order O4\nProposed USD 210; NOT issued\nReason: staff approval required\nNext owner: authorized reviewer"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

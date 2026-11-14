@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!--
+Community questions in this file come from Amey Thakur's CLAUDE-CERTIFICATIONS repo
+(https://github.com/Amey-Thakur/CLAUDE-CERTIFICATIONS), under this licence:
+
+MIT License
+
+Copyright (c) 2026 Amey Thakur
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Certification Practice</title>
+<style>
+  :root {
+    --ink: #1f2328; --muted: #59636e; --line: #d1d9e0; --bg: #f6f8fa; --card: #fff;
+    --accent: #c15f3c; --accent-soft: #fbeee8; --good: #1a7f37; --good-soft: #dafbe1;
+    --bad: #cf222e; --bad-soft: #ffebe9; --warn: #9a6700; --warn-soft: #fff8c5;
+  }
+  :root[data-theme=dark] { --ink:#f2f0ed; --muted:#b8b4ae; --line:#555; --bg:#17191d; --card:#24262b; --accent:#cc876f; --accent-soft:#402b24; --good:#85d49b; --good-soft:#173925; --bad:#ff9999; --bad-soft:#422326; --warn:#edce7d; --warn-soft:#3c341b; color-scheme:dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+  header { background: var(--card); border-bottom: 1px solid var(--line); padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 18px; margin: 0; }
+  header .spacer { flex: 1; }
+  main { width: 100%; margin: 0 auto; padding: clamp(16px,2vw,40px); }
+  .qtext, .opt, .explain { max-width: 80ch; }
+  .card { min-width: 0; overflow-wrap: anywhere; }
+  .card:has(table) { overflow-x: auto; }
+  button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  header { flex-wrap: wrap; }
+  @media(max-width:600px) { .grid {grid-template-columns:1fr;} header {padding:12px 16px;} .card {padding:14px;} }
+  h2 { font-size: 20px; margin: 28px 0 12px; }
+  h3 { font-size: 16px; margin: 20px 0 8px; }
+  .muted { color: var(--muted); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px; } .grid > .card { min-width: 0; overflow-wrap: anywhere; }
+  .exam { cursor: pointer; border: 2px solid var(--line); }
+  .exam.sel { border-color: var(--accent); background: var(--accent-soft); }
+  .exam b { display: block; font-size: 15px; }
+  .exam small { color: var(--muted); }
+  button { font: inherit; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 8px 16px; cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  button:disabled { opacity: .45; cursor: default; }
+  button.link { border: 0; background: none; color: var(--accent); padding: 0; text-decoration: underline; }
+  label.opt { display: flex; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 8px 0; cursor: pointer; background: var(--card); }
+  label.opt:hover { border-color: #afb8c1; }
+  label.opt input { margin-top: 5px; }
+  label.opt .letter { font-weight: 700; min-width: 18px; }
+  label.opt.correct { border-color: var(--good); background: var(--good-soft); }
+  label.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+  .explain { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .pill { display: inline-block; font-size: 12px; padding: 2px 9px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line); color: var(--muted); margin-right: 6px; }
+  .pill.t1 { background: var(--good-soft); border-color: #aceebb; color: var(--good); }
+  .pill.t4 { background: #eef0ff; border-color: #c7ccf5; color: #3b44a8; }
+  .pill.t2 { background: var(--warn-soft); border-color: #f5e0a0; color: var(--warn); }
+  .qtext { font-size: 17px; margin: 12px 0 6px; white-space: pre-wrap; }
+  .select-n { font-weight: 600; color: var(--accent); font-size: 14px; }
+  .bar { display: flex; gap: 10px; align-items: center; margin-top: 16px; flex-wrap: wrap; }
+  .timer { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .timer.low { color: var(--bad); }
+  .nav { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 14px; }
+  .nav button { width: 34px; height: 30px; padding: 0; font-size: 12px; }
+  .nav button.ans { background: #ddf4ff; border-color: #80ccff; }
+  .nav button.flag { outline: 2px solid var(--warn); }
+  .nav button.cur { border: 2px solid var(--ink); }
+  @media(max-width:600px) { .card table {min-width:570px;} }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .meter { height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden; min-width: 80px; }
+  .meter > span { display: block; height: 100%; }
+  .big { font-size: 40px; font-weight: 800; line-height: 1.1; }
+  .pass { color: var(--good); } .fail { color: var(--bad); }
+  .row { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+  .checks label { display: flex; align-items: flex-start; gap: 8px; margin: 8px 0; white-space: normal; overflow-wrap: anywhere; }
+  .checks input { flex-shrink: 0; }
+  select,input[type=file] { max-width:100%; }
+  select, input[type=number] { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; }
+  .note { font-size: 13px; color: var(--muted); }
+  .hidden { display: none !important; }
+.practice-tb-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px}.practice-tb-pair>div{min-width:0}.practice-tb-pair pre{max-width:100%}@media(max-width:700px){.practice-tb-pair{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="../assets/site.css"><script src="question-bank.js"></script></head>
+<body>
+<header>
+  <h1>Claude Certification Practice</h1><a href="../exams/ccar-f.html">Return to Architect Foundations</a>
+  <span class="spacer"></span>
+  <button type="button" onclick="togglePracticeTheme()" aria-label="Switch practice colour theme">Theme</button>
+  <span id="hdrTimer" class="timer hidden"></span>
+  <button id="hdrHome" class="hidden" onclick="confirmHome()">Home</button>
+</header>
+<nav aria-label="CCAR-F connected learning" style="padding: .75rem 1rem; display:flex; flex-wrap:wrap; gap:1rem"><strong>CCAR-F learning route</strong><a href="../lessons/ccar-f/learning-journey.html">Full teaching-to-exam journey</a><a href="../lessons/ccar-f/architecture-studio/index.html">Eight application scenarios</a><a href="../lessons/ccar-f/scenario-studio.html">Scenarios and decisions</a><a href="../simulations/ccar-f/index.html">Simulations</a><a href="../labs/08-CCAR-F-architecture-decisions.html">Local Lab 08</a><a href="../labs/02-CCAR-F-coordinator-extraction.html">API Lab 02</a><a href="../labs/03-CCAR-F-mcp-server-claude-code.html">Lab 03</a><a href="../lessons/ccar-f/decision-atlas.html">Reference flows</a><a href="../lessons/ccar-f/flashcards.html">Recall</a><span>Use the exact repair link after an answer; your session stays saved.</span></nav>
+<main id="app"></main>
+
+<script>
+const DATA = window.CCT_PRACTICE_DATA;
+const STORE_KEY = "claude-cert-practice.v1";
+const SESSION_KEY = STORE_KEY + ".active";
+const BANK_VERSION = DATA.version || "legacy";
+const TIER_LABEL = {1: "Official samples (Anthropic)", 2: "Licensed community", 3: "Licensed community (MIT)", 4: "Project-authored (written by us)"};
+
+function togglePracticeTheme(){const d=document.documentElement;d.dataset.theme=d.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem("ccs-theme",d.dataset.theme);}catch(e){}}
+try{document.documentElement.dataset.theme=localStorage.getItem("ccs-theme")||"light";}catch(e){}
+const $app = document.getElementById("app");
+const store = loadStore();
+let state = null;
+let timerHandle = null;
+let lastStorageError = "";
+
+function loadStore() {
+  const s = {q: {}, runs: [], prefs: {}, attempts: [], retries: []};
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY)) || {};
+    for (const k of Object.keys(s)) {
+      if (saved[k] && typeof saved[k] === "object" && Array.isArray(saved[k]) === Array.isArray(s[k])) s[k] = saved[k];
+    }
+    if (s.prefs.exam && !DATA.exams[s.prefs.exam]) delete s.prefs.exam;
+    if (s.prefs.tiers && !Array.isArray(s.prefs.tiers)) delete s.prefs.tiers;
+  } catch (e) {}
+  return s;
+}
+function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); lastStorageError = ""; } catch (e) { lastStorageError = "Progress could not be saved. Export your progress before leaving."; } }
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+}
+function shuffle(a) {
+  a = a.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+function pct(n, d) { return d ? Math.round(100 * n / d) : 0; }
+function scaled(fraction) { return null; } // Historical values remain in storage; new sessions never predict a certification score.
+function meter(p) {
+  const color = p >= 80 ? "var(--good)" : p >= 65 ? "var(--warn)" : "var(--bad)";
+  return `<div class="meter"><span style="width:${p}%;background:${color}"></span></div>`;
+}
+function fmtTime(sec) {
+  const m = Math.floor(sec / 60), s = sec % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+function pool(exam, tiers, includeWarmups = false) {
+  return DATA.questions.filter(q => q.exam === exam && tiers.includes(q.origin_tier) && (includeWarmups || !q.warmup_only) && q.review_status !== "quarantined" && DATA.reviewMap?.[q.id]?.disposition !== "quarantined" && q.stage !== "delayed-retry");
+}
+function warmups(exam) { return DATA.questions.filter(q => q.exam === exam && q.warmup_only); }
+
+// Exposure is not a submitted answer. Retain historical storage; interpret evidence at read time.
+function lastCompletedResult(id) {
+  const history=store.attempts.filter(a=>a.id===id);
+  const completed=history.filter(a=>!a.skipped && Array.isArray(a.choices) && a.choices.length);
+  if(completed.length)return completed[completed.length-1].right === true;
+  if(history.length)return null;
+  const r=store.q[id];
+  return r && r.seen>0 && typeof r.last === "boolean" ? r.last : null;
+}
+function isFresh(q){const r=store.q[q.id];return !(r&&(r.seen||r.exposed));}
+function isMistake(q){return lastCompletedResult(q.id)===false;}
+function familyName(id){return ({"code-ci":"Code changes and CI review","enterprise":"Enterprise knowledge and decisions","extraction":"Document extraction and validation","mcp":"Tool interfaces and MCP","multi-agent":"Coordinator and specialist handoffs","reliability":"State, recovery and reliability","support":"Customer support actions"})[id] || id.replace(/-/g," ");}
+function objectiveName(id){return DATA.objectiveNames?.[id] || "Architecture decision";}
+
+function domainStats(exam) {
+  const out = {};
+  for (const d of Object.keys(DATA.exams[exam].domains)) out[d] = {seen: 0, right: 0};
+  for (const q of DATA.questions) {
+    if (q.exam !== exam || q.warmup_only || DATA.reviewMap?.[q.id]?.disposition === "quarantined" || DATA.reviewMap?.[q.id]?.disposition === "caveated") continue;
+    const r = store.q[q.id];
+    if (lastCompletedResult(q.id) === null) continue;
+    out[q.domain].seen += 1;
+    if (lastCompletedResult(q.id) === true) out[q.domain].right += 1;
+  }
+  return out;
+}
+
+/* ---------------- Home ---------------- */
+
+function renderHome() {
+  stopTimer();
+  state = null;
+  document.getElementById("hdrHome").classList.add("hidden");
+  document.getElementById("hdrTimer").classList.add("hidden");
+  const prefs = Object.assign({exam: "CCAR-F", tiers: [1, 2, 3, 4]}, store.prefs);
+  const exam = prefs.exam;
+  const meta = DATA.exams[exam];
+
+  const examCards = Object.entries(DATA.exams).map(([code, m]) => {
+    const n = DATA.questions.filter(q => q.exam === code).length;
+    return `<button type="button" class="card exam ${code === exam ? "sel" : ""}" aria-pressed="${code === exam}" onclick="setPref('exam','${code}')">
+      <b>${code}</b><span>${esc(m.title.replace("Claude Certified ", ""))}</span><br>
+      <small>${m.items} questions · ${m.minutes} min · ${m.fee} · ${n} in bank</small></button>`;
+  }).join("");
+
+  const tierTotals = [1, 2, 3, 4].map(t => DATA.questions.filter(q => q.exam === exam && q.origin_tier === t).length);
+  const tierCounts = [1, 2, 3, 4].map(t => pool(exam,[t]).length);
+  const nWarm = warmups(exam).length;
+  const allWarm = t => t === 3 && nWarm && nWarm === tierTotals[2];
+  const tierChecks = [1, 2, 3, 4].map(t => `<label><input type="checkbox" ${prefs.tiers.includes(t) ? "checked" : ""}
+      ${tierCounts[t - 1] ? "" : "disabled"} onchange="toggleTier(${t}, this.checked)"> ${TIER_LABEL[t]} (${allWarm(t) ? tierTotals[t - 1] + ", only in Warm-up below" : tierCounts[t - 1]})</label>`).join("");
+
+  const ds = domainStats(exam);
+  const domRows = Object.entries(meta.domains).map(([d, w]) => {
+    const n = pool(exam, prefs.tiers).filter(q => q.domain === d).length;
+    const s = ds[d];
+    const p = pct(s.right, s.seen);
+    return `<tr><td>${esc(d)}</td><td class="num">${w}%</td><td class="num">${n}</td>
+      <td class="num">${s.seen ? p + "%" : "–"}</td><td>${s.seen ? meter(p) : ""}</td>
+      <td><button class="link" data-d="${esc(d)}" onclick="startDrill(this.dataset.d)">Drill</button></td></tr>`;
+  }).join("");
+
+  const wrong = pool(exam, [1, 2, 3, 4]).filter(q => isMistake(q)).length;
+  const runs = store.runs.filter(r => r.exam === exam).slice(-8).reverse();
+  const runRows = runs.map(r => `<tr><td>${new Date(r.at).toLocaleString()}</td><td>${esc(r.mode)}</td>
+      <td class="num">${r.right}/${r.total}</td><td class="num">${r.scaled == null ? "–" : r.scaled}</td>
+      <td class="muted">${r.bank_version ? esc(r.bank_version) : "legacy session"}</td></tr>`).join("");
+
+  $app.innerHTML = `
+    <p class="muted">Every question is tagged with where it came from. <b>Official</b> means written by Anthropic.
+        <b>Community</b> means written by open-source authors: Amey Thakur's questions are Copyright (c) 2026 Amey Thakur, shared under the MIT licence (full notice in this file's source). The real exam bank is confidential, so none of these are real exam questions.</p>
+    <h2>1. Pick an exam</h2>
+    <div class="grid">${examCards}</div>
+    <h2>2. Pick sources</h2>
+    <div class="card checks">${tierChecks}</div>
+    ${exam === "CCAR-F" ? objectiveControls() : ""}
+    ${resumeAvailable() ? `<div class="card"><b>Saved session</b><p>Your exact question IDs, choices and flags are kept in this browser.</p><button onclick="resumeSession()">Resume saved session</button></div>` : ""}
+    <h2>3. Practice</h2>${new URLSearchParams(location.search).get("variant")?`<p class="note">Targeted decision: ${esc(new URLSearchParams(location.search).get("variant"))}. Use Start fresh decision practice above.</p>`:""}
+    <div class="grid">
+      <div class="card"><b>Mock exam</b><p class="muted">${meta.items} questions drawn to match the official domain weights. ${meta.minutes}-minute timer. No answers shown until you finish.</p>
+        <button class="primary" onclick="startMock()">Start mock</button></div>
+      <div class="card"><b>Quick drill</b><p class="muted">Fresh questions first, followed by previously seen items when needed. This is mixed review. You see the reasoning after each answer.</p>
+        <div class="row"><input id="drillN" type="number" min="5" max="200" value="20" style="width:80px"> questions
+        <button class="primary" onclick="startDrill(null)">Start drill</button></div></div>
+      <div class="card"><b>Fix my mistakes</b><p class="muted">Only completed incorrect answers. Reading a teaching example or skipping a question does not add a mistake. ${wrong} waiting.</p>
+        <button class="primary" ${wrong ? "" : "disabled"} onclick="startMistakes()">Start review</button></div>
+      ${nWarm ? `<div class="card"><b>Warm-up (community set, free MIT licence)</b><p class="muted">Quick recall questions written by a community author, not Anthropic. In this set the right answer is nearly always the longest option, so they don't count toward your readiness score. Don't use length as a clue on the real exam. ${nWarm} available.</p>
+        <button class="primary" onclick="startWarmup()">Start warm-up</button></div>` : ""}
+    </div>
+    <h2>Your standing by domain · ${esc(meta.title)}</h2><p class="note">On a narrow screen, scroll the table left and right to read every column.</p>
+    <div class="card"><table>
+      <tr><th>Domain</th><th class="num">Exam weight</th><th class="num">Questions available</th><th class="num">Your accuracy</th><th></th><th></th></tr>
+      ${domRows}</table>
+      <p class="note">Accuracy counts your last answer to each question. Any 80% study target is an unvalidated local heuristic, not an official scaled score or proof of readiness. Prioritize objective gaps, fresh explanations and delayed transfer as well as domain weight.</p></div>
+    ${runs.length ? `<h2>Recent sessions</h2><div class="card"><table><tr><th>When</th><th>Mode</th><th class="num">Score</th><th class="num">Historical estimate</th><th></th></tr>${runRows}</table>
+      <p class="note">Historical estimates are preserved for continuity. They are uncalibrated practice values and do not predict an official exam score. New sessions report accuracy and coverage only.</p></div>` : ""}
+    <p class="note" style="margin-top:28px">Progress is saved in this browser only. ${esc(lastStorageError)} <button onclick="exportProgress()">Export progress</button> <label>Import progress <input type="file" accept="application/json" onchange="importProgress(this.files[0])"></label> <button class="link" onclick="resetProgress()">Reset progress</button></p>`;
+}
+
+function setPref(k, v) { store.prefs[k] = v; saveStore(); renderHome(); }
+function toggleTier(t, on) {
+  const tiers = new Set(store.prefs.tiers || [1, 2, 3, 4]);
+  on ? tiers.add(t) : tiers.delete(t);
+  if (!tiers.size) tiers.add(t);
+  store.prefs.tiers = [...tiers].sort();
+  saveStore(); renderHome();
+}
+function resetProgress() {
+  if (!confirm("Clear all saved answers and session history in this browser?")) return;
+  store.q = {}; store.runs = []; store.attempts = []; store.retries = []; try { localStorage.removeItem(SESSION_KEY); } catch(e) {} saveStore(); renderHome();
+}
+function confirmHome() {
+  if (state && !state.finished && !confirm("Leave this session? Answers so far will not be scored.")) return;
+  renderHome();
+}
+
+/* ---------------- Building a session ---------------- */
+
+function prefs() { return Object.assign({exam: "CCAR-F", tiers: [1, 2, 3, 4]}, store.prefs); }
+
+function blueprintSample(exam, tiers) {
+  const meta = DATA.exams[exam];
+  const all = pool(exam, tiers).filter(q=>DATA.reviewMap?.[q.id]?.disposition !== "caveated");
+  const doms = Object.entries(meta.domains);
+  const total = Object.values(meta.domains).reduce((a, b) => a + b, 0);
+  let quotas = doms.map(([d, w]) => [d, Math.floor(meta.items * w / total), meta.items * w / total % 1]);
+  let short = meta.items - quotas.reduce((a, q) => a + q[1], 0);
+  quotas.sort((a, b) => b[2] - a[2]).forEach(q => { if (short > 0) { q[1] += 1; short -= 1; } });
+
+  const picked = [], used = new Set();
+  for (const [d, n] of quotas) {
+    const got = shuffle(all.filter(q => q.domain === d)).slice(0, n);
+    got.forEach(q => { picked.push(q); used.add(q.id); });
+  }
+  const fill = shuffle(all.filter(q => !used.has(q.id))).slice(0, meta.items - picked.length);
+  return shuffle(picked.concat(fill));
+}
+
+function startMock() {
+  const p = prefs();
+  const qs = blueprintSample(p.exam, p.tiers);
+  begin({mode: "Mock exam", exam: p.exam, qs, timed: true, feedback: false});
+}
+function startDrill(domain) {
+  const p = prefs();
+  let qs = pool(p.exam, p.tiers);
+  if (domain) qs = qs.filter(q => q.domain === domain);
+  const unseenFirst = shuffle(qs).sort((a, b) => (store.q[a.id] ? 1 : 0) - (store.q[b.id] ? 1 : 0));
+  const n = domain ? Math.min(20, qs.length) : Math.max(5, parseInt(document.getElementById("drillN")?.value || "20", 10));
+  begin({mode: domain ? "Mixed review: " + domain : "Quick drill · fresh and previously seen", exam: p.exam, qs: unseenFirst.slice(0, n), timed: false, feedback: true});
+}
+function startMistakes() {
+  const p = prefs();
+  const qs = shuffle(pool(p.exam, [1, 2, 3, 4]).filter(q => isMistake(q)));
+  begin({mode: "Fix my mistakes", exam: p.exam, qs, timed: false, feedback: true});
+}
+function startWarmup() {
+  const p = prefs();
+  const qs = shuffle(warmups(p.exam)).sort((a, b) => (store.q[a.id] ? 1 : 0) - (store.q[b.id] ? 1 : 0));
+  begin({mode: "Warm-up", exam: p.exam, qs: qs.slice(0, 20), timed: false, feedback: true});
+}
+
+function begin(opts) {
+  if (!opts.qs.length) { alert("No questions match those settings."); return; }
+  state = Object.assign(opts, {i: 0, picks: {}, checked: {}, flags: new Set(), finished: false,
+    endsAt: opts.timed ? Date.now() + DATA.exams[opts.exam].minutes * 60000 : null, optionOrder: {}, assisted: {}, recorded: {}, missCategories: {}});
+  state.qs.forEach(q => state.optionOrder[q.id] = q.variant_id ? shuffle(Object.keys(q.options)) : Object.keys(q.options));
+  persistSession();
+  document.getElementById("hdrHome").classList.remove("hidden");
+  if (opts.timed) startTimer();
+  renderQuestion();
+}
+
+/* ---------------- Timer ---------------- */
+
+function startTimer() {
+  stopTimer();
+  const el = document.getElementById("hdrTimer");
+  el.classList.remove("hidden");
+  const tick = () => {
+    const left = Math.max(0, Math.round((state.endsAt - Date.now()) / 1000));
+    el.textContent = "Time left " + fmtTime(left);
+    el.classList.toggle("low", left < 600);
+    if (left === 0) { stopTimer(); finish(true); return false; }
+    return true;
+  };
+  if (tick()) timerHandle = setInterval(tick, 1000);
+}
+function stopTimer() { if (timerHandle) clearInterval(timerHandle); timerHandle = null; }
+
+/* ---------------- Question view ---------------- */
+
+function renderQuestion() {
+  const q = state.qs[state.i];
+  const multi = q.answer.length > 1;
+  const picks = state.picks[q.id] || [];
+  const checked = state.checked[q.id];
+  const reveal = state.feedback && checked;
+
+  const opts = (state.optionOrder[q.id] || Object.keys(q.options)).map((k, position) => {
+    const v = q.options[k];
+    let cls = "";
+    if (reveal) cls = q.answer.includes(k) ? "correct" : picks.includes(k) ? "wrong" : "";
+    const why = reveal && (q.explain?.[k] || q.why_not?.[k] || (q.answer.includes(k) && q.rationale)) ? `<div class="explain">${esc(q.explain?.[k] || q.why_not?.[k] || q.rationale)}</div>` : "";
+    return `<label class="opt ${cls}"><input type="${multi ? "checkbox" : "radio"}" name="opt" value="${k}"
+        ${picks.includes(k) ? "checked" : ""} ${reveal ? "disabled" : ""} onchange="pick('${k}', this.checked)">
+        <span class="letter">${String.fromCharCode(65 + position)}</span><span>${esc(v)}${why}</span></label>`;
+  }).join("");
+
+  const rationale = reveal && q.rationale ? `<div class="card" style="margin-top:12px"><b>Why</b><p>${esc(q.rationale)}</p>${q.review_flag ? `<p><b>Note:</b> ${esc(q.review_flag)}</p>` : ""}</div>` : "";
+  const verdict = reveal ? `<p class="${isRight(q) ? "pass" : "fail"}"><b>${isRight(q) ? "Correct." : "Not quite. Correct answer: " + q.answer.map(id=>String.fromCharCode(65+(state.optionOrder[q.id]||Object.keys(q.options)).indexOf(id))).join(", ")}</b></p>` : "";
+  const last = state.i === state.qs.length - 1;
+
+  let buttons;
+  if (state.feedback) {
+    buttons = checked
+      ? `<button class="primary" onclick="${last ? "finish(false)" : "move(1)"}">${last ? "See results" : "Next"}</button>`
+      : `<button class="primary" ${picks.length ? "" : "disabled"} onclick="check()">Check answer</button>
+         <button onclick="skip()">Skip</button>`;
+  } else {
+    buttons = `<button ${state.i ? "" : "disabled"} onclick="move(-1)">Back</button>
+      <button class="primary" onclick="${last ? "finish(false)" : "move(1)"}">${last ? "Finish and score" : "Next"}</button>
+      <button onclick="toggleFlag()">${state.flags.has(q.id) ? "Unflag" : "Flag for review"}</button>`;
+  }
+
+  const nav = state.timed ? `<div class="nav">${state.qs.map((x, j) =>
+    `<button class="${(state.picks[x.id] || []).length ? "ans" : ""} ${state.flags.has(x.id) ? "flag" : ""} ${j === state.i ? "cur" : ""}"
+      onclick="jump(${j})">${j + 1}</button>`).join("")}</div>
+    <p class="note">Blue = answered · yellow outline = flagged. Unanswered questions score as wrong, and there is no penalty for guessing.</p>` : "";
+
+  $app.innerHTML = `
+    <div class="row muted"><span>${esc(state.mode)} · question ${state.i + 1} of ${state.qs.length}</span></div>
+    <div class="card">
+      <div><span class="pill">${esc(q.domain)}</span><span class="pill t${q.origin_tier}">${esc(q.label || TIER_LABEL[q.origin_tier])}</span>
+        ${q.scenario ? `<span class="pill">Scenario: ${esc(q.scenario)}</span>` : ""}${objectiveOf(q) ? `<span class="pill">Objective ${esc(objectiveOf(q))}</span>` : ""}</div>
+      <div class="qtext">${esc(q.question)}</div>
+      <div class="select-n">${multi ? `Select ${q.answer.length}.` : "Select 1."}</div>
+      ${opts}
+      ${verdict}
+      <div class="bar">${buttons}</div>
+    </div>
+    ${rationale}
+    ${reveal ? reviewCaveat(q)+missCategoryPanel(q)+repairPanel(q)+technicalBridgePanel(q)+learningPatternPanel(q) : ""}
+    <p class="note">Attempt evidence: ${esc(attemptEvidenceLabel(q))}. ${repairOpenedAfterSubmission(q) ? "Repair was opened after submission; the original submission classification is retained." : ""} Bank ${esc(BANK_VERSION)}.</p>
+    ${nav}
+    ${reveal ? `<p class="note">Source: ${esc(q.source)}</p>` : ""}`;
+}
+
+function pick(k, on) {
+  const q = state.qs[state.i];
+  let p = new Set(state.picks[q.id] || []);
+  if (q.answer.length > 1) { on ? p.add(k) : p.delete(k); }
+  else p = new Set([k]);
+  state.picks[q.id] = [...p].sort();
+  persistSession(); renderQuestion();
+  document.querySelector(`input[value="${k}"]`)?.focus();
+}
+function isRight(q) {
+  const p = state.picks[q.id] || [];
+  return p.length === q.answer.length && q.answer.every(a => p.includes(a));
+}
+function record(q) {
+  if (state.recorded[q.id]) return;
+  state.recorded[q.id] = true;
+  if (!(state.picks[q.id]||[]).length) return; // A skipped slot still counts in this run score, not submitted-answer history.
+  const r = store.q[q.id] || {seen: 0, right: 0};
+  const attempt = {id:q.id, at:Date.now(), objective:objectiveOf(q), variant_id:q.variant_id||null, bank_version:BANK_VERSION, choices:(state.picks[q.id]||[]).slice(), right:isRight(q), evidence:state.assisted[q.id]?"assisted":(r.seen||r.exposed)?"repeat":"first-attempt", skipped:!(state.picks[q.id]||[]).length};
+  store.attempts.push(attempt);
+  if (!attempt.right && q.retry_id && !store.retries.some(x=>x.id===q.retry_id&&!x.completed)) store.retries.push({id:q.retry_id,from:q.id,due:Date.now()+86400000,completed:false});
+  store.retries.filter(x=>x.id===q.id).forEach(x=>x.completed=true);
+  r.seen += 1;
+  r.last = isRight(q);
+  if (r.last) r.right += 1;
+  store.q[q.id] = r;
+}
+function check() {
+  const q = state.qs[state.i];
+  state.checked[q.id] = true;
+  record(q); saveStore(); persistSession();
+  renderQuestion();
+}
+function skip() {
+  state.checked[state.qs[state.i].id] = true; record(state.qs[state.i]); saveStore(); persistSession();
+  if (state.i === state.qs.length - 1) return finish(false);
+  move(1);
+}
+function move(d) { state.i = Math.min(state.qs.length - 1, Math.max(0, state.i + d)); persistSession(); renderQuestion(); window.scrollTo(0, 0); }
+function jump(j) { state.i = j; persistSession(); renderQuestion(); }
+function toggleFlag() {
+  const id = state.qs[state.i].id;
+  state.flags.has(id) ? state.flags.delete(id) : state.flags.add(id);
+  persistSession(); renderQuestion();
+}
+
+/* ---------------- Results ---------------- */
+
+function finish(timeUp) {
+  if (!state || state.finished) return;
+  if (!state.feedback && !timeUp) {
+    const open = state.qs.filter(q => !(state.picks[q.id] || []).length).length;
+    const flagged = state.flags.size;
+    if ((open || flagged) && !confirm(`${open} unanswered and ${flagged} flagged. Finish and score now?`)) return;
+  }
+  stopTimer();
+  state.finished = true;
+  document.getElementById("hdrTimer").classList.add("hidden");
+
+  const scored = state.feedback ? state.qs.filter(q => state.checked[q.id]) : state.qs;
+  if (!state.feedback) scored.forEach(record);
+  const right = scored.filter(isRight).length;
+  const sc = state.mode === "Warm-up" ? null : scaled(scored.length ? right / scored.length : 0);
+  store.runs.push({at: Date.now(), exam: state.exam, mode: state.mode.startsWith("Drill") ? "Drill" : state.mode, right, total: scored.length, scaled: null, bank_version:BANK_VERSION});
+  try { localStorage.removeItem(SESSION_KEY); } catch(e) {}
+  saveStore();
+
+  const meta = DATA.exams[state.exam];
+  const byDom = {};
+  for (const q of scored) {
+    const b = byDom[q.domain] || (byDom[q.domain] = {n: 0, r: 0});
+    b.n += 1; if (isRight(q)) b.r += 1;
+  }
+  const domRows = Object.entries(meta.domains).filter(([d]) => byDom[d]).map(([d, w]) => {
+    const b = byDom[d], p = pct(b.r, b.n);
+    return `<tr><td>${esc(d)}</td><td class="num">${w}%</td><td class="num">${b.r}/${b.n}</td><td class="num">${p}%</td><td>${meter(p)}</td></tr>`;
+  }).join("");
+
+  const missed = scored.filter(q => !isRight(q));
+  const missedHtml = missed.map(q => {
+    const why = q.rationale || (q.explain ? q.answer.map(a => q.explain[a]).filter(Boolean).join(" ") : "");
+    const yours = (state.picks[q.id] || []).join(", ") || "no answer";
+    return `<div class="card"><div><span class="pill">${esc(q.domain)}</span><span class="pill t${q.origin_tier}">${esc(q.label || TIER_LABEL[q.origin_tier])}</span></div>
+      <div class="qtext">${esc(q.question)}</div>
+      ${Object.entries(q.options).map(([k, v]) => `<div class="${q.answer.includes(k) ? "pass" : ""}">${q.answer.includes(k) ? "✓" : "&nbsp;&nbsp;"} <b>${k}</b> ${esc(v)}</div>`).join("")}
+      <p class="muted">You picked: ${esc(yours)}</p>${why ? `<p class="explain">${esc(why)}</p>` : ""}</div>`;
+  }).join("");
+
+  $app.innerHTML = `
+    <h2>${esc(state.mode)} · results${timeUp ? " (time ran out)" : ""}</h2>
+    <div class="card row">
+      <div><div class="big">${right}/${scored.length}</div><div class="muted">${pct(right, scored.length)}% correct</div></div>
+      <div class="muted">Practice accuracy, not an official scaled score. Reading and repeated answers do not establish mastery.</div>
+      <div class="spacer" style="flex:1"></div>
+      <button class="primary" onclick="renderHome()">Back to home</button>
+    </div>
+    <p class="note">Review fresh, assisted and repeated attempts separately. Practice results do not predict certification marks.</p>
+    <h3>By domain</h3>
+    <div class="card"><table><tr><th>Domain</th><th class="num">Exam weight</th><th class="num">Right</th><th class="num">%</th><th></th></tr>${domRows}</table></div>
+    ${objectiveResults(scored)}
+    <h3>Review every question</h3>${scored.map(q=>reviewCard(q)).join("")}`;
+  window.scrollTo(0, 0);
+}
+
+
+/* Objective repair, delayed transfer, and compatible local history. */
+
+const MISS_CATEGORIES = {
+  "wrong-signal": "Wrong signal or decisive constraint",
+  "wrong-mechanism": "Wrong Claude mechanism",
+  "wrong-scope": "Wrong scope or permission boundary",
+  "wrong-timing": "Wrong timing or execution phase",
+  "missing-validation": "Missing validation",
+  "unsafe-recovery": "Unsafe recovery or retry",
+  "provenance-loss": "Lost evidence provenance",
+  "instruction-conflict": "Instruction conflict"
+};
+function missCategoryRepair(q, category) {
+  const capable = !!(q.variant_id && q.repair_url);
+  const exact = !!(capable && category && MISS_CATEGORIES[category]);
+  const href = exact ? repairHref(q) + "-" + category : repairHref(q);
+  return `<a href="${esc(href)}" onclick="markAssisted('${q.id}')">${exact ? "Open this miss-category repair" : "Open available lesson repair"}</a>${!capable ? `<p class="note">This legacy item has no category-specific subsection; use the available lesson or domain repair.</p>` : !category ? `<p class="note">Select a category to open its precise subsection; the link currently opens the variant overview.</p>` : ""}`;
+}
+function missCategoryPanel(q) {
+  if (!state || isRight(q)) return "";
+  const value = state.missCategories?.[q.id] || "";
+  return `<section class="card"><label for="miss-category-${esc(q.id)}"><b>What caused this miss? (optional)</b></label><p class="note">Choose your own diagnosis after reviewing the answer. This self-report does not change grading or accuracy.</p><select id="miss-category-${esc(q.id)}" onchange="setMissCategory('${q.id}', this.value)"><option value="">Not classified</option>${Object.entries(MISS_CATEGORIES).map(([id,label])=>`<option value="${id}" ${value===id?"selected":""}>${esc(label)}</option>`).join("")}</select><div id="miss-repair-${esc(q.id)}">${missCategoryRepair(q,value)}</div></section>`;
+}
+function setMissCategory(id, category) {
+  const q = state?.qs.find(q=>q.id===id);
+  if (!q || isRight(q) || (!state.finished && !state.checked[id]) || (category && !MISS_CATEGORIES[category])) return;
+  const attempt = store.attempts.slice().reverse().find(a=>a.id===id);
+  if (!attempt || attempt.right) return;
+  state.missCategories ||= {};
+  if (category) { state.missCategories[id]=category; attempt.miss_category=category; attempt.miss_category_source="learner-self-report"; }
+  else { delete state.missCategories[id]; delete attempt.miss_category; delete attempt.miss_category_source; }
+  saveStore(); persistSession();
+  // Update only this result's repair link: do not rerender the page or change question position.
+  const target=document.getElementById("miss-repair-"+id);
+  if(target) target.innerHTML=missCategoryRepair(q,category);
+}
+
+function reviewCaveat(q) { const r=DATA.reviewMap?.[q.id];return r?.disposition==="caveated"?`<p class="note"><b>Learning-only caveat:</b> ${esc(r.reason)} This item is excluded from mixed mock scoring.</p>`:""; }
+function repairOpenedAfterSubmission(q) { return !!(state.recorded[q.id] && store.attempts.slice().reverse().find(a=>a.id===q.id)?.repair_opened); }
+function attemptEvidenceLabel(q) {
+  const submitted = state.recorded[q.id] ? store.attempts.slice().reverse().find(a=>a.id===q.id) : null;
+  const kind = submitted?.evidence || (state.assisted[q.id] ? "assisted" : (store.q[q.id]?.seen || store.q[q.id]?.exposed) ? "repeat" : "first-attempt");
+  return kind === "first-attempt" ? "first recorded attempt in this browser" : kind === "assisted" ? "assisted at submission" : "repeat or previously surfaced in this browser";
+}
+function technicalBridgePanel(q) { const id=objectiveOf(q),b=q.exam==="CCAR-F"&&DATA.technicalBridges?.[id];if(!b)return "";return `<details class="card practice-technical-bridge"><summary>Plain ↔ technical · objective ${esc(id)}</summary><p><a href="../lessons/ccar-f/objectives/objective-${esc(id)}.html?practiceReturn=1&coachObjective=${esc(id)}#decision-workbench" onclick="markAssisted('${q.id}')">Work through the layered decision, diagram and changed constraint →</a></p><div class="practice-tb-pair"><div><h3>In everyday language</h3><p>${esc(b.plain)}</p><p><b>Does not establish:</b> ${esc(b.not_equivalent)}</p></div><div><h3>In technical terms</h3><p>${b.terms.map(t=>`<code>${esc(t)}</code>`).join(" · ")}</p><p>${esc(b.example_label)}</p><pre style="max-height:340px;overflow:auto;white-space:pre">${esc(b.example)}</pre><p><b>Read it as:</b> ${esc(b.read_it)}</p><p><a href="${esc(b.source_url)}">Official mechanism reference</a></p></div></div></details>`; }
+// Companion learning never supplies facts or an answer explanation for the
+// current item. It is optional repair after submission or a completed mock.
+function learningPatternAvailable(q) {
+  return !!(state && q.exam === "CCAR-F" && (state.finished ||
+    (!state.timed && state.feedback && state.checked[q.id])));
+}
+function openLearningPattern(details, id) {
+  if (!details.open) return;
+  const q = DATA.questions.find(item => item.id === id);
+  if (q && learningPatternAvailable(q)) markAssisted(id);
+}
+function learningPatternPanel(q) {
+  if (!learningPatternAvailable(q)) return "";
+  const id = objectiveOf(q), pattern = DATA.learningPatterns?.[id];
+  if (!pattern?.companion || pattern.companion.fixture_scope !== "companion-example") return "";
+  const c = pattern.companion;
+  const applications = (pattern.course_applications || []).filter(row =>
+    row.fixture_scope === "companion-example" || row.fixture_scope === "extension");
+  const itemArg = esc(JSON.stringify(q.id));
+  return `<details class="card practice-learning-pattern" ontoggle="openLearningPattern(this, ${itemArg})">
+    <summary>Separate worked example · objective ${esc(id)} · optional post-answer learning</summary>
+    <p class="note"><b>Different teaching fixture:</b> The people, records, IDs and constraints below belong to a separate companion example. They are not facts from the question you just answered, an official exam item, or evidence that a system was executed.</p>
+    <h3>What happens in this companion example</h3><p>${esc(c.what)}</p>
+    <h3>Why the decision matters</h3><p>${esc(c.why)}</p>
+    <h3>How to handle it</h3><p>${esc(c.how)}</p>
+    <p><b>Evidence to check:</b> ${esc(c.evidence)}</p>
+    ${c.artifact ? `<p>${esc(c.artifact_label)}</p><pre style="max-height:340px;overflow:auto;white-space:pre-wrap">${esc(c.artifact)}</pre>` : ""}
+    ${pattern.technical_terms?.length ? `<p><b>Technical vocabulary:</b> ${pattern.technical_terms.map(term => `<code>${esc(term)}</code>`).join(" · ")}</p>` : ""}
+    ${pattern.technical_reference_url ? `<p><a href="${esc(pattern.technical_reference_url)}">Official mechanism reference</a></p>` : ""}
+    ${applications.length ? `<details><summary>Optional course connections and implementation extensions</summary>
+      <p>These connections support the companion example or a new implementation requirement. They do not add requirements to your practice question or establish course completion.</p>
+      ${applications.map(row => `<section><h4>${esc(row.title)}</h4>
+        <p><b>${row.fixture_scope === "extension" ? "Conditional implementation extension" : "Separate companion example"} · ${esc(row.disposition)}</b></p>
+        <p><b>Decision:</b> ${esc(row.decision)}</p><p><b>Why:</b> ${esc(row.why)}</p>
+        <p><b>How:</b> ${esc(row.how)}</p><p><b>Evidence to check:</b> ${esc(row.evidence)}</p>
+      </section>`).join("")}</details>` : ""}
+    <p><a href="../lessons/ccar-f/objectives/objective-${esc(id)}.html?practiceReturn=1&amp;coachObjective=${esc(id)}#decision-workbench">Continue in the objective lesson →</a></p>
+    <p class="note">Opening this repair records assistance; the submitted score and original submission classification are retained.</p>
+  </details>`;
+}
+function objectiveOf(q) { return q.objective_id || q.objective || (DATA.objectiveMap?.[q.id]?.confidence === "clear" ? DATA.objectiveMap[q.id].objectives?.[0] : null); }
+function objectiveControls() {
+ const ids=Array.from(new Set(DATA.questions.filter(q=>q.exam==="CCAR-F").map(objectiveOf).filter(Boolean))).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+ return `<section class="card"><h2>Practice an objective or decision family</h2><label>Objective <select id="objectiveFilter"><option value="">All mapped objectives</option>${ids.map(id=>`<option value="${esc(id)}">${esc(id)} · ${esc(objectiveName(id))}</option>`).join("")}</select></label> <label>Family <select id="familyFilter"><option value="">All families</option>${Array.from(new Set(DATA.questions.map(q=>q.family_id).filter(Boolean))).sort().map(id=>`<option value="${esc(id)}">${esc(familyName(id))}</option>`).join("")}</select></label> <button onclick="startObjective()">Start fresh decision practice</button><button onclick="startRetries()">Delayed transfer queue (${store.retries.filter(x=>!x.completed).length})</button><p class="note">Fresh practice excludes both submitted items and scenes already surfaced in teaching. Only clearly mapped items count toward objective coverage. A delayed retry is a different case; items become due after one day.</p></section>`;
+}
+function startObjective() { let qs=pool("CCAR-F",prefs().tiers).filter(q=>objectiveOf(q)); const id=document.getElementById("objectiveFilter")?.value, family=document.getElementById("familyFilter")?.value; if(id)qs=qs.filter(q=>objectiveOf(q)===id);if(family)qs=qs.filter(q=>q.family_id===family);const variant=new URLSearchParams(location.search).get("variant");if(variant)qs=qs.filter(q=>q.variant_id===variant);qs=shuffle(qs.filter(q=>q.stage!=="delayed-retry"&&isFresh(q)));if(!qs.length){alert("No fresh questions match these settings. Use Quick drill for an explicitly mixed review, or change the objective/source filters. Your history was preserved.");return;}begin({mode:"Fresh objective decisions",exam:"CCAR-F",qs:qs.slice(0,10),timed:false,feedback:true}); }
+function startRetries() { const due=store.retries.filter(x=>!x.completed&&x.due<=Date.now());if(!due.length){alert("No delayed cases are due yet. Return after the due date to test retention.");return;} const ids=new Set(due.map(x=>x.id));begin({mode:"Delayed transfer",exam:"CCAR-F",qs:DATA.questions.filter(q=>ids.has(q.id)&&DATA.reviewMap?.[q.id]?.disposition!=="quarantined"),timed:false,feedback:true}); }
+function repairHref(q) { const raw=q.repair_url || (objectiveOf(q)?`../lessons/ccar-f/objectives/objective-${objectiveOf(q)}.html`:"../exams/ccar-f.html");const parts=raw.split("#");return parts[0]+"?practiceReturn=1"+(parts[1]?"#"+parts[1]:""); }
+function repairPanel(q) { return `<section class="card"><h3>Repair this decision</h3><p>${esc(q.decision_cue||"Explain the decisive constraint and why the closest alternative loses.")}</p><a href="${esc(repairHref(q))}" onclick="markAssisted('${q.id}')">Open exact lesson and flow</a><p class="note">Your session is saved. Use the lesson's Return to practice control or browser Back to return here.</p>${q.retry_id?`<button onclick="queueRetry('${q.id}')">Queue a different case for tomorrow</button>`:""}</section>`; }
+function markAssisted(id) { state.assisted[id]=true; const a=store.attempts.slice().reverse().find(x=>x.id===id);if(a)a.repair_opened=true;saveStore();persistSession(); }
+function queueRetry(id){const q=DATA.questions.find(x=>x.id===id);if(q?.retry_id&&!store.retries.some(x=>x.id===q.retry_id&&!x.completed)){store.retries.push({id:q.retry_id,from:id,due:Date.now()+86400000,completed:false});saveStore();}alert("A different case is queued for tomorrow.");}
+function objectiveResults(qs) { const ids=Array.from(new Set(qs.map(objectiveOf).filter(Boolean))).sort();return `<h3>By objective</h3><div class="card">${ids.map(id=>{const a=qs.filter(q=>objectiveOf(q)===id);return `<p><b>${esc(id)}</b>: ${a.filter(isRight).length}/${a.length} correct · <a href="../lessons/ccar-f/objectives/objective-${esc(id)}.html">Repair objective</a></p>`;}).join("")}<p>Unmapped/uncertain: ${qs.filter(q=>!objectiveOf(q)).length}. These are excluded from objective denominators.</p></div>`; }
+function reviewCard(q) { const order=state.optionOrder[q.id]||Object.keys(q.options);return `<section class="card"><h3>${esc(q.id)} · ${isRight(q)?"Correct":"Missed or skipped"}</h3><p class="qtext">${esc(q.question)}</p>${order.map((id,n)=>`<p><b>${String.fromCharCode(65+n)} ${q.answer.includes(id)?"— correct":""}</b> ${esc(q.options[id])}<br><span class="explain">${esc(q.explain?.[id]||q.why_not?.[id]||(q.answer.includes(id)?q.rationale:"Per-option rationale not supplied for this legacy item."))}</span></p>`).join("")}<p>Your selections: ${esc((state.picks[q.id]||[]).map(k=>String.fromCharCode(65+order.indexOf(k))).join(", ")||"Skipped")}</p><p>${esc(q.rationale)}</p><p>Source: ${esc(q.source)}</p>${reviewCaveat(q)}${missCategoryPanel(q)}${repairPanel(q)}${technicalBridgePanel(q)}${learningPatternPanel(q)}</section>`; }
+function persistSession() { if(!state||state.finished)return;try {localStorage.setItem(SESSION_KEY,JSON.stringify({...state,qs:state.qs.map(q=>q.id),flags:[...state.flags],bank_version:BANK_VERSION}));}catch(e){lastStorageError="Session could not be saved; export progress.";} }
+function resumeAvailable(){try{return !!localStorage.getItem(SESSION_KEY);}catch(e){return false;}}
+function resumeSession(){try{const s=JSON.parse(localStorage.getItem(SESSION_KEY));if(!s)return;const byId=new Map(DATA.questions.map(q=>[q.id,q]));if(s.qs.some(id=>!byId.has(id)||DATA.reviewMap?.[id]?.disposition==="quarantined")){alert("Saved session contains unavailable or quarantined items. Export your progress, then start an eligible session. Saved history and session were preserved.");return;}state={...s,qs:s.qs.map(id=>byId.get(id)),flags:new Set(s.flags),recorded:s.recorded||{},assisted:s.assisted||{},optionOrder:s.optionOrder||{},missCategories:s.missCategories||{}};if(s.bank_version!==BANK_VERSION){state.qs.forEach(q=>state.assisted[q.id]=true);state.bank_changed=true;}document.getElementById("hdrHome").classList.remove("hidden");if(state.timed&&state.endsAt<=Date.now())finish(true);else{if(state.timed)startTimer();renderQuestion();}}catch(e){alert("Saved session cannot be read; it was preserved.");}}
+function exportProgress(){const b=new Blob([JSON.stringify({format:"claude-practice-history-v1",bank_version:BANK_VERSION,store,active:localStorage.getItem(SESSION_KEY)},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="claude-practice-progress.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
+async function importProgress(file){if(!file)return;try{const data=JSON.parse(await file.text());if(data.format!=="claude-practice-history-v1"||!data.store||typeof data.store.q!=="object"||!Array.isArray(data.store.runs))throw Error("Invalid progress file");if(!confirm("Merge this progress backup into this browser? Existing item IDs are preserved."))return;for(const[id,r]of Object.entries(data.store.q)){if(!store.q[id]||(r.seen||0)>(store.q[id].seen||0))store.q[id]=r;}store.runs=[...store.runs,...data.store.runs].filter((r,i,a)=>a.findIndex(x=>x.at===r.at&&x.mode===r.mode)===i);store.attempts=[...store.attempts,...(data.store.attempts||[])].filter((r,i,a)=>a.findIndex(x=>x.id===r.id&&x.at===r.at&&JSON.stringify(x.choices)===JSON.stringify(r.choices))===i); const mergedRetries=new Map();for(const r of [...store.retries,...(data.store.retries||[])]){const key=r.id+":"+r.from;const old=mergedRetries.get(key);mergedRetries.set(key,old?{...old,...r,completed:!!(old.completed||r.completed),due:Math.min(old.due,r.due)}:r);}store.retries=[...mergedRetries.values()];saveStore();if(data.active&&!resumeAvailable())localStorage.setItem(SESSION_KEY,data.active);renderHome();}catch(e){alert("Could not import progress: "+e.message);}}
+const routeParams=new URLSearchParams(location.search);if(routeParams.get("exam")==="CCAR-F"||routeParams.has("objective"))store.prefs.exam="CCAR-F";
+renderHome();
+if(routeParams.get("resume")==="1"&&resumeAvailable())resumeSession();else if(routeParams.get("objective")&&document.getElementById("objectiveFilter"))document.getElementById("objectiveFilter").value=routeParams.get("objective");
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "stem": "A support application receives the following Messages API response while answering a delivery-status question. The application has an authorized lookup_order implementation. Which continuation correctly completes the client-tool interaction?",
+  "context": "Actual Messages API response excerpt; fictional tool and order IDs. Top-level stop_reason is response metadata.\n{\n  \"role\": \"assistant\",\n  \"stop_reason\": \"tool_use\",\n  \"content\": [{\"type\":\"tool_use\", \"id\":\"toolu_O4\",\n    \"name\":\"lookup_order\", \"input\":{\"order_id\":\"O4\"}}]\n}\nNo lookup result has been returned yet. This stage has no payment capability.",
+  "translation": "Claude is asking your program to look up the order. What must your program do, and how does it send the actual answer back to the same request?",
+  "options": [
+    {
+      "text": "Execute the authorized lookup, preserve the assistant role/content in the message history, then append a user message containing a tool_result with tool_use_id:\"toolu_O4\" and the observed lookup output.",
+      "why": "Client tools execute in application code. The result is returned in a user message and correlated to the original tool_use.id. Preserve the assistant content, not its top-level response metadata, in the request history."
+    },
+    {
+      "text": "Treat stop_reason:\"tool_use\" as confirmation that the lookup has executed, and display the delivery status inferred from input.order_id.",
+      "why": "The stop reason identifies a tool request, not execution or delivery evidence. An order identifier does not establish its delivery status."
+    },
+    {
+      "text": "Execute lookup_order, then append an assistant message containing tool_result with a new tool_use_id to represent the completed lookup.",
+      "why": "The client result belongs in a user message. Its tool_use_id must match the requesting tool_use.id rather than identify a new operation."
+    },
+    {
+      "text": "Execute lookup_order, discard the assistant tool_use message, and send its output as a fresh plain-text user message to restart the model turn.",
+      "why": "Discarding the assistant tool-use message loses the call/result relationship. Return the matching tool_result immediately after the corresponding assistant tool-use message in history."
+    }
+  ],
+  "answer": 0,
+  "sources": [
+    {
+      "title": "Anthropic: Handle client tool calls and format results",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
+    }
+  ],
+  "variant": {
+    "constraint": "The authorized lookup raises an error and returns no delivery evidence.",
+    "prompt": "How should the client represent this failure while preserving the call/result relationship, and what delivery claim must the application avoid?"
+  }
+}

@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="reviewed" content="2026-10-17">
+<meta name="reviewed-source" content="recorded">
+<meta name="description" content="Code-level flows">
+<title>Code-level flows · Claude Certifications Study Site</title>
+<link rel="stylesheet" href="../../../assets/site.css?v=21c6a0ac682a">
+<link rel="stylesheet" href="../../../assets/viewer.css?v=76723c43548d">
+<script defer src="../../../assets/diagram-annotations.js?v=7a2c6a4df9e1"></script><script defer src="../../../assets/vendor/mermaid-12.1.0.min.js"></script>
+<script defer src="../../../assets/viewer.js?v=85c369026fb2"></script>
+<script defer src="../../../assets/site.js?v=dac542edefb2"></script>
+<link rel="stylesheet" href="../../../assets/technical-bridges.css?v=bb37752895d2"><script defer src="../../../assets/technical-bridges-data.js?v=1cb4e92c8c7a"></script><script defer src="../../../assets/technical-bridges.js?v=778e575618b6"></script><link rel="stylesheet" href="../../../assets/course-coach.css?v=d2af8f112d7f"><script defer src="../../../assets/course-coach-data.js?v=a1d70be458c8"></script><script defer src="../../../assets/course-coach.js?v=76f8c674d0d9"></script><link rel="stylesheet" href="../../../assets/diagram-annotations.css?v=8882e7acffbe"></head>
+<body class="t-architect">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../../../index.html"><span class="mark" aria-hidden="true">✳</span> Claude Certifications <span class="brand-sub">Study Site</span></a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="../../../index.html">Home</a><a href="../../../curriculum.html">Curriculum</a><a href="../../../exams/ccao-f.html">CCAO-F</a><a href="../../../exams/ccar-f.html" aria-current="page">CCAR-F</a><a href="../../../exams/ccdv-f.html">CCDV-F</a><a href="../../../exams/ccar-p.html">CCAR-P</a><a href="../../../lessons/index.html">Lessons</a><a href="../../../simulations/index.html">Simulations</a><a href="../../../labs/index.html">Labs</a><a href="../../../insights.html">Insights</a><a href="../../../resources.html">Resources</a><a href="../../../faq.html">FAQ</a><a href="../../../about.html">About</a></nav>
+  <button class="theme" aria-label="Switch between light and dark theme">◐</button>
+</header>
+<div class="wrap with-side">
+<aside class="side" aria-label="In this exam"><details class="course-nav" open><summary>Course navigation</summary><p class="side-exam"><span class="pill">CCAR-F</span> Architect F</p><ul class="side-list"><li><a href="../../../exams/ccar-f.html">Study plan</a></li><li><a href="../../../lessons/ccar-f/architecture-studio/00-foundations.html">Start: picture an application</a></li><li class="side-h">Lessons</li><li><a href="../../../lessons/ccar-f/L00-orientation.html"><b>L00</b> Orientation: how the Architect exam thinks</a></li><li class="side-dom"><details><summary><b>L01</b> Agentic Architecture and Orchestration <span class="w">27%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L01-agentic-architecture-and-orchestration.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.1.html"><b>1.1</b> Build an agentic loop that knows when to continue</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.2.html"><b>1.2</b> Coordinate specialists without losing the whole question</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.3.html"><b>1.3</b> Spawn agents with complete, attributable context</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.4.html"><b>1.4</b> Enforce prerequisites and hand off a complete case</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.5.html"><b>1.5</b> Use hooks to normalize results and intercept actions</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.6.html"><b>1.6</b> Choose a task decomposition pattern that fits uncertainty</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-1.7.html"><b>1.7</b> Resume or fork sessions without trusting stale evidence</a></li></ul></details></li><li class="side-dom"><details><summary><b>L02</b> Tool Design and MCP Integration <span class="w">18%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L02-tool-design-and-mcp-integration.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.1.html"><b>2.1</b> Design tool interfaces that are hard to confuse</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.2.html"><b>2.2</b> Return errors that support the right recovery</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.3.html"><b>2.3</b> Scope each agent’s tools and control tool choice</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.4.html"><b>2.4</b> Integrate MCP with the right scope and discoverability</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-2.5.html"><b>2.5</b> Use built-in tools to investigate and edit incrementally</a></li></ul></details></li><li class="side-dom"><details><summary><b>L03</b> Claude Code Configuration and Workflows <span class="w">20%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L03-claude-code-configuration-and-workflows.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.1.html"><b>3.1</b> Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.2.html"><b>3.2</b> Create and configure custom slash commands and skills</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.3.html"><b>3.3</b> Apply path-specific rules for conditional convention loading</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.4.html"><b>3.4</b> Determine when to use plan mode vs direct execution</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.5.html"><b>3.5</b> Apply iterative refinement techniques for progressive improvement</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-3.6.html"><b>3.6</b> Integrate Claude Code into CI/CD pipelines</a></li></ul></details></li><li class="side-dom"><details><summary><b>L04</b> Prompt Engineering and Structured Output <span class="w">20%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L04-prompt-engineering-and-structured-output.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.1.html"><b>4.1</b> Design prompts with explicit criteria to improve precision and reduce false positives</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.2.html"><b>4.2</b> Apply few-shot prompting to improve output consistency and quality</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.3.html"><b>4.3</b> Enforce structured output using tool use and JSON schemas</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.4.html"><b>4.4</b> Implement validation, retry, and feedback loops for extraction quality</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.5.html"><b>4.5</b> Design efficient batch processing strategies</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-4.6.html"><b>4.6</b> Design multi-instance and multi-pass review architectures</a></li></ul></details></li><li class="side-dom"><details><summary><b>L05</b> Context Management and Reliability <span class="w">15%</span></summary><ul class="side-objs"><li><a href="../../../lessons/ccar-f/L05-context-management-and-reliability.html">Domain lesson</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.1.html"><b>5.1</b> Manage conversation context to preserve critical information across long interactions</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.2.html"><b>5.2</b> Design effective escalation and ambiguity resolution patterns</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.3.html"><b>5.3</b> Implement error propagation strategies across multi-agent systems</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.4.html"><b>5.4</b> Manage context effectively in large codebase exploration</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.5.html"><b>5.5</b> Design human review workflows and confidence calibration</a></li><li><a href="../../../lessons/ccar-f/objectives/objective-5.6.html"><b>5.6</b> Preserve information provenance and handle uncertainty in multi-source synthesis</a></li></ul></details></li><li class="side-h">Practice and reference</li><li><a href="../../../lessons/ccar-f/flashcards.html">Flashcards</a></li><li><a href="../../../lessons/ccar-f/hard-drills.html">Hard drills</a></li><li><a href="../../../lessons/ccar-f/decision-atlas.html">Architecture decision atlas</a></li><li><a href="../../../lessons/ccar-f/decision-conversation.html">Architecture decisions</a></li><li><a href="../../../lessons/ccar-f/skill-coverage.html">Official skill coverage and next checks</a></li><li><a href="../../../lessons/ccar-f/scenario-studio.html">Scenario learning studio</a></li><li><a href="../../../lessons/ccar-f/learning-journey.html">Understand, decide, practise, repair</a></li><li><a href="../../../lessons/ccar-f/last-minute-prep.html">Last-minute preparation checklist</a></li><li><a href="../../../lessons/ccar-f/mechanism-clinic.html">Choose the control that meets the requirement</a></li><li><a href="../../../lessons/ccar-f/choice-workshop.html">Decide under competing constraints</a></li><li><a href="../../../lessons/ccar-f/deep-practice/index.html">Deep practice</a></li><li><a href="../../../lessons/ccar-f/deep-practice/code-level-flows.html" aria-current="page">Code-level flows</a></li><li><a href="../../../lessons/ccar-f/deep-practice/conditions-and-errors.html">Conditions and errors</a></li><li><a href="../../../lessons/ccar-f/deep-practice/decision-charts.html">Decision charts</a></li><li><a href="../../../lessons/ccar-f/deep-practice/sequence-diagrams.html">Sequence diagrams</a></li><li><a href="../../../lessons/ccar-f/deep-practice/tie-breaker-rules.html">Tie-breaker rules for close answers</a></li><li><a href="../../../lessons/ccar-f/objectives/index.html">Objective lessons</a></li><li><a href="../../../lessons/ccar-f/scenario-walkthroughs/index.html">Scenario walkthroughs</a></li><li><a href="../../../lessons/ccar-f/architecture-studio/index.html">Learn to think like a Claude application architect</a></li><li><a href="../../../lessons/ccar-f/objectives/practice-coverage.html">Practice coverage by objective</a></li><li><a href="../../../lessons/ccar-f/objectives/progress.html">Your progress (this browser)</a></li><li><a href="../../../lessons/ccar-f/scenario-walkthroughs/signals-and-errors.html">Signals, errors and missed what-ifs</a></li><li class="side-h">Simulations</li><li><a href="../../../simulations/ccar-f/SIM-01-full-mock.html"><b>SIM-01</b> Full mock exams</a></li><li><a href="../../../simulations/ccar-f/SIM-02-customer-support-agent.html"><b>SIM-02</b> Scenario 1: Customer Support Resolution Agent</a></li><li><a href="../../../simulations/ccar-f/SIM-03-code-generation-claude-code.html"><b>SIM-03</b> Scenario 2: Code Generation with Claude Code</a></li><li><a href="../../../simulations/ccar-f/SIM-04-multi-agent-research.html"><b>SIM-04</b> Scenario 3: Multi-Agent Research System</a></li><li><a href="../../../simulations/ccar-f/SIM-05-developer-productivity.html"><b>SIM-05</b> Scenario 4: Developer Productivity with Claude</a></li><li><a href="../../../simulations/ccar-f/SIM-06-claude-code-ci-cd.html"><b>SIM-06</b> Scenario 5: Claude Code for Continuous Integration</a></li><li><a href="../../../simulations/ccar-f/SIM-07-structured-data-extraction.html"><b>SIM-07</b> Scenario 6: Structured Data Extraction</a></li><li class="side-h">Labs</li><li><a href="../../../labs/02-CCAR-F-coordinator-extraction.html"><b>Lab 02</b> An agent loop, two subagents and schema-checked extraction</a></li><li><a href="../../../labs/03-CCAR-F-mcp-server-claude-code.html"><b>Lab 03</b> An MCP server, wired into Claude Code with a guardrail hook</a></li><li><a href="../../../labs/08-CCAR-F-architecture-decisions.html"><b>Lab 08</b> Run architecture decisions before connecting a model</a></li></ul></details></aside>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../../index.html">Home</a><span aria-hidden="true"> / </span><a href="../../../exams/ccar-f.html">CCAR-F</a><span aria-hidden="true"> / </span><a href="../../../lessons/ccar-f/index.html">Lessons</a><span aria-hidden="true"> / </span><a href="../../../lessons/ccar-f/deep-practice/index.html">CCAR-F deep practice</a><span aria-hidden="true"> / </span><span>Code-level flows</span></nav>
+<div class="learning-layout"><article class="prose"><h1 id="code-level-flows">Code-level flows</h1><nav class="cc-route" aria-label="Connected architecture learning"><a href="../../../exams/ccar-f.html#decision-workbench">Learning home and decision coach</a> · <a href="../../../lessons/ccar-f/objectives/index.html">Objective map</a> · <a href="../../../lessons/ccar-f/architecture-studio/index.html">Application stories</a></nav><details class="cc-course" id="decision-workbench" data-course-route="lessons/ccar-f/deep-practice/code-level-flows.html"><summary>Learn, decide and inspect a worked architecture example here</summary><p>Trace the program branch, handoff and observed result in a concrete code-level flow.</p><p>No installation or API key is required for this reading and decision coach.</p><div class="cc-mount"></div><noscript><p><a href="../../../lessons/ccar-f/objectives/index.html">Read the full objective lessons and their diagrams</a></p></noscript></details><nav class="tb-route" aria-label="Plain language to technical learning"><strong>Plain ↔ technical:</strong> <a href="../../../lessons/ccar-f/technical-bridges.html">Mechanism examples and terminology</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.1">1.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.2">1.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.3">1.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.4">1.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.5">1.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.6">1.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-1.7">1.7</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.1">2.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.2">2.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.3">2.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.4">2.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-2.5">2.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.1">3.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.2">3.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.3">3.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.4">3.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.5">3.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-3.6">3.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.1">4.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.2">4.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.3">4.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.4">4.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.5">4.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-4.6">4.6</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.1">5.1</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.2">5.2</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.3">5.3</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.4">5.4</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.5">5.5</a> · <a href="../../../lessons/ccar-f/technical-bridges.html#technical-5.6">5.6</a></nav><p><strong>Picture the application:</strong> A support assistant says it will look up an order, but the customer never receives a grounded answer. Trace the request from your application to Claude, through the tool call and back with its result. These code-level flows show which program checks each condition and what should happen next.</p><nav class="variant-links" aria-label="Scenario learning route"><a href="../architecture-studio/00-foundations.html">Start with an application</a> · <a href="../learning-journey.html">Full learning journey</a> · <a href="../architecture-studio/index.html">Learn architecture through eight application cases</a> · <a href="../scenario-studio.html">Practise 30 decision variants</a></nav>
+
+<h2 id="what-this-file-is">What this file is</h2>
+<p>Most study pages answer "which option?" in one look. This file goes one level down. It walks each system the way you would build it in code. Every step says:</p>
+<ul><li><strong>Checks:</strong> what the code looks at.</li><li><strong>Results:</strong> each possible answer, and where it sends you next.</li><li><strong>Exact:</strong> the field, code, flag or setting, word for word, with its source in brackets.</li><li><strong>Right / Wrong:</strong> what a right exam answer at this step looks like, and the tempting wrong one.</li></ul>
+<p>Some exam questions show you a message, a config file or a hook script and ask "what happens next?" or "what is broken?". These flows are how you answer those fast.</p>
+<p><strong>Exam answer vs today's docs.</strong> The exam guide is version 1.0 from July 2026. Where today's docs say something different, you get <strong>the exam's answer first</strong>, then a short "What changed since" note that ends with what to pick on the exam.</p>
+<p><strong>Background, not tested.</strong> The exam guide's Out-of-Scope list includes API authentication, billing, rate limiting and quotas. Lines marked "background, not tested" are there so the code makes sense. Don't spend study time on them.</p>
+<p><strong>Source tags used below.</strong> <code>[Guide 4.3]</code> means the official exam guide, task statement 4.3 (the exact exam wording). Doc tags like <code>[errors]</code> are links listed at the bottom of the page. <code>(practice, not doc)</code> means a common design habit the exam tests but no Anthropic page states as a rule.</p>
+<p><strong>Chart key.</strong> Know Mermaid flowcharts already? Skip to <a href="#flow-1-how-does-an-extraction-pipeline-decide-what-a-person-checks">Flow 1</a>. Grey diamond = a question the code asks. Each arrow out of it says what the answer means. White box = a step. Green box starting "PICK" = the right move. Pink dashed box starting "NOT" = the tempting wrong move. Amber box starting "Note" = a version warning or a case handled in the steps below. A dotted line joins a right move to the wrong move that looks like it. Click a green PICK box to open the lesson section that teaches it.</p>
+<p><strong>Three task statements are easy to miss here:</strong></p>
+<ul><li><strong>3.2</strong> (skills and slash commands) shows up in Flow 8 only, step 7.</li><li><strong>5.6</strong> (<abbr data-tip="The source identity, location and version supporting a claim. Preserve it when results move between components." aria-label="provenance">provenance</abbr>) is one line in Flow 2, step 5: keep the source and date with each claim, and flag conflicts rather than averaging them.</li><li><strong>3.5</strong> (iterative refinement) has no flow. It's a working habit, not a system; see <a href="03-claude-code-configuration-and-workflows.html#35-iterative-refinement">deep practice 3, section 3.5</a>.</li></ul>
+<h2 id="flow-1-how-does-an-extraction-pipeline-decide-what-a-person-checks">Flow 1: How does an extraction pipeline decide what a person checks?</h2><details class="tb-inline" id="tb-mechanism-1-1" data-technical-bridge="1.1"><summary>Plain ↔ technical · stop_reason / tool_use</summary><p>Related objective example. Keep the current case's facts and chosen answer separate. For a decision, choose before opening this study help.</p><label>Mechanism <select class="tb-select"><option value="1.1">1.1 · stop_reason / tool_use</option><option value="1.2">1.2 · coordinator-subagent pattern / bounded delegation</option><option value="1.3">1.3 · isolated context / self-contained brief</option><option value="1.4">1.4 · execution-time authorization / prerequisite gate</option><option value="1.5">1.5 · PreToolUse / PostToolUse</option><option value="1.6">1.6 · prompt chaining / routing</option><option value="1.7">1.7 · session_id / resume</option><option value="2.1">2.1 · tools / name</option><option value="2.2">2.2 · tool_result / is_error</option><option value="2.3">2.3 · tools allowlist / tool_choice</option><option value="2.4">2.4 · MCP / JSON-RPC</option><option value="2.5">2.5 · Glob / Grep</option><option value="3.1">3.1 · CLAUDE.md / nested instructions</option><option value="3.2">3.2 · SKILL.md / YAML frontmatter</option><option value="3.3">3.3 · .claude/rules/ / paths</option><option value="3.4">3.4 · plan mode / --permission-mode plan</option><option value="3.5">3.5 · reproduction / expected versus observed</option><option value="3.6">3.6 · claude -p / --output-format json</option><option value="4.1">4.1 · explicit criteria / inclusion/exclusion examples</option><option value="4.2">4.2 · few-shot prompting / input/output examples</option><option value="4.3">4.3 · output_config.format / json_schema</option><option value="4.4">4.4 · consumer validation / semantic validation</option><option value="4.5">4.5 · Message Batches / custom_id</option><option value="4.6">4.6 · multi-pass review / local review</option><option value="5.1">5.1 · context window / compaction</option><option value="5.2">5.2 · ambiguity / escalation criteria</option><option value="5.3">5.3 · error propagation / partial success</option><option value="5.4">5.4 · targeted search / dependency trace</option><option value="5.5">5.5 · calibration / held-out evaluation</option><option value="5.6">5.6 · provenance / claim-to-source mapping</option></select></label><div class="tb-slot"><div class="tb-pair" data-objective="1.1"><div class="tb-plain"><h3>In everyday language</h3><p>Claude asks to look up an order. Your program performs the lookup, sends its observed result back, and asks Claude to continue. Stopping the model is separate from proving a payment finished.</p><p><strong>Does not establish:</strong> tool_use is a request for client execution, not execution itself; end_turn is not business settlement.</p></div><div class="tb-precise"><h3>In technical terms</h3><p class="tb-terms"><code>stop_reason</code> <code>tool_use</code> <code>tool_result</code> <code>tool_use_id</code> <code>end_turn</code></p><details><summary>Inspect the technical example</summary><p class="tb-artifact-label">Actual Messages content-block shapes; fictional IDs/data; response and next-request excerpts, not a complete API request</p><pre tabindex="0" aria-label="Technical example"><code>Observed assistant response excerpt (stop_reason is RESPONSE metadata):
+{&quot;role&quot;:&quot;assistant&quot;,&quot;stop_reason&quot;:&quot;tool_use&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_use&quot;,&quot;id&quot;:&quot;toolu_order17&quot;,&quot;name&quot;:&quot;lookup_order&quot;,&quot;input&quot;:{&quot;order_id&quot;:&quot;O4&quot;}}]}
+
+YOUR runtime executes the permitted lookup. For the next Messages request,
+append only assistant role + content, followed by the matching result:
+{&quot;role&quot;:&quot;assistant&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_use&quot;,&quot;id&quot;:&quot;toolu_order17&quot;,&quot;name&quot;:&quot;lookup_order&quot;,&quot;input&quot;:{&quot;order_id&quot;:&quot;O4&quot;}}]}
+{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:[{&quot;type&quot;:&quot;tool_result&quot;,&quot;tool_use_id&quot;:&quot;toolu_order17&quot;,&quot;content&quot;:&quot;{\&quot;order_id\&quot;:\&quot;O4\&quot;,\&quot;status\&quot;:\&quot;delivered\&quot;}&quot;}]}
+
+Send the updated messages array in the next model request.
+Do not copy response-only stop_reason into an input message.</code></pre><p><strong>Read it as:</strong> The tool_use id and tool_result tool_use_id must match. Input messages contain role and content; stop_reason describes the response. The returned content is observed lookup evidence, not a credit receipt.</p></details><p class="tb-source"><a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls">Official mechanism reference</a></p></div></div></div></details>
+<p><strong>Scenario: Structured Data Extraction · Task statements 4.1, 4.2, 4.3, 4.4, 4.5, 5.5, 2.3</strong></p>
+<p>The job: take messy documents (text, digital PDFs, scans), pull out fields as JSON, check them, and send only the risky ones to a person.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-1" data-teaching-key="diagram-39">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;Documents arrive for extraction&quot;])
+    Q1{&quot;Is a person or a blocking check waiting for this result?&quot;}
+    XS[&quot;Messages API call with the extraction tool and schema&quot;]
+    XB[&quot;Batch API request with the extraction tool and schema&quot;]
+    Q2{&quot;Does the extracted JSON pass your schema validator?&quot;}
+    R1[&quot;Retry with the exact error, at most 2 retries&quot;]
+    Q3{&quot;Do the line items add up to the stated total?&quot;}
+    R2[&quot;Retry once with the mismatch&quot;]
+    Q4{&quot;Is any field low confidence, null when required, or in conflict?&quot;}
+    HUM[&quot;PICK: route to human review&quot;]
+    AUTO[&quot;PICK: auto-accept and stratified sample&quot;]
+    T1[&quot;NOT: retry until it passes&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes, someone waits&quot; --&gt; XS
+    Q1 -- &quot;no, it can wait&quot; --&gt; XB
+    XS --&gt; Q2
+    XB --&gt; Q2
+    Q2 -- &quot;no, schema errors&quot; --&gt; R1
+    R1 -- &quot;fixed&quot; --&gt; Q2
+    R1 -- &quot;still invalid after 2 retries&quot; --&gt; HUM
+    Q2 -- &quot;yes, matches the schema&quot; --&gt; Q3
+    Q3 -- &quot;no, totals differ&quot; --&gt; R2 --&gt; Q4
+    Q3 -- &quot;yes, totals agree&quot; --&gt; Q4
+    Q4 -- &quot;yes, a field is risky&quot; --&gt; HUM
+    Q4 -- &quot;no, all fields safe&quot; --&gt; AUTO
+    R1 -.- T1
+    click HUM href &quot;../L05-context-management-and-reliability.html#55-human-review-and-confidence&quot;
+    click AUTO href &quot;../L05-context-management-and-reliability.html#55-human-review-and-confidence&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2,Q3,Q4 decision
+    class S,XS,XB,R1,R2 action
+    class HUM,AUTO rightPath
+    class T1 trap</pre></div>
+<p><strong>Remember it as:</strong> Schema fixes shape, code checks meaning, people check the risky fields.</p>
+<h3 id="step-1-authenticate">Step 1. Authenticate</h3>
+<ul><li><strong>Checks:</strong> the API response status before anything else.</li><li><strong>Results (background, not tested):</strong><ul><li><code>401</code> <code>authentication_error</code> (bad, revoked or expired key) → stop, alert a person. A retry cannot fix it. [errors]</li><li><code>403</code> <code>permission_error</code> (key lacks access) → stop, fix access. [errors]</li><li>Works → Step 2.</li></ul></li><li><strong>Tested part:</strong> where the secret lives (next bullet). That is TS 2.4.</li><li><strong>Exact:</strong> the key comes from an environment variable or a secret store, never from code or the repo. MCP servers get secrets with <code>${VAR}</code> expansion in <code>.mcp.json</code>, for example <code>${GITHUB_TOKEN}</code>. [Guide 2.4] [mcp]</li><li><strong>Right:</strong> "Read the key from an environment variable; on <code>401</code>, fail fast and alert."</li><li><strong>Wrong:</strong> "Retry <code>401</code> with exponential backoff." Backoff is for <code>429</code>, <code>500</code>, <code>529</code>. A bad key never heals. (Background, not tested: a <code>429</code> with no <code>retry-after</code> header may be a tier spend cap, which keeps failing until access resumes, so fail and alert. A spend limit you set yourself returns a <code>400</code>, not a <code>429</code>. [errors])</li></ul>
+<h3 id="step-2-pick-the-api-by-who-is-waiting">Step 2. Pick the API by who is waiting</h3>
+<ul><li><strong>Checks:</strong> is a person or a pipeline blocked until the answer comes back?</li><li><strong>Results:</strong><ul><li>Yes (a user is waiting, a merge is blocked) → synchronous Messages API.</li><li>No (overnight report, weekly audit, a big backlog) → Message Batches API.</li></ul></li><li><strong>Exact:</strong><ul><li>Batch: <code>50% cost savings, up to 24-hour processing window, no guaranteed latency SLA</code> (exam wording). [Guide 4.5]</li><li>A batch holds up to 100,000 requests or 256 MB, whichever comes first. Results stay for 29 days. [batch]</li><li>Each request has a <code>custom_id</code>: 1 to 64 letters, digits, <code>-</code> or <code>_</code>. Results can come back in any order, so you match on <code>custom_id</code>. [batch]</li><li>Each result is <code>succeeded</code>, <code>errored</code>, <code>canceled</code> or <code>expired</code>. [batch]</li><li>Batch <code>does not support multi-turn tool calling within a single request (cannot execute tools mid-request and return results)</code> (exam wording). [Guide 4.5] What that means: a batch request can carry a multi-turn message history, and server tools run inside it. What it can't do is stop for <strong>your</strong> tool, wait for your result, and carry on in the same request. [batch]</li></ul></li><li><strong>Timing math (exam skill):</strong> the rule is <strong>cycle + 24 h + safety margin ≤ deadline</strong>. With a 30-hour promise and batches that can take up to 24 hours, submit <strong>every 4 hours, not 6</strong> (6 is the ceiling: 30 − 24): 4 + 24 = 28, which leaves 2 hours of safety margin (most batches finish within an hour, but a resend can take up to 24 hours too). Expired requests return no output, so the margin must cover resubmitting them or running them synchronously (Anthropic docs, Message Batches, <a class="xref" href="../../../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a>, checked 2026-10-12). A 6-hour cycle hits exactly 30 with no room. This matches the guide's own example, <code>4-hour windows to guarantee 30-hour SLA with 24-hour batch processing</code> (exam wording). [Guide 4.5]</li><li><strong>Right:</strong> "Nightly batch for the backlog; synchronous calls for the upload screen."</li><li><strong>Wrong:</strong> "Batch everything to save 50%", including a blocking step. Or "use Batch for a loop that needs tool results mid-request".</li></ul>
+<h3 id="step-3-prepare-the-input-by-file-type">Step 3. Prepare the input by file type</h3>
+<ul><li><strong>Checks:</strong> what kind of file is this?</li><li><strong>Results:</strong><ul><li>Plain text → send the text.</li><li>Any PDF, digital or scanned → a PDF document block. Each page is read as <strong>text plus an image</strong> of the page, so a digital PDF isn't text only. [pdf]</li><li>Photo → an image block, or OCR first.</li><li>Keep this short in your head: image analysis itself is on the guide's Out-of-Scope list.</li><li>Poor scan → expect lower certainty. Ask for a confidence value <strong>per field</strong>, not one score per document.</li><li>Word or Excel → convert to PDF or text first (practice, not doc).</li></ul></li><li><strong>Right:</strong> "Ask for field-level confidence so the review step can route by field." [Guide 5.5]</li><li><strong>Wrong:</strong> "One overall confidence score for the document." It hides which field is unreliable.</li></ul>
+<h3 id="step-4-call-with-an-extraction-tool-and-a-json-schema">Step 4. Call with an extraction tool and a JSON <abbr data-tip="A structural contract for fields and types. Matching it does not prove the values agree with evidence or business rules." aria-label="schema">schema</abbr></h3>
+<ul><li><strong>Checks:</strong> how do we make sure the reply is JSON in our shape?</li><li><strong>Results (most reliable first):</strong><ol><li>A tool whose <code>input_schema</code> is your JSON schema. <strong>This is the exam's answer.</strong> Add <code>tool_choice</code> only if Claude sometimes answers in text. [Guide 4.3]</li><li>"Reply only in JSON" in the prompt: can break syntax.</li><li>Prefilling the reply with <code>{</code>: weakest.</li></ol></li><li><strong>Exact (exam wording, [Guide 4.3] and [Guide 2.3]):</strong><ul><li><code>tool_choice: &quot;auto&quot;</code>: model may return text instead of calling a tool.</li><li><code>tool_choice: &quot;any&quot;</code>: model must call a tool but can choose which. Use it when <strong>several extraction schemas exist and the document type is unknown</strong>.</li><li><code>tool_choice: {&quot;type&quot;: &quot;tool&quot;, &quot;name&quot;: &quot;extract_metadata&quot;}</code>: model must call a specific named tool. Use it to make one step run first (for example metadata before enrichment), then do later steps in follow-up turns.</li><li>Read the data from the <code>tool_use</code> block's <code>input</code> field. [handle-tools]</li></ul></li><li><strong>What changed since:</strong> today you can add <code>strict: true</code> to the tool to guarantee the shape, or use JSON outputs with <code>output_config.format</code>. [structured] On Claude Opus 5.5, Sonnet 5.5, Fable 5.1 and Mythos 5.1, <code>any</code> and a forced <code>tool_choice</code> (a named tool) return a <code>400</code>, so today's docs say use <code>auto</code> with <code>strict: true</code>. Manual extended thinking also blocks <code>any</code> and a named tool. [define-tools] Prefill is gone too: on Claude 4.6 and later models, a prefilled last assistant message returns a <code>400</code> <code>invalid_request_error</code> ("This model does not support assistant message prefill"). [errors] See <a href="conditions-and-errors.html#exam-answer-vs-today">exam answer vs today</a>. <strong>On the exam: pick tool use with a JSON schema. Add <code>tool_choice</code> (<code>any</code>, or the named tool) only when no tool gets called or one must run first. Rank prefill last.</strong></li><li><strong>Right:</strong> "Define <code>extract_invoice</code> with the schema as its <code>input_schema</code>. If Claude sometimes replies in text instead, add <code>tool_choice</code>."</li><li><strong>Wrong:</strong> "Add 'respond only with valid JSON' to the system prompt." Or "use a bigger model."</li></ul>
+<h3 id="step-5-design-the-schema-so-claude-never-has-to-invent">Step 5. Design the schema so Claude never has to invent</h3>
+<ul><li><strong>Checks:</strong> can every required field always be filled honestly from the source?</li><li><strong>Results:</strong><ul><li>Field is always in the document → <code>required</code>, normal type.</li><li>Field may be missing → make it <abbr data-tip="The field may explicitly contain null. Required presence, allowed null and factual completeness are separate decisions." aria-label="nullable">nullable</abbr>, for example <code>&quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]</code> (allowed in strict schemas; <code>anyOf</code> with a <code>null</code> branch also works) [structured], and say "use null if not present". <code>Designing schema fields as optional (nullable) ... preventing the model from fabricating values to satisfy required fields</code> (exam wording). [Guide 4.3]</li><li>Category list may grow → enum plus <code>&quot;other&quot;</code> and a free-text detail field. Add <code>&quot;unclear&quot;</code> for ambiguous cases. [Guide 4.3]</li><li>Formats vary (dates, currencies) → put format rules in the prompt next to the strict schema. [Guide 4.3]</li></ul></li><li><strong>Exact:</strong> a strict schema stops syntax errors. It does <strong>not</strong> stop meaning errors, such as line items that don't add up to the total or a value in the wrong field. [Guide 4.3] Today's structured outputs also don't support <code>minimum</code>, <code>maximum</code>, <code>multipleOf</code>, <code>minLength</code>, <code>maxLength</code>. Some SDK helpers strip them and re-check them after the reply; not every helper validates (the TypeScript JSON-schema helper doesn't, and Java rejects them). So check ranges in your own code. [structured]</li><li><strong>Right:</strong> "Make <code>po_number</code> nullable so the model can return <code>null</code> when the receipt has none."</li><li><strong>Wrong:</strong> "Keep it required and add 'never leave fields blank'." That pushes the model to make one up.</li></ul>
+<h3 id="step-6-check-the-schema-in-code-retry-with-the-exact-error">Step 6. Check the schema in code, retry with the exact error</h3>
+<ul><li><strong>Checks:</strong> run a JSON Schema validator on the tool input.</li><li><strong>Results:</strong><ul><li>Pass → Step 7.</li><li>Fail → retry. The follow-up includes <code>the original document, the failed extraction, and specific validation errors</code> (exam wording). Cap the retries (for example at most 2 retries). Still failing → human review. [Guide 4.4]</li><li>No tool call at all (under <code>auto</code>, Claude replied in text) → retry with feedback asking it to call the tool; this uses one of the same retries. [define-tools]</li></ul></li><li><strong>The limit of retry:</strong> retries fix format and structure errors. They <strong>don't</strong> fix data that is not in the document (for example, it lives in a separate file you never sent). [Guide 4.4]</li><li><strong>Right:</strong> "Retry with the validator's exact message, for example <code>line_items[2].amount: expected number</code>."</li><li><strong>Wrong:</strong> "Retry with 'please try again'", or "retry five times hoping the missing PO number appears".</li></ul>
+<h3 id="step-7-check-meaning-in-code">Step 7. Check meaning in code</h3>
+<ul><li><strong>Checks:</strong> do the numbers agree with each other?</li><li><strong>Results:</strong><ul><li>Ask the model for both <code>stated_total</code> (as printed) and <code>calculated_total</code> (sum of lines), plus a <code>conflict_detected</code> boolean. These field names are exam wording. [Guide 4.4]</li><li>Your code adds the lines too. Match → Step 8.</li><li>Mismatch → retry once with the specific mismatch (it may be a misread digit). Still off → keep <strong>both</strong> values, flag the field, send to review. Never overwrite the printed total.</li></ul></li><li><strong>Right:</strong> "Extract both totals and flag the conflict for a reviewer."</li><li><strong>Wrong:</strong> "Tell the model to make the totals match." That teaches it to fake data.</li></ul>
+<h3 id="step-8-route-to-review">Step 8. Route to review</h3>
+<ul><li><strong>Checks:</strong> is this extraction risky?</li><li><strong>Results:</strong> send to a person when any field's confidence is under its threshold, a required field is <code>null</code>, totals conflict, or the source is ambiguous or contradictory. Everything else is auto-accepted.</li><li><strong>Exact (exam wording, [Guide 5.5]):</strong><ul><li><code>Field-level confidence scores calibrated using labeled validation sets</code>.</li><li><code>Stratified random sampling for measuring error rates in high-confidence extractions and detecting novel error patterns</code>.</li><li><code>aggregate accuracy metrics (e.g., 97% overall) may mask poor performance on specific document types or fields</code>. Check accuracy by document type and by field before cutting human review.</li></ul></li><li><strong>Right:</strong> "Route low-confidence fields to reviewers; stratified-sample the auto-accepted ones by document type."</li><li><strong>Wrong:</strong> "97% overall, so remove human review." Or "review a plain random 5% of everything." Or "trust the model's raw confidence without calibrating it against labeled data."</li></ul>
+<h3 id="step-9-close-the-loop">Step 9. Close the loop</h3>
+<ul><li><strong>Checks:</strong> what kinds of errors keep happening?</li><li><strong>Results:</strong> log each error with document type, field and error type. Add a <code>detected_pattern</code> field: <code>Adding detected_pattern fields to structured findings to enable analysis of false positive patterns when developers dismiss findings</code> (exam wording). [Guide 4.4] Fix the schema, prompt or few-shot examples from the pattern.</li><li><strong>Few-shot rule:</strong> 2 to 4 targeted examples, showing varied document layouts, fix empty or <code>null</code> extraction of required fields. [Guide 4.2] Write explicit criteria, not "be conservative". [Guide 4.1]</li><li><strong>Before a big batch:</strong> refine the prompt on a sample set first, so the big run passes first time. [Guide 4.5]</li><li><strong>On batch failures:</strong> resubmit only the failed ones by <code>custom_id</code>, changed as needed (for example, split a document that was too long). [Guide 4.5]</li></ul>
+<pre><code class="lang-python">def extract(doc, waiting: bool):
+    client = Anthropic(api_key=os.environ[&quot;ANTHROPIC_API_KEY&quot;])   # never hard-coded
+    if not waiting:
+        return submit_batch(doc, custom_id=doc.id)                # match results by custom_id later
+
+    feedback, retried_total = None, False
+    for attempt in range(MAX_TRIES):                              # first try plus up to 2 retries, e.g. MAX_TRIES = 3
+        resp = client.messages.create(
+            model=MODEL, max_tokens=MAX_TOKENS,
+            tools=[EXTRACT_INVOICE],                          # schema = input_schema; today also &quot;strict&quot;: True
+            # tool_choice={&quot;type&quot;: &quot;tool&quot;, &quot;name&quot;: &quot;extract_invoice&quot;},  # exam add-on if Claude skips the tool
+            # today newest models (Opus 5.5, Sonnet 5.5) return a 400 for a forced tool_choice: use auto with strict: true
+            messages=build_messages(doc, feedback),
+        )
+        block = first_tool_use(resp)
+        if block is None:                                     # auto can answer in text
+            feedback = (doc, None, &quot;reply by calling the extract_invoice tool&quot;)
+            continue
+        data = block.input
+        errors = json_schema_errors(data, SCHEMA)
+        if errors:
+            feedback = (doc, data, errors)                        # doc + failed output + exact errors
+            continue
+        if data[&quot;calculated_total&quot;] != data[&quot;stated_total&quot;]:
+            if not retried_total:                                 # retry once: it may be a misread digit
+                feedback, retried_total = (doc, data, &quot;line items do not add up to stated_total&quot;), True
+                continue
+            data[&quot;conflict_detected&quot;] = True                      # still off: keep BOTH values
+        break
+    else:
+        return send_to_review(doc, reason=&quot;still failing after retries&quot;)
+
+    if needs_review(data):   # low field confidence, required null, conflict, ambiguous source
+        return send_to_review(doc, data)
+    accept(data)
+    maybe_stratified_sample(data, by=doc.type)                    # keep measuring high-confidence</code></pre>
+<hr>
+<h2 id="flow-2-how-does-the-agent-loop-know-when-to-stop">Flow 2: How does the agent loop know when to stop?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenarios: Customer Support, Multi-Agent Research, Developer Productivity · Task statements 1.1, 1.2, 1.3, 2.3, 5.1, 5.3</strong></p>
+<p>The job: send a request, let Claude ask for tools, run them, send results back, and stop at the right time.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-2" data-teaching-key="diagram-40">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;Send full history and tools&quot;])
+    Q1{&quot;Which stop_reason value came back in this reply?&quot;}
+    TU[&quot;Run every tool_use block&quot;]
+    Q2{&quot;Did running the requested tool throw an error?&quot;}
+    ERR[&quot;Return is_error true and the reason&quot;]
+    TR[&quot;Append tool_results first, same ids&quot;]
+    END[&quot;PICK: end_turn means done&quot;]
+    OTH[&quot;Note: max_tokens, pause_turn, refusal each need their own handling (Step 2)&quot;]
+    T1[&quot;NOT: stop when text says done&quot;]
+    T2[&quot;NOT: iteration cap as main stop&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;tool_use&quot; --&gt; TU --&gt; Q2
+    Q2 -- &quot;yes, the tool failed&quot; --&gt; ERR --&gt; TR
+    Q2 -- &quot;no, the tool worked&quot; --&gt; TR
+    TR --&gt; S
+    Q1 -- &quot;end_turn&quot; --&gt; END
+    Q1 -- &quot;another value&quot; --&gt; OTH
+    END -.- T1
+    END -.- T2
+    click END href &quot;../L01-agentic-architecture-and-orchestration.html#11-the-agentic-loop&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2 decision
+    class S,TU,TR,ERR action
+    class END rightPath
+    class T1,T2 trap
+    class OTH note</pre></div>
+<p><strong>Remember it as:</strong> <code>stop_reason</code> decides. Every <code>tool_use</code> gets a matching <code>tool_result</code>.</p>
+<h3 id="step-1-build-the-request-with-the-full-history">Step 1. Build the request with the full history</h3>
+<ul><li><strong>Checks:</strong> does <code>messages</code> hold every earlier turn, including every <code>tool_use</code> and <code>tool_result</code>?</li><li><strong>Results:</strong> yes → call. No → the model loses track. The API keeps no memory between calls; you send <code>complete conversation history in subsequent API requests</code> (exam wording). [Guide 5.1]</li><li><strong>Keep it lean:</strong> trim big tool results to the fields that matter (for example 5 of 40 order fields), and keep key facts (amounts, dates, IDs) in a "case facts" block that never gets summarised away. [Guide 5.1]</li><li><strong>Right:</strong> "Append the assistant turn and the tool results to <code>messages</code>, then call again."</li><li><strong>Wrong:</strong> "Send only the latest user message; the API remembers the session."</li></ul>
+<h3 id="step-2-branch-on-stop_reason">Step 2. Branch on <code>stop_reason</code></h3>
+<ul><li><strong>Checks:</strong> the <code>stop_reason</code> field of the response. Never the text.</li><li><strong>Results:</strong> [stop-reasons]<ul><li><code>tool_use</code> → Step 3. Continue the loop. [Guide 1.1]</li><li><code>end_turn</code> → done. Return the answer. [Guide 1.1]</li><li><code>max_tokens</code> → the reply was cut off. If it stopped inside a tool call, the <code>tool_use</code> block is incomplete: <strong>don't run it</strong>. Retry with a higher <code>max_tokens</code>.</li><li><code>stop_sequence</code> → one of your stop strings was hit; handle as your design says.</li><li><code>pause_turn</code> → a server-tool loop hit its limit. Send the assistant content back to continue.</li><li><code>refusal</code> → Claude declined. Read <code>stop_details</code>; today's docs suggest a fallback model. Don't loop blindly.</li><li><code>model_context_window_exceeded</code> → treat the reply as truncated.</li></ul></li><li><strong>Right:</strong> "Continue while <code>stop_reason == &quot;tool_use&quot;</code>; stop on <code>&quot;end_turn&quot;</code>."</li><li><strong>Wrong (exam wording for the anti-patterns, [Guide 1.1]):</strong> <code>parsing natural language signals to determine loop termination</code>, <code>setting arbitrary iteration caps as the primary stopping mechanism</code>, or <code>checking for assistant text content as a completion indicator</code>. A cap as a <strong>backstop</strong> for runaway loops is fine; as the main stop it is wrong.</li></ul>
+<h3 id="step-3-run-every-tool-block-and-send-results-back">Step 3. Run every tool block and send results back</h3>
+<ul><li><strong>Checks:</strong> every <code>tool_use</code> block in the response, by <code>id</code>.</li><li><strong>Results:</strong><ul><li>Each one gets a <code>tool_result</code> with the matching <code>tool_use_id</code>. [handle-tools]</li><li>All <code>tool_result</code> blocks go <strong>first</strong> in the next user message; any text goes after. Text first is a <code>400</code>. [handle-tools]</li><li>Parallel calls: every result goes back in one single user message, with no text before the results. [parallel]</li><li>Edge case: if the same assistant turn also called a server tool that has no result yet, the user message must hold <strong>only</strong> <code>tool_result</code> blocks. Text after them then gives a <code>400</code> naming the unfinished server tool. [handle-tools]</li><li>A missing result gives an error like <code>tool_use ids were found without tool_result blocks immediately after</code>. [handle-tools]</li></ul></li><li><strong>If a tool fails:</strong> return <code>&quot;is_error&quot;: true</code> with a useful message ("Rate limit exceeded. Retry after 60 seconds."), not a crash and not a bare "failed". [handle-tools]</li><li><strong>Right:</strong> "Return a <code>tool_result</code> with <code>is_error: true</code> and the reason; let Claude decide what to do."</li><li><strong>Wrong:</strong> "Throw an exception and end the loop", or "drop the failed call and send only the good results".</li></ul>
+<h3 id="step-4-model-driven-vs-scripted-order">Step 4. Model-driven vs scripted order</h3>
+<ul><li><strong>Checks:</strong> must the steps always happen in one fixed order?</li><li><strong>Results:</strong><ul><li>Claude may choose → model-driven: Claude picks the next tool from context. [Guide 1.1]</li><li>One step must run first → force it with <code>tool_choice</code> (exam answer) or a code gate. [Guide 2.3]</li><li>A rule must <strong>always</strong> hold (identity before refund) → enforce in code: a hook or a <abbr data-tip="An executable check requiring a prior condition to hold before a dependent action. A prompt instruction alone is not this gate." aria-label="prerequisite gate">prerequisite gate</abbr> (Flow 4). [Guide 1.4]</li></ul></li></ul>
+<h3 id="step-5-multi-agent-branch-coordinator-and-subagents">Step 5. Multi-agent branch (coordinator and subagents)</h3>
+<ul><li><strong>Checks:</strong> is one agent enough, or does the task split into specialist parts?</li><li><strong>Results:</strong><ul><li>Split → hub and spoke: the coordinator manages all communication, errors and routing. [Guide 1.2]</li><li>Subagents start empty. They <code>do not automatically inherit parent context</code> (exam wording). Put prior findings into the subagent's prompt, as structured data that keeps source URLs, document names and page numbers apart from the content. [Guide 1.3] [Guide 5.6]</li><li>Parallel work → emit several Task tool calls <strong>in one</strong> coordinator response, not across turns. [Guide 1.3]</li><li>The coordinator needs <code>&quot;Task&quot;</code> in <code>allowedTools</code>: the guide states <code>the requirement that allowedTools must include &quot;Task&quot; for a coordinator to invoke subagents</code> (exam wording). [Guide 1.3] On the exam, <code>Task</code> in <code>allowedTools</code>. Today the tool is <code>Agent</code> (renamed in Claude Code v2.1.63; <code>Task</code> still works as an alias), and <code>allowedTools</code> only pre-approves tools; see <a href="conditions-and-errors.html#exam-answer-vs-today">exam answer vs today</a>. [sub-agents]</li><li>Keep provenance: each claim travels with its source and date. When two sources disagree, flag the conflict with both sources; don't average them or quietly pick one. [Guide 5.6]</li><li>Give each subagent only its role's tools (4 to 5, not 18). [Guide 2.3]</li><li>Coordinator prompts state goals and quality criteria, not step-by-step procedures. [Guide 1.3]</li></ul></li><li><strong>When a subagent fails:</strong> it retries transient errors itself. It passes up only what it can't fix, with failure type, what it tried, partial results and alternatives. Tell an access failure apart from a valid empty result. [Guide 5.3]</li><li><strong>Right:</strong> "Pass the web results and document analysis into the synthesis subagent's prompt."</li><li><strong>Wrong:</strong> "The synthesis subagent can read the coordinator's history." Or "return empty results as success when the search timed out." Or "kill the whole run on one subagent failure."</li></ul>
+<pre><code class="lang-python">messages = [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: task}]
+for turn in range(SAFETY_CAP):                     # backstop only, not the real stop
+    resp = client.messages.create(model=M, tools=TOOLS, messages=messages, max_tokens=MAX)
+    messages.append({&quot;role&quot;: &quot;assistant&quot;, &quot;content&quot;: resp.content})
+
+    if resp.stop_reason == &quot;end_turn&quot;:
+        return final_text(resp)
+    if resp.stop_reason == &quot;max_tokens&quot;:
+        if has_incomplete_tool_use(resp):          # never run a half-written call
+            messages.pop(); MAX *= 2; continue
+        return continue_or_flag(resp)
+    if resp.stop_reason == &quot;pause_turn&quot;:
+        continue                                   # content already appended; call again
+    if resp.stop_reason == &quot;refusal&quot;:
+        return handle_refusal(resp.stop_details)
+    if resp.stop_reason == &quot;tool_use&quot;:
+        results = []
+        for block in tool_use_blocks(resp):
+            try:
+                out = run_tool(block.name, block.input)
+                results.append({&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: block.id, &quot;content&quot;: out})
+            except ToolError as e:
+                results.append({&quot;type&quot;: &quot;tool_result&quot;, &quot;tool_use_id&quot;: block.id,
+                                &quot;content&quot;: e.helpful_message, &quot;is_error&quot;: True})
+        messages.append({&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: results})   # results first, no text before them
+else:
+    hand_off_to_person(messages)                   # cap hit: safe exit, not silent success</code></pre>
+<hr>
+<h2 id="flow-3-how-should-an-mcp-tool-report-each-kind-of-result">Flow 3: How should an MCP tool report each kind of result?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenarios: Customer Support, Multi-Agent Research, Developer Productivity · Task statements 2.1, 2.2, 2.3, 2.4, 5.3</strong></p>
+<p>The job: build an MCP server whose tools Claude picks correctly, whose errors Claude can act on, and which teammates can install safely.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-3" data-teaching-key="diagram-41">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;Server starts, lists its tools, gets a tools/call&quot;])
+    Q1{&quot;Is the tools/call for a known tool, in a valid request?&quot;}
+    PE[&quot;Protocol error, e.g. -32602&quot;]
+    Q2{&quot;Are the tool&#x27;s input arguments valid, like a correct date format?&quot;}
+    VE[&quot;isError true, validation&quot;]
+    B[&quot;Call the backend&quot;]
+    Q3{&quot;What did the backend return when the server called it?&quot;}
+    OK[&quot;Success: a trimmed result&quot;]
+    EMPTY[&quot;PICK: success, zero matches&quot;]
+    TE[&quot;PICK: isError true, transient, retryable&quot;]
+    BE[&quot;isError true, business, not retryable&quot;]
+    T1[&quot;NOT: Operation failed&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;no, unknown or malformed&quot; --&gt; PE
+    Q1 -- &quot;yes, known and well formed&quot; --&gt; Q2
+    Q2 -- &quot;no, bad input&quot; --&gt; VE
+    Q2 -- &quot;yes, input is valid&quot; --&gt; B --&gt; Q3
+    Q3 -- &quot;data&quot; --&gt; OK
+    Q3 -- &quot;no matches&quot; --&gt; EMPTY
+    Q3 -- &quot;timeout or down&quot; --&gt; TE
+    Q3 -- &quot;policy says no&quot; --&gt; BE
+    TE -.- T1
+    click EMPTY href &quot;../L05-context-management-and-reliability.html#53-passing-errors-between-agents&quot;
+    click TE href &quot;../L02-tool-design-and-mcp-integration.html#22-structured-errors&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2,Q3 decision
+    class S,PE,VE,B,OK,BE action
+    class EMPTY,TE rightPath
+    class T1 trap</pre></div>
+<p><strong>Remember it as:</strong> Empty is success. Down is a retryable error.</p>
+<h3 id="step-1-configure-and-start-the-server">Step 1. Configure and start the server</h3>
+<ul><li><strong>Checks:</strong> where does the config live, and are its secrets set?</li><li><strong>Results:</strong><ul><li>Shared with the team → project scope, <code>.mcp.json</code> in the project root, checked into git. [mcp] [Guide 2.4]</li><li>Personal or experimental → user scope in <code>~/.claude.json</code> (exam wording). [Guide 2.4] Today's docs also have a <strong>local</strong> scope (the default, this project only, also stored in <code>~/.claude.json</code>). [mcp]</li><li>Secrets → <code>${VAR}</code> expansion, for example <code>${GITHUB_TOKEN}</code>; <code>${VAR:-default}</code> gives a fallback. [mcp]</li><li>Exception today: in a <strong>remote</strong> server's <code>url</code> and <code>headers</code>, Claude Code reads its own and cloud-provider credential variables (for example <code>ANTHROPIC_API_KEY</code>, <code>AWS_BEARER_TOKEN_BEDROCK</code>) as empty, with no warning. Use a variable name of your own. The doc's list says "such as", so whether <code>GITHUB_TOKEN</code> is covered is (unconfirmed). [mcp] <strong>On the exam: pick <code>${GITHUB_TOKEN}</code> in <code>.mcp.json</code>.</strong></li><li>Standard integration (for example Jira) → use an existing community server, not a custom one. [Guide 2.4]</li></ul></li><li><strong>When a tool doesn't show up or doesn't work, check in this order:</strong><ul><li><code>claude mcp list</code> status. <code>⏸ Pending approval</code> means a project server from <code>.mcp.json</code> you haven't approved yet; run <code>claude</code> to approve. <code>✘ Failed to connect</code> means it didn't start. [mcp]</li><li>An unset <code>${VAR}</code> with no <code>:-default</code>: Claude Code warns in <code>claude mcp list</code> and <code>/mcp</code>, naming the variable, <strong>and still loads the server with the <code>${VAR}</code> text unexpanded</strong>. So the usual symptom is not a missing server. It's failed auth or failed calls, plus that warning. [mcp]</li><li>Wrong scope (it's in your user config, so a teammate doesn't have it).</li></ul></li><li><strong>Right:</strong> "Put the server in <code>.mcp.json</code> with <code>${GITHUB_TOKEN}</code> and have each developer export the token."</li><li><strong>Wrong:</strong> "Commit the token in <code>.mcp.json</code>", or "put the shared server in each person's <code>~/.claude.json</code>".</li></ul>
+<h3 id="step-2-describe-each-tool-so-claude-picks-the-right-one">Step 2. Describe each tool so Claude picks the right one</h3>
+<ul><li><strong>Checks:</strong> could Claude confuse this tool with another one?</li><li><strong>Results:</strong><ul><li>Description too short → misrouting. Descriptions are <code>the primary mechanism LLMs use for tool selection</code> (exam wording). Include input formats, example queries, edge cases, and when to use this tool <strong>versus</strong> the similar one. [Guide 2.1]</li><li>Two tools overlap (<code>analyze_content</code> vs <code>analyze_document</code>) → rename and narrow, for example <code>extract_web_results</code>. [Guide 2.1]</li><li>One generic tool does many jobs → split it (<code>extract_data_points</code>, <code>summarize_content</code>, <code>verify_claim_against_source</code>). [Guide 2.1]</li><li>Claude keeps using built-in Grep instead of your better MCP tool → improve the MCP tool's description. [Guide 2.4]</li><li>The system prompt has a keyword that pulls Claude to the wrong tool → fix the prompt wording. [Guide 2.1]</li><li>Many read-only catalogs (issue lists, schemas) → expose them as <strong>MCP resources</strong> so Claude sees what exists without exploratory calls. [Guide 2.4]</li></ul></li><li><strong>Right:</strong> "Rewrite both descriptions to say what each is for and when to use the other."</li><li><strong>Wrong:</strong> "Add few-shot examples first", "add a routing classifier", or "merge everything into one tool". Fixing descriptions comes first.</li></ul>
+<h3 id="step-3-check-the-call-then-classify-every-failure">Step 3. Check the call, then classify every failure</h3>
+<ul><li><strong>Checks:</strong> is the request well formed, is the input valid, and what did the backend say?</li><li><strong>Results (MCP spec 2025-11-25, [mcp-spec]):</strong><ul><li>Unknown tool or a request that breaks the <code>CallToolRequest</code> schema → <strong>protocol error</strong> (JSON-RPC), for example <code>&quot;code&quot;: -32602</code>.</li><li>Bad input (wrong date format, value out of range), API failures, business-rule failures → a normal result with <code>&quot;isError&quot;: true</code> and an actionable message, so the model can fix and retry.</li></ul></li><li><strong>Exam metadata (exam wording, [Guide 2.2]):</strong> return <code>errorCategory</code> (transient / validation / permission; the guide also names business errors), an <code>isRetryable</code> boolean, and a human-readable description. For policy violations, <code>retriable: false</code> plus a customer-friendly explanation. These field names are the exam guide's pattern, not fields defined by the MCP spec (practice, not doc). The guide spells it both <code>isRetryable</code> and <code>retriable</code>; treat them as the same idea.</li><li><strong>Empty is not an error:</strong> a search that worked and found nothing is a <strong>success with zero results</strong>. A timeout is an <strong>access failure</strong>. Mixing them up breaks the coordinator's decisions. [Guide 2.2] [Guide 5.3]</li><li><strong>Spec history (no conflict with the exam):</strong> the older spec, 2025-06-18, listed invalid arguments as a protocol error. From 2025-11-25 on, they are tool execution errors with <code>isError: true</code>. That change came before the July 2026 guide, so the exam and today's spec agree. [mcp-spec] <strong>On the exam: pick <code>isError: true</code> with structured metadata.</strong></li><li><strong>Right:</strong> <code>isError: true</code>, <code>errorCategory: &quot;transient&quot;</code>, <code>isRetryable: true</code>, "Inventory service timed out after 5 s; retry in 30 s."</li><li><strong>Wrong:</strong> <code>&quot;Operation failed&quot;</code> for everything. Or returning <code>[]</code> with no error when the backend was down.</li></ul>
+<h3 id="step-4-keep-results-small">Step 4. Keep results small</h3>
+<ul><li><strong>Checks:</strong> how big is the response?</li><li><strong>Results:</strong> page through results, return only needed fields, cap the size. Claude Code warns above 10,000 tokens of MCP output and caps it at 25,000 by default; <code>MAX_MCP_OUTPUT_TOKENS</code> changes the cap. [mcp]</li><li><strong>Right:</strong> "Return the 5 return-relevant fields, not all 40." [Guide 5.1]</li></ul>
+<h3 id="step-5-give-each-agent-the-right-tools">Step 5. Give each agent the right tools</h3>
+<ul><li><strong>Checks:</strong> how many tools does each agent see?</li><li><strong>Results:</strong> 4 to 5 per role, not 18. Replace risky generic tools with narrow ones (<code>fetch_url</code> → <code>load_document</code> that checks the URL). Give a narrow cross-role tool for a frequent need (<code>verify_fact</code> for synthesis) and send complex cases through the coordinator. [Guide 2.3]</li><li><strong>Exact:</strong> all tools from all configured MCP servers are found at connection time and are available at once. [Guide 2.4] That is why too many servers can flood tool choice.</li></ul>
+<pre><code class="lang-python">@server.tool(&quot;lookup_order&quot;, description=ORDER_DESC)   # says when to use it vs search_orders
+def lookup_order(args):
+    if not valid_order_id(args.get(&quot;order_id&quot;)):
+        return error(&quot;validation&quot;, retryable=False,
+                     msg=&quot;order_id must look like ORD-123456; got &#x27;%s&#x27;&quot; % args.get(&quot;order_id&quot;))
+    try:
+        rows = backend.get_order(args[&quot;order_id&quot;], timeout=5)
+    except Timeout:
+        return error(&quot;transient&quot;, retryable=True, msg=&quot;Order service timed out; retry in 30 s&quot;)
+    except Forbidden:
+        return error(&quot;permission&quot;, retryable=False, msg=&quot;Agent lacks access to this region&#x27;s orders&quot;)
+    if not rows:
+        return ok({&quot;matches&quot;: 0})                       # valid empty result, NOT an error
+    return ok(trim(rows, FIELDS_NEEDED))                # small, readable, no internal IDs only
+
+def error(category, retryable, msg):
+    return {&quot;isError&quot;: True,
+            &quot;content&quot;: [{&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: json.dumps(
+                {&quot;errorCategory&quot;: category, &quot;isRetryable&quot;: retryable, &quot;message&quot;: msg})}]}
+# Unknown tool name never reaches this code: the MCP layer answers with JSON-RPC -32602.</code></pre>
+<hr>
+<h2 id="flow-4-how-does-a-support-agent-enforce-rules-and-hand-off">Flow 4: How does a support agent enforce rules and hand off?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenario: Customer Support Resolution Agent · Task statements 1.4, 1.5, 5.1, 5.2</strong></p>
+<p>The job: resolve returns, billing and account issues, with rules that can't be skipped and clean handoffs.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-4" data-teaching-key="diagram-42">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;A customer message arrives&quot;])
+    Q0{&quot;Did the customer ask to talk to a human?&quot;}
+    H[&quot;PICK: escalate now&quot;]
+    Q1{&quot;How many customers did get_customer match?&quot;}
+    ASK[&quot;Ask for another identifier&quot;]
+    Q3{&quot;Does policy clearly cover this exact request?&quot;}
+    Q2{&quot;Is the refund amount over the limit a person must approve?&quot;}
+    HOOK[&quot;PICK: PreToolUse hook blocks&quot;]
+    DO[&quot;Resolve it with process_refund&quot;]
+    ESC[&quot;Escalate with handoff summary&quot;]
+    T1[&quot;NOT: prompt says verify first&quot;]
+    T2[&quot;NOT: escalate on sentiment&quot;]
+    S --&gt; Q0
+    Q0 -- &quot;yes, they asked&quot; --&gt; H
+    Q0 -- &quot;no, not asked&quot; --&gt; Q1
+    Q1 -- &quot;none, or more than one&quot; --&gt; ASK
+    ASK --&gt; Q1
+    Q1 -- &quot;one, verified&quot; --&gt; Q3
+    Q3 -- &quot;no, silent or an exception&quot; --&gt; ESC
+    Q3 -- &quot;yes, clearly covered&quot; --&gt; Q2
+    Q2 -- &quot;yes, over the limit&quot; --&gt; HOOK --&gt; ESC
+    Q2 -- &quot;no, within the limit&quot; --&gt; DO
+    HOOK -.- T1
+    H -.- T2
+    click H href &quot;../L05-context-management-and-reliability.html#52-escalation-and-ambiguity&quot;
+    click HOOK href &quot;../L01-agentic-architecture-and-orchestration.html#15-agent-sdk-hooks&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q0,Q1,Q2,Q3 decision
+    class S,ASK,DO,ESC action
+    class H,HOOK rightPath
+    class T1,T2 trap</pre></div>
+<p><strong>Remember it as:</strong> Asked: escalate. Must hold: hook. Policy silent: escalate.</p>
+<h3 id="step-1-did-the-customer-ask-for-a-person">Step 1. Did the customer ask for a person?</h3>
+<ul><li><strong>Checks:</strong> an explicit request for a human.</li><li><strong>Results:</strong><ul><li>Yes → escalate <strong>right away</strong>, without investigating first. [Guide 5.2]</li><li>Frustrated but the issue is simple → acknowledge, offer to resolve; escalate if they ask again. [Guide 5.2]</li></ul></li><li><strong>Wrong:</strong> "Escalate when sentiment turns negative" or "when the model's confidence is low". <code>sentiment-based escalation and self-reported confidence scores are unreliable proxies</code> (exam wording). [Guide 5.2]</li></ul>
+<h3 id="step-2-identify-the-customer-with-a-code-gate">Step 2. Identify the customer, with a code gate</h3>
+<ul><li><strong>Checks:</strong> did <code>get_customer</code> return exactly one verified customer ID?</li><li><strong>Results:</strong><ul><li>Several matches → ask for another identifier. Never pick by a guess. [Guide 5.2] No match → ask again too, rather than going on without a verified ID (practice, not doc).</li><li>One verified ID → unlock money tools.</li><li>Not yet → <code>process_refund</code> is <strong>blocked in code</strong> until <code>get_customer</code> returns a verified ID. [Guide 1.4]</li></ul></li><li><strong>Exact:</strong> <code>prompt instructions alone have a non-zero failure rate</code> when compliance must be deterministic (exam wording). [Guide 1.4]</li><li><strong>Right:</strong> "A programmatic prerequisite blocks <code>process_refund</code> until a verified ID exists."</li><li><strong>Wrong:</strong> "Add 'always verify identity first' in bold to the system prompt."</li></ul>
+<h3 id="step-3-enforce-business-rules-with-hooks">Step 3. Enforce business rules with hooks</h3>
+<ul><li><strong>Checks:</strong> does the tool call break a hard rule (for example a refund over $500)?</li><li><strong>Results:</strong><ul><li>Breaks it → a hook that intercepts the outgoing call blocks it and redirects to human escalation. [Guide 1.5]</li><li>Fine → allow.</li></ul></li><li><strong>Exact:</strong> in Claude Code, a <code>PreToolUse</code> hook can return <code>hookSpecificOutput.permissionDecision: &quot;deny&quot;</code> or exit with code <code>2</code> to block the call. [hooks] In the Agent SDK, a <code>PreToolUse</code> callback returns <code>hookSpecificOutput.permissionDecision</code> (<code>&quot;allow&quot;</code>, <code>&quot;deny&quot;</code>, <code>&quot;ask&quot;</code> or <code>&quot;defer&quot;</code>) plus <code>permissionDecisionReason</code>, which tells the model why. [sdk-hooks] (<code>defer</code> works only in <code>-p</code> and Agent SDK runs; it pauses the call for the calling app, and in the SDK the turn ends with <code>stop_reason: &quot;tool_deferred&quot;</code>. [hooks] On the exam, the answers are <code>allow</code>, <code>deny</code> and <code>ask</code>.)</li><li><strong>Normalising data:</strong> a <code>PostToolUse</code> hook changes tool results <strong>before</strong> the model reads them, for example turning Unix timestamps, ISO 8601 strings and numeric status codes into one format. [Guide 1.5]</li><li><strong>Right:</strong> "Block refunds over $500 in a hook and route them to <code>escalate_to_human</code>."</li><li><strong>Wrong:</strong> "Tell the model the limit in the prompt and audit refunds weekly."</li></ul>
+<h3 id="step-4-is-policy-clear">Step 4. Is policy clear?</h3>
+<ul><li><strong>Checks:</strong> does policy cover this exact request?</li><li><strong>Results:</strong><ul><li>Covered and within limits → resolve.</li><li>Policy silent or ambiguous (for example competitor price matching when policy only covers your own site) → escalate. [Guide 5.2]</li><li>Can't make progress → escalate. [Guide 5.2]</li></ul></li><li><strong>Several problems in one message</strong> → split into separate items, investigate each in parallel with shared context, then give one combined answer. [Guide 1.4]</li></ul>
+<h3 id="step-5-keep-facts-and-hand-off-cleanly">Step 5. Keep facts and hand off cleanly</h3>
+<ul><li><strong>Checks:</strong> will the facts survive a long chat, and can a person pick it up cold?</li><li><strong>Results:</strong><ul><li>Keep a "case facts" block (amounts, dates, order numbers, statuses) outside the summarised history. [Guide 5.1]</li><li>Handoff summary: customer ID, root cause, refund amount, recommended action. The human agent can't see the transcript. [Guide 1.4]</li></ul></li><li><strong>Wrong:</strong> "Paste the whole transcript into the ticket" or "summarise as 'customer wants a refund'".</li></ul>
+<pre><code class="lang-python">def on_message(msg, state):
+    if explicitly_asks_for_human(msg):
+        return escalate(handoff(state))                        # immediately, no investigation
+
+def pre_tool_use(call, state):                                 # hook: runs before every tool call
+    if call.name == &quot;process_refund&quot;:
+        if not state.verified_customer_id:
+            return deny(&quot;Verify the customer with get_customer first&quot;)
+        if call.input[&quot;amount&quot;] &gt; 500:
+            return deny(&quot;Over $500: escalate_to_human with a handoff summary&quot;)
+    return allow()
+
+def post_tool_use(result):                                     # hook: normalise before Claude sees it
+    return to_iso8601_and_named_statuses(trim(result, RETURN_FIELDS))
+
+def handoff(state):
+    return {&quot;customer_id&quot;: state.verified_customer_id, &quot;root_cause&quot;: state.root_cause,
+            &quot;refund_amount&quot;: state.amount, &quot;recommended_action&quot;: state.next_step}</code></pre>
+<hr>
+<h2 id="flow-5-how-does-a-hook-block-a-tool-call">Flow 5: How does a hook block a tool call?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenarios: Code Generation, Developer Productivity, CI · Task statements 1.4, 1.5, 3.1</strong></p>
+<p>The job: make sure a rule always runs, instead of hoping Claude remembers a line in <code>CLAUDE.md</code>.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-5" data-teaching-key="diagram-43">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;Event fires, e.g. PreToolUse&quot;])
+    Q1{&quot;Does the hook&#x27;s matcher match this tool&#x27;s name?&quot;}
+    SKIP[&quot;Hook does not run&quot;]
+    RUN[&quot;Script reads JSON on stdin&quot;]
+    Q2{&quot;Which exit code did the hook script return?&quot;}
+    E0[&quot;0: go on, parse stdout JSON&quot;]
+    E2[&quot;PICK: 2 blocks, stderr to Claude&quot;]
+    E1[&quot;Other, e.g. 1, no JSON: non-blocking&quot;]
+    T1[&quot;NOT: exit 1 to enforce a rule&quot;]
+    N1[&quot;Note: PostToolUse can&#x27;t undo, tool already ran&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;no, other tool&quot; --&gt; SKIP
+    Q1 -- &quot;yes, tool name matches&quot; --&gt; RUN --&gt; Q2
+    Q2 -- &quot;0&quot; --&gt; E0
+    Q2 -- &quot;2&quot; --&gt; E2
+    Q2 -- &quot;anything else&quot; --&gt; E1
+    E2 -.- T1
+    E2 --- N1
+    click E2 href &quot;../L01-agentic-architecture-and-orchestration.html#15-agent-sdk-hooks&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2 decision
+    class S,SKIP,RUN,E0,E1 action
+    class E2 rightPath
+    class T1 trap
+    class N1 note</pre></div>
+<p><strong>Remember it as:</strong> Exit 2 blocks. Exit 1 with plain text does not.</p>
+<h3 id="step-1-decide-hook-setting-or-claudemd">Step 1. Decide: hook, setting, or <code>CLAUDE.md</code>?</h3>
+<ul><li><strong>Checks:</strong> must this rule hold every time, or is it advice?</li><li><strong>Results:</strong><ul><li>Must always hold (never edit <code>.env</code>, always run the formatter) → a hook or a permission rule in settings. Code enforcement beats prompt instructions (practice, not doc; the exam guide says hooks give <code>deterministic guarantees</code> vs prompts' <code>probabilistic compliance</code>, [Guide 1.5]).</li><li>Team conventions and context → <code>CLAUDE.md</code> (project level, in git). [Guide 3.1]</li><li>Only for some file types → <code>.claude/rules/</code> with <code>paths:</code> (Flow 8, step 7). [Guide 3.3]</li></ul></li><li><strong>Right:</strong> "A <code>PreToolUse</code> hook that blocks writes to <code>migrations/</code>."</li><li><strong>Wrong:</strong> "Add 'NEVER edit migrations' in capitals to <code>CLAUDE.md</code>."</li></ul>
+<h3 id="step-2-the-event-fires-and-the-matcher-filters">Step 2. The event fires and the matcher filters</h3>
+<ul><li><strong>Checks:</strong> which event, and does the <code>matcher</code> match the tool name?</li><li><strong>Results:</strong><ul><li><code>PreToolUse</code> → before the tool runs. Can block.</li><li><code>PostToolUse</code> → after the tool ran. Can't undo it, but can feed problems back to Claude.</li><li><code>UserPromptSubmit</code> → before Claude sees a prompt. Can block the prompt.</li><li><code>Stop</code> / <code>SubagentStop</code> → when Claude is about to stop. Exit <code>2</code> keeps it working.</li><li><code>SessionStart</code> → adds context only. Can't block. [hooks]</li><li>Matcher example: <code>&quot;Edit|Write&quot;</code> is a <strong>list of exact tool names</strong>, so it runs only for <code>Edit</code> and <code>Write</code>. A matcher made only of letters, digits, <code>_</code>, <code>-</code>, spaces, <code>,</code> and <code>|</code> is read as exact names; one with any other character (for example <code>mcp__memory__.*</code>) is read as a regex. [hooks]</li></ul></li><li><strong>Where configured:</strong> the <code>hooks</code> key in a settings file. <code>.claude/settings.json</code> is shared with the team through git; <code>.claude/settings.local.json</code> is just you. [settings]</li></ul>
+<h3 id="step-3-the-script-runs-and-returns-an-exit-code">Step 3. The script runs and returns an exit code</h3>
+<ul><li><strong>Checks:</strong> the exit code, then stdout.</li><li><strong>Results (exact, [hooks]):</strong><ul><li><code>0</code> → go on. If stdout is valid JSON, Claude Code reads its fields. Exit <code>0</code> with no output is <strong>not</strong> approval; the call just continues through normal permissions.</li><li><code>2</code> → block. The reason (your JSON's reason, or stderr) goes back. <code>PreToolUse</code> blocks the call. <code>PostToolUse</code>: "Shows stderr to Claude; the tool already ran" (doc wording).</li><li>Any other code, including <code>1</code>, <strong>when stdout has no valid JSON</strong> → <strong>non-blocking error</strong>. The action goes ahead. (If stdout does hold a valid JSON decision, its fields are honoured on any exit code, so exit <code>1</code> plus a JSON <code>deny</code> does block.) The docs say plainly: if your hook is meant to enforce a policy, use <code>exit 2</code>.</li><li>Script path wrong or not executable → shell exits like <code>127</code> → non-blocking. A typo in <code>settings.json</code> leaves the gate silently off.</li></ul></li><li><strong>JSON control instead of exit codes (exact, [hooks]):</strong><ul><li><code>PreToolUse</code>: <code>hookSpecificOutput.permissionDecision</code> = <code>&quot;allow&quot;</code>, <code>&quot;deny&quot;</code>, <code>&quot;ask&quot;</code> or <code>&quot;defer&quot;</code>, plus <code>updatedInput</code> to rewrite the tool's arguments. When several hooks answer, <code>deny</code> beats <code>defer</code>, which beats <code>ask</code>, which beats <code>allow</code>. <code>defer</code> works only in <code>-p</code> and Agent SDK runs: it pauses the call for the app that launched Claude. On the exam, the answers are <code>allow</code>, <code>deny</code> and <code>ask</code>.</li><li><code>PostToolUse</code>, <code>Stop</code>, <code>UserPromptSubmit</code>: top-level <code>&quot;decision&quot;: &quot;block&quot;</code> with a <code>reason</code>.</li><li><code>additionalContext</code> adds a note to Claude's context.</li></ul></li><li><strong>Right:</strong> "The script exits <code>2</code> and writes the reason to stderr."</li><li><strong>Wrong:</strong> "The script exits <code>1</code>" (with plain-text output). Claude Code treats that as a non-blocking error; the edit goes through.</li></ul>
+<h3 id="step-4-the-posttooluse-quality-loop">Step 4. The <abbr data-tip="A hook event after successful tool execution. Useful for observing or transforming results; it cannot prevent the effect already performed." aria-label="PostToolUse">PostToolUse</abbr> quality loop</h3>
+<ul><li><strong>Checks:</strong> after <code>Edit</code> or <code>Write</code>, does the code still pass formatter, linter and tests?</li><li><strong>Results:</strong><ul><li>Pass → exit <code>0</code>.</li><li>Fail → exit <code>2</code> with the failures on stderr (or <code>&quot;decision&quot;: &quot;block&quot;</code> with a reason). Claude sees them and fixes the code. The edit already happened; the hook makes sure Claude hears about the problem.</li></ul></li><li><strong>Right:</strong> "A <code>PostToolUse</code> hook on <code>Edit|Write</code> runs the linter and returns failures to Claude."</li><li><strong>Wrong:</strong> "Ask Claude in <code>CLAUDE.md</code> to run the linter after every change."</li></ul>
+<h3 id="step-5-check-whats-loaded">Step 5. Check what's loaded</h3>
+<ul><li><strong>Checks:</strong> is Claude even seeing the instructions you think it sees?</li><li><strong>Results:</strong> <code>/memory</code> shows which memory files are loaded. A teammate missing rules usually means the rules are in <code>~/.claude/CLAUDE.md</code> (user level, not shared) instead of the project's <code>CLAUDE.md</code>. [Guide 3.1] On the exam, <code>/memory</code>. Today <code>/context</code> lists, under Memory files, the <code>CLAUDE.md</code> files loaded at launch; see <a href="conditions-and-errors.html#exam-answer-vs-today">exam answer vs today</a>. [memory]</li><li><strong><code>@</code> references:</strong> <code>@path/to/file</code> in <code>CLAUDE.md</code> imports a file; in a prompt it pulls one known file into this turn. Use <code>@</code> when you know the exact file; use <code>CLAUDE.md</code> when every session needs it. [memory] [Guide 3.1]</li></ul>
+<pre><code class="lang-python"># .claude/hooks/block_migrations.py  (registered under hooks.PreToolUse, matcher &quot;Edit|Write&quot;)
+import json, sys
+event = json.load(sys.stdin)                       # tool_name, tool_input, ...
+path = event[&quot;tool_input&quot;].get(&quot;file_path&quot;, &quot;&quot;)
+if path.startswith(&quot;migrations/&quot;):
+    print(&quot;Migrations are generated. Edit models/ and run make migrate.&quot;, file=sys.stderr)
+    sys.exit(2)                                    # 2 = block; 1 with plain text would NOT block
+sys.exit(0)                                        # 0 = no objection, normal permissions apply
+
+# .claude/hooks/post_edit_quality.py  (hooks.PostToolUse, matcher &quot;Edit|Write&quot;)
+r = run([&quot;npm&quot;, &quot;run&quot;, &quot;lint&quot;, &quot;--&quot;, path])
+if r.returncode != 0:
+    print(r.stdout[-4000:], file=sys.stderr)       # Claude reads this and fixes
+    sys.exit(2)                                    # tool already ran; this feeds back, can&#x27;t undo</code></pre>
+<hr>
+<h2 id="flow-6-resume-fork-or-start-fresh-when-you-come-back">Flow 6: Resume, fork or start fresh when you come back?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenarios: Code Generation, Developer Productivity, Multi-Agent Research · Task statements 1.7, 5.1, 5.4</strong></p>
+<p>The job: pick up yesterday's investigation without trusting stale facts.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-6" data-teaching-key="diagram-44">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;Coming back to earlier work&quot;])
+    Q1{&quot;Do you want to try two different approaches from one starting point?&quot;}
+    F[&quot;PICK: fork from shared baseline&quot;]
+    Q2{&quot;Are the earlier tool results, like file reads, still mostly true?&quot;}
+    R[&quot;PICK: resume by name, list changed files&quot;]
+    N[&quot;PICK: new session and structured summary&quot;]
+    T1[&quot;NOT: resume and trust stale reads&quot;]
+    T2[&quot;NOT: re-explore everything&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes, two branches&quot; --&gt; F
+    Q1 -- &quot;no, one path&quot; --&gt; Q2
+    Q2 -- &quot;yes, mostly still true&quot; --&gt; R
+    Q2 -- &quot;no, code changed a lot&quot; --&gt; N
+    N -.- T1
+    R -.- T2
+    click F href &quot;../L01-agentic-architecture-and-orchestration.html#17-sessions-resume-and-fork&quot;
+    click R href &quot;../L01-agentic-architecture-and-orchestration.html#17-sessions-resume-and-fork&quot;
+    click N href &quot;../L01-agentic-architecture-and-orchestration.html#17-sessions-resume-and-fork&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2 decision
+    class S action
+    class F,R,N rightPath
+    class T1,T2 trap</pre></div>
+<p><strong>Remember it as:</strong> Two paths: fork. Still true: resume. Stale: fresh plus summary.</p>
+<h3 id="step-1-find-the-session">Step 1. Find the session</h3>
+<ul><li><strong>Checks:</strong> which earlier conversation do you want?</li><li><strong>Results (exact, [cli]):</strong><ul><li>The most recent one in this folder → <code>--continue</code> (<code>-c</code>). Interactive <code>--continue</code> skips sessions made with <code>claude -p</code> or the Agent SDK; <code>claude -p --continue</code> includes <code>-p</code>, SDK and <code>/loop</code> sessions, which matters for CI jobs that pick up where they left off. [cli]</li><li>A specific one → <code>--resume &lt;session-name&gt;</code> (exam wording, [Guide 1.7]). Today's docs: <code>--resume</code> / <code>-r</code> takes an ID or a name, or opens a picker. [cli]</li><li>Name sessions up front with <code>--name</code> / <code>-n</code> so you can find them (today's docs). [cli]</li></ul></li><li><strong>Right:</strong> "<code>claude --resume auth-refactor-investigation</code>."</li><li><strong>Wrong:</strong> "<code>--continue</code>", when you need a session that isn't the latest.</li></ul>
+<h3 id="step-2-fork-when-you-want-to-compare">Step 2. Fork when you want to compare</h3>
+<ul><li><strong>Checks:</strong> do you want two independent paths from the same analysis?</li><li><strong>Results:</strong><ul><li>Yes → <code>fork_session</code> (exam wording, [Guide 1.7]). In the Python Agent SDK it is <code>fork_session=True</code> with <code>resume=</code>; in TypeScript, <code>forkSession: true</code>. [sdk-sessions] In the CLI: <code>--fork-session</code> with <code>--resume</code> or <code>--continue</code> makes a new session ID instead of reusing the original. [cli]</li><li>No → Step 3.</li></ul></li><li><strong>Right:</strong> "Fork the baseline twice to compare two testing strategies."</li><li><strong>Wrong:</strong> "Run both strategies one after the other in the same session." The second one is biased by the first.</li></ul>
+<h3 id="step-3-resume-or-start-fresh">Step 3. Resume or start fresh?</h3>
+<ul><li><strong>Checks:</strong> are the earlier tool results (file reads, test runs) still true?</li><li><strong>Results (exam wording, [Guide 1.7]):</strong><ul><li>Mostly valid → resume, and tell the agent exactly which files changed, for <code>targeted re-analysis rather than requiring full re-exploration</code>.</li><li>Stale → start a new session with a structured summary. <code>starting a new session with a structured summary is more reliable than resuming with stale tool results</code>.</li></ul></li><li><strong>How code knows what changed:</strong> compare file hashes, timestamps or <code>git diff</code> since the last session (practice, not doc). Re-read only those files.</li></ul>
+<h3 id="step-4-make-the-work-survive">Step 4. Make the work survive</h3>
+<ul><li><strong>Checks:</strong> what if the context fills or a run crashes?</li><li><strong>Results:</strong><ul><li>Context filling → <code>/compact</code>. [Guide 5.4]</li><li>Key findings → a scratchpad file the agent writes and re-reads. [Guide 5.4]</li><li>Crash recovery → each agent exports state to a known place; the coordinator loads a manifest on resume and puts it into agent prompts. [Guide 5.4]</li><li>Long chats → keep numbers, dates and promises in a facts block; summaries blur them. [Guide 5.1]</li></ul></li></ul>
+<pre><code class="lang-python">def come_back(task):
+    if task.compare_two_approaches:
+        a = sdk.query(prompt=plan_a, options={&quot;resume&quot;: base_id, &quot;fork_session&quot;: True})
+        b = sdk.query(prompt=plan_b, options={&quot;resume&quot;: base_id, &quot;fork_session&quot;: True})
+        return compare(a, b)
+
+    changed = files_changed_since(task.last_run)       # hashes, mtimes or git diff
+    if share_changed(changed) &lt; STALE_LIMIT:
+        return resume(task.session_name,               # claude --resume &lt;name&gt;
+                      prompt=f&quot;Since last time these files changed: {changed}. Re-read only these.&quot;)
+    summary = read(&quot;scratchpad/findings.md&quot;)           # written during the earlier session
+    return new_session(prompt=f&quot;Earlier findings (verify before trusting):\n{summary}\n\n{task.goal}&quot;)</code></pre>
+<p>The <code>options</code> keys above use the Python spelling (<code>resume</code>, <code>fork_session</code>); TypeScript uses <code>forkSession</code>. [sdk-sessions]</p>
+<hr>
+<h2 id="flow-7-how-does-claude-code-review-a-pull-request-in-ci">Flow 7: How does Claude Code review a pull request in CI?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenario: Claude Code for Continuous Integration · Task statements 3.6, 4.1, 4.5, 4.6, 1.6, 1.7</strong></p>
+<p>The job: review pull requests and generate tests automatically, with useful comments and few false alarms.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-7" data-teaching-key="diagram-45">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;PR opened or nightly job&quot;])
+    Q1{&quot;Is a merge or a developer waiting on this run?&quot;}
+    SY[&quot;Run claude -p with --output-format json and --json-schema&quot;]
+    BA[&quot;Batch API overnight&quot;]
+    Q2{&quot;Is this a new commit on a pull request already reviewed?&quot;}
+    PRIOR[&quot;Add prior findings: report new only&quot;]
+    REV[&quot;Independent review instance&quot;]
+    Q3{&quot;Is the review output valid JSON that matches the findings schema?&quot;}
+    POST[&quot;PICK: post inline PR comments&quot;]
+    FLAG[&quot;Retry once, then needs a person&quot;]
+    T1[&quot;NOT: same session reviews its code&quot;]
+    T2[&quot;NOT: Batch for a pre-merge check&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes, someone waits&quot; --&gt; SY
+    Q1 -- &quot;no, nothing waits&quot; --&gt; BA
+    SY --&gt; Q2
+    Q2 -- &quot;yes, a repeat run&quot; --&gt; PRIOR --&gt; REV
+    Q2 -- &quot;no, first run&quot; --&gt; REV
+    REV --&gt; Q3
+    Q3 -- &quot;yes, valid findings&quot; --&gt; POST
+    Q3 -- &quot;no, invalid output&quot; --&gt; FLAG
+    REV -.- T1
+    SY -.- T2
+    click POST href &quot;../L03-claude-code-configuration-and-workflows.html#36-claude-code-in-cicd&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2,Q3 decision
+    class S,SY,BA,PRIOR,REV,FLAG action
+    class POST rightPath
+    class T1,T2 trap</pre></div>
+<p><strong>Remember it as:</strong> Blocking: <code>-p</code> now. Not blocking: batch. Never self-review.</p>
+<h3 id="step-1-is-it-blocking">Step 1. Is it blocking?</h3>
+<ul><li><strong>Checks:</strong> is a merge or a developer waiting on this?</li><li><strong>Results:</strong><ul><li>Yes (pre-merge check) → synchronous: headless Claude Code or the Messages API. [Guide 4.5]</li><li>No (nightly test generation, weekly audit) → Message Batches API for 50% savings. [Guide 4.5]</li></ul></li><li><strong>Wrong:</strong> "Use Batch for the pre-merge review to cut cost." Batch has no latency promise.</li></ul>
+<h3 id="step-2-run-headless-with-machine-readable-output">Step 2. Run headless with machine-readable output</h3>
+<ul><li><strong>Checks:</strong> will the job hang waiting for input, and can the pipeline parse the result?</li><li><strong>Results (exact, [cli] and [Guide 3.6]):</strong><ul><li><code>-p</code> / <code>--print</code> → non-interactive. Without it, CI can hang waiting for input.</li><li><code>--output-format json</code> → parseable output (<code>text</code>, <code>json</code>, <code>stream-json</code>).</li><li><code>--json-schema &#x27;&lt;schema&gt;&#x27;</code> → validated JSON matching your schema (print mode only). With <code>--output-format json</code>, the answer sits in the <code>structured_output</code> field of the JSON reply, next to metadata, so the pipeline reads <code>.structured_output</code>. [headless]</li><li>Limits: <code>--max-turns N</code> (print mode only; exits with an error at the limit; <strong>no limit by default</strong>, so a CI job has no cap unless you set one), <code>--max-budget-usd</code>, <code>--permission-mode</code>. [cli]</li><li><code>--allowedTools</code> pre-approves tools so they run without a prompt; for Glob and Grep, which are off by default on macOS, Linux and WSL, naming them also turns them back on. <code>--tools</code> is what restricts the set. [cli] [tools]</li><li>The API key comes from the CI secret store as an environment variable.</li><li>GitHub Actions has an official Claude Code integration (setup details not re-checked today).</li></ul></li><li><strong>What changed since:</strong> today's docs say "In CI or other scripted environments, add <code>--bare</code>", and it will become the default for <code>-p</code> later. <code>--bare</code> skips hooks, skills, custom commands, subagents, plugins, MCP servers, auto memory <strong>and <code>CLAUDE.md</code></strong>, so with it you pass standards in explicitly (for example <code>--append-system-prompt-file</code>). Without <code>--bare</code>, a <code>-p</code> run uses the project's <code>.claude/settings.json</code> hooks and <code>.mcp.json</code> servers even in a folder you've never trusted, which is unsafe for untrusted code. [headless] [cli] <strong>On the exam: pick <code>-p</code> with <code>CLAUDE.md</code> in the repo as the way CI gets project context.</strong></li><li><strong>Right:</strong> <code>claude -p &quot;Review this diff&quot; --output-format json --json-schema &quot;$(cat findings.schema.json)&quot;</code></li><li><strong>Wrong:</strong> "Run <code>claude</code> interactively in the CI container", or "parse the free-text reply with a regex".</li></ul>
+<h3 id="step-3-give-it-project-context-through-the-repo">Step 3. Give it project context through the repo</h3>
+<ul><li><strong>Checks:</strong> where does CI Claude learn the team's standards?</li><li><strong>Results:</strong> <code>CLAUDE.md</code> in the repo holds testing standards, fixture conventions and review criteria. [Guide 3.6] <code>.claude/settings.json</code> (shared) is in the repo; <code>settings.local.json</code> and user settings are not on the CI machine. [settings] (Under <code>--bare</code>, <code>CLAUDE.md</code> is not loaded; see the note in Step 2.)</li><li><strong>For test generation:</strong> put existing test files in context so it doesn't suggest tests that already exist. [Guide 3.6]</li></ul>
+<h3 id="step-4-pick-what-to-read">Step 4. Pick what to read</h3>
+<ul><li><strong>Checks:</strong> what changed?</li><li><strong>Results:</strong> start from <code>git diff</code>. Read the changed files, Grep for callers and tests of changed functions. Don't load the whole repo (practice, not doc; see Flow 8).</li><li><strong>Big PR:</strong> split into per-file passes for local issues plus a separate cross-file integration pass. This avoids <code>attention dilution</code> (exam wording). [Guide 4.6] [Guide 1.6]</li></ul>
+<h3 id="step-5-new-commit-on-the-same-pr">Step 5. New commit on the same PR</h3>
+<ul><li><strong>Checks:</strong> have we reviewed this PR before?</li><li><strong>Results:</strong> yes → include the earlier findings and tell Claude to report only new or still-unaddressed issues, so it doesn't post duplicates. [Guide 3.6]</li><li><strong>Wrong:</strong> "Re-run the full review from scratch and post everything again."</li></ul>
+<h3 id="step-6-review-with-an-independent-instance">Step 6. Review with an independent instance</h3>
+<ul><li><strong>Checks:</strong> is the reviewer the same session that wrote the code?</li><li><strong>Results:</strong> it must not be. A model <code>retains reasoning context from generation, making it less likely to question its own decisions</code> (exam wording). Use a second, independent instance. That beats "review yourself carefully" and beats extended thinking. [Guide 4.6] [Guide 3.6]</li></ul>
+<h3 id="step-7-write-criteria-that-cut-false-positives">Step 7. Write criteria that cut false positives</h3>
+<ul><li><strong>Checks:</strong> are developers ignoring the comments?</li><li><strong>Results (exam wording, [Guide 4.1]):</strong><ul><li>Use explicit criteria: what to report (bugs, security) and what to skip (minor style, local patterns).</li><li>"Be conservative" or "only report high-confidence findings" does <strong>not</strong> improve precision.</li><li>Temporarily turn off a high-false-positive category while you fix its prompt, to win back trust.</li><li>Define each severity with concrete code examples.</li><li>Few-shot examples of acceptable code vs real issues help Claude generalise. [Guide 4.2]</li></ul></li></ul>
+<h3 id="step-8-gate-on-facts-output-and-failures">Step 8. Gate on facts, output, and failures</h3>
+<ul><li><strong>Checks:</strong> did tests actually pass, and is the output valid?</li><li><strong>Results:</strong><ul><li>Pass/fail comes from real test exit codes, not from Claude saying "tests pass" (practice, not doc).</li><li>Schema-valid findings (file, line, severity, message) → post as inline PR comments. [Guide 3.6]</li><li>Invalid → retry once with the error, then mark "needs a person". Never auto-approve.</li><li>Background, not tested: <code>429</code>, <code>500</code>, <code>529</code> → retry with backoff (the SDK retries twice by default, honouring <code>retry-after</code>). A <code>429</code> with no <code>retry-after</code> may be a spend cap; backoff won't fix it, so fail and alert. [errors]</li><li>Max turns hit → the run exits with an error; fail the job visibly. [cli]</li></ul></li></ul>
+<pre><code class="lang-bash"># pre-merge job (blocking, so synchronous)
+claude -p &quot;Review the changes in this PR. Report only bugs and security issues per CLAUDE.md.
+Earlier findings (report only new or still-open ones): $(cat prior_findings.json)&quot; \
+  --output-format json \
+  --json-schema &quot;$(cat findings.schema.json)&quot; \
+  --max-turns 15 \
+  --allowedTools &quot;Read&quot; &quot;Grep&quot; &quot;Glob&quot; &quot;Bash(git diff *)&quot; \
+  &gt; review_raw.json || { echo &quot;review failed or hit max turns&quot;; exit 1; }
+# naming Grep and Glob here also brings them back on macOS/Linux/WSL, where they&#x27;re off by default
+
+jq &#x27;.structured_output&#x27; review_raw.json &gt; review.json   # the schema-valid findings live here
+python post_inline_comments.py review.json      # validates again, then posts
+npm test                                        # merge gate = real exit code, not Claude&#x27;s opinion</code></pre>
+<pre><code class="lang-python"># nightly job (not blocking, so Batch)
+batch = client.messages.batches.create(requests=[
+    {&quot;custom_id&quot;: f&quot;testgen-{slug(path)}&quot;, &quot;params&quot;: testgen_params(path, existing_tests(path))}
+    for path in changed_this_week()])
+# later: for each result, match on custom_id; resubmit only errored/expired ones, adjusted</code></pre>
+<hr>
+<h2 id="flow-8-how-do-you-explore-a-big-codebase-without-flooding-context">Flow 8: How do you explore a big codebase without flooding context?</h2><p class="tb-section-link"><a href="#tb-mechanism-1-1">Related technical reference · stop_reason / tool_use</a></p>
+<p><strong>Scenario: Developer Productivity with Claude (also Code Generation) · Task statements 2.5, 5.4, 3.3, 3.4, 1.6</strong></p>
+<p>The job: understand a big legacy repo without flooding the context window.</p>
+<div class="mmd"><pre class="mermaid" id="cc-chart-8" data-teaching-key="diagram-46">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;flowchart&quot;:{&quot;curve&quot;:&quot;linear&quot;,&quot;htmlLabels&quot;:true,&quot;nodeSpacing&quot;:40,&quot;rankSpacing&quot;:50},&quot;themeVariables&quot;:{&quot;fontFamily&quot;:&quot;system-ui, -apple-system, Segoe UI, sans-serif&quot;,&quot;fontSize&quot;:&quot;16px&quot;,&quot;background&quot;:&quot;#ffffff&quot;,&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryTextColor&quot;:&quot;#1b2430&quot;,&quot;primaryBorderColor&quot;:&quot;#1b2430&quot;,&quot;lineColor&quot;:&quot;#5b6878&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;,&quot;tertiaryColor&quot;:&quot;#f6f7f9&quot;}}}%%
+flowchart TD
+    S([&quot;New repo: read CLAUDE.md, README and top folders&quot;])
+    Q1{&quot;Do you know a file name pattern, rather than text inside files?&quot;}
+    GL[&quot;Glob, e.g. **/*.test.tsx&quot;]
+    GR[&quot;Grep for content: callers, errors&quot;]
+    RD[&quot;Read only the files that matter&quot;]
+    NOTE[&quot;Write findings to scratchpad&quot;]
+    Q2{&quot;Is the question broad enough to pull in lots of raw output?&quot;}
+    SUB[&quot;PICK: subagent returns a summary&quot;]
+    Q3{&quot;Is the next step a big change across many files?&quot;}
+    PLAN[&quot;PICK: plan mode first&quot;]
+    DX[&quot;PICK: direct execution&quot;]
+    T1[&quot;NOT: read every file up front&quot;]
+    S --&gt; Q1
+    Q1 -- &quot;yes, a name pattern&quot; --&gt; GL --&gt; RD
+    Q1 -- &quot;no, know some text&quot; --&gt; GR --&gt; RD
+    RD --&gt; NOTE --&gt; Q2
+    Q2 -- &quot;yes, pulls in lots&quot; --&gt; SUB --&gt; NOTE
+    Q2 -- &quot;no, narrow question&quot; --&gt; Q3
+    Q3 -- &quot;yes, big change&quot; --&gt; PLAN
+    Q3 -- &quot;no, a small clear fix&quot; --&gt; DX
+    RD -.- T1
+    click SUB href &quot;../L05-context-management-and-reliability.html#54-exploring-a-large-codebase&quot;
+    click PLAN href &quot;../L03-claude-code-configuration-and-workflows.html#34-plan-mode-or-direct-execution&quot;
+    click DX href &quot;../L03-claude-code-configuration-and-workflows.html#34-plan-mode-or-direct-execution&quot;
+    classDef decision fill:#eef1f5,stroke:#5b6878,stroke-width:2px,color:#1b2430
+    classDef action fill:#ffffff,stroke:#1b2430,stroke-width:2px,color:#1b2430
+    classDef rightPath fill:#e3f6ea,stroke:#157a3c,stroke-width:3px,color:#0f3d20,font-weight:bold
+    classDef trap fill:#fdeceb,stroke:#b3261e,stroke-width:2px,stroke-dasharray:6 4,color:#7a1510
+    classDef note fill:#fff4d6,stroke:#8a5a00,stroke-width:2px,color:#4d3300
+    class Q1,Q2,Q3 decision
+    class S,GL,GR,RD,NOTE action
+    class SUB,PLAN,DX rightPath
+    class T1 trap</pre></div>
+<p><strong>Remember it as:</strong> Names: Glob. Text: Grep. Big question: subagent.</p>
+<h3 id="step-1-read-the-map-first">Step 1. Read the map first</h3>
+<ul><li><strong>Checks:</strong> does the repo already explain itself?</li><li><strong>Results:</strong> read <code>CLAUDE.md</code>, the README and the top-level folder list before searching (practice, not doc).</li></ul>
+<h3 id="step-2-glob-or-grep">Step 2. Glob or Grep?</h3>
+<ul><li><strong>Checks:</strong> do you know a <strong>file name</strong> pattern, or some <strong>text inside</strong> files?</li><li><strong>Results (exam wording, [Guide 2.5]):</strong><ul><li>Name or extension → <strong>Glob</strong>, <code>file path pattern matching</code>, for example <code>**/*.test.tsx</code>.</li><li>Text inside files (function names, error messages, imports) → <strong>Grep</strong>, <code>content search</code>.</li><li>First see which files match, then look at content in the few that matter. The Grep tool's default mode is <code>files_with_matches</code> (file paths only); ask for content mode with a few lines of context after that. [tools]</li></ul></li><li><strong>What changed since:</strong> today Glob and Grep are absent by default on macOS, Linux and WSL (Claude searches through Bash instead). They come back when you name them in <code>--tools</code> or <code>--allowedTools</code>, or when Bash is removed. [tools] <strong>On the exam: pick Glob for names and Grep for content.</strong></li><li><strong>Right:</strong> "Grep for <code>processRefund(</code> to find every caller."</li><li><strong>Wrong:</strong> "Glob for <code>*refund*</code>" when the question is who <strong>calls</strong> a function. Glob only sees names.</li></ul>
+<h3 id="step-3-read-selectively-and-build-up">Step 3. Read selectively and build up</h3>
+<ul><li><strong>Checks:</strong> do you need the whole file?</li><li><strong>Results:</strong> start with Grep to find entry points, then Read to follow imports and trace the flow, <code>rather than reading all files upfront</code> (exam wording). [Guide 2.5] For big files, read a line range.</li><li><strong>Wrapper modules:</strong> first list every name the wrapper exports, then Grep for each name across the codebase. [Guide 2.5]</li></ul>
+<h3 id="step-4-editing-edit-or-read--write">Step 4. Editing: Edit, or Read + Write?</h3>
+<ul><li><strong>Checks:</strong> is the text you want to change unique in the file?</li><li><strong>Results:</strong> unique → <strong>Edit</strong> (targeted change by unique text match). Not unique, so Edit fails → <strong>Read</strong> the full file, then <strong>Write</strong> it back changed. [Guide 2.5]</li><li><strong>What changed since:</strong> today's Edit tool has two more options: a longer <code>old_string</code> with enough surrounding text to be unique, or <code>replace_all: true</code> when you really want every match changed. [tools] <strong>On the exam: pick Read + Write when Edit can't find unique text.</strong></li><li><strong>Wrong:</strong> "Use Bash <code>sed</code> to force it" or "keep retrying Edit with the same text".</li></ul>
+<h3 id="step-5-write-things-down">Step 5. Write things down</h3>
+<ul><li><strong>Checks:</strong> will today's findings survive a long session or a new one?</li><li><strong>Results:</strong> keep a scratchpad file of entry points, key classes and open questions; re-read it for later questions. This fights <code>Context degradation in extended sessions: models start giving inconsistent answers and referencing &quot;typical patterns&quot; rather than specific classes discovered earlier</code> (exam wording). [Guide 5.4] Use <code>/compact</code> when discovery output piles up. [Guide 5.4]</li></ul>
+<h3 id="step-6-split-broad-questions">Step 6. Split broad questions</h3>
+<ul><li><strong>Checks:</strong> will this question pull in lots of raw output?</li><li><strong>Results:</strong> spawn a subagent per question ("find all test files", "trace refund flow dependencies"). Each returns a short summary; the main agent keeps the big picture. Summarise one phase before starting the next and put that summary into the new subagents' first prompt. [Guide 5.4] The <strong>Explore subagent</strong> isolates verbose discovery and returns summaries. [Guide 3.4]</li><li><strong>Wrong:</strong> "Switch to a model with a bigger context window." That delays the problem; it doesn't fix it.</li></ul>
+<h3 id="step-7-load-the-right-conventions">Step 7. Load the right conventions</h3>
+<ul><li><strong>Checks:</strong> do the rules apply everywhere, in one folder, or to one file type spread everywhere?</li><li><strong>Results:</strong><ul><li>Everywhere → project <code>CLAUDE.md</code>. [Guide 3.1]</li><li>One file type across many folders (tests, Terraform) → <code>.claude/rules/</code> file with YAML front matter <code>paths:</code> glob patterns, for example <code>paths: [&quot;terraform/**/*&quot;]</code> or <code>**/*.test.tsx</code>. Loads only when editing matching files. [Guide 3.3] [memory]</li><li>A task you run on demand → a skill in <code>.claude/skills/</code> with <code>SKILL.md</code>. <code>context: fork</code> runs it in an isolated sub-agent; <code>allowed-tools</code> limits its tools (exam answer; today it only pre-approves and <code>disallowed-tools</code> blocks; see <a href="conditions-and-errors.html#exam-answer-vs-today">exam answer vs today</a>); <code>argument-hint</code> prompts for missing arguments. [Guide 3.2] [skills]</li></ul></li><li><strong>Wrong:</strong> "A <code>CLAUDE.md</code> in every test folder" for a test rule. Path rules handle spread-out files.</li></ul>
+<h3 id="step-8-plan-or-just-do-it">Step 8. Plan or just do it?</h3>
+<ul><li><strong>Checks:</strong> how big and how open is the change?</li><li><strong>Results (exam wording, [Guide 3.4]):</strong><ul><li>Large-scale, many valid approaches, architecture choices, multi-file (for example a migration touching 45+ files) → <strong>plan mode</strong> first, then execute the plan.</li><li>Simple, clear scope (one-file bug fix with a clear stack trace) → <strong>direct execution</strong>.</li></ul></li><li><strong>Open-ended tasks</strong> ("add tests to a legacy codebase") → map structure, find high-impact areas, make a prioritised plan that changes as you learn. [Guide 1.6]</li></ul>
+<pre><code class="lang-python">def explore(question):
+    read(&quot;CLAUDE.md&quot;); read(&quot;README.md&quot;); list_dir(&quot;.&quot;)
+    if knows_name_pattern(question):
+        files = glob(&quot;**/*payment*.ts&quot;)                     # names only
+    else:
+        files = grep(&quot;processRefund\\(&quot;, output=&quot;files&quot;)    # count first
+    if len(files) &gt; TOO_MANY or is_broad(question):
+        summary = spawn_subagent(f&quot;Answer: {question}. Return a 10-line summary with file:line refs.&quot;)
+        append(&quot;scratchpad/findings.md&quot;, summary)
+        return summary
+    for f in rank(files)[:5]:
+        hits = grep(&quot;processRefund\\(&quot;, path=f, context=3)
+        read(f, offset=hits.first_line - 20, limit=80)      # a slice, not the whole file
+    append(&quot;scratchpad/findings.md&quot;, notes())               # survives /compact and new sessions</code></pre>
+<hr>
+<h2 id="sources">Sources</h2>
+<p><a class="xref" href="../../../about.html#source-tiers"><abbr data-tip="Tier 1: Anthropic&#x27;s own material. It wins every conflict." aria-label="Tier 1: Anthropic&#x27;s own material. It wins every conflict.">Tier 1</abbr></a> only. Pages checked on 2026-10-06; [structured], [define-tools], [handle-tools] and [tools] re-checked 2026-10-07.</p>
+<ul><li><code>[Guide x.y]</code> Official CCAR-F exam guide v1.0 (July 2026, Anthropic), task statement x.y.</li><li><code>[errors]</code> <a class="ext" href="https://platform.claude.com/docs/en/api/errors" rel="noopener">https://platform.claude.com/docs/en/api/errors</a></li><li><code>[stop-reasons]</code> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons" rel="noopener">https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons</a></li><li><code>[handle-tools]</code> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls" rel="noopener">https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls</a></li><li><code>[define-tools]</code> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools" rel="noopener">https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools</a> (the old <code>implement-tool-use</code> URL redirects here)</li><li><code>[parallel]</code> <a class="ext" href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use" rel="noopener">https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use</a></li><li><code>[pdf]</code> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/pdf-support" rel="noopener">https://platform.claude.com/docs/en/build-with-claude/pdf-support</a></li><li><code>[headless]</code> <a class="ext" href="https://code.claude.com/docs/en/headless" rel="noopener">https://code.claude.com/docs/en/headless</a></li><li><code>[tools]</code> <a class="ext" href="https://code.claude.com/docs/en/tools-reference" rel="noopener">https://code.claude.com/docs/en/tools-reference</a></li><li><code>[sdk-hooks]</code> <a class="ext" href="https://code.claude.com/docs/en/agent-sdk/hooks" rel="noopener">https://code.claude.com/docs/en/agent-sdk/hooks</a></li><li><code>[sdk-sessions]</code> <a class="ext" href="https://code.claude.com/docs/en/agent-sdk/sessions" rel="noopener">https://code.claude.com/docs/en/agent-sdk/sessions</a></li><li><code>[structured]</code> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs" rel="noopener">https://platform.claude.com/docs/en/build-with-claude/structured-outputs</a></li><li><code>[batch]</code> <a class="ext" href="https://platform.claude.com/docs/en/build-with-claude/batch-processing" rel="noopener">https://platform.claude.com/docs/en/build-with-claude/batch-processing</a></li><li><code>[mcp]</code> <a class="ext" href="https://code.claude.com/docs/en/mcp" rel="noopener">https://code.claude.com/docs/en/mcp</a></li><li><code>[mcp-spec]</code> <a class="ext" href="https://modelcontextprotocol.io/specification/2025-11-25/server/tools" rel="noopener">https://modelcontextprotocol.io/specification/2025-11-25/server/tools</a></li><li><code>[hooks]</code> <a class="ext" href="https://code.claude.com/docs/en/hooks" rel="noopener">https://code.claude.com/docs/en/hooks</a></li><li><code>[cli]</code> <a class="ext" href="https://code.claude.com/docs/en/cli-reference" rel="noopener">https://code.claude.com/docs/en/cli-reference</a></li><li><code>[settings]</code> <a class="ext" href="https://code.claude.com/docs/en/settings" rel="noopener">https://code.claude.com/docs/en/settings</a> (not re-fetched today)</li><li><code>[memory]</code> <a class="ext" href="https://code.claude.com/docs/en/memory" rel="noopener">https://code.claude.com/docs/en/memory</a> (not re-fetched today)</li><li><code>[skills]</code> <a class="ext" href="https://code.claude.com/docs/en/skills" rel="noopener">https://code.claude.com/docs/en/skills</a> (not re-fetched today)</li><li><code>[sub-agents]</code> <a class="ext" href="https://code.claude.com/docs/en/sub-agents" rel="noopener">https://code.claude.com/docs/en/sub-agents</a> (the subagent tool is now named <code>Agent</code>)</li></ul></article><aside class="learning-outline" aria-label="Page sections"><nav class="toc-nav" aria-label="Sections on this page"><details class="toc"><summary>Sections on this page (10)</summary><ol><li><a href="#what-this-file-is">What this file is</a></li><li><a href="#flow-1-how-does-an-extraction-pipeline-decide-what-a-person-checks">Flow 1: How does an extraction pipeline decide what a person checks?</a></li><li><a href="#flow-2-how-does-the-agent-loop-know-when-to-stop">Flow 2: How does the agent loop know when to stop?</a></li><li><a href="#flow-3-how-should-an-mcp-tool-report-each-kind-of-result">Flow 3: How should an MCP tool report each kind of result?</a></li><li><a href="#flow-4-how-does-a-support-agent-enforce-rules-and-hand-off">Flow 4: How does a support agent enforce rules and hand off?</a></li><li><a href="#flow-5-how-does-a-hook-block-a-tool-call">Flow 5: How does a hook block a tool call?</a></li><li><a href="#flow-6-resume-fork-or-start-fresh-when-you-come-back">Flow 6: Resume, fork or start fresh when you come back?</a></li><li><a href="#flow-7-how-does-claude-code-review-a-pull-request-in-ci">Flow 7: How does Claude Code review a pull request in CI?</a></li><li><a href="#flow-8-how-do-you-explore-a-big-codebase-without-flooding-context">Flow 8: How do you explore a big codebase without flooding context?</a></li><li><a href="#sources">Sources</a></li></ol></details></nav></aside></div>
+</main>
+</div>
+<footer class="foot">
+  <p>An internal study site for Anthropic's Claude certifications, made by colleagues. It isn't affiliated with or endorsed by Anthropic.
+  Facts come from Anthropic's own material first (<a href="../../../about.html#source-tiers">source tiers</a>), and the official exam guide always wins.</p>
+  <p><a class="ext" href="https://git.soma.salesforce.com/akumthekar/claude-certifications-training/issues/new?template=report-a-problem.yml&amp;page=https%3A%2F%2Fgit.soma.salesforce.com%2Fpages%2Fakumthekar%2Fclaude-certifications-training%2Flessons%2Fccar-f%2Fdeep-practice%2Fcode-level-flows.html" rel="noopener">Report a problem on this page</a> · <a href="../../../contribute.html">Contribute</a> · <a href="../../../whats-new.html">What's new</a> · <a href="../../../faq.html">FAQ</a></p>
+  <p>No real exam questions. Your checklist ticks stay in this browser. Built 2026-10-22 · <a href="../../../how-we-build.html">How this site is built and checked</a></p>
+</footer>
+</body>
+</html>
